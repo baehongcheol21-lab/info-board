@@ -64,17 +64,19 @@ def fetch_smp():
     try:
         r = requests.get(
             "https://apis.data.go.kr/B552115/SmpWithForecastDemand/getSmpWithForecastDemand",
-            params={"serviceKey": key, "pageNo": 1, "numOfRows": 50}, headers=UA, timeout=20)
+            params={"serviceKey": key, "pageNo": 1, "numOfRows": 100, "dataType": "json"},
+            headers=UA, timeout=20)
         if "Unauthorized" in r.text or "SERVICE_KEY" in r.text or "NO OPENAPI" in r.text:
             return None
-        nums = []
-        for elem in ET.fromstring(r.text).iter():
-            if "smp" in elem.tag.lower():
-                try:
-                    nums.append(float(elem.text))
-                except (TypeError, ValueError):
-                    pass
-        return nums[-1] if nums else None
+        items = r.json()["response"]["body"]["items"]["item"]
+        daily = {}
+        for it in items:
+            if it.get("areaName") == "육지":
+                daily.setdefault(str(it["date"]), []).append(float(it["smp"]))
+        if not daily:
+            return None
+        newest = max(daily)
+        return round(sum(daily[newest]) / len(daily[newest]), 2)  # 최신일 육지 일평균
     except Exception:
         return None
 
