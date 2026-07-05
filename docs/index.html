@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>정보 브리핑</title>
+<style>
+ body{background:#050505;color:#e6fff8;font-family:-apple-system,'Malgun Gothic',sans-serif;margin:0;
+  background-image:linear-gradient(rgba(0,255,204,.04) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,255,204,.04) 1px,transparent 1px);background-size:22px 22px}
+ header{padding:14px 16px;border-bottom:1px solid #00ffcc;font-family:'Courier New',monospace}
+ header h1{font-size:1rem;letter-spacing:3px;color:#00ffcc;margin:0;text-shadow:0 0 6px #00ffcc}
+ header .t{font-size:.72rem;color:#7fa99e}
+ #hl{padding:12px 16px;font-weight:700;border-left:5px solid #ff5c5c;background:rgba(0,255,204,.04)}
+ #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;padding:12px}
+ .card{background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);border-radius:8px;padding:12px;
+  box-shadow:0 0 12px rgba(0,255,204,.06) inset}
+ .card.alert{border-color:#ff5c5c;box-shadow:0 0 10px rgba(255,92,92,.4)}
+ .card h3{font-size:.68rem;color:#7fa99e;margin:0 0 6px;font-family:'Courier New',monospace}
+ .val{font-size:1.45rem;font-weight:800;color:#fff;text-align:right}
+ .u{font-size:.65rem;color:#00ffcc;margin-left:3px}
+ .chg{font-size:.8rem;font-weight:700;text-align:right}
+ .up{color:#ff5c5c} .down{color:#58a6ff} .flat{color:#7fa99e} .dim{color:#7fa99e;font-weight:400}
+ .sp{width:100%;height:34px;margin-top:6px}
+ .err{color:#ffd24d;font-size:.85rem;padding:8px 0}
+ #news{margin:4px 12px 24px;background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);border-radius:8px;padding:12px}
+ #news h3{font-size:.7rem;color:#7fa99e;font-family:'Courier New',monospace;margin:0 0 8px}
+ #news li{font-size:.82rem;padding:5px 0 5px 8px;border-left:2px solid #00ffcc;list-style:none;margin:5px 0}
+ #news ul{margin:0;padding:0}
+ footer{color:#7fa99e;font-size:.65rem;text-align:center;padding:10px;font-family:'Courier New',monospace}
+</style></head><body>
+<header><h1>INFO_BRIEF // MOBILE</h1><div class="t">갱신 07/05 23:19 KST · 시세 15~20분 지연</div></header>
+<div id="hl">오늘 중요도: 🔴 특이 — 이상 4건</div>
+<div id="grid"><div class="card"><h3>SMP 계통한계가격</h3><div class="err">🔑 키 승인 대기</div></div>
+<div class="card"><h3>원/달러 환율</h3>
+  <div class="val">1,529.2<span class="u">원</span></div>
+  <div class="chg down">▼ 0.84% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,28.3 8.7,19.3 17.4,17.3 26.1,3.0 34.8,20.1 43.5,22.1 52.2,22.6 60.9,27.7 69.6,33.0 78.3,30.5 87.0,32.0 95.7,22.4 104.3,14.3 113.0,18.4 121.7,13.3 130.4,15.8 139.1,10.8 147.8,8.3 156.5,15.8 165.2,11.5 173.9,6.9 182.6,4.8 191.3,11.2 200.0,19.9" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card alert"><h3>코스피</h3>
+  <div class="val">8,088.34<span class="u">pt</span></div>
+  <div class="chg up">▲ 5.76% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,11.7 9.5,20.6 19.0,33.0 28.6,21.7 38.1,28.5 47.6,27.9 57.1,21.2 66.7,13.5 76.2,10.1 85.7,7.6 95.2,3.9 104.8,4.1 114.3,3.0 123.8,19.8 133.3,14.8 142.9,6.4 152.4,15.9 161.9,16.2 171.4,14.7 181.0,17.9 190.5,30.0 200.0,21.9" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card alert"><h3>반도체지수 SOX</h3>
+  <div class="val">12,626.22<span class="u">pt</span></div>
+  <div class="chg down">▼ 5.44% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,11.9 10.0,15.6 20.0,32.8 30.0,24.3 40.0,27.4 50.0,33.0 60.0,21.1 70.0,18.6 80.0,9.6 90.0,19.6 100.0,17.3 110.0,6.6 120.0,3.0 130.0,17.2 140.0,17.5 150.0,11.6 160.0,20.7 170.0,14.4 180.0,7.8 190.0,18.8 200.0,27.8" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card"><h3>천연가스 (LNG 대리)</h3>
+  <div class="val">3.245<span class="u">USD</span></div>
+  <div class="chg up">▲ 1.53% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,16.4 10.5,26.0 21.1,26.8 31.6,21.5 42.1,33.0 52.6,29.1 63.2,26.0 73.7,15.2 84.2,26.2 94.7,15.9 105.3,13.5 115.8,26.0 126.3,17.3 136.8,3.0 147.4,16.1 157.9,22.0 168.4,11.0 178.9,17.4 189.5,20.2 200.0,14.5" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card"><h3>구리 선물</h3>
+  <div class="val">6.224<span class="u">USD/lb</span></div>
+  <div class="chg up">▲ 1.79% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,15.4 10.5,11.8 21.1,13.2 31.6,16.2 42.1,15.6 52.6,6.2 63.2,3.4 73.7,3.0 84.2,3.4 94.7,9.3 105.3,10.3 115.8,22.1 126.3,33.0 136.8,26.0 147.4,22.1 157.9,24.5 168.4,19.3 178.9,23.1 189.5,23.6 200.0,17.6" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card"><h3>WTI 유가</h3>
+  <div class="val">68.78<span class="u">USD</span></div>
+  <div class="chg up">▲ 0.13% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,4.0 10.5,3.0 21.1,7.1 31.6,4.7 42.1,7.7 52.6,11.5 63.2,16.9 73.7,23.1 84.2,22.2 94.7,22.4 105.3,24.8 115.8,26.9 126.3,30.7 136.8,28.6 147.4,32.1 157.9,30.1 168.4,31.8 178.9,33.0 189.5,32.9 200.0,32.7" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card"><h3>한국전력</h3>
+  <div class="val">38,250<span class="u">원</span></div>
+  <div class="chg up">▲ 0.26% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,17.7 9.5,21.0 19.0,32.5 28.6,31.9 38.1,30.3 47.6,33.0 57.1,23.5 66.7,3.0 76.2,11.7 85.7,7.9 95.2,14.2 104.8,22.1 114.3,21.5 123.8,31.1 133.3,28.4 142.9,17.2 152.4,26.5 161.9,20.2 171.4,27.0 181.0,23.7 190.5,20.7 200.0,20.2" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card alert"><h3>삼성전자</h3>
+  <div class="val">309,500<span class="u">원</span></div>
+  <div class="chg up">▲ 8.22% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,7.3 9.5,16.1 19.0,29.3 28.6,18.9 38.1,26.5 47.6,27.9 57.1,18.7 66.7,13.0 76.2,10.6 85.7,9.3 95.2,3.0 104.8,6.3 114.3,6.5 123.8,23.6 133.3,11.6 142.9,4.6 152.4,12.0 161.9,18.5 171.4,14.2 181.0,21.8 190.5,33.0 200.0,23.8" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card alert"><h3>SK하이닉스</h3>
+  <div class="val">2,425,000<span class="u">원</span></div>
+  <div class="chg up">▲ 10.88% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,21.5 9.5,28.3 19.0,33.0 28.6,24.0 38.1,28.9 47.6,27.3 57.1,25.9 66.7,21.8 76.2,19.0 85.7,14.8 95.2,10.0 104.8,7.6 114.3,3.0 123.8,13.8 133.3,11.9 142.9,3.1 152.4,10.3 161.9,11.7 171.4,11.0 181.0,13.7 190.5,24.8 200.0,17.7" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card"><h3>엔비디아</h3>
+  <div class="val">194.83<span class="u">USD</span></div>
+  <div class="chg down">▼ 1.39% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,7.5 10.0,3.0 20.0,18.6 30.0,14.5 40.0,15.0 50.0,23.9 60.0,18.8 70.0,18.5 80.0,10.1 90.0,15.9 100.0,19.1 110.0,12.2 120.0,14.5 130.0,24.4 140.0,25.6 150.0,29.3 160.0,33.0 170.0,30.2 180.0,24.3 190.0,27.2 200.0,30.4" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card"><h3>금 선물</h3>
+  <div class="val">4,187.3<span class="u">USD</span></div>
+  <div class="chg up">▲ 1.81% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,4.8 10.5,4.9 21.1,11.0 31.6,23.4 42.1,24.9 52.6,14.7 63.2,5.5 73.7,5.3 84.2,3.0 94.7,14.0 105.3,17.4 115.8,21.6 126.3,33.0 136.8,29.7 147.4,25.8 157.9,30.4 168.4,30.3 178.9,26.7 189.5,23.0 200.0,17.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div>
+<div class="card"><h3>미 10년물 금리</h3>
+  <div class="val">4.485<span class="u">%</span></div>
+  <div class="chg up">▲ 0.22% <span class="dim">전일比</span></div>
+  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,19.2 9.5,13.2 19.0,15.5 28.6,5.7 38.1,3.0 47.6,7.0 57.1,4.7 66.7,17.8 76.2,13.8 85.7,16.8 95.2,23.7 104.8,17.8 114.3,19.8 123.8,10.2 133.3,12.8 142.9,28.0 152.4,29.7 161.9,33.0 171.4,32.7 181.0,25.3 190.5,15.8 200.0,14.2" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg></div></div>
+<div id="news"><h3>RSS_FEED // 전기신문</h3><ul><li>포항시, 수소특화단지 공식 홈페이지 개설…수소기업 투자유치 플랫폼 구축</li><li>KR, 유럽서 해운 탈탄소 전략 논의...AI·IMO 대응 협력 확대</li><li>글로벌 전쟁 이후 구조적 변화 시대, ‘스스로 눈 떠야’ 위험 피한다</li><li>글로벌 공유 킥보드 주차, ‘가상구역’이 대세로…한국 PM법도 수용해야</li><li>“유연성 자원으로 배전 전력망 혼잡 푼다”...한전, 제주서 배전망 유연성시장 첫 개설</li><li>[긴급진단] 혼탁해진 전기공사 입찰시스템(1)간이형 종심제 폐지, 기술 경쟁 회복 신호탄 기대</li></ul></div>
+<footer>info-dashboard system · 자동 갱신(매시간) · 사파리 공유→홈 화면에 추가</footer>
+</body></html>
