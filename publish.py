@@ -93,9 +93,35 @@ def spark_svg(closes):
             f'<polyline points="{pts}" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg>')
 
 
+def load_discussions():
+    """discuss.py가 저장한 최신 AI 토론 결과 (없으면 빈 dict)"""
+    try:
+        import json
+        with open("discussions.json", encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def _esc(t):
+    return (t or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
 def main():
+    disc = load_discussions()
+    d_ind = disc.get("indicators", {})
     cards, alerts = [], 0
     for _id, name, sym, unit, dec in INDICATORS:
+        di = d_ind.get(_id, {})
+        summary = _esc(di.get("summary", ""))
+        detail = _esc(di.get("detail", ""))
+        extra = ""
+        if summary:
+            extra += f'<div class="sum">{summary}</div>'
+        if detail:
+            extra += (f'<div class="more" onclick="this.classList.toggle(\'open\')">'
+                      f'<span class="tap">▼ 자세한 배경 (AI 토론 결과)</span>'
+                      f'<div class="detail">{detail}</div></div>')
         try:
             price, pct, closes = fetch_yahoo(sym)
             arrow = "▲" if (pct or 0) > 0 else ("▼" if (pct or 0) < 0 else "▬")
@@ -106,15 +132,28 @@ def main():
 <div class="card{' alert' if big else ''}"><h3>{name}</h3>
   <div class="val">{price:,.{dec}f}<span class="u">{unit}</span></div>
   <div class="chg {cls}">{arrow} {abs(pct):.2f}% <span class="dim">전일比</span></div>
-  {spark_svg(closes)}</div>""")
+  {spark_svg(closes)}{extra}</div>""")
         except Exception as e:
             cards.append(f'<div class="card"><h3>{name}</h3><div class="err">❌ 수집 실패</div>'
-                         f'<div class="dim" style="font-size:.7rem">{type(e).__name__}</div></div>')
+                         f'<div class="dim" style="font-size:.7rem">{type(e).__name__}</div>{extra}</div>')
 
     smp = fetch_smp()
+    sd = d_ind.get("smp", {})
+    smp_extra = ""
+    if sd.get("summary"):
+        smp_extra += f'<div class="sum">{_esc(sd["summary"])}</div>'
+    if sd.get("detail"):
+        smp_extra += (f'<div class="more" onclick="this.classList.toggle(\'open\')">'
+                      f'<span class="tap">▼ 자세한 배경 (AI 토론 결과)</span>'
+                      f'<div class="detail">{_esc(sd["detail"])}</div></div>')
     smp_card = (f'<div class="card"><h3>SMP 계통한계가격</h3><div class="val">{smp:,.2f}'
-                f'<span class="u">원/kWh</span></div></div>' if smp else
-                '<div class="card"><h3>SMP 계통한계가격</h3><div class="err">🔑 키 승인 대기</div></div>')
+                f'<span class="u">원/kWh</span></div>{smp_extra}</div>' if smp else
+                f'<div class="card"><h3>SMP 계통한계가격</h3><div class="err">🔑 키 승인 대기</div>{smp_extra}</div>')
+
+    brief = _esc(disc.get("alpha_brief", ""))
+    brief_html = (f'<div id="brief"><h3>🎼 알파의 총평 <span class="dim">'
+                  f'({_esc(disc.get("time", ""))} 토론, {disc.get("calls_used", "?")}콜 사용)</span></h3>'
+                  f'<div class="btext">{brief}</div></div>') if brief else ""
 
     news_items = "".join(f"<li>{t}</li>" for t in fetch_news())
     now = datetime.datetime.now(KST).strftime("%m/%d %H:%M")
@@ -151,9 +190,20 @@ def main():
  #news li{{font-size:.82rem;padding:5px 0 5px 8px;border-left:2px solid #00ffcc;list-style:none;margin:5px 0}}
  #news ul{{margin:0;padding:0}}
  footer{{color:#7fa99e;font-size:.65rem;text-align:center;padding:10px;font-family:'Courier New',monospace}}
+ .sum{{margin-top:8px;padding:8px;background:rgba(0,255,204,.06);border-radius:6px;
+      font-size:.78rem;line-height:1.55;white-space:pre-wrap}}
+ .more .tap{{display:block;margin-top:6px;font-size:.72rem;color:#00ffcc;cursor:pointer}}
+ .more .detail{{display:none;margin-top:6px;padding:8px;background:rgba(0,0,0,.5);
+      border-left:3px solid #ffd24d;border-radius:4px;font-size:.78rem;line-height:1.6;white-space:pre-wrap}}
+ .more.open .detail{{display:block}}
+ #brief{{margin:12px;padding:14px;background:rgba(0,255,204,.05);border:1px solid rgba(0,255,204,.35);
+      border-radius:10px}}
+ #brief h3{{margin:0 0 8px;font-size:.8rem;color:#00ffcc;font-family:'Courier New',monospace}}
+ #brief .btext{{font-size:.88rem;line-height:1.65;white-space:pre-wrap}}
 </style></head><body>
 <header><h1>INFO_BRIEF // MOBILE</h1><div class="t">갱신 {now} KST · 시세 15~20분 지연</div></header>
 <div id="hl">오늘 중요도: {level[0]}</div>
+{brief_html}
 <div id="grid">{smp_card}{"".join(cards)}</div>
 <div id="news"><h3>RSS_FEED // 전기신문</h3><ul>{news_items or "<li>수집 실패</li>"}</ul></div>
 <footer>info-dashboard system · 자동 갱신(매시간) · 사파리 공유→홈 화면에 추가</footer>
