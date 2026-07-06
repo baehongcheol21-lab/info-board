@@ -84,6 +84,24 @@ def fetch_power_mix():
         return None
 
 
+def fetch_sukub():
+    """전력수급현황 — 예비율/공급능력/현재수요. 키 없으면 None."""
+    key = os.environ.get("DATA_GO_KR_KEY", "")
+    if not key:
+        return None
+    try:
+        r = requests.get("https://apis.data.go.kr/B552115/sukub5mMaxDatetime2/getSukub5mMaxDatetime2",
+                         params={"serviceKey": key, "pageNo": 1, "numOfRows": 1, "dataType": "json"},
+                         headers=UA, timeout=20)
+        it = r.json()["response"]["body"]["items"]["item"]
+        if isinstance(it, list):
+            it = it[0]
+        return {"rate": float(it["suppReserveRate"]), "supply": float(it["suppAbility"]),
+                "demand": float(it["currPwrTot"]), "time": str(it["baseDatetime"])[8:12]}
+    except Exception:
+        return None
+
+
 def fetch_smp():
     """공공데이터 SMP — 키가 없거나 미승인이면 None (가짜 숫자 금지)"""
     key = os.environ.get("DATA_GO_KR_KEY", "")
@@ -193,8 +211,15 @@ def main():
             f'<div class="pmbar"><div style="width:{mw/mx*100:.0f}%;background:{_FCOLOR.get(lab, "#00ffcc")}"></div>'
             f'<span class="pmval">{mw:,.0f}MW · {mw/pm["total"]*100:.1f}%</span></div></div>'
             for lab, mw in pm["fuels"])
-        pm_html = (f'<div id="pmix"><h3>⚡ 실시간 발전원 믹스 (전력거래소 · {pm["time"]} 기준)</h3>'
-                   f'<div class="pmtot">{pm["total"]:,.0f}<span>MW 현재 총발전(≈수요)</span></div>{bars}</div>')
+        sk = fetch_sukub()
+        head = ""
+        if sk:
+            rcol = "#ff5c5c" if sk["rate"] < 10 else ("#ffd24d" if sk["rate"] < 15 else "#3fb950")
+            head = (f'<div class="pmhead"><span>공급예비율 <b style="color:{rcol}">{sk["rate"]:.1f}%</b></span>'
+                    f'<span>공급능력 <b>{sk["supply"]:,.0f}MW</b></span>'
+                    f'<span>현재수요 <b>{sk["demand"]:,.0f}MW</b></span></div>')
+        pm_html = (f'<div id="pmix"><h3>⚡ 실시간 전력수급 · 발전원 믹스 (전력거래소 · {pm["time"]} 기준)</h3>'
+                   f'{head}<div class="pmtot">{pm["total"]:,.0f}<span>MW 현재 총발전(≈수요)</span></div>{bars}</div>')
 
     news_items = "".join(f"<li>{t}</li>" for t in fetch_news())
     now = datetime.datetime.now(KST).strftime("%m/%d %H:%M")
@@ -250,6 +275,8 @@ def main():
  .pmbar{{flex:1;background:#0a1512;border-radius:4px;height:18px;position:relative}}
  .pmbar>div{{height:100%;border-radius:4px}}
  .pmval{{position:absolute;right:5px;top:1px;font-size:.65rem;color:#fff}}
+ .pmhead{{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px;font-size:.78rem;color:#7fa99e}}
+ .pmhead b{{color:#fff;font-size:.9rem}}
 </style></head><body>
 <header><h1>INFO_BRIEF // MOBILE</h1><div class="t">갱신 {now} KST · 시세 15~20분 지연</div></header>
 <div id="hl">오늘 중요도: {level[0]}</div>
