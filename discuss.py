@@ -45,8 +45,9 @@ class Budget:
         self.client = client
         self.used = 0
         self._last = 0.0
+        self.transcript = []   # 녹취록 — 토론방 탭에서 챗 형식으로 재생된다
 
-    def ask(self, role, prompt):
+    def ask(self, role, prompt, topic=""):
         import time
         if self.used >= MAX_CALLS:
             raise RuntimeError(f"예산 {MAX_CALLS}콜 소진")
@@ -59,6 +60,7 @@ class Budget:
                 self.used += 1
                 r = self.client.models.generate_content(model=MODEL, contents=prompt)
                 text = (r.text or "").strip()
+                self.transcript.append({"role": role, "topic": topic, "text": text})
                 print(f"  [{self.used:>3}콜] {role}: {text[:50].replace(chr(10), ' ')}...")
                 return text
             except Exception as e:
@@ -120,7 +122,8 @@ def main():
 지표: {d['name']} = {d['value']} {d['unit']} (전일比 {d['pct']}%)
 오늘 업계 뉴스: {' / '.join(news[:4]) or '없음'}
 
-이 지표가 무엇이고 오늘 어떤 상태인지, 재밌는 비유 1개를 섞어 3~5줄로 설명하라.""")
+이 지표가 무엇이고 오늘 어떤 상태인지, 재밌는 비유 1개를 섞어 3~5줄로 설명하라.""",
+                      topic=d["name"])
             out_ind[_id] = {"summary": s, "reused": False}
         except Exception as e:
             print(f"  ⚠️ {_id}: {e}")
@@ -135,9 +138,10 @@ def main():
             base = f"{d['name']}이(가) 하루 만에 {d['pct']:+}% 변했다. 현재 {d['value']} {d['unit']}."
             u3 = b.ask("U3", f"너는 원인분석 요원 U3다. {base}\n뉴스: {' / '.join(news) or '없음'}\n"
                        f"직전 토론 결론: {prev_brief[:500] or '없음'}\n"
-                       "가능한 원인 후보를 최대 3개, 각 1문장으로. 근거 없으면 '추정'이라고 붙여라.")
+                       "가능한 원인 후보를 최대 3개, 각 1문장으로. 근거 없으면 '추정'이라고 붙여라.",
+                       topic=d["name"])
             u4 = b.ask("U4", f"너는 비판 요원 U4다. 다음 원인 분석을 검증하라. 과장·근거부족을 깎아내라.\n{u3}\n"
-                       "확실한 것과 추정을 구분해 3문장으로.")
+                       "확실한 것과 추정을 구분해 3문장으로.", topic=d["name"])
             alpha = b.ask("알파", f"""너는 지휘자 알파다. {EASY_RULES.replace('정확히 3~5줄만', '15~20줄로')}
 
 관측: {base}
@@ -146,7 +150,8 @@ U4 비판검증: {u4}
 직전 토론에서 우리가 내린 결론: {prev_brief[:500] or '없음'}
 
 배경 설명문을 작성하라. 구성: ①결론 1줄 ②이 지표가 뭔지 쉬운 설명 ③오늘 왜 움직였나(확실/추정 구분)
-④직전 토론과 달라진 점 ⑤앞으로 뭘 지켜봐야 하나. 확인 안 된 것은 '원인불명입니다'라고 정직하게 써라.""")
+④직전 토론과 달라진 점 ⑤앞으로 뭘 지켜봐야 하나. 확인 안 된 것은 '원인불명입니다'라고 정직하게 써라.""",
+                          topic=d["name"])
             out_ind.setdefault(_id, {})["detail"] = alpha
             out_ind[_id]["verdict"] = "yellow"
         except Exception as e:
@@ -162,7 +167,7 @@ U4 비판검증: {u4}
 직전 토론 결론: {prev_brief[:600] or '첫 토론이다'}
 
 오늘의 총평을 3~5줄로. 첫 줄은 '오늘은 조용합니다' 또는 '오늘은 O건이 특이합니다'로 시작하라.
-직전과 비교해 흐름이 바뀐 게 있으면 짚어라.""")
+직전과 비교해 흐름이 바뀐 게 있으면 짚어라.""", topic="오늘의 총평")
     except Exception:
         brief = ""
 
@@ -172,6 +177,7 @@ U4 비판검증: {u4}
         "alpha_brief": brief,
         "indicators": out_ind,
         "calls_used": b.used,
+        "transcript": b.transcript,   # 녹취록 (토론방 탭용)
     }
     with open("discussions.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=1)
