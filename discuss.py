@@ -1,51 +1,47 @@
 # coding=utf-8
 """
-discuss.py — AI 오케스트라 자동 토론 (GitHub Actions에서 하루 3번: 06시/12시/18시 KST)
+discuss.py v2 — HMAS AI 오케스트라 (하루 3회: KST 06/12/18시, GitHub Actions 자동)
 
-구조 (사용자 설계):
-  알파(지휘자) — 의제 선정과 최종 종합을 맡는다
-  U1(요약요원) — 지표마다 '쉬운 말' 3~5줄 요약을 만든다 (호버/탭용)
-  U3(원인분석요원) — 이상신호의 원인 후보를 찾는다
-  U4(비판요원) — U3의 주장을 검증하고 과장을 깎는다
-  알파(종합) — 20줄 배경설명으로 정리한다 (카드 클릭용)
-
-피드백 회로: 직전 토론(discussions.json)의 결론을 이번 토론의 입력으로 넣는다.
-예산: 한 실행당 최대 150콜 강제 차단, 평균 ~100콜 목표.
-  절약 장치 — 변동이 거의 없는 지표(|전일比|<0.5%)는 직전 요약을 재사용한다(0콜).
-출력:
-  discussions.json            (최신 — publish.py가 페이지에 심음)
-  discussions/타임스탬프.json  (전량 보관, 원본 안 버림)
-  exports/YYYY-MM-DD.csv      (엑셀로 열리는 일별 스냅샷)
+v2 개편 (요구사항_체크리스트.md 반영):
+  [조직]  알파(메타·종합) / U1(지표요약) / U2(뉴스분석) / B2(뉴스분류 슈퍼바이저)
+          U3(원인분석·도구사용) / U4(비판·평가매트릭스)
+  [도구]  tools.py — 뉴스검색·기사크롤링·과거시세·기억은행 (콜 0원, 실패시 폴백)
+  [방어]  Time-Proximity(24h), U4 평가매트릭스, 알파 모순검사+판단불가 허용(Escape Hatch),
+          출처태그, 전역상태 버스, 기억은행 주입, 상태압축(요약만 전달)
+  [문체]  유치한 비유 금지 / 뻔한 뜻풀이 금지 / 채움말 금지 / 예시 돌림 금지
+  [병렬화] asyncio 검토했으나 무료티어 분당 15콜 제한과 상충 → 보류 (체크리스트 D11)
 """
 import os
 import csv
 import json
-import glob
 import datetime
 
-from publish import INDICATORS, fetch_yahoo, fetch_news, fetch_smp
+from publish import INDICATORS, fetch_yahoo, fetch_smp
+import tools
 
 MAX_CALLS = 150
 MODEL = "gemini-3.1-flash-lite"
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
-EASY_RULES = """[쉬운 글 규칙 — 반드시 지켜라]
-- 한 문장은 20자 안팎으로 짧게 끊습니다. 마침표로 끝냅니다.
-- 어려운 단어를 쓰면 바로 다음 문장에서 'OO은 ~하는 것입니다'로 풀이합니다.
-- 피동형(~되어집니다)을 쓰지 않습니다. 능동형 '-습니다'로 씁니다.
-- 결론을 첫 줄에 씁니다.
-- 줄마다 줄바꿈합니다. 정확히 3~5줄만 씁니다."""
+# ---- 문체 규칙 (체크리스트 B — 사용자가 직접 지적한 것들) ----
+STYLE = """[문체 규칙 — 어기면 폐기된다]
+- 짧은 단문, '-습니다'체, 결론 먼저.
+- 비유 금지. 꼭 필요하면 성인 신문 수준 1개만. ("과자가 쏟아진", "헐렁한 옷" 같은 유치한 비유 금지)
+- 낱말 뜻풀이 금지. 전문용어(예: 계통한계가격, 출력제어)만 한 줄 풀이 허용.
+  ("환율은 외국 돈과 바꾸는 비율입니다" 같은 뻔한 설명 = 즉시 실격)
+- 채움말 금지. ("~에 힘쓰고 있습니다", "~로 미래를 밝힙니다" 같은 알맹이 없는 문장 금지)
+- 사실 주장에는 [출처: ...] 태그를 달아라. 출처를 못 대면 (추정)이라고 표기하라.
+- 사용자가 준 예시는 참고일 뿐이다. 예시 개수·형식에 갇히지 말고 본질에 맞게 스스로 설계하라."""
 
 
 class Budget:
-    """예산 관리 + 속도 조절. 무료티어는 분당 15콜 제한이라 콜 사이 4.5초 간격을 강제하고,
-    그래도 429(한도초과)가 나면 65초 쉬었다 딱 한 번 재시도한다."""
+    """예산 + 속도조절(분당 15콜 제한 대응: 콜 간 4.5초, 429시 65초 1회 재시도) + 녹취"""
 
     def __init__(self, client):
         self.client = client
         self.used = 0
         self._last = 0.0
-        self.transcript = []   # 녹취록 — 토론방 탭에서 챗 형식으로 재생된다
+        self.transcript = []
 
     def ask(self, role, prompt, topic=""):
         import time
@@ -61,18 +57,17 @@ class Budget:
                 r = self.client.models.generate_content(model=MODEL, contents=prompt)
                 text = (r.text or "").strip()
                 self.transcript.append({"role": role, "topic": topic, "text": text})
-                print(f"  [{self.used:>3}콜] {role}: {text[:50].replace(chr(10), ' ')}...")
+                print(f"  [{self.used:>3}콜] {role}: {text[:48].replace(chr(10), ' ')}...")
                 return text
             except Exception as e:
                 if attempt == 1 and ("429" in str(e) or "RESOURCE_EXHAUSTED" in str(e)):
-                    print("  ⏳ 분당 한도 도달 — 65초 대기 후 재시도")
+                    print("  ⏳ 분당 한도 — 65초 대기")
                     time.sleep(65)
                     continue
                 raise
 
 
 def load_prev():
-    """직전 토론 결과 (피드백 회로 입력)"""
     try:
         with open("discussions.json", encoding="utf-8") as f:
             return json.load(f)
@@ -80,105 +75,183 @@ def load_prev():
         return {}
 
 
+def build_global_state(snap, now):
+    """전역 상태 버스 (체크리스트 D6) — 모든 요원이 공유하는 2줄 맥락"""
+    movers = sorted((d for d in snap.values() if d["pct"] is not None),
+                    key=lambda x: -abs(x["pct"]))[:3]
+    mv = ", ".join(f"{d['name']} {d['pct']:+}%" for d in movers)
+    kr_open = now.weekday() < 5 and 9 <= now.hour < 16
+    session = (f"지금 {now:%m/%d %H시} KST. 한국장 {'열림' if kr_open else '마감'}. "
+               "미국 지수(SOX·나스닥 등)는 미국 어젯밤 종가라 한국 오늘장과 시점이 다르다.")
+    return f"[전역 상태] {session}\n[오늘 큰 움직임] {mv or '없음'}"
+
+
 def main():
     api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
-        print("❌ GEMINI_API_KEY 없음 — 토론 생략")
+        print("❌ GEMINI_API_KEY 없음")
         return
     from google import genai
-    client = genai.Client(api_key=api_key)
-    b = Budget(client)
+    b = Budget(genai.Client(api_key=api_key))
     now = datetime.datetime.now(KST)
     prev = load_prev()
     prev_ind = prev.get("indicators", {})
     prev_brief = prev.get("alpha_brief", "")
 
-    # ---- 1단계: 데이터 수집 (API 콜 0회 — 파이썬이 직접) ----
-    print("[1/4] 데이터 수집")
+    # ---- 1. 데이터 수집 (0콜) ----
+    print("[1/5] 데이터 수집")
     snap = {}
     for _id, name, sym, unit, dec in INDICATORS:
         try:
-            price, pct, closes = fetch_yahoo(sym)
+            price, pct, _ = fetch_yahoo(sym)
             snap[_id] = {"name": name, "value": price, "pct": pct, "unit": unit}
         except Exception as e:
-            print(f"  ⚠️ {name} 수집 실패: {e}")
+            print(f"  ⚠️ {name}: {e}")
     smp = fetch_smp()
     if smp:
         snap["smp"] = {"name": "SMP 계통한계가격", "value": smp, "pct": None, "unit": "원/kWh"}
-    news = fetch_news()
+    gstate = build_global_state(snap, now)
+    memory = tools.get_conclusions("", n=2)  # 기억 은행 (D10)
 
-    # ---- 2단계: U1 요약요원 — 지표별 쉬운 말 3~5줄 (변동 없으면 재사용) ----
-    print("[2/4] U1 요약 (변동 큰 것만 새로 작성)")
+    # ---- 2. U1 지표요약 (변동 <0.5%는 직전 요약 재사용 = 0콜) ----
+    print("[2/5] U1 지표요약")
     out_ind = {}
     for _id, d in snap.items():
-        reuse = (d["pct"] is not None and abs(d["pct"]) < 0.5
-                 and _id in prev_ind and prev_ind[_id].get("summary"))
-        if reuse:
+        if (d["pct"] is not None and abs(d["pct"]) < 0.5
+                and prev_ind.get(_id, {}).get("summary")):
             out_ind[_id] = {"summary": prev_ind[_id]["summary"], "reused": True}
             continue
         try:
-            s = b.ask("U1", f"""너는 정보요약 요원 U1이다. {EASY_RULES}
+            s = b.ask("U1", f"""너는 지표요약 요원 U1이다. {STYLE}
+{gstate}
 
 지표: {d['name']} = {d['value']} {d['unit']} (전일比 {d['pct']}%)
-오늘 업계 뉴스: {' / '.join(news[:4]) or '없음'}
 
-이 지표가 무엇이고 오늘 어떤 상태인지, 재밌는 비유 1개를 섞어 3~5줄로 설명하라.""",
+이 숫자가 오늘 무엇을 의미하는지 3~4줄. 모르는 건 쓰지 마라. 채움말로 줄 수 채우지 마라.""",
                       topic=d["name"])
             out_ind[_id] = {"summary": s, "reused": False}
         except Exception as e:
             print(f"  ⚠️ {_id}: {e}")
 
-    # ---- 3단계: 이상신호 심층 토론 (U3 원인 → U4 비판 → 알파 종합 20줄) ----
+    # ---- 3. 뉴스 파이프라인 (체크리스트 A) ----
+    print("[3/5] 뉴스 파이프라인 (본문 크롤링→U2 분석→B2 분류→맥락)")
+    news_brief = {}
+    try:
+        heads = tools.get_electimes_headlines(10)
+        articles = []
+        for h in heads[:8]:  # 예산 관리: 회당 최대 8건 본문 분석
+            try:
+                body = tools.get_article(h["link"])
+            except Exception as e:
+                body = f"본문 추출 실패({e}) — 제목만으로 판단"
+            a = b.ask("U2", f"""너는 뉴스분석 요원 U2다. {STYLE}
+{gstate}
+
+기사 제목: {h['title']}
+기사 본문(발췌): {body[:1800]}
+
+이 기사를 2~3줄로 분석하라: ①무슨 일인가 ②전기산업/시장에 왜 중요한가(중요하지 않으면 '일상 기사'라고 써라).""",
+                      topic=h["title"][:30])
+            articles.append({"title": h["title"], "link": h["link"], "analysis": a})
+        # B2 분류 슈퍼바이저 — 분류 체계를 스스로 설계 (예시 돌림 금지, 체크리스트 A3/B5)
+        joined = "\n\n".join(f"[{i+1}] {a['title']}\n{a['analysis']}" for i, a in enumerate(articles))
+        cls = b.ask("B2", f"""너는 분류 슈퍼바이저 B2다. {STYLE}
+아래는 U2가 분석한 오늘 전기신문 기사 {len(articles)}건이다.
+
+{joined}
+
+할 일:
+1. 이 기사들에 맞는 분류 체계를 네가 스스로 설계하라 (기사 유형, 실현가능성/영향도 점수 등 —
+   사용자가 예시로 준 틀을 복사하지 말고 오늘 기사 성격에 맞게 만들어라).
+2. 각 기사에 [번호] 라벨 + 점수 + 근거 1줄을 붙여라.
+3. 마지막에 '주목: [번호]' 로 변동성이 예측되는 기사를 골라 이유를 써라.
+반드시 JSON으로 출력: {{"체계": "...", "기사": [{{"no": 1, "label": "...", "score": 0, "reason": "..."}}], "주목": "..."}}""",
+                    topic="기사 분류")
+        try:
+            cj = json.loads(cls[cls.find("{"):cls.rfind("}") + 1])
+        except ValueError:
+            cj = {"체계": cls[:300], "기사": [], "주목": ""}
+        ctx = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
+{gstate}
+B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
+직전 토론 결론: {prev_brief[:400] or '없음'}
+
+오늘 전기업계 뉴스들이 '어떤 맥락으로 전개되고 있는지' 4~6줄로 브리핑하라.
+변동성이 예측되는 지점이 있으면 '주시: ...' 한 줄을 붙여라. 없으면 '특이 흐름 없음'이라고 써라.""",
+                    topic="뉴스 맥락")
+        for i, a in enumerate(articles):
+            for c in cj.get("기사", []):
+                if c.get("no") == i + 1:
+                    a.update({"label": c.get("label", ""), "score": c.get("score"),
+                              "reason": c.get("reason", "")})
+        news_brief = {"context": ctx, "scheme": cj.get("체계", ""),
+                      "focus": cj.get("주목", ""), "articles": articles}
+    except Exception as e:
+        print(f"  ⚠️ 뉴스 파이프라인 실패(토론은 계속): {e}")
+
+    # ---- 4. 이상신호 심층토론 (도구 사용 + 방어로직) ----
     anomalies = sorted(
         [(_id, d) for _id, d in snap.items() if d["pct"] is not None and abs(d["pct"]) >= 3],
         key=lambda x: -abs(x[1]["pct"]))[:3]
-    print(f"[3/4] 심층 토론: 이상신호 {len(anomalies)}건")
+    print(f"[4/5] 심층토론 {len(anomalies)}건 (도구 사용)")
     for _id, d in anomalies:
         try:
-            base = f"{d['name']}이(가) 하루 만에 {d['pct']:+}% 변했다. 현재 {d['value']} {d['unit']}."
-            u3 = b.ask("U3", f"너는 원인분석 요원 U3다. {base}\n뉴스: {' / '.join(news) or '없음'}\n"
-                       f"직전 토론 결론: {prev_brief[:500] or '없음'}\n"
-                       "가능한 원인 후보를 최대 3개, 각 1문장으로. 근거 없으면 '추정'이라고 붙여라.",
-                       topic=d["name"])
-            u4 = b.ask("U4", f"너는 비판 요원 U4다. 다음 원인 분석을 검증하라. 과장·근거부족을 깎아내라.\n{u3}\n"
-                       "확실한 것과 추정을 구분해 3문장으로.", topic=d["name"])
-            alpha = b.ask("알파", f"""너는 지휘자 알파다. {EASY_RULES.replace('정확히 3~5줄만', '15~20줄로')}
-
+            base = f"{d['name']} 전일比 {d['pct']:+}%, 현재 {d['value']} {d['unit']}."
+            u3 = tools.run_tool_loop(b, "U3", f"""너는 원인분석 요원 U3다. {STYLE}
+{gstate}
 관측: {base}
-U3 원인분석: {u3}
-U4 비판검증: {u4}
-직전 토론에서 우리가 내린 결론: {prev_brief[:500] or '없음'}
+과거 유사 결론(기억은행): {memory[:400]}
 
-배경 설명문을 작성하라. 구성: ①결론 1줄 ②이 지표가 뭔지 쉬운 설명 ③오늘 왜 움직였나(확실/추정 구분)
-④직전 토론과 달라진 점 ⑤앞으로 뭘 지켜봐야 하나. 확인 안 된 것은 '원인불명입니다'라고 정직하게 써라.""",
-                          topic=d["name"])
+[Time-Proximity 규칙] 원인 후보는 '24시간 이내에 새로 발생한 이벤트'만 인정된다.
+"HBM 독점" 같은 장기 상수는 오늘 급변의 원인이 될 수 없다 — 배제하라.
+도구(search_news, get_history 등)로 근거를 찾아라. 원인 후보 최대 3개, 각각 [출처:]와 발생시점 명시.
+근거를 못 찾으면 "원인 후보 없음"이라고 써라.""", topic=d["name"])
+            u4 = b.ask("U4", f"""너는 비판 요원 U4다. {STYLE}
+U3의 분석: {u3[:1500]}
+
+[평가 매트릭스] 각 원인 후보를 두 기준으로 채점하라:
+  ①24시간 이내 발생한 이벤트인가?  ②수급 데이터(거래량 등)나 출처로 증명되는가?
+둘 다 충족해야만 [확실]. 하나만 충족 = [추정]. 둘 다 미충족 = [기각].
+마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.""", topic=d["name"])
+            # 판정 구속 (코드 레벨): U4 판정을 파싱해서 알파에게 강제
+            verdict_kr = next((v for v in ("[확실]", "[추정]", "[원인불명]", "[판단불가]")
+                               if v in u4.split("\n")[-1] or v in u4[-120:]), "[추정]")
+            constraint = ("원인을 단정해도 된다." if verdict_kr == "[확실]" else
+                          f"U4 종합판정이 {verdict_kr} 이므로 너는 원인을 단정할 수 없다. "
+                          "서두에 '원인은 아직 확정되지 않았습니다'로 시작하라. 서두와 결론이 모순되면 실격이다.")
+            alpha = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
+관측: {base}
+U3(요약): {u3[:800]}
+U4 검증(요약): {u4[:600]}
+[판정 구속] {constraint}
+
+10~15줄 배경설명: ①현재 판정 1줄 ②확인된 사실([출처:] 있는 것만) ③기각된 가설과 이유
+④앞으로 확인할 것. '판단불가'로 끝내도 된다 — 억지 결론이 더 나쁘다.""", topic=d["name"])
             out_ind.setdefault(_id, {})["detail"] = alpha
-            out_ind[_id]["verdict"] = "yellow"
+            out_ind[_id]["verdict"] = {"[확실]": "green", "[추정]": "yellow"}.get(verdict_kr, "red")
         except Exception as e:
-            print(f"  ⚠️ 토론 실패 {_id}: {e}")
+            print(f"  ⚠️ {_id} 토론 실패: {e}")
 
-    # ---- 4단계: 알파 총평 ----
-    print("[4/4] 알파 총평")
+    # ---- 5. 알파 총평 ----
+    print("[5/5] 알파 총평")
     try:
         lines = [f"- {d['name']}: {d['value']} {d['unit']} ({d['pct']}%)" for d in snap.values()]
-        brief = b.ask("알파", f"""너는 지휘자 알파다. {EASY_RULES}
-오늘 {now:%m월 %d일 %H시} 지표 전체:
+        brief = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
+{gstate}
+지표 전체:
 {chr(10).join(lines)}
-직전 토론 결론: {prev_brief[:600] or '첫 토론이다'}
+뉴스 맥락: {news_brief.get('context', '없음')[:400]}
+직전 결론: {prev_brief[:400] or '첫 토론'}
 
-오늘의 총평을 3~5줄로. 첫 줄은 '오늘은 조용합니다' 또는 '오늘은 O건이 특이합니다'로 시작하라.
-직전과 비교해 흐름이 바뀐 게 있으면 짚어라.""", topic="오늘의 총평")
+총평 3~5줄. 첫 줄은 '오늘은 조용합니다' 또는 '오늘은 O건이 특이합니다'.
+직전 대비 흐름 변화가 있으면 짚어라. 채움말 금지.""", topic="오늘의 총평")
     except Exception:
         brief = ""
 
     # ---- 저장 ----
-    result = {
-        "time": now.isoformat(timespec="minutes"),
-        "alpha_brief": brief,
-        "indicators": out_ind,
-        "calls_used": b.used,
-        "transcript": b.transcript,   # 녹취록 (토론방 탭용)
-    }
+    result = {"time": now.isoformat(timespec="minutes"), "alpha_brief": brief,
+              "indicators": out_ind, "news_brief": news_brief,
+              "calls_used": b.used, "transcript": b.transcript}
     with open("discussions.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=1)
     os.makedirs("discussions", exist_ok=True)
@@ -187,11 +260,11 @@ U4 비판검증: {u4}
     os.makedirs("exports", exist_ok=True)
     with open(f"exports/{now:%Y-%m-%d}.csv", "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["지표", "값", "단위", "전일比%", "요약(쉬운말)"])
+        w.writerow(["지표", "값", "단위", "전일比%", "요약"])
         for _id, d in snap.items():
             w.writerow([d["name"], d["value"], d["unit"], d["pct"],
                         out_ind.get(_id, {}).get("summary", "").replace("\n", " ")])
-    print(f"✅ 토론 완료 — {b.used}콜 사용 (한도 {MAX_CALLS}), 토론파일·CSV 저장됨")
+    print(f"✅ 완료 — {b.used}콜 (한도 {MAX_CALLS})")
 
 
 if __name__ == "__main__":
