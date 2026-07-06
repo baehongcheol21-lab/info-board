@@ -56,6 +56,34 @@ def fetch_news():
         return []
 
 
+_FUEL = {"fuelPwr4": "원자력", "fuelPwr6": "LNG(가스)", "fuelPwr3": "유연탄", "fuelPwr7": "국내탄",
+         "fuelPwr8": "신재생", "fuelPwr9": "태양광", "fuelPwr1": "수력", "fuelPwr5": "양수", "fuelPwr2": "유류"}
+_FCOLOR = {"원자력": "#ff5c5c", "LNG(가스)": "#ffa94d", "유연탄": "#8b95a1", "국내탄": "#6b7480",
+           "신재생": "#3fb950", "태양광": "#ffd24d", "수력": "#58a6ff", "양수": "#a371f7", "유류": "#d97757"}
+
+
+def fetch_power_mix():
+    """발전원 믹스(9종 실측 MW) — 아이폰 관제 패널용. 키 없으면 None."""
+    key = os.environ.get("DATA_GO_KR_KEY", "")
+    if not key:
+        return None
+    try:
+        today = datetime.datetime.now(KST).strftime("%Y%m%d")
+        r = requests.get("https://apis.data.go.kr/B552115/PwrAmountByGen/getPwrAmountByGen",
+                         params={"serviceKey": key, "pageNo": 1, "numOfRows": 288,
+                                 "dataType": "json", "baseDate": today}, headers=UA, timeout=20)
+        items = r.json()["response"]["body"]["items"]["item"]
+        if isinstance(items, dict):
+            items = [items]
+        it = max(items, key=lambda x: str(x.get("baseDatetime") or ""))
+        total = float(it.get("fuelPwrTot") or 0)
+        fuels = sorted(((lab, float(it.get(f) or 0)) for f, lab in _FUEL.items()),
+                       key=lambda x: -x[1])
+        return {"total": total, "fuels": fuels, "time": str(it.get("baseDatetime") or "")[8:12]}
+    except Exception:
+        return None
+
+
 def fetch_smp():
     """공공데이터 SMP — 키가 없거나 미승인이면 None (가짜 숫자 금지)"""
     key = os.environ.get("DATA_GO_KR_KEY", "")
@@ -155,6 +183,19 @@ def main():
                   f'({_esc(disc.get("time", ""))} 토론, {disc.get("calls_used", "?")}콜 사용)</span></h3>'
                   f'<div class="btext">{brief}</div></div>') if brief else ""
 
+    # 발전원 믹스 관제 패널 (한국전력급)
+    pm = fetch_power_mix()
+    pm_html = ""
+    if pm and pm["total"]:
+        mx = max(m for _, m in pm["fuels"]) or 1
+        bars = "".join(
+            f'<div class="pmrow"><span class="pmlbl">{lab}</span>'
+            f'<div class="pmbar"><div style="width:{mw/mx*100:.0f}%;background:{_FCOLOR.get(lab, "#00ffcc")}"></div>'
+            f'<span class="pmval">{mw:,.0f}MW · {mw/pm["total"]*100:.1f}%</span></div></div>'
+            for lab, mw in pm["fuels"])
+        pm_html = (f'<div id="pmix"><h3>⚡ 실시간 발전원 믹스 (전력거래소 · {pm["time"]} 기준)</h3>'
+                   f'<div class="pmtot">{pm["total"]:,.0f}<span>MW 현재 총발전(≈수요)</span></div>{bars}</div>')
+
     news_items = "".join(f"<li>{t}</li>" for t in fetch_news())
     now = datetime.datetime.now(KST).strftime("%m/%d %H:%M")
     level = ("🟢 조용함", "#3fb950") if alerts == 0 else \
@@ -200,10 +241,20 @@ def main():
       border-radius:10px}}
  #brief h3{{margin:0 0 8px;font-size:.8rem;color:#00ffcc;font-family:'Courier New',monospace}}
  #brief .btext{{font-size:.88rem;line-height:1.65;white-space:pre-wrap}}
+ #pmix{{margin:12px;padding:14px;background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);border-radius:10px}}
+ #pmix h3{{font-size:.72rem;color:#7fa99e;font-family:'Courier New',monospace;margin:0 0 8px}}
+ .pmtot{{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:10px}}
+ .pmtot span{{font-size:.6rem;color:#00ffcc;margin-left:4px}}
+ .pmrow{{display:flex;align-items:center;gap:6px;margin:4px 0}}
+ .pmlbl{{flex:0 0 66px;font-size:.72rem;font-family:'Courier New',monospace}}
+ .pmbar{{flex:1;background:#0a1512;border-radius:4px;height:18px;position:relative}}
+ .pmbar>div{{height:100%;border-radius:4px}}
+ .pmval{{position:absolute;right:5px;top:1px;font-size:.65rem;color:#fff}}
 </style></head><body>
 <header><h1>INFO_BRIEF // MOBILE</h1><div class="t">갱신 {now} KST · 시세 15~20분 지연</div></header>
 <div id="hl">오늘 중요도: {level[0]}</div>
 {brief_html}
+{pm_html}
 <div id="grid">{smp_card}{"".join(cards)}</div>
 <div id="news"><h3>RSS_FEED // 전기신문</h3><ul>{news_items or "<li>수집 실패</li>"}</ul></div>
 <footer>info-dashboard system · 자동 갱신(매시간) · 사파리 공유→홈 화면에 추가</footer>
