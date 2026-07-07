@@ -20,6 +20,7 @@ import traceback
 
 from publish import INDICATORS, fetch_yahoo, fetch_smp
 import tools
+import trends
 from gemini_keys import RotatingBudget
 
 
@@ -111,13 +112,21 @@ def main():
         except Exception as e:
             print(f"  ⚠️ {_id}: {_diag(e)}")
 
-    # ---- 3. 뉴스 파이프라인 (체크리스트 A) ----
-    print("[3/5] 뉴스 파이프라인 (본문 크롤링→U2 분석→B2 분류→맥락)")
+    # ---- 3. 뉴스 파이프라인 (다중 소스: 전기신문 + 인베스팅닷컴) ----
+    print("[3/5] 뉴스 파이프라인 (다중소스 크롤링→U2 분석→B2 분류→맥락)")
     news_brief = {}
     try:
-        heads = tools.get_electimes_headlines(10)
+        # 전 소스에서 헤드라인 수집 후 제목 기준 중복 제거
+        raw = tools.get_headlines(per_source=12)
+        seen, heads = set(), []
+        for h in raw:
+            key = h["title"][:20]
+            if h["title"] and key not in seen:
+                seen.add(key)
+                heads.append(h)
+        MAX_ANALYZE = 24  # 회당 분석 상한 (1000콜 예산 안에서 여러 소스 커버)
         articles = []
-        for h in heads[:8]:  # 예산 관리: 회당 최대 8건 본문 분석
+        for h in heads[:MAX_ANALYZE]:
             try:
                 body = tools.get_article(h["link"])
             except Exception as e:
@@ -125,16 +134,19 @@ def main():
             a = b.ask("U2", f"""너는 뉴스분석 요원 U2다. {STYLE}
 {gstate}
 
+출처: {h.get('source_name', '')}
 기사 제목: {h['title']}
-기사 본문(발췌): {body[:1800]}
+기사 본문(발췌): {body[:1600]}
 
-이 기사를 2~3줄로 분석하라: ①무슨 일인가 ②전기산업/시장에 왜 중요한가(중요하지 않으면 '일상 기사'라고 써라).""",
+이 기사를 2~3줄로 분석하라: ①무슨 일인가 ②전기/경제·시장에 왜 중요한가(중요하지 않으면 '일상 기사'라고 써라).""",
                       topic=h["title"][:30])
-            articles.append({"title": h["title"], "link": h["link"], "analysis": a})
+            articles.append({"title": h["title"], "link": h["link"], "analysis": a,
+                             "source": h.get("source_name", ""), "category": h.get("category", "econ")})
         # B2 분류 슈퍼바이저 — 분류 체계를 스스로 설계 (예시 돌림 금지, 체크리스트 A3/B5)
-        joined = "\n\n".join(f"[{i+1}] {a['title']}\n{a['analysis']}" for i, a in enumerate(articles))
+        joined = "\n\n".join(f"[{i+1}]({a['category']}) {a['title']}\n{a['analysis']}"
+                             for i, a in enumerate(articles))
         cls = b.ask("B2", f"""너는 분류 슈퍼바이저 B2다. {STYLE}
-아래는 U2가 분석한 오늘 전기신문 기사 {len(articles)}건이다.
+아래는 U2가 분석한 오늘 뉴스 {len(articles)}건이다 (괄호는 분야: elec=전기, econ=경제).
 
 {joined}
 
@@ -197,6 +209,20 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
             a["detail"] = deep
             a["why_me"] = why.strip()
             a["action"] = act.strip()
+        # ---- 트렌드 추적 (O8): 심층기사 주제가 최근 며칠간 몇 번 등장했나 ----
+        try:
+            tracker = trends.TrendTracker()
+            for a in top:
+                _, msg = tracker.check(f"{a['title']} {a.get('label', '')}")
+                if msg:
+                    a["trend"] = msg
+            # 모든 기사 제목도 트렌드 로그에 축적 (다음날 비교 근거) — 상위 심층기사는 이미 반영됨
+            for a in articles:
+                if "trend" not in a:
+                    tracker.check(a["title"])
+            tracker.flush()
+        except Exception as e:
+            print(f"  ⚠️ 트렌드 추적 건너뜀: {str(e)[:60]}")
         news_brief = {"context": ctx, "scheme": cj.get("체계", ""),
                       "focus": cj.get("주목", ""), "articles": articles}
     except Exception as e:

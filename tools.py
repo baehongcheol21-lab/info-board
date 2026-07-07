@@ -54,9 +54,23 @@ def get_article(url, max_chars=2500):
     return text if len(text) > 80 else f"본문 추출 실패 (길이 {len(text)}자) — 이 기사는 제목만으로 판단하라"
 
 
-def get_electimes_headlines(max_items=12):
-    """전기신문 최신 헤드라인+링크 (오늘/어제 위주)"""
-    r = requests.get("https://www.electimes.com/rss/allArticle.xml", headers=UA, timeout=15)
+# ---- 뉴스 소스 레지스트리 (새 신문 추가는 여기 한 줄만) ----
+# category: 이 소스가 어느 탭 맥락인지. discuss.py가 카테고리별로 묶어 파이프라인을 돌린다.
+NEWS_SOURCES = {
+    "electimes": {"name": "전기신문", "category": "elec",
+                  "rss": "https://www.electimes.com/rss/allArticle.xml"},
+    "investing_market": {"name": "인베스팅닷컴·증시", "category": "econ",
+                         "rss": "https://kr.investing.com/rss/news_25.rss"},
+    "investing_econ": {"name": "인베스팅닷컴·경제지표", "category": "econ",
+                       "rss": "https://kr.investing.com/rss/news_95.rss"},
+    "investing_fx": {"name": "인베스팅닷컴·외환", "category": "econ",
+                     "rss": "https://kr.investing.com/rss/news_1.rss"},
+}
+
+
+def fetch_rss(url, max_items=15):
+    """범용 RSS 파서. 반환: [{title, link, published}]"""
+    r = requests.get(url, headers=UA, timeout=15)
     r.raise_for_status()
     out = []
     for it in ET.fromstring(r.content).findall(".//item")[:max_items]:
@@ -64,6 +78,27 @@ def get_electimes_headlines(max_items=12):
                     "link": (it.findtext("link") or "").strip(),
                     "published": (it.findtext("pubDate") or "").strip()})
     return out
+
+
+def get_headlines(category=None, per_source=15):
+    """카테고리별(elec/econ) 뉴스 소스 전체에서 헤드라인 수집.
+    반환: [{title, link, published, source, source_name, category}]. 실패한 소스는 조용히 건너뜀."""
+    out = []
+    for sid, s in NEWS_SOURCES.items():
+        if category and s["category"] != category:
+            continue
+        try:
+            for it in fetch_rss(s["rss"], per_source):
+                it.update({"source": sid, "source_name": s["name"], "category": s["category"]})
+                out.append(it)
+        except Exception:
+            continue  # 한 소스가 죽어도 나머지는 계속
+    return out
+
+
+def get_electimes_headlines(max_items=12):
+    """(호환용) 전기신문 헤드라인. 신규 코드는 get_headlines('elec') 사용 권장."""
+    return fetch_rss(NEWS_SOURCES["electimes"]["rss"], max_items)
 
 
 def get_history(symbol_or_id, days=30):
