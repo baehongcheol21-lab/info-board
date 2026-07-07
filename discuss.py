@@ -15,10 +15,17 @@ import os
 import csv
 import json
 import datetime
+import traceback
 
 from publish import INDICATORS, fetch_yahoo, fetch_smp
 import tools
 from gemini_keys import RotatingBudget
+
+
+def _diag(e):
+    """실패 원인을 한 줄로 못 잡을 때(예: 인코딩 문제) 다음 조사를 위해 traceback 마지막 줄을 남긴다."""
+    tb = traceback.format_exc().strip().splitlines()
+    return f"{e} | {tb[-1] if tb else ''}"
 
 MAX_CALLS = 150   # 회의 1회당 안전상한 (계정 개수와 무관 — 폭주 방지용)
 KST = datetime.timezone(datetime.timedelta(hours=9))
@@ -98,7 +105,7 @@ def main():
                       topic=d["name"])
             out_ind[_id] = {"summary": s, "reused": False}
         except Exception as e:
-            print(f"  ⚠️ {_id}: {e}")
+            print(f"  ⚠️ {_id}: {_diag(e)}")
 
     # ---- 3. 뉴스 파이프라인 (체크리스트 A) ----
     print("[3/5] 뉴스 파이프라인 (본문 크롤링→U2 분석→B2 분류→맥락)")
@@ -154,7 +161,7 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
         news_brief = {"context": ctx, "scheme": cj.get("체계", ""),
                       "focus": cj.get("주목", ""), "articles": articles}
     except Exception as e:
-        print(f"  ⚠️ 뉴스 파이프라인 실패(토론은 계속): {e}")
+        print(f"  ⚠️ 뉴스 파이프라인 실패(토론은 계속): {_diag(e)}")
 
     # ---- 4. 이상신호 심층토론 (도구 사용 + 방어로직) ----
     anomalies = sorted(
@@ -205,7 +212,7 @@ U4 검증(요약): {u4[:600]}
             out_ind.setdefault(_id, {})["detail"] = alpha
             out_ind[_id]["verdict"] = {"[확실]": "green", "[추정]": "yellow"}.get(verdict_kr, "red")
         except Exception as e:
-            print(f"  ⚠️ {_id} 토론 실패: {e}")
+            print(f"  ⚠️ {_id} 토론 실패: {_diag(e)}")
 
     # ---- 5. 알파 총평 ----
     print("[5/5] 알파 총평")
