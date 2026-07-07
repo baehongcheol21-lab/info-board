@@ -18,9 +18,9 @@ import datetime
 
 from publish import INDICATORS, fetch_yahoo, fetch_smp
 import tools
+from gemini_keys import RotatingBudget
 
-MAX_CALLS = 150
-MODEL = "gemini-3.1-flash-lite"
+MAX_CALLS = 150   # 회의 1회당 안전상한 (계정 개수와 무관 — 폭주 방지용)
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
 # ---- 문체 규칙 (체크리스트 B — 사용자가 직접 지적한 것들) ----
@@ -32,39 +32,6 @@ STYLE = """[문체 규칙 — 어기면 폐기된다]
 - 채움말 금지. ("~에 힘쓰고 있습니다", "~로 미래를 밝힙니다" 같은 알맹이 없는 문장 금지)
 - 사실 주장에는 [출처: ...] 태그를 달아라. 출처를 못 대면 (추정)이라고 표기하라.
 - 사용자가 준 예시는 참고일 뿐이다. 예시 개수·형식에 갇히지 말고 본질에 맞게 스스로 설계하라."""
-
-
-class Budget:
-    """예산 + 속도조절(분당 15콜 제한 대응: 콜 간 4.5초, 429시 65초 1회 재시도) + 녹취"""
-
-    def __init__(self, client):
-        self.client = client
-        self.used = 0
-        self._last = 0.0
-        self.transcript = []
-
-    def ask(self, role, prompt, topic=""):
-        import time
-        if self.used >= MAX_CALLS:
-            raise RuntimeError(f"예산 {MAX_CALLS}콜 소진")
-        wait = 4.5 - (time.time() - self._last)
-        if wait > 0:
-            time.sleep(wait)
-        for attempt in (1, 2):
-            try:
-                self._last = time.time()
-                self.used += 1
-                r = self.client.models.generate_content(model=MODEL, contents=prompt)
-                text = (r.text or "").strip()
-                self.transcript.append({"role": role, "topic": topic, "text": text})
-                print(f"  [{self.used:>3}콜] {role}: {text[:48].replace(chr(10), ' ')}...")
-                return text
-            except Exception as e:
-                if attempt == 1 and ("429" in str(e) or "RESOURCE_EXHAUSTED" in str(e)):
-                    print("  ⏳ 분당 한도 — 65초 대기")
-                    time.sleep(65)
-                    continue
-                raise
 
 
 def load_prev():
@@ -87,12 +54,12 @@ def build_global_state(snap, now):
 
 
 def main():
-    api_key = os.environ.get("GEMINI_API_KEY", "")
-    if not api_key:
-        print("❌ GEMINI_API_KEY 없음")
+    try:
+        b = RotatingBudget(per_run_cap=MAX_CALLS)
+    except RuntimeError as e:
+        print(f"❌ {e}")
         return
-    from google import genai
-    b = Budget(genai.Client(api_key=api_key))
+    print(f"🔑 등록된 계정 {len(b.keys)}개 (오늘 이론상 최대 {b.total_daily_limit}콜)")
     now = datetime.datetime.now(KST)
     prev = load_prev()
     prev_ind = prev.get("indicators", {})

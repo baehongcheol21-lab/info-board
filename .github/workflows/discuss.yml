@@ -19,9 +19,12 @@ jobs:
           python-version: "3.12"
       - run: pip install requests google-genai
       - name: AI 오케스트라 토론 (최대 150콜)
+        # 계정(키) 추가 시: 여기 env에 GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }} 한 줄만 더 추가
+        # (gemini_keys.py가 번호를 자동 인식하므로 discuss.py 코드는 건드릴 필요 없음)
         run: python discuss.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       - name: 페이지 재생성 (토론 결과 반영)
         run: python publish.py
@@ -31,6 +34,6 @@ jobs:
         run: |
           git config user.name "alpha-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs discussions discussions.json exports
+          git add docs discussions discussions.json exports key_usage.json
           git commit -m "토론: $(date -u '+%Y-%m-%d %H:%M') UTC" || echo "변경 없음"
           git push
