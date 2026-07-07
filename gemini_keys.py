@@ -46,16 +46,24 @@ _BASE = os.path.dirname(os.path.abspath(__file__))
 USAGE_FILE = os.path.join(_BASE, "key_usage.json")
 
 
+def _clean(v):
+    """BOM(\\ufeff)·제로폭 공백·개행 등을 제거. httpx는 HTTP 헤더 값을 ascii로만
+    인코딩하는데(RFC 준수), 키에 이런 문자가 섞여 있으면 매 호출이 UnicodeEncodeError로
+    죽는다 (2026-07-07 실전 확인 — 이 오류가 PowerShell로 시크릿을 등록할 때 파이프에
+    BOM이 섞여 들어가는 잘 알려진 결함 때문일 가능성이 높음). 원인이 무엇이든 안전하게 제거."""
+    return v.strip().lstrip("﻿").strip()
+
+
 def discover_keys(env=None):
     """GEMINI_API_KEY, GEMINI_API_KEY_2, _3, _4 ... 를 순서대로 전부 수집.
     새 계정을 추가할 때 이 함수를 건드릴 필요 없음 — 번호만 이어서 늘리면 자동 인식."""
     env = env or os.environ
     keys = []
     if env.get("GEMINI_API_KEY"):
-        keys.append(env["GEMINI_API_KEY"])
+        keys.append(_clean(env["GEMINI_API_KEY"]))
     i = 2
     while env.get(f"GEMINI_API_KEY_{i}"):
-        keys.append(env[f"GEMINI_API_KEY_{i}"])
+        keys.append(_clean(env[f"GEMINI_API_KEY_{i}"]))
         i += 1
     return keys
 
