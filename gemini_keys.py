@@ -39,7 +39,8 @@ import json
 import time
 import datetime
 
-MODEL = "gemini-3.1-flash-lite"
+MODEL = "gemini-3.1-flash-lite"       # 주력(volume): 요약·뉴스분석 등 대량 처리용
+HEAVY_MODEL = "gemini-2.5-flash"      # 판단력 강한 보조 모델: 정책 점수·심층 배경설명 등에만
 KST = datetime.timezone(datetime.timedelta(hours=9))
 PER_KEY_DAILY_LIMIT = 500  # Gemini 무료 티어, 계정(키) 1개당 하루 한도
 _BASE = os.path.dirname(os.path.abspath(__file__))
@@ -167,7 +168,33 @@ class RotatingBudget:
         """호환용: 기존 코드가 참조하는 '이번 실행에서 쓴 콜 수'."""
         return self.run_used
 
-    def ask(self, role, prompt, topic=""):
+    def ask_heavy(self, role, prompt, topic=""):
+        """판단력 강한 보조 모델(gemini-2.5-flash)로 호출. 정책 점수·심층 배경설명 등
+        무거운 판단이 필요한 소수 콜에만 사용.
+        heavy 모델은 별도의 작은 일일 쿼터(RPD)를 가지므로, 쿼터/오류 시 키를 소진처리하지 않고
+        곧바로 주력 모델(flash-lite)로 폴백한다 — heavy 실패가 주력 예산을 망치지 않게."""
+        if self.run_used >= self.per_run_cap:
+            raise RuntimeError(f"이번 회의 예산 {self.per_run_cap}콜 소진")
+        wait = 4.5 - (time.time() - self._last)
+        if wait > 0:
+            time.sleep(wait)
+        try:
+            self._last = time.time()
+            r = self._rot.client().models.generate_content(model=HEAVY_MODEL, contents=prompt)
+            text = (r.text or "").strip()
+            if not text:
+                raise RuntimeError("빈 응답")
+            self.run_used += 1
+            n = self._rot.record_call()
+            self.transcript.append({"role": role, "topic": topic, "text": text})
+            print(f"  [키{self._rot.idx + 1} {n:>3}/{PER_KEY_DAILY_LIMIT}]★{role}: "
+                  f"{text[:40].replace(chr(10), ' ')}...")
+            return text
+        except Exception as e:
+            print(f"  ↩️ heavy({HEAVY_MODEL}) 실패({str(e)[:40]}) → 주력 모델 폴백")
+            return self.ask(role, prompt, topic=topic)
+
+    def ask(self, role, prompt, topic="", model=MODEL):
         if self.run_used >= self.per_run_cap:
             raise RuntimeError(f"이번 회의 예산 {self.per_run_cap}콜 소진")
         wait = 4.5 - (time.time() - self._last)
@@ -184,12 +211,13 @@ class RotatingBudget:
                 continue
             try:
                 self._last = time.time()
-                r = self._rot.client().models.generate_content(model=MODEL, contents=prompt)
+                r = self._rot.client().models.generate_content(model=model, contents=prompt)
                 text = (r.text or "").strip()
                 self.run_used += 1
                 n = self._rot.record_call()
                 self.transcript.append({"role": role, "topic": topic, "text": text})
-                print(f"  [키{idx + 1} {n:>3}/{PER_KEY_DAILY_LIMIT}] "
+                tag = "★" if model != MODEL else " "
+                print(f"  [키{idx + 1} {n:>3}/{PER_KEY_DAILY_LIMIT}]{tag}"
                       f"{role}: {text[:40].replace(chr(10), ' ')}...")
                 return text
             except Exception as e:

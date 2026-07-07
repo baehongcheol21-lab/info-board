@@ -12,6 +12,7 @@ v2 개편 (요구사항_체크리스트.md 반영):
   [병렬화] asyncio 검토했으나 무료티어 분당 15콜 제한과 상충 → 보류 (체크리스트 D11)
 """
 import os
+import re
 import csv
 import json
 import datetime
@@ -39,6 +40,9 @@ STYLE = """[문체 규칙 — 어기면 폐기된다]
 - 채움말 금지. ("~에 힘쓰고 있습니다", "~로 미래를 밝힙니다" 같은 알맹이 없는 문장 금지)
 - 사실 주장에는 [출처: ...] 태그를 달아라. 출처를 못 대면 (추정)이라고 표기하라.
 - 사용자가 준 예시는 참고일 뿐이다. 예시 개수·형식에 갇히지 말고 본질에 맞게 스스로 설계하라."""
+
+# 독자 프로파일 — 뉴스 개인화("왜 나한테 중요한가")의 기준
+READER = "이 브리핑을 읽는 사람은 전력전자·전기기계 전공자다. 전력계통·전력변환·ESS·계통연계·반도체 공정전력 같은 주제에 특히 민감하다."
 
 
 def load_prev():
@@ -158,6 +162,41 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
                 if c.get("no") == i + 1:
                     a.update({"label": c.get("label", ""), "score": c.get("score"),
                               "reason": c.get("reason", "")})
+        # ---- 중요 기사(점수 상위)만 심층 배경설명 — 판단력 강한 heavy 모델 사용 ----
+        def _score(a):
+            # B2가 점수를 숫자로 줄 수도, "영향력 8, 실현성 7" 같은 문자열로 줄 수도 있음.
+            # 문자열이면 등장하는 숫자들의 합으로 대략적 중요도를 매긴다.
+            v = a.get("score")
+            if isinstance(v, (int, float)):
+                return float(v)
+            nums = re.findall(r"\d+(?:\.\d+)?", str(v or ""))
+            return sum(float(n) for n in nums) if nums else 0
+        top = sorted([a for a in articles if _score(a) > 0], key=_score, reverse=True)[:3]
+        for a in top:
+            try:
+                body = tools.get_article(a["link"])[:2500]
+            except Exception:
+                body = a.get("analysis", "")
+            deep = b.ask_heavy("알파", f"""너는 지휘자 알파다. {STYLE}
+{READER}
+
+기사 제목: {a['title']}
+기사 본문/분석: {body}
+
+이 기사의 '심층 배경'을 초심자도 흐름을 이해하도록 6개 소제목으로 설명하라.
+구성 예시(형식만 참고, 내용은 이 기사에 맞게): ①배경(왜 이렇게 됐나) ②직접 원인/촉발 ③현재 상황과 수치
+④정책·시장의 대응 ⑤파급효과 ⑥앞으로의 과제. 각 소제목은 "N. 제목" 형식, 2~4문장.
+과장·채움말 금지. 사실엔 [출처:]. 모르면 (추정).""", topic=a["title"][:30])
+            why = b.ask("U1", f"""{READER}
+기사: {a['title']} — {a.get('reason', '')}
+이 기사가 '전력전자·전기기계 전공자'에게 왜 중요한지 딱 한 줄로. 전공과의 구체적 연결고리를 짚어라.
+없으면 "전공 직접 연관 낮음"이라고 써라. 채움말 금지.""", topic=a["title"][:30])
+            act = b.ask("U1", f"""기사: {a['title']}
+독자가 더 알아보면 좋을 '후속 리서치 질문'을 딱 한 줄, 물음표로 끝내라.
+예: "국내 ESS 화재 관련 최근 규제 변화는?" 형식만 참고. 실제 기사에 맞게.""", topic=a["title"][:30])
+            a["detail"] = deep
+            a["why_me"] = why.strip()
+            a["action"] = act.strip()
         news_brief = {"context": ctx, "scheme": cj.get("체계", ""),
                       "focus": cj.get("주목", ""), "articles": articles}
     except Exception as e:
