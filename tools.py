@@ -123,23 +123,43 @@ TOOL_GUIDE = ("[사용 가능 도구]\n" + "\n".join(f"- {d}" for _, d in TOOLS.
               "도구 결과를 받은 뒤 최종 답을 쓰거나, 필요하면 다른 도구를 또 요청해도 된다.")
 
 
-def run_tool_loop(budget, role, prompt, topic="", max_rounds=4):
-    """요원에게 도구 사용권을 주는 에이전트 루프. 도구 실행은 콜 소모 없음."""
+def run_tool_loop(budget, role, prompt, topic="", max_rounds=4, force_tool=True):
+    """요원에게 도구 사용권을 주는 에이전트 루프 (레퍼런스26 반영).
+    개선점:
+      - 근거 누적: 이전 도구 결과를 덮어쓰지 않고 전부 유지 (다단계 추론 = 기억 보존)
+      - 도구 강제(force_tool): 첫 턴에 도구를 안 쓰면 자동으로 뉴스검색 1회 → 툴킷 항상 활성화
+    도구 실행 자체는 API 콜 0."""
     convo = prompt + "\n\n" + TOOL_GUIDE
+    evidence = []      # 수집한 근거 전부 누적 (덮어쓰기 금지)
+    auto_done = False
     for _ in range(max_rounds):
         text = budget.ask(role, convo, topic=topic)
         m = re.search(r'\{[^{}]*"tool"[^{}]*\}', text, re.S)
         if not m:
+            if force_tool and not evidence and not auto_done:
+                # 근거 없이 결론 내려 하면 강제로 검색 1회 (에이전트가 도구를 놀리지 않게)
+                auto_done = True
+                try:
+                    res = str(search_news(topic or prompt[:40]))[:2500]
+                except Exception as e:
+                    res = f"검색 실패: {e}"
+                budget.transcript.append({"role": "🧰도구", "topic": topic,
+                                          "text": f"search_news(자동 강제) 결과:\n{res[:600]}"})
+                evidence.append(res)
+                convo = (f"{prompt}\n\n[자동 수집된 뉴스 근거]\n{res}\n\n"
+                         "이 근거를 반영해 최종 답을 써라. 사실에는 [출처:] 태그를 달아라.")
+                continue
             return text  # 최종 답변
         try:
             req = json.loads(m.group(0))
             fn = TOOLS[req["tool"]][0]
-            result = fn(**req.get("args", {}))
-            result = str(result)[:3000]
+            result = str(fn(**req.get("args", {})))[:3000]
         except Exception as e:  # 도구 폴백(D8): 실패해도 토론은 계속
             result = f"도구 실행 실패: {type(e).__name__}: {e}. 다른 방법을 쓰거나 '판단불가'라고 하라."
         budget.transcript.append({"role": "🧰도구", "topic": topic,
                                   "text": f"{req.get('tool', '?')} 실행 결과:\n{result[:600]}"})
-        convo = (f"{prompt}\n\n[도구 {req.get('tool')} 실행 결과]\n{result}\n\n"
-                 "이 결과를 근거로 최종 답을 써라. 근거가 부족하면 다른 도구를 JSON으로 요청하라.")
-    return budget.ask(role, convo + "\n(도구 한도 소진 — 지금까지 정보로 최종 답을 써라)", topic=topic)
+        evidence.append(result)
+        joined = "\n".join(f"[근거{i + 1}] {e[:800]}" for i, e in enumerate(evidence))
+        convo = (f"{prompt}\n\n[지금까지 수집한 근거 — 모두 반영하라]\n{joined}\n\n"
+                 "근거가 충분하면 최종 답을 써라([출처:] 필수). 더 필요하면 다른 도구를 JSON으로 요청하라.")
+    return budget.ask(role, convo + "\n(도구 한도 소진 — 지금까지 근거로 최종 답을 써라)", topic=topic)

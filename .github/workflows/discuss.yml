@@ -1,8 +1,9 @@
 name: ai-discussion
 on:
   schedule:
-    # KST 06시/12시/18시 = UTC 21시/03시/09시 — 사용자 지정 하루 3회
-    - cron: "0 21,3,9 * * *"
+    # GitHub cron은 보통 10~90분 지각 → 타겟을 30분 앞당겨 06/12/18시대에 걸리게 함.
+    # KST 05:30/11:30/17:30 = UTC 20:30/02:30/08:30
+    - cron: "30 20,2,8 * * *"
   workflow_dispatch: {}
 
 permissions:

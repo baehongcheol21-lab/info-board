@@ -191,7 +191,7 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
 
     # ---- 4. 이상신호 심층토론 (도구 사용 + 방어로직) ----
     anomalies = sorted(
-        [(_id, d) for _id, d in snap.items() if d["pct"] is not None and abs(d["pct"]) >= 3],
+        [(_id, d) for _id, d in snap.items() if d["pct"] is not None and abs(d["pct"]) >= 2],
         key=lambda x: -abs(x[1]["pct"]))[:3]
     print(f"[4/5] 심층토론 {len(anomalies)}건 (도구 사용)")
     for _id, d in anomalies:
@@ -206,11 +206,19 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
 "HBM 독점" 같은 장기 상수는 오늘 급변의 원인이 될 수 없다 — 배제하라.
 도구(search_news, get_history 등)로 근거를 찾아라. 원인 후보 최대 3개, 각각 [출처:]와 발생시점 명시.
 근거를 못 찾으면 "원인 후보 없음"이라고 써라.""", topic=d["name"])
+            # 툴킷: 수급(거래량) 데이터를 자동으로 뽑아 U4의 평가매트릭스 근거로 제공
+            try:
+                vol = tools.get_history(_id, days=7)
+            except Exception as e:
+                vol = f"(수급 데이터 조회 실패: {e})"
+            b.transcript.append({"role": "🧰도구", "topic": d["name"],
+                                 "text": f"get_history({_id},7d) → 수급 검증용:\n{vol[:600]}"})
             u4 = b.ask("U4", f"""너는 비판 요원 U4다. {STYLE}
-U3의 분석: {u3[:1500]}
+U3의 분석: {u3[:1200]}
+[수급 데이터 7일(종가·거래량)]: {vol[:700]}
 
 [평가 매트릭스] 각 원인 후보를 두 기준으로 채점하라:
-  ①24시간 이내 발생한 이벤트인가?  ②수급 데이터(거래량 등)나 출처로 증명되는가?
+  ①24시간 이내 발생한 이벤트인가?  ②위 수급 데이터(거래량 급증 등)로 증명되는가?
 둘 다 충족해야만 [확실]. 하나만 충족 = [추정]. 둘 다 미충족 = [기각].
 마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.""", topic=d["name"])
             # 판정 구속 (코드 레벨): U4 판정을 파싱해서 알파에게 강제
