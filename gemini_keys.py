@@ -39,6 +39,11 @@ import json
 import time
 import datetime
 
+try:  # P5 관측 로그 — 없어도(예: dashboard/ 쪽 복제본) 조용히 무시하고 동작
+    import runlog
+except ImportError:
+    runlog = None
+
 MODEL = "gemini-3.1-flash-lite"       # 주력(volume): 요약·뉴스분석 등 대량 처리용
 HEAVY_MODEL = "gemini-2.5-flash"      # 판단력 강한 보조 모델: 정책 점수·심층 배경설명 등에만
 KST = datetime.timezone(datetime.timedelta(hours=9))
@@ -178,6 +183,7 @@ class RotatingBudget:
         wait = 4.5 - (time.time() - self._last)
         if wait > 0:
             time.sleep(wait)
+        t0 = time.time()
         try:
             self._last = time.time()
             r = self._rot.client().models.generate_content(model=HEAVY_MODEL, contents=prompt)
@@ -189,9 +195,15 @@ class RotatingBudget:
             self.transcript.append({"role": role, "topic": topic, "text": text})
             print(f"  [키{self._rot.idx + 1} {n:>3}/{PER_KEY_DAILY_LIMIT}]★{role}: "
                   f"{text[:40].replace(chr(10), ' ')}...")
+            if runlog:
+                runlog.log_api_call(role, HEAVY_MODEL, self._rot.idx + 1, topic, len(prompt),
+                                     True, time.time() - t0)
             return text
         except Exception as e:
             print(f"  ↩️ heavy({HEAVY_MODEL}) 실패({str(e)[:40]}) → 주력 모델 폴백")
+            if runlog:
+                runlog.log_api_call(role, HEAVY_MODEL, self._rot.idx + 1, topic, len(prompt),
+                                     False, time.time() - t0, "tool_error")
             return self.ask(role, prompt, topic=topic)
 
     def ask(self, role, prompt, topic="", model=MODEL):
@@ -209,6 +221,7 @@ class RotatingBudget:
                 self._rot.rotate("(이미 소진된 키 건너뜀)")
                 tried += 1
                 continue
+            t0 = time.time()
             try:
                 self._last = time.time()
                 r = self._rot.client().models.generate_content(model=model, contents=prompt)
@@ -219,10 +232,16 @@ class RotatingBudget:
                 tag = "★" if model != MODEL else " "
                 print(f"  [키{idx + 1} {n:>3}/{PER_KEY_DAILY_LIMIT}]{tag}"
                       f"{role}: {text[:40].replace(chr(10), ' ')}...")
+                if runlog:
+                    runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                                         True, time.time() - t0)
                 return text
             except Exception as e:
                 if KeyRotator.is_daily_quota_error(e):
                     print(f"  ⚠️ 키{idx + 1}번 일일 한도 소진")
+                    if runlog:
+                        runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                                             False, time.time() - t0, "tool_error")
                     self._rot.usage["counts"][str(idx)] = PER_KEY_DAILY_LIMIT
                     _save_usage(self._rot.usage)
                     self._rot.rotate("(일일 한도 소진)")
@@ -230,7 +249,13 @@ class RotatingBudget:
                     continue
                 if KeyRotator.is_quota_error(e):
                     print("  ⏳ 분당 한도 — 65초 대기 (같은 키 재시도)")
+                    if runlog:
+                        runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                                             False, time.time() - t0, "tool_error")
                     time.sleep(65)
                     continue
+                if runlog:
+                    runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                                         False, time.time() - t0, "runtime_error")
                 raise
         raise RuntimeError(f"등록된 계정 {len(self._rot.keys)}개 전부 오늘 한도 소진 — 내일 자정(KST) 리셋")

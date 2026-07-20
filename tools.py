@@ -11,14 +11,32 @@ import re
 import json
 import glob
 import html
+import hashlib
 import datetime
 import urllib.parse
 import xml.etree.ElementTree as ET
 
 import requests
 
+try:  # P5 관측 로그
+    import runlog
+except ImportError:
+    runlog = None
+
 UA = {"User-Agent": "Mozilla/5.0 (personal research tool; non-commercial)"}
 BASE = os.path.dirname(os.path.abspath(__file__))
+
+
+def _query_mismatch(tool, args, topic):
+    """검색어-주제 정합 검사 (2026-07-20 감사: 코스피 회의에서 '삼성전자 급락' 검색됨).
+    search_news에만 적용 — topic의 2자 이상 토큰이 검색어에 하나도 없으면 불일치로 본다."""
+    if tool != "search_news" or not topic:
+        return False
+    q = str(args.get("query", ""))
+    toks = [t for t in re.split(r"[\s·,()]+", topic) if len(t) >= 2]
+    if not toks:
+        return False
+    return not any(t in q for t in toks)
 
 
 def search_news(query, max_items=6):
@@ -176,8 +194,13 @@ def run_tool_loop(budget, role, prompt, topic="", max_rounds=4, force_tool=True)
                 auto_done = True
                 try:
                     res = str(search_news(topic or prompt[:40]))[:2500]
+                    ok = True
                 except Exception as e:
                     res = f"검색 실패: {e}"
+                    ok = False
+                if runlog:
+                    runlog.log_tool_call("search_news(자동강제)", (topic or prompt[:40])[:120], ok, len(res),
+                                          result_hash=hashlib.md5(res.encode("utf-8")).hexdigest()[:12] if ok else "")
                 budget.transcript.append({"role": "🧰도구", "topic": topic,
                                           "text": f"search_news(자동 강제) 결과:\n{res[:600]}"})
                 evidence.append(res)
@@ -185,14 +208,25 @@ def run_tool_loop(budget, role, prompt, topic="", max_rounds=4, force_tool=True)
                          "이 근거를 반영해 최종 답을 써라. 사실에는 [출처:] 태그를 달아라.")
                 continue
             return text  # 최종 답변
+        req = {}
         try:
             req = json.loads(m.group(0))
             fn = TOOLS[req["tool"]][0]
             result = str(fn(**req.get("args", {})))[:3000]
+            ok = True
         except Exception as e:  # 도구 폴백(D8): 실패해도 토론은 계속
             result = f"도구 실행 실패: {type(e).__name__}: {e}. 다른 방법을 쓰거나 '판단불가'라고 하라."
+            ok = False
+        tool_name = req.get("tool", "?")
+        args = req.get("args", {})
+        mismatch = _query_mismatch(tool_name, args, topic)
+        if runlog:
+            runlog.log_tool_call(tool_name, json.dumps(args, ensure_ascii=False)[:120], ok, len(result),
+                                  mismatch=mismatch,
+                                  result_hash=hashlib.md5(result.encode("utf-8")).hexdigest()[:12] if ok else "")
         budget.transcript.append({"role": "🧰도구", "topic": topic,
-                                  "text": f"{req.get('tool', '?')} 실행 결과:\n{result[:600]}"})
+                                  "text": f"{tool_name} 실행 결과:\n{result[:600]}" +
+                                          ("\n⚠️ 검색어-주제 불일치 감지됨" if mismatch else "")})
         evidence.append(result)
         joined = "\n".join(f"[근거{i + 1}] {e[:800]}" for i, e in enumerate(evidence))
         convo = (f"{prompt}\n\n[지금까지 수집한 근거 — 모두 반영하라]\n{joined}\n\n"

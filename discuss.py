@@ -15,6 +15,7 @@ import os
 import re
 import csv
 import json
+import hashlib
 import datetime
 import traceback
 
@@ -22,6 +23,11 @@ from publish import INDICATORS, fetch_yahoo, fetch_smp
 import tools
 import trends
 from gemini_keys import RotatingBudget
+
+try:  # P5 관측 로그
+    import runlog
+except ImportError:
+    runlog = None
 
 
 def _diag(e):
@@ -52,6 +58,38 @@ def load_prev():
             return json.load(f)
     except (OSError, ValueError):
         return {}
+
+
+# ---- 보류 큐 (알파 관리자화, P5 #6) — U4가 "데이터 부족"류 판정을 내린 건을
+#      다음 회의가 자동으로 다시 의제에 올리게 한다. 알파는 편집장이 아니라 운영 관리자다. ----
+RETRY_QUEUE_FILE = "retry_queue.json"
+DATA_INSUFFICIENT_MARKERS = ("데이터가 부족", "포함하지 않", "이후 데이터", "이후를 포함",
+                              "최신 데이터", "갱신되지 않", "데이터 부족", "시점이 맞지 않",
+                              "데이터 지연", "데이터가 사건 이후")
+
+
+def _load_retry_queue():
+    try:
+        return json.load(open(RETRY_QUEUE_FILE, encoding="utf-8"))
+    except (OSError, ValueError):
+        return []
+
+
+def _save_retry_queue(q):
+    with open(RETRY_QUEUE_FILE, "w", encoding="utf-8") as f:
+        json.dump(q, f, ensure_ascii=False, indent=1)
+
+
+def _push_retry_queue(_id, name, reason, now):
+    q = [x for x in _load_retry_queue() if x["id"] != _id]
+    q.append({"id": _id, "name": name, "reason": reason,
+              "ts": now.isoformat(timespec="minutes")})
+    _save_retry_queue(q[-10:])
+
+
+def _clear_retry_queue(_id):
+    q = [x for x in _load_retry_queue() if x["id"] != _id]
+    _save_retry_queue(q)
 
 
 def build_global_state(snap, now):
@@ -232,7 +270,12 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
     anomalies = sorted(
         [(_id, d) for _id, d in snap.items() if d["pct"] is not None and abs(d["pct"]) >= 2],
         key=lambda x: -abs(x[1]["pct"]))[:3]
-    print(f"[4/5] 심층토론 {len(anomalies)}건 (도구 사용)")
+    # 보류 큐 편입 (P5 #6 알파 관리자화): 전 회의에서 "데이터 부족"으로 미뤄둔 건을
+    # 최대 2건까지 오늘 의제에 자동으로 다시 올린다.
+    already = {i for i, _ in anomalies}
+    retry_items = [x for x in _load_retry_queue() if x["id"] not in already and x["id"] in snap][:2]
+    anomalies = anomalies + [(x["id"], snap[x["id"]]) for x in retry_items]
+    print(f"[4/5] 심층토론 {len(anomalies)}건 (도구 사용, 보류큐 재의제 {len(retry_items)}건 포함)")
     for _id, d in anomalies:
         try:
             base = f"{d['name']} 전일比 {d['pct']:+}%, 현재 {d['value']} {d['unit']}."
@@ -244,12 +287,18 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
 [Time-Proximity 규칙] 원인 후보는 '24시간 이내에 새로 발생한 이벤트'만 인정된다.
 "HBM 독점" 같은 장기 상수는 오늘 급변의 원인이 될 수 없다 — 배제하라.
 도구(search_news, get_history 등)로 근거를 찾아라. 원인 후보 최대 3개, 각각 [출처:]와 발생시점 명시.
+검색어에는 반드시 "{d['name']}" 지표명을 포함하라 — 다른 종목·지표를 검색하지 마라.
 근거를 못 찾으면 "원인 후보 없음"이라고 써라.""", topic=d["name"])
             # 툴킷: 수급(거래량) 데이터를 자동으로 뽑아 U4의 평가매트릭스 근거로 제공
             try:
                 vol = tools.get_history(_id, days=7)
+                vol_ok = True
             except Exception as e:
                 vol = f"(수급 데이터 조회 실패: {e})"
+                vol_ok = False
+            if runlog:
+                runlog.log_tool_call("get_history(U4증거)", f"{_id},7d", vol_ok, len(vol),
+                                      result_hash=hashlib.md5(vol.encode("utf-8")).hexdigest()[:12] if vol_ok else "")
             b.transcript.append({"role": "🧰도구", "topic": d["name"],
                                  "text": f"get_history({_id},7d) → 수급 검증용:\n{vol[:600]}"})
             u4 = b.ask("U4", f"""너는 비판 요원 U4다. {STYLE}
@@ -266,16 +315,57 @@ U3의 분석: {u3[:1200]}
             constraint = ("원인을 단정해도 된다." if verdict_kr == "[확실]" else
                           f"U4 종합판정이 {verdict_kr} 이므로 너는 원인을 단정할 수 없다. "
                           "서두에 '원인은 아직 확정되지 않았습니다'로 시작하라. 서두와 결론이 모순되면 실격이다.")
-            alpha = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
+
+            # ---- 알파 관리자화 (P5 #6) ----
+            # U4가 "데이터 부족/시점 불일치"류로 원인불명·판단불가를 냈으면, 알파에게 넘기기 전에
+            # 코드가 먼저 1회 자동 재조회한다. 그래도 같은 데이터면 알파는 분석을 하지 말고
+            # '보류'로만 짧게 분류하고, 이 건은 다음 회의가 자동으로 다시 의제에 올린다.
+            manage_note = ""
+            needs_retry = verdict_kr in ("[원인불명]", "[판단불가]") and any(
+                mk in u4 for mk in DATA_INSUFFICIENT_MARKERS)
+            if needs_retry:
+                try:
+                    vol2 = tools.get_history(_id, days=7)
+                    retried_ok = True
+                except Exception as e:
+                    vol2 = f"(재조회 실패: {e})"
+                    retried_ok = False
+                if runlog:
+                    runlog.log_tool_call("get_history(재조회)", f"{_id},7d", retried_ok, len(vol2))
+                if not retried_ok or vol2.strip() == vol.strip():
+                    manage_note = ("\n[관리] 재조회했지만 데이터가 갱신되지 않았습니다. 이 건은 원인 규명을 "
+                                    "시도하지 말고 반드시 '보류(데이터 대기)'로만 분류하십시오.")
+                    _push_retry_queue(_id, d["name"], "데이터 부족 — 재조회해도 갱신 안 됨", now)
+                else:
+                    vol = vol2  # 새 데이터를 확보했으면 그걸로 계속 진행 (보류 아님)
+                    needs_retry = False
+
+            if not needs_retry:
+                _clear_retry_queue(_id)  # 이번엔 재조회 불필요했거나 해결됨 → 큐에서 제거
+
+            if manage_note:
+                alpha_prompt = f"""너는 지휘자(운영 관리자) 알파다. {STYLE}
+관측: {base}
+U3(요약): {u3[:600]}
+U4 검증(요약): {u4[:400]}
+{manage_note}
+
+심층분석을 쓰지 말고 3줄 이내로: ①관측 사실 한 줄 ②'데이터 부족으로 보류합니다. 다음 회의에서 재검토합니다.'
+③보류 사유 한 줄."""
+            else:
+                alpha_prompt = f"""너는 지휘자 알파다. {STYLE}
 관측: {base}
 U3(요약): {u3[:800]}
 U4 검증(요약): {u4[:600]}
 [판정 구속] {constraint}
 
 10~15줄 배경설명: ①현재 판정 1줄 ②확인된 사실([출처:] 있는 것만) ③기각된 가설과 이유
-④앞으로 확인할 것. '판단불가'로 끝내도 된다 — 억지 결론이 더 나쁘다.""", topic=d["name"])
+④앞으로 확인할 것. '판단불가'로 끝내도 된다 — 억지 결론이 더 나쁘다."""
+            alpha = b.ask("알파", alpha_prompt, topic=d["name"])
             out_ind.setdefault(_id, {})["detail"] = alpha
             out_ind[_id]["verdict"] = {"[확실]": "green", "[추정]": "yellow"}.get(verdict_kr, "red")
+            if manage_note:
+                out_ind[_id]["pending"] = True
         except Exception as e:
             print(f"  ⚠️ {_id} 토론 실패: {_diag(e)}")
 
@@ -296,9 +386,16 @@ U4 검증(요약): {u4[:600]}
         brief = ""
 
     # ---- 저장 ----
+    # transcript 필수화 (P5 #4): "콜은 썼는데 녹취 0줄"인 조용한 실패를 여기서 반드시 기록한다.
+    meeting_ok = bool(b.transcript)
+    if not meeting_ok:
+        print(f"❌ 회의 실패로 기록 — 콜 {b.used}건을 썼지만 녹취(transcript)가 0줄입니다.")
+    if runlog:
+        runlog.log_meeting(meeting_ok, b.used, len(b.transcript),
+                            note="" if meeting_ok else "transcript 비어있음")
     result = {"time": now.isoformat(timespec="minutes"), "alpha_brief": brief,
               "indicators": out_ind, "news_brief": news_brief,
-              "calls_used": b.used, "transcript": b.transcript}
+              "calls_used": b.used, "transcript": b.transcript, "meeting_ok": meeting_ok}
     with open("discussions.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=1)
     os.makedirs("discussions", exist_ok=True)

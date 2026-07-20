@@ -9,6 +9,8 @@ publish.py — 아이폰용 정적 브리핑 페이지 생성기 (GitHub Actions
 실행: python publish.py  →  docs/index.html 생성
 """
 import os
+import json
+import glob
 import datetime
 import xml.etree.ElementTree as ET
 
@@ -153,6 +155,28 @@ def _esc(t):
     return (t or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def load_recent_events(n=20):
+    """P5 관측 로그 최근 n건 (api_call_log+tool_call_log 통합, 시간순).
+    ※ 이 섹션은 P5 임시 스텁이다 — P1(아이폰 대공사)에서 AI회의 탭으로 재디자인된다."""
+    rows = []
+    month = datetime.datetime.now(KST).strftime("%Y-%m")
+    for kind in ("api_call_log", "tool_call_log"):
+        p = os.path.join("logs", f"{month}-{kind}.jsonl")
+        try:
+            with open(p, encoding="utf-8") as f:
+                for line in f.readlines()[-n * 3:]:
+                    try:
+                        row = json.loads(line)
+                    except ValueError:
+                        continue
+                    row["kind"] = kind
+                    rows.append(row)
+        except OSError:
+            pass
+    rows.sort(key=lambda r: r.get("ts", ""))
+    return rows[-n:]
+
+
 def main():
     disc = load_discussions()
     d_ind = disc.get("indicators", {})
@@ -221,6 +245,18 @@ def main():
         pm_html = (f'<div id="pmix"><h3>⚡ 실시간 전력수급 · 발전원 믹스 (전력거래소 · {pm["time"]} 기준)</h3>'
                    f'{head}<div class="pmtot">{pm["total"]:,.0f}<span>MW 현재 총발전(≈수요)</span></div>{bars}</div>')
 
+    # 최근 활동 (P5 스텁 — P1에서 AI회의 탭으로 재디자인 예정)
+    events = load_recent_events(20)
+    ev_html = ""
+    if events:
+        rows = "".join(
+            f'<div class="evrow{"" if e.get("ok", True) else " everr"}">'
+            f'<span class="evt">{_esc((e.get("ts") or "")[11:19])}</span>'
+            f'<span class="evwho">{_esc(e.get("agent") or e.get("tool") or "?")}</span>'
+            f'<span class="evwhat">{_esc(e.get("topic") or e.get("args") or "")}</span></div>'
+            for e in reversed(events))
+        ev_html = f'<div id="events"><h3>🧬 최근 활동 (AI 호출·도구 실행)</h3>{rows}</div>'
+
     news_items = "".join(f"<li>{t}</li>" for t in fetch_news())
     now = datetime.datetime.now(KST).strftime("%m/%d %H:%M")
     level = ("🟢 조용함", "#3fb950") if alerts == 0 else \
@@ -277,6 +313,15 @@ def main():
  .pmval{{position:absolute;right:5px;top:1px;font-size:.65rem;color:#fff}}
  .pmhead{{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px;font-size:.78rem;color:#7fa99e}}
  .pmhead b{{color:#fff;font-size:.9rem}}
+ #events{{margin:12px;padding:14px;background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);
+      border-radius:10px;font-family:'Courier New',monospace}}
+ #events h3{{font-size:.72rem;color:#7fa99e;margin:0 0 8px}}
+ .evrow{{display:flex;gap:8px;font-size:.68rem;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.05);
+      align-items:baseline}}
+ .evrow.everr{{background:rgba(255,92,92,.08)}}
+ .evt{{flex:0 0 52px;color:#7fa99e}}
+ .evwho{{flex:0 0 90px;color:#00ffcc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+ .evwhat{{flex:1;color:#e6fff8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 </style></head><body>
 <header><h1>INFO_BRIEF // MOBILE</h1><div class="t">갱신 {now} KST · 시세 15~20분 지연</div></header>
 <div id="hl">오늘 중요도: {level[0]}</div>
@@ -284,6 +329,7 @@ def main():
 {pm_html}
 <div id="grid">{smp_card}{"".join(cards)}</div>
 <div id="news"><h3>RSS_FEED // 전기신문</h3><ul>{news_items or "<li>수집 실패</li>"}</ul></div>
+{ev_html}
 <footer>info-dashboard system · 자동 갱신(매시간) · 사파리 공유→홈 화면에 추가</footer>
 </body></html>"""
     os.makedirs("docs", exist_ok=True)
