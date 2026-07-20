@@ -1,0 +1,6 @@
+{"ts": "2026-07-20T14:55:49+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 1915, "cache": "신규", "mismatch": false, "result_hash": "b8e623fc2307", "err_class": null}
+{"ts": "2026-07-20T14:55:54+09:00", "tool": "get_history(U4증거)", "args": "samsung,7d", "sig": "b9116cf053", "ok": true, "result_chars": 230, "cache": "신규", "mismatch": false, "result_hash": "173e23fc2108", "err_class": null}
+{"ts": "2026-07-20T14:56:07+09:00", "tool": "search_news(자동강제)", "args": "코스피", "sig": "5c4a1d7dc8", "ok": true, "result_chars": 2204, "cache": "신규", "mismatch": false, "result_hash": "8fc05ea06e1e", "err_class": null}
+{"ts": "2026-07-20T14:56:11+09:00", "tool": "get_history(U4증거)", "args": "kospi,7d", "sig": "d82858bf4f", "ok": true, "result_chars": 208, "cache": "신규", "mismatch": false, "result_hash": "c7c9946b51f2", "err_class": null}
+{"ts": "2026-07-20T14:56:25+09:00", "tool": "search_news(자동강제)", "args": "한국전력", "sig": "7a8d3fe4fa", "ok": true, "result_chars": 1944, "cache": "신규", "mismatch": false, "result_hash": "cfcab5de1928", "err_class": null}
+{"ts": "2026-07-20T14:56:29+09:00", "tool": "get_history(U4증거)", "args": "kepco,7d", "sig": "524b413233", "ok": true, "result_chars": 216, "cache": "신규", "mismatch": false, "result_hash": "76b3330c5b97", "err_class": null}
