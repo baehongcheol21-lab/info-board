@@ -1,185 +1,365 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>정보 브리핑</title>
+<title>정보 브리핑 // PIXEL TRADING FLOOR</title>
+<!-- 자동 생성 파일 (publish.py) — 디자인 수정은 시안/pixel_floor.html에서 먼저 승인받은 뒤 반영할 것 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/quiple/galmuri@latest/dist/galmuri.css">
 <style>
- body{background:#050505;color:#e6fff8;font-family:-apple-system,'Malgun Gothic',sans-serif;margin:0;
-  background-image:linear-gradient(rgba(0,255,204,.04) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(0,255,204,.04) 1px,transparent 1px);background-size:22px 22px}
- header{padding:14px 16px;border-bottom:1px solid #00ffcc;font-family:'Courier New',monospace}
- header h1{font-size:1rem;letter-spacing:3px;color:#00ffcc;margin:0;text-shadow:0 0 6px #00ffcc}
- header .t{font-size:.72rem;color:#7fa99e}
- #hl{padding:12px 16px;font-weight:700;border-left:5px solid #ff5c5c;background:rgba(0,255,204,.04)}
- #grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;padding:12px}
- .card{background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);border-radius:8px;padding:12px;
-  box-shadow:0 0 12px rgba(0,255,204,.06) inset}
- .card.alert{border-color:#ff5c5c;box-shadow:0 0 10px rgba(255,92,92,.4)}
- .card h3{font-size:.68rem;color:#7fa99e;margin:0 0 6px;font-family:'Courier New',monospace}
- .val{font-size:1.45rem;font-weight:800;color:#fff;text-align:right}
- .u{font-size:.65rem;color:#00ffcc;margin-left:3px}
- .chg{font-size:.8rem;font-weight:700;text-align:right}
- .up{color:#ff5c5c} .down{color:#58a6ff} .flat{color:#7fa99e} .dim{color:#7fa99e;font-weight:400}
- .sp{width:100%;height:34px;margin-top:6px}
- .err{color:#ffd24d;font-size:.85rem;padding:8px 0}
- #news{margin:4px 12px 24px;background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);border-radius:8px;padding:12px}
- #news h3{font-size:.7rem;color:#7fa99e;font-family:'Courier New',monospace;margin:0 0 8px}
- #news li{font-size:.82rem;padding:5px 0 5px 8px;border-left:2px solid #00ffcc;list-style:none;margin:5px 0}
- #news ul{margin:0;padding:0}
- footer{color:#7fa99e;font-size:.65rem;text-align:center;padding:10px;font-family:'Courier New',monospace}
- .sum{margin-top:8px;padding:8px;background:rgba(0,255,204,.06);border-radius:6px;
-      font-size:.78rem;line-height:1.55;white-space:pre-wrap}
- .more .tap{display:block;margin-top:6px;font-size:.72rem;color:#00ffcc;cursor:pointer}
- .more .detail{display:none;margin-top:6px;padding:8px;background:rgba(0,0,0,.5);
-      border-left:3px solid #ffd24d;border-radius:4px;font-size:.78rem;line-height:1.6;white-space:pre-wrap}
- .more.open .detail{display:block}
- #brief{margin:12px;padding:14px;background:rgba(0,255,204,.05);border:1px solid rgba(0,255,204,.35);
-      border-radius:10px}
- #brief h3{margin:0 0 8px;font-size:.8rem;color:#00ffcc;font-family:'Courier New',monospace}
- #brief .btext{font-size:.88rem;line-height:1.65;white-space:pre-wrap}
- #pmix{margin:12px;padding:14px;background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);border-radius:10px}
- #pmix h3{font-size:.72rem;color:#7fa99e;font-family:'Courier New',monospace;margin:0 0 8px}
- .pmtot{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:10px}
- .pmtot span{font-size:.6rem;color:#00ffcc;margin-left:4px}
- .pmrow{display:flex;align-items:center;gap:6px;margin:4px 0}
- .pmlbl{flex:0 0 66px;font-size:.72rem;font-family:'Courier New',monospace}
- .pmbar{flex:1;background:#0a1512;border-radius:4px;height:18px;position:relative}
- .pmbar>div{height:100%;border-radius:4px}
- .pmval{position:absolute;right:5px;top:1px;font-size:.65rem;color:#fff}
- .pmhead{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:8px;font-size:.78rem;color:#7fa99e}
- .pmhead b{color:#fff;font-size:.9rem}
- #events{margin:12px;padding:14px;background:rgba(0,0,0,.55);border:1px solid rgba(0,255,204,.28);
-      border-radius:10px;font-family:'Courier New',monospace}
- #events h3{font-size:.72rem;color:#7fa99e;margin:0 0 8px}
- .evrow{display:flex;gap:8px;font-size:.68rem;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.05);
-      align-items:baseline}
- .evrow.everr{background:rgba(255,92,92,.08)}
- .evt{flex:0 0 52px;color:#7fa99e}
- .evwho{flex:0 0 90px;color:#00ffcc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
- .evwhat{flex:1;color:#e6fff8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-</style></head><body>
-<header><h1>INFO_BRIEF // MOBILE</h1><div class="t">갱신 07/20 15:04 KST · 시세 15~20분 지연</div></header>
-<div id="hl">오늘 중요도: 🔴 특이 — 이상 4건</div>
-<div id="brief"><h3>🎼 알파의 총평 <span class="dim">(2026-07-20T14:51+09:00 토론, 58콜 사용)</span></h3><div class="btext">오늘은 5건이 특이합니다.
+:root{
+  --bg:#0b0f1a; --floor1:#8b5a2b; --floor2:#6b4423; --floor-line:#4a2f18;
+  --panel:#f5ecd7; --ink:#1a1a1a; --accent:#ffd24d; --up:#3ddc71; --down:#ff5c5c;
+  --wall:#2a2440; --wallLine:#3d3560;
+}
+*{box-sizing:border-box; -webkit-font-smoothing:none}
+html,body{margin:0;background:var(--bg);color:var(--panel);
+  font-family:'Galmuri11',ui-monospace,'Courier New',monospace;
+  letter-spacing:.3px; overflow-x:hidden}
+img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
+.phone{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg);
+  border-left:1px solid #000;border-right:1px solid #000;position:relative}
 
-코스피 지지선 이탈로 투매 심리가 시장을 지배합니다. [출처: 한국거래소]
+.topbar{display:flex;justify-content:space-between;align-items:center;
+  padding:8px 12px;background:#000;border-bottom:3px solid var(--accent);font-size:11px}
+.topbar .dot{display:inline-block;width:8px;height:8px;background:var(--accent);
+  margin-right:5px;animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.25}}
 
-데이터센터 설비 투자 축소가 전력기기 업종의 실적 기대감을 훼손했습니다. [출처: (추정)]
+.chart-panel{margin:10px;border:3px solid #000;background:#000;position:relative;
+  box-shadow:4px 4px 0 rgba(0,0,0,.5)}
+.chart-head{display:flex;justify-content:space-between;padding:6px 8px;
+  background:var(--accent);color:#000;font-size:10px;font-weight:700}
+.chart-body{padding:8px}
+.chart-price{font-size:22px;font-weight:700;color:#fff}
+.chart-pct{font-size:12px;font-weight:700}
+.chart-pct.down{color:var(--down)} .chart-pct.up{color:var(--up)}
+.chart-svg{width:100%;height:64px;margin-top:6px}
+.chart-legend{display:flex;gap:12px;font-size:9px;color:#9aa;margin-top:4px}
+.chart-legend b{color:#fff}
+.worldclock{display:flex;gap:10px;padding:6px 8px;border-top:2px dashed #333;
+  font-size:9px;color:#8a8;justify-content:space-between}
 
-전력기기 업체 이익률 하락이 부품 협력사의 연쇄 유동성 위기로 이어집니다. [출처: (추정)]
+.power-panel{margin:10px;border:3px solid #000;background:var(--wall);
+  display:flex;align-items:center;gap:10px;padding:8px 10px;
+  box-shadow:4px 4px 0 rgba(0,0,0,.5)}
+.gauge{width:44px;height:44px;border-radius:50%;position:relative;flex:none;
+  background:conic-gradient(var(--gc) calc(var(--gp)*1%), #1a1a2e 0)}
+.gauge::after{content:'';position:absolute;inset:6px;background:var(--wall);border-radius:50%}
+.gauge span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:700;color:#fff}
+.power-txt{font-size:10px;line-height:1.7;color:#cfc}
+.power-txt b{color:#fff}
 
-정부의 전력망 병목 해소 사업이 예산 삭감 기조와 결합하여 전면 재조정 중입니다. [출처: 기사 2, 7]
+.floor-title{margin:16px 10px 6px;font-size:12px;letter-spacing:2px;color:var(--accent);
+  display:flex;align-items:center;gap:8px}
+.floor-title::before,.floor-title::after{content:'';flex:1;height:2px;background:#333}
 
-반도체 설비 투자 철회에 따른 전력 인프라 산업의 타격 규모가 차주 실적 가이드라인에 반영될 예정입니다. [출처: (추정)]
+.office{margin:0 10px 6px;border:3px solid #000;position:relative;
+  background:repeating-linear-gradient(90deg,var(--floor1) 0 26px,var(--floor2) 26px 52px);
+  box-shadow:4px 4px 0 rgba(0,0,0,.5);padding:14px 8px 10px;overflow:hidden}
+.office::before{content:'';position:absolute;left:0;right:0;top:0;height:100%;
+  background-image:repeating-linear-gradient(0deg,transparent 0 30px,var(--floor-line) 30px 31px);
+  pointer-events:none;opacity:.5}
+.desks{display:flex;justify-content:space-around;gap:4px}
+.desk{display:flex;flex-direction:column;align-items:center;width:23%;cursor:pointer;
+  position:relative}
+.sprite-wrap{position:relative}
+.sprite{animation:idle 1.8s ease-in-out infinite}
+.desk:nth-child(2n) .sprite{animation-delay:.3s}
+.desk:nth-child(3n) .sprite{animation-delay:.6s}
+@keyframes idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.online-dot{position:absolute;top:-2px;right:6px;width:6px;height:6px;background:var(--up);
+  border:1px solid #000;animation:blink 1.4s steps(2) infinite}
+.nameplate{margin-top:4px;font-size:9px;color:#fff;text-align:center;font-weight:700}
+.roletag{font-size:7px;background:#000;color:var(--accent);padding:1px 4px;margin-top:2px;
+  border:1px solid var(--accent)}
+.status{margin-top:5px;font-size:7.5px;color:#fff;background:rgba(0,0,0,.72);
+  border:1px solid #000;padding:3px 4px;text-align:center;min-height:22px;line-height:1.35;
+  max-width:100%;word-break:keep-all}
+.status .car{display:inline-block;width:5px;height:8px;background:#fff;margin-left:2px;
+  animation:blink .8s steps(2) infinite;vertical-align:-1px}
 
-시장 낙폭은 직전 대비 확대되었습니다. 반도체발 충격이 전력 인프라 밸류체인 전반의 부실로 전이되는 양상입니다. 투자 심리 경색이 극심합니다.</div></div>
-<div id="pmix"><h3>⚡ 실시간 전력수급 · 발전원 믹스 (전력거래소 · 1455 기준)</h3><div class="pmhead"><span>공급예비율 <b style="color:#3fb950">31.8%</b></span><span>공급능력 <b>105,094MW</b></span><span>현재수요 <b>79,730MW</b></span></div><div class="pmtot">79,819<span>MW 현재 총발전(≈수요)</span></div><div class="pmrow"><span class="pmlbl">유연탄</span><div class="pmbar"><div style="width:100%;background:#8b95a1"></div><span class="pmval">28,446MW · 35.6%</span></div></div><div class="pmrow"><span class="pmlbl">LNG(가스)</span><div class="pmbar"><div style="width:80%;background:#ffa94d"></div><span class="pmval">22,716MW · 28.5%</span></div></div><div class="pmrow"><span class="pmlbl">원자력</span><div class="pmbar"><div style="width:74%;background:#ff5c5c"></div><span class="pmval">21,020MW · 26.3%</span></div></div><div class="pmrow"><span class="pmlbl">태양광</span><div class="pmbar"><div style="width:16%;background:#ffd24d"></div><span class="pmval">4,531MW · 5.7%</span></div></div><div class="pmrow"><span class="pmlbl">신재생</span><div class="pmbar"><div style="width:10%;background:#3fb950"></div><span class="pmval">2,985MW · 3.7%</span></div></div><div class="pmrow"><span class="pmlbl">수력</span><div class="pmbar"><div style="width:3%;background:#58a6ff"></div><span class="pmval">840MW · 1.1%</span></div></div><div class="pmrow"><span class="pmlbl">국내탄</span><div class="pmbar"><div style="width:1%;background:#6b7480"></div><span class="pmval">329MW · 0.4%</span></div></div><div class="pmrow"><span class="pmlbl">유류</span><div class="pmbar"><div style="width:1%;background:#d97757"></div><span class="pmval">232MW · 0.3%</span></div></div><div class="pmrow"><span class="pmlbl">양수</span><div class="pmbar"><div style="width:-5%;background:#a371f7"></div><span class="pmval">-1,282MW · -1.6%</span></div></div></div>
-<div id="grid"><div class="card"><h3>SMP 계통한계가격</h3><div class="val">134.98<span class="u">원/kWh</span></div></div>
-<div class="card"><h3>원/달러 환율</h3>
-  <div class="val">1,477.9<span class="u">원</span></div>
-  <div class="chg down">▼ 0.07% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,11.3 10.0,8.2 20.0,9.7 30.0,6.7 40.0,5.2 50.0,9.7 60.0,7.1 70.0,4.3 80.0,3.0 90.0,6.9 100.0,11.4 110.0,12.4 120.0,16.0 130.0,22.7 140.0,21.6 150.0,24.6 160.0,25.0 170.0,28.9 180.0,29.6 190.0,32.6 200.0,33.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">원/달러 환율은 1487.46원으로 상승했습니다 [출처: 서울외환시장]. 
-반도체주 급락으로 인한 외국인 자금 이탈이 환율 상승을 견인했습니다 [출처: 한국거래소]. 
-국내 증시의 매도세가 심화하며 원화 가치가 하락한 결과입니다 [출처: (추정)].</div></div>
-<div class="card alert"><h3>코스피</h3>
-  <div class="val">6,516.41<span class="u">pt</span></div>
-  <div class="chg down">▼ 4.46% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,3.0 10.5,13.5 21.1,10.4 31.6,5.1 42.1,11.1 52.6,11.3 63.2,10.4 73.7,12.4 84.2,19.9 94.7,14.8 105.3,15.3 115.8,19.8 126.3,24.6 136.8,24.0 147.4,21.9 157.9,29.6 168.4,29.1 178.9,24.1 189.5,29.5 200.0,33.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">코스피 6,514.78 pt는 전일 대비 4.48% 하락한 수치입니다.
-삼성전자 등 시가총액 상위 종목의 매도세가 지수 급락을 주도했습니다 [출처: 한국거래소].
-외국인과 기관의 동반 순매도가 지수 하락의 주원인으로 분석됩니다 (추정).</div><div class="more" onclick="this.classList.toggle('open')"><span class="tap">▼ 자세한 배경 (AI 토론 결과)</span><div class="detail">원인은 아직 확정되지 않았습니다.
+.research-office{padding-bottom:16px}
+.table-wrap{display:flex;justify-content:center;align-items:flex-end;gap:0;position:relative;
+  margin-top:2px}
+.side{width:38%;display:flex;flex-direction:column;align-items:center;cursor:pointer}
+.vs{font-size:16px;color:var(--accent);padding:0 6px 18px;font-weight:700}
+.argtag{font-size:8px;padding:2px 6px;border:2px solid #000;font-weight:700;margin-top:3px}
+.argtag.bull{background:var(--up);color:#02310f}
+.argtag.bear{background:var(--down);color:#3a0000}
+.argbox{margin-top:5px;font-size:7.5px;background:var(--panel);color:#000;border:2px solid #000;
+  padding:4px;line-height:1.35;position:relative;min-height:30px}
+.argbox::after{content:'';position:absolute;top:-7px;left:14px;border:5px solid transparent;
+  border-bottom-color:#000}
+.argbox::before{content:'';position:absolute;top:-4px;left:16px;border:4px solid transparent;
+  border-bottom-color:var(--panel);z-index:1}
+.ace-row{display:flex;flex-direction:column;align-items:center;margin-top:10px}
+.ace-row .status{margin-top:4px}
 
-1. 현재 종합판정은 [추정]입니다.
-2. 매도 사이드카가 2026-07-20 02:25:00에 발동된 사실은 확인되었습니다. [출처: YTN, 2026-07-20 02:25:00]
-3. 중동 지역의 전쟁 관련 불확실성이 존재한다는 사실은 확인되었습니다. [출처: 뉴데일리, 2026-07-20 01:08:09]
-4. 반도체 대형주 수익성 의구심은 발생 후 24시간이 경과하여 기각되었습니다.
-5. 레버리지 ETF 기계적 매도는 거래량 급감 데이터와 상충하여 기각되었습니다.
-6. 중동 리스크 역시 거래량 둔화 현상과 연계 시 인과관계가 불분명하여 기각되었습니다.
-7. 금일 거래량 급감의 정확한 원인을 분석해야 합니다.
-8. 외국인 및 기관의 순매도 종목군 데이터를 대조해야 합니다.
-9. 파생상품 시장의 미결제약정 변화량을 추적해야 합니다.
-10. 판단불가.</div></div></div>
-<div class="card"><h3>반도체지수 SOX</h3>
-  <div class="val">11,673.89<span class="u">pt</span></div>
-  <div class="chg down">▼ 1.63% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,6.0 10.5,3.0 21.1,14.7 31.6,14.9 42.1,10.0 52.6,17.5 63.2,12.4 73.7,6.9 84.2,16.0 94.7,23.4 105.3,20.6 115.8,26.7 126.3,23.9 136.8,20.0 147.4,19.9 157.9,26.2 168.4,23.0 178.9,25.7 189.5,31.0 200.0,33.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">미국 필라델피아 반도체지수(SOX) 하락은 국내 반도체 종목의 매도세를 강화하는 재료입니다.
-삼성전자 등 국내 대형주와 미국 반도체 지수의 동조화 현상이 반영되었습니다 [출처: 한국거래소].
-금일 코스피 급락은 반도체 섹터의 투자 심리 악화가 지수 전반으로 확산된 결과입니다 [추정].</div></div>
-<div class="card"><h3>천연가스 (LNG 대리)</h3>
-  <div class="val">2.880<span class="u">USD</span></div>
-  <div class="chg down">▼ 1.06% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,8.6 10.5,15.1 21.1,10.5 31.6,3.0 42.1,9.9 52.6,13.0 63.2,7.2 73.7,10.6 84.2,12.1 94.7,9.1 105.3,7.8 115.8,11.1 126.3,23.5 136.8,27.9 147.4,30.6 157.9,30.2 168.4,28.9 178.9,33.0 189.5,29.7 200.0,31.6" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">천연가스 가격 하락은 한국전력의 연료비 부담 완화 요인입니다.
-그러나 오늘 한국전력 주가는 3.67% 하락했습니다.
-에너지 가격 하락보다 코스피 전체의 급락세가 주가에 더 큰 영향을 미쳤습니다. [출처: 한국거래소]
-국제 연료가와 국내 전력 공기업 주가 사이의 상관관계가 현재 시장 공포 심리에 압도되었습니다. (추정)</div></div>
-<div class="card"><h3>구리 선물</h3>
-  <div class="val">6.262<span class="u">USD/lb</span></div>
-  <div class="chg up">▲ 0.68% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,3.0 10.5,18.6 21.1,33.0 31.6,23.7 42.1,18.6 52.6,21.8 63.2,14.9 73.7,19.9 84.2,20.6 94.7,16.0 105.3,16.4 115.8,24.9 126.3,13.3 136.8,11.9 147.4,12.0 157.9,4.9 168.4,7.6 178.9,7.4 189.5,12.9 200.0,9.8" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">구리 선물 가격이 0.71% 상승했습니다. 
-경기 선행 지표인 구리 가격과 달리, 금일 코스피와 삼성전자는 대폭락했습니다. 
-현재 한국 시장의 하락세는 경기 침체 우려보다 반도체 중심의 수급 이탈에 기인한 것으로 보입니다. [출처: 한국거래소]</div></div>
-<div class="card"><h3>WTI 유가</h3>
-  <div class="val">83.70<span class="u">USD</span></div>
-  <div class="chg up">▲ 1.47% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,20.6 10.5,23.8 21.1,29.5 31.6,26.3 42.1,31.7 52.6,28.6 63.2,31.1 73.7,32.9 84.2,32.7 94.7,33.0 105.3,29.3 115.8,23.2 126.3,26.0 136.8,27.3 147.4,14.0 157.9,11.6 168.4,11.1 178.9,12.4 189.5,5.4 200.0,3.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">WTI 유가는 전일 대비 1.38% 상승한 83.63달러를 기록했습니다. 
+.sheet-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;
+  opacity:0;pointer-events:none;transition:opacity .18s}
+.sheet-backdrop.open{opacity:1;pointer-events:auto}
+.bottom-sheet{position:fixed;left:0;right:0;bottom:0;max-width:430px;margin:0 auto;
+  background:var(--panel);color:#000;border-top:3px solid #000;z-index:41;
+  padding:6px 16px 22px;max-height:66vh;overflow-y:auto;
+  transform:translateY(100%);transition:transform .22s steps(6,end)}
+.bottom-sheet.open{transform:translateY(0)}
+.sheet-grip{width:36px;height:5px;background:#0003;margin:8px auto 10px;border-radius:0}
+.bottom-sheet .who{font-size:11px;color:#5a8a5a;font-weight:700;margin-bottom:8px;
+  display:flex;justify-content:space-between;align-items:center;border-bottom:2px dashed #0002;
+  padding-bottom:6px}
+.bottom-sheet .who .roleTiny{color:#888;font-weight:400;font-size:9px}
+.bottom-sheet .close{cursor:pointer;color:#a33;font-weight:700;font-size:10px}
+.bottom-sheet .body{font-size:11px;line-height:1.75;white-space:pre-wrap}
 
-유가 상승은 국내 수입 물가와 생산 원가 부담을 높여 코스피 하락 압력으로 작용합니다. 오늘 코스피 4.48% 급락의 직접적 원인은 아니나, 에너지 비용 증가는 기업 이익률을 저해하는 요인입니다. [출처: 한국석유공사 페트로넷]</div></div>
-<div class="card alert"><h3>한국전력</h3>
-  <div class="val">32,750<span class="u">원</span></div>
-  <div class="chg down">▼ 3.82% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,8.4 10.5,16.6 21.1,14.2 31.6,4.6 42.1,12.6 52.6,7.2 63.2,13.1 73.7,10.3 84.2,7.7 94.7,7.2 105.3,3.0 115.8,7.5 126.3,14.2 136.8,21.5 147.4,16.8 157.9,26.0 168.4,27.4 178.9,27.6 189.5,26.9 200.0,33.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">한국전력 주가는 32,800원으로 마감했습니다. 
+.ticker-wrap{position:sticky;bottom:0;background:#000;border-top:3px solid var(--accent);
+  overflow:hidden;padding:6px 0;margin-top:14px}
+.ticker-track{display:inline-flex;white-space:nowrap;animation:marquee 22s linear infinite}
+.ticker-track span{padding:0 16px;font-size:10px;font-weight:700}
+.ticker-track .up{color:var(--up)} .ticker-track .down{color:var(--down)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-- 금일 코스피 지수가 4.48% 급락하며 시장 전반의 투자 심리가 위축된 결과입니다. [출처: 한국거래소]
-- 전기요금 인상 지연으로 인한 재무 구조 악화 우려가 하락폭을 키웠습니다. (추정)
-- 대규모 자본 잠식 해소를 위한 근본적 변화가 부재한 상황입니다. (추정)</div><div class="more" onclick="this.classList.toggle('open')"><span class="tap">▼ 자세한 배경 (AI 토론 결과)</span><div class="detail">원인은 아직 확정되지 않았습니다.
+.hint{text-align:center;font-size:8px;color:#556;padding:8px 20px 4px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="phone" id="app">
 
-1. 금일 한국전력 주가는 전일 대비 3.67% 하락한 32,800원을 기록했습니다. [출처: 한국거래소]
-2. 계통 알박기 규제 강화가 하락 요인 중 하나로 거론되나, 거래량 급증이 동반되지 않아 인과관계는 불분명합니다. [추정]
-3. 호남 지역 전력망 구축 지연은 장기적 구조 문제이며, 금일 발생한 단기 급락의 직접적 트리거로 보기 어렵습니다. [기각]
-4. 송변전 설비 비용 부담 증가는 기업 재무제표에 반영된 상수이며, 일시적인 주가 변동의 원인으로는 설득력이 부족합니다. [기각]
-5. 현재까지 거론된 모든 이슈는 주가 변동성과 통계적 유의성을 확보하지 못했습니다. [추정]
-6. 외국인과 기관의 매도 추이 및 당일 수급 데이터를 분석할 필요가 있습니다. [추정]
-7. 전력 도매가격인 SMP(계통한계가격)의 변동과 한국전력의 재무적 민감도를 대조하겠습니다. [추정]
-8. 추가적인 시장 공시 및 에너지 정책 변경사항을 모니터링하겠습니다. [추정]
+  <div class="topbar">
+    <span><span class="dot"></span>PIXEL TRADING FLOOR</span>
+    <span id="clockNow">--:--</span>
+  </div>
 
-결론적으로, 현재 시장의 움직임을 설명할 명확한 근거는 판단불가입니다.</div></div></div>
-<div class="card alert"><h3>삼성전자</h3>
-  <div class="val">243,750<span class="u">원</span></div>
-  <div class="chg down">▼ 4.41% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,4.3 10.5,15.7 21.1,7.7 31.6,3.0 42.1,8.0 52.6,12.3 63.2,9.4 73.7,14.5 84.2,22.0 94.7,15.8 105.3,13.6 115.8,19.3 126.3,24.2 136.8,24.0 147.4,22.2 157.9,30.2 168.4,28.0 178.9,23.7 189.5,30.1 200.0,33.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">삼성전자 주가 하락은 코스피 지수 4.48% 급락을 주도했습니다. [출처: 한국거래소] 외국인과 기관의 매도세가 집중된 결과로 분석됩니다. (추정) 시가총액 비중이 높은 삼성전자의 약세가 시장 전체의 하향 압력을 가중했습니다. [출처: 금융투자협회]</div><div class="more" onclick="this.classList.toggle('open')"><span class="tap">▼ 자세한 배경 (AI 토론 결과)</span><div class="detail">지휘자 알파입니다. 보고합니다.
+  <div class="chart-panel">
+    <div class="chart-head"><span>코스피 KOSPI</span><span>실시간(15~20분 지연)</span></div>
+    <div class="chart-body">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <span class="chart-price" id="cp-price">--</span>
+        <span class="chart-pct down" id="cp-pct">--</span>
+      </div>
+      <svg class="chart-svg" viewBox="0 0 200 50" preserveAspectRatio="none" id="cp-svg"></svg>
+      <div class="chart-legend"><span>MA20 <b id="ma20">--</b></span><span>MA60 <b id="ma60">--</b></span></div>
+    </div>
+    <div class="worldclock">
+      <span>NYC <b id="tz-nyc">--:--</b></span>
+      <span>LDN <b id="tz-ldn">--:--</b></span>
+      <span>SEL <b id="tz-sel">--:--</b></span>
+    </div>
+  </div>
 
-1. 현재 판정: 원인불명입니다.
-2. 사실 확인: 삼성전자 주가는 전일 대비 4.71% 하락했습니다. [출처: 한국거래소]
-3. 사실 확인: 7월 20일 거래량은 19,517,622주입니다. [출처: 한국거래소]
-4. 사실 확인: 24시간 내 실적 악화 및 설비 투자 철회 공시는 없습니다. [출처: DART]
-5. 기각 가설: 미국 시장발 투자 심리 악화는 거래량 급증이 없어 인과관계가 부족합니다. [(추정)]
-6. 기각 가설: 외국인 매도에 의한 프로그램 매매 주도는 거래량이 7일 내 최저치이므로 근거가 희박합니다. [(추정)]
-7. 프로그램 매매: 주가 등락을 유발하기 위해 정해진 규칙에 따라 컴퓨터가 자동으로 주문을 넣는 매매 방식입니다.
-8. 앞으로 확인할 것: 기관 투자자의 매도 포지션 전환 여부를 확인합니다.
-9. 앞으로 확인할 것: 환율 변동에 따른 외국인 자금 이탈 여부를 분석합니다.
-10. 결론: 하락의 명확한 촉매제가 존재하지 않는 수급 불균형 현상으로 판단합니다.</div></div></div>
-<div class="card alert"><h3>SK하이닉스</h3>
-  <div class="val">1,776,000<span class="u">원</span></div>
-  <div class="chg down">▼ 3.58% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,3.0 10.5,12.6 21.1,10.8 31.6,3.1 42.1,9.5 52.6,10.6 63.2,10.1 73.7,12.4 84.2,22.2 94.7,16.0 105.3,18.1 115.8,21.8 126.3,25.1 136.8,22.2 147.4,22.4 157.9,31.2 168.4,29.4 178.9,25.0 189.5,31.3 200.0,33.0" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">SK하이닉스는 177,600원으로 마감하며 전일 대비 3.58% 하락했습니다. [출처: 한국거래소] 코스피 지수가 4.48% 급락한 상황에서 반도체 업종 전반에 대한 투자 심리가 위축된 결과입니다. [출처: 추정] 고대역폭메모리(HBM)를 포함한 AI 반도체 수요 전망과 별개로, 거시경제 불확실성이 기술주 매도세를 유발했습니다. [출처: 추정]</div></div>
-<div class="card"><h3>엔비디아</h3>
-  <div class="val">202.81<span class="u">USD</span></div>
-  <div class="chg down">▼ 2.21% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,5.7 10.5,8.8 21.1,21.7 31.6,23.3 42.1,28.2 52.6,33.0 63.2,29.3 73.7,21.6 84.2,25.4 94.7,29.5 105.3,28.5 115.8,26.4 126.3,15.6 136.8,17.6 147.4,5.3 157.9,16.5 168.4,4.1 178.9,3.0 189.5,10.7 200.0,17.6" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">엔비디아 주가 하락은 국내 반도체 종목의 매도세를 강화하는 트리거입니다.
-코스피 폭락은 미국 기술주 약세와 삼성전자 실적 우려가 맞물린 결과입니다.
-*SOX(필라델피아 반도체 지수): 반도체 설계, 제조, 유통 관련 기업 30개로 구성된 지수.
-엔비디아 가격 하락은 국내 반도체 공급망 전반의 투자 심리를 위축시킵니다 [출처: 한국거래소].</div></div>
-<div class="card"><h3>금 선물</h3>
-  <div class="val">4,013.0<span class="u">USD</span></div>
-  <div class="chg up">▲ 0.01% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,3.0 10.5,10.9 21.1,32.3 31.6,26.1 42.1,18.8 52.6,27.4 63.2,27.3 73.7,20.4 84.2,13.6 94.7,7.1 105.3,8.6 115.8,20.0 126.3,10.8 136.8,14.9 147.4,31.3 157.9,21.5 168.4,24.1 178.9,33.0 189.5,28.9 200.0,28.8" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">금 선물 가격이 0.83% 상승했습니다. 위험 자산인 주식 시장의 급락으로 인해 안전 자산인 금에 대한 선호가 강화된 결과입니다. 금 선물 4018.8 USD는 투자 심리가 위축되었음을 나타내는 지표입니다. [출처: 한국거래소]</div></div>
-<div class="card"><h3>미 10년물 금리</h3>
-  <div class="val">4.541<span class="u">%</span></div>
-  <div class="chg down">▼ 0.61% <span class="dim">전일比</span></div>
-  <svg viewBox="0 0 200 36" preserveAspectRatio="none" class="sp"><polyline points="0.0,21.5 10.0,23.0 20.0,15.7 30.0,17.7 40.0,29.2 50.0,30.5 60.0,33.0 70.0,32.7 80.0,27.2 90.0,20.0 100.0,18.7 110.0,19.5 120.0,13.1 130.0,8.1 140.0,11.9 150.0,8.1 160.0,3.0 170.0,6.0 180.0,11.1 190.0,8.1 200.0,11.6" fill="none" stroke="#00ffcc" stroke-width="1.5"/></svg><div class="sum">미국 10년물 국채 금리 하락은 안전자산 선호 심리를 반영합니다.
-한국 증시의 급락은 반도체 업황 우려와 투자 심리 위축이 복합적으로 작용한 결과입니다. [출처: 한국거래소]
-현재 금리 하락에도 불구하고 외국인 매도세가 거세며 지수 방어에 실패했습니다. [출처: (추정)]</div></div></div>
-<div id="news"><h3>RSS_FEED // 전기신문</h3><ul><li>반월시화산단, M.AX 클러스터로 조성…소부장에 AI 접목</li><li>전체 화재 23%가 전기화재… ‘무자격 시공’ 사각지대 도마에</li><li>홍희기 경희대 교수 “도시 달구는 하절기 열…활용 가치 커”</li><li>가온전선, 올 상반기 美 수출 확대로 사상 최대 실적 달성</li><li>동서발전, 전직원 AI 활용 본격화…맞춤형 교육·에이전트 확대</li><li>‘매립’은 줄고 ‘자원순환’은 커졌는데…수도권매립지관리공사 사명 바뀔까</li></ul></div>
-<div id="events"><h3>🧬 최근 활동 (AI 호출·도구 실행)</h3><div class="evrow"><span class="evt">14:56:43</span><span class="evwho">알파</span><span class="evwhat">오늘의 총평</span></div><div class="evrow"><span class="evt">14:56:39</span><span class="evwho">알파</span><span class="evwhat">한국전력</span></div><div class="evrow"><span class="evt">14:56:34</span><span class="evwho">U4</span><span class="evwhat">한국전력</span></div><div class="evrow"><span class="evt">14:56:29</span><span class="evwho">get_history(U4증거)</span><span class="evwhat">kepco,7d</span></div><div class="evrow"><span class="evt">14:56:29</span><span class="evwho">U3</span><span class="evwhat">한국전력</span></div><div class="evrow"><span class="evt">14:56:25</span><span class="evwho">search_news(자동강제)</span><span class="evwhat">한국전력</span></div><div class="evrow"><span class="evt">14:56:24</span><span class="evwho">U3</span><span class="evwhat">한국전력</span></div><div class="evrow"><span class="evt">14:56:20</span><span class="evwho">알파</span><span class="evwhat">코스피</span></div><div class="evrow"><span class="evt">14:56:16</span><span class="evwho">U4</span><span class="evwhat">코스피</span></div><div class="evrow"><span class="evt">14:56:11</span><span class="evwho">get_history(U4증거)</span><span class="evwhat">kospi,7d</span></div><div class="evrow"><span class="evt">14:56:11</span><span class="evwho">U3</span><span class="evwhat">코스피</span></div><div class="evrow"><span class="evt">14:56:07</span><span class="evwho">search_news(자동강제)</span><span class="evwhat">코스피</span></div><div class="evrow"><span class="evt">14:56:06</span><span class="evwho">U3</span><span class="evwhat">코스피</span></div><div class="evrow"><span class="evt">14:56:03</span><span class="evwho">알파</span><span class="evwhat">삼성전자</span></div><div class="evrow"><span class="evt">14:55:58</span><span class="evwho">U4</span><span class="evwhat">삼성전자</span></div><div class="evrow"><span class="evt">14:55:54</span><span class="evwho">get_history(U4증거)</span><span class="evwhat">samsung,7d</span></div><div class="evrow"><span class="evt">14:55:53</span><span class="evwho">U3</span><span class="evwhat">삼성전자</span></div><div class="evrow"><span class="evt">14:55:49</span><span class="evwho">search_news(자동강제)</span><span class="evwhat">삼성전자</span></div><div class="evrow"><span class="evt">14:55:48</span><span class="evwho">U3</span><span class="evwhat">삼성전자</span></div><div class="evrow"><span class="evt">14:55:44</span><span class="evwho">U1</span><span class="evwhat">은행, 3분기 가계대출 문턱 높인다…신용위험도 확대</span></div></div>
-<footer>info-dashboard system · 자동 갱신(매시간) · 사파리 공유→홈 화면에 추가</footer>
-</body></html>
+  <div class="power-panel" id="powerPanel"></div>
+
+  <h2 class="floor-title">애널리스트 팀</h2>
+  <div class="office">
+    <div class="desks" id="analystFloor"></div>
+  </div>
+
+  <h2 class="floor-title">리서치 팀</h2>
+  <div class="office research-office">
+    <div class="table-wrap" id="researchFloor"></div>
+    <div class="ace-row" id="aceRow"></div>
+  </div>
+
+  <p class="hint">캐릭터를 탭하면 실제 분석 내용이 아래에서 올라옵니다 · 갱신 <span id="genTime"></span> KST</p>
+
+  <div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
+
+</div>
+
+<div class="sheet-backdrop" id="sheetBackdrop" onclick="closeSheet()"></div>
+<div class="bottom-sheet" id="bottomSheet">
+  <div class="sheet-grip"></div>
+  <div class="who">
+    <span id="sheetWho">—</span>
+    <span class="close" onclick="closeSheet()">✕ 닫기</span>
+  </div>
+  <div class="body" id="sheetBody"></div>
+</div>
+
+<script>
+const DATA = {"time": "2026-07-20T15:34+09:00", "chart": {"price": 6495.33, "pct": -4.77, "ma20": 7801.4, "ma60": 7747.8, "points": [7484.41015625, 8096.93017578125, 7730.81982421875, 7763.9501953125, 8123.6201171875, 8545.98046875, 8726.599609375, 8864.240234375, 9063.83984375, 9052.419921875, 9114.5498046875, 8203.83984375, 8471.01953125, 8930.2998046875, 8411.2099609375, 8394.650390625, 8476.48046875, 8303.41015625, 7648.08984375, 8088.33984375, 8051.330078125, 7656.31005859375, 7246.7900390625, 7291.91015625, 7475.93994140625, 6806.93017578125, 6856.830078125, 7284.41015625, 6820.60009765625, 6495.330078125]}, "power": null, "analysts": [{"id": "U1", "name": "유원", "role": "기술적 분석", "hair": "#2b3a67", "body": "#3a6ea5", "pants": "#20304f", "glasses": true, "cap": false, "belt": false, "hairStyle": "normal", "status": "은행, 3분기 가계대출 확인 중…", "detail": "미국 10년물 국채 금리 하락은 안전자산 선호 심리를 반영합니다.\n한국 증시의 급락은 반도체 업황 우려와 투자 심리 위축이 복합적으로 작용한 결과입니다. [출처: 한국거래소]\n현재 금리 하락에도 불구하고 외국인 매도세가 거세며 지수 방어에 실패했습니다. [출처: (추정)]"}, {"id": "U2", "name": "이투", "role": "뉴스 분석", "hair": "#7a3b1e", "body": "#c99a2e", "pants": "#5b4210", "glasses": false, "cap": false, "belt": false, "hairStyle": "ponytail", "status": "유로존 인플레이션, 6월 확인 중…", "detail": "① 유로존 6월 소비자물가지수 상승률이 연간 2.8%로 둔화했습니다. [출처: 인베스팅닷컴]\n② 인플레이션 완화는 유럽중앙은행의 금리 인하 근거가 됩니다. 이는 글로벌 유동성 공급과 위험자산 선호 심리에 긍정적 영향을 미칠 수 있습니다."}, {"id": "B2", "name": "비투", "role": "기본적 분석", "hair": "#5a2d82", "body": "#2f8f5b", "pants": "#1c5a38", "glasses": false, "cap": false, "belt": false, "hairStyle": "parted", "status": "기사 분류 확인 중…", "detail": "분류: [정책/전략] 공공기관 및 제도 개선, [기술/산업] 기술 도입 및 인프라 구축, [시장/동향] 기업 실적 및 경제 지표. 영향도: 1(저) ~ 5(고) - 산업 파급력과 증시 변동성 기준."}, {"id": "TK", "name": "툴킷", "role": "데이터 수집", "hair": "#888888", "body": "#2b8f8f", "pants": "#1c5a5a", "glasses": false, "cap": true, "belt": true, "hairStyle": "normal", "status": "시세 조회 실행 중…", "detail": "get_history(kepco,7d) → 수급 검증용:\n07-09: 종가 35200.0, 거래량 2061114\n07-10: 종가 36200.0, 거래량 1352856\n07-13: 종가 34250.0, 거래량 1778803\n07-14: 종가 33950.0, 거래량 2544172\n07-15: 종가 33900.0, 거래량 1534557\n07-16: 종가 34050.0, 거래량 1847121\n07-20: 종가 32800.0, 거래량 1146249"}], "research": {"bull": {"name": "삼추", "tag": "매수 논거", "text": "한국전력의 주가 하락 원인을 분석합니다.\n\n1. 호남 지역 전력망 적기 구축 실패 및 투자 가중 우려가 주가에 반영되었습니다. [출처: v.daum.net (2026-07-17 22:02)]\n2. 송변전 설비 구축 난항으로 인한 민간 주도 인프라 건설 압박이 비용 부담을 증대시켰습니다. [출처: 이투데이 (2026-07-20 01:27)]\n3. 계통 알박기(송전 용량을 확보한 뒤 설비를 설치하지 않아 타인의 접속을 막는 행위) 근절을 위한 정부 규제 강화가 사업 불확실성을 높였습니다. [출처: 전기신문 (2026-07-19 11:36)]"}, "bear": {"name": "사비", "tag": "매도 논거", "text": "비판 요원 U4입니다. 한국전력 주가 하락 원인을 분석합니다.\n\n1. 호남 전력망 구축 실패 및 투자 가중 우려: 24시간 이내 이벤트 아님. 수급 데이터로 직접 증명 불가. [기각]\n2. 송변전 설비 구축 난항 및 비용 부담 증대: 24시간 이내 이벤트 아님. 거래량 급증과 직접적 인과관계 확인 불가. [기각]\n3. 계통 알박기(송전 용량을 선점하고 설비를 미설치하여 후발 사업자의 접속을 방해하는 행위) 규제 강화: 24시간 이내 발생한 이벤트이나 주가 하락과 동기화된 거래량 폭증 패턴은 나타나지 않음. [추정]\n\n[평가 매트릭스]\n① 호남 전력망 이슈: [기각]\n② 민간 인프라 비용 부담: [기각]\n③ 계통 알박기 규제: [추정]\n\n종합판정: [추정]"}, "ace": {"name": "알파", "status": "오늘의 총평 확인 중…", "detail": "오늘은 5건이 특이합니다.\n\n코스피 지지선 이탈로 투매 심리가 시장을 지배합니다. [출처: 한국거래소]\n\n데이터센터 설비 투자 축소가 전력기기 업종의 실적 기대감을 훼손했습니다. [출처: (추정)]\n\n전력기기 업체 이익률 하락이 부품 협력사의 연쇄 유동성 위기로 이어집니다. [출처: (추정)]\n\n정부의 전력망 병목 해소 사업이 예산 삭감 기조와 결합하여 전면 재조정 중입니다. [출처: 기사 2, 7]\n\n반도체 설비 투자 철회에 따른 전력 인프라 산업의 타격 규모가 차주 실적 가이드라인에 반영될 예정입니다. [출처: (추정)]\n\n시장 낙폭은 직전 대비 확대되었습니다. 반도체발 충격이 전력 인프라 밸류체인 전반의 부실로 전이되는 양상입니다. 투자 심리 경색이 극심합니다."}}, "tickers": [{"name": "원/달러 환율", "value": "1,478.2", "pct": -0.05}, {"name": "반도체지수 SOX", "value": "11,673.89", "pct": -1.63}, {"name": "천연가스 (LNG 대리)", "value": "2.882", "pct": -1.0}, {"name": "구리 선물", "value": "6.280", "pct": 0.96}, {"name": "WTI 유가", "value": "83.88", "pct": 1.69}, {"name": "한국전력", "value": "32,800", "pct": -3.67}, {"name": "삼성전자", "value": "242,500", "pct": -4.9}, {"name": "SK하이닉스", "value": "1,759,000", "pct": -4.51}, {"name": "엔비디아", "value": "202.81", "pct": -2.21}, {"name": "금 선물", "value": "4,013.1", "pct": 0.01}, {"name": "미 10년물 금리", "value": "4.541", "pct": -0.61}]};
+
+function esc(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+const CHAR_GRID = [
+  "...HHHH...",
+  "...HHHH...",
+  "...SSSS...",
+  "...SSSS...",
+  "..AABBAA..",
+  "..ABBBBA..",
+  "..ABBBBA..",
+  "..ABBBBA..",
+  "...BBBB...",
+  "...PPPP...",
+  "..PP..PP..",
+  "..PP..PP..",
+];
+const CHAR_GRID_WIDE = CHAR_GRID.slice(0, 9).concat([
+  "..PPPPPP..",
+  ".PP....PP.",
+  ".PP....PP.",
+]);
+function pixelChar(cfg, size){
+  const cell = size||5, cols = 10;
+  const grid = cfg.stance === "wide" ? CHAR_GRID_WIDE : CHAR_GRID;
+  const rows = grid.length;
+  const colorOf = c => ({H:cfg.hair, S:"#f0c090", A:"#f0c090", B:cfg.body, P:cfg.pants}[c]);
+  let rects = "";
+  grid.forEach((row,y)=>{
+    for(let x=0;x<cols;x++){
+      const c = row[x];
+      if(c==="."||c===" ") continue;
+      rects += `<rect x="${x*cell}" y="${y*cell}" width="${cell}" height="${cell}" fill="${colorOf(c)}"/>`;
+    }
+  });
+  if(cfg.glasses){
+    rects += `<rect x="${3*cell}" y="${2*cell}" width="${cell}" height="${cell}" fill="#111"/>`;
+    rects += `<rect x="${6*cell}" y="${2*cell}" width="${cell}" height="${cell}" fill="#111"/>`;
+    rects += `<rect x="${4*cell}" y="${2*cell}" width="${2*cell}" height="1.5" fill="#111"/>`;
+  } else {
+    rects += `<rect x="${3*cell}" y="${2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#111"/>`;
+    rects += `<rect x="${6*cell}" y="${2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#111"/>`;
+  }
+  if(cfg.hairStyle === "ponytail"){
+    rects += `<rect x="${9*cell}" y="0" width="${cell}" height="${3*cell}" fill="${cfg.hair}"/>`;
+    rects += `<rect x="${9.5*cell}" y="${2.5*cell}" width="${cell*.7}" height="${cell*1.5}" fill="${cfg.hair}"/>`;
+  } else if(cfg.hairStyle === "parted"){
+    rects += `<rect x="${4.5*cell}" y="0" width="${cell*.5}" height="${cell*.7}" fill="#00000030"/>`;
+  }
+  if(cfg.cap){
+    rects += `<rect x="${2*cell}" y="0" width="${6*cell}" height="${cell*.8}" fill="${cfg.body}"/>`;
+    rects += `<rect x="${6.5*cell}" y="${cell*.2}" width="${cell*1.2}" height="${cell*.4}" fill="${cfg.hair}"/>`;
+  }
+  if(cfg.belt){
+    rects += `<rect x="${2*cell}" y="${8*cell}" width="${6*cell}" height="${cell*.5}" fill="#3a2a10"/>`;
+    rects += `<rect x="${4.6*cell}" y="${7.9*cell}" width="${cell*.8}" height="${cell*.7}" fill="#c99a2e"/>`;
+  }
+  if(cfg.bowtie){
+    rects += `<rect x="${4*cell}" y="${4.2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#c0453f"/>`;
+    rects += `<rect x="${5.4*cell}" y="${4.2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#c0453f"/>`;
+  }
+  const w = (cfg.hairStyle==="ponytail" ? cols+1 : cols)*cell, h = rows*cell;
+  return `<svg class="sprite" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${rects}</svg>`;
+}
+
+function renderAnalysts(){
+  const wrap = document.getElementById("analystFloor");
+  wrap.innerHTML = DATA.analysts.map((a,i)=>`
+    <div class="desk" onclick="openBubble('analyst', ${i})">
+      <div class="sprite-wrap">${pixelChar(a)}<span class="online-dot"></span></div>
+      <div class="nameplate">${esc(a.name)}</div>
+      <div class="roletag">${esc(a.role)}</div>
+      <div class="status">${esc(a.status)}<span class="car"></span></div>
+    </div>`).join("");
+}
+
+function renderResearch(){
+  const wrap = document.getElementById("researchFloor");
+  const b = DATA.research.bull, r = DATA.research.bear;
+  wrap.innerHTML = `
+    <div class="side" onclick="openBubble('research','bull')">
+      ${pixelChar({hair:"#1a1a1a",body:"#2f8f5b",pants:"#1c5a38",glasses:false,stance:"wide"})}
+      <div class="nameplate">${esc(b.name)}</div>
+      <span class="argtag bull">${esc(b.tag)}</span>
+      <div class="argbox">${esc(b.text.slice(0,34))}…</div>
+    </div>
+    <div class="vs">VS</div>
+    <div class="side" onclick="openBubble('research','bear')">
+      ${pixelChar({hair:"#1a1a1a",body:"#c0453f",pants:"#7a2420",glasses:true})}
+      <div class="nameplate">${esc(r.name)}</div>
+      <span class="argtag bear">${esc(r.tag)}</span>
+      <div class="argbox">${esc(r.text.slice(0,34))}…</div>
+    </div>`;
+  const ace = DATA.research.ace;
+  document.getElementById("aceRow").innerHTML = `
+    ${pixelChar({hair:"#c99a2e",body:"#1a1a2e",pants:"#000",glasses:false,bowtie:true},6)}
+    <div class="nameplate">${esc(ace.name)} <span style="color:#888;font-weight:400">· 수석</span></div>
+    <div class="status" onclick="openBubble('ace')">${esc(ace.status)}<span class="car"></span></div>`;
+}
+
+function renderChart(){
+  const c = DATA.chart;
+  if(c.price == null){
+    document.getElementById("cp-price").textContent = "수집 실패";
+    return;
+  }
+  const pts = c.points.length ? c.points : [c.price];
+  const lo = Math.min(...pts), hi = Math.max(...pts), rng = (hi-lo)||1;
+  const path = pts.map((v,i)=>`${(i/Math.max(1,pts.length-1)*200).toFixed(1)},${(46-(v-lo)/rng*40).toFixed(1)}`).join(" ");
+  document.getElementById("cp-svg").innerHTML =
+    `<polyline points="${path}" fill="none" stroke="#3ddc71" stroke-width="2"/>`;
+  document.getElementById("cp-price").textContent = c.price.toLocaleString(undefined,{minimumFractionDigits:2});
+  const pctEl = document.getElementById("cp-pct");
+  const up = (c.pct||0) >= 0;
+  pctEl.className = "chart-pct " + (up?"up":"down");
+  pctEl.textContent = c.pct==null ? "--" : (up?"▲ ":"▼ ") + Math.abs(c.pct).toFixed(2) + "%";
+  document.getElementById("ma20").textContent = c.ma20!=null ? c.ma20.toLocaleString() : "—";
+  document.getElementById("ma60").textContent = c.ma60!=null ? c.ma60.toLocaleString() : "—";
+}
+
+function renderPower(){
+  const el = document.getElementById("powerPanel");
+  const p = DATA.power;
+  if(!p){
+    el.innerHTML = `<div class="power-txt">⚡ 전력 관제 · <span style="color:#888">키 승인 대기 중…</span></div>`;
+    return;
+  }
+  const color = p.rate<10 ? "#ff5c5c" : (p.rate<15 ? "#ffd24d" : "#3ddc71");
+  el.innerHTML = `
+    <div class="gauge" style="--gp:${Math.min(100,p.rate*5)};--gc:${color}"><span>${p.rate}%</span></div>
+    <div class="power-txt">⚡ 전력 관제 · <b>${Math.round(p.demand).toLocaleString()}MW</b> 현재수요<br>
+      공급예비율 <b>${p.rate}%</b> · 공급능력 ${Math.round(p.supply).toLocaleString()}MW</div>`;
+}
+
+function renderTicker(){
+  const row = DATA.tickers.map(t=>{
+    const up = t.pct>=0;
+    return `<span class="${up?'up':'down'}">${esc(t.name)} ${esc(t.value)} ${up?'▲':'▼'}${Math.abs(t.pct).toFixed(2)}%</span>`;
+  }).join("");
+  document.getElementById("tickerTrack").innerHTML = row + row;
+}
+
+function openSheet(who, roleTiny, body){
+  document.getElementById("sheetWho").innerHTML = `${esc(who)} <span class="roleTiny">· ${esc(roleTiny)}</span>`;
+  document.getElementById("sheetBody").textContent = body;
+  document.getElementById("bottomSheet").classList.add("open");
+  document.getElementById("sheetBackdrop").classList.add("open");
+}
+function closeSheet(){
+  document.getElementById("bottomSheet").classList.remove("open");
+  document.getElementById("sheetBackdrop").classList.remove("open");
+}
+function openBubble(kind, key){
+  if(kind==="analyst"){
+    const a = DATA.analysts[key];
+    openSheet(a.name, a.role, a.detail);
+  } else if(kind==="ace"){
+    openSheet(DATA.research.ace.name, "수석 · 오늘의 총평", DATA.research.ace.detail);
+  } else {
+    const r = key==="bull" ? DATA.research.bull : DATA.research.bear;
+    openSheet(r.name, r.tag, r.text);
+  }
+}
+
+function tickClock(){
+  const now = new Date();
+  document.getElementById("clockNow").textContent =
+    now.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false});
+  const opt = tz => new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:tz});
+  try{
+    document.getElementById("tz-nyc").textContent = opt("America/New_York");
+    document.getElementById("tz-ldn").textContent = opt("Europe/London");
+    document.getElementById("tz-sel").textContent = opt("Asia/Seoul");
+  }catch(e){}
+}
+
+document.getElementById("genTime").textContent = (DATA.time||"").slice(11,16);
+renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderTicker();
+tickClock(); setInterval(tickClock, 30000);
+</script>
+</body>
+</html>
