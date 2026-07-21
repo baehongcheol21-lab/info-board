@@ -1,0 +1,272 @@
+{
+ "article_extract": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "기사 URL의 본문 텍스트 추출",
+   "args": {
+    "url": "str",
+    "max_chars": "int=2500"
+   },
+   "returns": "str",
+   "safety": "network"
+  }
+ ],
+ "conclusions_search": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "기억",
+   "desc": "discussions/*.json에서 keyword 포함된 최근 결론 n건 검색 (읽기 전용)",
+   "args": {
+    "keyword": "str=''",
+    "n": "int=3"
+   },
+   "returns": "str",
+   "safety": "write"
+  }
+ ],
+ "corr_graph": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "지표별 시계열들의 상관관계 네트워크(노드/엣지, |r|>=min_abs만)",
+   "args": {
+    "series_by_id": "{id: {date: value}}",
+    "min_abs": "float=0.4"
+   },
+   "returns": "{nodes:list[str], edges:list[{a,b,r}]}",
+   "safety": "pure"
+  }
+ ],
+ "dedup_titles": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "제목(title) 필드 앞 20자 기준으로 중복 항목 제거, 순서 보존",
+   "args": {
+    "items": "list[{title:str, ...}]"
+   },
+   "returns": "list[dict]",
+   "safety": "pure"
+  }
+ ],
+ "gtrends_fetch": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "구글 트렌드 관심도·급상승 연관검색어 (6h 캐시, 실패시 마지막 성공값 폴백)",
+   "args": {
+    "keywords": "list[str]?=None",
+    "force": "bool=False"
+   },
+   "returns": "{series, rising, fetched, stale, source}",
+   "safety": "network"
+  }
+ ],
+ "json_parse_loose": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "텍스트 중 첫 '{' ~ 마지막 '}' 구간을 JSON으로 파싱, 실패 시 폴백 dict",
+   "args": {
+    "text": "str",
+    "fallback_key": "str=raw"
+   },
+   "returns": "dict",
+   "safety": "pure"
+  }
+ ],
+ "news_search": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "구글뉴스 RSS 검색 (키 불필요)",
+   "args": {
+    "query": "str",
+    "max_items": "int=6"
+   },
+   "returns": "list[{title,link,published}]",
+   "safety": "network"
+  }
+ ],
+ "pct_change": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "n거래일 전 대비 변화율(%)",
+   "args": {
+    "history": "list[[date,value]]",
+    "days_back": "int"
+   },
+   "returns": "float | None",
+   "safety": "pure"
+  }
+ ],
+ "pearson": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "두 시계열의 피어슨 상관계수(-1~1). 표본<8이면 None",
+   "args": {
+    "xs": "list[float]",
+    "ys": "list[float]"
+   },
+   "returns": "float | None",
+   "safety": "pure"
+  }
+ ],
+ "power_mix_fetch": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "발전원별 발전량 중 최신 시각의 총발전(MW). 키 없으면 None",
+   "args": {},
+   "returns": "{total, time} | None",
+   "safety": "network"
+  }
+ ],
+ "retry_queue": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "기억",
+   "desc": "보류 큐 조회(load)/등록(push)/해제(clear). id는 지표 id",
+   "args": {
+    "action": "str(load|push|clear)",
+    "id": "str?=None",
+    "name": "str?=None",
+    "reason": "str?=None"
+   },
+   "returns": "list[{id,name,reason,ts}]",
+   "safety": "write"
+  }
+ ],
+ "rss_fetch": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "임의 RSS 주소 파싱",
+   "args": {
+    "url": "str",
+    "max_items": "int=15"
+   },
+   "returns": "list[{title,link,published}]",
+   "safety": "network"
+  }
+ ],
+ "smp_fetch": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "SMP 계통한계가격(육지 일평균). 키 없거나 미승인이면 None",
+   "args": {},
+   "returns": "float | None",
+   "safety": "network"
+  }
+ ],
+ "sukub_fetch": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "전력수급현황 — 공급예비율·공급능력·현재수요. 키 없으면 None",
+   "args": {},
+   "returns": "{rate, supply, demand, time} | None",
+   "safety": "network"
+  }
+ ],
+ "summary_clip": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "n자 근처 공백에서 자연스럽게 문자열을 자른다(단어 중간 절단 방지)",
+   "args": {
+    "text": "str",
+    "n": "int"
+   },
+   "returns": "str",
+   "safety": "pure"
+  }
+ ],
+ "usage_track": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "기억",
+   "desc": "오늘(KST) Gemini 키별 사용 콜 수 조회 (읽기 전용, 카운트 증가 없음)",
+   "args": {},
+   "returns": "{date, counts:{키번호:콜수}}",
+   "safety": "write"
+  }
+ ],
+ "verify_topic": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "검증",
+   "desc": "search 계열 명령의 query가 topic과 무관한지 검사 (search_news 외 도구는 항상 False)",
+   "args": {
+    "tool": "str",
+    "args": "dict",
+    "topic": "str"
+   },
+   "returns": "bool",
+   "safety": "pure"
+  }
+ ],
+ "yahoo_chart": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "지표 id 또는 야후 심볼의 과거 종가·거래량 (텍스트 라인)",
+   "args": {
+    "symbol_or_id": "str",
+    "days": "int=30"
+   },
+   "returns": "str",
+   "safety": "network"
+  }
+ ],
+ "yahoo_quote": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "야후 파이낸스 현재가·전일比·구간 종가열",
+   "args": {
+    "symbol": "str",
+    "rng": "str=1mo"
+   },
+   "returns": "{price, pct, closes:list[float]}",
+   "safety": "network"
+  }
+ ],
+ "zscore": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "최근 window일 분포 대비 마지막 값의 z-score",
+   "args": {
+    "history_values": "list[float]",
+    "window": "int=30"
+   },
+   "returns": "float | None",
+   "safety": "pure"
+  }
+ ]
+}
