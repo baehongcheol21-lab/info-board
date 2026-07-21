@@ -13,6 +13,20 @@
    "safety": "network"
   }
  ],
+ "cmd_parse": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "텍스트에서 {\"cmd\":...} 또는 {\"tool\":...} JSON 명령을 추출·검증 (중첩 객체 지원)",
+   "args": {
+    "text": "str",
+    "required_keys": "list[str]?=None"
+   },
+   "returns": "{found:bool, cmd:dict|None, error:str|None}",
+   "safety": "pure"
+  }
+ ],
  "conclusions_search": [
   {
    "version": 1,
@@ -41,6 +55,32 @@
    "safety": "pure"
   }
  ],
+ "dart_rss": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "DART 오늘의 공시 목록 (RSS, 키 불필요)",
+   "args": {
+    "max_items": "int=15"
+   },
+   "returns": "list[{title,link,published}]",
+   "safety": "network"
+  }
+ ],
+ "date_extract": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "텍스트에서 날짜 표현(YYYY-MM-DD, N월 N일 등) 추출",
+   "args": {
+    "text": "str"
+   },
+   "returns": "list[str]",
+   "safety": "pure"
+  }
+ ],
  "dedup_titles": [
   {
    "version": 1,
@@ -52,6 +92,80 @@
    },
    "returns": "list[dict]",
    "safety": "pure"
+  }
+ ],
+ "dispatch": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "실행",
+   "desc": "명령 dict({\"cmd\"/\"tool\":이름, ...인자})를 받아 해당 기관을 찾아 실행",
+   "args": {
+    "cmd_obj": "dict"
+   },
+   "returns": "{ok:bool, result:any, error:str|None}",
+   "safety": "network"
+  }
+ ],
+ "drawdown": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "최대낙폭(MDD, %) — 고점 대비 최대 하락폭",
+   "args": {
+    "values": "list[float]"
+   },
+   "returns": "{mdd_pct: float|None}",
+   "safety": "pure"
+  }
+ ],
+ "event_emit": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "기억",
+   "desc": "이벤트 한 줄을 스트림(stream/YYYY-MM-stream.jsonl)에 append",
+   "args": {
+    "type": "str",
+    "actor": "str",
+    "topic": "str=''",
+    "payload": "dict?=None",
+    "cause": "str?=None",
+    "dry_run": "bool=False"
+   },
+   "returns": "{eid:str|None, error:str|None}",
+   "safety": "write"
+  }
+ ],
+ "experience_append": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "기억",
+   "desc": "회의 1건의 기록을 experience/YYYY-MM.jsonl에 영구 append",
+   "args": {
+    "meeting_id": "str",
+    "record": "dict",
+    "dry_run": "bool=False"
+   },
+   "returns": "{ok:bool, error:str|None}",
+   "safety": "write"
+  }
+ ],
+ "glossary_store": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "기억",
+   "desc": "용어사전 조회(get)/등록(set)/전체조회(all)",
+   "args": {
+    "action": "str(get|set|all)",
+    "term": "str?=None",
+    "definition": "str?=None"
+   },
+   "returns": "dict",
+   "safety": "write"
   }
  ],
  "gtrends_fetch": [
@@ -82,6 +196,35 @@
    "safety": "pure"
   }
  ],
+ "lag_corr": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "두 시계열의 시차상관 — -max_lag~+max_lag 중 |r|이 가장 큰 지연을 찾는다",
+   "args": {
+    "xs": "list[float]",
+    "ys": "list[float]",
+    "max_lag": "int=10"
+   },
+   "returns": "{best_lag:int|None, best_r:float|None, by_lag:{lag:r}}",
+   "safety": "pure"
+  }
+ ],
+ "moving_avg": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "최근 window개 값의 이동평균(마지막 값 기준)",
+   "args": {
+    "values": "list[float]",
+    "window": "int"
+   },
+   "returns": "float | None",
+   "safety": "pure"
+  }
+ ],
  "news_search": [
   {
    "version": 1,
@@ -96,6 +239,34 @@
    "safety": "network"
   }
  ],
+ "news_search_dated": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "감각",
+   "desc": "구글뉴스 검색 + date_after(YYYY-MM-DD) 이후 발행분만 필터",
+   "args": {
+    "query": "str",
+    "date_after": "str",
+    "max_items": "int=6"
+   },
+   "returns": "list[{title,link,published}]",
+   "safety": "network"
+  }
+ ],
+ "num_extract": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "텍스트에서 숫자(천단위 콤마 허용)를 전부 float로 추출",
+   "args": {
+    "text": "str"
+   },
+   "returns": "list[float]",
+   "safety": "pure"
+  }
+ ],
  "pct_change": [
   {
    "version": 1,
@@ -107,6 +278,19 @@
     "days_back": "int"
    },
    "returns": "float | None",
+   "safety": "pure"
+  }
+ ],
+ "pct_claim_extract": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "텍스트에서 '숫자%' 형태의 주장을 전부 찾아 위치 맥락과 함께 반환",
+   "args": {
+    "text": "str"
+   },
+   "returns": "list[{claim_pct: float, context: str}]",
    "safety": "pure"
   }
  ],
@@ -124,6 +308,17 @@
    "safety": "pure"
   }
  ],
+ "pixel_char": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "화면",
+   "desc": "픽셀 캐릭터 렌더러 JS 정본(CHAR_GRID+pixelChar) — 새 화면에 캐릭터가 필요하면 여기서",
+   "args": {},
+   "returns": "str (JS 소스)",
+   "safety": "pure"
+  }
+ ],
  "power_mix_fetch": [
   {
    "version": 1,
@@ -133,6 +328,51 @@
    "args": {},
    "returns": "{total, time} | None",
    "safety": "network"
+  }
+ ],
+ "prompt_build": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "역할+문체규칙+전역상태+과제를 프롬프트 하나로 조립",
+   "args": {
+    "role": "str",
+    "style_rules": "str",
+    "global_state": "str=''",
+    "task": "str",
+    "extra": "str=''"
+   },
+   "returns": "str",
+   "safety": "pure"
+  }
+ ],
+ "py_sandbox": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "실행",
+   "desc": "생성 파이썬 코드를 격리 실행(클라우드 전용, import·이름 화이트리스트, 20s 타임아웃)",
+   "args": {
+    "code": "str",
+    "why": "str=''"
+   },
+   "returns": "{ok:bool, output:str, error:str|None}",
+   "safety": "sandbox"
+  }
+ ],
+ "rate_limit": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "실행",
+   "desc": "마지막 호출 시각 기준으로 min_interval_s를 채우려면 몇 초 더 기다려야 하는지 계산",
+   "args": {
+    "last_call_ts": "float",
+    "min_interval_s": "float=4.5"
+   },
+   "returns": "{wait_s: float, now: float}",
+   "safety": "pure"
   }
  ],
  "retry_queue": [
@@ -151,6 +391,35 @@
    "safety": "write"
   }
  ],
+ "retry_wrap": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "실행",
+   "desc": "dispatch 실행을 max_tries까지 재시도(실패 시 backoff_s 대기 후 재시도)",
+   "args": {
+    "cmd_obj": "dict",
+    "max_tries": "int=2",
+    "backoff_s": "float=1.0"
+   },
+   "returns": "{ok:bool, result:any, error:str|None, attempts:int}",
+   "safety": "network"
+  }
+ ],
+ "rsi": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "RSI(상대강도지수). period+1개 미만 데이터면 None",
+   "args": {
+    "closes": "list[float]",
+    "period": "int=14"
+   },
+   "returns": "float | None",
+   "safety": "pure"
+  }
+ ],
  "rss_fetch": [
   {
    "version": 1,
@@ -165,6 +434,33 @@
    "safety": "network"
   }
  ],
+ "rule_engine": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "실행",
+   "desc": "룰 1개(when.cond)를 이벤트 dict에 평가 — cond는 등록된 함수만 허용",
+   "args": {
+    "rule": "dict",
+    "event": "dict"
+   },
+   "returns": "{fired:bool, then:dict?, reason:str?}",
+   "safety": "pure"
+  }
+ ],
+ "safe_calc": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "안전 수식 계산 (사칙연산·abs/round/min/max/sum/len/sqrt/log/exp/mean/stdev, pi·e)",
+   "args": {
+    "expr": "str"
+   },
+   "returns": "float | int | list",
+   "safety": "pure"
+  }
+ ],
  "smp_fetch": [
   {
    "version": 1,
@@ -174,6 +470,21 @@
    "args": {},
    "returns": "float | None",
    "safety": "network"
+  }
+ ],
+ "spark_svg": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "화면",
+   "desc": "종가열로 미니 스파크라인 SVG 문자열 생성",
+   "args": {
+    "closes": "list[float]",
+    "width": "int=200",
+    "height": "int=36"
+   },
+   "returns": "str (SVG)",
+   "safety": "pure"
   }
  ],
  "sukub_fetch": [
@@ -201,6 +512,20 @@
    "safety": "pure"
   }
  ],
+ "term_extract": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "텍스트",
+   "desc": "텍스트에서 전문용어 후보(대문자 약어 + 한글 기술접미사 패턴) 추출",
+   "args": {
+    "text": "str",
+    "max_terms": "int=10"
+   },
+   "returns": "list[str]",
+   "safety": "pure"
+  }
+ ],
  "usage_track": [
   {
    "version": 1,
@@ -210,6 +535,72 @@
    "args": {},
    "returns": "{date, counts:{키번호:콜수}}",
    "safety": "write"
+  }
+ ],
+ "verify_date": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "검증",
+   "desc": "뉴스/공시 항목 목록의 최신 발행일이 max_age_h 이내인지 검사",
+   "args": {
+    "items": "list[{published:str}]",
+    "max_age_h": "float=48"
+   },
+   "returns": "{fresh:bool, newest:str|None, all_stale:bool}",
+   "safety": "pure"
+  }
+ ],
+ "verify_empty": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "검증",
+   "desc": "도구 결과가 비었거나(None/빈 리스트·딕셔너리·문자열) 실패 신호를 담고 있는지 검사",
+   "args": {
+    "result": "any"
+   },
+   "returns": "bool",
+   "safety": "pure"
+  }
+ ],
+ "verify_nan": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "검증",
+   "desc": "숫자 또는 숫자 리스트에 nan/inf가 있는지 검사",
+   "args": {
+    "value": "float | list[float]"
+   },
+   "returns": "bool",
+   "safety": "pure"
+  }
+ ],
+ "verify_source_tag": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "검증",
+   "desc": "텍스트에 [출처:] 또는 (추정) 표기가 있는지 검사",
+   "args": {
+    "text": "str"
+   },
+   "returns": "bool",
+   "safety": "pure"
+  }
+ ],
+ "verify_style": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "검증",
+   "desc": "채움말·뻔한 뜻풀이 등 STYLE 위반 패턴을 0콜로 검사",
+   "args": {
+    "text": "str"
+   },
+   "returns": "{ok:bool, violations:list[str]}",
+   "safety": "pure"
   }
  ],
  "verify_topic": [
@@ -224,6 +615,33 @@
     "topic": "str"
    },
    "returns": "bool",
+   "safety": "pure"
+  }
+ ],
+ "volatility": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "종가열의 일간 % 변화율 표준편차(변동성)",
+   "args": {
+    "closes": "list[float]"
+   },
+   "returns": "float | None",
+   "safety": "pure"
+  }
+ ],
+ "volume_spike": [
+  {
+   "version": 1,
+   "stable": true,
+   "category": "계산",
+   "desc": "최근 거래량이 그 이전 평균의 threshold배 이상이면 급증(spike)으로 판정",
+   "args": {
+    "volumes": "list[float]",
+    "threshold": "float=2.0"
+   },
+   "returns": "{spike: bool, ratio: float|None}",
    "safety": "pure"
   }
  ],
