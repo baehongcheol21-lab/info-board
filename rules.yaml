@@ -1,0 +1,83 @@
+# 반사신경 — 프로덕션 룰 (설계서_ACT_자율실행.md §4 원문 그대로, 문법 버그 1건만 수정)
+#
+# 원문 대비 수정: R01의 then 블록에 닫는 중괄호가 빠져 있어(문서 78~79행 사이) YAML로
+# 파싱이 안 됐다 — 실측으로 확인, 닫는 `}`만 추가했다(그 외 내용은 원문 그대로).
+#
+# active: true인 룰만 rules_engine.py가 평가한다. 마스터플랜 P11-2 지시("R01·02·05·06만
+# 활성")에 따라 이번 단계는 4개만 true — 나머지 8개는 원문 그대로 보관하되 꺼둔다.
+# 켜는 순서는 §7 회고가 근거를 쌓은 뒤 인간 승인으로만(§4 "룰 변경 거버넌스").
+#
+# cond 문자열은 conditions.py의 화이트리스트 딕셔너리 키와 정확히 일치해야 발화한다
+# (eval 금지 — 룩업만 허용, §4).
+
+- id: R01
+  desc: 검색 결과가 전부 48시간 이전 기사면 날짜 필터로 자동 재검색
+  active: true
+  when: {type: tool_result, tool: search, cond: "max_published_age_h > 48"}
+  then: {cmd: redo, target: search, fix: {date_after: "{today-1d}"}, max_fires_per_topic: 1}
+
+- id: R02
+  desc: 검색어-주제 불일치(P5 mismatch) 감지 시 주제어 강제 재검색
+  active: true
+  when: {type: tool_result, tool: search, cond: "mismatch == true"}
+  then: {cmd: redo, target: search, fix: {query: "{topic} {원쿼리}"}, max_fires_per_topic: 1}
+
+- id: R03
+  desc: U4 판정이 데이터부족 계열이면 재조회, 재조회도 같으면 보류 등록
+  active: false
+  when: {type: verdict, actor: U4, cond: "verdict in [원인불명,판단불가] and 데이터부족_마커"}
+  then: {cmd: history, id: "{topic_id}", days: 7, on_same_result: {cmd: hold}}
+
+- id: R04
+  desc: 요원 발언에 숫자 계산 주장(전일比 등)이 있으면 검산 큐에 등록
+  active: false
+  when: {type: agent_output, cond: "has_pct_claim"}
+  then: {cmd: calc, expr: "{auto_extract}", compare_to: "{claimed}", on_mismatch: notify_alpha}
+
+- id: R05
+  desc: 도구 결과 0건/실패 시 요원에게 대안 안내 부착
+  active: true
+  when: {type: tool_result, cond: "empty or error"}
+  then: {annotate: "다른 검색어를 쓰거나 hold를 선언하라"}
+
+- id: R06
+  desc: 같은 명령 해시 2회째면 실행 거부 (v1 승계)
+  active: true
+  when: {type: command, cond: "duplicate_sig"}
+  then: {reject: "같은 명령 반복 — 다른 방법 또는 hold"}
+
+- id: R07
+  desc: calc/python 결과에 nan/inf → 경고 부착
+  active: false
+  when: {type: tool_result, tool: [calc, python], cond: "has_nan_inf"}
+  then: {annotate: "수치 이상 — 입력을 점검하라"}
+
+- id: R08
+  desc: hold 선언 → retry_queue 등록 (P5 승계)
+  active: false
+  when: {type: command, cmd: hold}
+  then: {py: push_retry_queue}
+
+- id: R09
+  desc: 회의 콜 사용이 배분의 70% 미만으로 끝나면 잔여소진 라운드 개시 (P12 연동)
+  active: false
+  when: {type: meeting_end, cond: "calls_used < allot*0.7"}
+  then: {py: spend_remaining_budget}
+
+- id: R10
+  desc: 심층 판정 [확실] + 방향 존재 → 모의투자 모델3 신호 이벤트 발행 (P10 연동)
+  active: false
+  when: {type: verdict, cond: "verdict==확실 and direction"}
+  then: {emit: {type: trade_signal, model: 3}}
+
+- id: R11
+  desc: 동일 topic에서 룰 발화 총 6회 초과 → 그 topic 강제 hold (폭주 차단)
+  active: false
+  when: {type: rule_fired, cond: "fires_on_topic > 6"}
+  then: {cmd: hold, reason: "룰 발화 상한"}
+
+- id: R12
+  desc: error 이벤트 3연속 → 회의는 계속하되 파수꾼 경고 파일 기록
+  active: false
+  when: {type: error, cond: "consecutive >= 3"}
+  then: {py: write_alert}

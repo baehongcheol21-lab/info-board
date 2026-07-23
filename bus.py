@@ -7,7 +7,11 @@ bus.py — ACT v2(설계서_ACT_자율실행.md) §3 "혈관·신경"의 관측 
 이 모듈은 discuss.py의 실제 회의 로직(누가 뭘 묻고 어떻게 판단하는가)을 단 한 줄도
 바꾸지 않는다. 이미 끝난 transcript·result를 event_emit·cmd_parse·experience_append
 세 기관(P11-0에서 확보)에 통과시켜 stream/과 experience/에 "관측 기록"만 추가로 남긴다.
-반사신경(rules.yaml 엔진)과 뇌(brain.py 사이클)는 아직 없다 — 각각 P11-2·P11-3 몫.
+
+P11-2부터는 관측 직후 rules_engine.py(반사신경, R01·02·05·06만 active)를 이 스트림에
+한 번 더 통과시켜 rule_fired 이벤트도 같이 남긴다 — 여전히 discuss.py의 실시간 루프에는
+개입하지 않는 후행(post-hoc) 평가다(발화해도 명령을 실제 실행하지는 않음, §4·rules_engine.py
+docstring 참고). 뇌(brain.py 사이클)는 아직 없다 — P11-3 몫.
 
 실패해도 회의를 죽이지 않는다(§3 "기록 실패는 회의를 죽이지 않는다") — 공개 함수 전부
 내부에서 예외를 삼키고 stderr 경고만 남긴다. discuss.py 쪽 호출도 가드 임포트
@@ -17,6 +21,11 @@ bus.py — ACT v2(설계서_ACT_자율실행.md) §3 "혈관·신경"의 관측 
 import sys
 
 from registry import get_registry
+
+try:  # PyYAML 미설치 환경(예: 아주 오래된 로컬 셋업)에서도 관측 자체는 죽지 않게
+    import rules_engine
+except ImportError:
+    rules_engine = None
 
 _reg = None
 
@@ -67,34 +76,52 @@ def observe_meeting(meeting_id, now, result):
       4) meeting_end 이벤트 기록.
       5) experience_append 기관으로 회의 전체(result)를 experience/YYYY-MM.jsonl에 영구 저장
          (§6 일화기억 — "모든 수행결과를 파일에 계속 누적"의 직접 구현).
+      6) (P11-2) 위에서 쌓은 이벤트 전체를 rules_engine에 한 번 더 통과시켜 R01·02·05·06
+         발화 여부를 관측 — 발화하면 rule_fired 이벤트로 기록(§4). rules_engine이 없거나
+         실패해도(guard import) 1~5는 이미 끝난 뒤이므로 영향 없음.
 
     이 함수는 discussions.json 등 핵심 산출물이 이미 저장된 뒤 호출되므로, 여기서 나는
     어떤 예외도 회의 결과 자체에는 영향을 주지 않는다."""
     try:
         reg = _registry()
         transcript = result.get("transcript", [])
+        events = []  # rules_engine에 넘길 이번 회의의 이벤트 전체(순서 보존)
         cause = None
+
+        def _record(ev_type, actor, topic, payload, cause_eid):
+            eid = emit(ev_type, actor, topic=topic, payload=payload, cause=cause_eid)
+            if eid:
+                events.append({"eid": eid, "type": ev_type, "actor": actor, "topic": topic,
+                                "payload": payload, "cause": cause_eid})
+            return eid
+
         for entry in transcript:
             role = entry.get("role", "?")
             text = entry.get("text", "")
             ev_type = "tool_result" if role == "🧰도구" else "agent_output"
-            eid = emit(ev_type, role, topic=entry.get("topic", ""),
-                       payload={"text": text[:2000]}, cause=cause)
+            eid = _record(ev_type, role, entry.get("topic", ""), {"text": text[:2000]}, cause)
             if ev_type == "agent_output" and text:
                 try:
                     parsed = reg.run("cmd_parse", text=text)
                 except Exception:
                     parsed = {"found": False}
                 if parsed.get("found") and parsed.get("cmd"):
-                    emit("command", role, topic=entry.get("topic", ""),
-                         payload={"cmd": parsed["cmd"]}, cause=eid)
+                    _record("command", role, entry.get("topic", ""), {"cmd": parsed["cmd"]}, eid)
             cause = eid or cause
-        emit("meeting_end", "brain", topic=meeting_id,
-             payload={"calls_used": result.get("calls_used"),
-                      "transcript_len": len(transcript),
-                      "meeting_ok": result.get("meeting_ok")})
+        _record("meeting_end", "brain", meeting_id,
+                {"calls_used": result.get("calls_used"), "transcript_len": len(transcript),
+                 "meeting_ok": result.get("meeting_ok")}, None)
         r = reg.run("experience_append", meeting_id=meeting_id, record=result)
         if r.get("error"):
             print(f"  ⚠️ bus.observe_meeting: experience_append 실패: {r['error']}", file=sys.stderr)
+
+        if rules_engine:
+            try:
+                fired = rules_engine.evaluate_stream(events, emit_fn=emit)
+                if fired:
+                    print(f"  🧠 반사신경 발화 {len(fired)}건: "
+                          f"{[f['rule_id'] for f in fired]}")
+            except Exception as e:
+                _warn("observe_meeting(rules_engine)", e)
     except Exception as e:
         _warn("observe_meeting", e)

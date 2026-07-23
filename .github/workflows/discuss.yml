@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install requests google-genai
+      - run: pip install requests google-genai pyyaml
       - name: AI 오케스트라 토론 (최대 150콜)
         # 계정(키) 추가 시: 여기 env에 GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }} 한 줄만 더 추가
         # (gemini_keys.py가 번호를 자동 인식하므로 discuss.py 코드는 건드릴 필요 없음)
