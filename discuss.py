@@ -29,6 +29,11 @@ try:  # P5 관측 로그
 except ImportError:
     runlog = None
 
+try:  # P11-1 관측 계층 (설계서_ACT_자율실행.md §3·§6·§9-1) — 없어도 회의는 그대로 진행
+    import bus
+except ImportError:
+    bus = None
+
 
 def _diag(e):
     """실패 원인을 한 줄로 못 잡을 때(예: 인코딩 문제) 다음 조사를 위해 traceback 마지막 줄을 남긴다."""
@@ -111,6 +116,9 @@ def main():
         return
     print(f"🔑 등록된 계정 {len(b.keys)}개 (오늘 이론상 최대 {b.total_daily_limit}콜)")
     now = datetime.datetime.now(KST)
+    meeting_id = f"{now:%Y%m%dT%H%M}"
+    if bus:
+        bus.emit_meeting_start(meeting_id, now)
     prev = load_prev()
     prev_ind = prev.get("indicators", {})
     prev_brief = prev.get("alpha_brief", "")
@@ -408,6 +416,8 @@ U4 검증(요약): {u4[:600]}
         for _id, d in snap.items():
             w.writerow([d["name"], d["value"], d["unit"], d["pct"],
                         out_ind.get(_id, {}).get("summary", "").replace("\n", " ")])
+    if bus:
+        bus.observe_meeting(meeting_id, now, result)
     print(f"✅ 완료 — {b.used}콜 (한도 {MAX_CALLS})")
 
 
