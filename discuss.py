@@ -10,6 +10,12 @@ v2 개편 (요구사항_체크리스트.md 반영):
           출처태그, 전역상태 버스, 기억은행 주입, 상태압축(요약만 전달)
   [문체]  유치한 비유 금지 / 뻔한 뜻풀이 금지 / 채움말 금지 / 예시 돌림 금지
   [병렬화] asyncio 검토했으나 무료티어 분당 15콜 제한과 상충 → 보류 (체크리스트 D11)
+
+P11-3 재배치 (설계서_ACT_자율실행.md §5·§9-3):
+  회의의 5단계를 brain.py의 결정 사이클이 부르는 phase 함수로 "재배치"했다. 프롬프트·STYLE·
+  budget·방어로직은 **한 글자도 안 바꿨다** — 블록을 그대로 함수로 옮겼을 뿐이다. brain이
+  phase 사이사이 실시간 관측·반사신경을 돌리고, 최종 result는 예전과 동일하게 finalize가 만든다.
+  brain을 끄면(BRAIN_DISABLED=1) _run_sequential이 예전과 완전히 같은 순서로 돈다(§9-5 롤백).
 """
 import os
 import re
@@ -33,6 +39,11 @@ try:  # P11-1 관측 계층 (설계서_ACT_자율실행.md §3·§6·§9-1) — 
     import bus
 except ImportError:
     bus = None
+
+try:  # P11-3 뇌(결정 사이클) — 없거나 BRAIN_DISABLED=1이면 레거시 순차 경로로 폴백
+    import brain
+except ImportError:
+    brain = None
 
 
 def _diag(e):
@@ -108,21 +119,29 @@ def build_global_state(snap, now):
     return f"[전역 상태] {session}\n[오늘 큰 움직임] {mv or '없음'}"
 
 
-def main():
-    try:
-        b = RotatingBudget(per_run_cap=MAX_CALLS)
-    except RuntimeError as e:
-        print(f"❌ {e}")
-        return
-    print(f"🔑 등록된 계정 {len(b.keys)}개 (오늘 이론상 최대 {b.total_daily_limit}콜)")
-    now = datetime.datetime.now(KST)
-    meeting_id = f"{now:%Y%m%dT%H%M}"
-    if bus:
-        bus.emit_meeting_start(meeting_id, now)
-    prev = load_prev()
-    prev_ind = prev.get("indicators", {})
-    prev_brief = prev.get("alpha_brief", "")
+class Meeting:
+    """회의 1건이 phase들 사이로 넘겨 주고받는 공유 상태(구 discuss.main()의 지역변수들).
+    phase 함수는 이 컨텍스트를 읽고 쓴다 — 순서·상한은 brain이 통제한다."""
 
+    def __init__(self, now, prev):
+        self.now = now
+        self.meeting_id = f"{now:%Y%m%dT%H%M}"
+        self.prev_ind = prev.get("indicators", {})
+        self.prev_brief = prev.get("alpha_brief", "")
+        self.snap = {}
+        self.gstate = ""
+        self.memory = ""
+        self.out_ind = {}
+        self.news_brief = {}
+        self.brief = ""
+
+
+# ============================================================================
+# phase 함수들 — 구 discuss.main()의 [1/5]~[5/5] 블록을 한 글자도 안 바꾸고 옮긴 것.
+# 각 함수는 (budget b, Meeting m)을 받아 m을 갱신한다. brain이 이 순서대로 부른다.
+# ============================================================================
+
+def phase_perceive(b, m):
     # ---- 1. 데이터 수집 (0콜) ----
     print("[1/5] 데이터 수집")
     snap = {}
@@ -135,12 +154,16 @@ def main():
     smp = fetch_smp()
     if smp:
         snap["smp"] = {"name": "SMP 계통한계가격", "value": smp, "pct": None, "unit": "원/kWh"}
-    gstate = build_global_state(snap, now)
-    memory = tools.get_conclusions("", n=2)  # 기억 은행 (D10)
+    m.snap = snap
+    m.gstate = build_global_state(snap, m.now)
+    m.memory = tools.get_conclusions("", n=2)  # 기억 은행 (D10)
 
+
+def phase_indicators(b, m):
+    snap, gstate, prev_ind = m.snap, m.gstate, m.prev_ind
     # ---- 2. U1 지표요약 (변동 <0.5%는 직전 요약 재사용 = 0콜) ----
     print("[2/5] U1 지표요약")
-    out_ind = {}
+    out_ind = m.out_ind
     for _id, d in snap.items():
         if (d["pct"] is not None and abs(d["pct"]) < 0.5
                 and prev_ind.get(_id, {}).get("summary")):
@@ -158,6 +181,9 @@ def main():
         except Exception as e:
             print(f"  ⚠️ {_id}: {_diag(e)}")
 
+
+def phase_news(b, m):
+    gstate, prev_brief = m.gstate, m.prev_brief
     # ---- 3. 뉴스 파이프라인 (다중 소스: 전기신문 + 인베스팅닷컴) ----
     print("[3/5] 뉴스 파이프라인 (다중소스 크롤링→U2 분석→B2 분류→맥락)")
     news_brief = {}
@@ -273,7 +299,11 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
                       "focus": cj.get("주목", ""), "articles": articles}
     except Exception as e:
         print(f"  ⚠️ 뉴스 파이프라인 실패(토론은 계속): {_diag(e)}")
+    m.news_brief = news_brief
 
+
+def phase_deepdive(b, m):
+    snap, gstate, memory, now, out_ind = m.snap, m.gstate, m.memory, m.now, m.out_ind
     # ---- 4. 이상신호 심층토론 (도구 사용 + 방어로직) ----
     anomalies = sorted(
         [(_id, d) for _id, d in snap.items() if d["pct"] is not None and abs(d["pct"]) >= 2],
@@ -377,8 +407,12 @@ U4 검증(요약): {u4[:600]}
         except Exception as e:
             print(f"  ⚠️ {_id} 토론 실패: {_diag(e)}")
 
+
+def phase_brief(b, m):
+    snap, news_brief, gstate, prev_brief = m.snap, m.news_brief, m.gstate, m.prev_brief
     # ---- 5. 알파 총평 ----
     print("[5/5] 알파 총평")
+    brief = ""
     try:
         lines = [f"- {d['name']}: {d['value']} {d['unit']} ({d['pct']}%)" for d in snap.values()]
         brief = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
@@ -392,7 +426,13 @@ U4 검증(요약): {u4[:600]}
 직전 대비 흐름 변화가 있으면 짚어라. 채움말 금지.""", topic="오늘의 총평")
     except Exception:
         brief = ""
+    m.brief = brief
 
+
+def finalize(b, m):
+    """구 discuss.main()의 저장 블록. result를 만들고 파일에 쓰고 돌려준다.
+    (bus 이벤트 기록은 경로별로 밖에서 처리 — brain은 실시간, 레거시는 observe_meeting.)"""
+    now, out_ind, news_brief = m.now, m.out_ind, m.news_brief
     # ---- 저장 ----
     # transcript 필수화 (P5 #4): "콜은 썼는데 녹취 0줄"인 조용한 실패를 여기서 반드시 기록한다.
     meeting_ok = bool(b.transcript)
@@ -401,7 +441,7 @@ U4 검증(요약): {u4[:600]}
     if runlog:
         runlog.log_meeting(meeting_ok, b.used, len(b.transcript),
                             note="" if meeting_ok else "transcript 비어있음")
-    result = {"time": now.isoformat(timespec="minutes"), "alpha_brief": brief,
+    result = {"time": now.isoformat(timespec="minutes"), "alpha_brief": m.brief,
               "indicators": out_ind, "news_brief": news_brief,
               "calls_used": b.used, "transcript": b.transcript, "meeting_ok": meeting_ok}
     with open("discussions.json", "w", encoding="utf-8") as f:
@@ -413,11 +453,52 @@ U4 검증(요약): {u4[:600]}
     with open(f"exports/{now:%Y-%m-%d}.csv", "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
         w.writerow(["지표", "값", "단위", "전일比%", "요약"])
-        for _id, d in snap.items():
+        for _id, d in m.snap.items():
             w.writerow([d["name"], d["value"], d["unit"], d["pct"],
                         out_ind.get(_id, {}).get("summary", "").replace("\n", " ")])
+    return result
+
+
+PHASES = [
+    ("perceive", phase_perceive),
+    ("indicators", phase_indicators),
+    ("news", phase_news),
+    ("deepdive", phase_deepdive),
+    ("brief", phase_brief),
+]
+
+
+def _run_sequential(m, b):
+    """레거시(brain 비활성) 경로 — 구 discuss.main()과 완전히 같은 순서·같은 bus 호출.
+    BRAIN_DISABLED=1 또는 brain/bus 임포트 실패 시 이 경로로 폴백한다(§9-5 롤백선)."""
     if bus:
-        bus.observe_meeting(meeting_id, now, result)
+        bus.emit_meeting_start(m.meeting_id, m.now)
+    for _name, fn in PHASES:
+        fn(b, m)
+    result = finalize(b, m)
+    if bus:
+        bus.observe_meeting(m.meeting_id, m.now, result)
+    return result
+
+
+def main():
+    try:
+        b = RotatingBudget(per_run_cap=MAX_CALLS)
+    except RuntimeError as e:
+        print(f"❌ {e}")
+        return
+    print(f"🔑 등록된 계정 {len(b.keys)}개 (오늘 이론상 최대 {b.total_daily_limit}콜)")
+    now = datetime.datetime.now(KST)
+    m = Meeting(now, load_prev())
+
+    use_brain = bus is not None and brain is not None and not brain.disabled()
+    if use_brain:
+        print("🧠 brain 사이클 경로 (P11-3)")
+        brain.run_meeting(m, b, PHASES, finalize)
+    else:
+        why = "brain/bus 없음" if (bus is None or brain is None) else "BRAIN_DISABLED=1"
+        print(f"↩️ 레거시 순차 경로 ({why})")
+        _run_sequential(m, b)
     print(f"✅ 완료 — {b.used}콜 (한도 {MAX_CALLS})")
 
 

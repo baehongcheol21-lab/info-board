@@ -39,39 +39,54 @@ def _cmd_sig(cmd):
     return hashlib.md5(json.dumps(cmd, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()
 
 
+class ReflexEngine:
+    """상태 유지 반사신경 엔진 — brain.py(P11-3)가 사이클 중 이벤트를 조금씩(phase 단위로)
+    먹여도 R06 중복탐지가 회의 전체에 걸쳐 이어지도록 seen_sigs를 인스턴스에 보관한다.
+    (P11-2의 evaluate_stream은 한 방에 전체를 평가하는 무상태 버전 — 그건 그대로 유지하고
+    아래에서 이 엔진에 위임한다.)"""
+
+    def __init__(self, rules=None):
+        rules = rules if rules is not None else load_rules()
+        self.active_rules = [r for r in rules if r.get("active")]
+        self.seen_sigs = set()
+
+    def feed(self, events, emit_fn=None):
+        """새로 들어온 이벤트들만 평가한다(이미 먹인 건 다시 주지 말 것 — 재발화 방지).
+        emit_fn(=bus.emit)을 주면 발화마다 rule_fired 이벤트를 기록한다.
+        반환: [{rule_id, event_eid, topic, then}, ...] — 발화 순서 보존."""
+        fired = []
+        for ev in events:
+            payload = dict(ev.get("payload") or {})
+            if ev.get("type") == "command":
+                sig = _cmd_sig(payload.get("cmd", {}))
+                payload["duplicate"] = sig in self.seen_sigs
+                self.seen_sigs.add(sig)
+            probe = {**ev, "payload": payload}
+            for rule in self.active_rules:
+                when = rule.get("when") or {}
+                if when.get("type") and when["type"] != ev.get("type"):
+                    continue
+                checker = CONDITIONS.get(when.get("cond"))
+                if not checker:
+                    continue
+                try:
+                    matched = bool(checker(probe))
+                except Exception:
+                    matched = False
+                if not matched:
+                    continue
+                rec = {"rule_id": rule["id"], "event_eid": ev.get("eid"),
+                       "topic": ev.get("topic", ""), "then": rule.get("then")}
+                fired.append(rec)
+                if emit_fn:
+                    emit_fn("rule_fired", f"rule:{rule['id']}", topic=ev.get("topic", ""),
+                            payload={"rule_id": rule["id"], "desc": rule.get("desc"),
+                                     "then": rule.get("then")},
+                            cause=ev.get("eid"))
+        return fired
+
+
 def evaluate_stream(events, rules=None, emit_fn=None):
-    """events: 시간순 Event dict 리스트(§3 스키마 — eid/type/actor/topic/payload/cause).
-    emit_fn(type, actor, topic, payload, cause) 시그니처(=bus.emit과 동일)를 주면 발화마다
-    rule_fired 이벤트를 기록한다. None이면 기록 없이 발화 목록만 돌려준다(테스트용).
-    반환: [{rule_id, event_eid, then}, ...] — 발화 순서 보존."""
-    rules = rules if rules is not None else load_rules()
-    active_rules = [r for r in rules if r.get("active")]
-    seen_sigs = set()
-    fired = []
-    for ev in events:
-        payload = dict(ev.get("payload") or {})
-        if ev.get("type") == "command":
-            sig = _cmd_sig(payload.get("cmd", {}))
-            payload["duplicate"] = sig in seen_sigs
-            seen_sigs.add(sig)
-        probe = {**ev, "payload": payload}
-        for rule in active_rules:
-            when = rule.get("when") or {}
-            if when.get("type") and when["type"] != ev.get("type"):
-                continue
-            checker = CONDITIONS.get(when.get("cond"))
-            if not checker:
-                continue
-            try:
-                matched = bool(checker(probe))
-            except Exception:
-                matched = False
-            if not matched:
-                continue
-            rec = {"rule_id": rule["id"], "event_eid": ev.get("eid"), "then": rule.get("then")}
-            fired.append(rec)
-            if emit_fn:
-                emit_fn("rule_fired", f"rule:{rule['id']}", topic=ev.get("topic", ""),
-                        payload={"rule_id": rule["id"], "desc": rule.get("desc"), "then": rule.get("then")},
-                        cause=ev.get("eid"))
-    return fired
+    """무상태 일괄 평가(P11-2 테스트·후행 평가용). ReflexEngine에 전체를 한 번에 먹인 것과 같다.
+    반환: [{rule_id, event_eid, topic, then}, ...]."""
+    return ReflexEngine(rules).feed(events, emit_fn=emit_fn)
