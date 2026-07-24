@@ -745,3 +745,58 @@
 {"ts": "2026-07-24T06:36:32+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력", "prompt_chars": 997, "ok": true, "sec": 1.37, "err_class": null}
 {"ts": "2026-07-24T06:36:37+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력", "prompt_chars": 1233, "ok": true, "sec": 1.57, "err_class": null}
 {"ts": "2026-07-24T06:36:41+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "오늘의 총평", "prompt_chars": 1567, "ok": true, "sec": 1.48, "err_class": null}
+{"ts": "2026-07-24T14:33:02+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "원/달러 환율", "prompt_chars": 603, "ok": true, "sec": 2.35, "err_class": null}
+{"ts": "2026-07-24T14:33:05+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 600, "ok": true, "sec": 0.66, "err_class": null}
+{"ts": "2026-07-24T14:33:09+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX", "prompt_chars": 608, "ok": true, "sec": 0.86, "err_class": null}
+{"ts": "2026-07-24T14:33:14+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 601, "ok": true, "sec": 0.79, "err_class": null}
+{"ts": "2026-07-24T14:33:18+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 604, "ok": true, "sec": 0.92, "err_class": null}
+{"ts": "2026-07-24T14:33:23+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "엔비디아", "prompt_chars": 601, "ok": true, "sec": 0.71, "err_class": null}
+{"ts": "2026-07-24T14:33:27+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 10년물 금리", "prompt_chars": 602, "ok": true, "sec": 0.77, "err_class": null}
+{"ts": "2026-07-24T14:33:32+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "정부 “美, 한국 관세 15% 상한선 준수 입장 재확인", "prompt_chars": 1735, "ok": true, "sec": 0.9, "err_class": null}
+{"ts": "2026-07-24T14:33:36+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "(월요기획)‘中 비중 69%’ 태양광 인버터 시장, ‘", "prompt_chars": 2259, "ok": true, "sec": 0.96, "err_class": null}
+{"ts": "2026-07-24T14:33:41+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "김양우 한전 감독관 “바다 건넌 전력망, 서남권 재생에", "prompt_chars": 2249, "ok": true, "sec": 0.71, "err_class": null}
+{"ts": "2026-07-24T14:33:45+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "이태헌 감리단장 “설계와 현장의 간극, 검증과 조정으로", "prompt_chars": 2242, "ok": true, "sec": 0.86, "err_class": null}
+{"ts": "2026-07-24T14:33:50+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "김성환 기후장관 \"재생에너지만 확대하면 전기요금 대폭 ", "prompt_chars": 1668, "ok": true, "sec": 0.75, "err_class": null}
+{"ts": "2026-07-24T14:33:54+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "노동부, 산업보건-화학물질 제도 정책포럼 세미나 개최", "prompt_chars": 1498, "ok": true, "sec": 0.7, "err_class": null}
+{"ts": "2026-07-24T14:33:59+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "263m 철탑 세워 2㎞ 바다 넘었다…운남-안좌 송전선", "prompt_chars": 2247, "ok": true, "sec": 0.89, "err_class": null}
+{"ts": "2026-07-24T14:34:03+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "전기안전인재개발원, 직업계고 고교학점제 교육 확대", "prompt_chars": 1334, "ok": true, "sec": 0.58, "err_class": null}
+{"ts": "2026-07-24T14:34:08+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK시그넷 결국 매각 수순...SK, 공개매수로 상장폐", "prompt_chars": 2241, "ok": true, "sec": 0.82, "err_class": null}
+{"ts": "2026-07-24T14:34:12+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "소방전기분야 공사원가 산정 쉬워졌다", "prompt_chars": 2016, "ok": true, "sec": 0.74, "err_class": null}
+{"ts": "2026-07-24T14:34:17+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "산업부, 복수국간 그린경제협정 공청회 개최", "prompt_chars": 1491, "ok": true, "sec": 0.7, "err_class": null}
+{"ts": "2026-07-24T14:34:21+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "원광에스앤티, ‘혁신 프리미어 1000’ 선정...정책", "prompt_chars": 1589, "ok": true, "sec": 0.79, "err_class": null}
+{"ts": "2026-07-24T14:34:26+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "﻿5배 뛴 삼성전기, 아직 끝 아니다…증권가 \"300만", "prompt_chars": 770, "ok": true, "sec": 0.74, "err_class": null}
+{"ts": "2026-07-24T14:34:30+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "공정위, 독립 후 복귀 친족 ‘동일인 관련자’ 재지정…", "prompt_chars": 774, "ok": true, "sec": 1.01, "err_class": null}
+{"ts": "2026-07-24T14:34:35+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "’K바이오 투톱’ 삼성바이오·셀트, 실적 신기원…’합산", "prompt_chars": 778, "ok": true, "sec": 0.68, "err_class": null}
+{"ts": "2026-07-24T14:34:39+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "NXT 거래한도 유예 9월 종료…무더기 종목 편출맞나", "prompt_chars": 762, "ok": true, "sec": 0.92, "err_class": null}
+{"ts": "2026-07-24T14:34:44+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "[K신약 AtoZ⑫] 상업적 성공 못 이뤘지만…JW중외", "prompt_chars": 780, "ok": true, "sec": 0.8, "err_class": null}
+{"ts": "2026-07-24T14:34:48+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "[기자수첩] 비만치료제 ’묻지마 경쟁’ 안된다", "prompt_chars": 758, "ok": true, "sec": 0.6, "err_class": null}
+{"ts": "2026-07-24T14:34:53+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "HMM, ’중장기 전략’ 29조원 베팅...종합 해운·", "prompt_chars": 775, "ok": true, "sec": 0.78, "err_class": null}
+{"ts": "2026-07-24T14:34:57+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "’형지코인’보다 ’형지페이’ 먼저…형지글로벌, 결제 생", "prompt_chars": 771, "ok": true, "sec": 0.83, "err_class": null}
+{"ts": "2026-07-24T14:35:03+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "日 300조엔 연기금, 첫 국내 대체투자…GPIF 리밸", "prompt_chars": 775, "ok": true, "sec": 1.59, "err_class": null}
+{"ts": "2026-07-24T14:35:06+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "트럼프 관세로 아시아 증시 하락, 한국·일본 급락", "prompt_chars": 760, "ok": true, "sec": 0.78, "err_class": null}
+{"ts": "2026-07-24T14:35:11+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "일본 6월 CPI, 예상치 부합…근원 인플레이션은 BO", "prompt_chars": 775, "ok": true, "sec": 0.63, "err_class": null}
+{"ts": "2026-07-24T14:35:15+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미국 주간 실업수당 청구 18.7만 건, 1969년 이", "prompt_chars": 772, "ok": true, "sec": 0.65, "err_class": null}
+{"ts": "2026-07-24T14:35:23+09:00", "agent": "B2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "기사 분류", "prompt_chars": 5914, "ok": true, "sec": 4.38, "err_class": null}
+{"ts": "2026-07-24T14:35:24+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "뉴스 맥락", "prompt_chars": 2533, "ok": true, "sec": 0.96, "err_class": null}
+{"ts": "2026-07-24T14:35:41+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "日 300조엔 연기금, 첫 국내 대체투자…GPIF 리밸", "prompt_chars": 908, "ok": true, "sec": 13.01, "err_class": null}
+{"ts": "2026-07-24T14:35:42+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "日 300조엔 연기금, 첫 국내 대체투자…GPIF 리밸", "prompt_chars": 252, "ok": true, "sec": 0.74, "err_class": null}
+{"ts": "2026-07-24T14:35:46+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "日 300조엔 연기금, 첫 국내 대체투자…GPIF 리밸", "prompt_chars": 138, "ok": true, "sec": 0.46, "err_class": null}
+{"ts": "2026-07-24T14:36:01+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "트럼프 관세로 아시아 증시 하락, 한국·일본 급락", "prompt_chars": 882, "ok": true, "sec": 10.73, "err_class": null}
+{"ts": "2026-07-24T14:36:01+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "트럼프 관세로 아시아 증시 하락, 한국·일본 급락", "prompt_chars": 232, "ok": true, "sec": 0.71, "err_class": null}
+{"ts": "2026-07-24T14:36:06+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "트럼프 관세로 아시아 증시 하락, 한국·일본 급락", "prompt_chars": 123, "ok": true, "sec": 0.46, "err_class": null}
+{"ts": "2026-07-24T14:36:22+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "정부 “美, 한국 관세 15% 상한선 준수 입장 재확인", "prompt_chars": 1791, "ok": true, "sec": 11.88, "err_class": null}
+{"ts": "2026-07-24T14:36:22+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "정부 “美, 한국 관세 15% 상한선 준수 입장 재확인", "prompt_chars": 237, "ok": true, "sec": 0.81, "err_class": null}
+{"ts": "2026-07-24T14:36:27+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "정부 “美, 한국 관세 15% 상한선 준수 입장 재확인", "prompt_chars": 127, "ok": true, "sec": 0.52, "err_class": null}
+{"ts": "2026-07-24T14:36:31+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 1525, "ok": true, "sec": 0.45, "err_class": null}
+{"ts": "2026-07-24T14:36:37+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 3608, "ok": true, "sec": 1.42, "err_class": null}
+{"ts": "2026-07-24T14:36:41+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 1266, "ok": true, "sec": 1.55, "err_class": null}
+{"ts": "2026-07-24T14:36:45+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 1565, "ok": true, "sec": 1.24, "err_class": null}
+{"ts": "2026-07-24T14:36:49+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 1530, "ok": true, "sec": 0.47, "err_class": null}
+{"ts": "2026-07-24T14:36:55+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 3311, "ok": true, "sec": 1.56, "err_class": null}
+{"ts": "2026-07-24T14:36:59+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 1325, "ok": true, "sec": 1.53, "err_class": null}
+{"ts": "2026-07-24T14:37:04+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 1658, "ok": true, "sec": 1.44, "err_class": null}
+{"ts": "2026-07-24T14:37:07+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1523, "ok": true, "sec": 0.5, "err_class": null}
+{"ts": "2026-07-24T14:37:12+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 3268, "ok": true, "sec": 1.22, "err_class": null}
+{"ts": "2026-07-24T14:37:17+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1170, "ok": true, "sec": 1.27, "err_class": null}
+{"ts": "2026-07-24T14:37:21+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1457, "ok": true, "sec": 1.26, "err_class": null}
+{"ts": "2026-07-24T14:37:26+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "오늘의 총평", "prompt_chars": 1580, "ok": true, "sec": 1.54, "err_class": null}
