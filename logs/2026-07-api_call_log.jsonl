@@ -1507,3 +1507,61 @@
 {"ts": "2026-07-28T14:32:23+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1181, "ok": true, "sec": 1.7, "err_class": null}
 {"ts": "2026-07-28T14:32:27+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1639, "ok": true, "sec": 1.55, "err_class": null}
 {"ts": "2026-07-28T14:32:31+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "오늘의 총평", "prompt_chars": 1671, "ok": true, "sec": 1.16, "err_class": null}
+{"ts": "2026-07-28T19:55:32+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 604, "ok": true, "sec": 2.33, "err_class": null}
+{"ts": "2026-07-28T19:55:35+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX", "prompt_chars": 610, "ok": true, "sec": 1.1, "err_class": null}
+{"ts": "2026-07-28T19:55:39+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "천연가스 (LNG 대리)", "prompt_chars": 612, "ok": true, "sec": 0.72, "err_class": null}
+{"ts": "2026-07-28T19:55:44+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "WTI 유가", "prompt_chars": 605, "ok": true, "sec": 0.81, "err_class": null}
+{"ts": "2026-07-28T19:55:48+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력", "prompt_chars": 603, "ok": true, "sec": 1.16, "err_class": null}
+{"ts": "2026-07-28T19:55:52+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 605, "ok": true, "sec": 0.72, "err_class": null}
+{"ts": "2026-07-28T19:55:57+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 608, "ok": true, "sec": 0.85, "err_class": null}
+{"ts": "2026-07-28T19:56:02+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "엔비디아", "prompt_chars": 604, "ok": true, "sec": 1.02, "err_class": null}
+{"ts": "2026-07-28T19:56:06+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물", "prompt_chars": 604, "ok": true, "sec": 0.94, "err_class": null}
+{"ts": "2026-07-28T19:56:10+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 10년물 금리", "prompt_chars": 606, "ok": true, "sec": 0.73, "err_class": null}
+{"ts": "2026-07-28T19:56:15+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "2주 남은 함흥규 한전산업 사장 임기…후임 인선 쉽지 ", "prompt_chars": 1778, "ok": true, "sec": 0.75, "err_class": null}
+{"ts": "2026-07-28T19:56:19+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "보유세 부담 G7의 절반 수준…매년 시세 반영이 특이점", "prompt_chars": 1786, "ok": true, "sec": 0.72, "err_class": null}
+{"ts": "2026-07-28T19:56:24+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한난 광주전남지사, 대기오염물질 저감 ‘최우수’…할당량", "prompt_chars": 1334, "ok": true, "sec": 0.59, "err_class": null}
+{"ts": "2026-07-28T19:56:28+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "“한전산업 재공영화, 주주들이 적극 나서달라”", "prompt_chars": 1326, "ok": true, "sec": 0.7, "err_class": null}
+{"ts": "2026-07-28T19:56:33+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "[속보] 한국지엠 노조, 임단협 찬반투표 가결…찬성률 ", "prompt_chars": 974, "ok": true, "sec": 0.65, "err_class": null}
+{"ts": "2026-07-28T19:56:38+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "HD현대일렉트릭, 사상 첫 2분기 매출 1조 돌파… 영", "prompt_chars": 2185, "ok": true, "sec": 0.89, "err_class": null}
+{"ts": "2026-07-28T19:56:42+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "[인사] 한국수력원자력", "prompt_chars": 1268, "ok": true, "sec": 0.87, "err_class": null}
+{"ts": "2026-07-28T19:56:46+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "“녹조 저감”…기후부, 낙동강 하류 4개보 순차 개방", "prompt_chars": 1414, "ok": true, "sec": 0.69, "err_class": null}
+{"ts": "2026-07-28T19:56:51+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "남동발전, 발전사 통합 대비 토론회…대응 전략 논의", "prompt_chars": 1216, "ok": true, "sec": 0.68, "err_class": null}
+{"ts": "2026-07-28T19:56:56+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한전, 변전소 유휴부지에 태양광 짓는다", "prompt_chars": 1408, "ok": true, "sec": 0.78, "err_class": null}
+{"ts": "2026-07-28T19:57:00+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "“AI·반도체 생존 달렸다”… 남미서 ‘희토류 공급망’", "prompt_chars": 2246, "ok": true, "sec": 0.73, "err_class": null}
+{"ts": "2026-07-28T19:57:05+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "도쿄일렉트론코리아, 키자니아에 '반도체 드림랩' 개소…", "prompt_chars": 1818, "ok": true, "sec": 0.86, "err_class": null}
+{"ts": "2026-07-28T19:57:09+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "Citi, 중국 주식 포지셔닝 개선 속 코스피지수 약세", "prompt_chars": 774, "ok": true, "sec": 0.84, "err_class": null}
+{"ts": "2026-07-28T19:57:14+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "이번 분기, 빅테크의 반등이 시작될까?", "prompt_chars": 757, "ok": true, "sec": 0.83, "err_class": null}
+{"ts": "2026-07-28T19:57:18+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "메르세데스-벤츠, 판매 감소에 중국 사업 조정", "prompt_chars": 766, "ok": true, "sec": 0.69, "err_class": null}
+{"ts": "2026-07-28T19:57:22+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "오늘 SAAB 주식이 오르는 이유?", "prompt_chars": 760, "ok": true, "sec": 0.7, "err_class": null}
+{"ts": "2026-07-28T19:57:27+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "라오푸 골드 주가, 오늘 폭락한 이유는?", "prompt_chars": 763, "ok": true, "sec": 0.75, "err_class": null}
+{"ts": "2026-07-28T19:57:32+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "네메첵 주가, 오늘 급등하는 이유는?", "prompt_chars": 761, "ok": true, "sec": 0.85, "err_class": null}
+{"ts": "2026-07-28T19:57:36+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "뱅크오브아메리카, 2026년 2분기 앞두고 엘란코 애니", "prompt_chars": 791, "ok": true, "sec": 0.84, "err_class": null}
+{"ts": "2026-07-28T19:57:41+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "J.P. Morgan, 킹피셔를 상반기 실적 리스크로 ", "prompt_chars": 778, "ok": true, "sec": 0.85, "err_class": null}
+{"ts": "2026-07-28T19:57:45+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "울프 리서치, 기술주 우려 속 견조한 실적 시즌 전망", "prompt_chars": 770, "ok": true, "sec": 0.78, "err_class": null}
+{"ts": "2026-07-28T19:57:50+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "유나이트 그룹 주가, 오늘 하락한 이유는?", "prompt_chars": 764, "ok": true, "sec": 1.07, "err_class": null}
+{"ts": "2026-07-28T19:57:54+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "호주중앙은행 불록 총재, 인플레 위험 지속에 추가 금리", "prompt_chars": 776, "ok": true, "sec": 0.84, "err_class": null}
+{"ts": "2026-07-28T19:57:59+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "영국 소매 판매, 6개월 만에 최저 감소폭 기록", "prompt_chars": 771, "ok": true, "sec": 0.77, "err_class": null}
+{"ts": "2026-07-28T19:58:07+09:00", "agent": "B2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "기사 분류", "prompt_chars": 5440, "ok": true, "sec": 4.68, "err_class": null}
+{"ts": "2026-07-28T19:58:08+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "뉴스 맥락", "prompt_chars": 2473, "ok": true, "sec": 1.18, "err_class": null}
+{"ts": "2026-07-28T19:58:28+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "유나이트 그룹 주가, 오늘 하락한 이유는?", "prompt_chars": 880, "ok": true, "sec": 16.81, "err_class": null}
+{"ts": "2026-07-28T19:58:29+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "유나이트 그룹 주가, 오늘 하락한 이유는?", "prompt_chars": 246, "ok": true, "sec": 0.67, "err_class": null}
+{"ts": "2026-07-28T19:58:33+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "유나이트 그룹 주가, 오늘 하락한 이유는?", "prompt_chars": 119, "ok": true, "sec": 0.69, "err_class": null}
+{"ts": "2026-07-28T19:58:53+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "Citi, 중국 주식 포지셔닝 개선 속 코스피지수 약세", "prompt_chars": 877, "ok": true, "sec": 15.58, "err_class": null}
+{"ts": "2026-07-28T19:58:53+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "Citi, 중국 주식 포지셔닝 개선 속 코스피지수 약세", "prompt_chars": 254, "ok": true, "sec": 0.62, "err_class": null}
+{"ts": "2026-07-28T19:58:58+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "Citi, 중국 주식 포지셔닝 개선 속 코스피지수 약세", "prompt_chars": 129, "ok": true, "sec": 0.65, "err_class": null}
+{"ts": "2026-07-28T19:59:15+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "이번 분기, 빅테크의 반등이 시작될까?", "prompt_chars": 822, "ok": true, "sec": 12.7, "err_class": null}
+{"ts": "2026-07-28T19:59:15+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "이번 분기, 빅테크의 반등이 시작될까?", "prompt_chars": 246, "ok": true, "sec": 0.64, "err_class": null}
+{"ts": "2026-07-28T19:59:19+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "이번 분기, 빅테크의 반등이 시작될까?", "prompt_chars": 117, "ok": true, "sec": 0.44, "err_class": null}
+{"ts": "2026-07-28T19:59:25+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 1534, "ok": true, "sec": 0.48, "err_class": null}
+{"ts": "2026-07-28T19:59:30+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 3697, "ok": true, "sec": 1.15, "err_class": null}
+{"ts": "2026-07-28T19:59:35+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 1133, "ok": true, "sec": 1.28, "err_class": null}
+{"ts": "2026-07-28T19:59:40+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 1333, "ok": true, "sec": 1.5, "err_class": null}
+{"ts": "2026-07-28T19:59:43+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 1529, "ok": true, "sec": 0.45, "err_class": null}
+{"ts": "2026-07-28T19:59:49+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 3111, "ok": true, "sec": 1.38, "err_class": null}
+{"ts": "2026-07-28T19:59:53+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 1217, "ok": true, "sec": 1.53, "err_class": null}
+{"ts": "2026-07-28T19:59:57+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 1452, "ok": true, "sec": 1.28, "err_class": null}
+{"ts": "2026-07-28T20:00:01+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1527, "ok": true, "sec": 0.42, "err_class": null}
+{"ts": "2026-07-28T20:00:06+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 3061, "ok": true, "sec": 1.08, "err_class": null}
+{"ts": "2026-07-28T20:00:11+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1094, "ok": true, "sec": 1.29, "err_class": null}
+{"ts": "2026-07-28T20:00:16+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 1325, "ok": true, "sec": 1.45, "err_class": null}
+{"ts": "2026-07-28T20:00:20+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "오늘의 총평", "prompt_chars": 1636, "ok": true, "sec": 1.17, "err_class": null}
