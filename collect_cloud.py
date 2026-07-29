@@ -66,7 +66,14 @@ def fetch_sukub_all():
                     pass          # 파싱 실패 = 값 없음. 가짜로 채우지 않는다.
         return out
     except Exception as e:
+        # 진단 로그: 왜 실패했는지 모르면 고칠 수 없다. 키 값은 절대 찍지 않고,
+        # 서버 응답 머리말과 키의 '지문'(길이·문자종류)만 남긴다.
         print(f"  ⚠️ sukub 실패: {type(e).__name__}: {e}")
+        try:
+            print(f"     응답머리: {r.text[:120]!r}")
+        except Exception:
+            pass
+        print(f"     키지문: 길이={len(key)} pct={'%' in key} plus={'+' in key} eq={'=' in key}")
         return {}
 
 
