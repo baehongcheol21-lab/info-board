@@ -47,7 +47,7 @@ SUKUB_FIELDS = {
 def fetch_sukub_all():
     """전력수급 4개 필드를 원본 그대로. publish.fetch_sukub()은 3개(rate/supply/demand)만
     돌려주고 suppReservePwr가 빠져 있어, 여기서 직접 호출해 4개를 다 가져온다."""
-    key = os.environ.get("DATA_GO_KR_KEY", "")
+    key = publish.gov_key()   # 인코딩/디코딩 두 형태를 흡수 (publish.gov_key 주석 참고)
     if not key:
         return {}
     try:

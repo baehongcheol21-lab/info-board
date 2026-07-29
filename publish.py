@@ -67,9 +67,26 @@ _FUEL = {"fuelPwr4": "원자력", "fuelPwr6": "LNG(가스)", "fuelPwr3": "유연
          "fuelPwr8": "신재생", "fuelPwr9": "태양광", "fuelPwr1": "수력", "fuelPwr5": "양수", "fuelPwr2": "유류"}
 
 
+def gov_key():
+    """data.go.kr 인증키를 '디코딩 형태'로 통일해서 돌려준다.
+
+    공공데이터포털은 같은 키를 두 형태로 준다: 인코딩(%2B…)과 디코딩(+…). requests가
+    params를 다시 URL-인코딩하므로, 인코딩 형태를 그대로 넘기면 %가 %25로 **이중 인코딩**되어
+    서버가 "Unauthorized"를 반환한다(JSON이 아니라 평문이라 JSONDecodeError로 나타남).
+
+    2026-07-30 실측으로 확인: GitHub Secrets에 인코딩 형태가 저장돼 있어 **클라우드의 전력
+    데이터가 계속 실패**하고 있었다(publish 로그가 매번 '전력 대기'). 아이폰 페이지의 전력
+    패널이 내내 비어 있던 원인이 이것이다. 어느 형태로 저장돼 있든 여기서 흡수한다."""
+    k = os.environ.get("DATA_GO_KR_KEY", "").strip()
+    if "%" in k:                       # 인코딩 형태 → 디코딩해서 requests가 한 번만 인코딩하게
+        from urllib.parse import unquote
+        k = unquote(k)
+    return k
+
+
 def fetch_power_mix():
     """발전원 믹스 — 아이폰 관제 패널의 '현재수요' 근거. 키 없거나 실패하면 None(가짜 숫자 금지)."""
-    key = os.environ.get("DATA_GO_KR_KEY", "")
+    key = gov_key()
     if not key:
         return None
     try:
@@ -89,7 +106,7 @@ def fetch_power_mix():
 
 def fetch_sukub():
     """전력수급현황 — 예비율/공급능력/현재수요. 키 없거나 실패하면 None(가짜 숫자 금지)."""
-    key = os.environ.get("DATA_GO_KR_KEY", "")
+    key = gov_key()
     if not key:
         return None
     try:
@@ -109,7 +126,7 @@ def fetch_smp():
     """공공데이터 SMP — 키가 없거나 미승인이면 None (가짜 숫자 금지).
     ⚠️ discuss.py가 `from publish import fetch_smp`로 직접 가져다 쓴다(AI 회의의 지표 중 하나) —
     이 페이지(픽셀 플로어)에 SMP 카드가 안 보인다고 지우면 회의 전체가 임포트 단계에서 죽는다."""
-    key = os.environ.get("DATA_GO_KR_KEY", "")
+    key = gov_key()
     if not key:
         return None
     try:
