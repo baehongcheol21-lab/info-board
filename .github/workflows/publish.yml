@@ -20,10 +20,17 @@ jobs:
         run: python publish.py
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      # PC가 꺼져 있어도 데이터가 끊기지 않게 매시간 스냅샷을 남긴다.
+      # 특히 전력(SMP·수급)은 지나가면 복구가 불가능해서 이 단계가 유일한 보존 수단이다.
+      # 실패해도 페이지 갱신은 이미 끝났으므로 워크플로를 죽이지 않는다.
+      - name: 지표 스냅샷 적재 (상시 수집)
+        run: python collect_cloud.py || echo "스냅샷 실패 — 페이지 갱신은 정상"
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       - name: 커밋 & 푸시
         run: |
           git config user.name "brief-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs
+          git add docs series
           git commit -m "auto: $(date -u '+%Y-%m-%d %H:%M') UTC" || echo "변경 없음"
           git push
