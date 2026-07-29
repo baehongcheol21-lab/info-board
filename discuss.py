@@ -51,8 +51,19 @@ def _diag(e):
     tb = traceback.format_exc().strip().splitlines()
     return f"{e} | {tb[-1] if tb else ''}"
 
-MAX_CALLS = 150   # 회의 1회당 안전상한 (계정 개수와 무관 — 폭주 방지용)
+MAX_CALLS = 300   # 회의 1회당 상한 (P12 풀스로틀: 150→300, 하루 3회면 ~900콜/일)
+TARGET_CALLS = int(MAX_CALLS * 0.7)  # 이 미만이면 잔여예산 소진 라운드 발동 (P12 #4)
 KST = datetime.timezone(datetime.timedelta(hours=9))
+
+# ---- 배경설명 의무 구조 (P12 #2, 원장 #63) — "정보 나열"이 아니라 "맥락·의미"를 강제한다.
+#      사용자 핵심 통증: "그래서 어쩌라고, 이전 자료지 정보가 아니야." → ④가 그 해답이다. ----
+BRIEF_STRUCTURE = """[배경설명 의무구조 — '정보 나열'은 실격이다. 아래 5개를 빠짐없이, 특히 ④를 반드시 채워라]
+① 무슨 일: 핵심 사실. 숫자엔 [출처:].
+② 왜: 직접 촉발 원인과 그 배경.
+③ 맥락: 이게 처음인가 반복인가 — 최근 흐름에서 어디쯤인지, 전에도 있었다면 그때와 무엇이 다른지.
+④ 그래서 나에게: 이 독자(전력전자·전기기계 전공자)에게/시장에 구체적으로 무엇이 달라지나, 그래서 무엇을 지켜봐야 하나. 막연한 일반론·교과서 설명 금지 — 전공·실무와의 연결고리를 짚어라. (없으면 실격)
+⑤ 한계: 모르는 것·불확실한 것은 '모른다/추정'으로 솔직히.
+전문용어는 등장 즉시 괄호로 한 줄 해설. 채움말·과장 금지."""
 
 # ---- 문체 규칙 (체크리스트 B — 사용자가 직접 지적한 것들) ----
 STYLE = """[문체 규칙 — 어기면 폐기된다]
@@ -165,7 +176,7 @@ def phase_indicators(b, m):
     print("[2/5] U1 지표요약")
     out_ind = m.out_ind
     for _id, d in snap.items():
-        if (d["pct"] is not None and abs(d["pct"]) < 0.5
+        if (d["pct"] is not None and abs(d["pct"]) < 0.2   # P12: 0.5→0.2 (거의 안 움직인 것만 재사용)
                 and prev_ind.get(_id, {}).get("summary")):
             out_ind[_id] = {"summary": prev_ind[_id]["summary"], "reused": True}
             continue
@@ -255,7 +266,7 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
                 return float(v)
             nums = re.findall(r"\d+(?:\.\d+)?", str(v or ""))
             return sum(float(n) for n in nums) if nums else 0
-        top = sorted([a for a in articles if _score(a) > 0], key=_score, reverse=True)[:3]
+        top = sorted([a for a in articles if _score(a) > 0], key=_score, reverse=True)[:8]  # P12: 3→8건 심층
         for a in top:
             try:
                 body = tools.get_article(a["link"])[:2500]
@@ -267,10 +278,9 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
 기사 제목: {a['title']}
 기사 본문/분석: {body}
 
-이 기사의 '심층 배경'을 초심자도 흐름을 이해하도록 6개 소제목으로 설명하라.
-구성 예시(형식만 참고, 내용은 이 기사에 맞게): ①배경(왜 이렇게 됐나) ②직접 원인/촉발 ③현재 상황과 수치
-④정책·시장의 대응 ⑤파급효과 ⑥앞으로의 과제. 각 소제목은 "N. 제목" 형식, 2~4문장.
-과장·채움말 금지. 사실엔 [출처:]. 모르면 (추정).""", topic=a["title"][:30])
+이 기사의 '심층 배경'을 초심자도 흐름을 이해하도록 설명하라.
+{BRIEF_STRUCTURE}
+각 항목은 "① 무슨 일: …" 형식으로 2~4문장씩.""", topic=a["title"][:30])
             why = b.ask("U1", f"""{READER}
 기사: {a['title']} — {a.get('reason', '')}
 이 기사가 '전력전자·전기기계 전공자'에게 왜 중요한지 딱 한 줄로. 전공과의 구체적 연결고리를 짚어라.
@@ -397,8 +407,9 @@ U3(요약): {u3[:800]}
 U4 검증(요약): {u4[:600]}
 [판정 구속] {constraint}
 
-10~15줄 배경설명: ①현재 판정 1줄 ②확인된 사실([출처:] 있는 것만) ③기각된 가설과 이유
-④앞으로 확인할 것. '판단불가'로 끝내도 된다 — 억지 결론이 더 나쁘다."""
+{BRIEF_STRUCTURE}
+'판단불가'로 끝내도 된다 — 억지 결론이 더 나쁘다. 단 ④(그래서 나에게)는 판정이 불확실해도
+'지금은 이런 상태이니 무엇을 지켜보라'로 반드시 채워라. 억지 원인 단정은 금지."""
             alpha = b.ask("알파", alpha_prompt, topic=d["name"])
             out_ind.setdefault(_id, {})["detail"] = alpha
             out_ind[_id]["verdict"] = {"[확실]": "green", "[추정]": "yellow"}.get(verdict_kr, "red")
@@ -422,11 +433,47 @@ def phase_brief(b, m):
 뉴스 맥락: {news_brief.get('context', '없음')[:400]}
 직전 결론: {prev_brief[:400] or '첫 토론'}
 
-총평 3~5줄. 첫 줄은 '오늘은 조용합니다' 또는 '오늘은 O건이 특이합니다'.
-직전 대비 흐름 변화가 있으면 짚어라. 채움말 금지.""", topic="오늘의 총평")
+총평 4~6줄. 첫 줄은 '오늘은 조용합니다' 또는 '오늘은 O건이 특이합니다'.
+직전 대비 흐름 변화가 있으면 짚어라.
+**마지막 줄은 반드시 '오늘 지켜볼 것: …'** 으로 시작해, 이 독자(전력전자·전기기계 전공자)가
+내일까지 실제로 주시해야 할 딱 한 가지를 구체적으로 지목하라. '시장을 지켜보자' 같은 막연한
+말은 실격 — 어떤 지표·이벤트를, 어떤 값이 되면 무슨 의미인지까지. 채움말 금지.""", topic="오늘의 총평")
     except Exception:
         brief = ""
     m.brief = brief
+
+
+def phase_spend_remaining(b, m):
+    """잔여예산 소진 라운드 (P12 #4). 이번 회의가 목표(TARGET_CALLS)보다 적게 썼으면, 남는
+    예산으로 '업종 배경 리포트'를 추가 생성해 브리핑을 두껍게 한다. 사용자 통증 "1000 가능한데
+    60콜"의 직접 해소 — 남긴 예산은 버린 예산이다. MAX_CALLS 상한이 자동으로 폭주를 막는다.
+
+    heavy 모델은 일일 쿼터가 작아(≈40) 여기선 주력(flash)만 쓴다. 큰 움직임 지표부터 배경을
+    파고, 목표에 닿거나 지표가 떨어지면 멈춘다."""
+    if b.used >= TARGET_CALLS:
+        print(f"[+/6] 잔여소진 불필요 — 이미 {b.used}콜 ≥ 목표 {TARGET_CALLS}")
+        return
+    print(f"[+/6] 잔여예산 소진 라운드 ({b.used}/{TARGET_CALLS}콜 사용)")
+    movers = sorted((d for d in m.snap.values() if d.get("pct") is not None),
+                    key=lambda x: -abs(x["pct"]))
+    reports = []
+    for d in movers:
+        if b.used >= TARGET_CALLS:
+            break
+        try:
+            rep = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
+{READER}
+지표: {d['name']} = {d['value']} {d['unit']} (전일比 {d.get('pct')}%)
+
+오늘 숫자 하나가 아니라, 이 지표가 '최근 어떤 큰 흐름 위에 있는지'를 업종 배경 리포트로 써라.
+{BRIEF_STRUCTURE}""", topic=f"{d['name']} 배경")
+            reports.append({"indicator": d["name"], "report": rep})
+        except Exception as e:
+            print(f"  ⚠️ {d['name']} 배경리포트 실패: {_diag(e)}")
+            break  # 예산 소진/오류면 라운드 종료
+    if reports and isinstance(m.news_brief, dict):
+        m.news_brief["deep_reports"] = reports
+    print(f"[+/6] 잔여소진 종료 — 총 {b.used}콜, 배경리포트 {len(reports)}건")
 
 
 def finalize(b, m):
@@ -465,6 +512,7 @@ PHASES = [
     ("news", phase_news),
     ("deepdive", phase_deepdive),
     ("brief", phase_brief),
+    ("spend_remaining", phase_spend_remaining),  # P12 #4 — 잔여예산 소진
 ]
 
 
