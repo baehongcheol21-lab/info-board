@@ -74,10 +74,17 @@ def gov_key():
     params를 다시 URL-인코딩하므로, 인코딩 형태를 그대로 넘기면 %가 %25로 **이중 인코딩**되어
     서버가 "Unauthorized"를 반환한다(JSON이 아니라 평문이라 JSONDecodeError로 나타남).
 
-    2026-07-30 실측으로 확인: GitHub Secrets에 인코딩 형태가 저장돼 있어 **클라우드의 전력
-    데이터가 계속 실패**하고 있었다(publish 로그가 매번 '전력 대기'). 아이폰 페이지의 전력
-    패널이 내내 비어 있던 원인이 이것이다. 어느 형태로 저장돼 있든 여기서 흡수한다."""
-    k = os.environ.get("DATA_GO_KR_KEY", "").strip()
+    ⚠️ 진짜 원인은 따로 있었다 (2026-07-30 클라우드 진단으로 확정):
+    GitHub Secrets의 키가 로컬(.env)보다 **1글자 길었다**(89 vs 88). 형태는 같은데(+, = 있고
+    % 없음) 길이만 다름 → 보이지 않는 문자(BOM ﻿ 등)가 섞인 것. `.strip()`은 BOM을
+    공백으로 치지 않아 못 지운다. 그래서 서버가 'Unauthorized'를 반환했고, 클라우드 전력이
+    **계속** 죽어 있었다(publish 로그가 매번 '전력 대기' — 아이폰 전력 패널이 내내 빈 이유).
+    이 프로젝트는 같은 사고를 이미 겪었다 — gemini_keys._clean()이 "PowerShell로 시크릿
+    등록 시 파이프에 BOM이 섞이는 결함" 때문에 만들어진 함수다. 같은 방식으로 방어한다."""
+    k = os.environ.get("DATA_GO_KR_KEY", "")
+    for ch in ("﻿", "​", "‌", "‍", "\xa0"):   # BOM·제로폭·NBSP 제거
+        k = k.replace(ch, "")
+    k = k.strip()
     if "%" in k:                       # 인코딩 형태 → 디코딩해서 requests가 한 번만 인코딩하게
         from urllib.parse import unquote
         k = unquote(k)
