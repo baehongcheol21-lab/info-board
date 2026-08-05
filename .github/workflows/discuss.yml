@@ -34,7 +34,14 @@ jobs:
         run: |
           git config user.name "alpha-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs discussions discussions.json exports key_usage.json trends.json logs retry_queue.json stream experience glossary.json forecasts.jsonl calibration.json themes.json portfolio.json equity.jsonl trades.jsonl
+          # ⚠️ git add는 **없는 경로를 지정하면 exit 128로 죽는다.** 실험 파일(forecasts.jsonl 등)은
+          # 첫 회의 전에는 존재하지 않아서, 목록에 그냥 넣었더니 커밋 단계에서 워크플로가 통째로
+          # 실패했다(2026-08-05 19:56 KST 회의가 이걸로 날아감). 있는 것만 골라 add 한다.
+          # `git add -A`로 뭉뚱그리지 않는 이유: 임시 CSV 같은 잡파일까지 커밋되기 때문.
+          for f in docs discussions discussions.json exports key_usage.json trends.json logs                    retry_queue.json stream experience glossary.json                    forecasts.jsonl calibration.json themes.json                    portfolio.json equity.jsonl trades.jsonl; do
+            [ -e "$f" ] && git add "$f"
+          done
+          true   # 마지막 [ -e ] 가 거짓이어도 스텝이 실패하지 않게
           git commit -m "토론: $(date -u '+%Y-%m-%d %H:%M') UTC" || echo "변경 없음"
           # 회의는 10~20분 걸린다. 그 사이 사람이 push하면 이 단계가 non-fast-forward로 죽고
           # **회의 결과가 통째로 버려진다**(2026-08-05 실제 발생 — 144콜을 쓴 회의를 날림).
