@@ -549,6 +549,13 @@ def phase_brief(b, m):
     brief = ""
     try:
         lines = [f"- {d['name']}: {d['value']} {d['unit']} ({d['pct']}%)" for d in snap.values()]
+        # 직전 감시 항목이 이미 달성됐는지 0콜로 판정해 알려준다(같은 지시 복사 방지).
+        follow = ""
+        if _fc:
+            try:
+                follow = _fc.watch_followup(prev_brief, snap)
+            except Exception:
+                follow = ""
         # R04 검산이 잡아낸 불일치를 총평 앞에 붙인다(on_mismatch: notify_alpha). 없으면 빈 문자열.
         alerts = getattr(m, "alerts", None) or []
         warn = ("\n⚠️ 검산 경고 — 아래는 오늘 회의 발언 중 **실제 지표와 어긋난 것**이다. "
@@ -558,7 +565,8 @@ def phase_brief(b, m):
 {gstate}
 지표 전체:
 {chr(10).join(lines)}
-{warn}뉴스 맥락: {news_brief.get('context', '없음')[:400]}
+{warn}{follow}
+뉴스 맥락: {news_brief.get('context', '없음')[:400]}
 직전 결론: {prev_brief[:400] or '첫 토론'}
 
 총평 4~6줄. 첫 줄은 '오늘은 조용합니다' 또는 '오늘은 O건이 특이합니다'.

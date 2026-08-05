@@ -255,6 +255,59 @@ def correction_block(who):
     return (head + body)[:MAX_BLOCK]
 
 
+# ---- 알파의 '오늘 지켜볼 것' 후속 점검 --------------------------------------------
+# 2026-08-05 소급 검증(회의 110건, 야후 실제 종가 대조)에서 나온 실측 결함:
+#   · 같은 지시("구리 6.50 상회")를 11회 반복 — 08-01에 이미 돌파했는데 08-02·03에도 그대로
+#   · 28%는 **낼 때 이미 충족된** 임계값이었다(알맹이 없는 지시)
+#   · 임계값까지 거리의 중앙값이 0.98% — 하루 변동폭 안이라 거의 자동으로 충족된다
+# → 알파에게 직전 감시 항목의 달성 여부를 알려주고, 달성됐으면 새 항목을 내게 한다. 0콜.
+_WATCH = re.compile(r"오늘 지켜볼 것[:：]\s*(.+)")
+_ABOVE = ("상회", "돌파", "넘어", "이상", "초과")
+_BELOW = ("하회", "이탈", "밑도", "이하", "아래", "미만", "밑으로")
+_NUM = re.compile(r"([0-9][0-9,]*\.[0-9]+|[0-9][0-9,]*)\s*(%|USD/lb|USD|달러|원|pt|포인트)")
+
+
+def watch_followup(prev_brief, snap):
+    """직전 총평의 감시 항목이 달성됐는지 오늘 스냅샷으로 판정해 알파에게 돌려줄 한 줄.
+    판정 불가면 빈 문자열(프롬프트 무변화)."""
+    m = _WATCH.search(prev_brief or "")
+    if not m or not snap:
+        return ""
+    head = m.group(1)[:150]
+    # 지표: 문장에서 가장 먼저 등장하는 스냅샷 지표
+    hit = None
+    for iid, d in (snap or {}).items():
+        nm = (d or {}).get("name") or ""
+        i = head.find(nm)
+        if nm and i >= 0 and (hit is None or i < hit[0]):
+            hit = (i, iid, nm)
+    if not hit:
+        return ""
+    _, iid, nm = hit
+    cur = (snap.get(iid) or {}).get("value")
+    if cur is None:
+        return ""
+    up = any(w in head for w in _ABOVE)
+    dn = any(w in head for w in _BELOW)
+    if up == dn:
+        return ""
+    # 지표 이름을 지운 뒤 단위 붙은 숫자만 임계값 후보로(‘10년물’의 10을 잡던 실측 버그 회피)
+    nums = [float(x.group(1).replace(",", "")) for x in _NUM.finditer(head.replace(nm, " "))]
+    cand = [v for v in nums if 0.3 * cur <= v <= 3 * cur]
+    if not cand:
+        return ""
+    th = cand[0]
+    done = (cur > th) if up else (cur < th)
+    return (f"\n\n[직전 감시 항목 점검 — 0콜 자동판정] 지난 회의는 "
+            f"\"{nm}이 {th}을 {'상회' if up else '하회'}하는지\"를 지켜보라고 했다. "
+            f"현재 {nm} = {cur} → **{'달성됨' if done else '아직 미달성'}**.\n"
+            + ("이미 달성됐으므로 같은 항목을 반복하면 실격이다. 다음 국면을 짚는 **새 항목**을 내라."
+               if done else
+               "아직 미달성이다. 같은 항목을 유지하려면 그럴 이유를 한 줄로 대라.")
+            + " 임계값은 그 지표의 하루 변동폭보다 의미 있게 떨어진 값이어야 한다 — "
+              "하루면 자동으로 닿는 값은 감시 항목이 아니다.")
+
+
 def weights():
     """요원별 신뢰도 {who: w}. 앙상블 가중에 쓴다."""
     return {k: (v or {}).get("weight", 0.5)
