@@ -1,0 +1,29 @@
+{
+ "opened": "2026-08-06",
+ "capital": 50000000,
+ "cash": 50000000.0,
+ "holdings": {},
+ "cost_basis": {},
+ "pending": {
+  "date": "2026-08-06",
+  "meeting_id": "20260806T0112",
+  "weights": {
+   "kepco": 0.15,
+   "lselectric": 0.15,
+   "hynix": 0.2,
+   "nvda": 0.2,
+   "ceg": 0.2,
+   "xle": 0.1
+  },
+  "forecast": {
+   "equity": 50650000.0,
+   "p": 0.6,
+   "lo": 49800000.0,
+   "hi": 51500000.0,
+   "by": "알파"
+  },
+  "note": "SK하이닉스와 엔비디아는 AI 인프라 확장의 핵심 고리로서 기술적 반등 강도가 가장 높을 것으로 판단됩니다. Constellation Energy는 데이터센터의 전력 부족 문제를 직접 해결하는 구조적 성장주이므로 배분했습니다. 한국전력과 LS ELECTRIC은 전력망 증설의 국내 정책적 수혜를 기대하여 일부 편입하고, 에너지 섹터인 XLE는 경기 침체 우려에 따른 변동성을 방어하기 위해 최소 비중으로 설정합니다.\n\n[비중] kepco=15 lselectric=15 hynix=20 nvda=20 ceg=20 xle=10 현금=0\n[평"
+ },
+ "last_settled": "2026-08-06",
+ "fees_paid": 0.0
+}
