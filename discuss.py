@@ -215,7 +215,7 @@ def phase_news(b, m):
     news_brief = {}
     try:
         # 전 소스에서 헤드라인 수집 후 제목 기준 중복 제거
-        raw = tools.get_headlines(per_source=12)
+        raw = tools.get_headlines(per_source=20)   # 12→20: 더 넓은 풀에서 고른다
         seen, heads = set(), []
         for h in raw:
             key = h["title"][:20]
@@ -223,6 +223,16 @@ def phase_news(b, m):
                 seen.add(key)
                 heads.append(h)
         MAX_ANALYZE = 24  # 회당 분석 상한 (1000콜 예산 안에서 여러 소스 커버)
+        # 관련도 순으로 줄을 세운다(0콜). 감사 ★1: U2 발언의 14.2%가 스스로 "일상 기사"라고
+        # 판정했는데, 원인은 '점수 상위 24개'가 아니라 **수집 순서대로 앞 24개**를 분석한 것이었다.
+        # ⚠️ 버리지 않고 **순서만** 바꾼다. 과거 600건 대조 결과 제목 휴리스틱으로 하드 드롭하면
+        # 일반 기사의 43%가 오탈락했고(하위컷), 무관 키워드만 써도 "여행 수요 호조에 주가 급등"
+        # 같은 진짜 시장 기사가 걸렸다. 랭킹만으로도 상위 슬롯의 일상기사 비율이 15.7%→8.3%로 준다.
+        if _registry:
+            try:
+                heads = _registry().run("news_rank", items=heads)
+            except Exception as e:
+                print(f"  ⚠️ 헤드라인 랭킹 건너뜀(수집 순서 유지): {str(e)[:60]}")
         articles = []
         for h in heads[:MAX_ANALYZE]:
             try:
