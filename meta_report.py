@@ -67,6 +67,16 @@ def summarize(days=7):
     # 현실 정합 (①축)
     rc = [r for r in stream if r.get("type") == "reality_check"]
     rc_result = collections.Counter((r.get("payload") or {}).get("result") for r in rc)
+    # ①축의 본체 — 예측 채점. reality_check는 판정 분포 관측이고, '맞았나'는 여기서 나온다.
+    fs_ev = [r for r in stream if r.get("type") == "forecast_score"]
+    calib = {}
+    for r in fs_ev:                      # 요원별 최신 성적만 남긴다(시간순 정렬이므로 뒤가 최신)
+        p_ = r.get("payload") or {}
+        if p_.get("who"):
+            calib[p_["who"]] = {k: p_.get(k) for k in
+                                ("n", "brier", "skill", "rel", "res", "unc",
+                                 "overconf", "bias", "coverage", "weight", "diagnosis")}
+    n_forecast = sum(1 for r in stream if r.get("type") == "forecast")
     verdicts = collections.Counter(
         (r.get("payload") or {}).get("verdict") for r in stream if r.get("type") == "verdict")
 
@@ -81,6 +91,9 @@ def summarize(days=7):
 
     return {
         "기간": f"최근 {days}일",
+        "①예측채점": {"발행 예측수": n_forecast, "채점된 요원": calib} if (n_forecast or calib)
+                     else {"발행 예측수": 0, "채점된 요원": {},
+                           "참고": "예측 이벤트가 아직 없다 — 회로가 처음 도는 회의 이후부터 채워진다"},
         "회의수": len(meetings),
         "이벤트수": len(stream),
         "experience행": len(exp),

@@ -50,6 +50,11 @@ try:  # 기관 도서관(P11-0) — 잔여소진 라운드의 0콜 계산(상관
 except ImportError:
     _registry = None
 
+try:  # 예측→익일채점→프롬프트 자동교정 회로. 없어도 회의는 그대로 돈다.
+    import forecast as _fc
+except ImportError:
+    _fc = None
+
 
 def _diag(e):
     """실패 원인을 한 줄로 못 잡을 때(예: 인코딩 문제) 다음 조사를 위해 traceback 마지막 줄을 남긴다."""
@@ -132,6 +137,22 @@ def _push_retry_queue(_id, name, reason, now):
 def _clear_retry_queue(_id):
     q = [x for x in _load_retry_queue() if x["id"] != _id]
     _save_retry_queue(q)
+
+
+def _fix(who):
+    """그 요원의 최근 성적표에서 나온 교정 지시. 없으면 빈 문자열(프롬프트 무변화).
+    이게 "다음 명령 때 수정된 프롬프트를 스스로 세팅한다"의 실물 통로다."""
+    if not _fc:
+        return ""
+    try:
+        return _fc.correction_block(who)
+    except Exception:
+        return ""
+
+
+def _fcfmt():
+    """예측 한 줄을 요구하는 형식 안내. **추가 콜이 0이다** — 이미 부르는 프롬프트에 얹는다."""
+    return _fc.FORMAT_HINT if _fc else ""
 
 
 def build_global_state(snap, now):
@@ -368,7 +389,7 @@ def phase_deepdive(b, m):
 "HBM 독점" 같은 장기 상수는 오늘 급변의 원인이 될 수 없다 — 배제하라.
 도구(search_news, get_history 등)로 근거를 찾아라. 원인 후보 최대 3개, 각각 [출처:]와 발생시점 명시.
 검색어에는 반드시 "{d['name']}" 지표명을 포함하라 — 다른 종목·지표를 검색하지 마라.
-근거를 못 찾으면 "원인 후보 없음"이라고 써라.""", topic=d["name"])
+근거를 못 찾으면 "원인 후보 없음"이라고 써라.{_fix("U3")}{_fcfmt()}""", topic=d["name"])
             # 툴킷: 수급(거래량) 데이터를 자동으로 뽑아 U4의 평가매트릭스 근거로 제공
             try:
                 vol = tools.get_history(_id, days=7)
@@ -388,7 +409,7 @@ U3의 분석: {u3[:1200]}
 [평가 매트릭스] 각 원인 후보를 두 기준으로 채점하라:
   ①24시간 이내 발생한 이벤트인가?  ②위 수급 데이터(거래량 급증 등)로 증명되는가?
 둘 다 충족해야만 [확실]. 하나만 충족 = [추정]. 둘 다 미충족 = [기각].
-마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.""", topic=d["name"])
+마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.{_fix("U4")}{_fcfmt()}""", topic=d["name"])
             def _parse_verdict(txt):
                 return next((v for v in ("[확실]", "[추정]", "[원인불명]", "[판단불가]")
                              if v in txt.split("\n")[-1] or v in txt[-120:]), "[추정]")
@@ -450,6 +471,18 @@ U4가 부족하다고 한 바로 그 지점을 메워라. 같은 검색을 반�
                                   # 교정 성과 측정용(§7-1): 재라운드가 판정을 실제로 바꿨나
                                   "verdict_first": verdict_first, "critique_rounds": rounds,
                                   "improved": bool(rounds) and verdict_first != verdict_kr})
+            # ---- 예측 채집 (추가 콜 0) ----
+            # U3·U4는 이미 부른 응답이다. 그 끝에 붙인 [예측] 한 줄만 뽑아 기록한다.
+            # 이게 있어야 내일 "맞았나"를 물을 대상이 생긴다 — 없으면 §7-2는 채점할 게 없다.
+            if _fc:
+                for who, txt in (("U3", u3), ("U4", u4)):
+                    try:
+                        pred = _fc.parse(txt)
+                        if pred:
+                            _fc.record(m.meeting_id, who, _id, pred,
+                                       emit_fn=(bus.emit if bus else None))
+                    except Exception as e:
+                        print(f"  ⚠️ 예측 기록 실패({who}/{_id}): {type(e).__name__}: {e}")
             constraint = ("원인을 단정해도 된다." if verdict_kr == "[확실]" else
                           f"U4 종합판정이 {verdict_kr} 이므로 너는 원인을 단정할 수 없다. "
                           "서두에 '원인은 아직 확정되지 않았습니다'로 시작하라. 서두와 결론이 모순되면 실격이다.")

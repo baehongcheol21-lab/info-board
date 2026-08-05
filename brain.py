@@ -46,6 +46,11 @@ try:
 except ImportError:
     _reality = None
 
+try:  # 예측 채점·신뢰도 갱신 회로(§7-2 본체)
+    import forecast as _forecast
+except ImportError:
+    _forecast = None
+
 try:  # R04 검산의 손 — 기관 도서관이 없으면 검산만 건너뛴다(회의는 그대로)
     from registry import get_registry
 except ImportError:
@@ -249,8 +254,18 @@ def run_meeting(m, b, phases, finalize, engine=None):
             # 회고가 "이번 회의가 얼마나 건강했나"를 셀 수 있다(§7-1 루프건전성).
             _emit("error", f"phase:{name}", name, {"err": f"{type(e).__name__}: {e}"[:300]})
         _flush()
-        # §7-2 익일 현실대조: 감각(perceive)이 끝나 오늘 숫자가 손에 들어온 직후가 제자리다.
-        # 0콜이며, 실패해도 회의를 막지 않는다.
+        # §7-2 익일 예측 채점 — 오늘 숫자가 손에 들어온 직후가 제자리다. 0콜.
+        # 어제 요원들이 낸 [예측]을 오늘 실제 등락과 대조해 브라이어·머피분해까지 내고,
+        # 요원 신뢰도를 갱신한다. 그 결과가 **이번 회의의 U3·U4 프롬프트 교정 블록으로
+        # 곧바로 들어간다**(phase_deepdive는 perceive 뒤에 돌기 때문에 같은 회의에 반영됨).
+        if name == "perceive" and _forecast:
+            try:
+                _forecast.settle(getattr(m, "snap", {}) or {},
+                                 emit_fn=lambda t, a, **kw: _emit(t, a, kw.get("topic", ""),
+                                                                  kw.get("payload"), kw.get("cause")))
+            except Exception as e:
+                print(f"  ⚠️ brain: 예측 채점 실패(계속): {type(e).__name__}: {e}", file=sys.stderr)
+        # (구) 현실대조 — 판정 분포 관측용으로 유지. 채점은 위 forecast가 한다.
         if name == "perceive" and _reality:
             try:
                 _reality.run(getattr(m, "snap", {}), meeting_id=m.meeting_id,
