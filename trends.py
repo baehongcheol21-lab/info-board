@@ -103,12 +103,14 @@ class TrendTracker:
                 hits += 1
         self._new.append({"date": self.today, "text": str(topic)[:120], "vec": vec})
         n = hits + 1  # 오늘 것 포함
+        # 화면 텍스트에 이모지를 섞지 않는다 — 아이콘은 UI 층이 그린다.
+        # (이 문자열은 discussions.json을 거쳐 대시보드 카드로 그대로 흘러간다.)
         if n >= 3:
-            msg = f"📈 이 주제, 최근 {recent_days}일간 {n}번째 등장 — 트렌드 형성 중"
+            msg = f"이 주제, 최근 {recent_days}일간 {n}번째 등장 — 트렌드 형성 중"
         elif n == 2:
-            msg = f"↗ 이 주제, 최근 {recent_days}일간 2번째 등장 — 반복 감지"
+            msg = f"이 주제, 최근 {recent_days}일간 2번째 등장 — 반복 감지"
         else:
-            msg = "🆕 최근 처음 등장한 주제"
+            msg = "최근 처음 등장한 주제"
         return n, msg
 
     def flush(self):
