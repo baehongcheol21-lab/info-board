@@ -345,10 +345,38 @@ def build_data():
         except Exception:
             continue
 
+    # ---- 가상계좌 모의투자 현황 (아이폰에서도 봐야 하므로 공개 페이지에 싣는다) ----
+    # PC 대시보드는 localhost에만 떠 있어 폰에서 아예 열리지 않는다. 실험을 폰에서 보려면
+    # 이 공개 페이지가 유일한 길이다. 데이터가 없으면 lab=None으로 두고 화면이 알아서 숨긴다.
+    lab = None
+    try:
+        import portfolio as _pf, universe as _uv
+        rep = _pf.report()
+        if rep.get("equity") is not None:
+            px, fx = {}, None
+            try:
+                px_raw, fx = _uv.fetch_prices()
+                px = {k: v["px"] for k, v in px_raw.items()}
+            except Exception:
+                pass
+            pos, _tot = _pf.positions(_pf.load(), px, fx) if (px and fx) else ([], 0)
+            cv = _pf.curve(60)
+            lab = {"capital": rep["capital"], "equity": rep["equity"],
+                   "return_pct": rep["return_pct"], "profit": rep["profit"],
+                   "days": rep["days"], "mdd": rep["mdd_pct"],
+                   "mae": rep.get("forecast_mae_pct"), "band": rep.get("band_hit"),
+                   "review_due": rep.get("review_due"),
+                   "positions": [{"name": p_["name"], "shares": p_["shares"],
+                                  "weight": p_["weight"], "pl": p_["pl_pct"]} for p_ in pos],
+                   "curve": [[r["date"][5:], r["equity"]] for r in cv],
+                   "last": cv[-1] if cv else None}
+    except Exception as e:
+        print(f"  ⚠️ 가상계좌 현황 수집 실패(화면에서 생략): {type(e).__name__}: {e}")
+
     return {
         "time": datetime.datetime.now(KST).isoformat(timespec="minutes"),
         "chart": chart, "power": power, "analysts": analysts,
-        "research": research, "tickers": tickers,
+        "research": research, "tickers": tickers, "lab": lab,
     }
 
 
@@ -437,6 +465,23 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
   animation:blink .8s steps(2) infinite;vertical-align:-1px}
 
 .research-office{padding-bottom:16px}
+/* 가상계좌 — 폰에서 보는 게 유일한 경로라 세로 한 줄 배치로만 짠다. 가로 스크롤 금지. */
+.lab-office{padding:12px 10px 18px}
+.lab-hero{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.lab-hero .eq{font-size:1.5rem;font-weight:800;letter-spacing:-1px}
+.lab-hero .rt{font-size:1rem;font-weight:700}
+.lab-hero .sub{font-size:.7rem;opacity:.65}
+.lab-up{color:#ff6b6b} .lab-dn{color:#6fb3ff}
+.lab-bar{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:8px 0 12px}
+.lab-bar i{display:block;height:100%;background:#f5c451}
+.lab-pos{display:flex;flex-direction:column;gap:6px}
+.lab-pos .row{display:flex;align-items:center;gap:8px;font-size:.76rem;
+  padding:7px 9px;background:rgba(255,255,255,.04);border-radius:8px}
+.lab-pos .row .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lab-pos .row .sh{opacity:.7;font-variant-numeric:tabular-nums}
+.lab-pos .row .pl{width:64px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.lab-meta{margin-top:10px;font-size:.68rem;opacity:.6;line-height:1.7}
+.lab-spark{width:100%;height:44px;margin:4px 0 2px;display:block}
 .table-wrap{display:flex;justify-content:center;align-items:flex-end;gap:0;position:relative;
   margin-top:2px}
 .side{width:38%;display:flex;flex-direction:column;align-items:center;cursor:pointer}
@@ -516,6 +561,9 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
     <div class="table-wrap" id="researchFloor"></div>
     <div class="ace-row" id="aceRow"></div>
   </div>
+
+  <h2 class="floor-title" id="labTitle" style="display:none">가상계좌 모의투자</h2>
+  <div class="office lab-office" id="labOffice" style="display:none"></div>
 
   <p class="hint">캐릭터를 탭하면 실제 분석 내용이 아래에서 올라옵니다 · 갱신 <span id="genTime"></span> KST</p>
 
@@ -655,6 +703,45 @@ function renderChart(){
   document.getElementById("ma60").textContent = c.ma60!=null ? c.ma60.toLocaleString() : "—";
 }
 
+function renderLab(){
+  const L = DATA.lab;
+  if(!L) return;                       // 데이터가 없으면 섹션 자체를 숨긴 채 둔다(가짜 숫자 금지)
+  document.getElementById("labTitle").style.display = "";
+  const box = document.getElementById("labOffice");
+  box.style.display = "";
+  const up = L.return_pct >= 0;
+  const cls = up ? "lab-up" : "lab-dn";
+  const pct = Math.max(0, Math.min(100, (L.equity / L.capital) * 50));   // 0~200% → 0~100
+  const pos = (L.positions||[]).map(p => `
+    <div class="row"><span class="nm">${p.name}</span>
+      <span class="sh">${p.shares}주 · ${(p.weight*100).toFixed(0)}%</span>
+      <span class="pl ${p.pl>=0?'lab-up':'lab-dn'}">${p.pl==null?'—':(p.pl>=0?'+':'')+p.pl.toFixed(1)+'%'}</span>
+    </div>`).join("") || '<div class="row"><span class="nm">아직 보유 종목이 없습니다</span></div>';
+  const c = L.curve || [];
+  let spark = "";
+  if(c.length > 1){
+    const vs = c.map(x=>x[1]), lo = Math.min(...vs), hi = Math.max(...vs), rg = (hi-lo)||1;
+    const pts = vs.map((v,i)=>`${(i/(vs.length-1)*100).toFixed(1)},${(40-(v-lo)/rg*36).toFixed(1)}`).join(" ");
+    spark = `<svg class="lab-spark" viewBox="0 0 100 44" preserveAspectRatio="none">
+      <polyline points="${pts}" fill="none" stroke="#f5c451" stroke-width="1.6"/></svg>`;
+  }
+  box.innerHTML = `
+    <div class="lab-hero">
+      <span class="eq">${L.equity.toLocaleString()}원</span>
+      <span class="rt ${cls}">${up?'+':''}${L.return_pct.toFixed(2)}%</span>
+      <span class="sub">원금 ${L.capital.toLocaleString()}원 · ${L.days}일차</span>
+    </div>
+    <div class="lab-bar"><i style="width:${pct}%"></i></div>
+    ${spark}
+    <div class="lab-pos">${pos}</div>
+    <div class="lab-meta">
+      손익 ${L.profit>=0?'+':''}${L.profit.toLocaleString()}원 · 최대낙폭 ${L.mdd}%
+      ${L.mae!=null?` · 평가액 예측 평균오차 ${L.mae}%`:""}
+      ${L.band!=null?` · 구간적중 ${(L.band*100).toFixed(0)}%`:""}
+      <br>6개월 결산 예정: ${L.review_due||"—"} · 전부 가상계좌 시뮬레이션입니다
+    </div>`;
+}
+
 function renderPower(){
   const el = document.getElementById("powerPanel");
   const p = DATA.power;
@@ -712,7 +799,7 @@ function tickClock(){
 }
 
 document.getElementById("genTime").textContent = (DATA.time||"").slice(11,16);
-renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderTicker();
+renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderLab(); renderTicker();
 tickClock(); setInterval(tickClock, 30000);
 </script>
 </body>
