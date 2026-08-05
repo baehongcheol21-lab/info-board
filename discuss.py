@@ -55,6 +55,11 @@ try:  # 예측→익일채점→프롬프트 자동교정 회로. 없어도 회�
 except ImportError:
     _fc = None
 
+try:  # 오늘의 테마 실험(사용자 실험 #1) — 없으면 실험만 건너뛴다
+    import themes as _themes
+except ImportError:
+    _themes = None
+
 
 def _diag(e):
     """실패 원인을 한 줄로 못 잡을 때(예: 인코딩 문제) 다음 조사를 위해 traceback 마지막 줄을 남긴다."""
@@ -819,12 +824,131 @@ def finalize(b, m):
     return result
 
 
+def phase_theme(b, m):
+    """오늘의 테마를 놓고 요원 전원이 토론하고, **기간별 예측**을 낸다. (사용자 실험)
+
+    설계 의도
+    ---------
+    "틀려도 되니까 매일 테마를 하나 정하고, AI들이 토론해서 예측하고, 다음 날 파이썬으로
+    맞았는지 채점하고, 그 가중치를 다시 프롬프트에 먹여라. 한 달 돌리면 나아지는지 보자."
+
+    그래서 이 phase는 **일부러 단정을 요구한다.** 안전하게 0.5만 부르면 실험이 죽는다.
+    대신 틀린 것은 전부 기록되고(forecasts.jsonl), 편향은 다음 회의 프롬프트로 돌아온다.
+
+    콜 예산: 4콜(강세 → 약세 → 반박 → 종합). 회의 1회 200콜 규모에서 무시할 만한 비용이다.
+    실패해도 브리핑 본류에는 영향이 없다 — 전부 try/except로 감싼다.
+    """
+    if not (_fc and _themes):
+        return
+    snap, gstate = m.snap, m.gstate
+    if not snap:
+        return
+    print("[6/6] 테마 실험 — 오늘의 테마 토론·예측")
+    try:
+        theme = _themes.pick(snap)
+        m.theme = theme
+        levels = _themes.snapshot_levels(theme, snap)
+        if not levels:
+            print("  ⚠️ 테마 바스켓 가격이 비어 채점 불가 — 건너뜀")
+            return
+        board = _themes.brief(theme, snap)
+        hist = _fc.theme_block(theme["id"])
+    except Exception as e:
+        print(f"  ⚠️ 테마 준비 실패: {type(e).__name__}: {e}")
+        return
+
+    b.transcript.append({"role": "🧰도구", "topic": theme["name"],
+                         "text": "오늘의 테마 선정: " + theme["name"] + "\n" + board})
+
+    common = STYLE + "\n" + gstate + "\n" + board + hist
+    fmt = _fc.THEME_FORMAT
+    bull = bear = rebut = final = ""
+
+    try:
+        bull = b.ask("U3", f"""너는 원인분석 요원 U3다. {common}
+
+이 테마의 **강세 논거**를 편들어 세워라. 억지로 균형 잡지 마라 — 반대편은 U4가 맡는다.
+근거는 24시간 내 사건·수급·가격 데이터로만. 없으면 "강한 근거 없음"이라고 분명히 써라.
+3줄 이내.{fmt}{_fix("U3")}""", topic=theme["name"])
+    except Exception as e:
+        print(f"  ⚠️ U3 강세: {_diag(e)}")
+
+    try:
+        bear = b.ask("U4", f"""너는 비판 요원 U4다. {common}
+
+U3의 강세 논거: {bull[:900]}
+
+이 테마의 **약세 논거**와 U3 논거의 허점을 짚어라. 근거 없는 낙관은 깎아라.
+3줄 이내.{fmt}{_fix("U4")}""", topic=theme["name"])
+    except Exception as e:
+        print(f"  ⚠️ U4 약세: {_diag(e)}")
+
+    try:
+        rebut = b.ask("U3", f"""너는 U3다. {STYLE}
+U4의 반론: {bear[:900]}
+
+반론 중 **타당한 것은 인정하고**, 틀린 것만 반박하라. 2줄 이내. 새 근거가 없으면
+"반박 근거 없음"이라고 써라. 그 뒤에 예측을 갱신해 다시 적어라.{fmt}""",
+                      topic=theme["name"])
+    except Exception as e:
+        print(f"  ⚠️ U3 반박: {_diag(e)}")
+
+    # 알파 종합 전에 요원 신뢰도 가중 합의를 0콜로 계산해 보여준다.
+    # 알파가 '누구 말이 그동안 맞았는지'를 모른 채 저울질하면 실험의 학습이 알파를 안 거친다.
+    ens_note = ""
+    try:
+        from organs.forecast_score_v1 import ensemble as _ens
+        preds = []
+        for who, txt in (("U3", rebut or bull), ("U4", bear)):
+            for pr in _fc.parse_multi(txt):
+                preds.append({"who": who, "dir": pr["dir"], "p": pr["p"], "hz": pr["horizon_kr"]})
+        w = _fc.weights()
+        rows = []
+        for hz in ("단기", "중기", "장기"):
+            sub = [x for x in preds if x["hz"] == hz]
+            e = _ens(sub, w) if sub else None
+            if e:
+                rows.append(f"{hz}: {'상승' if e['dir'] > 0 else '하락'} p={e['p']} "
+                            f"(요원 일치도 {e['agree']})")
+        if rows:
+            ens_note = ("\n[요원 신뢰도 가중 합의 — 0콜 계산] " + " / ".join(rows)
+                        + "\n이건 참고값이다. 다르게 보면 다르게 적되 이유를 대라.")
+    except Exception as e:
+        print(f"  ⚠️ 앙상블 계산 실패: {type(e).__name__}: {e}")
+
+    try:
+        final = b.ask("알파", f"""너는 지휘자 알파다. {common}
+
+강세(U3): {(rebut or bull)[:700]}
+약세(U4): {bear[:700]}{ens_note}
+
+양쪽을 저울질해 **네 판단**을 3줄로 내라. 어느 쪽 논거가 왜 더 무거운지 명시하라.
+"둘 다 일리 있다"는 실격 — 실험이니 한쪽으로 기울여라.{fmt}{_fix("알파")}""",
+                      topic=theme["name"])
+    except Exception as e:
+        print(f"  ⚠️ 알파 종합: {_diag(e)}")
+
+    saved = 0
+    for who, txt in (("U3", rebut or bull), ("U4", bear), ("알파", final)):
+        try:
+            prs = _fc.parse_multi(txt)
+            if prs:
+                _fc.record_theme(m.meeting_id, who, theme, prs, levels,
+                                 emit_fn=(bus.emit if bus else None))
+                saved += len(prs)
+        except Exception as e:
+            print(f"  ⚠️ 예측 기록 실패({who}): {type(e).__name__}: {e}")
+    print(f"  🧪 {theme['name']} — 예측 {saved}건 저장(요원×기간)")
+    m.theme_forecasts = saved
+
+
 PHASES = [
     ("perceive", phase_perceive),
     ("indicators", phase_indicators),
     ("news", phase_news),
     ("deepdive", phase_deepdive),
     ("brief", phase_brief),
+    ("theme", phase_theme),                      # 사용자 실험 — 테마 토론·기간별 예측
     ("spend_remaining", phase_spend_remaining),  # P12 #4 — 잔여예산 소진
 ]
 

@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "alpha-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs discussions discussions.json exports key_usage.json trends.json logs retry_queue.json stream experience glossary.json forecasts.jsonl calibration.json
+          git add docs discussions discussions.json exports key_usage.json trends.json logs retry_queue.json stream experience glossary.json forecasts.jsonl calibration.json themes.json
           git commit -m "토론: $(date -u '+%Y-%m-%d %H:%M') UTC" || echo "변경 없음"
           # 회의는 10~20분 걸린다. 그 사이 사람이 push하면 이 단계가 non-fast-forward로 죽고
           # **회의 결과가 통째로 버려진다**(2026-08-05 실제 발생 — 144콜을 쓴 회의를 날림).

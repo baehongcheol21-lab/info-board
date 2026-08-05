@@ -55,6 +55,13 @@ _RE = re.compile(
     r"확률\s*=\s*([01](?:\.\d+)?)\s*"
     r"구간\s*=\s*([+-]?\d+(?:\.\d+)?)\s*~\s*([+-]?\d+(?:\.\d+)?)")
 
+# 테마 실험용 다기간 예측: `[예측:단기] 방향=상승 확률=0.7 구간=-1~+3`
+HORIZONS = {"단기": 1, "중기": 5, "장기": 20}       # 거래일 기준
+_RE_H = re.compile(
+    r"\[예측[:：]\s*(단기|중기|장기)\]\s*방향\s*=\s*(상승|하락)\s*"
+    r"확률\s*=\s*([01](?:\.\d+)?)\s*"
+    r"구간\s*=\s*([+-]?\d+(?:\.\d+)?)\s*~\s*([+-]?\d+(?:\.\d+)?)")
+
 # 요원에게 보여줄 형식 안내. 프롬프트에 그대로 붙인다.
 FORMAT_HINT = (
     "\n\n[예측 의무] 마지막 줄에 **내일 종가 기준** 예측을 아래 형식 그대로 한 줄 쓴다"
@@ -76,6 +83,33 @@ def parse(text):
     return {"dir": 1 if m.group(1) == "상승" else -1,
             "p": min(max(float(m.group(2)), 0.0), 1.0),
             "lo": lo, "hi": hi}
+
+
+def parse_multi(text):
+    """다기간 예측 전부. 반환: [{horizon_kr, days, dir, p, lo, hi}, ...]"""
+    out = []
+    for m in _RE_H.finditer(text or ""):
+        lo, hi = float(m.group(4)), float(m.group(5))
+        if lo > hi:
+            lo, hi = hi, lo
+        out.append({"horizon_kr": m.group(1), "days": HORIZONS[m.group(1)],
+                    "dir": 1 if m.group(2) == "상승" else -1,
+                    "p": min(max(float(m.group(3)), 0.0), 1.0), "lo": lo, "hi": hi})
+    return out
+
+
+# 테마 실험에서 요원에게 요구하는 형식. 세 기간을 **전부** 내게 한다 —
+# 하나만 내면 "쉬운 기간만 고르는" 회피가 생긴다.
+THEME_FORMAT = (
+    "\n\n[예측 의무 — 세 줄 전부, 형식 그대로]\n"
+    "[예측:단기] 방향=상승 확률=0.65 구간=-1.0~+3.0     ← 다음 거래일(1일)\n"
+    "[예측:중기] 방향=상승 확률=0.60 구간=-3.0~+6.0     ← 5거래일 뒤\n"
+    "[예측:장기] 방향=하락 확률=0.55 구간=-8.0~+4.0     ← 20거래일 뒤\n"
+    "· 대상은 위 바스켓의 **동일가중 평균 등락률**이다(개별 종목이 아니다).\n"
+    "· 확률은 그 방향이 맞을 확률(0.50~0.95). **틀려도 된다 — 겁먹고 0.5만 쓰면 "
+    "실험 자체가 무의미해진다.** 근거가 있으면 확신을 실어라. 다만 근거 없이 부풀리면 "
+    "다음 회의에서 네 성적표로 돌아온다.\n"
+    "· 구간은 그 시점까지의 누적 등락률(%) 예상 범위다.")
 
 
 def _load_jsonl(path):
@@ -110,6 +144,173 @@ def record(meeting_id, who, indicator, pred, emit_fn=None):
     if emit_fn:
         emit_fn("forecast", who, topic=indicator, payload=dict(row))
     return row
+
+
+# ---- 테마 실험: 발행과 채점 -------------------------------------------------------
+_YC = {}          # 프로세스 내 야후 일별 종가 캐시 {symbol: {date: close}}
+
+
+def _yahoo_daily(symbol, rng="3mo"):
+    """일별 종가. 채점은 '며칠 뒤 종가'가 필요해서 스냅샷만으론 안 된다."""
+    if symbol in _YC:
+        return _YC[symbol]
+    import requests
+    from publish import UA
+    r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+                     params={"range": rng, "interval": "1d"}, headers=UA, timeout=20)
+    r.raise_for_status()
+    res = r.json()["chart"]["result"][0]
+    ts = res.get("timestamp") or []
+    cl = (res.get("indicators", {}).get("quote") or [{}])[0].get("close") or []
+    out = {datetime.datetime.fromtimestamp(t, datetime.timezone.utc).strftime("%Y-%m-%d"): float(c)
+           for t, c in zip(ts, cl) if c is not None}
+    _YC[symbol] = out
+    return out
+
+
+def _sym(iid):
+    from publish import INDICATORS
+    for _id, name, sym, unit, dec in INDICATORS:
+        if _id == iid:
+            return sym
+    return None
+
+
+def record_theme(meeting_id, who, theme, preds, levels, emit_fn=None):
+    """테마 다기간 예측을 영구 기록. levels는 발행 시점의 구성원 가격(채점 기준선)."""
+    now = datetime.datetime.now(KST)
+    rows = []
+    for p in preds:
+        row = {"kind": "theme", "ts": now.isoformat(timespec="seconds"),
+               "date": now.strftime("%Y-%m-%d"), "meeting_id": meeting_id, "who": who,
+               "theme": theme["id"], "theme_name": theme["name"],
+               "horizon": p["horizon_kr"], "days": p["days"],
+               "dir": p["dir"], "p": p["p"], "lo": p["lo"], "hi": p["hi"],
+               "levels": levels}
+        rows.append(row)
+        try:
+            with open(FC_FILE, "a", encoding="utf-8") as f:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
+        except OSError:
+            pass
+        if emit_fn:
+            emit_fn("forecast", who, topic=theme["name"],
+                    payload={k: v for k, v in row.items() if k != "levels"})
+    return rows
+
+
+def _theme_actual(row, today):
+    """발행 후 row['days']번째 거래일의 바스켓 등락률. 아직 안 왔으면 None."""
+    import themes as _th
+    got, base = {}, row.get("levels") or {}
+    if not base:
+        return None
+    for m in base:
+        sym = _sym(m)
+        if not sym:
+            continue
+        try:
+            ser = _yahoo_daily(sym)
+        except Exception:
+            return None                     # 조회 실패 — 이번엔 채점하지 않는다(다음에 재시도)
+        later = sorted(d for d in ser if d > row["date"] and d <= today)
+        if len(later) < row["days"]:
+            return None                     # 아직 그 시점이 오지 않았다
+        got[m] = ser[later[row["days"] - 1]]
+    return _th.basket_return(base, got)
+
+
+def settle_themes(emit_fn=None, today=None):
+    """만기가 된 테마 예측을 채점하고, 요원·테마 성적을 갱신한다. 만기 전 것은 그대로 둔다."""
+    if not get_registry:
+        return {"checked": 0}
+    import themes as _th
+    today = today or datetime.datetime.now(KST).strftime("%Y-%m-%d")
+    rows = _load_jsonl(FC_FILE)
+    theme_rows = [r for r in rows if r.get("kind") == "theme"]
+    if not theme_rows:
+        return {"checked": 0}
+
+    graded, keep_ids = [], set()
+    for i, r in enumerate(theme_rows):
+        if r.get("date", "") >= today:
+            keep_ids.add(i)
+            continue
+        actual = _theme_actual(r, today)
+        if actual is None:
+            keep_ids.add(i)                 # 아직 만기 전이거나 조회 실패 → 보존
+            continue
+        graded.append(dict(r, actual=actual))
+    if not graded:
+        return {"checked": 0}
+
+    reg = get_registry()
+    cal = _cal_load()
+    agents = cal.setdefault("agents", {})
+    # 요원별 × 기간별로 나눠 채점한다 — 단기와 장기를 섞으면 편향이 상쇄돼 안 보인다.
+    buckets = {}
+    for g in graded:
+        buckets.setdefault((g.get("who", "?"), g.get("horizon", "단기")), []).append(g)
+        _th.record_score(g["theme"], g["horizon"],
+                         (g["actual"] >= 0) == (g["dir"] >= 0),
+                         g["actual"] - (g["lo"] + g["hi"]) / 2.0)
+    summary = {}
+    for (who, hz), rs in buckets.items():
+        try:
+            sc = reg.run("forecast_score", rows=rs, n_min=MIN_N)
+        except Exception:
+            continue
+        st = agents.setdefault(who, {"weight": 0.5})
+        hz_st = st.setdefault("horizons", {}).setdefault(hz, {"weight": 0.5})
+        hz_st["weight"] = _update_weight(hz_st.get("weight", 0.5), sc.get("skill"))
+        hz_st["n"] = sc["n"]
+        hz_st["score"] = {k: sc.get(k) for k in
+                          ("hit_rate", "mean_p", "brier", "rel", "res", "unc", "skill",
+                           "overconf", "bias", "mae", "coverage")}
+        hz_st["diagnosis"] = sc.get("diagnosis", [])
+        summary[f"{who}/{hz}"] = {"n": sc["n"], "hit": sc["hit_rate"], "skill": sc["skill"]}
+        if emit_fn:
+            emit_fn("forecast_score", who, topic=f"테마/{hz}",
+                    payload={"who": who, "horizon": hz, "n": sc["n"], "brier": sc["brier"],
+                             "skill": sc["skill"], "hit_rate": sc["hit_rate"],
+                             "overconf": sc["overconf"], "bias": sc["bias"],
+                             "coverage": sc["coverage"], "weight": hz_st["weight"],
+                             "diagnosis": [d["code"] for d in sc.get("diagnosis", [])]})
+    cal["updated"] = today
+    _cal_save(cal)
+
+    # 채점 끝난 것만 덜어낸다(만기 전 예측은 반드시 보존 — 장기 20거래일짜리가 있다)
+    survivors = [r for r in rows if r.get("kind") != "theme"]
+    survivors += [r for i, r in enumerate(theme_rows) if i in keep_ids]
+    try:
+        with open(FC_FILE, "w", encoding="utf-8") as f:
+            for r in survivors:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    except OSError:
+        pass
+    print(f"  🧪 테마 예측 채점 {len(graded)}건 — " +
+          ", ".join(f"{k} n={v['n']} 적중{v['hit']}" for k, v in summary.items()))
+    return {"checked": len(graded), "summary": summary}
+
+
+def theme_block(theme_id, who=None):
+    """이 테마·이 요원의 지금까지 성적. 프롬프트에 붙여 '전에 어땠는지'를 알려준다."""
+    import themes as _th
+    sb = _th.scoreboard()
+    name = _th.BY_ID.get(theme_id, {}).get("name", theme_id)
+    row = sb.get(name)
+    if not row:
+        return ""
+    parts = [f"{h} n={v['n']} 적중{v['hit_rate']:.0%} 편향{v['bias']:+.2f}%p"
+             for h, v in sorted(row.items())]
+    head = f"\n\n[이 테마 누적 성적 — 실측] {name}: " + " / ".join(parts)
+    if who:
+        st = ((_cal_load().get("agents") or {}).get(who) or {}).get("horizons") or {}
+        mine = [f"{h} 적중{(v.get('score') or {}).get('hit_rate')}" for h, v in st.items()
+                if (v.get("score") or {}).get("hit_rate") is not None]
+        if mine:
+            head += f"\n[네 기간별 성적] " + " / ".join(mine)
+    return head
 
 
 def _cal_load():

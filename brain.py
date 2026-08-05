@@ -260,9 +260,12 @@ def run_meeting(m, b, phases, finalize, engine=None):
         # 곧바로 들어간다**(phase_deepdive는 perceive 뒤에 돌기 때문에 같은 회의에 반영됨).
         if name == "perceive" and _forecast:
             try:
-                _forecast.settle(getattr(m, "snap", {}) or {},
-                                 emit_fn=lambda t, a, **kw: _emit(t, a, kw.get("topic", ""),
-                                                                  kw.get("payload"), kw.get("cause")))
+                _ef = lambda t, a, **kw: _emit(t, a, kw.get("topic", ""),
+                                               kw.get("payload"), kw.get("cause"))
+                _forecast.settle(getattr(m, "snap", {}) or {}, emit_fn=_ef)
+                # 테마 실험의 만기 도래분도 여기서 채점한다(단기 1일 / 중기 5일 / 장기 20일).
+                # 만기 전 예측은 건드리지 않는다 — 장기 20거래일짜리가 살아 있어야 한다.
+                _forecast.settle_themes(emit_fn=_ef)
             except Exception as e:
                 print(f"  ⚠️ brain: 예측 채점 실패(계속): {type(e).__name__}: {e}", file=sys.stderr)
         # (구) 현실대조 — 판정 분포 관측용으로 유지. 채점은 위 forecast가 한다.
