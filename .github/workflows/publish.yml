@@ -33,4 +33,12 @@ jobs:
           git config user.email "bot@users.noreply.github.com"
           git add docs series
           git commit -m "auto: $(date -u '+%Y-%m-%d %H:%M') UTC" || echo "변경 없음"
-          git push
+          # 매시간 도는 작업이라 사람의 push와 겹치기 쉽다 — 리베이스 후 재시도(생성파일이라 안전).
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push 충돌 — 리베이스 후 재시도 ($i/5)"
+            git pull --rebase origin master || git rebase --abort
+            sleep 5
+          done
+          echo "::error::5회 재시도에도 push 실패"
+          exit 1

@@ -34,6 +34,16 @@ jobs:
         run: |
           git config user.name "alpha-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add docs discussions discussions.json exports key_usage.json trends.json logs retry_queue.json stream experience
+          git add docs discussions discussions.json exports key_usage.json trends.json logs retry_queue.json stream experience glossary.json
           git commit -m "토론: $(date -u '+%Y-%m-%d %H:%M') UTC" || echo "변경 없음"
-          git push
+          # 회의는 10~20분 걸린다. 그 사이 사람이 push하면 이 단계가 non-fast-forward로 죽고
+          # **회의 결과가 통째로 버려진다**(2026-08-05 실제 발생 — 144콜을 쓴 회의를 날림).
+          # 리베이스 후 재시도해서 결과를 지켜낸다. 우리 산출물은 생성파일이라 리베이스가 안전하다.
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            echo "push 충돌 — 리베이스 후 재시도 ($i/5)"
+            git pull --rebase origin master || git rebase --abort
+            sleep 5
+          done
+          echo "::error::5회 재시도에도 push 실패"
+          exit 1
