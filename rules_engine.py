@@ -83,7 +83,8 @@ class ReflexEngine:
                     if name != when["cmd"]:
                         continue
                     rec = {"rule_id": rule["id"], "event_eid": ev.get("eid"),
-                           "topic": ev.get("topic", ""), "then": rule.get("then")}
+                           "topic": ev.get("topic", ""), "then": rule.get("then"),
+                           "event_payload": payload}
                     fired.append(rec)
                     if emit_fn:
                         emit_fn("rule_fired", f"rule:{rule['id']}", topic=ev.get("topic", ""),
@@ -99,8 +100,11 @@ class ReflexEngine:
                     matched = False
                 if not matched:
                     continue
+                # 발화의 '원인 이벤트 내용'을 함께 넘긴다 — R04 검산처럼 then이 원문 텍스트를
+                # 필요로 하는 효과가 있어서다(brain이 eid로 되짚지 않아도 되게).
                 rec = {"rule_id": rule["id"], "event_eid": ev.get("eid"),
-                       "topic": ev.get("topic", ""), "then": rule.get("then")}
+                       "topic": ev.get("topic", ""), "then": rule.get("then"),
+                       "event_payload": payload}
                 fired.append(rec)
                 if emit_fn:
                     emit_fn("rule_fired", f"rule:{rule['id']}", topic=ev.get("topic", ""),

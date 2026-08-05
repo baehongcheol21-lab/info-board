@@ -50,7 +50,9 @@ def score(events, calls_used=0, cap=0, reflex_work=0):
     fires_by_topic = collections.Counter(e.get("topic") for e in fired)
 
     llm_outputs = types.get("agent_output", 0)
-    rule_handled = types.get("annotation", 0) + types.get("rejected", 0)
+    # verification(R04 검산)도 반사가 0콜로 실제 처리한 일이다 — annotate·reject와 같은 자격.
+    rule_handled = (types.get("annotation", 0) + types.get("rejected", 0)
+                    + types.get("verification", 0))
     # 반사로 처리된 건 / (반사 + LLM 발언). 높을수록 0콜로 해결한 비율이 크다.
     denom = rule_handled + llm_outputs
     reflex_ratio = round(rule_handled / denom, 3) if denom else 0.0
@@ -63,6 +65,12 @@ def score(events, calls_used=0, cap=0, reflex_work=0):
     improved = sum(1 for e in vevents if (e.get("payload") or {}).get("improved"))
 
     redo_fires = sum(v for k, v in by_rule.items() if k in ("R01", "R02"))
+
+    # R04 검산 실적 — '몇 건을 대조했고 몇 건이 현실과 어긋났나'. pending_command(기록만)와
+    # 달리 이건 실제로 수행된 작업이라 ③구조축의 핵심 지표가 된다.
+    ver = [e for e in events if e.get("type") == "verification"]
+    verified_n = sum(int((e.get("payload") or {}).get("checked") or 0) for e in ver)
+    mismatch_n = sum(len((e.get("payload") or {}).get("mismatch") or []) for e in ver)
 
     return {
         # --- 예산효율 ---
@@ -78,6 +86,8 @@ def score(events, calls_used=0, cap=0, reflex_work=0):
         # --- 교정성과 ---
         "redo_fired": redo_fires,                      # 재검색 지시가 몇 번 나왔나
         "pending_commands": types.get("pending_command", 0),  # 기록만 하고 미실행인 명령
+        "verified": verified_n,                        # R04가 실제로 대조한 주장 수
+        "verify_mismatch": mismatch_n,                 # 그중 스냅샷과 어긋난 건수
         "style": _style_audit(events),                 # (추정) 오용·채움말 0콜 실측
         "critique_rounds": critique_rounds,            # 비판→교정 재라운드 횟수
         "critique_improved": improved,                 # 그중 판정이 실제로 바뀐 건수

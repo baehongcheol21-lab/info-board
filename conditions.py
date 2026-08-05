@@ -81,15 +81,24 @@ def _r03_verdict_insufficient(event):
 
 
 def _r04_has_pct_claim(event):
-    """요원 발언에 % 계산 주장이 있으면 검산 대상. pct_claim_extract 기관에 위임."""
+    """요원 발언에 **검산 가능한** 계산 주장이 있으면 대상. claim_verify 기관에 위임.
+
+    ⚠️ 2026-08-05 좁힘. 예전엔 pct_claim_extract로 '%가 하나라도 있으면' 발화했다. 그 결과
+    R04 혼자 238회 발화해 스트림의 절반을 차지했는데 정작 검산은 한 번도 못 했다(메타리뷰).
+    실물을 보니 그 %의 71%는 애초에 검산 대상이 아니었다 — 시장점유율·위험가중치·실업률·
+    사이드카 발동조건·전년 동기 대비 실적처럼 **대조할 진실값이 우리에게 없는 숫자**들이다.
+
+    R04의 desc는 원래부터 "숫자 계산 주장(**전일比 등**)"이었다. 즉 이건 rules.yaml에서
+    벗어나는 게 아니라, 넓게 잡고 있던 조건부를 **룰 원문의 뜻대로 되돌리는** 것이다
+    (rules.yaml은 손대지 않았다 — §4 자기수정 금지).
+    실측: 1,250개 이벤트 → 544개(56% 감소), 남은 것은 전부 스냅샷과 대조 가능한 주장."""
     text = (event.get("payload") or {}).get("text", "")
     if "%" not in text:
         return False
     try:
-        claims = get_registry().run("pct_claim_extract", text=text)
+        return bool(get_registry().run("claim_verify", text=text))
     except Exception:
         return False
-    return bool(claims)
 
 
 def _r07_has_nan_inf(event):

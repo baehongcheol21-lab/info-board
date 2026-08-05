@@ -160,6 +160,9 @@ class Meeting:
         self.out_ind = {}
         self.news_brief = {}
         self.brief = ""
+        # R04 검산(brain)이 스냅샷과 어긋난 발언을 찾으면 여기에 넣는다 → 총평 프롬프트로 전달
+        # (rules.yaml R04의 `on_mismatch: notify_alpha`의 실제 통로). 0콜이다.
+        self.alerts = []
 
 
 # ============================================================================
@@ -513,11 +516,16 @@ def phase_brief(b, m):
     brief = ""
     try:
         lines = [f"- {d['name']}: {d['value']} {d['unit']} ({d['pct']}%)" for d in snap.values()]
+        # R04 검산이 잡아낸 불일치를 총평 앞에 붙인다(on_mismatch: notify_alpha). 없으면 빈 문자열.
+        alerts = getattr(m, "alerts", None) or []
+        warn = ("\n⚠️ 검산 경고 — 아래는 오늘 회의 발언 중 **실제 지표와 어긋난 것**이다. "
+                "총평에서 잘못된 값을 되풀이하지 말고 위 '지표 전체'의 숫자를 따르라:\n"
+                + "\n".join(f"  · {a}" for a in alerts) + "\n") if alerts else ""
         brief = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
 {gstate}
 지표 전체:
 {chr(10).join(lines)}
-뉴스 맥락: {news_brief.get('context', '없음')[:400]}
+{warn}뉴스 맥락: {news_brief.get('context', '없음')[:400]}
 직전 결론: {prev_brief[:400] or '첫 토론'}
 
 총평 4~6줄. 첫 줄은 '오늘은 조용합니다' 또는 '오늘은 O건이 특이합니다'.
@@ -746,8 +754,17 @@ def finalize(b, m):
     result = {"time": now.isoformat(timespec="minutes"), "alpha_brief": m.brief,
               "indicators": out_ind, "news_brief": news_brief,
               "calls_used": b.used, "transcript": b.transcript, "meeting_ok": meeting_ok}
-    with open("discussions.json", "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=1)
+    # ⚠️ 실패한 회의는 **discussions.json을 덮지 않는다**(2026-08-05 실측으로 잡은 실사고).
+    # 예산 소진 상태에서 14:27 회의가 콜 0·녹취 0으로 끝났는데도 결과를 그대로 써서,
+    # 141콜짜리 13:43 브리핑을 지워 버렸다. 공개 페이지가 "오늘은 심층토론 대상이 없습니다"라는
+    # 폴백 문구로 퇴화한 원인이 이것이다 — 사용자가 말한 "이전 자료지 정보가 아니야"의 실체.
+    # 빈 결과보다 **직전의 진짜 브리핑을 남기는 편이 언제나 낫다**(시각은 그때 것으로 표시되므로
+    # 낡았다는 사실도 화면에 정직하게 드러난다). 기록용 개별 파일은 그대로 남겨 감사 가능하게 둔다.
+    if meeting_ok:
+        with open("discussions.json", "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=1)
+    else:
+        print("  🛡️ discussions.json 보존 — 실패한 회의로 직전 브리핑을 덮어쓰지 않는다.")
     os.makedirs("discussions", exist_ok=True)
     with open(f"discussions/{now:%Y-%m-%dT%H%M}.json", "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=1)

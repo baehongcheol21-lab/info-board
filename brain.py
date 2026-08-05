@@ -46,10 +46,17 @@ try:
 except ImportError:
     _reality = None
 
+try:  # R04 검산의 손 — 기관 도서관이 없으면 검산만 건너뛴다(회의는 그대로)
+    from registry import get_registry
+except ImportError:
+    get_registry = None
+
 # ---- 결정론적 상한 (§8 면역계 + §5) ----
 MAX_CYCLES = 12            # §5: 회의당 사이클 상한
 PER_TOPIC_FIRE_CAP = 6     # R11: 한 topic에서 룰 발화 6회 초과 시 그 topic 동결(폭주 차단)
 MAX_REFLEX_WORK = 12       # 반사신경이 유발한 추가 작업(enqueue)의 총 처리 상한 — T12 정지 보장
+MAX_VERIFY = 80            # R04 검산 실행 상한(0콜이지만 무한은 없다 — 실측 회의당 12.5건)
+MAX_ALERTS = 6             # 알파에게 넘길 불일치 경보 상한(프롬프트를 경보로 덮지 않는다)
 
 # 엔진 스스로 만든 이벤트 — 되먹이면 자기 발화가 자기를 부르는 고리가 된다.
 _ENGINE_MADE = ("rule_fired", "annotation", "rejected", "pending_command", "rule_frozen")
@@ -71,6 +78,8 @@ def _classify_effect(then):
         return "reject", then["reject"]
     if "enqueue" in then:                    # 현재 활성 룰엔 없음 — 미래·T12용 통로
         return "enqueue", then["enqueue"]
+    if then.get("cmd") == "calc":            # R04 검산 — 0콜·순수계산·비순환이라 즉시 실행한다
+        return "verify", then
     return "record", then                     # redo/emit/py/cmd 등: 기록만(자동 실행 안 함)
 
 
@@ -102,6 +111,8 @@ def run_meeting(m, b, phases, finalize, engine=None):
     seen = []                       # 이번 회의의 전체 이벤트 (§7-1 회고 채점 재료)
     recorded = set()                # (topic, rule) 기록 중복 제거 — 스트림 비대 방지
     fed = [0]                       # bus.EMITTED 중 반사신경에 이미 먹인 지점(커서)
+    verified = [0, 0]               # [검산한 주장 수, 불일치 수]
+    seen_claims = set()             # 같은 주장 재검산 방지 (id, claimed)
 
     def _emit(type, actor, topic="", payload=None, cause_eid=None):
         """bus.emit + 회고용 기록을 한 번에. 채점은 '무슨 일이 있었나'를 세는 것이라
@@ -111,6 +122,49 @@ def run_meeting(m, b, phases, finalize, engine=None):
                      "payload": payload or {}, "cause": cause_eid})
         return eid
 
+    def _run_verify(f):
+        """R04의 then을 **실제로 실행**한다 — 요원이 말한 '전일 대비 N%'를 오늘 스냅샷과 대조.
+
+        설계서 R04의 then은 `{cmd: calc, expr: "{auto_extract}"}`지만, 실제 회의록을 4,528건
+        훑어보면 요원은 두 피연산자를 문장에 적지 않는다("WTI가 전일 대비 6.9% 하락"). 즉
+        계산기에 넣을 식이 텍스트 안에 없다 — calc를 붙이면 "6.9가 6.9인가"를 확인하는
+        자기동어반복이 된다. 검산의 목적은 **현실과 맞나**(원장 #65)이므로, 진실값인 오늘
+        스냅샷과 대조한다. 0콜·순수계산이라 브레이크 없는 자동화가 아니다.
+
+        on_mismatch: notify_alpha — 불일치는 m.alerts에 실려 총평 프롬프트로 들어간다."""
+        if get_registry is None or verified[0] >= MAX_VERIFY:
+            return
+        text = (f.get("event_payload") or {}).get("text", "")
+        snap = getattr(m, "snap", None) or {}
+        if not text or not snap:
+            return
+        try:
+            checks = get_registry().run("claim_verify", text=text, snap=snap)
+        except Exception as e:
+            print(f"  ⚠️ brain: 검산 실패(계속): {type(e).__name__}: {e}", file=sys.stderr)
+            return
+        bad, fresh = [], 0
+        for c in checks:
+            key = (c["id"], c["claimed"])
+            if c["ok"] is None or key in seen_claims:
+                continue          # 대조할 진실값이 없거나 이미 본 주장(같은 값 반복 인용)
+            seen_claims.add(key)
+            fresh += 1
+            verified[0] += 1
+            if not c["ok"]:
+                verified[1] += 1
+                bad.append(c)
+        if not fresh:
+            return                # 새로 대조한 게 없으면 이벤트도 남기지 않는다(스트림 비대 방지)
+        _emit("verification", f"rule:{f['rule_id']}", f.get("topic", ""),
+              {"checked": fresh, "mismatch": bad}, f.get("event_eid"))
+        alerts = getattr(m, "alerts", None)
+        if bad and isinstance(alerts, list) and len(alerts) < MAX_ALERTS:
+            for c in bad[:MAX_ALERTS - len(alerts)]:
+                alerts.append(f"{c['name']}: 회의 중 '{c['claimed']}%'라는 발언이 있었으나 "
+                              f"오늘 실제 등락은 {c['actual']}%다({c['why']}).")
+                print(f"  ❗ 검산 불일치 — {c['name']}: 주장 {c['claimed']}% vs 실제 {c['actual']}% ({c['why']})")
+
     def _handle_fired(fired):
         for f in fired:
             topic = f.get("topic", "")
@@ -119,6 +173,9 @@ def run_meeting(m, b, phases, finalize, engine=None):
             # 행동"을 끊는 것이지 관측을 세는 게 아니다 — 예컨대 R04(% 주장 검산)는 요원이
             # 숫자를 말할 때마다 정상적으로 발화하므로(테스트에서 15회) 이걸 상한에 세면
             # 정작 중요한 R05·R06이 막힌다. 대신 (topic, rule) 조합당 1회만 남겨 스트림 비대를 막는다.
+            if kind == "verify":
+                _run_verify(f)                 # 0콜·비순환 — 상한 계산에 넣지 않는다
+                continue
             if kind == "record":
                 key = (topic, f["rule_id"])
                 if key in recorded:
@@ -213,6 +270,9 @@ def run_meeting(m, b, phases, finalize, engine=None):
     if reflex_queue:
         print(f"  ⛔ 반사 작업 상한(MAX_REFLEX_WORK={MAX_REFLEX_WORK}) 도달 — "
               f"남은 {len(reflex_queue)}건 폐기(정지 보장)", file=sys.stderr)
+
+    if verified[0]:
+        print(f"  ✅ 검산(R04) {verified[0]}건 — 불일치 {verified[1]}건")
 
     # ---- 최종 산출물은 discuss.py가 만든다(brain은 손대지 않음) ----
     result = finalize(b, m)
