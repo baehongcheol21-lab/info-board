@@ -55,8 +55,12 @@ def score(events, calls_used=0, cap=0, reflex_work=0):
     denom = rule_handled + llm_outputs
     reflex_ratio = round(rule_handled / denom, 3) if denom else 0.0
 
-    verdicts = collections.Counter(
-        (e.get("payload") or {}).get("verdict") for e in events if e.get("type") == "verdict")
+    vevents = [e for e in events if e.get("type") == "verdict"]
+    verdicts = collections.Counter((e.get("payload") or {}).get("verdict") for e in vevents)
+    # 비판→교정 루프의 실효성 — 재라운드를 몇 번 돌았고 그중 몇 건이 판정을 실제로 바꿨나.
+    # "비판이 형식적"이라는 감사 지적(U4 3.3%)에 대한 측정 지표다.
+    critique_rounds = sum(int((e.get("payload") or {}).get("critique_rounds") or 0) for e in vevents)
+    improved = sum(1 for e in vevents if (e.get("payload") or {}).get("improved"))
 
     redo_fires = sum(v for k, v in by_rule.items() if k in ("R01", "R02"))
 
@@ -75,6 +79,8 @@ def score(events, calls_used=0, cap=0, reflex_work=0):
         "redo_fired": redo_fires,                      # 재검색 지시가 몇 번 나왔나
         "pending_commands": types.get("pending_command", 0),  # 기록만 하고 미실행인 명령
         "style": _style_audit(events),                 # (추정) 오용·채움말 0콜 실측
+        "critique_rounds": critique_rounds,            # 비판→교정 재라운드 횟수
+        "critique_improved": improved,                 # 그중 판정이 실제로 바뀐 건수
         # --- 관측 요약 ---
         "events": sum(types.values()),
         "event_types": dict(types),

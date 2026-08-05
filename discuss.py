@@ -58,6 +58,8 @@ def _diag(e):
 
 MAX_CALLS = 300   # 회의 1회당 상한 (P12 풀스로틀: 150→300, 하루 3회면 ~900콜/일)
 TARGET_CALLS = int(MAX_CALLS * 0.7)  # 이 미만이면 잔여예산 소진 라운드 발동 (P12 #4)
+DEEP_TOPICS = 8   # 심층토론 대상 수 (3→8, 2026-08-05 역할 고정 문제 해소)
+MAX_CRITIQUE_ROUNDS = 1   # topic당 비판→교정 재라운드 상한 (무한 왕복 차단)
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
 # ---- 배경설명 의무 구조 (P12 #2, 원장 #63) — "정보 나열"이 아니라 "맥락·의미"를 강제한다.
@@ -328,9 +330,13 @@ B2의 분류 결과: {json.dumps(cj, ensure_ascii=False)[:1500]}
 def phase_deepdive(b, m):
     snap, gstate, memory, now, out_ind = m.snap, m.gstate, m.memory, m.now, m.out_ind
     # ---- 4. 이상신호 심층토론 (도구 사용 + 방어로직) ----
+    # 대상 수를 3으로 하드코딩하던 것을 DEEP_TOPICS(8)로 넓혔다. 2026-08-05 감사에서 최근
+    # 3회의의 역할 배분이 **정확히 동일**(U1:26 U2:24 알파:25 U3:6 U4:3 B2:1)한 게 드러났는데,
+    # 그날 이상신호가 몇 개든 심층은 무조건 3건이었던 게 원인이다. 예산도 남아돌던 터라
+    # (140/300) 그 여유를 여기, 즉 '비판과 근거 수집'에 붓는 게 맞다.
     anomalies = sorted(
         [(_id, d) for _id, d in snap.items() if d["pct"] is not None and abs(d["pct"]) >= 2],
-        key=lambda x: -abs(x[1]["pct"]))[:3]
+        key=lambda x: -abs(x[1]["pct"]))[:DEEP_TOPICS]
     # 보류 큐 편입 (P5 #6 알파 관리자화): 전 회의에서 "데이터 부족"으로 미뤄둔 건을
     # 최대 2건까지 오늘 의제에 자동으로 다시 올린다.
     already = {i for i, _ in anomalies}
@@ -370,16 +376,67 @@ U3의 분석: {u3[:1200]}
   ①24시간 이내 발생한 이벤트인가?  ②위 수급 데이터(거래량 급증 등)로 증명되는가?
 둘 다 충족해야만 [확실]. 하나만 충족 = [추정]. 둘 다 미충족 = [기각].
 마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.""", topic=d["name"])
+            def _parse_verdict(txt):
+                return next((v for v in ("[확실]", "[추정]", "[원인불명]", "[판단불가]")
+                             if v in txt.split("\n")[-1] or v in txt[-120:]), "[추정]")
+
             # 판정 구속 (코드 레벨): U4 판정을 파싱해서 알파에게 강제
-            verdict_kr = next((v for v in ("[확실]", "[추정]", "[원인불명]", "[판단불가]")
-                               if v in u4.split("\n")[-1] or v in u4[-120:]), "[추정]")
+            verdict_kr = _parse_verdict(u4)
+            verdict_first = verdict_kr
+
+            # ---- 비판→교정 루프 (2026-08-05, 원장 #64 "비판→교정이 실제로 작동") ----
+            # 기존 구조에서 U4는 topic당 딱 한 번 채점하고 끝이었다(감사: U4가 전체 발언의
+            # 3.3%). 비판이 형식적으로만 존재하고 **교정으로 이어지지 않았다**.
+            # 판정이 [확실]이 아니면 = 근거가 부족하다는 뜻이므로, U4가 지적한 결함을 그대로
+            # U3에게 돌려 보강 수집을 시키고 U4가 **다시 판정**한다. 판정 전/후를 모두 남겨
+            # 회고(§7-1 교정성과)가 "교정이 실제로 판정을 개선했나"를 셀 수 있게 한다.
+            # 안전장치: topic당 최대 MAX_CRITIQUE_ROUNDS회 + 예산 여유가 있을 때만.
+            rounds = 0
+            while (verdict_kr != "[확실]" and rounds < MAX_CRITIQUE_ROUNDS
+                   and b.used < TARGET_CALLS):
+                rounds += 1
+                try:
+                    u3b = tools.run_tool_loop(b, "U3", f"""너는 원인분석 요원 U3다. {STYLE}
+{gstate}
+관측: {base}
+
+[재조사 지시] 비판 요원 U4가 네 1차 분석을 다음과 같이 판정했다: {verdict_kr}
+U4의 지적: {u4[:900]}
+
+U4가 부족하다고 한 바로 그 지점을 메워라. 같은 검색을 반복하지 말고 **다른 각도**로 파라
+(다른 검색어·다른 기간·다른 도구). 검색어에는 "{d['name']}"를 포함하라.
+새로 찾은 것이 없으면 "추가 근거 없음"이라고 분명히 써라 — 없는 걸 지어내는 것이 최악이다.""",
+                                              topic=f"{d['name']} 재조사")
+                    u4b = b.ask("U4", f"""너는 비판 요원 U4다. {STYLE}
+관측: {base}
+[1차 판정] {verdict_kr}
+[1차 분석] {u3[:700]}
+[재조사 결과] {u3b[:1200]}
+[수급 데이터 7일]: {vol[:600]}
+
+재조사로 근거가 실제로 보강됐는지 판단하라. 보강됐으면 판정을 올리고, 그대로면 유지하라.
+근거 없이 판정을 올리는 것은 실격이다.
+마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.""",
+                                 topic=f"{d['name']} 재판정")
+                    u3 = f"{u3}\n\n[재조사] {u3b}"
+                    u4 = f"{u4}\n\n[재판정] {u4b}"
+                    verdict_kr = _parse_verdict(u4b)
+                except Exception as e:
+                    print(f"  ⚠️ {_id} 교정 라운드 중단: {_diag(e)}")
+                    break
+            if rounds:
+                moved = "개선" if verdict_first != verdict_kr else "유지"
+                print(f"  🔁 {d['name']} 비판→교정 {rounds}회: {verdict_first} → {verdict_kr} ({moved})")
             # P11-4: 판정을 verdict 이벤트로 스트림에 남긴다. 이게 있어야 R03(데이터부족→재조회)·
             # R10(확실→모의투자 신호)이 죽은 룰이 아니게 되고, 익일 현실대조(reality_check.py)가
             # "어제 뭐라고 판정했나"를 기계적으로 읽을 수 있다(§7-2).
             if bus:
                 bus.emit("verdict", "U4", topic=d["name"],
                          payload={"verdict": verdict_kr, "id": _id, "pct": d.get("pct"),
-                                  "value": d.get("value"), "text": u4[-800:]})
+                                  "value": d.get("value"), "text": u4[-800:],
+                                  # 교정 성과 측정용(§7-1): 재라운드가 판정을 실제로 바꿨나
+                                  "verdict_first": verdict_first, "critique_rounds": rounds,
+                                  "improved": bool(rounds) and verdict_first != verdict_kr})
             constraint = ("원인을 단정해도 된다." if verdict_kr == "[확실]" else
                           f"U4 종합판정이 {verdict_kr} 이므로 너는 원인을 단정할 수 없다. "
                           "서두에 '원인은 아직 확정되지 않았습니다'로 시작하라. 서두와 결론이 모순되면 실격이다.")
