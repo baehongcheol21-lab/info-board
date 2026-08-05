@@ -51,6 +51,12 @@ try:  # 예측 채점·신뢰도 갱신 회로(§7-2 본체)
 except ImportError:
     _forecast = None
 
+try:  # 가상계좌 모의투자(시뮬레이션 전용)
+    import portfolio as _pfolio
+    import universe as _univ2
+except ImportError:
+    _pfolio = _univ2 = None
+
 try:  # R04 검산의 손 — 기관 도서관이 없으면 검산만 건너뛴다(회의는 그대로)
     from registry import get_registry
 except ImportError:
@@ -266,6 +272,16 @@ def run_meeting(m, b, phases, finalize, engine=None):
                 # 테마 실험의 만기 도래분도 여기서 채점한다(단기 1일 / 중기 5일 / 장기 20일).
                 # 만기 전 예측은 건드리지 않는다 — 장기 20거래일짜리가 살아 있어야 한다.
                 _forecast.settle_themes(emit_fn=_ef)
+                # 가상계좌 정산: 어제 예약한 목표비중을 오늘 종가로 체결하고, 어제 낸
+                # '내일 평가액' 예측을 실제와 대조한다. **전부 시뮬레이션이다.**
+                if _pfolio and _univ2:
+                    try:
+                        _px, _fx = _univ2.fetch_prices()
+                        if _px and _fx:
+                            _pfolio.settle({k: v["px"] for k, v in _px.items()}, _fx, emit_fn=_ef)
+                    except Exception as e:
+                        print(f"  ⚠️ brain: 가상계좌 정산 실패(계속): {type(e).__name__}: {e}",
+                              file=sys.stderr)
             except Exception as e:
                 print(f"  ⚠️ brain: 예측 채점 실패(계속): {type(e).__name__}: {e}", file=sys.stderr)
         # (구) 현실대조 — 판정 분포 관측용으로 유지. 채점은 위 forecast가 한다.

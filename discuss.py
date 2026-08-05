@@ -60,6 +60,18 @@ try:  # 오늘의 테마 실험(사용자 실험 #1) — 없으면 실험만 건
 except ImportError:
     _themes = None
 
+try:  # 가상계좌 모의투자 실험(전부 시뮬레이션 — 실계좌 주문 코드는 없다)
+    import universe as _univ
+    import portfolio as _pf
+except ImportError:
+    _univ = _pf = None
+
+# 알파가 마지막에 적는 두 줄의 형식. 형식을 못 지키면 그 회의는 주문 없이 넘어간다.
+_re_pf_w = re.compile(r"\[비중\]\s*(.+)")
+_re_pf_e = re.compile(r"\[평가예측\]\s*내일\s*=\s*([\d,]+)\s*"
+                      r"확률\s*=\s*([01](?:\.\d+)?)\s*"
+                      r"구간\s*=\s*([\d,]+)\s*~\s*([\d,]+)")
+
 
 def _diag(e):
     """실패 원인을 한 줄로 못 잡을 때(예: 인코딩 문제) 다음 조사를 위해 traceback 마지막 줄을 남긴다."""
@@ -942,13 +954,167 @@ U4의 반론: {bear[:900]}
     m.theme_forecasts = saved
 
 
+def _pf_parse_weights(text):
+    """`[비중] kepco=15 lselectric=15 hynix=20 nvda=20 ceg=15 xle=5 현금=10` → {id: 0.15, ...}"""
+    m = _re_pf_w.search(text or "")
+    if not m:
+        return None
+    known = set(_univ.BY_ID) if _univ else set()
+    out = {}
+    for tok in re.finditer(r"([A-Za-z_]+)\s*=\s*(\d+(?:\.\d+)?)", m.group(1)):
+        k, v = tok.group(1).lower(), float(tok.group(2))
+        if k in ("cash", "현금"):
+            continue
+        if known and k not in known:
+            continue          # 모르는 종목 id는 여기서 버린다 — 오타가 주문으로 흘러가지 않게
+        out[k] = v / 100.0
+    return out or None
+
+
+def _pf_parse_equity(text):
+    """`[평가예측] 내일=50,320,000 확률=0.6 구간=49,500,000~51,200,000`"""
+    m = _re_pf_e.search(text or "")
+    if not m:
+        return None
+    f = lambda s: float(s.replace(",", ""))
+    lo, hi = f(m.group(3)), f(m.group(4))
+    if lo > hi:
+        lo, hi = hi, lo
+    return {"equity": f(m.group(1)), "p": min(max(float(m.group(2)), 0.0), 1.0),
+            "lo": lo, "hi": hi}
+
+
+def phase_portfolio(b, m):
+    """가상계좌 5천만원 모의투자 — 6종목 전부 토론하고 목표비중·내일 평가액을 정한다.
+
+    ⚠️ 전부 시뮬레이션이다. 실계좌 주문 코드는 없다.
+
+    사용자 실험: "6종목으로 6개월 굴려보고, 내일 얼마가 될지 스스로 정하게 해라."
+    그래서 이 phase의 산출물은 두 개다:
+      ① 6종목 목표비중 → 다음 거래일 종가로 리밸런싱(수수료·세금 반영)
+      ② **내일 계좌 평가액 숫자** → 다음 날 실제와 대조. 이게 가장 반증 가능한 예측이다.
+
+    콜: 종목당 2콜(강세·약세) + 알파 종합 1콜 = 13콜. 회의 200콜 규모에서 감당된다.
+    """
+    if not (_univ and _pf):
+        return
+    print("[6/6] 가상계좌 모의투자 — 6종목 토론")
+    try:
+        prices, fx = _univ.fetch_prices()
+        if not prices or not fx:
+            print("  ⚠️ 시세/환율을 못 받아 이번 회의는 건너뜁니다(가짜 값을 만들지 않는다)")
+            return
+        pf = _pf.load()
+        m.prices, m.fx = prices, fx
+        rows, tot = _pf.positions(pf, {k: v["px"] for k, v in prices.items()}, fx)
+        board = _univ.brief(prices, fx, pf.get("holdings"))
+    except Exception as e:
+        print(f"  ⚠️ 계좌 준비 실패: {type(e).__name__}: {e}")
+        return
+
+    held = ("\n[현재 계좌] 평가액 {:,.0f}원 (원금 {:,.0f}원 대비 {:+.2f}%) · 현금 {:,.0f}원\n".format(
+        tot, _univ.INITIAL_CAPITAL, (tot / _univ.INITIAL_CAPITAL - 1) * 100, pf.get("cash", 0))
+        + ("\n".join(f"  · {r['name']} {r['shares']}주 "
+                     f"비중 {r['weight']:.0%} 손익 {r['pl_pct']:+.1f}%" for r in rows)
+           if rows else "  (아직 보유 종목 없음 — 첫 배분을 정하라)"))
+
+    b.transcript.append({"role": "🧰도구", "topic": "가상계좌",
+                         "text": board + "\n" + held})
+
+    common = STYLE + "\n" + m.gstate + "\n" + board + held
+    views = {}
+    for u in _univ.UNIVERSE:
+        uid, nm = u["id"], u["name"]
+        if uid not in prices:
+            continue
+        bull = bear = ""
+        try:
+            bull = b.ask("U3", f"""너는 원인분석 요원 U3다. {STYLE}
+{m.gstate}
+
+종목: {nm} ({u['sector']}) 현재 {prices[uid]['px']:,.2f} {u['ccy']}, 전일比 {prices[uid]['pct']}%
+이 종목을 볼 때 주로 보는 것: {u['watch']}
+
+**매수 논거**를 세워라. 억지 균형 금지 — 반대편은 U4가 맡는다.
+24시간 내 사건·수급·가격으로만. 없으면 "강한 근거 없음"이라고 써라. 2줄 이내.
+{_fc.THEME_FORMAT if _fc else ''}{_fix("U3")}""", topic=nm)
+        except Exception as e:
+            print(f"  ⚠️ U3/{nm}: {_diag(e)}")
+        try:
+            bear = b.ask("U4", f"""너는 비판 요원 U4다. {STYLE}
+{m.gstate}
+
+종목: {nm} ({u['sector']}) 현재 {prices[uid]['px']:,.2f} {u['ccy']}, 전일比 {prices[uid]['pct']}%
+U3의 매수 논거: {bull[:600]}
+
+**매도/보류 논거**와 U3 논거의 허점을 짚어라. 근거 없는 낙관은 깎아라. 2줄 이내.
+{_fc.THEME_FORMAT if _fc else ''}{_fix("U4")}""", topic=nm)
+        except Exception as e:
+            print(f"  ⚠️ U4/{nm}: {_diag(e)}")
+        views[uid] = (bull, bear)
+        if _fc:
+            for who, txt in (("U3", bull), ("U4", bear)):
+                try:
+                    prs = _fc.parse_multi(txt)
+                    if prs:
+                        _fc.record_theme(m.meeting_id, who,
+                                         {"id": uid, "name": nm, "members": [uid]},
+                                         prs, {uid: prices[uid]["px"]},
+                                         emit_fn=(bus.emit if bus else None))
+                except Exception as e:
+                    print(f"  ⚠️ 예측 기록({who}/{nm}): {type(e).__name__}: {e}")
+
+    digest = "\n\n".join(
+        f"[{_univ.BY_ID[k]['name']}]\n 매수(U3): {v[0][:320]}\n 매도(U4): {v[1][:320]}"
+        for k, v in views.items())
+    ids = " ".join(u["id"] for u in _univ.UNIVERSE)
+
+    final = ""
+    try:
+        final = b.ask("알파", f"""너는 지휘자 알파다. 가상계좌 {_univ.INITIAL_CAPITAL:,.0f}원을 굴린다.
+{common}
+
+요원 토론:
+{digest[:3500]}
+
+**두 줄을 형식 그대로 마지막에 적어라.**
+[비중] kepco=15 lselectric=15 hynix=20 nvda=20 ceg=15 xle=5 현금=10
+[평가예측] 내일={int(tot):,} 확률=0.60 구간={int(tot*0.98):,}~{int(tot*1.02):,}
+
+규칙:
+· 종목 id는 정확히 이것만 쓴다: {ids}
+· 비중은 5 단위 정수(%), 한 종목 최대 {int(_univ.MAX_WEIGHT*100)}. 합계 100 이하, 나머지는 현금.
+· [평가예측]은 **다음 거래일 종가 기준 계좌 총평가액(원)**이다. 위 비중대로 산 뒤의 값이다.
+· 확신이 없으면 현금 비중을 올려라. 다만 **겁먹고 매번 현금 100은 실격** — 실험이 죽는다.
+· 비중을 왜 그렇게 잡았는지 근거를 2~3줄로 먼저 쓰고, 마지막에 위 두 줄을 적어라.
+{_fix("알파")}""", topic="가상계좌 배분")
+    except Exception as e:
+        print(f"  ⚠️ 알파 배분: {_diag(e)}")
+
+    w = _pf_parse_weights(final)
+    eq = _pf_parse_equity(final)
+    if w:
+        eq = eq or {}
+        eq["by"] = "알파"
+        _pf.set_orders(pf, w, eq, m.meeting_id, note=final[:300])
+        pct = " ".join(f"{_univ.BY_ID[k]['name']} {v:.0%}" for k, v in w.items() if v > 0)
+        print(f"  💼 목표비중 예약: {pct or '전량 현금'}"
+              + (f" · 내일 예측 {eq.get('equity', 0):,.0f}원" if eq.get("equity") else ""))
+        if bus:
+            bus.emit("portfolio_order", "알파", topic="가상계좌",
+                     payload={"weights": w, "forecast": eq, "meeting_id": m.meeting_id})
+        m.pf_orders = w
+    else:
+        print("  ⚠️ 알파가 [비중] 형식을 안 지켜 이번 회의 주문은 없음(직전 보유 유지)")
+
+
 PHASES = [
     ("perceive", phase_perceive),
     ("indicators", phase_indicators),
     ("news", phase_news),
     ("deepdive", phase_deepdive),
     ("brief", phase_brief),
-    ("theme", phase_theme),                      # 사용자 실험 — 테마 토론·기간별 예측
+    ("portfolio", phase_portfolio),              # 가상계좌 모의투자 — 6종목 토론·배분
     ("spend_remaining", phase_spend_remaining),  # P12 #4 — 잔여예산 소진
 ]
 
