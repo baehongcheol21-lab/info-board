@@ -16,6 +16,31 @@ meta_report.py(§7-3)가 이걸 주 단위로 집계한다.
 """
 import collections
 
+try:  # 0콜 문체 검사(verify_style) — 없어도 채점은 진행
+    from registry import get_registry as _registry
+except ImportError:
+    _registry = None
+
+
+def _style_audit(events):
+    """이번 회의 발언 전체의 문체 위반을 0콜로 집계한다(§7-1 '교정성과' 축의 실측 재료).
+
+    (추정) 남발은 2026-08-05 감사에서 22~32%로 확인된 미처리 문제다. 프롬프트를 고쳤다고
+    믿는 대신 **매 회의 숫자로 추적**해서 실제로 줄었는지 본다 — 안 줄면 다시 손댄다."""
+    if not _registry:
+        return {}
+    text = "\n".join((e.get("payload") or {}).get("text", "")
+                     for e in events if e.get("type") == "agent_output")
+    if not text.strip():
+        return {}
+    try:
+        r = _registry().run("verify_style", text=text)
+    except Exception:
+        return {}
+    st = dict(r.get("stats") or {})
+    st["violations"] = len(r.get("violations") or [])
+    return st
+
 
 def score(events, calls_used=0, cap=0, reflex_work=0):
     """events: 이번 회의의 Event dict 리스트(§3 스키마). 반환: 채점 dict."""
@@ -49,6 +74,7 @@ def score(events, calls_used=0, cap=0, reflex_work=0):
         # --- 교정성과 ---
         "redo_fired": redo_fires,                      # 재검색 지시가 몇 번 나왔나
         "pending_commands": types.get("pending_command", 0),  # 기록만 하고 미실행인 명령
+        "style": _style_audit(events),                 # (추정) 오용·채움말 0콜 실측
         # --- 관측 요약 ---
         "events": sum(types.values()),
         "event_types": dict(types),
