@@ -360,6 +360,13 @@ U3의 분석: {u3[:1200]}
             # 판정 구속 (코드 레벨): U4 판정을 파싱해서 알파에게 강제
             verdict_kr = next((v for v in ("[확실]", "[추정]", "[원인불명]", "[판단불가]")
                                if v in u4.split("\n")[-1] or v in u4[-120:]), "[추정]")
+            # P11-4: 판정을 verdict 이벤트로 스트림에 남긴다. 이게 있어야 R03(데이터부족→재조회)·
+            # R10(확실→모의투자 신호)이 죽은 룰이 아니게 되고, 익일 현실대조(reality_check.py)가
+            # "어제 뭐라고 판정했나"를 기계적으로 읽을 수 있다(§7-2).
+            if bus:
+                bus.emit("verdict", "U4", topic=d["name"],
+                         payload={"verdict": verdict_kr, "id": _id, "pct": d.get("pct"),
+                                  "value": d.get("value"), "text": u4[-800:]})
             constraint = ("원인을 단정해도 된다." if verdict_kr == "[확실]" else
                           f"U4 종합판정이 {verdict_kr} 이므로 너는 원인을 단정할 수 없다. "
                           "서두에 '원인은 아직 확정되지 않았습니다'로 시작하라. 서두와 결론이 모순되면 실격이다.")

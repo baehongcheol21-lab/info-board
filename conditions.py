@@ -65,9 +65,83 @@ def _r06_duplicate_sig(event):
     return bool((event.get("payload") or {}).get("duplicate"))
 
 
+# ---- P11-4에서 추가 (전체 룰 활성) --------------------------------------------------
+# discuss.py가 verdict/error 이벤트를 실제로 내보내기 시작했기 때문에 아래가 죽은 룰이 아니다.
+
+_INSUFFICIENT = ("데이터가 부족", "포함하지 않", "이후 데이터", "이후를 포함", "최신 데이터",
+                  "갱신되지 않", "데이터 부족", "시점이 맞지 않", "데이터 지연", "데이터가 사건 이후")
+
+
+def _r03_verdict_insufficient(event):
+    """U4 판정이 원인불명·판단불가 계열이고 그 사유가 '데이터 부족'일 때만."""
+    p = event.get("payload") or {}
+    if p.get("verdict") not in ("[원인불명]", "[판단불가]"):
+        return False
+    return any(mk in (p.get("text") or "") for mk in _INSUFFICIENT)
+
+
+def _r04_has_pct_claim(event):
+    """요원 발언에 % 계산 주장이 있으면 검산 대상. pct_claim_extract 기관에 위임."""
+    text = (event.get("payload") or {}).get("text", "")
+    if "%" not in text:
+        return False
+    try:
+        claims = get_registry().run("pct_claim_extract", text=text)
+    except Exception:
+        return False
+    return bool(claims)
+
+
+def _r07_has_nan_inf(event):
+    """계산 결과에 nan/inf가 섞였는지. verify_nan 기관에 위임."""
+    p = event.get("payload") or {}
+    val = p.get("result", p.get("value"))
+    if val is None:
+        text = p.get("text", "")
+        return ("nan" in text.lower()) or ("inf" in text.lower())
+    try:
+        return bool(get_registry().run("verify_nan", value=val))
+    except Exception:
+        return False
+
+
+def _r09_budget_underused(event):
+    """회의가 배분의 70% 미만으로 끝났으면 잔여소진 라운드 대상(P12 연동).
+    score는 retrospect가 넣어준다."""
+    s = (event.get("payload") or {}).get("score") or {}
+    br = s.get("budget_ratio")
+    return br is not None and br < 0.7
+
+
+def _r10_certain_with_direction(event):
+    """[확실] 판정 + 방향(등락)이 있으면 모의투자 신호 후보(P10 연동).
+    ⚠️ 신호는 '이벤트 발행'까지다 — 실제 주문은 P10의 모의 전용 실행기에서만 일어난다."""
+    p = event.get("payload") or {}
+    return p.get("verdict") == "[확실]" and p.get("pct") not in (None, 0)
+
+
+def _r11_fires_over_cap(event):
+    """topic당 룰 발화 상한 초과. 실제 차단은 brain.PER_TOPIC_FIRE_CAP이 이미 수행하며,
+    이 조건은 그 사실을 이벤트로도 남기기 위한 것(회고 통계용)."""
+    return bool((event.get("payload") or {}).get("over_cap"))
+
+
+def _r12_consecutive_errors(event):
+    """에러 3연속. 연속 카운트는 rules_engine이 상태로 세어 payload에 넣어준다."""
+    return int((event.get("payload") or {}).get("consecutive", 0)) >= 3
+
+
 CONDITIONS = {
     "max_published_age_h > 48": _r01_stale_search,
     "mismatch == true": _r02_topic_mismatch,
     "empty or error": _r05_empty_or_error,
     "duplicate_sig": _r06_duplicate_sig,
+    # P11-4 추가
+    "verdict in [원인불명,판단불가] and 데이터부족_마커": _r03_verdict_insufficient,
+    "has_pct_claim": _r04_has_pct_claim,
+    "has_nan_inf": _r07_has_nan_inf,
+    "calls_used < allot*0.7": _r09_budget_underused,
+    "verdict==확실 and direction": _r10_certain_with_direction,
+    "fires_on_topic > 6": _r11_fires_over_cap,
+    "consecutive >= 3": _r12_consecutive_errors,
 }

@@ -49,6 +49,7 @@ class ReflexEngine:
         rules = rules if rules is not None else load_rules()
         self.active_rules = [r for r in rules if r.get("active")]
         self.seen_sigs = set()
+        self.consecutive_errors = 0     # R12: 연속 에러 카운트(상태는 엔진이 가진다)
 
     def feed(self, events, emit_fn=None):
         """새로 들어온 이벤트들만 평가한다(이미 먹인 건 다시 주지 말 것 — 재발화 방지).
@@ -57,14 +58,37 @@ class ReflexEngine:
         fired = []
         for ev in events:
             payload = dict(ev.get("payload") or {})
-            if ev.get("type") == "command":
+            etype = ev.get("type")
+            if etype == "command":
                 sig = _cmd_sig(payload.get("cmd", {}))
                 payload["duplicate"] = sig in self.seen_sigs
                 self.seen_sigs.add(sig)
+            # R12용 연속 에러 카운트 — 조건함수는 순수하게 두고 상태는 엔진이 센다.
+            if etype == "error":
+                self.consecutive_errors += 1
+                payload["consecutive"] = self.consecutive_errors
+            elif etype in ("agent_output", "tool_result"):
+                self.consecutive_errors = 0      # 정상 진행이 끼면 연속이 끊긴다
             probe = {**ev, "payload": payload}
             for rule in self.active_rules:
                 when = rule.get("when") or {}
-                if when.get("type") and when["type"] != ev.get("type"):
+                if when.get("type") and when["type"] != etype:
+                    continue
+                if when.get("actor") and when["actor"] != ev.get("actor"):
+                    continue
+                # R08처럼 cond 없이 cmd 이름으로 매칭하는 룰 지원
+                if when.get("cmd"):
+                    cmd_obj = payload.get("cmd") or {}
+                    name = cmd_obj.get("cmd") or cmd_obj.get("tool")
+                    if name != when["cmd"]:
+                        continue
+                    rec = {"rule_id": rule["id"], "event_eid": ev.get("eid"),
+                           "topic": ev.get("topic", ""), "then": rule.get("then")}
+                    fired.append(rec)
+                    if emit_fn:
+                        emit_fn("rule_fired", f"rule:{rule['id']}", topic=ev.get("topic", ""),
+                                payload={"rule_id": rule["id"], "desc": rule.get("desc"),
+                                         "then": rule.get("then")}, cause=ev.get("eid"))
                     continue
                 checker = CONDITIONS.get(when.get("cond"))
                 if not checker:

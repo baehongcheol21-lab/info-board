@@ -36,6 +36,16 @@ try:
 except ImportError:
     rules_engine = None
 
+try:  # P11-4 §7 전전두엽 — 없어도 회의는 그대로 진행
+    import retrospect as _retro
+except ImportError:
+    _retro = None
+
+try:
+    import reality_check as _reality
+except ImportError:
+    _reality = None
+
 # ---- 결정론적 상한 (§8 면역계 + §5) ----
 MAX_CYCLES = 12            # §5: 회의당 사이클 상한
 PER_TOPIC_FIRE_CAP = 6     # R11: 한 topic에서 룰 발화 6회 초과 시 그 topic 동결(폭주 차단)
@@ -85,28 +95,43 @@ def run_meeting(m, b, phases, finalize, engine=None):
     reflex_queue = []               # enqueue된 반사 작업 (상한 하에 drain)
     cause = [None]                  # phase 경계를 넘어 이어지는 인과사슬 커서
     mark = [0]                      # 이미 이벤트화한 transcript 길이
+    seen = []                       # 이번 회의의 전체 이벤트 (§7-1 회고 채점 재료)
+    recorded = set()                # (topic, rule) 기록 중복 제거 — 스트림 비대 방지
+
+    def _emit(type, actor, topic="", payload=None, cause_eid=None):
+        """bus.emit + 회고용 기록을 한 번에. 채점은 '무슨 일이 있었나'를 세는 것이라
+        모든 발생을 여기로 통과시켜야 빠짐이 없다."""
+        eid = bus.emit(type, actor, topic=topic, payload=payload, cause=cause_eid)
+        seen.append({"eid": eid, "type": type, "actor": actor, "topic": topic,
+                     "payload": payload or {}, "cause": cause_eid})
+        return eid
 
     def _handle_fired(fired):
         for f in fired:
             topic = f.get("topic", "")
+            kind, val = _classify_effect(f.get("then"))
+            # 기록만 하는 발화(pending_command)는 상한에 안 센다. R11 상한의 목적은 "폭주하는
+            # 행동"을 끊는 것이지 관측을 세는 게 아니다 — 예컨대 R04(% 주장 검산)는 요원이
+            # 숫자를 말할 때마다 정상적으로 발화하므로(테스트에서 15회) 이걸 상한에 세면
+            # 정작 중요한 R05·R06이 막힌다. 대신 (topic, rule) 조합당 1회만 남겨 스트림 비대를 막는다.
+            if kind == "record":
+                key = (topic, f["rule_id"])
+                if key in recorded:
+                    continue
+                recorded.add(key)
+                _emit("pending_command", f"rule:{f['rule_id']}", topic, {"then": val}, f.get("event_eid"))
+                continue
             fires[topic] += 1
             if fires[topic] > PER_TOPIC_FIRE_CAP:      # R11: 폭주하는 topic 동결
-                bus.emit("rule_frozen", "brain", topic=topic,
-                         payload={"rule_id": f["rule_id"], "reason": "룰 발화 상한(R11)"},
-                         cause=f.get("event_eid"))
+                _emit("rule_frozen", "brain", topic,
+                      {"rule_id": f["rule_id"], "reason": "룰 발화 상한(R11)"}, f.get("event_eid"))
                 continue
-            kind, val = _classify_effect(f.get("then"))
             if kind == "annotate":
-                bus.emit("annotation", f"rule:{f['rule_id']}", topic=topic,
-                         payload={"note": val}, cause=f.get("event_eid"))
+                _emit("annotation", f"rule:{f['rule_id']}", topic, {"note": val}, f.get("event_eid"))
             elif kind == "reject":
-                bus.emit("rejected", f"rule:{f['rule_id']}", topic=topic,
-                         payload={"reason": val}, cause=f.get("event_eid"))
+                _emit("rejected", f"rule:{f['rule_id']}", topic, {"reason": val}, f.get("event_eid"))
             elif kind == "enqueue":
                 reflex_queue.append((topic, val))
-            else:  # record — redo/emit/py 등은 기록만(P11-3 자동 실행 안 함)
-                bus.emit("pending_command", f"rule:{f['rule_id']}", topic=topic,
-                         payload={"then": val}, cause=f.get("event_eid"))
 
     def _flush():
         """직전 처리 이후 늘어난 transcript 조각을 실시간 이벤트화하고 반사신경을 먹인다."""
@@ -116,13 +141,15 @@ def run_meeting(m, b, phases, finalize, engine=None):
             return
         try:
             evs, cause[0] = bus.emit_entries(new, cause[0])
+            seen.extend(evs)
         except Exception as e:
             print(f"  ⚠️ brain._flush(emit) 실패: {e}", file=sys.stderr)
             return
         if engine is None:
             return
         try:
-            fired = engine.feed(evs, emit_fn=bus.emit)
+            fired = engine.feed(evs, emit_fn=lambda t, a, **kw: _emit(
+                t, a, kw.get("topic", ""), kw.get("payload"), kw.get("cause")))
         except Exception as e:
             print(f"  ⚠️ brain._flush(reflex) 실패: {e}", file=sys.stderr)
             return
@@ -140,7 +167,20 @@ def run_meeting(m, b, phases, finalize, engine=None):
             fn(b, m)
         except Exception as e:
             print(f"  ⚠️ brain: phase '{name}' 예외(계속): {type(e).__name__}: {e}", file=sys.stderr)
+            # P11-4: 실패도 이벤트다. 이게 있어야 R12(에러 3연속→파수꾼 경고)가 살아있고,
+            # 회고가 "이번 회의가 얼마나 건강했나"를 셀 수 있다(§7-1 루프건전성).
+            _emit("error", f"phase:{name}", name, {"err": f"{type(e).__name__}: {e}"[:300]})
         _flush()
+        # §7-2 익일 현실대조: 감각(perceive)이 끝나 오늘 숫자가 손에 들어온 직후가 제자리다.
+        # 0콜이며, 실패해도 회의를 막지 않는다.
+        if name == "perceive" and _reality:
+            try:
+                _reality.run(getattr(m, "snap", {}), meeting_id=m.meeting_id,
+                             emit_fn=lambda t, a, **kw: _emit(t, a, kw.get("topic", ""),
+                                                              kw.get("payload"), kw.get("cause")),
+                             append_fn=bus.append_experience)
+            except Exception as e:
+                print(f"  ⚠️ brain: 현실대조 실패(계속): {type(e).__name__}: {e}", file=sys.stderr)
 
     # ---- 반사신경이 유발한 추가 작업 drain (상한으로 정지 보장 — T12) ----
     work_done = 0
@@ -157,17 +197,21 @@ def run_meeting(m, b, phases, finalize, engine=None):
     result = finalize(b, m)
 
     # ---- §5 step5·6: 0콜 회고 채점 + 일화기억 flush ----
-    score = _retrospect(b, fires, work_done)
+    score = _score_meeting(b, seen, fires, work_done)
     bus.emit_meeting_end(m.meeting_id, result, score=score)
     bus.append_experience(m.meeting_id, result)
     return result
 
 
-def _retrospect(b, fires, reflex_work):
-    """§7-1 회고 채점의 최소 구현(0콜). 예산효율·반사 통계만 — 익일 현실대조·메타리뷰(§7-2/3)는
-    P11-4에서 붙는다. meeting_end 이벤트에 실려 experience/로 영구 누적된다."""
+def _score_meeting(b, events, fires, reflex_work):
+    """§7-1 회고 채점(0콜). retrospect.py가 있으면 3축 전체를, 없으면 최소 통계를 남긴다."""
     cap = getattr(b, "per_run_cap", 0) or 0
     used = getattr(b, "used", 0)
+    if _retro:
+        try:
+            return _retro.score(events, calls_used=used, cap=cap, reflex_work=reflex_work)
+        except Exception as e:
+            print(f"  ⚠️ brain: 회고 채점 실패: {type(e).__name__}: {e}", file=sys.stderr)
     return {"calls_used": used, "cap": cap,
             "budget_ratio": round(used / cap, 3) if cap else 0.0,
             "rule_fires": dict(fires), "reflex_work": reflex_work}
