@@ -51,6 +51,9 @@ MAX_CYCLES = 12            # §5: 회의당 사이클 상한
 PER_TOPIC_FIRE_CAP = 6     # R11: 한 topic에서 룰 발화 6회 초과 시 그 topic 동결(폭주 차단)
 MAX_REFLEX_WORK = 12       # 반사신경이 유발한 추가 작업(enqueue)의 총 처리 상한 — T12 정지 보장
 
+# 엔진 스스로 만든 이벤트 — 되먹이면 자기 발화가 자기를 부르는 고리가 된다.
+_ENGINE_MADE = ("rule_fired", "annotation", "rejected", "pending_command", "rule_frozen")
+
 
 def disabled():
     """롤백 스위치 — 환경변수 BRAIN_DISABLED=1이면 discuss.py가 레거시 순차 경로를 탄다(§9-5)."""
@@ -98,6 +101,7 @@ def run_meeting(m, b, phases, finalize, engine=None):
     mark = [0]                      # 이미 이벤트화한 transcript 길이
     seen = []                       # 이번 회의의 전체 이벤트 (§7-1 회고 채점 재료)
     recorded = set()                # (topic, rule) 기록 중복 제거 — 스트림 비대 방지
+    fed = [0]                       # bus.EMITTED 중 반사신경에 이미 먹인 지점(커서)
 
     def _emit(type, actor, topic="", payload=None, cause_eid=None):
         """bus.emit + 회고용 기록을 한 번에. 채점은 '무슨 일이 있었나'를 세는 것이라
@@ -134,29 +138,45 @@ def run_meeting(m, b, phases, finalize, engine=None):
             elif kind == "enqueue":
                 reflex_queue.append((topic, val))
 
-    def _flush():
-        """직전 처리 이후 늘어난 transcript 조각을 실시간 이벤트화하고 반사신경을 먹인다."""
-        new = b.transcript[mark[0]:]
-        mark[0] = len(b.transcript)
-        if not new:
-            return
-        try:
-            evs, cause[0] = bus.emit_entries(new, cause[0])
-            seen.extend(evs)
-        except Exception as e:
-            print(f"  ⚠️ brain._flush(emit) 실패: {e}", file=sys.stderr)
-            return
+    def _feed_engine():
+        """**직전 급여 이후 발행된 모든 이벤트**를 반사신경에 먹인다.
+
+        ⚠️ 2026-08-05 메타리뷰가 잡은 결함: 예전엔 transcript에서 만든 이벤트(evs)만 먹여서,
+        discuss.py가 직접 내는 verdict나 brain이 내는 meeting_end가 **엔진에 도달하지 못했다**.
+        그래서 조건이 충족되는데도 R03·R09·R10이 한 번도 발화하지 않았다(실측: 그 이벤트들을
+        엔진에 직접 먹이면 R03·R10 9회, R09 44회 발화). "전체 룰 활성"이 반쪽이었던 것.
+        → bus.EMITTED(발행 전량)를 커서로 훑어 빠짐없이 먹인다.
+
+        단 엔진이 만들어낸 이벤트(rule_fired·annotation 등)는 되먹이지 않는다 — 자기 발화가
+        자기를 다시 부르는 고리를 원천 차단(상한이 있어도 무의미한 왕복은 만들지 않는다)."""
         if engine is None:
             return
+        fresh = [e for e in bus.EMITTED[fed[0]:]
+                 if e.get("type") not in _ENGINE_MADE]
+        fed[0] = len(bus.EMITTED)
+        if not fresh:
+            return
         try:
-            fired = engine.feed(evs, emit_fn=lambda t, a, **kw: _emit(
+            fired = engine.feed(fresh, emit_fn=lambda t, a, **kw: _emit(
                 t, a, kw.get("topic", ""), kw.get("payload"), kw.get("cause")))
         except Exception as e:
-            print(f"  ⚠️ brain._flush(reflex) 실패: {e}", file=sys.stderr)
+            print(f"  ⚠️ brain._feed_engine 실패: {e}", file=sys.stderr)
             return
         if fired:
             print(f"  🧠 반사신경 발화 {len(fired)}건: {[f['rule_id'] for f in fired]}")
             _handle_fired(fired)
+
+    def _flush():
+        """직전 처리 이후 늘어난 transcript 조각을 실시간 이벤트화하고 반사신경을 먹인다."""
+        new = b.transcript[mark[0]:]
+        mark[0] = len(b.transcript)
+        if new:
+            try:
+                evs, cause[0] = bus.emit_entries(new, cause[0])
+                seen.extend(evs)
+            except Exception as e:
+                print(f"  ⚠️ brain._flush(emit) 실패: {e}", file=sys.stderr)
+        _feed_engine()   # transcript 유래든 직접 발행이든 전부 여기서 걸러진다
 
     # ---- 기본 phase들: 항상 전부 시도한다(각 phase는 내부적으로 자기 예외를 방어한다).
     #      brain 계층의 실패가 브리핑 완주를 막지 못하도록 phase 호출도 한 번 더 감싼다. ----
@@ -202,6 +222,9 @@ def run_meeting(m, b, phases, finalize, engine=None):
     # 상위집합이라 채점 재료로 더 정확하다. 없으면 brain이 모은 seen으로 폴백.
     score = _score_meeting(b, list(bus.EMITTED) or seen, fires, work_done)
     bus.emit_meeting_end(m.meeting_id, result, score=score)
+    # meeting_end도 반사신경을 거쳐야 R09(예산 미달 감지)가 산다. 이 시점의 발화는 기록만
+    # 남고(추가 LLM 호출 없음) 다음 회의의 재료가 된다 — 회의를 늘리지 않으면서 신호는 남긴다.
+    _feed_engine()
     bus.append_experience(m.meeting_id, result)
     return result
 
