@@ -83,6 +83,7 @@ def run_meeting(m, b, phases, finalize, engine=None):
     """m: Meeting 컨텍스트(now·meeting_id 보유). b: RotatingBudget. phases: [(이름, fn(b,m)), ...].
     finalize: fn(b,m)->result(=discussions.json 내용을 만들고 파일 저장). 반환: result.
     engine: 테스트에서 악성 룰을 주입하기 위한 ReflexEngine 오버라이드(평상시 None)."""
+    del bus.EMITTED[:]              # 이번 회의만 채점하도록 초기화
     bus.emit_meeting_start(m.meeting_id, m.now)
     if engine is None and rules_engine is not None:
         try:
@@ -197,7 +198,9 @@ def run_meeting(m, b, phases, finalize, engine=None):
     result = finalize(b, m)
 
     # ---- §5 step5·6: 0콜 회고 채점 + 일화기억 flush ----
-    score = _score_meeting(b, seen, fires, work_done)
+    # bus.EMITTED는 brain을 거치지 않고 발행된 것(discuss.py의 verdict 등)까지 포함하는
+    # 상위집합이라 채점 재료로 더 정확하다. 없으면 brain이 모은 seen으로 폴백.
+    score = _score_meeting(b, list(bus.EMITTED) or seen, fires, work_done)
     bus.emit_meeting_end(m.meeting_id, result, score=score)
     bus.append_experience(m.meeting_id, result)
     return result

@@ -29,6 +29,10 @@ except ImportError:
 
 _reg = None
 
+# 이번 프로세스가 발행한 이벤트의 가벼운 사본. 회고 채점(§7-1)이 "무슨 일이 있었나"를 빠짐없이
+# 세려면 brain을 거치지 않고 발행된 것(예: discuss.py가 직접 내는 verdict)도 보여야 한다.
+EMITTED = []
+
 
 def _registry():
     global _reg
@@ -50,6 +54,8 @@ def emit(type, actor, topic="", payload=None, cause=None):
         if r.get("error"):
             print(f"  ⚠️ bus.emit 실패: {r['error']}", file=sys.stderr)
             return None
+        EMITTED.append({"eid": r["eid"], "type": type, "actor": actor,
+                        "topic": topic, "payload": payload or {}, "cause": cause})
         return r["eid"]
     except Exception as e:
         _warn("emit", e)

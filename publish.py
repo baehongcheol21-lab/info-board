@@ -91,6 +91,31 @@ def gov_key():
     return k
 
 
+_gov_warned = False
+
+
+def gov_check(resp):
+    """공공데이터 응답이 '실패'인지 판정하고 **사유를 한 번 크게 알린다**.
+
+    이 API는 실패해도 HTTP 200에 본문으로 사유를 담아 보낸다. 기존 코드는 예외로만 처리해
+    조용히 None을 반환했고, 그래서 화면엔 '전력 대기'만 뜨고 **왜인지 알 수 없었다**.
+    2026-08-05에 키가 무효화("등록되지 않은 서비스키입니다", resultCode 30)됐을 때도
+    로그만 보고는 원인을 짚을 수 없었다 — 사용자가 조치할 수 있게 사유를 노출한다."""
+    global _gov_warned
+    txt = (resp.text or "")[:300]
+    for marker, why in (("등록되지 않은 서비스키", "키 미등록/만료 — data.go.kr에서 서비스 신청·키 재발급 필요"),
+                        ("SERVICE_KEY_IS_NOT_REGISTERED", "키 미등록/만료 — 재발급 필요"),
+                        ("SERVICE_KEY_IS_NULL", "키가 비어 있음 — .env/Secrets 확인"),
+                        ("LIMITED_NUMBER_OF_SERVICE_REQUESTS", "일일 호출 한도 초과 — 내일 재시도"),
+                        ("Unauthorized", "인증 거부 — 키 형식(BOM·인코딩) 또는 등록 상태 확인")):
+        if marker in txt:
+            if not _gov_warned:
+                print(f"  ⚠️ 공공데이터 전력 API 실패: {why}")
+                _gov_warned = True
+            return False
+    return True
+
+
 def fetch_power_mix():
     """발전원 믹스 — 아이폰 관제 패널의 '현재수요' 근거. 키 없거나 실패하면 None(가짜 숫자 금지)."""
     key = gov_key()
@@ -101,6 +126,8 @@ def fetch_power_mix():
         r = requests.get("https://apis.data.go.kr/B552115/PwrAmountByGen/getPwrAmountByGen",
                          params={"serviceKey": key, "pageNo": 1, "numOfRows": 288,
                                  "dataType": "json", "baseDate": today}, headers=UA, timeout=20)
+        if not gov_check(r):
+            return None
         items = r.json()["response"]["body"]["items"]["item"]
         if isinstance(items, dict):
             items = [items]
@@ -120,6 +147,8 @@ def fetch_sukub():
         r = requests.get("https://apis.data.go.kr/B552115/sukub5mMaxDatetime2/getSukub5mMaxDatetime2",
                          params={"serviceKey": key, "pageNo": 1, "numOfRows": 1, "dataType": "json"},
                          headers=UA, timeout=20)
+        if not gov_check(r):
+            return None
         it = r.json()["response"]["body"]["items"]["item"]
         if isinstance(it, list):
             it = it[0]
@@ -141,6 +170,8 @@ def fetch_smp():
             "https://apis.data.go.kr/B552115/SmpWithForecastDemand/getSmpWithForecastDemand",
             params={"serviceKey": key, "pageNo": 1, "numOfRows": 100, "dataType": "json"},
             headers=UA, timeout=20)
+        if not gov_check(r):
+            return None
         if "Unauthorized" in r.text or "SERVICE_KEY" in r.text or "NO OPENAPI" in r.text:
             return None
         items = r.json()["response"]["body"]["items"]["item"]
