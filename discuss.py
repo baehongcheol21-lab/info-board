@@ -45,6 +45,11 @@ try:  # P11-3 뇌(결정 사이클) — 없거나 BRAIN_DISABLED=1이면 레거�
 except ImportError:
     brain = None
 
+try:  # 기관 도서관(P11-0) — 잔여소진 라운드의 0콜 계산(상관·용어)에 쓴다
+    from registry import get_registry as _registry
+except ImportError:
+    _registry = None
+
 
 def _diag(e):
     """실패 원인을 한 줄로 못 잡을 때(예: 인코딩 문제) 다음 조사를 위해 traceback 마지막 줄을 남긴다."""
@@ -450,22 +455,181 @@ def phase_brief(b, m):
     m.brief = brief
 
 
-def phase_spend_remaining(b, m):
-    """잔여예산 소진 라운드 (P12 #4). 이번 회의가 목표(TARGET_CALLS)보다 적게 썼으면, 남는
-    예산으로 '업종 배경 리포트'를 추가 생성해 브리핑을 두껍게 한다. 사용자 통증 "1000 가능한데
-    60콜"의 직접 해소 — 남긴 예산은 버린 예산이다. MAX_CALLS 상한이 자동으로 폭주를 막는다.
+def _condense_series(raw, keep=45):
+    """긴 시세 문자열을 전 구간 균등 샘플로 압축한다.
+    ⚠️ 그냥 앞에서 자르면(raw[:1200]) **가장 오래된 날짜만** 남아 "지금이 긴 흐름의 어디쯤인가"를
+    판단할 수 없다(실측으로 발견). 처음·중간·끝이 고르게 들어가야 흐름이 보인다."""
+    lines = [l for l in (raw or "").splitlines() if l.strip()]
+    if len(lines) <= keep:
+        return "\n".join(lines)
+    step = len(lines) / float(keep)
+    picked = [lines[min(len(lines) - 1, int(i * step))] for i in range(keep)]
+    if picked[-1] != lines[-1]:
+        picked[-1] = lines[-1]        # 최신값은 반드시 포함
+    return "\n".join(picked) + f"\n(전체 {len(lines)}일 중 {keep}개 균등 샘플, 마지막은 최신)"
 
-    heavy 모델은 일일 쿼터가 작아(≈40) 여기선 주력(flash)만 쓴다. 큰 움직임 지표부터 배경을
-    파고, 목표에 닿거나 지표가 떨어지면 멈춘다."""
+
+def _corr_pairs(top_n=20, min_abs=0.45):
+    """지표 간 상관관계 상위 쌍을 계산한다 — **0콜**(야후 시세 + 순수계산 기관만 사용).
+    원장 #6 "요소 연관성 모델(유가↔전기값)"의 실물이다. 6개월 종가로 pearson을 돌리고,
+    lag_corr로 '어느 쪽이 며칠 앞서는지'까지 뽑아 해설의 근거로 넘긴다."""
+    if not _registry:
+        return []
+    reg = _registry()
+    closes = {}
+    for _id, name, sym, unit, dec in INDICATORS:
+        try:
+            _, _, cl = fetch_yahoo(sym, rng="6mo")
+            if cl and len(cl) >= 40:
+                closes[_id] = (name, cl)
+        except Exception:
+            continue
+    ids = list(closes)
+    pairs = []
+    for i in range(len(ids)):
+        for j in range(i + 1, len(ids)):
+            a, c = ids[i], ids[j]
+            xa, xc = closes[a][1], closes[c][1]
+            n = min(len(xa), len(xc))
+            if n < 40:
+                continue
+            try:
+                r = reg.run("pearson", xs=xa[-n:], ys=xc[-n:])
+            except Exception:
+                continue
+            if r is None or abs(r) < min_abs:
+                continue
+            lag = {}
+            try:
+                lag = reg.run("lag_corr", xs=xa[-n:], ys=xc[-n:], max_lag=5) or {}
+            except Exception:
+                pass
+            pairs.append({"a": closes[a][0], "b": closes[c][0], "r": round(r, 3), "n": n,
+                          "lag": lag.get("best_lag"), "lag_r": lag.get("best_r")})
+    pairs.sort(key=lambda p: -abs(p["r"]))
+    return pairs[:top_n]
+
+
+def _new_terms(m, limit=25):
+    """오늘 브리핑에 나온 전문용어 중 **사전에 아직 없는 것**만 추린다(0콜).
+    이미 있는 용어는 0콜로 재사용되므로 회를 거듭할수록 이 일감은 자연히 줄어든다."""
+    if not _registry:
+        return []
+    reg = _registry()
+    text = " ".join([m.brief or ""] +
+                    [(v.get("detail") or "") for v in (m.out_ind or {}).values()] +
+                    [(a.get("detail") or "") for a in (m.news_brief or {}).get("articles", [])])
+    if not text.strip():
+        return []
+    try:
+        terms = reg.run("term_extract", text=text[:12000], max_terms=60) or []
+    except Exception:
+        return []
+    out = []
+    for t in terms:
+        try:
+            if reg.run("glossary_store", action="get", term=t).get("definition"):
+                continue          # 이미 있음 → 0콜 재사용
+        except Exception:
+            continue
+        out.append(t)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def phase_spend_remaining(b, m):
+    """잔여예산 소진 라운드 (P12 #4). 목표(TARGET_CALLS)에 못 미치면 남는 예산으로 **가치 있는
+    일감**을 순서대로 처리한다. "남긴 예산 = 버린 예산"이지만, **채움말로 콜을 채우는 것은 더
+    나쁘다** — 그래서 일감이 떨어지면 목표에 못 닿아도 그냥 멈춘다.
+
+    2026-08-05 감사에서 이 라운드가 매번 정확히 86콜에서 멈추는 게 드러났다. 원인은 일감이
+    '지표별 배경 리포트' 한 종류뿐이라 지표 12개를 쓰고 고갈된 것. 그래서 일감을 넷으로 넓혔다:
+
+      1) 교차 연결분석 — 지표 간 상관·선행관계 해설. **원장 #6의 오랜 숙원**이자 이 시스템에만
+         있는 정보(남이 안 해주는 것)라 가치가 가장 높다. 근거는 0콜로 계산한 실제 r값.
+      2) 용어사전 축적 — 처음 나온 용어만 1콜로 풀어 영구 저장(재등장 시 0콜). 사용자의
+         "읽어도 이해가 안 된다"에 직접 대응하며, 쌓일수록 일감이 줄어드는 자기소멸형.
+      3) 지표 장기흐름 — 오늘 숫자가 2년 흐름의 어디쯤인지. "이전 자료지 정보가 아니다"의 해답.
+      4) 업종 배경 리포트 — 기존 일감(유지).
+    """
     if b.used >= TARGET_CALLS:
         print(f"[+/6] 잔여소진 불필요 — 이미 {b.used}콜 ≥ 목표 {TARGET_CALLS}")
         return
     print(f"[+/6] 잔여예산 소진 라운드 ({b.used}/{TARGET_CALLS}콜 사용)")
     movers = sorted((d for d in m.snap.values() if d.get("pct") is not None),
                     key=lambda x: -abs(x["pct"]))
-    reports = []
+    reports, links, terms_done, longviews = [], [], [], []
+
+    def budget_left():
+        return b.used < TARGET_CALLS
+
+    # ---- 1) 교차 연결분석 (원장 #6) ----
+    try:
+        for p in _corr_pairs():
+            if not budget_left():
+                break
+            lag_txt = ""
+            if p.get("lag"):
+                lead = p["a"] if p["lag"] > 0 else p["b"]
+                lag_txt = f" (시차상관: {lead}가 약 {abs(p['lag'])}일 선행, r={p.get('lag_r')})"
+            txt = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
+{READER}
+
+[0콜로 계산된 실측 상관] 최근 6개월 종가 {p['n']}개 기준
+  {p['a']} ↔ {p['b']} : 상관계수 r = {p['r']}{lag_txt}
+
+이 두 지표가 왜 이렇게 움직이는지 설명하라. 상관은 인과가 아니다 — 공통 원인이 있는지,
+한쪽이 다른 쪽을 실제로 끌어당기는지, 아니면 우연인지 구분해서 말하라. 근거 없으면 (추정).
+{BRIEF_STRUCTURE}""", topic=f"{p['a']}↔{p['b']} 연관")
+            links.append({"pair": f"{p['a']}↔{p['b']}", "r": p["r"], "lag": p.get("lag"),
+                          "analysis": txt})
+    except Exception as e:
+        print(f"  ⚠️ 교차 연결분석 건너뜀: {_diag(e)}")
+
+    # ---- 2) 용어사전 축적 (P12 #3) ----
+    try:
+        reg = _registry() if _registry else None
+        for t in (_new_terms(m) if reg else []):
+            if not budget_left():
+                break
+            d = b.ask("U1", f"""용어 '{t}'을(를) 이 브리핑 독자에게 한 줄로 설명하라.
+{READER}
+- 딱 한 문장. 뻔한 사전적 정의 말고 '이 맥락에서 왜 중요한지'가 드러나게.
+- 이 용어를 모르는 사람이 읽고 바로 이해되게. 채움말 금지.""", topic=f"용어:{t}")
+            try:
+                reg.run("glossary_store", action="set", term=t, definition=d.strip())
+                terms_done.append(t)
+            except Exception:
+                pass
+    except Exception as e:
+        print(f"  ⚠️ 용어사전 건너뜀: {_diag(e)}")
+
+    # ---- 3) 지표 장기흐름 ----
+    try:
+        for d in movers:
+            if not budget_left():
+                break
+            try:
+                raw = tools.get_history(next((i for i, v in m.snap.items() if v is d), ""), days=400)
+                hist = _condense_series(raw)
+            except Exception:
+                hist = "(장기 시세 조회 실패)"
+            txt = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
+{READER}
+지표: {d['name']} = {d['value']} {d['unit']} (전일比 {d.get('pct')}%)
+[장기 시세(최대 400일)]: {hist}
+
+오늘 숫자가 **긴 흐름의 어디쯤인지** 위치를 잡아줘라. 고점/저점 대비 어디인가, 지금 구간이
+과거 어느 국면과 닮았고 무엇이 다른가. 숫자로 말하고, 모르면 (추정).
+{BRIEF_STRUCTURE}""", topic=f"{d['name']} 장기흐름")
+            longviews.append({"indicator": d["name"], "report": txt})
+    except Exception as e:
+        print(f"  ⚠️ 장기흐름 건너뜀: {_diag(e)}")
+
+    # ---- 4) 업종 배경 리포트 (기존 일감) ----
     for d in movers:
-        if b.used >= TARGET_CALLS:
+        if not budget_left():
             break
         try:
             rep = b.ask("알파", f"""너는 지휘자 알파다. {STYLE}
@@ -478,9 +642,18 @@ def phase_spend_remaining(b, m):
         except Exception as e:
             print(f"  ⚠️ {d['name']} 배경리포트 실패: {_diag(e)}")
             break  # 예산 소진/오류면 라운드 종료
-    if reports and isinstance(m.news_brief, dict):
-        m.news_brief["deep_reports"] = reports
-    print(f"[+/6] 잔여소진 종료 — 총 {b.used}콜, 배경리포트 {len(reports)}건")
+
+    if isinstance(m.news_brief, dict):
+        if reports:
+            m.news_brief["deep_reports"] = reports
+        if links:
+            m.news_brief["links"] = links          # 교차 연결분석 (원장 #6)
+        if longviews:
+            m.news_brief["longviews"] = longviews
+    print(f"[+/6] 잔여소진 종료 — 총 {b.used}콜 (목표 {TARGET_CALLS}) | "
+          f"연관 {len(links)} · 용어 {len(terms_done)} · 장기 {len(longviews)} · 배경 {len(reports)}")
+    if b.used < TARGET_CALLS:
+        print(f"       (일감 소진으로 목표 미달 — 채움말로 콜을 채우지 않는다)")
 
 
 def finalize(b, m):
