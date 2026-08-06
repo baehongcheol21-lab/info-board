@@ -696,6 +696,7 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
     <div class="office lab-office" id="labOffice" style="display:none"></div>
   </div>
 
+  <div id="psec-news" class="psec"></div>
   <div id="psec-trends" class="psec"></div>
   <div id="psec-graph" class="psec"></div>
   <div id="psec-chat" class="psec"></div>
@@ -883,6 +884,7 @@ const PTABS = [
   {id:"deck",   name:"브리핑덱"},
   {id:"team",   name:"팀"},
   {id:"lab",    name:"실험"},
+  {id:"news",   name:"뉴스"},
   {id:"chat",   name:"토론방"},
   {id:"trends", name:"트렌드"},
   {id:"graph",  name:"관계망"},
@@ -910,35 +912,133 @@ function spark(v, col){
     <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5"/></svg>`;
 }
 
+// ===== PC 데이터 =====
+// PC 대시보드는 127.0.0.1에만 떠 있어 폰에서 못 연다. 그래서 PC가 자기 DB를 docs/api/*.json
+// 으로 떨궈 두고, 이 페이지가 **같은 출처에서 그냥 fetch** 한다. 서버도 CORS도 필요 없다.
+// 못 받아도 페이지는 인라인 데이터로 그대로 돌아간다 — PC 데이터는 '덧붙임'이지 전제가 아니다.
+let PC = null;
+
+async function loadPC(){
+  const names = ["defs","latest","history","news","interp","powermix","meta"];
+  try{
+    const got = await Promise.all(names.map(n =>
+      fetch("api/"+n+".json", {cache:"no-store"})
+        .then(r => r.ok ? r.json() : null).catch(() => null)));
+    const o = {}; names.forEach((n,i)=>o[n]=got[i]);
+    if(!o.defs || !o.latest) return;            // 핵심 두 개가 없으면 병합할 게 없다
+    PC = o;
+    renderPhoneTabs();                           // 탭 구성이 늘어날 수 있으므로 다시 그린다
+  }catch(e){ /* 인라인 데이터로 계속 간다 */ }
+}
+
+// 클라우드(야후 실시간)와 PC(2년 기록 + 정부지표 마지막값)를 하나의 지표 목록으로 합친다.
+// 겹치면 값은 클라우드가 이긴다 — 방금 받은 값이 더 새롭다. PC는 클라우드가 아예 모르는
+// 지표(정부 API 7종)와 긴 기록을 채운다.
+function indRows(){
+  const base = (DATA.m.ind && DATA.m.ind.rows) || [];
+  if(!PC) return base;
+  const cloud = {}; base.forEach(r => cloud[r.id] = r);
+  const lat = {}; ((PC.latest||{}).rows||[]).forEach(r => lat[r.id] = r);
+  const H = PC.history || {series:{}, dates:[]};
+  const interp = {};
+  ((PC.interp||{}).rows||[]).forEach(r => { if(!interp[r.id]) interp[r.id] = r; });
+
+  const out = [];
+  (PC.defs.indicators||[]).forEach(d => {
+    if(d.id === "news_electimes") return;        // 뉴스 소스지 숫자 지표가 아니다
+    const c = cloud[d.id], l = lat[d.id] || {};
+    const hs = (H.series||{})[d.id] || [];
+    const hv = hs.filter(x => x !== null);
+    const lastIdx = hs.reduce((a,x,i)=> x===null?a:i, -1);
+    const hasLive = !!(c && c.value != null);
+    const pcVal = (l.value != null) ? l.value : (lastIdx >= 0 ? hs[lastIdx] : null);
+
+    out.push({
+      id: d.id, name: d.name, unit: d.unit || (c && c.unit) || "",
+      groups: d.tabs || [],
+      value: hasLive ? c.value : (pcVal != null ? pcVal.toLocaleString() : null),
+      pct: hasLive ? c.pct : (l.pct != null ? l.pct : null),
+      spark: hasLive && (c.spark||[]).length > 1 ? c.spark : hv.slice(-60),
+      ma20: hasLive ? c.ma20 : null, ma60: hasLive ? c.ma60 : null,
+      // 값이 언제 것인지 반드시 표시한다. 정부 API 키가 만료된 지표는 '지금 값'이 아니라
+      // '마지막으로 받았던 값'이고, 그걸 지금 값처럼 보여주면 그게 가짜 숫자다.
+      stale: hasLive ? null : (lastIdx >= 0 ? (H.dates||[])[lastIdx] : (l.at || null)),
+      wait: !hasLive && l.status && l.status !== "ok" ? (l.msg || l.status) : null,
+      hist: hv.length,
+      ai: (c && c.ai) || (interp[d.id] ? interp[d.id].text : null),
+      detail: (c && c.detail) || null,
+      verdict: (c && c.verdict) || (interp[d.id] ? interp[d.id].verdict : null),
+      by: (c && c.ai) ? null : (interp[d.id] ? (interp[d.id].ts + " · " + interp[d.id].model) : null),
+    });
+  });
+  // PC 정의에 없는 클라우드 지표가 생기면 뒤에 붙인다(양쪽이 어긋나도 사라지지 않게)
+  base.forEach(r => { if(!out.some(x => x.id === r.id)) out.push(r); });
+  return out;
+}
+
+function indGroups(){
+  if(PC && PC.defs && PC.defs.tabs){
+    // PC의 탭 정의를 그대로 쓴다. 손으로 적어 둔 표를 쓰면 PC에서 전기 탭에 12개가 있어도
+    // 폰은 5개만 아는 어긋남이 계속 생긴다.
+    const keep = ["core","elec","econ","original"];
+    return [{id:"all",name:"전체"}].concat(
+      PC.defs.tabs.filter(t => keep.includes(t.id)).map(t => ({id:t.id, name:t.name})));
+  }
+  return (DATA.m.ind && DATA.m.ind.groups) || [{id:"all",name:"전체"}];
+}
+
 function renderInd(){
-  const rows = (DATA.m.ind.rows||[]).filter(r => _chip==="all" || (r.groups||[]).includes(_chip));
-  document.getElementById("pindlist").innerHTML = rows.map(r=>{
+  const rows = indRows().filter(r => _chip==="all" || (r.groups||[]).includes(_chip));
+  const mix = (_chip==="all"||_chip==="elec") ? mixCard() : "";
+  document.getElementById("pindlist").innerHTML = mix + (rows.map(r=>{
     const up = (r.pct||0) >= 0, col = r.pct==null ? "#8a7a63" : (up?"#ff6b6b":"#6fb3ff");
+    const meta = [
+      r.ma20!=null ? `MA20 ${r.ma20.toLocaleString()} · MA60 ${r.ma60!=null?r.ma60.toLocaleString():"—"}` : null,
+      r.hist ? `PC 기록 ${r.hist}일` : null,
+    ].filter(Boolean).join(" · ");
     return `<div class="icard" onclick="openInd('${r.id}')">
       <div class="top">
         <span class="inm">${esc2(r.name)}${String(r.verdict||"").startsWith("red")?'<span class="flag">근거부족</span>':""}</span>
-        <span class="ival">${esc2(String(r.value))}<span style="font-size:.6rem;opacity:.5"> ${esc2(r.unit||"")}</span></span>
+        ${r.value==null ? '<span class="ival" style="opacity:.35;font-size:.7rem">값 없음</span>'
+          : `<span class="ival">${esc2(String(r.value))}<span style="font-size:.6rem;opacity:.5"> ${esc2(r.unit||"")}</span></span>`}
         ${r.pct==null?"":`<span class="ipct ${up?"ppos":"pneg"}">${up?"▲":"▼"}${Math.abs(r.pct).toFixed(2)}%</span>`}
       </div>
+      ${r.stale?`<div class="ima" style="color:#ffd24d;opacity:.9">⏸ 실시간 아님 · ${esc2(r.stale)} 마지막 관측${r.wait?" · "+esc2(String(r.wait).slice(0,40)):""}</div>`:""}
       ${spark(r.spark, col)}
-      ${r.ma20!=null?`<div class="ima">MA20 ${r.ma20.toLocaleString()} · MA60 ${r.ma60!=null?r.ma60.toLocaleString():"—"}</div>`:""}
-      ${r.ai?`<div class="ima" style="margin-top:7px;opacity:.4">${esc2(DATA.m.ind.at||"")} 회의 시점 해석</div>
+      ${meta?`<div class="ima">${meta}</div>`:""}
+      ${r.ai?`<div class="ima" style="margin-top:7px;opacity:.4">${esc2(r.by || ((DATA.m.ind&&DATA.m.ind.at||"")+" 회의 시점 해석"))}</div>
               <div class="iai">${esc2(r.ai)}</div>`
-            :'<div class="iai" style="opacity:.35">이번 회의에서 다루지 않은 지표입니다</div>'}
-    </div>`;}).join("") || '<div class="pempty">이 그룹에 지표가 없습니다</div>';
+            :'<div class="iai" style="opacity:.35">아직 이 지표에 대한 해석이 없습니다</div>'}
+    </div>`;}).join("") || '<div class="pempty">이 그룹에 지표가 없습니다</div>');
+}
+
+// 연료원별 발전량 — PC가 정부 API에서 받아 둔 것. 전기 그룹에서만 보여준다.
+function mixCard(){
+  if(!PC || !PC.powermix || !(PC.powermix.fuels||[]).length) return "";
+  const f = PC.powermix.fuels.filter(x=>x.mw>0);
+  const tot = f.reduce((a,x)=>a+x.mw,0) || 1;
+  const rows = f.map(x=>`<div class="prow"><span class="nm">${esc2(x.fuel)}</span>
+      <span class="pbar"><i style="width:${(x.mw/tot*100).toFixed(0)}%"></i></span>
+      <span class="vv">${Math.round(x.mw).toLocaleString()}MW · ${(x.mw/tot*100).toFixed(1)}%</span></div>`).join("");
+  return `<div class="pcard"><h4>연료원별 발전량
+      <span class="sub">${esc2(PC.powermix.at||"")} 기준 · PC 수집</span></h4>${rows}</div>`;
 }
 
 function openInd(id){
-  const r = (DATA.m.ind.rows||[]).find(x=>x.id===id);
+  const r = indRows().find(x=>x.id===id);
   if(!r) return;
   // 요약과 상세는 다른 글이다 — 상세가 없을 때만 요약으로 대체한다
-  const at = DATA.m.ind.at || "";
+  const at = (DATA.m.ind && DATA.m.ind.at) || "";
   const body = [r.detail, (!r.detail && r.ai) ? r.ai : null,
                 r.verdict ? "\n[판정] " + r.verdict : null,
+                r.by ? "\n[해석 출처] PC 로컬 분석 · " + r.by : null,
+                r.stale ? "\n[주의] 실시간 값이 아닙니다. " + r.stale + " 이 마지막 관측이고, "
+                        + "그 뒤로는 정부 API 키가 만료되어 새 값을 받지 못했습니다."
+                        + (r.wait ? "\n사유: " + r.wait : "") : null,
                 // 시세는 지금 값, 해석은 회의 시각 값이다. 장중에 크게 움직이면 둘이 안 맞는데,
                 // 그건 오류가 아니라 시점 차이다 — 화면이 그걸 말해 줘야 한다.
-                at ? "\n(값은 페이지 갱신 시각 기준, 해석은 " + at + " 회의 시점 기준)" : null]
-               .filter(Boolean).join("\n\n") || "이 지표에 대한 요원 해석이 아직 없습니다.";
+                (!r.by && at) ? "\n(값은 페이지 갱신 시각 기준, 해석은 " + at + " 회의 시점 기준)" : null]
+               .filter(Boolean).join("\n\n") || "이 지표에 대한 해석이 아직 없습니다.";
   openSheet(r.name, (r.pct==null?"":((r.pct>=0?"+":"")+r.pct.toFixed(2)+"% · ")) + "AI 해석", body);
 }
 
@@ -958,19 +1058,42 @@ function renderPhoneTabs(){
   const M = DATA.m || {};
   const bar = document.getElementById("ptabs");
   // 데이터가 없는 탭은 아예 만들지 않는다 — 눌렀는데 빈 화면이 나오는 게 제일 나쁘다
-  // 실험 탭은 테마 예측(M.lab)이 없어도 가상계좌(DATA.lab)만 있으면 볼 게 있다
-  const avail = PTABS.filter(t => t.id==="home" || M[t.id] || (t.id==="lab" && DATA.lab));
+  // 실험 탭은 테마 예측(M.lab)이 없어도 가상계좌(DATA.lab)만 있으면 볼 게 있다.
+  // 뉴스 탭은 PC가 내보낸 헤드라인이 도착해야 생긴다(도착 전엔 아예 만들지 않는다).
+  const hasNews = !!(PC && ((PC.news||{}).rows||[]).length);
+  const avail = PTABS.filter(t => t.id==="home" || M[t.id]
+                                  || (t.id==="lab" && DATA.lab) || (t.id==="news" && hasNews));
   bar.innerHTML = avail.map(t=>
     `<div class="pt${t.id===_ptab?" on":""}" data-id="${t.id}" onclick="pgo('${t.id}')">${t.name}</div>`).join("");
 
   // --- 지표: PC의 핵심/전기/경제/오리지널을 그룹 칩 하나로 ---
-  if(M.ind){
-    const chips = M.ind.groups.map(g=>
+  if(M.ind || PC){
+    const chips = indGroups().map(g=>
       `<div class="chip${g.id===_chip?" on":""}" data-g="${g.id}" onclick="pchip('${g.id}')">${g.name}</div>`).join("");
+    const src = PC ? `클라우드 실시간 ${(M.ind&&M.ind.rows||[]).length}종 + PC 기록 ${(PC.history||{}).days||0}일`
+                   : "클라우드 실시간";
     document.getElementById("psec-ind").innerHTML =
       `<div id="pchips">${chips}</div><div id="pindlist"></div>
-       <div class="pempty" style="padding:0 4px 14px">카드를 탭하면 그 지표에 대한 요원의 상세 판단이 열립니다</div>`;
+       <div class="pempty" style="padding:0 4px 14px">카드를 탭하면 상세 판단이 열립니다 · ${esc2(src)}</div>`;
     renderInd();
+  }
+
+  // --- 뉴스: PC가 수집한 전기신문 헤드라인 + PC 로컬 AI 해석 ---
+  if(hasNews){
+    const N = (PC.news.rows||[]).map(n=>`<a class="prow" href="${esc2(n.link)}"
+        target="_blank" rel="noopener" style="min-height:44px;align-items:center;
+        color:inherit;text-decoration:none">
+        <span class="nm" style="white-space:normal;line-height:1.45">${esc2(n.title)}</span>
+        <span class="vv" style="opacity:.45">${esc2((n.pub||"").slice(5,10))}</span></a>`).join("");
+    const I = ((PC.interp||{}).rows||[]).slice(0,12).map(r=>`<div class="prow"
+        style="flex-direction:column;align-items:stretch;gap:3px">
+        <span class="vv" style="opacity:.5;text-align:left">${esc2(r.ts)} · ${esc2(r.name)} · ${esc2(r.verdict||"")}</span>
+        <span class="nm" style="white-space:normal;line-height:1.5;opacity:.85">${esc2((r.text||"").slice(0,240))}</span></div>`).join("");
+    document.getElementById("psec-news").innerHTML = `
+      <div class="pcard"><h4>전기신문 헤드라인
+        <span class="sub">PC 수집 ${PC.news.rows.length}건 · 탭하면 원문</span></h4>${N}</div>
+      ${I?`<div class="pcard"><h4>PC 로컬 AI 해석
+        <span class="sub">analyze.py 산출 · 지표별</span></h4>${I}</div>`:""}`;
   }
 
   // --- 브리핑덱: 옆으로 넘기는 카드 ---
@@ -1186,6 +1309,7 @@ function tickClock(){
 
 document.getElementById("genTime").textContent = (DATA.time||"").slice(11,16);
 renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderLab(); renderTicker(); renderPhoneTabs();
+loadPC();   // PC 데이터가 도착하면 지표·뉴스 탭이 저절로 채워진다(실패해도 위 화면은 그대로)
 tickClock(); setInterval(tickClock, 30000);
 </script>
 </body>
