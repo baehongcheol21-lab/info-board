@@ -1019,6 +1019,25 @@ function renderInd(){
     </div>`;}).join("") || '<div class="pempty">이 그룹에 지표가 없습니다</div>');
 }
 
+// PC 데이터가 '언제 것인지'를 반드시 보여 준다. 대시보드가 꺼져 있으면 이 파일은 그대로
+// 멈춰 있는데, 시각이 안 보이면 멈춘 값을 지금 값으로 착각하게 된다.
+function pcCard(){
+  if(!PC) return `<div class="pcard"><h4>PC 데이터 <span class="sub">받지 못함</span></h4>
+    <div class="pempty" style="text-align:left">PC 대시보드가 아직 한 번도 내보내지 않았거나
+    네트워크가 끊겼습니다. 지금 화면은 클라우드 데이터만으로 돌고 있습니다.</div></div>`;
+  const g = (PC.meta||{}).generated || "";
+  let age = "";
+  if(g){ const h = (Date.now() - new Date(g).getTime())/36e5;
+    age = h < 1.5 ? "방금" : (h < 48 ? Math.round(h)+"시간 전" : Math.round(h/24)+"일 전"); }
+  return `<div class="pcard"><h4>PC 데이터 <span class="sub">${esc2(age)}</span></h4>
+    <div class="prow"><span class="nm">내보낸 시각</span><span class="vv">${esc2(g.slice(0,16))}</span></div>
+    <div class="prow"><span class="nm">지표 기록</span><span class="vv">${(PC.history||{}).days||0}일</span></div>
+    <div class="prow"><span class="nm">뉴스 · 로컬 해석</span>
+      <span class="vv">${((PC.news||{}).rows||[]).length}건 · ${((PC.interp||{}).rows||[]).length}건</span></div>
+    <div class="pempty" style="text-align:left">PC 대시보드로 수집할 때마다 갱신됩니다.
+      PC가 꺼져 있으면 이 시각이 멈춥니다.</div></div>`;
+}
+
 // 연료원별 발전량 — PC가 정부 API에서 받아 둔 것. 전기 그룹에서만 보여준다.
 function mixCard(){
   if(!PC || !PC.powermix || !(PC.powermix.fuels||[]).length) return "";
@@ -1280,7 +1299,8 @@ function renderPhoneTabs(){
       <div class="pcard"><h4>이벤트 요약 <span class="sub">최근 스트림</span></h4>${ev||'<div class="pempty">없음</div>'}</div>
       ${cal?`<div class="pcard"><h4>요원 예측 성적 <span class="sub">기간별 적중률</span></h4>${cal}</div>`:""}
       <div class="pcard"><h4>뇌 시퀀스 <span class="sub">누가 무엇을 호출했나</span></h4>${tl}</div>
-      <div class="pcard"><h4>최근 에러</h4>${errs}</div>`;
+      <div class="pcard"><h4>최근 에러</h4>${errs}</div>
+      ${pcCard()}`;
   }
   pgo(_ptab);
 }
