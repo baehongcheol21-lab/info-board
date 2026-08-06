@@ -262,6 +262,18 @@ def _status_line(events, role_tag):
 
 def _mobile_payload(series=None, power=None, smp=None):
     """폰 탭에 실을 데이터. 실패하면 그 섹션만 빠지고 페이지는 정상 생성된다."""
+    # docs/.nojekyll — 깃허브 페이지스가 Jekyll로 사이트를 빌드하지 않고 파일을 그대로 내보내게 한다.
+    # 이게 없어서 2026-08-06 11:48 UTC부터 Pages 빌드가 계속 실패했고(사이트가 옛 커밋에 멈춤),
+    # 이 사이트는 정적 파일뿐이라 Jekyll이 할 일이 애초에 없다. 지워지면 같은 사고가 재발한다.
+    try:
+        _nj = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", ".nojekyll")
+        if not os.path.exists(_nj):
+            os.makedirs(os.path.dirname(_nj), exist_ok=True)
+            open(_nj, "w").close()
+            print("  · docs/.nojekyll 복구 — Jekyll 빌드 우회")
+    except OSError as e:
+        print(f"  ⚠️ .nojekyll 생성 실패: {e}")
+
     try:
         import mobile_data
         out = mobile_data.build(series, power, smp)
