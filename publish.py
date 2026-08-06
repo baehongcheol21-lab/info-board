@@ -260,6 +260,16 @@ def _status_line(events, role_tag):
     return "대기중…"
 
 
+def _mobile_payload():
+    """폰 탭에 실을 데이터. 실패하면 그 섹션만 빠지고 페이지는 정상 생성된다."""
+    try:
+        import mobile_data
+        return mobile_data.build()
+    except Exception as e:
+        print(f"  ⚠️ 폰 payload 생성 실패(탭 생략): {type(e).__name__}: {e}")
+        return {}
+
+
 def build_data():
     """실제 데이터를 시안A와 동일한 JSON 구조로 조립. 이 함수만 앞으로 관리하면 된다."""
     disc = load_discussions()
@@ -377,6 +387,9 @@ def build_data():
         "time": datetime.datetime.now(KST).isoformat(timespec="minutes"),
         "chart": chart, "power": power, "analysts": analysts,
         "research": research, "tickers": tickers, "lab": lab,
+        # 폰에서도 PC와 같은 정보를 볼 수 있게 — 트렌드·관계망·토론방·시스템.
+        # 원본이 커서(녹취 11MB 등) mobile_data가 화면 분량만 잘라 담는다.
+        "m": _mobile_payload(),
     }
 
 
@@ -465,6 +478,43 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
   animation:blink .8s steps(2) infinite;vertical-align:-1px}
 
 .research-office{padding-bottom:16px}
+/* ===== 폰 탭 =====
+   PC 대시보드의 11개 기능을 폰에서도 볼 수 있게 한 구조. 정적 페이지라 서버 왕복이 없고,
+   전부 미리 담긴 데이터를 보여주기만 한다(그래서 즉시 전환된다). */
+#ptabs{position:sticky;top:0;z-index:40;display:flex;gap:2px;overflow-x:auto;
+  scrollbar-width:none;background:#181410;border-bottom:2px solid #3b2f22;padding:0 6px}
+#ptabs::-webkit-scrollbar{display:none}
+#ptabs .pt{flex:none;padding:12px 13px;font-size:.72rem;letter-spacing:.5px;color:#8a7a63;
+  cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;min-height:44px}
+#ptabs .pt.on{color:#f5c451;border-bottom-color:#f5c451}
+.psec{display:none} .psec.on{display:block}
+.pcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:10px 0}
+.pcard h4{font-size:.78rem;color:#f5c451;margin-bottom:8px;letter-spacing:.5px}
+.pcard .sub{font-size:.66rem;opacity:.55;font-weight:400}
+.prow{display:flex;gap:8px;align-items:baseline;font-size:.74rem;padding:6px 0;
+  border-bottom:1px solid rgba(255,255,255,.05)}
+.prow:last-child{border-bottom:0}
+.prow .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prow .vv{font-variant-numeric:tabular-nums;opacity:.8;flex:none}
+.pbar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;flex:none;width:70px}
+.pbar i{display:block;height:100%;background:#f5c451}
+.pmsg{font-size:.72rem;line-height:1.7;white-space:pre-wrap;word-break:break-word}
+.pwho{display:inline-block;font-size:.64rem;padding:2px 7px;border-radius:6px;
+  background:#3b2f22;color:#f5c451;margin-bottom:5px}
+.pchat{max-height:none}
+.pchat .msg{background:#1e1811;border-left:3px solid #3b2f22;border-radius:8px;
+  padding:9px 10px;margin:8px 0}
+.pchat .msg.alpha{border-left-color:#f5c451}
+.pempty{font-size:.72rem;opacity:.5;padding:14px 4px;line-height:1.7}
+.ppos{color:#ff6b6b} .pneg{color:#6fb3ff}
+.pspark{width:100%;height:34px;display:block;margin:2px 0 4px}
+/* 자동 감사(ui_audit)가 390px에서 잡아낸 실측 문제:
+     .status  22px  — 캐릭터 말풍선(탭하면 상세 시트가 열린다)
+     .close   15px  — 시트 닫기 버튼
+   둘 다 손가락으로 정확히 누르기 어렵다. 최소 40px로 올린다. */
+.ace-row .status,.desk .status{min-height:40px;display:flex;align-items:center;padding:6px 8px}
+.bottom-sheet .who .close{min-height:44px;display:inline-flex;align-items:center;padding:0 12px;
+  margin:-8px -8px -8px 0}
 /* 가상계좌 — 폰에서 보는 게 유일한 경로라 세로 한 줄 배치로만 짠다. 가로 스크롤 금지. */
 .lab-office{padding:12px 10px 18px}
 .lab-hero{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
@@ -532,6 +582,9 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
     <span id="clockNow">--:--</span>
   </div>
 
+  <div id="ptabs"></div>
+
+  <div id="psec-home" class="psec on">
   <div class="chart-panel">
     <div class="chart-head"><span>코스피 KOSPI</span><span>실시간(15~20분 지연)</span></div>
     <div class="chart-body">
@@ -566,6 +619,12 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
   <div class="office lab-office" id="labOffice" style="display:none"></div>
 
   <p class="hint">캐릭터를 탭하면 실제 분석 내용이 아래에서 올라옵니다 · 갱신 <span id="genTime"></span> KST</p>
+  </div><!-- /psec-home -->
+
+  <div id="psec-trends" class="psec"></div>
+  <div id="psec-graph" class="psec"></div>
+  <div id="psec-chat" class="psec"></div>
+  <div id="psec-system" class="psec"></div>
 
   <div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
 
@@ -742,6 +801,128 @@ function renderLab(){
     </div>`;
 }
 
+// ===== 폰 탭 — PC의 트렌드/관계망/토론방/시스템을 폰에서도 =====
+const PTABS = [
+  {id:"home",   name:"홈"},
+  {id:"chat",   name:"토론방"},
+  {id:"trends", name:"트렌드"},
+  {id:"graph",  name:"관계망"},
+  {id:"system", name:"시스템"},
+];
+let _ptab = "home";
+
+function esc2(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function pgo(id){
+  _ptab = id;
+  document.querySelectorAll("#ptabs .pt").forEach(e=>e.classList.toggle("on", e.dataset.id===id));
+  // 홈 전체를 컨테이너 하나로 감쌌으므로 섹션만 토글하면 된다.
+  // (개별 id를 나열하면 홈에 뭘 추가할 때마다 여기를 고쳐야 해서 반드시 빠뜨린다)
+  ["home","trends","graph","chat","system"].forEach(k=>{
+    const el=document.getElementById("psec-"+k);
+    if(el) el.classList.toggle("on", id===k);
+  });
+  window.scrollTo(0,0);
+}
+
+function renderPhoneTabs(){
+  const M = DATA.m || {};
+  const bar = document.getElementById("ptabs");
+  // 데이터가 없는 탭은 아예 만들지 않는다 — 눌렀는데 빈 화면이 나오는 게 제일 나쁘다
+  const avail = PTABS.filter(t => t.id==="home" || M[t.id]);
+  bar.innerHTML = avail.map(t=>
+    `<div class="pt${t.id===_ptab?" on":""}" data-id="${t.id}" onclick="pgo('${t.id}')">${t.name}</div>`).join("");
+
+  // --- 토론방 ---
+  if(M.chat){
+    const c = M.chat;
+    const lines = c.lines.map(l=>`<div class="msg${l.who==="알파"?" alpha":""}">
+        <span class="pwho">${esc2(l.who)}${l.topic?" · "+esc2(l.topic):""}</span>
+        <div class="pmsg">${esc2(l.text)}</div></div>`).join("");
+    const mts = c.meetings.map(m=>`<div class="prow"><span class="nm">${esc2(m.time)}</span>
+        <span class="vv">${m.calls}콜 · ${m.lines}줄</span></div>`).join("");
+    document.getElementById("psec-chat").innerHTML = `
+      <div class="pcard"><h4>회의 녹취 <span class="sub">${esc2(c.time.slice(0,16))} · ${c.calls}콜 · 최근 ${c.lines.length}발언</span></h4>
+        <div class="pchat">${lines || '<div class="pempty">녹취가 없습니다</div>'}</div></div>
+      ${c.news && c.news.context ? `<div class="pcard"><h4>뉴스 맥락</h4><div class="pmsg">${esc2(c.news.context)}</div></div>`:""}
+      <div class="pcard"><h4>최근 회의 <span class="sub">${c.meetings.length}건</span></h4>${mts}</div>`;
+  }
+
+  // --- 트렌드 ---
+  if(M.trends){
+    const t = M.trends;
+    const mx = Math.max(1, ...t.ours.map(o=>o.count));
+    const ours = t.ours.map(o=>`<div class="prow">
+        <span class="nm">${esc2(o.topic)}</span>
+        <span class="pbar"><i style="width:${(o.count/mx*100).toFixed(0)}%"></i></span>
+        <span class="vv">${o.count}회·${o.days}일</span></div>`).join("");
+    const gg = (t.google||[]).map(g=>{
+      const v=g.series||[]; let sp="";
+      if(v.length>1){ const lo=Math.min(...v),hi=Math.max(...v),rg=(hi-lo)||1;
+        sp=`<svg class="pspark" viewBox="0 0 100 34" preserveAspectRatio="none"><polyline points="${
+          v.map((x,i)=>`${(i/(v.length-1)*100).toFixed(1)},${(31-(x-lo)/rg*28).toFixed(1)}`).join(" ")
+        }" fill="none" stroke="#f5c451" stroke-width="1.5"/></svg>`; }
+      return `<div style="margin:8px 0"><div class="prow"><span class="nm">${esc2(g.kw)}</span>
+        <span class="vv">${g.now}</span></div>${sp}</div>`;}).join("");
+    document.getElementById("psec-trends").innerHTML = `
+      <div class="pcard"><h4>우리 관측 트렌드 <span class="sub">${esc2(t.window||"")}</span></h4>
+        ${ours || '<div class="pempty">아직 반복 주제가 없습니다</div>'}</div>
+      <div class="pcard"><h4>구글 검색 관심도 <span class="sub">${esc2(t.source||"")}</span></h4>
+        ${gg || '<div class="pempty">구글 관심도를 불러오지 못했습니다 (차단 또는 캐시 만료)</div>'}</div>`;
+  }
+
+  // --- 관계망: 폰에선 노드그래프 대신 상관 상위 목록이 읽기 쉽다 ---
+  if(M.graph){
+    const rows = M.graph.pairs.map(p=>{
+      const pos = p.r>=0;
+      return `<div class="prow"><span class="nm">${esc2(p.a)} ↔ ${esc2(p.b)}</span>
+        <span class="pbar"><i style="width:${(Math.abs(p.r)*100).toFixed(0)}%;background:${pos?"#ff6b6b":"#6fb3ff"}"></i></span>
+        <span class="vv ${pos?"ppos":"pneg"}">${p.r>=0?"+":""}${p.r.toFixed(2)}</span></div>`;}).join("");
+    document.getElementById("psec-graph").innerHTML = `
+      <div class="pcard"><h4>지표 상관관계 <span class="sub">6개월 종가 · |r|≥0.45 상위 ${M.graph.pairs.length}쌍</span></h4>
+        ${rows}
+        <div class="pempty">빨강 = 같이 움직임 · 파랑 = 반대로 움직임</div></div>`;
+  }
+
+  // --- 시스템 ---
+  if(M.system){
+    const S = M.system, b = S.budget||{};
+    const pct = b.limit? Math.min(100, b.used/b.limit*100) : 0;
+    const runs = (S.runs||[]).map(r=>`<div class="prow"><span class="nm">${esc2(r.time)} 회의</span>
+        <span class="vv">${r.calls}콜 ${r.ok?"":"· 실패"}</span></div>`).join("")
+        || '<div class="pempty">오늘 회의 기록 없음</div>';
+    const tl = (S.timeline||[]).slice().reverse().map(e=>`<div class="prow">
+        <span class="vv" style="opacity:.5">${esc2(e.ts)}</span>
+        <span class="nm">${esc2(e.who)} · ${esc2(e.what)}</span>
+        <span class="vv">${e.ok?"":"✕"}</span></div>`).join("")
+        || '<div class="pempty">기록 없음</div>';
+    const errs = (S.errors||[]).map(e=>`<div class="prow">
+        <span class="vv" style="opacity:.5">${esc2(e.ts)}</span>
+        <span class="nm">${esc2(e.who)} ${esc2(e.msg)}</span></div>`).join("")
+        || '<div class="pempty">최근 에러 없음</div>';
+    const ev = Object.entries(S.events||{}).map(([k,v])=>`<div class="prow">
+        <span class="nm">${esc2(k)}</span><span class="vv">${v}</span></div>`).join("");
+    let cal = "";
+    if(S.calibration){
+      cal = Object.entries(S.calibration).map(([who,hz])=>`<div class="prow">
+        <span class="nm">${esc2(who)}</span>
+        <span class="vv">${Object.entries(hz).map(([h,v])=>
+          `${h} ${v.hit==null?"—":Math.round(v.hit*100)+"%"}(n=${v.n||0})`).join(" · ")}</span></div>`).join("");
+    }
+    document.getElementById("psec-system").innerHTML = `
+      <div class="pcard"><h4>오늘 AI 예산 <span class="sub">계정 ${b.keys||"?"}개</span></h4>
+        <div class="prow"><span class="nm">사용</span>
+          <span class="vv">${(b.used||0).toLocaleString()} / ${(b.limit||0).toLocaleString()}콜</span></div>
+        <div class="pbar" style="width:100%;margin-top:6px"><i style="width:${pct}%;background:${pct>=90?"#ff6b6b":"#f5c451"}"></i></div>
+        <div style="margin-top:8px">${runs}</div></div>
+      <div class="pcard"><h4>이벤트 요약 <span class="sub">최근 스트림</span></h4>${ev||'<div class="pempty">없음</div>'}</div>
+      ${cal?`<div class="pcard"><h4>요원 예측 성적 <span class="sub">기간별 적중률</span></h4>${cal}</div>`:""}
+      <div class="pcard"><h4>뇌 시퀀스 <span class="sub">누가 무엇을 호출했나</span></h4>${tl}</div>
+      <div class="pcard"><h4>최근 에러</h4>${errs}</div>`;
+  }
+  pgo(_ptab);
+}
+
 function renderPower(){
   const el = document.getElementById("powerPanel");
   const p = DATA.power;
@@ -799,7 +980,7 @@ function tickClock(){
 }
 
 document.getElementById("genTime").textContent = (DATA.time||"").slice(11,16);
-renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderLab(); renderTicker();
+renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderLab(); renderTicker(); renderPhoneTabs();
 tickClock(); setInterval(tickClock, 30000);
 </script>
 </body>
