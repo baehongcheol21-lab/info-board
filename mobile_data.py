@@ -58,6 +58,230 @@ def _jsonl(path, tail=None):
     return rows[-tail:] if tail else rows
 
 
+def _latest_disc():
+    files = sorted(glob.glob(os.path.join(BASE, "discussions", "*.json")), reverse=True)
+    for p in files[:20]:
+        d = _j(p)
+        if d and d.get("transcript"):
+            return os.path.basename(p)[:-5], d
+    return None, {}
+
+
+# ---------- 지표: PC의 핵심/전기/경제/오리지널 4개 탭을 한 화면에 ----------
+# PC는 탭 4개에 지표를 나눠 담는다. 폰에서 거의 같은 탭 4개를 만드는 건 스크롤만 늘린다 —
+# 한 탭 안에서 그룹 칩으로 거르는 편이 손가락으로 쓰기 낫다. 지표 자체는 하나도 빠지지 않는다.
+GROUPS = {
+    "krw_usd": ["core", "elec", "econ"], "kospi": ["core", "econ"],
+    "sox": ["core", "econ"], "natgas": ["elec"], "copper": ["elec"],
+    "wti": ["elec", "econ"], "kepco": ["elec"], "samsung": ["original"],
+    "hynix": ["original"], "nvidia": ["original"],
+    "gold": ["econ", "original"], "us10y": ["econ", "original"],
+    # 전력 계열은 정부 API에서 오는 파생 지표다(수급/SMP)
+    "pwr_rate": ["core", "elec"], "pwr_demand": ["core", "elec"],
+    "pwr_supply": ["elec"], "smp": ["core", "elec"],
+}
+MAX_SPARK = 40
+
+
+def indicators_payload(series=None, power=None, smp=None):
+    """지표 카드 — 값·변동률·스파크라인·이동평균 + 그 지표에 대한 AI 해석.
+
+    `series`는 publish.py가 티커를 만들며 **이미 받아 둔** 종가다. 여기서 다시 받으면
+    같은 심볼을 두 번 긁는 셈이라 그대로 넘겨받는다(요청 수 = 0).
+    AI 해석은 최신 회의의 `indicators[id]`에 들어 있는 요약·상세·판정을 쓴다.
+    """
+    _mid, d = _latest_disc()
+    ai = d.get("indicators") or {}
+    rows = []
+    for _id, meta in (series or {}).items():
+        cl = meta.get("closes") or []
+        a = ai.get(_id) or {}
+        rows.append({
+            "id": _id, "name": meta.get("name"), "unit": meta.get("unit"),
+            "value": meta.get("value"), "pct": meta.get("pct"),
+            "spark": [round(float(x), 4) for x in cl[-MAX_SPARK:]],
+            "ma20": meta.get("ma20"), "ma60": meta.get("ma60"),
+            "groups": GROUPS.get(_id, []),
+            "ai": (a.get("summary") or "")[:400] or None,
+            "detail": (a.get("detail") or "")[:900] or None,
+            "verdict": a.get("verdict"),
+        })
+
+    # 전력 계열 — 수치만 있고 시계열이 없으므로 스파크라인은 비운다
+    if power:
+        for key, name, unit, val in (
+            ("pwr_rate", "전력 공급예비율", "%", power.get("rate")),
+            ("pwr_demand", "현재 전력수요", "MW", power.get("demand")),
+            ("pwr_supply", "공급능력", "MW", power.get("supply"))):
+            if val is None:
+                continue
+            rows.append({"id": key, "name": name, "unit": unit, "value": val,
+                         "pct": None, "spark": [], "ma20": None, "ma60": None,
+                         "groups": GROUPS.get(key, []), "ai": None,
+                         "detail": None, "verdict": None})
+    if smp is not None:
+        rows.append({"id": "smp", "name": "SMP 계통한계가격", "unit": "원/kWh",
+                     "value": smp, "pct": None, "spark": [], "ma20": None, "ma60": None,
+                     "groups": GROUPS["smp"], "ai": None, "detail": None, "verdict": None})
+    if not rows:
+        return None
+    # 값은 '지금' 시세인데 해석은 '회의 시각' 기준이다. 이 둘이 어긋나면(장중 급변) 화면에서
+    # 서로 모순돼 보인다 — 해석에 회의 시각을 붙여 어느 시점의 판단인지 드러낸다.
+    return {"rows": rows, "meeting": _mid, "at": (d.get("time") or "")[11:16],
+            "groups": [{"id": "all", "name": "전체"}, {"id": "core", "name": "핵심"},
+                       {"id": "elec", "name": "전기"}, {"id": "econ", "name": "경제"},
+                       {"id": "original", "name": "오리지널"}]}
+
+
+# ---------- 브리핑덱: 오늘의 요점을 카드로 ----------
+def deck_payload(series=None):
+    """알파의 총평을 문단 단위로 쪼개 카드로 만든다.
+
+    PC의 브리핑덱은 스와이프 카드다. 없는 내용을 지어내지 않는다 — 알파가 실제로 쓴 문단,
+    실제 변동 상위 지표, 실제 뉴스 맥락만 카드가 된다.
+    """
+    mid, d = _latest_disc()
+    cards = []
+    brief = (d.get("alpha_brief") or "").strip()
+    if brief:
+        # "오늘 지켜볼 것:"은 성격이 달라 따로 뗀다
+        watch = None
+        m = re.search(r"오늘 지켜볼 것\s*[:：]\s*(.+)$", brief, re.S)
+        if m:
+            watch = m.group(1).strip()
+            brief = brief[:m.start()].strip()
+        for para in [p.strip() for p in brief.split("\n\n") if p.strip()]:
+            cards.append({"kind": "brief", "title": "알파 총평", "text": para[:500]})
+        if watch:
+            cards.append({"kind": "watch", "title": "오늘 지켜볼 것", "text": watch[:500]})
+
+    movers = sorted([(abs(v.get("pct") or 0), k, v) for k, v in (series or {}).items()],
+                    reverse=True)[:3]
+    for _a, _k, v in movers:
+        if not v.get("pct"):
+            continue
+        # 알파 총평은 회의 시각 기준, 이 값은 페이지 갱신 시각 기준이다. 장중에 크게 움직이면
+        # 앞뒤 카드의 숫자가 달라 보이는데 둘 다 맞는 값이므로 기준 시각을 적어 준다.
+        cards.append({"kind": "mover", "title": f"오늘의 변동 · {v.get('name')}",
+                      "text": f"{v.get('value')} {v.get('unit') or ''} · 전일 대비 "
+                              f"{'+' if v['pct'] >= 0 else ''}{v['pct']:.2f}%\n"
+                              f"(페이지 갱신 시각 기준 — 위 총평은 회의 시각 기준입니다)",
+                      "pct": v["pct"]})
+
+    ctx = ((d.get("news_brief") or {}).get("context") or "").strip()
+    if ctx:
+        cards.append({"kind": "news", "title": "뉴스 맥락", "text": ctx[:700]})
+
+    # 판정이 red인 지표 — 요원 스스로 "근거 부족"이라고 표시한 것들
+    reds = [(k, (v.get("summary") or "")[:220])
+            for k, v in (d.get("indicators") or {}).items()
+            if str(v.get("verdict") or "").startswith("red")]
+    for k, s in reds[:3]:
+        nm = (series or {}).get(k, {}).get("name") or k
+        cards.append({"kind": "red", "title": f"근거 부족 · {nm}", "text": s})
+
+    if not cards:
+        return None
+    return {"cards": cards, "meeting": mid, "time": (d.get("time") or "")[:16]}
+
+
+# ---------- 팀: 요원 로스터 ----------
+ROSTER = [
+    ("U1", "유원", "기술적 분석"), ("U2", "이투", "뉴스 분석"),
+    ("B2", "비투", "기본적 분석"), ("🧰도구", "툴킷", "데이터 수집"),
+    ("U3", "삼추", "매수 논거"), ("U4", "사비", "매도 논거"),
+    ("알파", "알파", "수석 · 총평"),
+]
+
+
+def team_payload():
+    """요원별 활동량·최근 발언·예측 성적. PC의 팀 탭에 해당한다."""
+    mid, d = _latest_disc()
+    tr = d.get("transcript") or []
+    if not tr:
+        return None
+    cnt = collections.Counter(t.get("role") for t in tr)
+    # 마지막 발언을 그냥 쓰면 비투처럼 JSON을 뱉는 요원은 화면에 원시 JSON이 그대로 뜬다.
+    # 사람이 읽을 수 있는 마지막 발언을 고른다(전부 JSON이면 그때는 어쩔 수 없이 그걸 쓴다).
+    last, last_any = {}, {}
+    for t in tr:
+        r = t.get("role")
+        last_any[r] = t
+        txt = (t.get("text") or "").lstrip()
+        if txt and txt[0] not in "{[":
+            last[r] = t
+    for r, t in last_any.items():
+        last.setdefault(r, t)
+    cal = (_j(os.path.join(BASE, "calibration.json")) or {}).get("agents") or {}
+
+    members = []
+    for tag, name, role in ROSTER:
+        st = cal.get(tag) or cal.get(name) or {}
+        hz = []
+        for h, v in (st.get("horizons") or {}).items():
+            sc = v.get("score") or {}
+            hz.append({"h": h, "n": v.get("n"), "hit": sc.get("hit_rate"),
+                       "brier": sc.get("brier"), "w": v.get("weight")})
+        lt = last.get(tag) or {}
+        members.append({
+            "tag": tag, "name": name, "role": role, "calls": cnt.get(tag, 0),
+            "topic": (lt.get("topic") or "")[:40],
+            "text": (lt.get("text") or "")[:600] or None,
+            "horizons": hz,
+        })
+    return {"members": members, "meeting": mid, "total": len(tr),
+            "calls": d.get("calls_used", 0)}
+
+
+# ---------- 실험: 테마 예측 + 가상계좌 ----------
+def lab_payload():
+    """오늘 요원들이 6종목에 대해 내놓은 예측과, 만기가 남은 예측 대기열.
+
+    가상계좌 숫자 자체는 publish.py가 이미 DATA.lab에 담는다 — 여기선 예측만 맡는다.
+    """
+    rows = _jsonl(os.path.join(BASE, "forecasts.jsonl"), tail=600)
+    themes = [r for r in rows if r.get("kind") == "theme"]
+    if not themes:
+        return None
+    # 날짜가 아니라 **최신 회의**로 거른다. 하루에 회의가 여러 번 돌면(오늘은 01:12·06:39)
+    # 날짜로 거를 경우 같은 요원의 같은 기간 예측이 두 줄씩 겹쳐 보인다.
+    latest_mid = max(r.get("meeting_id") or "" for r in themes)
+    today_rows = [r for r in themes if r.get("meeting_id") == latest_mid]
+    latest_date = (today_rows[0].get("date") if today_rows else "")
+
+    by_theme = collections.OrderedDict()
+    for r in today_rows:
+        t = r.get("theme")
+        by_theme.setdefault(t, {"name": r.get("theme_name") or t, "id": t,
+                                "level": (r.get("levels") or {}).get(t), "preds": []})
+        by_theme[t]["preds"].append({
+            "who": r.get("who"), "h": r.get("horizon"), "days": r.get("days"),
+            "dir": r.get("dir"), "p": r.get("p"), "lo": r.get("lo"), "hi": r.get("hi"),
+        })
+    for v in by_theme.values():
+        v["preds"].sort(key=lambda x: ({"단기": 0, "중기": 1, "장기": 2}.get(x["h"], 9),
+                                        str(x["who"])))
+        # 강세론자(U3)와 약세론자(U4)가 방향·확률·구간까지 똑같으면 서로 독립적으로 판단한 게
+        # 아닐 가능성이 크다. 숨기지 않고 화면에 표시한다 — 이건 실험이 관찰해야 할 대상이다.
+        same = collections.defaultdict(dict)
+        for p in v["preds"]:
+            same[p["h"]][p["who"]] = (p["dir"], p["p"], p["lo"], p["hi"])
+        v["twins"] = sorted((h for h, d in same.items()
+                             if d.get("U3") is not None and d.get("U3") == d.get("U4")),
+                            key=lambda h: {"단기": 0, "중기": 1, "장기": 2}.get(h, 9))
+
+    # 채점 완료분 — settle이 result를 붙인 행
+    done = [r for r in themes if r.get("result") is not None]
+    scored = None
+    if done:
+        hit = sum(1 for r in done if r.get("result", {}).get("hit"))
+        scored = {"n": len(done), "hit_rate": round(hit / len(done), 3)}
+
+    pending = len([r for r in themes if r.get("result") is None])
+    return {"date": latest_date, "themes": list(by_theme.values()),
+            "pending": pending, "scored": scored}
+
+
 # ---------- 토론방: 최신 회의 녹취 ----------
 def chat_payload():
     files = sorted(glob.glob(os.path.join(BASE, "discussions", "*.json")), reverse=True)
@@ -124,20 +348,30 @@ def trends_payload():
 
 
 # ---------- 관계망: 지표 상관 (상위 쌍만) ----------
-def graph_payload():
+def graph_payload(series=None):
     try:
         from registry import get_registry
-        from publish import INDICATORS, fetch_yahoo
     except ImportError:
         return None
     closes = {}
-    for _id, name, sym, unit, dec in INDICATORS:
+    if series:
+        # publish.py가 이미 6개월 종가를 받아 뒀다 — 여기서 다시 긁으면 12번 중복 요청이다
+        for _id, meta in series.items():
+            cl = meta.get("closes") or []
+            if len(cl) >= 40:
+                closes[_id] = (meta.get("name"), cl)
+    else:
         try:
-            _, _, cl = fetch_yahoo(sym, rng="6mo")
-            if cl and len(cl) >= 40:
-                closes[_id] = (name, cl)
-        except Exception:
-            continue
+            from publish import INDICATORS, fetch_yahoo
+        except ImportError:
+            return None
+        for _id, name, sym, unit, dec in INDICATORS:
+            try:
+                _, _, cl = fetch_yahoo(sym, rng="6mo")
+                if cl and len(cl) >= 40:
+                    closes[_id] = (name, cl)
+            except Exception:
+                continue
     if len(closes) < 3:
         return None
     reg = get_registry()
@@ -236,11 +470,23 @@ def system_payload():
     return out
 
 
-def build():
-    """폰 페이지에 실을 전체 payload. 실패한 섹션은 None이라 화면이 알아서 숨긴다."""
+def build(series=None, power=None, smp=None):
+    """폰 페이지에 실을 전체 payload. 실패한 섹션은 None이라 화면이 알아서 숨긴다.
+
+    series는 publish.py가 티커용으로 이미 받아 둔 종가다(중복 요청 방지).
+    """
+    jobs = (
+        ("ind", lambda: indicators_payload(series, power, smp)),
+        ("deck", lambda: deck_payload(series)),
+        ("team", team_payload),
+        ("lab", lab_payload),
+        ("chat", chat_payload),
+        ("trends", trends_payload),
+        ("graph", lambda: graph_payload(series)),
+        ("system", system_payload),
+    )
     out = {}
-    for name, fn in (("chat", chat_payload), ("trends", trends_payload),
-                     ("graph", graph_payload), ("system", system_payload)):
+    for name, fn in jobs:
         try:
             out[name] = fn()
         except Exception as e:

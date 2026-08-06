@@ -260,11 +260,11 @@ def _status_line(events, role_tag):
     return "대기중…"
 
 
-def _mobile_payload():
+def _mobile_payload(series=None, power=None, smp=None):
     """폰 탭에 실을 데이터. 실패하면 그 섹션만 빠지고 페이지는 정상 생성된다."""
     try:
         import mobile_data
-        return mobile_data.build()
+        return mobile_data.build(series, power, smp)
     except Exception as e:
         print(f"  ⚠️ 폰 payload 생성 실패(탭 생략): {type(e).__name__}: {e}")
         return {}
@@ -344,16 +344,30 @@ def build_data():
                 "detail": disc.get("alpha_brief") or "아직 오늘의 총평이 없습니다."},
     }
 
-    # ---- 하단 티커 (코스피 제외 나머지) ----
-    tickers = []
+    # ---- 하단 티커 + 지표 원본 (코스피는 히어로 차트에서 이미 받았다) ----
+    # 종가는 6개월치로 한 번만 받아 티커·지표카드·관계망이 **같은 데이터를 나눠 쓴다**.
+    # 예전엔 티커가 1개월, 관계망이 6개월을 따로 받아 심볼당 2번씩 긁고 있었다.
+    tickers, series = [], {}
     for _id, name, sym, unit, dec in INDICATORS:
         if _id == "kospi":
-            continue
-        try:
-            price, pct, _ = fetch_yahoo(sym)
+            price, pct, closes = k_price, k_pct, k_closes
+        else:
+            try:
+                price, pct, closes = fetch_yahoo(sym, rng="6mo")
+            except Exception:
+                continue
             tickers.append({"name": name, "value": f"{price:,.{dec}f}", "pct": pct or 0})
-        except Exception:
+        if price is None:
             continue
+        series[_id] = {"name": name, "unit": unit, "value": f"{price:,.{dec}f}",
+                       "pct": pct or 0, "closes": closes or [],
+                       "ma20": ma(closes or [], 20), "ma60": ma(closes or [], 60)}
+
+    smp = None
+    try:
+        smp = fetch_smp()
+    except Exception:
+        pass
 
     # ---- 가상계좌 모의투자 현황 (아이폰에서도 봐야 하므로 공개 페이지에 싣는다) ----
     # PC 대시보드는 localhost에만 떠 있어 폰에서 아예 열리지 않는다. 실험을 폰에서 보려면
@@ -387,9 +401,9 @@ def build_data():
         "time": datetime.datetime.now(KST).isoformat(timespec="minutes"),
         "chart": chart, "power": power, "analysts": analysts,
         "research": research, "tickers": tickers, "lab": lab,
-        # 폰에서도 PC와 같은 정보를 볼 수 있게 — 트렌드·관계망·토론방·시스템.
+        # 폰에서도 PC와 같은 정보를 볼 수 있게 — 지표·덱·팀·실험·토론방·트렌드·관계망·시스템.
         # 원본이 커서(녹취 11MB 등) mobile_data가 화면 분량만 잘라 담는다.
-        "m": _mobile_payload(),
+        "m": _mobile_payload(series, power, smp),
     }
 
 
@@ -498,6 +512,59 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .prow .vv{font-variant-numeric:tabular-nums;opacity:.8;flex:none}
 .pbar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;flex:none;width:70px}
 .pbar i{display:block;height:100%;background:#f5c451}
+
+/* --- 지표 카드 --- */
+#pchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 2px 2px}
+#pchips::-webkit-scrollbar{display:none}
+#pchips .chip{flex:none;padding:9px 14px;min-height:40px;display:flex;align-items:center;
+  font-size:.7rem;border:1px solid #3b2f22;border-radius:20px;color:#8a7a63;background:#241d16;
+  cursor:pointer}
+#pchips .chip.on{color:#181410;background:#f5c451;border-color:#f5c451;font-weight:700}
+.icard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:11px 12px;margin:8px 0;
+  cursor:pointer}
+.icard .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.icard .inm{font-size:.76rem;color:#e8dcc8;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.icard .ival{font-size:.86rem;font-variant-numeric:tabular-nums;flex:none}
+.icard .ipct{font-size:.7rem;flex:none;font-variant-numeric:tabular-nums}
+.icard .ima{font-size:.62rem;opacity:.5;margin-top:3px;font-variant-numeric:tabular-nums}
+.icard .iai{font-size:.68rem;line-height:1.5;color:#bfae92;margin-top:7px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.icard .flag{font-size:.58rem;border:1px solid #ff6b6b;color:#ff6b6b;border-radius:4px;
+  padding:1px 5px;margin-left:6px;vertical-align:1px}
+.ppos{color:#ff6b6b} .pneg{color:#6fb3ff}
+
+/* --- 브리핑덱: 가로 스와이프 --- */
+#pdeck{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;padding:12px 2px}
+#pdeck::-webkit-scrollbar{display:none}
+#pdeck .dcard{flex:none;width:82vw;max-width:340px;scroll-snap-align:center;min-height:190px;
+  background:#241d16;border:1px solid #3b2f22;border-left:4px solid #f5c451;border-radius:12px;
+  padding:14px;display:flex;flex-direction:column}
+#pdeck .dcard.watch{border-left-color:#3ddc71} #pdeck .dcard.news{border-left-color:#6fb3ff}
+#pdeck .dcard.red{border-left-color:#ff6b6b} #pdeck .dcard.mover{border-left-color:#c99a2e}
+#pdeck .dt{font-size:.74rem;color:#f5c451;font-weight:700;margin-bottom:8px}
+#pdeck .dx{font-size:.72rem;line-height:1.65;color:#d8ccb6;word-break:keep-all}
+#pdeck .dn{margin-top:auto;font-size:.6rem;opacity:.4;padding-top:8px}
+
+/* --- 팀 --- */
+.tcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:8px 0}
+.tcard .th{display:flex;align-items:center;gap:8px}
+.tcard .tav{width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;
+  justify-content:center;font-size:.66rem;font-weight:700;color:#181410}
+.tcard .tnm{font-size:.78rem;color:#e8dcc8} .tcard .tr{font-size:.63rem;opacity:.55}
+.tcard .tc{margin-left:auto;font-size:.66rem;color:#f5c451;flex:none}
+.tcard .tt{font-size:.68rem;line-height:1.55;color:#bfae92;margin-top:8px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
+/* --- 실험: 테마 예측 --- */
+.fcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:8px 0}
+.fcard .fh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+.fcard .fnm{font-size:.77rem;color:#f5c451} .fcard .flv{font-size:.7rem;opacity:.7}
+.fpred{display:flex;gap:6px;align-items:center;font-size:.68rem;padding:5px 0;
+  border-bottom:1px solid rgba(255,255,255,.05)}
+.fpred:last-child{border-bottom:0}
+.fpred .fw{flex:none;width:34px;opacity:.6} .fpred .fhz{flex:none;width:30px;opacity:.6}
+.fpred .fd{flex:none;font-weight:700} .fpred .fp{margin-left:auto;font-variant-numeric:tabular-nums;opacity:.8}
 .pmsg{font-size:.72rem;line-height:1.7;white-space:pre-wrap;word-break:break-word}
 .pwho{display:inline-block;font-size:.64rem;padding:2px 7px;border-radius:6px;
   background:#3b2f22;color:#f5c451;margin-bottom:5px}
@@ -615,11 +682,19 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
     <div class="ace-row" id="aceRow"></div>
   </div>
 
-  <h2 class="floor-title" id="labTitle" style="display:none">가상계좌 모의투자</h2>
-  <div class="office lab-office" id="labOffice" style="display:none"></div>
-
   <p class="hint">캐릭터를 탭하면 실제 분석 내용이 아래에서 올라옵니다 · 갱신 <span id="genTime"></span> KST</p>
   </div><!-- /psec-home -->
+
+  <div id="psec-ind" class="psec"></div>
+  <div id="psec-deck" class="psec"></div>
+  <div id="psec-team" class="psec"></div>
+
+  <!-- 실험 = 테마 예측 + 가상계좌. PC의 실험 탭과 같은 묶음이다. -->
+  <div id="psec-lab" class="psec">
+    <div id="labPreds"></div>
+    <h2 class="floor-title" id="labTitle" style="display:none">가상계좌 모의투자</h2>
+    <div class="office lab-office" id="labOffice" style="display:none"></div>
+  </div>
 
   <div id="psec-trends" class="psec"></div>
   <div id="psec-graph" class="psec"></div>
@@ -804,21 +879,75 @@ function renderLab(){
 // ===== 폰 탭 — PC의 트렌드/관계망/토론방/시스템을 폰에서도 =====
 const PTABS = [
   {id:"home",   name:"홈"},
+  {id:"ind",    name:"지표"},
+  {id:"deck",   name:"브리핑덱"},
+  {id:"team",   name:"팀"},
+  {id:"lab",    name:"실험"},
   {id:"chat",   name:"토론방"},
   {id:"trends", name:"트렌드"},
   {id:"graph",  name:"관계망"},
   {id:"system", name:"시스템"},
 ];
+const PSECS = PTABS.map(t=>t.id);
 let _ptab = "home";
+let _chip = "all";
 
 function esc2(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+// 요원 색 — 홈의 캐릭터 배색과 같은 값을 써야 팀 탭에서 같은 사람으로 읽힌다
+const TEAMC = {"U1":"#3a6ea5","U2":"#c99a2e","B2":"#2f8f5b","🧰도구":"#2b8f8f",
+               "U3":"#ff6b6b","U4":"#6fb3ff","알파":"#f5c451"};
+
+function pchip(g){ _chip = g;
+  document.querySelectorAll("#pchips .chip").forEach(e=>e.classList.toggle("on", e.dataset.g===g));
+  renderInd(); }
+
+function spark(v, col){
+  if(!v || v.length < 2) return "";
+  const lo=Math.min(...v), hi=Math.max(...v), rg=(hi-lo)||1;
+  const pts = v.map((x,i)=>`${(i/(v.length-1)*100).toFixed(1)},${(31-(x-lo)/rg*28).toFixed(1)}`).join(" ");
+  return `<svg class="pspark" viewBox="0 0 100 34" preserveAspectRatio="none">
+    <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5"/></svg>`;
+}
+
+function renderInd(){
+  const rows = (DATA.m.ind.rows||[]).filter(r => _chip==="all" || (r.groups||[]).includes(_chip));
+  document.getElementById("pindlist").innerHTML = rows.map(r=>{
+    const up = (r.pct||0) >= 0, col = r.pct==null ? "#8a7a63" : (up?"#ff6b6b":"#6fb3ff");
+    return `<div class="icard" onclick="openInd('${r.id}')">
+      <div class="top">
+        <span class="inm">${esc2(r.name)}${String(r.verdict||"").startsWith("red")?'<span class="flag">근거부족</span>':""}</span>
+        <span class="ival">${esc2(String(r.value))}<span style="font-size:.6rem;opacity:.5"> ${esc2(r.unit||"")}</span></span>
+        ${r.pct==null?"":`<span class="ipct ${up?"ppos":"pneg"}">${up?"▲":"▼"}${Math.abs(r.pct).toFixed(2)}%</span>`}
+      </div>
+      ${spark(r.spark, col)}
+      ${r.ma20!=null?`<div class="ima">MA20 ${r.ma20.toLocaleString()} · MA60 ${r.ma60!=null?r.ma60.toLocaleString():"—"}</div>`:""}
+      ${r.ai?`<div class="ima" style="margin-top:7px;opacity:.4">${esc2(DATA.m.ind.at||"")} 회의 시점 해석</div>
+              <div class="iai">${esc2(r.ai)}</div>`
+            :'<div class="iai" style="opacity:.35">이번 회의에서 다루지 않은 지표입니다</div>'}
+    </div>`;}).join("") || '<div class="pempty">이 그룹에 지표가 없습니다</div>';
+}
+
+function openInd(id){
+  const r = (DATA.m.ind.rows||[]).find(x=>x.id===id);
+  if(!r) return;
+  // 요약과 상세는 다른 글이다 — 상세가 없을 때만 요약으로 대체한다
+  const at = DATA.m.ind.at || "";
+  const body = [r.detail, (!r.detail && r.ai) ? r.ai : null,
+                r.verdict ? "\n[판정] " + r.verdict : null,
+                // 시세는 지금 값, 해석은 회의 시각 값이다. 장중에 크게 움직이면 둘이 안 맞는데,
+                // 그건 오류가 아니라 시점 차이다 — 화면이 그걸 말해 줘야 한다.
+                at ? "\n(값은 페이지 갱신 시각 기준, 해석은 " + at + " 회의 시점 기준)" : null]
+               .filter(Boolean).join("\n\n") || "이 지표에 대한 요원 해석이 아직 없습니다.";
+  openSheet(r.name, (r.pct==null?"":((r.pct>=0?"+":"")+r.pct.toFixed(2)+"% · ")) + "AI 해석", body);
+}
 
 function pgo(id){
   _ptab = id;
   document.querySelectorAll("#ptabs .pt").forEach(e=>e.classList.toggle("on", e.dataset.id===id));
-  // 홈 전체를 컨테이너 하나로 감쌌으므로 섹션만 토글하면 된다.
-  // (개별 id를 나열하면 홈에 뭘 추가할 때마다 여기를 고쳐야 해서 반드시 빠뜨린다)
-  ["home","trends","graph","chat","system"].forEach(k=>{
+  // 섹션 목록은 PTABS에서 파생시킨다 — 탭을 추가할 때 여기를 같이 고치는 걸 잊으면
+  // 새 탭이 눌려도 아무것도 안 보이는 버그가 난다.
+  PSECS.forEach(k=>{
     const el=document.getElementById("psec-"+k);
     if(el) el.classList.toggle("on", id===k);
   });
@@ -829,9 +958,85 @@ function renderPhoneTabs(){
   const M = DATA.m || {};
   const bar = document.getElementById("ptabs");
   // 데이터가 없는 탭은 아예 만들지 않는다 — 눌렀는데 빈 화면이 나오는 게 제일 나쁘다
-  const avail = PTABS.filter(t => t.id==="home" || M[t.id]);
+  // 실험 탭은 테마 예측(M.lab)이 없어도 가상계좌(DATA.lab)만 있으면 볼 게 있다
+  const avail = PTABS.filter(t => t.id==="home" || M[t.id] || (t.id==="lab" && DATA.lab));
   bar.innerHTML = avail.map(t=>
     `<div class="pt${t.id===_ptab?" on":""}" data-id="${t.id}" onclick="pgo('${t.id}')">${t.name}</div>`).join("");
+
+  // --- 지표: PC의 핵심/전기/경제/오리지널을 그룹 칩 하나로 ---
+  if(M.ind){
+    const chips = M.ind.groups.map(g=>
+      `<div class="chip${g.id===_chip?" on":""}" data-g="${g.id}" onclick="pchip('${g.id}')">${g.name}</div>`).join("");
+    document.getElementById("psec-ind").innerHTML =
+      `<div id="pchips">${chips}</div><div id="pindlist"></div>
+       <div class="pempty" style="padding:0 4px 14px">카드를 탭하면 그 지표에 대한 요원의 상세 판단이 열립니다</div>`;
+    renderInd();
+  }
+
+  // --- 브리핑덱: 옆으로 넘기는 카드 ---
+  if(M.deck){
+    const D = M.deck;
+    const cards = D.cards.map((c,i)=>`<div class="dcard ${c.kind}">
+        <div class="dt">${esc2(c.title||"")}</div>
+        <div class="dx">${esc2(c.text||"")}</div>
+        <div class="dn">${i+1} / ${D.cards.length}</div></div>`).join("");
+    document.getElementById("psec-deck").innerHTML = `
+      <div class="pcard" style="margin-bottom:0"><h4>오늘의 브리핑
+        <span class="sub">${esc2(D.time||"")} 회의 · ${D.cards.length}장</span></h4>
+        <div class="pempty" style="text-align:left;padding:0">옆으로 밀어서 넘기세요</div></div>
+      <div id="pdeck">${cards}</div>`;
+  }
+
+  // --- 팀 ---
+  if(M.team){
+    const T = M.team;
+    const mx = Math.max(1, ...T.members.map(m=>m.calls));
+    const rows = T.members.map(m=>{
+      const col = TEAMC[m.tag] || "#f5c451";
+      const hz = (m.horizons||[]).map(h=>
+        `${h.h} ${h.hit==null?"—":Math.round(h.hit*100)+"%"}(n=${h.n||0})`).join(" · ");
+      return `<div class="tcard">
+        <div class="th">
+          <span class="tav" style="background:${col}">${esc2(m.name.slice(0,1))}</span>
+          <span><span class="tnm">${esc2(m.name)}</span><br><span class="tr">${esc2(m.role)}</span></span>
+          <span class="tc">${m.calls}회 발언</span></div>
+        <div class="pbar" style="width:100%;margin-top:8px"><i style="width:${(m.calls/mx*100).toFixed(0)}%;background:${col}"></i></div>
+        ${hz?`<div class="ima" style="margin-top:6px">예측 성적 · ${esc2(hz)}</div>`:""}
+        ${m.text?`<div class="tt">${m.topic?`<b style="color:#8a7a63">${esc2(m.topic)}</b> · `:""}${esc2(m.text)}</div>`:
+                 `<div class="tt" style="opacity:.4">이번 회의에서는 발언이 없었습니다</div>`}
+      </div>`;}).join("");
+    document.getElementById("psec-team").innerHTML = `
+      <div class="pcard"><h4>요원 로스터
+        <span class="sub">${esc2(T.meeting||"")} · 총 ${T.total}발언 / ${T.calls}콜</span></h4></div>${rows}`;
+  }
+
+  // --- 실험: 테마 예측 (가상계좌는 renderLab이 같은 섹션에 그린다) ---
+  if(M.lab){
+    const L = M.lab;
+    const cards = L.themes.map(t=>{
+      const preds = t.preds.map(p=>{
+        const up = p.dir>0;
+        return `<div class="fpred">
+          <span class="fw">${esc2(p.who||"")}</span>
+          <span class="fhz">${esc2(p.h||"")}</span>
+          <span class="fd ${up?"ppos":"pneg"}">${up?"▲ 상승":"▼ 하락"}</span>
+          <span class="fp">확률 ${(p.p*100).toFixed(0)}% · ${p.lo>0?"+":""}${p.lo}~${p.hi>0?"+":""}${p.hi}%</span>
+        </div>`;}).join("");
+      const tw = (t.twins||[]).length
+        ? `<div class="ima" style="color:#ff6b6b;opacity:.85;margin-top:7px">
+             ⚠ ${esc2(t.twins.join("·"))} 예측이 삼추·사비 완전 동일 — 독립적 판단이 아닐 수 있음</div>` : "";
+      return `<div class="fcard">
+        <div class="fh"><span class="fnm">${esc2(t.name)}</span>
+          <span class="flv">기준가 ${t.level!=null?t.level.toLocaleString():"—"}</span></div>
+        ${preds}${tw}</div>`;}).join("");
+    document.getElementById("labPreds").innerHTML = `
+      <div class="pcard"><h4>오늘의 예측 <span class="sub">${esc2(L.date||"")} · 6종목</span></h4>
+        <div class="prow"><span class="nm">채점 대기</span><span class="vv">${L.pending}건</span></div>
+        ${L.scored?`<div class="prow"><span class="nm">채점 완료 적중률</span>
+          <span class="vv">${Math.round(L.scored.hit_rate*100)}% (n=${L.scored.n})</span></div>`:
+          `<div class="pempty" style="text-align:left">아직 만기가 도래한 예측이 없습니다 — 단기는 다음 거래일에 채점됩니다</div>`}
+      </div>${cards}`;
+  }
 
   // --- 토론방 ---
   if(M.chat){
