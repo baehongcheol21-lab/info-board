@@ -306,8 +306,10 @@ def build_data():
     except Exception:
         k_price, k_pct, k_closes = None, None, []
 
-    def ma(closes, n):
-        return round(sum(closes[-n:]) / n, 1) if len(closes) >= n else None
+    def ma(closes, n, dec=1):
+        """이동평균. 자릿수는 지표마다 다르다 — 천연가스(2.663)를 소수 1자리로 반올림하면
+        MA60이 '3'으로 찍혀 아무 정보도 주지 못한다. 지표의 표시 자릿수를 그대로 쓴다."""
+        return round(sum(closes[-n:]) / n, dec) if len(closes) >= n else None
 
     chart = {
         "price": k_price, "pct": k_pct,
@@ -367,8 +369,8 @@ def build_data():
         if price is None:
             continue
         series[_id] = {"name": name, "unit": unit, "value": f"{price:,.{dec}f}",
-                       "pct": pct or 0, "closes": closes or [],
-                       "ma20": ma(closes or [], 20), "ma60": ma(closes or [], 60)}
+                       "pct": pct or 0, "closes": closes or [], "dec": dec,
+                       "ma20": ma(closes or [], 20, dec), "ma60": ma(closes or [], 60, dec)}
 
     smp = None
     try:
@@ -390,13 +392,24 @@ def build_data():
                 px = {k: v["px"] for k, v in px_raw.items()}
             except Exception:
                 pass
-            pos, _tot = _pf.positions(_pf.load(), px, fx) if (px and fx) else ([], 0)
+            _pfd = _pf.load()
+            pos, _tot = _pf.positions(_pfd, px, fx) if (px and fx) else ([], 0)
             cv = _pf.curve(60)
+            # 예약 주문은 다음 거래일 종가에 체결된다. 이걸 안 보여 주면 화면에는
+            # "보유 종목이 없습니다"만 남아, 왜 비어 있는지 알 수 없다.
+            _pd = (_pfd or {}).get("pending") or {}
+            _names = {u["id"]: u["name"] for u in _uv.UNIVERSE}
+            pending = None
+            if _pd.get("weights"):
+                pending = {"date": _pd.get("date"),
+                           "orders": [{"name": _names.get(k, k), "w": round(v * 100)}
+                                      for k, v in _pd["weights"].items() if v],
+                           "equity": (_pd.get("forecast") or {}).get("equity")}
             lab = {"capital": rep["capital"], "equity": rep["equity"],
                    "return_pct": rep["return_pct"], "profit": rep["profit"],
                    "days": rep["days"], "mdd": rep["mdd_pct"],
                    "mae": rep.get("forecast_mae_pct"), "band": rep.get("band_hit"),
-                   "review_due": rep.get("review_due"),
+                   "review_due": rep.get("review_due"), "pending": pending,
                    "positions": [{"name": p_["name"], "shares": p_["shares"],
                                   "weight": p_["weight"], "pl": p_["pl_pct"]} for p_ in pos],
                    "curve": [[r["date"][5:], r["equity"]] for r in cv],
@@ -435,8 +448,12 @@ html,body{margin:0;background:var(--bg);color:var(--panel);
   font-family:'Galmuri11',ui-monospace,'Courier New',monospace;
   letter-spacing:.3px; overflow-x:hidden}
 img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
+/* 세로 flex로 두는 이유: 티커는 sticky bottom인데, 내용이 짧은 탭(브리핑덱 등)에서는
+   페이지가 스크롤되지 않아 sticky가 걸리지 않고 티커가 화면 중간에 떠 버렸다.
+   margin-top:auto로 남는 공간을 티커 위가 흡수하게 하면 짧은 탭에서도 바닥에 붙는다. */
 .phone{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg);
-  border-left:1px solid #000;border-right:1px solid #000;position:relative}
+  border-left:1px solid #000;border-right:1px solid #000;position:relative;
+  display:flex;flex-direction:column}
 
 .topbar{display:flex;justify-content:space-between;align-items:center;
   padding:8px 12px;background:#000;border-bottom:3px solid var(--accent);font-size:11px}
@@ -536,15 +553,20 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .icard .ima{font-size:.62rem;opacity:.5;margin-top:3px;font-variant-numeric:tabular-nums}
 .icard .iai{font-size:.68rem;line-height:1.5;color:#bfae92;margin-top:7px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* 배지는 절대 잘리면 안 된다. .inm 안에 넣었더니 ellipsis에 먹혀 '근…'으로 잘렸다 —
+   형제로 빼고 flex:none을 준다. */
 .icard .flag{font-size:.58rem;border:1px solid #ff6b6b;color:#ff6b6b;border-radius:4px;
-  padding:1px 5px;margin-left:6px;vertical-align:1px}
+  padding:1px 5px;flex:none;white-space:nowrap;align-self:center}
 .ppos{color:#ff6b6b} .pneg{color:#6fb3ff}
 
 /* --- 브리핑덱: 가로 스와이프 --- */
 #pdeck{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
   scrollbar-width:none;padding:12px 2px}
 #pdeck::-webkit-scrollbar{display:none}
-#pdeck .dcard{flex:none;width:82vw;max-width:340px;scroll-snap-align:center;min-height:190px;
+/* 카드 높이를 px로 못박으면 짧은 글일 땐 카드 안이 비고, 화면엔 카드 밑으로 큰 여백이 남는다.
+   화면 높이에 비례시키면 어느 기기에서도 한 장이 화면을 채우는 '덱'답게 보인다. */
+#pdeck .dcard{flex:none;width:82vw;max-width:340px;scroll-snap-align:center;
+  min-height:min(46vh,420px);
   background:#241d16;border:1px solid #3b2f22;border-left:4px solid #f5c451;border-radius:12px;
   padding:14px;display:flex;flex-direction:column}
 #pdeck .dcard.watch{border-left-color:#3ddc71} #pdeck .dcard.news{border-left-color:#6fb3ff}
@@ -604,6 +626,8 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .lab-pos .row .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lab-pos .row .sh{opacity:.7;font-variant-numeric:tabular-nums}
 .lab-pos .row .pl{width:64px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+.lab-pos .row.pend-head{display:block;white-space:normal;line-height:1.5;font-size:.7rem;
+  opacity:.75;background:rgba(245,196,81,.1);color:#f5c451}
 .lab-meta{margin-top:10px;font-size:.68rem;opacity:.6;line-height:1.7}
 .lab-spark{width:100%;height:44px;margin:4px 0 2px;display:block}
 .table-wrap{display:flex;justify-content:center;align-items:flex-end;gap:0;position:relative;
@@ -639,7 +663,7 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .bottom-sheet .body{font-size:11px;line-height:1.75;white-space:pre-wrap}
 
 .ticker-wrap{position:sticky;bottom:0;background:#000;border-top:3px solid var(--accent);
-  overflow:hidden;padding:6px 0;margin-top:14px}
+  overflow:hidden;padding:6px 0;margin-top:auto;flex:none}
 .ticker-track{display:inline-flex;white-space:nowrap;animation:marquee 22s linear infinite}
 .ticker-track span{padding:0 16px;font-size:10px;font-weight:700}
 .ticker-track .up{color:var(--up)} .ticker-track .down{color:var(--down)}
@@ -696,11 +720,13 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
   <div id="psec-deck" class="psec"></div>
   <div id="psec-team" class="psec"></div>
 
-  <!-- 실험 = 테마 예측 + 가상계좌. PC의 실험 탭과 같은 묶음이다. -->
+  <!-- 실험 = 가상계좌 + 테마 예측. PC의 실험 탭과 같은 묶음이다.
+       계좌 잔고가 이 실험의 핵심 숫자이므로 맨 위에 둔다 — 예측 카드 6장 밑에 두었더니
+       스크롤 끝까지 내려야 보였다. -->
   <div id="psec-lab" class="psec">
-    <div id="labPreds"></div>
     <h2 class="floor-title" id="labTitle" style="display:none">가상계좌 모의투자</h2>
     <div class="office lab-office" id="labOffice" style="display:none"></div>
+    <div id="labPreds"></div>
   </div>
 
   <div id="psec-news" class="psec"></div>
@@ -858,7 +884,13 @@ function renderLab(){
     <div class="row"><span class="nm">${p.name}</span>
       <span class="sh">${p.shares}주 · ${(p.weight*100).toFixed(0)}%</span>
       <span class="pl ${p.pl>=0?'lab-up':'lab-dn'}">${p.pl==null?'—':(p.pl>=0?'+':'')+p.pl.toFixed(1)+'%'}</span>
-    </div>`).join("") || '<div class="row"><span class="nm">아직 보유 종목이 없습니다</span></div>';
+    </div>`).join("") || (L.pending
+      // 보유가 없는 이유를 말해 준다 — 주문은 이미 들어갔고 다음 거래일 종가에 체결된다.
+      // 안내문은 .nm(한 줄 말줄임)에 넣으면 잘린다 — 줄바꿈되는 자체 행으로 둔다.
+      ? `<div class="row pend-head">${L.pending.date} 주문 예약 · 다음 거래일 종가에 체결됩니다</div>`
+        + L.pending.orders.map(o=>`<div class="row"><span class="nm">${o.name}</span>
+            <span class="sh">목표 ${o.w}%</span><span class="pl">대기</span></div>`).join("")
+      : '<div class="row"><span class="nm">아직 보유 종목이 없습니다</span></div>');
   const c = L.curve || [];
   let spark = "";
   if(c.length > 1){
@@ -902,6 +934,14 @@ let _ptab = "home";
 let _chip = "all";
 
 function esc2(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+// 요원들은 마크다운으로 쓴다(**① 무슨 일** 같은 소제목). 그냥 텍스트로 넣으면 별표가 그대로
+// 보여 읽기 나쁘다. **이스케이프한 뒤에** 볼드만 태그로 바꾼다 — 순서를 바꾸면 주입 구멍이 된다.
+function md(t){
+  return esc2(t)
+    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
+    .replace(/^\s*[-·]\s+/gm, '· ');
+}
 
 // 요원 색 — 홈의 캐릭터 배색과 같은 값을 써야 팀 탭에서 같은 사람으로 읽힌다
 const TEAMC = {"U1":"#3a6ea5","U2":"#c99a2e","B2":"#2f8f5b","🧰도구":"#2b8f8f",
@@ -967,6 +1007,7 @@ function indRows(){
       pct: hasLive ? c.pct : (l.pct != null ? l.pct : null),
       spark: hasLive && (c.spark||[]).length > 1 ? c.spark : hv.slice(-60),
       ma20: hasLive ? c.ma20 : null, ma60: hasLive ? c.ma60 : null,
+      dec: (c && c.dec != null) ? c.dec : (d.dec != null ? d.dec : 2),
       // 값이 언제 것인지 반드시 표시한다. 정부 API 키가 만료된 지표는 '지금 값'이 아니라
       // '마지막으로 받았던 값'이고, 그걸 지금 값처럼 보여주면 그게 가짜 숫자다.
       stale: hasLive ? null : (lastIdx >= 0 ? (H.dates||[])[lastIdx] : (l.at || null)),
@@ -999,13 +1040,17 @@ function renderInd(){
   const mix = (_chip==="all"||_chip==="elec") ? mixCard() : "";
   document.getElementById("pindlist").innerHTML = mix + (rows.map(r=>{
     const up = (r.pct||0) >= 0, col = r.pct==null ? "#8a7a63" : (up?"#ff6b6b":"#6fb3ff");
+    // 자릿수를 지표별로 맞춘다. toLocaleString 기본값은 소수를 잘라 천연가스 MA60을 '3'으로 만든다.
+    const nf = v => v==null ? "—" : v.toLocaleString(undefined,
+      {minimumFractionDigits: r.dec||0, maximumFractionDigits: r.dec||0});
     const meta = [
-      r.ma20!=null ? `MA20 ${r.ma20.toLocaleString()} · MA60 ${r.ma60!=null?r.ma60.toLocaleString():"—"}` : null,
+      r.ma20!=null ? `MA20 ${nf(r.ma20)} · MA60 ${nf(r.ma60)}` : null,
       r.hist ? `PC 기록 ${r.hist}일` : null,
     ].filter(Boolean).join(" · ");
     return `<div class="icard" onclick="openInd('${r.id}')">
       <div class="top">
-        <span class="inm">${esc2(r.name)}${String(r.verdict||"").startsWith("red")?'<span class="flag">근거부족</span>':""}</span>
+        <span class="inm">${esc2(r.name)}</span>
+        ${String(r.verdict||"").startsWith("red")?'<span class="flag">근거부족</span>':""}
         ${r.value==null ? '<span class="ival" style="opacity:.35;font-size:.7rem">값 없음</span>'
           : `<span class="ival">${esc2(String(r.value))}<span style="font-size:.6rem;opacity:.5"> ${esc2(r.unit||"")}</span></span>`}
         ${r.pct==null?"":`<span class="ipct ${up?"ppos":"pneg"}">${up?"▲":"▼"}${Math.abs(r.pct).toFixed(2)}%</span>`}
@@ -1041,13 +1086,25 @@ function pcCard(){
 // 연료원별 발전량 — PC가 정부 API에서 받아 둔 것. 전기 그룹에서만 보여준다.
 function mixCard(){
   if(!PC || !PC.powermix || !(PC.powermix.fuels||[]).length) return "";
-  const f = PC.powermix.fuels.filter(x=>x.mw>0);
-  const tot = f.reduce((a,x)=>a+x.mw,0) || 1;
-  const rows = f.map(x=>`<div class="prow"><span class="nm">${esc2(x.fuel)}</span>
-      <span class="pbar"><i style="width:${(x.mw/tot*100).toFixed(0)}%"></i></span>
-      <span class="vv">${Math.round(x.mw).toLocaleString()}MW · ${(x.mw/tot*100).toFixed(1)}%</span></div>`).join("");
+  const all = PC.powermix.fuels;
+  // '총발전(현재수요)'는 연료가 아니라 **합계**다. 이걸 연료 목록에 섞어 두면 분모가 두 배가
+  // 되어 모든 비중이 절반으로 나온다(실제로 원자력이 18.4%로 찍히고 있었다 — 실제는 37%).
+  const totalRow = all.find(x=>/총발전|현재수요/.test(x.fuel));
+  const f = all.filter(x=>x!==totalRow);
+  const tot = (totalRow ? totalRow.mw : f.reduce((a,x)=>a+x.mw,0)) || 1;
+  // 양수(揚水)는 물을 퍼올릴 때 전력을 **쓰므로** 값이 음수다. 예전엔 mw>0 필터로 빼 버려서
+  // 구성 합이 총발전과 안 맞았다. 지우지 않고 음수 그대로 보여준다.
+  const rows = f.map(x=>{
+    const p = x.mw/tot*100, neg = x.mw < 0;
+    return `<div class="prow"><span class="nm">${esc2(x.fuel)}${neg?' <span style="opacity:.5;font-size:.62rem">(양수 소비)</span>':""}</span>
+      <span class="pbar"><i style="width:${Math.min(100,Math.abs(p)).toFixed(0)}%;background:${neg?"#6fb3ff":"#f5c451"}"></i></span>
+      <span class="vv">${Math.round(x.mw).toLocaleString()}MW · ${p.toFixed(1)}%</span></div>`;}).join("");
   return `<div class="pcard"><h4>연료원별 발전량
-      <span class="sub">${esc2(PC.powermix.at||"")} 기준 · PC 수집</span></h4>${rows}</div>`;
+      <span class="sub">${esc2(PC.powermix.at||"")} 기준 · PC 수집</span></h4>
+      ${totalRow?`<div class="prow" style="border-bottom:1px solid rgba(245,196,81,.3)">
+        <span class="nm" style="color:#f5c451">총발전 (현재수요)</span>
+        <span class="vv" style="color:#f5c451">${Math.round(totalRow.mw).toLocaleString()}MW</span></div>`:""}
+      ${rows}</div>`;
 }
 
 // 지난 회의 녹취를 그때 받아 온다. 실패하면 보고 있던 화면을 망가뜨리지 않고 사유만 알린다.
@@ -1065,7 +1122,7 @@ async function openMeeting(id){
   head.innerHTML = `회의 녹취 <span class="sub">${esc2((d.time||"").slice(0,16))} · ${d.calls}콜 · ${d.lines.length}발언</span>`;
   body.innerHTML = d.lines.map(l=>`<div class="msg${l.who==="알파"?" alpha":""}">
       <span class="pwho">${esc2(l.who)}${l.topic?" · "+esc2(l.topic):""}</span>
-      <div class="pmsg">${esc2(l.text)}</div></div>`).join("")
+      <div class="pmsg">${md(l.text)}</div></div>`).join("")
       || '<div class="pempty">녹취가 없습니다</div>';
   document.querySelectorAll("#psec-chat .prow").forEach(e=>{
     const on = (e.getAttribute("onclick")||"").includes("'"+id+"'");
@@ -1150,7 +1207,7 @@ function renderPhoneTabs(){
     const D = M.deck;
     const cards = D.cards.map((c,i)=>`<div class="dcard ${c.kind}">
         <div class="dt">${esc2(c.title||"")}</div>
-        <div class="dx">${esc2(c.text||"")}</div>
+        <div class="dx">${md(c.text||"")}</div>
         <div class="dn">${i+1} / ${D.cards.length}</div></div>`).join("");
     document.getElementById("psec-deck").innerHTML = `
       <div class="pcard" style="margin-bottom:0"><h4>오늘의 브리핑
@@ -1174,8 +1231,9 @@ function renderPhoneTabs(){
           <span class="tc">${m.calls}회 발언</span></div>
         <div class="pbar" style="width:100%;margin-top:8px"><i style="width:${(m.calls/mx*100).toFixed(0)}%;background:${col}"></i></div>
         ${hz?`<div class="ima" style="margin-top:6px">예측 성적 · ${esc2(hz)}</div>`:""}
-        ${m.text?`<div class="tt">${m.topic?`<b style="color:#8a7a63">${esc2(m.topic)}</b> · `:""}${esc2(m.text)}</div>`:
-                 `<div class="tt" style="opacity:.4">이번 회의에서는 발언이 없었습니다</div>`}
+        ${m.text?`<div class="tt">${m.topic?`<b style="color:#8a7a63">${esc2(m.topic)}</b> · `:""}${md(m.text)}</div>`
+          : m.machine?`<div class="tt" style="opacity:.45">이번 회의에서는 기계 판독용 출력(기사 분류표)만 남겼습니다 — 사람이 읽을 발언은 없습니다</div>`
+          :`<div class="tt" style="opacity:.4">이번 회의에서는 발언이 없었습니다</div>`}
       </div>`;}).join("");
     document.getElementById("psec-team").innerHTML = `
       <div class="pcard"><h4>요원 로스터
@@ -1215,7 +1273,7 @@ function renderPhoneTabs(){
     const c = M.chat;
     const lines = c.lines.map(l=>`<div class="msg${l.who==="알파"?" alpha":""}">
         <span class="pwho">${esc2(l.who)}${l.topic?" · "+esc2(l.topic):""}</span>
-        <div class="pmsg">${esc2(l.text)}</div></div>`).join("");
+        <div class="pmsg">${md(l.text)}</div></div>`).join("");
     // 목록만 보여 주고 못 열면 정보가 없는 것과 같다. 본문은 회의당 파일 하나로 나눠 두고
     // 탭했을 때만 받아 온다(최근 12건 본문만 합쳐도 599KB라 다 실을 수 없다).
     const mts = c.meetings.map(m=>`<div class="prow" style="min-height:44px;align-items:center;cursor:pointer"
@@ -1225,7 +1283,7 @@ function renderPhoneTabs(){
     document.getElementById("psec-chat").innerHTML = `
       <div class="pcard" id="pchatCard"><h4 id="pchatHead">회의 녹취 <span class="sub">${esc2(c.time.slice(0,16))} · ${c.calls}콜 · 최근 ${c.lines.length}발언</span></h4>
         <div class="pchat" id="pchatBody">${lines || '<div class="pempty">녹취가 없습니다</div>'}</div></div>
-      ${c.news && c.news.context ? `<div class="pcard"><h4>뉴스 맥락</h4><div class="pmsg">${esc2(c.news.context)}</div></div>`:""}
+      ${c.news && c.news.context ? `<div class="pcard"><h4>뉴스 맥락</h4><div class="pmsg">${md(c.news.context)}</div></div>`:""}
       <div class="pcard"><h4>지난 회의 <span class="sub">${c.meetings.length}건 · 탭하면 그 회의 녹취로 바뀝니다</span></h4>${mts}</div>`;
   }
 
@@ -1246,7 +1304,7 @@ function renderPhoneTabs(){
       return `<div style="margin:8px 0"><div class="prow"><span class="nm">${esc2(g.kw)}</span>
         <span class="vv">${g.now}</span></div>${sp}</div>`;}).join("");
     document.getElementById("psec-trends").innerHTML = `
-      <div class="pcard"><h4>우리 관측 트렌드 <span class="sub">${esc2(t.window||"")}</span></h4>
+      <div class="pcard"><h4>${esc2(t.title||"우리 관측 트렌드")} <span class="sub">${esc2(t.window||"")}</span></h4>
         ${ours || '<div class="pempty">아직 반복 주제가 없습니다</div>'}</div>
       <div class="pcard"><h4>구글 검색 관심도 <span class="sub">${esc2(t.source||"")}</span></h4>
         ${gg || '<div class="pempty">구글 관심도를 불러오지 못했습니다 (차단 또는 캐시 만료)</div>'}</div>`;

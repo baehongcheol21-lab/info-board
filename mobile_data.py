@@ -25,7 +25,10 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 
 # 폰 화면 기준 상한 — 이 숫자를 키우면 페이지가 무거워진다
 MAX_CHAT_ENTRIES = 60       # 회의 녹취 발언 수
-MAX_CHAT_CHARS = 700        # 발언 하나의 길이
+MAX_CHAT_CHARS = 700        # 페이지에 인라인으로 싣는 발언 하나의 길이
+# 회의 파일은 탭했을 때만 받으므로 넉넉해도 된다. 700자로 자르면 요원의 ①~⑤ 구조가
+# ⑤ 직전에서 끊겨 결론이 사라진다(실제로 그렇게 잘려 있었다).
+MAX_CHAT_CHARS_FILE = 2400
 MAX_MEETINGS = 12           # 회의 선택 목록
 MAX_TREND_ROWS = 15
 MAX_GRAPH_PAIRS = 18
@@ -101,7 +104,7 @@ def indicators_payload(series=None, power=None, smp=None):
             "value": meta.get("value"), "pct": meta.get("pct"),
             "spark": [round(float(x), 4) for x in cl[-MAX_SPARK:]],
             "ma20": meta.get("ma20"), "ma60": meta.get("ma60"),
-            "groups": GROUPS.get(_id, []),
+            "dec": meta.get("dec", 2), "groups": GROUPS.get(_id, []),
             "ai": (a.get("summary") or "")[:400] or None,
             "detail": (a.get("detail") or "")[:900] or None,
             "verdict": a.get("verdict"),
@@ -150,7 +153,20 @@ def deck_payload(series=None):
         if m:
             watch = m.group(1).strip()
             brief = brief[:m.start()].strip()
-        for para in [p.strip() for p in brief.split("\n\n") if p.strip()]:
+        # 짧은 문단은 다음 문단에 붙인다. "오늘은 3건이 특이합니다." 한 줄이 카드 한 장을
+        # 통째로 차지해서 화면 대부분이 빈 공간이었다 — 도입 문장은 본문과 같은 카드가 맞다.
+        paras, buf = [], ""
+        for p in [x.strip() for x in brief.split("\n\n") if x.strip()]:
+            buf = (buf + "\n" + p).strip() if buf else p
+            if len(buf) >= 45:
+                paras.append(buf)
+                buf = ""
+        if buf:
+            if paras:
+                paras[-1] += "\n" + buf
+            else:
+                paras.append(buf)
+        for para in paras:
             cards.append({"kind": "brief", "title": "알파 총평", "text": para[:500]})
         if watch:
             cards.append({"kind": "watch", "title": "오늘 지켜볼 것", "text": watch[:500]})
@@ -186,6 +202,28 @@ def deck_payload(series=None):
 
 
 # ---------- 팀: 요원 로스터 ----------
+def _readable(text):
+    """사람이 읽을 글인가 — 기계 출력(JSON·도구 호출 결과·URL 덤프)이면 False.
+
+    처음엔 '{' 나 '[' 로 시작하는지만 봤다. 그랬더니 화면에 두 개가 그대로 떴다:
+      · 비투  ```json { "체계": ... }        ← 마크다운 코드펜스로 시작
+      · 툴킷  search_news(...) 결과: [{'title': ..., 'link': 'https://...'}]
+    시작 글자만으로는 못 거른다. 형태를 본다.
+    """
+    s = (text or "").strip()
+    if not s:
+        return False
+    if s[0] in "{[" or s.startswith("```"):
+        return False
+    if re.search(r"\[\s*\{\s*['\"]", s):          # 리스트 안의 dict = 도구 결과
+        return False
+    if re.search(r"https?://\S{30,}", s):          # 긴 URL 덤프
+        return False
+    if s.count('"') + s.count("'") > 10:           # 따옴표 범벅 = 직렬화된 자료
+        return False
+    return True
+
+
 ROSTER = [
     ("U1", "유원", "기술적 분석"), ("U2", "이투", "뉴스 분석"),
     ("B2", "비투", "기본적 분석"), ("🧰도구", "툴킷", "데이터 수집"),
@@ -201,17 +239,17 @@ def team_payload():
     if not tr:
         return None
     cnt = collections.Counter(t.get("role") for t in tr)
-    # 마지막 발언을 그냥 쓰면 비투처럼 JSON을 뱉는 요원은 화면에 원시 JSON이 그대로 뜬다.
-    # 사람이 읽을 수 있는 마지막 발언을 고른다(전부 JSON이면 그때는 어쩔 수 없이 그걸 쓴다).
-    last, last_any = {}, {}
+    # 읽을 수 있는 마지막 발언만 고른다. 읽을 게 하나도 없으면(비투는 이번 회의에 기사 분류
+    # JSON 한 건이 전부다) 원문을 쏟는 대신 그렇다고 말한다 — 화면에 원시 JSON을 붙이는 건
+    # 정보가 아니라 소음이다.
+    last, machine_only = {}, set()
     for t in tr:
         r = t.get("role")
-        last_any[r] = t
-        txt = (t.get("text") or "").lstrip()
-        if txt and txt[0] not in "{[":
+        if _readable(t.get("text")):
             last[r] = t
-    for r, t in last_any.items():
-        last.setdefault(r, t)
+            machine_only.discard(r)
+        elif r not in last:
+            machine_only.add(r)
     cal = (_j(os.path.join(BASE, "calibration.json")) or {}).get("agents") or {}
 
     members = []
@@ -227,6 +265,7 @@ def team_payload():
             "tag": tag, "name": name, "role": role, "calls": cnt.get(tag, 0),
             "topic": (lt.get("topic") or "")[:40],
             "text": (lt.get("text") or "")[:600] or None,
+            "machine": tag in machine_only,
             "horizons": hz,
         })
     return {"members": members, "meeting": mid, "total": len(tr),
@@ -342,9 +381,12 @@ def trends_payload():
                "now": (v or [0])[-1]} for k, v in list(series.items())[:6]]
     if not ours and not google:
         return None
+    # 라벨을 정직하게. 이건 '주제 트렌드'가 아니라 **같은 기사가 여러 회의에서 몇 번 다시
+    # 수집됐나**이다. 화면에서 보니 뉴스 제목이 그대로 나열돼 트렌드처럼 오해되기 딱 좋았다.
     return {"ours": ours, "google": google, "source": str(g.get("source") or "")[:40],
             "fetched": str(g.get("fetched") or "")[:16],
-            "window": "최근 14일 뉴스"}
+            "title": "반복 등장한 기사",
+            "window": "최근 14일 · 회의에 다시 올라온 횟수"}
 
 
 # ---------- 관계망: 지표 상관 (상위 쌍만) ----------
@@ -490,7 +532,7 @@ def write_meetings(outdir, keep=MAX_MEETINGS):
             "brief": (d.get("alpha_brief") or "")[:2000],
             "news": ((d.get("news_brief") or {}).get("context") or "")[:900],
             "lines": [{"who": t.get("role", "?"), "topic": (t.get("topic") or "")[:40],
-                       "text": (t.get("text") or "")[:MAX_CHAT_CHARS]} for t in tr],
+                       "text": (t.get("text") or "")[:MAX_CHAT_CHARS_FILE]} for t in tr],
         }
         with open(os.path.join(outdir, name + ".json"), "w", encoding="utf-8") as f:
             json.dump(obj, f, ensure_ascii=False, separators=(",", ":"))
