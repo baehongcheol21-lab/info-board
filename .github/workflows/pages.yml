@@ -1,0 +1,49 @@
+name: pages-deploy
+# 왜 이 워크플로가 필요한가
+# ---------------------------
+# 원래는 깃허브의 '레거시' Pages 빌더(Jekyll)가 docs/를 알아서 배포했다. 그런데
+# 2026-08-06 11:48 UTC부터 그 빌더가 계속 실패했고(errored, duration 0), 나중엔
+# 10분 넘게 building에서 멈춘 채 끝나지 않았다. 푸시는 정상인데 사이트만 옛 커밋에
+# 묶여 있는 상태였다.
+#
+# 이 사이트는 정적 파일뿐이라 Jekyll이 할 일이 애초에 없다. 그래서 레거시 빌더를
+# 아예 거치지 않고, docs/를 그대로 아티팩트로 올려 배포한다. 실패하면 Actions 로그에
+# 이유가 남는다 — 레거시 빌더는 "Page build failed." 한 줄이 전부였다.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "docs/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 회의 워크플로와 PC가 docs를 각각 푸시하므로 배포가 겹칠 수 있다.
+# 진행 중인 배포를 취소하면 사이트가 반쯤 올라간 상태로 남을 수 있어 취소하지 않는다.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: docs 확인
+        run: |
+          test -f docs/index.html || { echo "docs/index.html이 없다 — 배포 중단"; exit 1; }
+          echo "파일 $(find docs -type f | wc -l)개 · $(du -sh docs | cut -f1)"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4
