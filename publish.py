@@ -264,7 +264,14 @@ def _mobile_payload(series=None, power=None, smp=None):
     """폰 탭에 실을 데이터. 실패하면 그 섹션만 빠지고 페이지는 정상 생성된다."""
     try:
         import mobile_data
-        return mobile_data.build(series, power, smp)
+        out = mobile_data.build(series, power, smp)
+        try:
+            n = mobile_data.write_meetings(os.path.join(os.path.dirname(
+                os.path.abspath(__file__)), "docs", "m"))
+            print(f"  · 지난 회의 녹취 {len(n)}건 (탭하면 받아 가는 방식)")
+        except Exception as e:
+            print(f"  ⚠️ 지난 회의 녹취 저장 실패(목록만 표시): {type(e).__name__}: {e}")
+        return out
     except Exception as e:
         print(f"  ⚠️ 폰 payload 생성 실패(탭 생략): {type(e).__name__}: {e}")
         return {}
@@ -1024,6 +1031,29 @@ function mixCard(){
       <span class="sub">${esc2(PC.powermix.at||"")} 기준 · PC 수집</span></h4>${rows}</div>`;
 }
 
+// 지난 회의 녹취를 그때 받아 온다. 실패하면 보고 있던 화면을 망가뜨리지 않고 사유만 알린다.
+async function openMeeting(id){
+  const head = document.getElementById("pchatHead"), body = document.getElementById("pchatBody");
+  if(!head || !body) return;
+  body.innerHTML = '<div class="pempty">녹취를 받아오는 중…</div>';
+  document.getElementById("pchatCard").scrollIntoView({behavior:"smooth", block:"start"});
+  let d = null;
+  try{ const r = await fetch("m/"+id+".json", {cache:"no-store"}); if(r.ok) d = await r.json(); }catch(e){}
+  if(!d){
+    body.innerHTML = '<div class="pempty">이 회의 녹취를 받지 못했습니다 — 아직 공개 페이지에 올라가지 않았거나 네트워크가 끊겼습니다</div>';
+    return;
+  }
+  head.innerHTML = `회의 녹취 <span class="sub">${esc2((d.time||"").slice(0,16))} · ${d.calls}콜 · ${d.lines.length}발언</span>`;
+  body.innerHTML = d.lines.map(l=>`<div class="msg${l.who==="알파"?" alpha":""}">
+      <span class="pwho">${esc2(l.who)}${l.topic?" · "+esc2(l.topic):""}</span>
+      <div class="pmsg">${esc2(l.text)}</div></div>`).join("")
+      || '<div class="pempty">녹취가 없습니다</div>';
+  document.querySelectorAll("#psec-chat .prow").forEach(e=>{
+    const on = (e.getAttribute("onclick")||"").includes("'"+id+"'");
+    e.style.background = on ? "rgba(245,196,81,.08)" : "";
+  });
+}
+
 function openInd(id){
   const r = indRows().find(x=>x.id===id);
   if(!r) return;
@@ -1167,13 +1197,17 @@ function renderPhoneTabs(){
     const lines = c.lines.map(l=>`<div class="msg${l.who==="알파"?" alpha":""}">
         <span class="pwho">${esc2(l.who)}${l.topic?" · "+esc2(l.topic):""}</span>
         <div class="pmsg">${esc2(l.text)}</div></div>`).join("");
-    const mts = c.meetings.map(m=>`<div class="prow"><span class="nm">${esc2(m.time)}</span>
-        <span class="vv">${m.calls}콜 · ${m.lines}줄</span></div>`).join("");
+    // 목록만 보여 주고 못 열면 정보가 없는 것과 같다. 본문은 회의당 파일 하나로 나눠 두고
+    // 탭했을 때만 받아 온다(최근 12건 본문만 합쳐도 599KB라 다 실을 수 없다).
+    const mts = c.meetings.map(m=>`<div class="prow" style="min-height:44px;align-items:center;cursor:pointer"
+        onclick="openMeeting('${m.id}')">
+        <span class="nm">${esc2(m.time)}${m.id===c.meeting?' <span style="color:#f5c451">· 지금 보는 중</span>':""}</span>
+        <span class="vv">${m.calls}콜 · ${m.lines}줄 ›</span></div>`).join("");
     document.getElementById("psec-chat").innerHTML = `
-      <div class="pcard"><h4>회의 녹취 <span class="sub">${esc2(c.time.slice(0,16))} · ${c.calls}콜 · 최근 ${c.lines.length}발언</span></h4>
-        <div class="pchat">${lines || '<div class="pempty">녹취가 없습니다</div>'}</div></div>
+      <div class="pcard" id="pchatCard"><h4 id="pchatHead">회의 녹취 <span class="sub">${esc2(c.time.slice(0,16))} · ${c.calls}콜 · 최근 ${c.lines.length}발언</span></h4>
+        <div class="pchat" id="pchatBody">${lines || '<div class="pempty">녹취가 없습니다</div>'}</div></div>
       ${c.news && c.news.context ? `<div class="pcard"><h4>뉴스 맥락</h4><div class="pmsg">${esc2(c.news.context)}</div></div>`:""}
-      <div class="pcard"><h4>최근 회의 <span class="sub">${c.meetings.length}건</span></h4>${mts}</div>`;
+      <div class="pcard"><h4>지난 회의 <span class="sub">${c.meetings.length}건 · 탭하면 그 회의 녹취로 바뀝니다</span></h4>${mts}</div>`;
   }
 
   // --- 트렌드 ---

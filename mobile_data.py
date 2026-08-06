@@ -470,6 +470,43 @@ def system_payload():
     return out
 
 
+def write_meetings(outdir, keep=MAX_MEETINGS):
+    """지난 회의 녹취를 회의당 파일 하나로 떨군다 — 탭했을 때만 받아 오게.
+
+    최근 12건 본문만 합쳐도 599KB다. 전부 페이지에 실으면 폰에서 안 열리고, 목록만 보여 주고
+    못 열게 하면 정보가 없는 것과 같다. 그래서 목록은 페이지에, 본문은 파일로 나눈다.
+    """
+    os.makedirs(outdir, exist_ok=True)
+    files = sorted(glob.glob(os.path.join(BASE, "discussions", "*.json")), reverse=True)
+    written = []
+    for p in files[:keep * 3]:
+        d = _j(p)
+        tr = (d or {}).get("transcript") or []
+        if not tr:
+            continue                      # 실패한 회의(발언 0건)는 열어 봐야 빈 화면이다
+        name = os.path.basename(p)[:-5]
+        obj = {
+            "id": name, "time": d.get("time", ""), "calls": d.get("calls_used", 0),
+            "brief": (d.get("alpha_brief") or "")[:2000],
+            "news": ((d.get("news_brief") or {}).get("context") or "")[:900],
+            "lines": [{"who": t.get("role", "?"), "topic": (t.get("topic") or "")[:40],
+                       "text": (t.get("text") or "")[:MAX_CHAT_CHARS]} for t in tr],
+        }
+        with open(os.path.join(outdir, name + ".json"), "w", encoding="utf-8") as f:
+            json.dump(obj, f, ensure_ascii=False, separators=(",", ":"))
+        written.append(name)
+        if len(written) >= keep:
+            break
+    # 오래된 회의 파일은 지운다 — 안 그러면 저장소가 계속 부풀고 폰 목록과도 어긋난다
+    for old in glob.glob(os.path.join(outdir, "*.json")):
+        if os.path.basename(old)[:-5] not in written:
+            try:
+                os.remove(old)
+            except OSError:
+                pass
+    return written
+
+
 def build(series=None, power=None, smp=None):
     """폰 페이지에 실을 전체 payload. 실패한 섹션은 None이라 화면이 알아서 숨긴다.
 
