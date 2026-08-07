@@ -1,0 +1,77 @@
+{
+ "agents": {
+  "U3": {
+   "weight": 0.35,
+   "n": 19,
+   "score": {
+    "hit_rate": 0.2632,
+    "mean_p": 0.5711,
+    "brier": 0.29513,
+    "rel": 0.11511,
+    "res": 0.01388,
+    "unc": 0.19391,
+    "skill": -0.522,
+    "overconf": 0.3079,
+    "bias": -1.2532,
+    "mae": 1.9911,
+    "coverage": 0.5263,
+    "sharpness": 0.1421
+   },
+   "diagnosis": [
+    {
+     "code": "no_skill",
+     "value": -0.522,
+     "why": "기저확률로 찍는 것보다 못하다"
+    },
+    {
+     "code": "miscalibrated",
+     "value": 0.11511,
+     "why": "확률을 과하게 부른다(공언 0.57 vs 실제 0.26)"
+    },
+    {
+     "code": "biased",
+     "value": -1.2532,
+     "why": "등락폭을 평균 1.25%p 크게 잡는다"
+    }
+   ],
+   "verdict": "판정 가능"
+  },
+  "U4": {
+   "weight": 0.35,
+   "n": 19,
+   "score": {
+    "hit_rate": 0.4211,
+    "mean_p": 0.5579,
+    "brier": 0.25895,
+    "rel": 0.02649,
+    "res": 0.01131,
+    "unc": 0.24377,
+    "skill": -0.0623,
+    "overconf": 0.1368,
+    "bias": -0.6216,
+    "mae": 1.7963,
+    "coverage": 0.5789,
+    "sharpness": 0.1158
+   },
+   "diagnosis": [
+    {
+     "code": "no_skill",
+     "value": -0.0623,
+     "why": "기저확률로 찍는 것보다 못하다"
+    },
+    {
+     "code": "miscalibrated",
+     "value": 0.02649,
+     "why": "확률을 과하게 부른다(공언 0.56 vs 실제 0.42)"
+    },
+    {
+     "code": "biased",
+     "value": -0.6216,
+     "why": "등락폭을 평균 0.62%p 크게 잡는다"
+    }
+   ],
+   "verdict": "판정 가능"
+  }
+ },
+ "updated": "2026-08-07"
+}
