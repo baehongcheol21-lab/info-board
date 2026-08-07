@@ -458,6 +458,15 @@ PIXEL_TEMPLATE = r"""<!DOCTYPE html>
 <title>정보 브리핑 // PIXEL TRADING FLOOR</title>
 <!-- 자동 생성 파일 (publish.py) — 디자인 수정은 시안/pixel_floor.html에서 먼저 승인받은 뒤 반영할 것 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/quiple/galmuri@latest/dist/galmuri.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 테마별 서체. 링크는 한 번만 걸지만 실제 폰트 파일은 그 테마가 켜졌을 때만 내려받는다. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;600;800&family=IBM+Plex+Sans+KR:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=Song+Myung&family=Gowun+Batang:wght@400;700&display=swap">
+<script>
+/* 테마를 첫 페인트 전에 입힌다 — 나중에 입히면 기본 테마가 한 번 번쩍이고 바뀐다. */
+(function(){try{var t=localStorage.getItem('ptheme');
+  document.documentElement.setAttribute('data-theme', t||'pixel');}catch(e){
+  document.documentElement.setAttribute('data-theme','pixel');}})();
+</script>
 <style>
 :root{
   --bg:#0b0f1a; --floor1:#8b5a2b; --floor2:#6b4423; --floor-line:#4a2f18;
@@ -541,14 +550,14 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
    PC 대시보드의 11개 기능을 폰에서도 볼 수 있게 한 구조. 정적 페이지라 서버 왕복이 없고,
    전부 미리 담긴 데이터를 보여주기만 한다(그래서 즉시 전환된다). */
 #ptabs{position:sticky;top:0;z-index:40;display:flex;gap:2px;overflow-x:auto;
-  scrollbar-width:none;background:#181410;border-bottom:2px solid #3b2f22;padding:0 6px}
+  scrollbar-width:none;background:#181410;border-bottom:2px solid var(--t-line);padding:0 6px}
 #ptabs::-webkit-scrollbar{display:none}
-#ptabs .pt{flex:none;padding:12px 13px;font-size:.72rem;letter-spacing:.5px;color:#8a7a63;
+#ptabs .pt{flex:none;padding:12px 13px;font-size:.72rem;letter-spacing:.5px;color:var(--t-dim);
   cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;min-height:44px}
-#ptabs .pt.on{color:#f5c451;border-bottom-color:#f5c451}
+#ptabs .pt.on{color:var(--t-accent);border-bottom-color:var(--t-accent)}
 .psec{display:none} .psec.on{display:block}
-.pcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:10px 0}
-.pcard h4{font-size:.78rem;color:#f5c451;margin-bottom:8px;letter-spacing:.5px}
+.pcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:12px;margin:10px 0}
+.pcard h4{font-size:.78rem;color:var(--t-accent);margin-bottom:8px;letter-spacing:.5px}
 .pcard .sub{font-size:.66rem;opacity:.55;font-weight:400}
 .prow{display:flex;gap:8px;align-items:baseline;font-size:.74rem;padding:6px 0;
   border-bottom:1px solid rgba(255,255,255,.05)}
@@ -556,29 +565,29 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .prow .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .prow .vv{font-variant-numeric:tabular-nums;opacity:.8;flex:none}
 .pbar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;flex:none;width:70px}
-.pbar i{display:block;height:100%;background:#f5c451}
+.pbar i{display:block;height:100%;background:var(--t-accent)}
 
 /* --- 지표 카드 --- */
 #pchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 2px 2px}
 #pchips::-webkit-scrollbar{display:none}
 #pchips .chip{flex:none;padding:9px 14px;min-height:40px;display:flex;align-items:center;
-  font-size:.72rem;border:1px solid #4a3c2c;border-radius:20px;color:#b3a488;background:#241d16;
+  font-size:.72rem;border:1px solid #4a3c2c;border-radius:20px;color:var(--t-dim);background:var(--t-card);
   cursor:pointer}
-#pchips .chip.on{color:#181410;background:#f5c451;border-color:#f5c451;font-weight:700}
-.icard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:11px 12px;margin:8px 0;
+#pchips .chip.on{color:#181410;background:var(--t-accent);border-color:var(--t-accent);font-weight:700}
+.icard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:11px 12px;margin:8px 0;
   cursor:pointer}
 .icard .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.icard .inm{font-size:.76rem;color:#e8dcc8;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.icard .inm{font-size:.76rem;color:var(--t-text);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .icard .ival{font-size:.86rem;font-variant-numeric:tabular-nums;flex:none}
 .icard .ipct{font-size:.7rem;flex:none;font-variant-numeric:tabular-nums}
 .icard .ima{font-size:.62rem;opacity:.5;margin-top:3px;font-variant-numeric:tabular-nums}
-.icard .iai{font-size:.68rem;line-height:1.5;color:#bfae92;margin-top:7px;
+.icard .iai{font-size:.68rem;line-height:1.5;color:var(--t-dim);margin-top:7px;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 /* 배지는 절대 잘리면 안 된다. .inm 안에 넣었더니 ellipsis에 먹혀 '근…'으로 잘렸다 —
    형제로 빼고 flex:none을 준다. */
-.icard .flag{font-size:.58rem;border:1px solid #ff6b6b;color:#ff6b6b;border-radius:4px;
+.icard .flag{font-size:.58rem;border:1px solid var(--t-up);color:var(--t-up);border-radius:4px;
   padding:1px 5px;flex:none;white-space:nowrap;align-self:center}
-.ppos{color:#ff6b6b} .pneg{color:#6fb3ff}
+.ppos{color:var(--t-up)} .pneg{color:var(--t-down)}
 
 /* --- 브리핑덱: 가로 스와이프 --- */
 #pdeck{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -589,44 +598,44 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
    (46vh로 뒀더니 3줄짜리 카드의 75%가 빈칸이었다). */
 #pdeck .dcard{flex:none;width:82vw;max-width:340px;scroll-snap-align:center;
   min-height:200px;justify-content:center;
-  background:#241d16;border:1px solid #3b2f22;border-left:4px solid #f5c451;border-radius:12px;
+  background:var(--t-card);border:1px solid var(--t-line);border-left:4px solid var(--t-accent);border-radius:12px;
   padding:14px;display:flex;flex-direction:column}
-#pdeck .dcard.watch{border-left-color:#3ddc71} #pdeck .dcard.news{border-left-color:#6fb3ff}
-#pdeck .dcard.red{border-left-color:#ff6b6b} #pdeck .dcard.mover{border-left-color:#c99a2e}
-#pdeck .dt{font-size:.74rem;color:#f5c451;font-weight:700;margin-bottom:8px}
+#pdeck .dcard.watch{border-left-color:#3ddc71} #pdeck .dcard.news{border-left-color:var(--t-down)}
+#pdeck .dcard.red{border-left-color:var(--t-up)} #pdeck .dcard.mover{border-left-color:#c99a2e}
+#pdeck .dt{font-size:.74rem;color:var(--t-accent);font-weight:700;margin-bottom:8px}
 #pdeck .dx{font-size:.8rem;line-height:1.7;color:#e2d7c2;word-break:keep-all}
 #pdeck .dn{font-size:.62rem;opacity:.45;padding-top:12px}
 /* 카드 위치 점 — 몇 장 중 몇 번째인지, 어디로 밀면 되는지 알려 준다 */
 #pdots{display:flex;gap:6px;justify-content:center;padding:6px 0 2px;flex-wrap:wrap}
-#pdots i{width:7px;height:7px;border-radius:50%;background:#3b2f22;display:block;transition:background .15s}
-#pdots i.on{background:#f5c451;transform:scale(1.25)}
+#pdots i{width:7px;height:7px;border-radius:50%;background:var(--t-line);display:block;transition:background .15s}
+#pdots i.on{background:var(--t-accent);transform:scale(1.25)}
 /* 카드 목차 — 10장을 다 밀어보지 않아도 무슨 내용이 있는지 한눈에 보이고,
    누르면 그 카드로 간다. 덱 아래 남던 빈 공간을 실제 기능으로 채운다. */
 #pindex{margin:6px 10px 0}
 #pindex .ix{display:flex;gap:8px;align-items:center;min-height:42px;padding:4px 8px;
-  font-size:.72rem;color:#bfae92;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
+  font-size:.72rem;color:var(--t-dim);border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
 #pindex .ix:last-child{border-bottom:0}
-#pindex .ix.on{color:#f5c451}
+#pindex .ix.on{color:var(--t-accent)}
 #pindex .ix .no{flex:none;width:20px;opacity:.45;font-variant-numeric:tabular-nums}
 #pindex .ix .tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* --- 팀 --- */
-.tcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:8px 0}
+.tcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:12px;margin:8px 0}
 .tcard .th{display:flex;align-items:center;gap:8px}
 /* 아바타 글자를 배경색 위에 얹으면 요원 색에 따라 명암비가 3.45까지 떨어졌다.
    진한 바탕에 흰 글자로 고정하고, 요원 색은 테두리로 표시한다. */
 .tcard .tav{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;
   justify-content:center;font-size:.7rem;font-weight:700;color:#fff;background:#1a1512 !important;
   border:2px solid currentColor;box-shadow:inset 0 0 0 2px #1a1512}
-.tcard .tnm{font-size:.78rem;color:#e8dcc8} .tcard .tr{font-size:.63rem;opacity:.55}
-.tcard .tc{margin-left:auto;font-size:.66rem;color:#f5c451;flex:none}
-.tcard .tt{font-size:.68rem;line-height:1.55;color:#bfae92;margin-top:8px;
+.tcard .tnm{font-size:.78rem;color:var(--t-text)} .tcard .tr{font-size:.63rem;opacity:.55}
+.tcard .tc{margin-left:auto;font-size:.66rem;color:var(--t-accent);flex:none}
+.tcard .tt{font-size:.68rem;line-height:1.55;color:var(--t-dim);margin-top:8px;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
 /* --- 실험: 테마 예측 --- */
-.fcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:8px 0}
+.fcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:12px;margin:8px 0}
 .fcard .fh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
-.fcard .fnm{font-size:.77rem;color:#f5c451} .fcard .flv{font-size:.7rem;opacity:.7}
+.fcard .fnm{font-size:.77rem;color:var(--t-accent)} .fcard .flv{font-size:.7rem;opacity:.7}
 .fpred{display:flex;gap:6px;align-items:center;font-size:.68rem;padding:5px 0;
   border-bottom:1px solid rgba(255,255,255,.05)}
 .fpred:last-child{border-bottom:0}
@@ -634,13 +643,13 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .fpred .fd{flex:none;font-weight:700} .fpred .fp{margin-left:auto;font-variant-numeric:tabular-nums;opacity:.8}
 .pmsg{font-size:.72rem;line-height:1.7;white-space:pre-wrap;word-break:break-word}
 .pwho{display:inline-block;font-size:.64rem;padding:2px 7px;border-radius:6px;
-  background:#3b2f22;color:#f5c451;margin-bottom:5px}
+  background:var(--t-line);color:var(--t-accent);margin-bottom:5px}
 .pchat{max-height:none}
-.pchat .msg{background:#1e1811;border-left:3px solid #3b2f22;border-radius:8px;
+.pchat .msg{background:#1e1811;border-left:3px solid var(--t-line);border-radius:8px;
   padding:9px 10px;margin:8px 0}
-.pchat .msg.alpha{border-left-color:#f5c451}
+.pchat .msg.alpha{border-left-color:var(--t-accent)}
 .pempty{font-size:.72rem;opacity:.5;padding:14px 4px;line-height:1.7}
-.ppos{color:#ff6b6b} .pneg{color:#6fb3ff}
+.ppos{color:var(--t-up)} .pneg{color:var(--t-down)}
 .pspark{width:100%;height:34px;display:block;margin:2px 0 4px}
 /* 자동 감사(ui_audit)가 390px에서 잡아낸 실측 문제:
      .status  22px  — 캐릭터 말풍선(탭하면 상세 시트가 열린다)
@@ -660,17 +669,17 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .lab-hero .eq{font-size:1.5rem;font-weight:800;letter-spacing:-1px}
 .lab-hero .rt{font-size:1rem;font-weight:700}
 .lab-hero .sub{font-size:.7rem;opacity:.65}
-.lab-up{color:#ff6b6b} .lab-dn{color:#6fb3ff}
+.lab-up{color:var(--t-up)} .lab-dn{color:var(--t-down)}
 .lab-bar{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:8px 0 12px}
-.lab-bar i{display:block;height:100%;background:#f5c451}
+.lab-bar i{display:block;height:100%;background:var(--t-accent)}
 .lab-pos{display:flex;flex-direction:column;gap:6px}
 .lab-pos .row{display:flex;align-items:center;gap:8px;font-size:.76rem;
-  padding:7px 9px;background:rgba(255,255,255,.07);border-radius:8px;color:#e8dcc8}
+  padding:7px 9px;background:rgba(255,255,255,.07);border-radius:8px;color:var(--t-text)}
 .lab-pos .row .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lab-pos .row .sh{opacity:.7;font-variant-numeric:tabular-nums}
 .lab-pos .row .pl{width:64px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
 .lab-pos .row.pend-head{display:block;white-space:normal;line-height:1.5;font-size:.7rem;
-  opacity:.75;background:rgba(245,196,81,.1);color:#f5c451}
+  opacity:.75;background:rgba(245,196,81,.1);color:var(--t-accent)}
 .lab-meta{margin-top:10px;font-size:.68rem;opacity:.6;line-height:1.7}
 .lab-spark{width:100%;height:44px;margin:4px 0 2px;display:block}
 .table-wrap{display:flex;justify-content:center;align-items:flex-end;gap:0;position:relative;
@@ -713,14 +722,347 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 .hint{text-align:center;font-size:10px;color:#9c8f7a;padding:8px 20px 4px;line-height:1.6}
+
+/* ===== 테마 오버라이드는 반드시 맨 끝 ===== */
+/* ============================================================================
+   테마 4종 — 같은 데이터, 같은 탭 구조, 다른 옷.
+   내비게이션(탭 10개)은 테마가 바뀌어도 그대로다. 테마마다 "뭐가 어디 있는지"가
+   달라지면 바꿀 때마다 다시 배워야 한다. 바뀌는 건 밀도·서체·카드 형태·배경·모션이다.
+
+     pixel     기존 픽셀아트 트레이딩 플로어 (기본)
+     glass     유리 관제탑 — 배경이 계좌 상태에 따라 물드는 오로라
+     terminal  관제 터미널 — 정보 밀도 최대, 각진 모서리, 고정폭
+     paper     브리핑 신문 — 밝은 종이, 명조, 괘선
+   ============================================================================ */
+
+/* ---- 공통 토큰. 각 테마가 이 값들만 갈아끼운다. ---- */
+:root{
+  --t-radius:10px; --t-gap:10px; --t-pad:12px;
+  --t-card:#241d16; --t-card2:#2c241b; --t-line:#3b2f22;
+  --t-text:#e8dcc8; --t-dim:#b3a488; --t-accent:#f5c451;
+  --t-font:'Galmuri11',ui-monospace,monospace;
+  --t-num:'Galmuri11',ui-monospace,monospace;
+  --t-display:'Galmuri11',ui-monospace,monospace;
+  --t-shadow:none; --t-cardborder:1px solid var(--t-line);
+  --t-tracking:.3px; --t-lh:1.5;
+  /* 경고·주의색도 토큰이어야 한다. 인라인으로 박아 두면 밝은 테마에서 안 읽힌다
+     (신문 테마에서 '⏸ 실시간 아님' 줄이 명암비 1.36으로 사라졌다). */
+  --t-warn:#ffd24d; --t-alert:var(--t-up);
+}
+
+/* 테마 전환 버튼 */
+#pthemebtn{position:relative;display:flex;align-items:center;gap:5px;min-height:34px;
+  padding:0 9px;border:1px solid currentColor;border-radius:999px;font-size:10px;
+  background:transparent;color:inherit;cursor:pointer;letter-spacing:.5px;opacity:.85}
+#pthemebtn:active{opacity:1}
+#pthemebtn .sw{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
+#pthemesheet{position:fixed;left:0;right:0;bottom:0;z-index:120;
+  background:var(--t-card);border-top:2px solid var(--t-accent);
+  transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);
+  padding:14px 12px calc(16px + env(safe-area-inset-bottom,0px));
+  max-width:430px;margin:0 auto;border-radius:16px 16px 0 0}
+#pthemesheet.open{transform:translateY(0)}
+#pthemesheet h4{font-size:.8rem;color:var(--t-accent);margin-bottom:4px}
+#pthemesheet .sub{font-size:.66rem;opacity:.55;margin-bottom:12px;display:block}
+.tsw{display:flex;align-items:center;gap:10px;width:100%;min-height:56px;
+  padding:8px 10px;margin-bottom:8px;border:1px solid var(--t-line);border-radius:12px;
+  background:var(--t-card2);color:var(--t-text);cursor:pointer;text-align:left}
+.tsw.on{border-color:var(--t-accent);box-shadow:0 0 0 1px var(--t-accent) inset}
+.tsw .chip{width:40px;height:40px;border-radius:9px;flex:none;position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,.14)}
+.tsw .nm{font-size:.78rem;display:block}
+.tsw .ds{font-size:.63rem;opacity:.6;display:block;margin-top:2px;line-height:1.4}
+.tsw .ok{margin-left:auto;color:var(--t-accent);font-size:.8rem;flex:none}
+/* 견본 칩 — 각 테마의 배경·강조색을 그대로 보여준다 */
+.chip-pixel{background:repeating-linear-gradient(90deg,#8b5a2b 0 8px,#6b4423 8px 16px)}
+.chip-pixel::after{content:'';position:absolute;left:6px;top:6px;width:10px;height:14px;background:#3a6ea5}
+.chip-glass{background:radial-gradient(120% 90% at 20% 10%,#1f6f5c 0%,transparent 55%),
+  radial-gradient(100% 80% at 85% 90%,#4a2c6b 0%,transparent 60%),#0a0e18}
+.chip-terminal{background:#07090b}
+.chip-terminal::after{content:'';position:absolute;inset:6px;
+  background:repeating-linear-gradient(0deg,#ffb000 0 1px,transparent 1px 4px);opacity:.9}
+.chip-paper{background:#f4f0e6}
+.chip-paper::after{content:'';position:absolute;left:6px;right:6px;top:9px;height:2px;background:#a3312a;
+  box-shadow:0 6px 0 rgba(26,23,20,.35),0 12px 0 rgba(26,23,20,.2)}
+
+/* ============================ GLASS ============================ */
+html[data-theme="glass"]{
+  --bg:#0a0e18; --panel:#e8edf5; --accent:#7ef0c8;
+  --t-card:rgba(255,255,255,.055); --t-card2:rgba(255,255,255,.085);
+  --t-line:rgba(255,255,255,.10); --t-text:#e8edf5; --t-dim:#9aa8bd; --t-accent:#7ef0c8;
+  --t-radius:16px; --t-pad:15px; --t-shadow:0 10px 34px rgba(0,0,0,.45);
+  --t-font:'IBM Plex Sans KR',system-ui,sans-serif;
+  --t-num:'IBM Plex Mono',ui-monospace,monospace;
+  --t-display:'Hahmlet',serif;
+  --t-tracking:0px; --t-lh:1.62;
+}
+html[data-theme="glass"] body{background:var(--bg);color:var(--t-text);
+  font-family:var(--t-font);letter-spacing:0}
+/* 배경이 곧 지표다 — 계좌가 오르면 초록, 내리면 붉은 기운으로 천천히 물든다.
+   --mood는 renderTheme()이 계좌 수익률을 보고 -1~+1로 넣어 준다. */
+html[data-theme="glass"] body::before{content:'';position:fixed;inset:-20%;z-index:-2;
+  background:
+    radial-gradient(45% 38% at 18% 12%, hsl(calc(150 + var(--mood,0) * -140) 62% 34% / .55) 0%, transparent 62%),
+    radial-gradient(42% 36% at 84% 20%, hsl(265 55% 38% / .42) 0%, transparent 64%),
+    radial-gradient(55% 45% at 60% 92%, hsl(calc(160 + var(--mood,0) * -120) 48% 26% / .40) 0%, transparent 66%);
+  filter:blur(38px);animation:aurora 26s ease-in-out infinite alternate}
+@keyframes aurora{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(-3%,2%,0) scale(1.07)}
+  100%{transform:translate3d(3%,-2%,0) scale(1.03)}}
+/* 미세한 그레인 — 그라디언트만 있으면 색 띠(밴딩)가 보인다 */
+html[data-theme="glass"] body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+  opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+html[data-theme="glass"] .phone{background:transparent;border:0}
+html[data-theme="glass"] .topbar{background:rgba(10,14,24,.55);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--t-line);font-family:var(--t-num);letter-spacing:1px}
+html[data-theme="glass"] #ptabs{background:rgba(10,14,24,.62);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--t-line)}
+html[data-theme="glass"] #ptabs .pt{color:var(--t-dim);font-size:.74rem;letter-spacing:0}
+html[data-theme="glass"] #ptabs .pt.on{color:var(--t-accent);border-bottom-color:var(--t-accent)}
+html[data-theme="glass"] .pcard,html[data-theme="glass"] .icard,
+html[data-theme="glass"] .tcard,html[data-theme="glass"] .fcard,
+html[data-theme="glass"] #pdeck .dcard{
+  background:var(--t-card);border:1px solid var(--t-line);border-radius:var(--t-radius);
+  backdrop-filter:blur(14px);box-shadow:var(--t-shadow);padding:var(--t-pad)}
+html[data-theme="glass"] .pcard h4,html[data-theme="glass"] #pdeck .dt{
+  font-family:var(--t-display);font-weight:600;color:var(--t-accent);letter-spacing:-.2px}
+html[data-theme="glass"] .icard .ival,html[data-theme="glass"] .icard .ipct,
+html[data-theme="glass"] .prow .vv,html[data-theme="glass"] .lab-hero .eq{
+  font-family:var(--t-num);font-variant-numeric:tabular-nums}
+html[data-theme="glass"] .lab-hero .eq{font-size:1.85rem;font-weight:600;letter-spacing:-1.5px}
+html[data-theme="glass"] .office{background:var(--t-card);border:1px solid var(--t-line);
+  border-radius:var(--t-radius);box-shadow:var(--t-shadow);backdrop-filter:blur(14px)}
+html[data-theme="glass"] .office::before{display:none}   /* 나무바닥 줄무늬 제거 */
+html[data-theme="glass"] .lab-office .lab-inner{background:transparent;border:0;padding:0}
+html[data-theme="glass"] .floor-title{font-family:var(--t-display);color:var(--t-text);opacity:.9}
+html[data-theme="glass"] .chart-panel{background:var(--t-card);border:1px solid var(--t-line);
+  border-radius:var(--t-radius);box-shadow:var(--t-shadow);backdrop-filter:blur(14px);overflow:hidden}
+html[data-theme="glass"] .chart-head{background:transparent;color:var(--t-dim);
+  border-bottom:1px solid var(--t-line)}
+html[data-theme="glass"] .chart-price{font-family:var(--t-num);letter-spacing:-1px}
+html[data-theme="glass"] .ticker-wrap{background:rgba(10,14,24,.72);backdrop-filter:blur(12px);
+  border-top:1px solid var(--t-line)}
+/* 등장 모션 — 한 번의 잘 짜인 진입이 흩뿌린 미세 효과보다 낫다 */
+html[data-theme="glass"] .psec.on > *{animation:rise .5s cubic-bezier(.2,.8,.2,1) backwards}
+html[data-theme="glass"] .psec.on > *:nth-child(1){animation-delay:.02s}
+html[data-theme="glass"] .psec.on > *:nth-child(2){animation-delay:.07s}
+html[data-theme="glass"] .psec.on > *:nth-child(3){animation-delay:.12s}
+html[data-theme="glass"] .psec.on > *:nth-child(4){animation-delay:.17s}
+html[data-theme="glass"] .psec.on > *:nth-child(n+5){animation-delay:.22s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ============================ TERMINAL ============================ */
+html[data-theme="terminal"]{
+  --bg:#07090b; --panel:#d7dde3; --accent:#ffb000;
+  --t-card:#0c1013; --t-card2:#11161a; --t-line:#1e262c;
+  --t-text:#d7dde3; --t-dim:#7d8891; --t-accent:#ffb000;
+  --t-radius:0px; --t-pad:9px; --t-gap:0px; --t-shadow:none;
+  --t-font:'IBM Plex Mono',ui-monospace,monospace;
+  --t-num:'IBM Plex Mono',ui-monospace,monospace;
+  --t-display:'IBM Plex Mono',ui-monospace,monospace;
+  --t-tracking:.2px; --t-lh:1.42;
+}
+html[data-theme="terminal"] body{background:var(--bg);color:var(--t-text);
+  font-family:var(--t-font);letter-spacing:var(--t-tracking);font-size:13px}
+/* 주사선 — 아주 옅게. 진하면 글자가 안 읽힌다. */
+html[data-theme="terminal"] body::after{content:'';position:fixed;inset:0;z-index:99;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0 1px,transparent 1px 3px)}
+html[data-theme="terminal"] .phone{background:var(--bg);border-left:1px solid var(--t-line);
+  border-right:1px solid var(--t-line)}
+html[data-theme="terminal"] .topbar{background:#000;border-bottom:1px solid var(--t-accent);
+  text-transform:uppercase;letter-spacing:2px;font-size:10px}
+html[data-theme="terminal"] #ptabs{background:#0a0d10;border-bottom:1px solid var(--t-line);padding:0}
+html[data-theme="terminal"] #ptabs .pt{color:var(--t-dim);border-bottom:2px solid transparent;
+  padding:11px 12px;font-size:.72rem;border-right:1px solid var(--t-line)}
+html[data-theme="terminal"] #ptabs .pt.on{color:#000;background:var(--t-accent);border-bottom-color:var(--t-accent)}
+html[data-theme="terminal"] .pcard,html[data-theme="terminal"] .icard,
+html[data-theme="terminal"] .tcard,html[data-theme="terminal"] .fcard{
+  background:var(--t-card);border:1px solid var(--t-line);border-radius:0;
+  margin:0 0 1px;padding:var(--t-pad)}
+html[data-theme="terminal"] .pcard h4{color:var(--t-accent);text-transform:uppercase;
+  letter-spacing:1.4px;font-size:.7rem;border-bottom:1px solid var(--t-line);padding-bottom:6px}
+html[data-theme="terminal"] .prow{padding:3px 0;font-size:.74rem;
+  border-bottom:1px dotted rgba(255,255,255,.07)}
+/* ⚠️ 처음엔 grid-template-areas로 짰다가 스파크라인·배지처럼 **영역 이름을 안 준 요소가
+   자동 배치되어 글자 위에 겹쳤다.** 카드 구조는 테마마다 다를 수 있으므로 영역 이름을
+   못박지 않는다. 기본 흐름을 그대로 두고 밀도만 조인다. */
+html[data-theme="terminal"] .icard{padding:7px 9px}
+html[data-theme="terminal"] .icard .top{gap:6px}
+html[data-theme="terminal"] .icard .inm{font-size:.76rem}
+html[data-theme="terminal"] .icard .ival{font-variant-numeric:tabular-nums;font-size:.84rem}
+html[data-theme="terminal"] .icard .ipct{min-width:60px;text-align:right}
+html[data-theme="terminal"] .icard .ima{font-size:.62rem;margin-top:2px}
+html[data-theme="terminal"] .icard .iai{-webkit-line-clamp:1;font-size:.66rem;margin-top:4px}
+html[data-theme="terminal"] .icard .flag{border-radius:0;font-size:.55rem;padding:0 4px}
+html[data-theme="terminal"] .pspark{height:20px;margin:3px 0 2px}
+html[data-theme="terminal"] .office{background:var(--t-card);border:1px solid var(--t-line);
+  border-radius:0;box-shadow:none;margin:0 0 1px}
+html[data-theme="terminal"] .office::before{display:none}
+html[data-theme="terminal"] .lab-office .lab-inner{background:transparent;border:0;border-radius:0}
+html[data-theme="terminal"] .chart-panel{border:1px solid var(--t-line);border-radius:0;margin:0 0 1px}
+html[data-theme="terminal"] .chart-head{background:var(--t-accent);color:#000;text-transform:uppercase;
+  letter-spacing:1.5px;font-size:9px}
+html[data-theme="terminal"] .floor-title{text-transform:uppercase;letter-spacing:2px;
+  font-size:.66rem;color:var(--t-accent)}
+html[data-theme="terminal"] #pchips .chip{border-radius:0;border-color:var(--t-line)}
+html[data-theme="terminal"] #pchips .chip.on{background:var(--t-accent);color:#000}
+html[data-theme="terminal"] #pdeck .dcard{border-radius:0;border-left-width:3px}
+html[data-theme="terminal"] .ticker-wrap{border-top:1px solid var(--t-accent)}
+/* 값이 바뀌면 셀이 한 번 번쩍인다 — 어디가 움직였는지 눈으로 잡힌다 */
+@keyframes tflash{from{background:rgba(255,176,0,.30)}to{background:transparent}}
+html[data-theme="terminal"] .flash{animation:tflash .7s ease-out}
+
+/* ============================ PAPER ============================ */
+html[data-theme="paper"]{
+  --bg:#f4f0e6; --panel:#1a1714; --accent:#a3312a;
+  --t-card:#fbf8f1; --t-card2:#f0ebdf; --t-line:rgba(26,23,20,.16);
+  --t-text:#1a1714; --t-dim:#6b6257; --t-accent:#a3312a;
+  --t-radius:2px; --t-pad:14px; --t-shadow:none;
+  --t-font:'Gowun Batang',serif;
+  --t-num:'IBM Plex Mono',ui-monospace,monospace;
+  --t-display:'Song Myung',serif;
+  --t-tracking:0px; --t-lh:1.78;
+}
+html[data-theme="paper"] body{background:var(--bg);color:var(--t-text);
+  font-family:var(--t-font);letter-spacing:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23p)' opacity='.045'/%3E%3C/svg%3E")}
+html[data-theme="paper"] .phone{background:transparent;border-left:1px solid var(--t-line);
+  border-right:1px solid var(--t-line)}
+html[data-theme="paper"] .topbar{background:transparent;color:var(--t-text);
+  border-bottom:3px double var(--t-text);font-family:var(--t-display);font-size:13px;letter-spacing:3px}
+html[data-theme="paper"] .topbar .dot{background:var(--t-accent)}
+html[data-theme="paper"] #ptabs{background:var(--bg);border-bottom:1px solid var(--t-text)}
+html[data-theme="paper"] #ptabs .pt{color:var(--t-dim);font-family:var(--t-display);font-size:.78rem}
+html[data-theme="paper"] #ptabs .pt.on{color:var(--t-accent);border-bottom-color:var(--t-accent)}
+/* 카드가 아니라 괘선으로 나눈다 — 신문 지면의 규칙 */
+html[data-theme="paper"] .pcard{background:transparent;border:0;border-bottom:1px solid var(--t-line);
+  border-radius:0;padding:14px 12px;margin:0}
+html[data-theme="paper"] .pcard h4{font-family:var(--t-display);color:var(--t-text);
+  font-size:1rem;letter-spacing:-.3px;border-bottom:2px solid var(--t-text);
+  padding-bottom:5px;margin-bottom:10px}
+html[data-theme="paper"] .pcard .sub{color:var(--t-dim)}
+html[data-theme="paper"] .icard{background:var(--t-card);border:1px solid var(--t-line);
+  border-radius:2px;box-shadow:1px 1px 0 var(--t-line)}
+html[data-theme="paper"] .icard .ival,html[data-theme="paper"] .prow .vv,
+html[data-theme="paper"] .icard .ipct{font-family:var(--t-num);font-variant-numeric:tabular-nums}
+html[data-theme="paper"] .icard .iai{color:var(--t-dim)}
+html[data-theme="paper"] .pmsg,html[data-theme="paper"] .iai,html[data-theme="paper"] .tt{
+  line-height:var(--t-lh)}
+/* 캐릭터 스프라이트는 어두운 배경 전제로 그려졌다. 밝은 종이 위에 그대로 얹으면
+   이름표·역할표(흰 글자)가 통째로 사라진다 — 실제로 그렇게 안 보였다.
+   신문에도 사진은 어두운 판으로 앉는다. 사무실 구역만 잉크판으로 둔다. */
+html[data-theme="paper"] .office{background:#1a1714;border:1px solid var(--t-text);
+  border-radius:2px;box-shadow:3px 3px 0 var(--t-line);color:#f4f0e6}
+html[data-theme="paper"] .office::before{display:none}
+html[data-theme="paper"] .nameplate{color:#f4f0e6}
+html[data-theme="paper"] .roletag{background:#000;color:#e8c98a;border-color:#e8c98a}
+html[data-theme="paper"] .status{background:rgba(0,0,0,.78);color:#f4f0e6;border-color:#000}
+html[data-theme="paper"] .vs{color:#e8c98a}
+html[data-theme="paper"] .chart-legend b,html[data-theme="paper"] .worldclock b{color:var(--t-text)}
+/* 사무실(.office)을 잉크판으로 돌렸으므로 그 **안쪽** 글자는 종이색이어야 한다.
+   토큰(--t-text=잉크)을 그대로 쓰면 잉크 위 잉크가 되어 명암비 1.0이 나온다. */
+html[data-theme="paper"] .lab-office .lab-inner{background:transparent;border:0;color:#f4f0e6}
+html[data-theme="paper"] .lab-pos .row{background:rgba(255,255,255,.09);color:#f4f0e6}
+html[data-theme="paper"] .lab-hero .eq{font-family:var(--t-num);color:#f4f0e6}
+html[data-theme="paper"] .lab-hero .sub,html[data-theme="paper"] .lab-meta{color:#c9bfae}
+html[data-theme="paper"] .lab-pos .row.pend-head{background:rgba(232,201,138,.16);color:#e8c98a}
+html[data-theme="paper"] .lab-bar{background:rgba(255,255,255,.14)}
+html[data-theme="paper"] .lab-bar i{background:#e8c98a}
+html[data-theme="paper"] .argbox{background:#f4f0e6;color:#1a1714;border-color:#000}
+html[data-theme="paper"] .hint{color:var(--t-dim)}
+html[data-theme="paper"] .floor-title{font-family:var(--t-display);color:var(--t-text);
+  font-size:1.05rem}
+html[data-theme="paper"] .floor-title::before,html[data-theme="paper"] .floor-title::after{
+  background:var(--t-text)}
+html[data-theme="paper"] .chart-panel{background:var(--t-card);border:1px solid var(--t-text);
+  border-radius:2px;box-shadow:3px 3px 0 var(--t-line)}
+html[data-theme="paper"] .chart-head{background:var(--t-text);color:var(--bg);
+  font-family:var(--t-display);letter-spacing:1px}
+html[data-theme="paper"] .chart-body{background:var(--t-card)}
+html[data-theme="paper"] .chart-price{font-family:var(--t-num);color:var(--t-text)}
+html[data-theme="paper"] .chart-legend,html[data-theme="paper"] .worldclock{color:var(--t-dim)}
+html[data-theme="paper"] #pchips .chip{background:var(--t-card);color:var(--t-dim);
+  border-color:var(--t-line);border-radius:2px;font-family:var(--t-display)}
+html[data-theme="paper"] #pchips .chip.on{background:var(--t-text);color:var(--bg);border-color:var(--t-text)}
+html[data-theme="paper"] #pdeck .dcard{background:var(--t-card);border:1px solid var(--t-text);
+  border-radius:2px;box-shadow:3px 3px 0 var(--t-line)}
+html[data-theme="paper"] #pdeck .dt{font-family:var(--t-display);color:var(--t-accent);font-size:.95rem}
+html[data-theme="paper"] #pdeck .dx{color:var(--t-text)}
+html[data-theme="paper"] .tcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:2px}
+html[data-theme="paper"] .fcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:2px}
+html[data-theme="paper"] .pchat .msg{background:var(--t-card);border-left:3px solid var(--t-accent)}
+html[data-theme="paper"] .pwho{color:var(--t-accent)}
+html[data-theme="paper"] .ticker-wrap{background:var(--t-text);border-top:0}
+html[data-theme="paper"] .pbar{background:rgba(26,23,20,.12)}
+html[data-theme="paper"] .pbar i{background:var(--t-accent)}
+html[data-theme="paper"] #pthemesheet{background:var(--t-card)}
+html[data-theme="paper"] .tsw{background:var(--t-card2)}
+
+/* ---- 상세 시트: 픽셀 테마의 크림색 종이가 다른 테마에 그대로 남아 있었다. ---- */
+html[data-theme="glass"] .bottom-sheet,
+html[data-theme="terminal"] .bottom-sheet,
+html[data-theme="paper"] .bottom-sheet{
+  background:var(--t-card2);color:var(--t-text);border-top:1px solid var(--t-accent);
+  transition:transform .26s cubic-bezier(.2,.8,.2,1)}
+html[data-theme="glass"] .bottom-sheet{backdrop-filter:blur(20px);
+  background:rgba(16,22,34,.92);border-radius:18px 18px 0 0}
+html[data-theme="paper"] .bottom-sheet{background:var(--t-card);border-top:3px double var(--t-text)}
+html[data-theme="glass"] .bottom-sheet .body,
+html[data-theme="terminal"] .bottom-sheet .body,
+html[data-theme="paper"] .bottom-sheet .body{color:var(--t-text);font-family:var(--t-font);
+  line-height:var(--t-lh)}
+html[data-theme="glass"] .bottom-sheet .who,
+html[data-theme="terminal"] .bottom-sheet .who,
+html[data-theme="paper"] .bottom-sheet .who{color:var(--t-accent);border-bottom-color:var(--t-line)}
+html[data-theme="glass"] .sheet-grip,html[data-theme="terminal"] .sheet-grip{background:#fff3}
+html[data-theme="glass"] .bottom-sheet .close,
+html[data-theme="terminal"] .bottom-sheet .close,
+html[data-theme="paper"] .bottom-sheet .close{color:var(--t-accent)}
+/* 테마 시트도 각 테마 옷을 입는다 */
+html[data-theme="glass"] #pthemesheet{background:rgba(16,22,34,.94);backdrop-filter:blur(20px)}
+html[data-theme="terminal"] #pthemesheet{background:var(--t-card);border-radius:0}
+html[data-theme="terminal"] .tsw{border-radius:0}
+html[data-theme="glass"] .tsw{background:rgba(255,255,255,.06);border-radius:14px}
+html[data-theme="paper"]{--t-warn:#8a5a12; --t-alert:#a3312a;
+  --t-up:#a3312a; --t-down:#1f4f7a}
+html[data-theme="terminal"]{--t-warn:#ffb000; --t-alert:#ff5f56;
+  --t-up:#ff7b72; --t-down:#79b8ff}
+html[data-theme="glass"]{--t-warn:#ffd08a; --t-alert:#ff8f87;
+  --t-up:#ff8f87; --t-down:#8ec5ff}
+/* 신문 테마의 사무실 구역만 잉크판이라, 그 안에서는 상승·하락색도 밝은 쪽을 써야 한다.
+   종이용으로 어둡게 잡은 색(#a3312a/#1f4f7a)을 잉크판 위에 쓰면 명암비가 1.63으로 떨어진다. */
+html[data-theme="paper"] .office .lab-up,html[data-theme="paper"] .office .ppos{color:#ff8f87}
+html[data-theme="paper"] .office .lab-dn,html[data-theme="paper"] .office .pneg{color:#8ec5ff}
+html[data-theme="paper"] .office .sh{color:#c9bfae}
+/* 터미널 보조색이 기준선(4.5)에 살짝 못 미쳤다 */
+html[data-theme="terminal"]{--t-dim:#93a0aa}
+/* 차트 등락 표시와 전력 패널 보조문구 — 종이 위에서 쓰는 색으로 다시 잡는다 */
+html[data-theme="paper"] .chart-pct.up{color:#a3312a}
+html[data-theme="paper"] .chart-pct.down{color:#1f4f7a}
+html[data-theme="paper"] .power-panel{background:var(--t-card);border-color:var(--t-line)}
+html[data-theme="paper"] .power-txt{color:var(--t-text)}
+html[data-theme="paper"] .power-txt span{color:#5a5248}
+/* 신문 테마 차트 — 밝은 종이 판에 잉크 글씨로 통일한다 */
+html[data-theme="paper"] .chart-body{background:var(--t-card)}
+html[data-theme="paper"] .chart-price{color:var(--t-text)}
+html[data-theme="paper"] .chart-legend{color:var(--t-dim);border-top-color:var(--t-line)}
+html[data-theme="paper"] .chart-legend b{color:var(--t-text)}
+html[data-theme="paper"] .worldclock{background:var(--t-card2);color:var(--t-dim)}
+html[data-theme="paper"] .worldclock b{color:var(--t-text)}
+
 </style>
 </head>
 <body>
 <div class="phone" id="app">
 
   <div class="topbar">
-    <span><span class="dot"></span>PIXEL TRADING FLOOR</span>
-    <span id="clockNow">--:--</span>
+    <span><span class="dot"></span><span id="brandName">PIXEL TRADING FLOOR</span></span>
+    <span style="display:flex;align-items:center;gap:8px">
+      <button id="pthemebtn" onclick="openThemes()" aria-label="디자인 바꾸기">
+        <span class="sw"></span><span id="pthemename">픽셀</span></button>
+      <span id="clockNow">--:--</span>
+    </span>
   </div>
 
   <div id="ptabs"></div>
@@ -780,6 +1122,13 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 
   <div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
 
+</div>
+
+<div class="sheet-backdrop" id="themeBackdrop" onclick="closeThemes()"></div>
+<div id="pthemesheet">
+  <h4>디자인 바꾸기</h4>
+  <span class="sub">같은 내용, 다른 옷. 탭 위치는 어느 디자인에서도 그대로입니다.</span>
+  <div id="pthemelist"></div>
 </div>
 
 <div class="sheet-backdrop" id="sheetBackdrop" onclick="closeSheet()"></div>
@@ -890,7 +1239,7 @@ function renderResearch(){
   const ace = DATA.research.ace;
   document.getElementById("aceRow").innerHTML = `
     ${pixelChar({hair:"#c99a2e",body:"#1a1a2e",pants:"#000",glasses:false,bowtie:true},6)}
-    <div class="nameplate">${esc(ace.name)} <span style="color:#888;font-weight:400">· 수석</span></div>
+    <div class="nameplate">${esc(ace.name)} <span style="color:var(--t-dim);font-weight:400">· 수석</span></div>
     <div class="status" onclick="openBubble('ace')">${esc(ace.status)}<span class="car"></span></div>`;
 }
 
@@ -940,7 +1289,7 @@ function renderLab(){
     const vs = c.map(x=>x[1]), lo = Math.min(...vs), hi = Math.max(...vs), rg = (hi-lo)||1;
     const pts = vs.map((v,i)=>`${(i/(vs.length-1)*100).toFixed(1)},${(40-(v-lo)/rg*36).toFixed(1)}`).join(" ");
     spark = `<svg class="lab-spark" viewBox="0 0 100 44" preserveAspectRatio="none">
-      <polyline points="${pts}" fill="none" stroke="#f5c451" stroke-width="1.6"/></svg>`;
+      <polyline points="${pts}" fill="none" stroke="var(--t-accent)" stroke-width="1.6"/></svg>`;
   }
   // 나무바닥 배경 위에 그대로 얹으면 글자가 안 읽힌다(측정 명암비 1.18) — 어두운 판으로 감싼다
   box.innerHTML = `
@@ -990,9 +1339,55 @@ function md(t){
     .replace(/^\s*[-·]\s+/gm, '· ');
 }
 
+// ===== 테마 =====
+// 4벌의 옷. 데이터도 탭 구조도 그대로고, 밀도·서체·카드 형태·배경·모션만 바뀐다.
+const THEMES = [
+  {id:"pixel",    name:"픽셀",   brand:"PIXEL TRADING FLOOR",
+   desc:"픽셀아트 트레이딩 플로어. 캐릭터가 일하는 사무실."},
+  {id:"glass",    name:"글래스", brand:"관제탑 · CONTROL TOWER",
+   desc:"유리 패널과 오로라. 배경이 계좌 상태에 따라 물듭니다."},
+  {id:"terminal", name:"터미널", brand:"CONTROL TERMINAL",
+   desc:"정보 밀도 최대. 각진 모서리와 고정폭 숫자."},
+  {id:"paper",    name:"신문",   brand:"관 제 탑  日 報",
+   desc:"밝은 종이에 명조. 읽기 가장 편한 화면."},
+];
+function curTheme(){ return document.documentElement.getAttribute("data-theme") || "pixel"; }
+function setTheme(id){
+  const t = THEMES.find(x=>x.id===id) || THEMES[0];
+  document.documentElement.setAttribute("data-theme", t.id);
+  try{ localStorage.setItem("ptheme", t.id); }catch(e){}
+  document.getElementById("pthemename").textContent = t.name;
+  document.getElementById("brandName").textContent = t.brand;
+  document.querySelectorAll("#pthemelist .tsw").forEach(e=>{
+    const on = e.dataset.id===t.id;
+    e.classList.toggle("on", on);
+    e.querySelector(".ok").textContent = on ? "✓" : "";
+  });
+  applyMood();
+}
+// 글래스 테마의 배경색을 계좌 수익률에 연동한다. 배경 자체가 지표가 되게.
+function applyMood(){
+  const r = (DATA.lab && DATA.lab.return_pct) || 0;
+  const mood = Math.max(-1, Math.min(1, r / 5));   // ±5%에서 최대치
+  document.documentElement.style.setProperty("--mood", mood.toFixed(3));
+}
+function openThemes(){
+  document.getElementById("pthemelist").innerHTML = THEMES.map(t=>`
+    <button class="tsw${t.id===curTheme()?" on":""}" data-id="${t.id}" onclick="setTheme('${t.id}');closeThemes()">
+      <span class="chip chip-${t.id}"></span>
+      <span><span class="nm">${t.name}</span><span class="ds">${esc2(t.desc)}</span></span>
+      <span class="ok">${t.id===curTheme()?"✓":""}</span></button>`).join("");
+  document.getElementById("pthemesheet").classList.add("open");
+  document.getElementById("themeBackdrop").classList.add("open");
+}
+function closeThemes(){
+  document.getElementById("pthemesheet").classList.remove("open");
+  document.getElementById("themeBackdrop").classList.remove("open");
+}
+
 // 요원 색 — 홈의 캐릭터 배색과 같은 값을 써야 팀 탭에서 같은 사람으로 읽힌다
 const TEAMC = {"U1":"#3a6ea5","U2":"#c99a2e","B2":"#2f8f5b","🧰도구":"#2b8f8f",
-               "U3":"#ff6b6b","U4":"#6fb3ff","알파":"#f5c451"};
+               "U3":"var(--t-up)","U4":"var(--t-down)","알파":"var(--t-accent)"};
 
 function pchip(g){ _chip = g;
   document.querySelectorAll("#pchips .chip").forEach(e=>e.classList.toggle("on", e.dataset.g===g));
@@ -1086,7 +1481,7 @@ function renderInd(){
   const rows = indRows().filter(r => _chip==="all" || (r.groups||[]).includes(_chip));
   const mix = (_chip==="all"||_chip==="elec") ? mixCard() : "";
   document.getElementById("pindlist").innerHTML = mix + (rows.map(r=>{
-    const up = (r.pct||0) >= 0, col = r.pct==null ? "#8a7a63" : (up?"#ff6b6b":"#6fb3ff");
+    const up = (r.pct||0) >= 0, col = r.pct==null ? "var(--t-dim)" : (up?"var(--t-up)":"var(--t-down)");
     // 자릿수를 지표별로 맞춘다. toLocaleString 기본값은 소수를 잘라 천연가스 MA60을 '3'으로 만든다.
     const nf = v => v==null ? "—" : v.toLocaleString(undefined,
       {minimumFractionDigits: r.dec||0, maximumFractionDigits: r.dec||0});
@@ -1102,7 +1497,7 @@ function renderInd(){
           : `<span class="ival">${esc2(String(r.value))}<span style="font-size:.6rem;opacity:.5"> ${esc2(r.unit||"")}</span></span>`}
         ${r.pct==null?"":`<span class="ipct ${up?"ppos":"pneg"}">${up?"▲":"▼"}${Math.abs(r.pct).toFixed(2)}%</span>`}
       </div>
-      ${r.stale?`<div class="ima" style="color:#ffd24d;opacity:.9">⏸ 실시간 아님 · ${esc2(r.stale)} 마지막 관측${r.wait?" · "+esc2(String(r.wait).slice(0,40)):""}</div>`:""}
+      ${r.stale?`<div class="ima" style="color:var(--t-warn);opacity:.95">⏸ 실시간 아님 · ${esc2(r.stale)} 마지막 관측${r.wait?" · "+esc2(String(r.wait).slice(0,40)):""}</div>`:""}
       ${spark(r.spark, col)}
       ${meta?`<div class="ima">${meta}</div>`:""}
       ${r.ai?`<div class="ima" style="margin-top:7px;opacity:.4">${esc2(r.by || ((DATA.m.ind&&DATA.m.ind.at||"")+" 회의 시점 해석"))}</div>
@@ -1144,13 +1539,13 @@ function mixCard(){
   const rows = f.map(x=>{
     const p = x.mw/tot*100, neg = x.mw < 0;
     return `<div class="prow"><span class="nm">${esc2(x.fuel)}${neg?' <span style="opacity:.5;font-size:.62rem">(양수 소비)</span>':""}</span>
-      <span class="pbar"><i style="width:${Math.min(100,Math.abs(p)).toFixed(0)}%;background:${neg?"#6fb3ff":"#f5c451"}"></i></span>
+      <span class="pbar"><i style="width:${Math.min(100,Math.abs(p)).toFixed(0)}%;background:${neg?"var(--t-down)":"var(--t-accent)"}"></i></span>
       <span class="vv">${Math.round(x.mw).toLocaleString()}MW · ${p.toFixed(1)}%</span></div>`;}).join("");
   return `<div class="pcard"><h4>연료원별 발전량
       <span class="sub">${esc2(PC.powermix.at||"")} 기준 · PC 수집</span></h4>
       ${totalRow?`<div class="prow" style="border-bottom:1px solid rgba(245,196,81,.3)">
-        <span class="nm" style="color:#f5c451">총발전 (현재수요)</span>
-        <span class="vv" style="color:#f5c451">${Math.round(totalRow.mw).toLocaleString()}MW</span></div>`:""}
+        <span class="nm" style="color:var(--t-accent)">총발전 (현재수요)</span>
+        <span class="vv" style="color:var(--t-accent)">${Math.round(totalRow.mw).toLocaleString()}MW</span></div>`:""}
       ${rows}</div>`;
 }
 
@@ -1293,7 +1688,7 @@ function renderPhoneTabs(){
     const T = M.team;
     const mx = Math.max(1, ...T.members.map(m=>m.calls));
     const rows = T.members.map(m=>{
-      const col = TEAMC[m.tag] || "#f5c451";
+      const col = TEAMC[m.tag] || "var(--t-accent)";
       const hz = (m.horizons||[]).map(h=>
         `${h.h} ${h.hit==null?"—":Math.round(h.hit*100)+"%"}(n=${h.n||0})`).join(" · ");
       return `<div class="tcard">
@@ -1303,7 +1698,7 @@ function renderPhoneTabs(){
           <span class="tc">${m.calls}회 발언</span></div>
         <div class="pbar" style="width:100%;margin-top:8px"><i style="width:${(m.calls/mx*100).toFixed(0)}%;background:${col}"></i></div>
         ${hz?`<div class="ima" style="margin-top:6px">예측 성적 · ${esc2(hz)}</div>`:""}
-        ${m.text?`<div class="tt">${m.topic?`<b style="color:#b3a488">${esc2(m.topic)}</b> · `:""}${md(m.text)}</div>`
+        ${m.text?`<div class="tt">${m.topic?`<b style="color:var(--t-dim)">${esc2(m.topic)}</b> · `:""}${md(m.text)}</div>`
           : m.machine?`<div class="tt" style="opacity:.45">이번 회의에서는 기계 판독용 출력(기사 분류표)만 남겼습니다 — 사람이 읽을 발언은 없습니다</div>`
           :`<div class="tt" style="opacity:.4">이번 회의에서는 발언이 없었습니다</div>`}
       </div>`;}).join("");
@@ -1325,7 +1720,7 @@ function renderPhoneTabs(){
           <span class="fp">확률 ${(p.p*100).toFixed(0)}% · ${p.lo>0?"+":""}${p.lo}~${p.hi>0?"+":""}${p.hi}%</span>
         </div>`;}).join("");
       const tw = (t.twins||[]).length
-        ? `<div class="ima" style="color:#ff6b6b;opacity:.85;margin-top:7px">
+        ? `<div class="ima" style="color:var(--t-alert);opacity:.95;margin-top:7px">
              ⚠ ${esc2(t.twins.join("·"))} 예측이 삼추·사비 완전 동일 — 독립적 판단이 아닐 수 있음</div>` : "";
       return `<div class="fcard">
         <div class="fh"><span class="fnm">${esc2(t.name)}</span>
@@ -1357,7 +1752,7 @@ function renderPhoneTabs(){
     // 탭했을 때만 받아 온다(최근 12건 본문만 합쳐도 599KB라 다 실을 수 없다).
     const mts = c.meetings.map(m=>`<div class="prow" style="min-height:44px;align-items:center;cursor:pointer"
         onclick="openMeeting('${m.id}')">
-        <span class="nm">${esc2(m.time)}${m.id===c.meeting?' <span style="color:#f5c451">· 지금 보는 중</span>':""}</span>
+        <span class="nm">${esc2(m.time)}${m.id===c.meeting?' <span style="color:var(--t-accent)">· 지금 보는 중</span>':""}</span>
         <span class="vv">${m.calls}콜 · ${m.lines}줄 ›</span></div>`).join("");
     document.getElementById("psec-chat").innerHTML = `
       <div class="pcard" id="pchatCard"><h4 id="pchatHead">회의 녹취 <span class="sub">${esc2(c.time.slice(0,16))} · ${c.calls}콜 · 최근 ${c.lines.length}발언</span></h4>
@@ -1379,7 +1774,7 @@ function renderPhoneTabs(){
       if(v.length>1){ const lo=Math.min(...v),hi=Math.max(...v),rg=(hi-lo)||1;
         sp=`<svg class="pspark" viewBox="0 0 100 34" preserveAspectRatio="none"><polyline points="${
           v.map((x,i)=>`${(i/(v.length-1)*100).toFixed(1)},${(31-(x-lo)/rg*28).toFixed(1)}`).join(" ")
-        }" fill="none" stroke="#f5c451" stroke-width="1.5"/></svg>`; }
+        }" fill="none" stroke="var(--t-accent)" stroke-width="1.5"/></svg>`; }
       return `<div style="margin:8px 0"><div class="prow"><span class="nm">${esc2(g.kw)}</span>
         <span class="vv">${g.now}</span></div>${sp}</div>`;}).join("");
     document.getElementById("psec-trends").innerHTML = `
@@ -1394,7 +1789,7 @@ function renderPhoneTabs(){
     const rows = M.graph.pairs.map(p=>{
       const pos = p.r>=0;
       return `<div class="prow"><span class="nm">${esc2(p.a)} ↔ ${esc2(p.b)}</span>
-        <span class="pbar"><i style="width:${(Math.abs(p.r)*100).toFixed(0)}%;background:${pos?"#ff6b6b":"#6fb3ff"}"></i></span>
+        <span class="pbar"><i style="width:${(Math.abs(p.r)*100).toFixed(0)}%;background:${pos?"var(--t-up)":"var(--t-down)"}"></i></span>
         <span class="vv ${pos?"ppos":"pneg"}">${p.r>=0?"+":""}${p.r.toFixed(2)}</span></div>`;}).join("");
     document.getElementById("psec-graph").innerHTML = `
       <div class="pcard"><h4>지표 상관관계 <span class="sub">6개월 종가 · |r|≥0.45 상위 ${M.graph.pairs.length}쌍</span></h4>
@@ -1431,7 +1826,7 @@ function renderPhoneTabs(){
       <div class="pcard"><h4>오늘 AI 예산 <span class="sub">계정 ${b.keys||"?"}개</span></h4>
         <div class="prow"><span class="nm">사용</span>
           <span class="vv">${(b.used||0).toLocaleString()} / ${(b.limit||0).toLocaleString()}콜</span></div>
-        <div class="pbar" style="width:100%;margin-top:6px"><i style="width:${pct}%;background:${pct>=90?"#ff6b6b":"#f5c451"}"></i></div>
+        <div class="pbar" style="width:100%;margin-top:6px"><i style="width:${pct}%;background:${pct>=90?"var(--t-up)":"var(--t-accent)"}"></i></div>
         <div style="margin-top:8px">${runs}</div></div>
       <div class="pcard"><h4>이벤트 요약 <span class="sub">최근 스트림</span></h4>${ev||'<div class="pempty">없음</div>'}</div>
       ${cal?`<div class="pcard"><h4>요원 예측 성적 <span class="sub">기간별 적중률</span></h4>${cal}</div>`:""}
@@ -1446,7 +1841,7 @@ function renderPower(){
   const el = document.getElementById("powerPanel");
   const p = DATA.power;
   if(!p){
-    el.innerHTML = `<div class="power-txt">⚡ 전력 관제 · <span style="color:#a99">키 승인 대기 중…</span></div>`;
+    el.innerHTML = `<div class="power-txt">⚡ 전력 관제 · <span style="color:var(--t-dim)">키 승인 대기 중…</span></div>`;
     return;
   }
   const color = p.rate<10 ? "#ff5c5c" : (p.rate<15 ? "#ffd24d" : "#3ddc71");
@@ -1500,6 +1895,7 @@ function tickClock(){
 
 document.getElementById("genTime").textContent = (DATA.time||"").slice(11,16);
 renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderLab(); renderTicker(); renderPhoneTabs();
+setTheme(curTheme());   // 저장된 테마의 이름표·브랜드명·배경 기운을 화면에 맞춘다
 loadPC();   // PC 데이터가 도착하면 지표·뉴스 탭이 저절로 채워진다(실패해도 위 화면은 그대로)
 tickClock(); setInterval(tickClock, 30000);
 </script>
