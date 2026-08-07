@@ -1,77 +1,45 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.35,
-   "n": 19,
+   "weight": 0.245,
+   "n": 7,
    "score": {
-    "hit_rate": 0.2632,
-    "mean_p": 0.5711,
-    "brier": 0.29513,
-    "rel": 0.11511,
-    "res": 0.01388,
-    "unc": 0.19391,
-    "skill": -0.522,
-    "overconf": 0.3079,
-    "bias": -1.2532,
-    "mae": 1.9911,
-    "coverage": 0.5263,
-    "sharpness": 0.1421
+    "hit_rate": 0.2857,
+    "mean_p": 0.55,
+    "brier": 0.27393,
+    "rel": 0.06985,
+    "res": 0.0,
+    "unc": 0.20408,
+    "skill": -0.3423,
+    "overconf": 0.2643,
+    "bias": -4.4314,
+    "mae": 5.7571,
+    "coverage": 0.2857,
+    "sharpness": 0.1
    },
-   "diagnosis": [
-    {
-     "code": "no_skill",
-     "value": -0.522,
-     "why": "기저확률로 찍는 것보다 못하다"
-    },
-    {
-     "code": "miscalibrated",
-     "value": 0.11511,
-     "why": "확률을 과하게 부른다(공언 0.57 vs 실제 0.26)"
-    },
-    {
-     "code": "biased",
-     "value": -1.2532,
-     "why": "등락폭을 평균 1.25%p 크게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능"
+   "diagnosis": [],
+   "verdict": "표본 부족(n=7 < 8) — 판정 보류"
   },
   "U4": {
-   "weight": 0.35,
-   "n": 19,
+   "weight": 0.245,
+   "n": 7,
    "score": {
-    "hit_rate": 0.4211,
-    "mean_p": 0.5579,
-    "brier": 0.25895,
-    "rel": 0.02649,
-    "res": 0.01131,
-    "unc": 0.24377,
-    "skill": -0.0623,
-    "overconf": 0.1368,
-    "bias": -0.6216,
-    "mae": 1.7963,
-    "coverage": 0.5789,
-    "sharpness": 0.1158
+    "hit_rate": 0.2857,
+    "mean_p": 0.5286,
+    "brier": 0.25957,
+    "rel": 0.05898,
+    "res": 0.0,
+    "unc": 0.20408,
+    "skill": -0.2719,
+    "overconf": 0.2429,
+    "bias": -3.91,
+    "mae": 5.8557,
+    "coverage": 0.2857,
+    "sharpness": 0.0571
    },
-   "diagnosis": [
-    {
-     "code": "no_skill",
-     "value": -0.0623,
-     "why": "기저확률로 찍는 것보다 못하다"
-    },
-    {
-     "code": "miscalibrated",
-     "value": 0.02649,
-     "why": "확률을 과하게 부른다(공언 0.56 vs 실제 0.42)"
-    },
-    {
-     "code": "biased",
-     "value": -0.6216,
-     "why": "등락폭을 평균 0.62%p 크게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능"
+   "diagnosis": [],
+   "verdict": "표본 부족(n=7 < 8) — 판정 보류"
   }
  },
- "updated": "2026-08-07"
+ "updated": "2026-08-08"
 }

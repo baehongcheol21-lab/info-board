@@ -1,11 +1,11 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 13112905.0,
+ "cash": 15226020.0,
  "holdings": {
-  "hynix": 5,
-  "nvda": 24,
-  "ceg": 26,
+  "hynix": 4,
+  "nvda": 23,
+  "ceg": 25,
   "lselectric": 62
  },
  "cost_basis": {
@@ -15,21 +15,21 @@
   "lselectric": 198900.0
  },
  "pending": {
-  "date": "2026-08-07",
-  "meeting_id": "20260807T1828",
+  "date": "2026-08-08",
+  "meeting_id": "20260808T0605",
   "weights": {
    "kepco": 0.0,
    "lselectric": 0.25,
-   "hynix": 0.14,
+   "hynix": 0.15,
    "nvda": 0.15,
-   "ceg": 0.19,
+   "ceg": 0.2,
    "xle": 0.0
   },
   "forecast": {
    "by": "알파"
   },
-  "note": "LS ELECTRIC은 데이터센터 전력 수요라는 구조적 성장세가 유효하여 비중을 유지합니다. SK하이닉스는 경기 침체 우려에 따른 투심 악화로 변동성이 확대되어 비용 대비 이득이 작다고 판단, 비중을 유지하며 시장 흐름을 관망합니다. Constellation Energy는 데이터센터 전력 공급 계약이라는 핵심 모멘텀이 장기 유효하므로 현재 비중을 유지합니다. \n\n[비중] kepco=0 lselectric=25 hynix=14 nvda=15 ceg=19 xle=0 현금=27\n[평가예측] 내일=49,850,000 확률=0.55 구간=-"
+  "note": "SK하이닉스의 투매는 시장 과잉 반응으로 판단합니다. 펀더멘털 손상이 없으므로 비중을 15%로 확대하여 저점 매수합니다. LS ELECTRIC은 수주 잔고의 견고함을 신뢰하며 기존 비중을 유지합니다. Constellation Energy는 데이터센터 수요라는 구조적 강세장이 유효하여 비중을 20%로 상향합니다. 잦은 매매에 따른 비용을 고려하여 변동성이 큰 종목 위주로 대응합니다.\n\n[비중] kepco=0 lselectric=25 hynix=15 nvda=15 ceg=20 xle=0 현금=25\n[평가예측] 내일=50,370,000 "
  },
- "last_settled": "2026-08-07",
- "fees_paid": 32069.0
+ "last_settled": "2026-08-08",
+ "fees_paid": 36024.0
 }
