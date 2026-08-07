@@ -137,11 +137,16 @@ def settle(prices, fx, today=None, emit_fn=None):
         basis = dict(pf.get("cost_basis") or {})
 
         # 매도 먼저(현금 확보) → 매수
-        plan = []
+        plan, skipped = [], []
         for u in U.UNIVERSE:
             uid = u["id"]
             px = prices.get(uid)
             if not px:
+                # 시세 조회가 한 번 실패하면 그 종목은 통째로 빠지고 돈은 현금에 남는다.
+                # 6개월 수익률 실험에서 이게 조용히 넘어가면 결과가 소리 없이 오염된다
+                # (2026-08-07 XLE가 실제로 이렇게 빠졌고 아무 기록도 남지 않았다).
+                if target.get(uid, 0.0) > 0:
+                    skipped.append(u["name"])
                 continue
             kp = _krw(uid, px, fx)
             want_val = eq_before * target.get(uid, 0.0)
@@ -184,6 +189,13 @@ def settle(prices, fx, today=None, emit_fn=None):
                 pass
         pf["holdings"], pf["cash"], pf["cost_basis"] = holdings, round(cash, 0), basis
         pf["pending"] = None
+        if skipped:
+            out["skipped"] = skipped
+            print(f"  ⚠️ 시세를 못 받아 체결하지 못한 종목: {', '.join(skipped)}"
+                  f" — 해당 비중은 현금으로 남습니다")
+            if emit_fn:
+                emit_fn("portfolio_skip", "brain", topic="가상계좌",
+                        payload={"skipped": skipped, "date": today})
 
     # ---- ③ 평가 + 예측 채점 ----
     eq = equity(pf, prices, fx)

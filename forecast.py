@@ -43,6 +43,9 @@ CAL_FILE = os.path.join(BASE, "calibration.json")
 MIN_N = 8          # 이 표본 수 미만이면 판정도 교정도 하지 않는다
 MAX_BLOCK = 600    # 교정 블록 최대 길이(글자)
 HALF_LIFE = 40     # 채점에 쓸 최근 예측 개수(요원별)
+# 지표 예측을 채점 못한 채 이 일수를 넘기면 폐기한다(휴장이 길거나 지표가 사라진 경우).
+# 테마 예측에는 적용하지 않는다 — 장기는 20거래일이라 달력으로 한 달 가까이 걸린다.
+STALE_DAYS = 21
 
 try:
     from registry import get_registry
@@ -346,14 +349,24 @@ def settle(today_snap, emit_fn=None, today=None):
     if not pend:
         return {"checked": 0, "agents": {}}
 
-    graded, by_who = [], {}
-    for r in pend:
+    # ⚠️ 채점한 행의 위치를 반드시 기록한다. 예전엔 "date < today면 전부 삭제"였는데,
+    #    그러면 **채점하지 못한 것까지 같이 지워졌다.** 실제 피해가 두 가지였다:
+    #      · 테마 예측(kind="theme")은 여기서 id가 없어 건너뛰는데, 그 직후 삭제돼서
+    #        뒤이어 도는 settle_themes()가 늘 빈 손이었다 → 테마 실험이 한 번도 채점된 적이 없다.
+    #      · 중기(5거래일)·장기(20거래일) 예측은 만기 전에 삭제돼 **구조적으로 채점 불가**였다.
+    graded, by_who, graded_idx = [], {}, set()
+    for i, r in enumerate(rows):
+        if r.get("date", "") >= today:
+            continue
+        if r.get("kind") == "theme":
+            continue                       # 테마는 만기 기준으로 settle_themes가 채점한다 — 건드리지 않는다
         cur = (today_snap or {}).get(r.get("id")) or {}
         actual = cur.get("pct")
         if actual is None:
-            continue                       # 오늘 값이 없으면 채점 불가(휴장 등) — 조용히 넘긴다
+            continue                       # 오늘 값이 없으면 채점 불가(휴장 등) — 남겨서 다음에 재시도한다
         g = dict(r, actual=float(actual))
         graded.append(g)
+        graded_idx.add(i)
         by_who.setdefault(r.get("who", "?"), []).append(g)
     if not graded:
         return {"checked": 0, "agents": {}}
@@ -388,8 +401,19 @@ def settle(today_snap, emit_fn=None, today=None):
     cal["updated"] = today
     _cal_save(cal)
 
-    # 채점이 끝난 예측은 파일에서 덜어낸다(같은 걸 매일 다시 채점하지 않게).
-    keep = [r for r in rows if r.get("date", "") >= today]
+    # **채점한 것만** 덜어낸다. 채점 못한 건 남겨서 다음 회의에 재시도한다.
+    # 다만 영원히 못 채점하는 행(상장폐지·지표 삭제 등)이 쌓이면 파일이 무한히 커지므로
+    # 유예기간을 넘긴 건 버리되, 조용히 버리지 않고 몇 건인지 찍는다.
+    cutoff = (datetime.datetime.strptime(today, "%Y-%m-%d")
+              - datetime.timedelta(days=STALE_DAYS)).strftime("%Y-%m-%d")
+    keep, dropped = [], 0
+    for i, r in enumerate(rows):
+        if i in graded_idx:
+            continue
+        if r.get("kind") != "theme" and r.get("date", "") < cutoff:
+            dropped += 1               # 유예기간 초과 — 채점 불가로 확정
+            continue
+        keep.append(r)
     try:
         with open(FC_FILE, "w", encoding="utf-8") as f:
             for r in keep:
@@ -397,7 +421,9 @@ def settle(today_snap, emit_fn=None, today=None):
     except OSError:
         pass
     print(f"  📐 예측 채점 {len(graded)}건 / 요원 {len(result)}명 — "
-          + ", ".join(f"{w}(brier {s['brier']}, skill {s['skill']})" for w, s in result.items()))
+          + ", ".join(f"{w}(brier {s['brier']}, skill {s['skill']})" for w, s in result.items())
+          + f" · 미채점 보존 {len(keep)}건"
+          + (f", {STALE_DAYS}일 초과 폐기 {dropped}건" if dropped else ""))
     return {"checked": len(graded), "agents": result}
 
 

@@ -1271,13 +1271,20 @@ function renderPhoneTabs(){
         <div class="fh"><span class="fnm">${esc2(t.name)}</span>
           <span class="flv">기준가 ${t.level!=null?t.level.toLocaleString():"—"}</span></div>
         ${preds}${tw}</div>`;}).join("");
+    const ag = (L.agents||[]).map(a=>`<div class="prow">
+        <span class="nm">${esc2(a.who)} · ${esc2(a.h)}</span>
+        <span class="vv">적중 ${Math.round(a.hit*100)}% (n=${a.n})${a.skill!=null?` · 기술점수 ${a.skill}`:""}</span></div>`).join("");
+    const bd = (L.board||[]).map(b=>`<div class="prow">
+        <span class="nm">${esc2(b.theme)} · ${esc2(b.h)}</span>
+        <span class="vv">적중 ${Math.round(b.hit*100)}% (n=${b.n})</span></div>`).join("");
     document.getElementById("labPreds").innerHTML = `
       <div class="pcard"><h4>오늘의 예측 <span class="sub">${esc2(L.date||"")} · 6종목</span></h4>
-        <div class="prow"><span class="nm">채점 대기</span><span class="vv">${L.pending}건</span></div>
-        ${L.scored?`<div class="prow"><span class="nm">채점 완료 적중률</span>
-          <span class="vv">${Math.round(L.scored.hit_rate*100)}% (n=${L.scored.n})</span></div>`:
-          `<div class="pempty" style="text-align:left">아직 만기가 도래한 예측이 없습니다 — 단기는 다음 거래일에 채점됩니다</div>`}
-      </div>${cards}`;
+        <div class="prow"><span class="nm">만기 대기</span><span class="vv">${L.pending}건</span></div>
+        <div class="pempty" style="text-align:left">단기 1 · 중기 5 · 장기 20 거래일 뒤 채점됩니다</div></div>
+      ${ag?`<div class="pcard"><h4>요원 성적 <span class="sub">채점 완료분 · 기간별</span></h4>${ag}
+        <div class="pempty" style="text-align:left">기술점수가 음수면 기준선(그냥 찍기)보다 못한 것입니다</div></div>`:""}
+      ${bd?`<div class="pcard"><h4>테마별 성적 <span class="sub">누적</span></h4>${bd}</div>`:""}
+      ${cards}`;
   }
 
   // --- 토론방 ---

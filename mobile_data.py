@@ -309,16 +309,36 @@ def lab_payload():
                              if d.get("U3") is not None and d.get("U3") == d.get("U4")),
                             key=lambda h: {"단기": 0, "중기": 1, "장기": 2}.get(h, 9))
 
-    # 채점 완료분 — settle이 result를 붙인 행
-    done = [r for r in themes if r.get("result") is not None]
-    scored = None
-    if done:
-        hit = sum(1 for r in done if r.get("result", {}).get("hit"))
-        scored = {"n": len(done), "hit_rate": round(hit / len(done), 3)}
+    # ⚠️ 채점 결과는 forecasts.jsonl에 남지 않는다. settle_themes는 채점한 행을 파일에서
+    # 덜어내고 결과를 calibration.json(요원별)·themes.json(테마별)으로 접는다.
+    # 예전엔 여기서 r["result"]를 찾았는데 그런 필드는 **누구도 쓰지 않아** 화면에 성적이
+    # 영영 안 나왔다("아직 만기가 도래한 예측이 없습니다"가 고정 문구가 돼 있었다).
+    cal = _j(os.path.join(BASE, "calibration.json")) or {}
+    agents = []
+    for who, st in (cal.get("agents") or {}).items():
+        for h, v in (st.get("horizons") or {}).items():
+            sc = v.get("score") or {}
+            if sc.get("hit_rate") is None:
+                continue
+            agents.append({"who": who, "h": h, "n": v.get("n"),
+                           "hit": sc.get("hit_rate"), "brier": sc.get("brier"),
+                           "skill": sc.get("skill"), "w": v.get("weight")})
+    agents.sort(key=lambda x: ({"단기": 0, "중기": 1, "장기": 2}.get(x["h"], 9), str(x["who"])))
 
-    pending = len([r for r in themes if r.get("result") is None])
+    board = []
+    th = (_j(os.path.join(BASE, "themes.json")) or {}).get("themes") or {}
+    for tid, rec in th.items():
+        for h, v in (rec.get("score") or {}).items():
+            if v.get("n"):
+                board.append({"theme": tid, "h": h, "n": v["n"],
+                              "hit": round(v["hit"] / v["n"], 3)})
+    board.sort(key=lambda x: -x["n"])
+
+    # '채점 대기'는 아직 만기가 안 온 예측 수다(오늘 낸 것 포함).
+    pending = len(themes)
     return {"date": latest_date, "themes": list(by_theme.values()),
-            "pending": pending, "scored": scored}
+            "pending": pending, "agents": agents, "board": board[:12],
+            "scored": {"n": sum(a["n"] or 0 for a in agents)} if agents else None}
 
 
 # ---------- 토론방: 최신 회의 녹취 ----------
