@@ -137,6 +137,23 @@ def indicators_payload(series=None, power=None, smp=None):
 
 
 # ---------- 브리핑덱: 오늘의 요점을 카드로 ----------
+DECK_CHARS = 230   # 카드 한 장에 들어갈 글자 수 — 폰에서 한 눈에 읽히는 분량
+
+
+def _cut(t, n=None):
+    """카드용으로 자른다. 문장 중간에서 끊기지 않게 마침표 뒤에서 자른다."""
+    t = (t or "").strip()
+    n = n or DECK_CHARS
+    if len(t) <= n:
+        return t
+    head = t[:n]
+    for mark in ("다.", ". ", "다\n"):
+        i = head.rfind(mark)
+        if i > n * 0.5:
+            return head[:i + len(mark)].strip()
+    return head.rstrip() + "…"
+
+
 def deck_payload(series=None):
     """알파의 총평을 문단 단위로 쪼개 카드로 만든다.
 
@@ -167,9 +184,9 @@ def deck_payload(series=None):
             else:
                 paras.append(buf)
         for para in paras:
-            cards.append({"kind": "brief", "title": "알파 총평", "text": para[:500]})
+            cards.append({"kind": "brief", "title": "알파 총평", "text": _cut(para)})
         if watch:
-            cards.append({"kind": "watch", "title": "오늘 지켜볼 것", "text": watch[:500]})
+            cards.append({"kind": "watch", "title": "오늘 지켜볼 것", "text": _cut(watch)})
 
     movers = sorted([(abs(v.get("pct") or 0), k, v) for k, v in (series or {}).items()],
                     reverse=True)[:3]
@@ -186,7 +203,7 @@ def deck_payload(series=None):
 
     ctx = ((d.get("news_brief") or {}).get("context") or "").strip()
     if ctx:
-        cards.append({"kind": "news", "title": "뉴스 맥락", "text": ctx[:700]})
+        cards.append({"kind": "news", "title": "뉴스 맥락", "text": _cut(ctx)})
 
     # 판정이 red인 지표 — 요원 스스로 "근거 부족"이라고 표시한 것들
     reds = [(k, (v.get("summary") or "")[:220])
@@ -202,6 +219,14 @@ def deck_payload(series=None):
 
 
 # ---------- 팀: 요원 로스터 ----------
+_MARKER = re.compile(r"^\s*\[(예측[:：][^\]]*|비중|평가예측)\].*$", re.M)
+
+
+def _prose(text):
+    """기계가 파싱하는 표식 줄을 걷어낸 산문만 남긴다."""
+    return _MARKER.sub("", text or "").strip()
+
+
 def _readable(text):
     """사람이 읽을 글인가 — 기계 출력(JSON·도구 호출 결과·URL 덤프)이면 False.
 
@@ -264,7 +289,9 @@ def team_payload():
         members.append({
             "tag": tag, "name": name, "role": role, "calls": cnt.get(tag, 0),
             "topic": (lt.get("topic") or "")[:40],
-            "text": (lt.get("text") or "")[:600] or None,
+            # [예측:단기] · [비중] · [평가예측]은 파이썬이 파싱하는 표식이지 사람이 읽을 글이
+            # 아니다. 전문(토론방)에는 그대로 두고, 요약 카드에서만 걷어낸다.
+            "text": _prose(lt.get("text"))[:600] or None,
             "machine": tag in machine_only,
             "horizons": hz,
         })

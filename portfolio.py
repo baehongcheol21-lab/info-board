@@ -294,6 +294,7 @@ def report():
     return {
         "opened": pf.get("opened"), "capital": U.INITIAL_CAPITAL,
         "equity": last["equity"], "return_pct": last["return_pct"],
+        "last_date": last["date"],          # 이 평가액이 '언제 기준'인지 화면이 밝히려면 필요하다
         "profit": round(last["equity"] - U.INITIAL_CAPITAL, 0),
         "days": elapsed, "records": len(c),
         "mdd_pct": round(mdd, 2),

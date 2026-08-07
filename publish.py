@@ -407,6 +407,11 @@ def build_data():
             _pfd = _pf.load()
             pos, _tot = _pf.positions(_pfd, px, fx) if (px and fx) else ([], 0)
             cv = _pf.curve(60)
+            # ⚠️ report()의 평가액은 **정산 시점**(어제 종가) 값이다. 아래 보유 종목 손익은
+            # 지금 시세로 계산한다. 그대로 두면 머리글은 -0.06%인데 종목은 -2.3%, -3.7%로
+            # 서로 안 맞아 보인다. 머리글도 지금 시세로 맞추고, 정산 시점 값은 따로 적는다.
+            live_eq = _pf.equity(_pfd, px, fx) if (px and fx) else None
+            settled_eq = rep["equity"]
             # 예약 주문은 다음 거래일 종가에 체결된다. 이걸 안 보여 주면 화면에는
             # "보유 종목이 없습니다"만 남아, 왜 비어 있는지 알 수 없다.
             _pd = (_pfd or {}).get("pending") or {}
@@ -417,8 +422,12 @@ def build_data():
                            "orders": [{"name": _names.get(k, k), "w": round(v * 100)}
                                       for k, v in _pd["weights"].items() if v],
                            "equity": (_pd.get("forecast") or {}).get("equity")}
-            lab = {"capital": rep["capital"], "equity": rep["equity"],
-                   "return_pct": rep["return_pct"], "profit": rep["profit"],
+            _eq = live_eq if live_eq else settled_eq
+            lab = {"capital": rep["capital"], "equity": round(_eq),
+                   "return_pct": round((_eq / rep["capital"] - 1) * 100, 2),
+                   "profit": round(_eq - rep["capital"]),
+                   "live": bool(live_eq),
+                   "settled_eq": round(settled_eq), "settled_date": rep.get("last_date"),
                    "days": rep["days"], "mdd": rep["mdd_pct"],
                    "mae": rep.get("forecast_mae_pct"), "band": rep.get("band_hit"),
                    "review_due": rep.get("review_due"), "pending": pending,
@@ -576,16 +585,30 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
   scrollbar-width:none;padding:12px 2px}
 #pdeck::-webkit-scrollbar{display:none}
 /* 카드 높이를 px로 못박으면 짧은 글일 땐 카드 안이 비고, 화면엔 카드 밑으로 큰 여백이 남는다.
-   화면 높이에 비례시키면 어느 기기에서도 한 장이 화면을 채우는 '덱'답게 보인다. */
+   화면 높이에 비례시키되, 글이 짧아도 허전하지 않게 **세로 가운데**에 놓는다
+   (46vh로 뒀더니 3줄짜리 카드의 75%가 빈칸이었다). */
 #pdeck .dcard{flex:none;width:82vw;max-width:340px;scroll-snap-align:center;
-  min-height:min(46vh,420px);
+  min-height:200px;justify-content:center;
   background:#241d16;border:1px solid #3b2f22;border-left:4px solid #f5c451;border-radius:12px;
   padding:14px;display:flex;flex-direction:column}
 #pdeck .dcard.watch{border-left-color:#3ddc71} #pdeck .dcard.news{border-left-color:#6fb3ff}
 #pdeck .dcard.red{border-left-color:#ff6b6b} #pdeck .dcard.mover{border-left-color:#c99a2e}
 #pdeck .dt{font-size:.74rem;color:#f5c451;font-weight:700;margin-bottom:8px}
-#pdeck .dx{font-size:.72rem;line-height:1.65;color:#d8ccb6;word-break:keep-all}
-#pdeck .dn{margin-top:auto;font-size:.6rem;opacity:.4;padding-top:8px}
+#pdeck .dx{font-size:.8rem;line-height:1.7;color:#e2d7c2;word-break:keep-all}
+#pdeck .dn{font-size:.62rem;opacity:.45;padding-top:12px}
+/* 카드 위치 점 — 몇 장 중 몇 번째인지, 어디로 밀면 되는지 알려 준다 */
+#pdots{display:flex;gap:6px;justify-content:center;padding:6px 0 2px;flex-wrap:wrap}
+#pdots i{width:7px;height:7px;border-radius:50%;background:#3b2f22;display:block;transition:background .15s}
+#pdots i.on{background:#f5c451;transform:scale(1.25)}
+/* 카드 목차 — 10장을 다 밀어보지 않아도 무슨 내용이 있는지 한눈에 보이고,
+   누르면 그 카드로 간다. 덱 아래 남던 빈 공간을 실제 기능으로 채운다. */
+#pindex{margin:6px 10px 0}
+#pindex .ix{display:flex;gap:8px;align-items:center;min-height:42px;padding:4px 8px;
+  font-size:.72rem;color:#bfae92;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
+#pindex .ix:last-child{border-bottom:0}
+#pindex .ix.on{color:#f5c451}
+#pindex .ix .no{flex:none;width:20px;opacity:.45;font-variant-numeric:tabular-nums}
+#pindex .ix .tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* --- 팀 --- */
 .tcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:8px 0}
@@ -925,13 +948,14 @@ function renderLab(){
     <div class="lab-hero">
       <span class="eq">${L.equity.toLocaleString()}원</span>
       <span class="rt ${cls}">${up?'+':''}${L.return_pct.toFixed(2)}%</span>
-      <span class="sub">원금 ${L.capital.toLocaleString()}원 · ${L.days}일차</span>
+      <span class="sub">원금 ${L.capital.toLocaleString()}원 · ${L.days}일차 · ${L.live?"지금 시세":"정산 시점"}</span>
     </div>
     <div class="lab-bar"><i style="width:${pct}%"></i></div>
     ${spark}
     <div class="lab-pos">${pos}</div>
     <div class="lab-meta">
       손익 ${L.profit>=0?'+':''}${L.profit.toLocaleString()}원 · 최대낙폭 ${L.mdd}%
+      ${L.live&&L.settled_eq?` · ${esc2(L.settled_date||"")} 정산 기준 ${L.settled_eq.toLocaleString()}원`:""}
       ${L.mae!=null?` · 평가액 예측 평균오차 ${L.mae}%`:""}
       ${L.band!=null?` · 구간적중 ${(L.band*100).toFixed(0)}%`:""}
       <br>6개월 결산 예정: ${L.review_due||"—"} · 전부 가상계좌 시뮬레이션입니다
@@ -1236,7 +1260,32 @@ function renderPhoneTabs(){
       <div class="pcard" style="margin-bottom:0"><h4>오늘의 브리핑
         <span class="sub">${esc2(D.time||"")} 회의 · ${D.cards.length}장</span></h4>
         <div class="pempty" style="text-align:left;padding:0">옆으로 밀어서 넘기세요</div></div>
-      <div id="pdeck">${cards}</div>`;
+      <div id="pdeck">${cards}</div>
+      <div id="pdots">${D.cards.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join("")}</div>
+      <div id="pindex">${D.cards.map((c,i)=>{
+        // 제목만 쓰면 '알파 총평'이 네 줄 연달아 나와 목차 구실을 못 한다.
+        // 내용 첫머리를 라벨로 쓴다 — 무슨 얘기인지가 목차의 존재 이유다.
+        const body = (c.text||"").replace(/\s+/g," ").trim();
+        const label = /총평/.test(c.title||"") ? body : (c.title + " · " + body);
+        return `<div class="ix${i?'':' on'}" data-i="${i}">
+          <span class="no">${i+1}</span><span class="tx">${esc2(label)}</span></div>`;}).join("")}</div>`;
+    // 어느 카드를 보고 있는지 점과 목차로 표시한다. 가로 스크롤은 위치 감각이 사라지기 쉽고,
+    // 10장을 다 밀어보게 만드는 것도 폰에서는 부담이다.
+    const dk = document.getElementById("pdeck");
+    const mark = i => {
+      document.querySelectorAll("#pdots i").forEach((d,j)=>d.classList.toggle("on", j===i));
+      document.querySelectorAll("#pindex .ix").forEach((d,j)=>d.classList.toggle("on", j===i));
+    };
+    dk.addEventListener("scroll", ()=>{
+      mark(Math.round(dk.scrollLeft / (dk.scrollWidth / D.cards.length)));
+    }, {passive:true});
+    document.querySelectorAll("#pindex .ix").forEach(el=>{
+      el.onclick = () => {
+        const i = +el.dataset.i;
+        dk.scrollTo({left: i * (dk.scrollWidth / D.cards.length), behavior:"smooth"});
+        mark(i);
+      };
+    });
   }
 
   // --- 팀 ---
