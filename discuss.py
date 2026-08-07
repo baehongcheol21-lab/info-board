@@ -1018,10 +1018,28 @@ def phase_portfolio(b, m):
                      f"비중 {r['weight']:.0%} 손익 {r['pl_pct']:+.1f}%" for r in rows)
            if rows else "  (아직 보유 종목 없음 — 첫 배분을 정하라)"))
 
-    b.transcript.append({"role": "🧰도구", "topic": "가상계좌",
-                         "text": board + "\n" + held})
+    # 거래비용을 **원 단위로** 알려 준다. 비율(0.18%)로 말하면 요원이 체감을 못 하고
+    # 매 회의마다 비중을 크게 흔든다 — 실측으로 회전율 38%에 3.4만원이 나갔고,
+    # 이 속도면 6개월 누적 8.7%다. 리밸런싱을 막는 대신 비용을 판단에 넣게 한다.
+    fee_note = ""
+    try:
+        one, kr, us, paid, paid_pct = _pf.cost_note(tot)
+        fee_note = (
+            f"\n[거래비용 — 비중을 정할 때 반드시 계산에 넣어라]\n"
+            f"  · 비중 1%p = {one:,.0f}원. 이걸 옮기면 왕복 비용이 "
+            f"국내 약 {kr:,.0f}원, 해외 약 {us:,.0f}원 나간다.\n"
+            f"  · 지금까지 낸 수수료·세금 누적 {paid:,.0f}원 (원금의 {paid_pct:.3f}%).\n"
+            f"  · 비중 변경은 **그 변경으로 기대하는 이득이 위 비용보다 클 때만** 해라.\n"
+            f"    근거 없이 숫자만 흔들면 수수료로 계좌가 녹는다.\n"
+            f"  · 확신이 없으면 **그대로 두는 것도 판단이다** — 다만 전 종목 동결이 매번\n"
+            f"    반복되면 그것도 판단을 안 한 것이다.\n")
+    except Exception as e:
+        print(f"  ⚠️ 거래비용 안내 생성 실패(프롬프트에서 생략): {type(e).__name__}: {e}")
 
-    common = STYLE + "\n" + m.gstate + "\n" + board + held
+    b.transcript.append({"role": "🧰도구", "topic": "가상계좌",
+                         "text": board + "\n" + held + fee_note})
+
+    common = STYLE + "\n" + m.gstate + "\n" + board + held + fee_note
     views = {}
     for u in _univ.UNIVERSE:
         uid, nm = u["id"], u["name"]
@@ -1090,6 +1108,8 @@ U3의 매수 논거: {bull[:600]}
 · 확신이 없으면 현금 비중을 올려라. 다만 **겁먹고 매번 현금 100은 실격** — 실험이 죽는다.
 · 요원들이 종목마다 다르게 말했다면 비중도 달라야 한다. 전 종목을 같은 비중으로 두는 건
   판단을 안 한 것이다.
+· **위 [거래비용]을 근거에 반드시 반영해라.** 어떤 종목의 비중을 바꿨다면, 그 변경이
+  비용을 물고도 남는 이유를 한 줄로 밝혀라. 밝히지 못할 변경이면 그대로 둬라.
 · 비중을 왜 그렇게 잡았는지 근거를 2~3줄로 먼저 쓰고, 마지막에 위 두 줄을 적어라.
 {_fix("알파")}""", topic="가상계좌 배분")
     except Exception as e:

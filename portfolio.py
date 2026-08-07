@@ -238,6 +238,21 @@ def settle(prices, fx, today=None, emit_fn=None):
     return out
 
 
+def cost_note(equity_now):
+    """비중을 옮길 때 실제로 나가는 돈을 **원 단위로** 알려 주는 문구.
+
+    사용자 결정(2026-08-07): 리밸런싱 빈도는 줄이지 않는다. 대신 **비용을 판단에 넣는다.**
+    비율(0.18%)로 말하면 요원이 체감을 못 한다 — "1%p 옮기면 몇 원"으로 환산해 준다.
+    """
+    one = (equity_now or U.INITIAL_CAPITAL) * 0.01          # 비중 1%p에 해당하는 금액
+    kr = one * (U.costs("KRW", "sell") + U.costs("KRW", "buy"))
+    us = one * (U.costs("USD", "sell") + U.costs("USD", "buy"))
+    pf = load()
+    paid = float(pf.get("fees_paid", 0.0))
+    return (one, kr, us, paid,
+            paid / U.INITIAL_CAPITAL * 100 if U.INITIAL_CAPITAL else 0.0)
+
+
 def curve(days=200):
     """평가액 곡선. 화면이 쓴다."""
     rows = []

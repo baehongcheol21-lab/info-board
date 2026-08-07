@@ -553,7 +553,7 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 #pchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 2px 2px}
 #pchips::-webkit-scrollbar{display:none}
 #pchips .chip{flex:none;padding:9px 14px;min-height:40px;display:flex;align-items:center;
-  font-size:.7rem;border:1px solid #3b2f22;border-radius:20px;color:#8a7a63;background:#241d16;
+  font-size:.72rem;border:1px solid #4a3c2c;border-radius:20px;color:#b3a488;background:#241d16;
   cursor:pointer}
 #pchips .chip.on{color:#181410;background:#f5c451;border-color:#f5c451;font-weight:700}
 .icard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:11px 12px;margin:8px 0;
@@ -590,8 +590,11 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 /* --- 팀 --- */
 .tcard{background:#241d16;border:1px solid #3b2f22;border-radius:10px;padding:12px;margin:8px 0}
 .tcard .th{display:flex;align-items:center;gap:8px}
-.tcard .tav{width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;
-  justify-content:center;font-size:.66rem;font-weight:700;color:#181410}
+/* 아바타 글자를 배경색 위에 얹으면 요원 색에 따라 명암비가 3.45까지 떨어졌다.
+   진한 바탕에 흰 글자로 고정하고, 요원 색은 테두리로 표시한다. */
+.tcard .tav{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;
+  justify-content:center;font-size:.7rem;font-weight:700;color:#fff;background:#1a1512 !important;
+  border:2px solid currentColor;box-shadow:inset 0 0 0 2px #1a1512}
 .tcard .tnm{font-size:.78rem;color:#e8dcc8} .tcard .tr{font-size:.63rem;opacity:.55}
 .tcard .tc{margin-left:auto;font-size:.66rem;color:#f5c451;flex:none}
 .tcard .tt{font-size:.68rem;line-height:1.55;color:#bfae92;margin-top:8px;
@@ -624,7 +627,12 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .bottom-sheet .who .close{min-height:44px;display:inline-flex;align-items:center;padding:0 12px;
   margin:-8px -8px -8px 0}
 /* 가상계좌 — 폰에서 보는 게 유일한 경로라 세로 한 줄 배치로만 짠다. 가로 스크롤 금지. */
+/* ⚠️ .office는 나무바닥 줄무늬(밝은 색)를 배경으로 깐다. 캐릭터 말풍선은 검은 배경을
+   따로 얹어서 읽히는데, 계좌 블록은 반투명 흰 박스라 명암비가 1.18까지 떨어졌다
+   (WCAG 최소 4.5). 사실상 안 보이는 상태였다 — 계좌 안쪽만 어두운 판을 깐다. */
 .lab-office{padding:12px 10px 18px}
+.lab-office .lab-inner{background:rgba(10,8,6,.88);border:2px solid #000;border-radius:10px;
+  padding:12px 11px;position:relative;z-index:1}
 .lab-hero{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
 .lab-hero .eq{font-size:1.5rem;font-weight:800;letter-spacing:-1px}
 .lab-hero .rt{font-size:1rem;font-weight:700}
@@ -634,7 +642,7 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .lab-bar i{display:block;height:100%;background:#f5c451}
 .lab-pos{display:flex;flex-direction:column;gap:6px}
 .lab-pos .row{display:flex;align-items:center;gap:8px;font-size:.76rem;
-  padding:7px 9px;background:rgba(255,255,255,.04);border-radius:8px}
+  padding:7px 9px;background:rgba(255,255,255,.07);border-radius:8px;color:#e8dcc8}
 .lab-pos .row .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lab-pos .row .sh{opacity:.7;font-variant-numeric:tabular-nums}
 .lab-pos .row .pl{width:64px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
@@ -681,7 +689,7 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
 .ticker-track .up{color:var(--up)} .ticker-track .down{color:var(--down)}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-.hint{text-align:center;font-size:8px;color:#556;padding:8px 20px 4px;line-height:1.6}
+.hint{text-align:center;font-size:10px;color:#9c8f7a;padding:8px 20px 4px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -911,7 +919,9 @@ function renderLab(){
     spark = `<svg class="lab-spark" viewBox="0 0 100 44" preserveAspectRatio="none">
       <polyline points="${pts}" fill="none" stroke="#f5c451" stroke-width="1.6"/></svg>`;
   }
+  // 나무바닥 배경 위에 그대로 얹으면 글자가 안 읽힌다(측정 명암비 1.18) — 어두운 판으로 감싼다
   box.innerHTML = `
+    <div class="lab-inner">
     <div class="lab-hero">
       <span class="eq">${L.equity.toLocaleString()}원</span>
       <span class="rt ${cls}">${up?'+':''}${L.return_pct.toFixed(2)}%</span>
@@ -925,6 +935,7 @@ function renderLab(){
       ${L.mae!=null?` · 평가액 예측 평균오차 ${L.mae}%`:""}
       ${L.band!=null?` · 구간적중 ${(L.band*100).toFixed(0)}%`:""}
       <br>6개월 결산 예정: ${L.review_due||"—"} · 전부 가상계좌 시뮬레이션입니다
+    </div>
     </div>`;
 }
 
@@ -1238,12 +1249,12 @@ function renderPhoneTabs(){
         `${h.h} ${h.hit==null?"—":Math.round(h.hit*100)+"%"}(n=${h.n||0})`).join(" · ");
       return `<div class="tcard">
         <div class="th">
-          <span class="tav" style="background:${col}">${esc2(m.name.slice(0,1))}</span>
+          <span class="tav" style="color:${col}"><span style="color:#fff">${esc2(m.name.slice(0,1))}</span></span>
           <span><span class="tnm">${esc2(m.name)}</span><br><span class="tr">${esc2(m.role)}</span></span>
           <span class="tc">${m.calls}회 발언</span></div>
         <div class="pbar" style="width:100%;margin-top:8px"><i style="width:${(m.calls/mx*100).toFixed(0)}%;background:${col}"></i></div>
         ${hz?`<div class="ima" style="margin-top:6px">예측 성적 · ${esc2(hz)}</div>`:""}
-        ${m.text?`<div class="tt">${m.topic?`<b style="color:#8a7a63">${esc2(m.topic)}</b> · `:""}${md(m.text)}</div>`
+        ${m.text?`<div class="tt">${m.topic?`<b style="color:#b3a488">${esc2(m.topic)}</b> · `:""}${md(m.text)}</div>`
           : m.machine?`<div class="tt" style="opacity:.45">이번 회의에서는 기계 판독용 출력(기사 분류표)만 남겼습니다 — 사람이 읽을 발언은 없습니다</div>`
           :`<div class="tt" style="opacity:.4">이번 회의에서는 발언이 없었습니다</div>`}
       </div>`;}).join("");
@@ -1386,7 +1397,7 @@ function renderPower(){
   const el = document.getElementById("powerPanel");
   const p = DATA.power;
   if(!p){
-    el.innerHTML = `<div class="power-txt">⚡ 전력 관제 · <span style="color:#888">키 승인 대기 중…</span></div>`;
+    el.innerHTML = `<div class="power-txt">⚡ 전력 관제 · <span style="color:#a99">키 승인 대기 중…</span></div>`;
     return;
   }
   const color = p.rate<10 ? "#ff5c5c" : (p.rate<15 ? "#ffd24d" : "#3ddc71");
