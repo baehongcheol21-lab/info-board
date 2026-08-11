@@ -349,3 +349,4 @@
 {"ts": "2026-08-11T18:35:05+09:00", "tool": "search_news(자동강제)", "args": "엔비디아", "sig": "94b470f76c", "ok": true, "result_chars": 1820, "cache": "신규(값변경)", "mismatch": false, "result_hash": "3f8145406769", "err_class": null}
 {"ts": "2026-08-11T18:35:08+09:00", "tool": "get_history(U4증거)", "args": "nvidia,7d", "sig": "fe95b5e68e", "ok": true, "result_chars": 223, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "0f8bc0f45690", "err_class": null}
 {"ts": "2026-08-11T18:35:17+09:00", "tool": "search_news(자동강제)", "args": "엔비디아 재조사", "sig": "e95f2c875a", "ok": true, "result_chars": 2197, "cache": "신규(값변경)", "mismatch": false, "result_hash": "61dd3235575a", "err_class": null}
+{"ts": "2026-08-12T06:18:32+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 1810, "cache": "신규", "mismatch": false, "result_hash": "0b8c028018e4", "err_class": null}
