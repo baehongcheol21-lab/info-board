@@ -5142,3 +5142,150 @@
 {"ts": "2026-08-12T13:34:55+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "천연가스 (LNG 대리) 배경", "prompt_chars": 1273, "ok": true, "sec": 5.7, "err_class": null}
 {"ts": "2026-08-12T13:35:02+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "원/달러 환율 배경", "prompt_chars": 1268, "ok": true, "sec": 6.48, "err_class": null}
 {"ts": "2026-08-12T13:35:08+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "엔비디아 배경", "prompt_chars": 1265, "ok": true, "sec": 6.16, "err_class": null}
+{"ts": "2026-08-12T18:36:40+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "원/달러 환율", "prompt_chars": 977, "ok": true, "sec": 2.05, "err_class": null}
+{"ts": "2026-08-12T18:36:43+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 974, "ok": true, "sec": 0.89, "err_class": null}
+{"ts": "2026-08-12T18:36:48+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX", "prompt_chars": 982, "ok": true, "sec": 1.11, "err_class": null}
+{"ts": "2026-08-12T18:36:52+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "천연가스 (LNG 대리)", "prompt_chars": 982, "ok": true, "sec": 0.83, "err_class": null}
+{"ts": "2026-08-12T18:36:57+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "구리 선물", "prompt_chars": 978, "ok": true, "sec": 0.95, "err_class": null}
+{"ts": "2026-08-12T18:37:01+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "WTI 유가", "prompt_chars": 976, "ok": true, "sec": 0.81, "err_class": null}
+{"ts": "2026-08-12T18:37:06+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력", "prompt_chars": 974, "ok": true, "sec": 0.86, "err_class": null}
+{"ts": "2026-08-12T18:37:16+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 975, "ok": true, "sec": 6.95, "err_class": null}
+{"ts": "2026-08-12T18:37:17+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 978, "ok": true, "sec": 0.86, "err_class": null}
+{"ts": "2026-08-12T18:37:21+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물", "prompt_chars": 975, "ok": true, "sec": 0.77, "err_class": null}
+{"ts": "2026-08-12T18:37:26+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 10년물 금리", "prompt_chars": 978, "ok": true, "sec": 1.0, "err_class": null}
+{"ts": "2026-08-12T18:37:34+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "20GW 규모 호남·용인 반도체 전력망 구축에 ‘속도’", "prompt_chars": 2626, "ok": true, "sec": 4.18, "err_class": null}
+{"ts": "2026-08-12T18:37:40+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한화 건설부문, 438억 규모 AI 데이터센터 에너지 ", "prompt_chars": 2412, "ok": true, "sec": 5.1, "err_class": null}
+{"ts": "2026-08-12T18:37:42+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한전, 상반기 영업이익 16.6%↓…실적 악화 현실로", "prompt_chars": 2611, "ok": true, "sec": 0.73, "err_class": null}
+{"ts": "2026-08-12T18:37:46+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "브라질 7월 인플레 4.4% 둔화…금리 인하 가능성 열", "prompt_chars": 1148, "ok": true, "sec": 0.72, "err_class": null}
+{"ts": "2026-08-12T18:37:51+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전기공사협회, 충북중기청에 정책자금 접근성 제고 요", "prompt_chars": 2061, "ok": true, "sec": 0.78, "err_class": null}
+{"ts": "2026-08-12T18:37:55+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "달러 및 유로 보합세, 환율 트레이더들 인플레이션 테스", "prompt_chars": 1147, "ok": true, "sec": 0.89, "err_class": null}
+{"ts": "2026-08-12T18:38:00+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "동서발전-당진시, 석탄폐지 충격 막는다…대체전원·신사업", "prompt_chars": 1910, "ok": true, "sec": 0.87, "err_class": null}
+{"ts": "2026-08-12T18:38:04+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "댐 몸값 '쑥'…발전사들, 전국 누비며 양수 후보지 ‘", "prompt_chars": 2614, "ok": true, "sec": 1.04, "err_class": null}
+{"ts": "2026-08-12T18:38:09+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "셀트리온, 스페인·포르투갈 입찰 잇단 수주…유럽 직판 ", "prompt_chars": 1140, "ok": true, "sec": 0.84, "err_class": null}
+{"ts": "2026-08-12T18:38:13+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "독일 7월 인플레이션, 6월 2.4%에서 2.8%로 상", "prompt_chars": 1148, "ok": true, "sec": 0.76, "err_class": null}
+{"ts": "2026-08-12T18:38:19+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "루마니아 7월 인플레이션 8.16% 완화, 예상치 상회", "prompt_chars": 1147, "ok": true, "sec": 1.61, "err_class": null}
+{"ts": "2026-08-12T18:38:22+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "이탈리아 7월 소비자물가 하락, 연간 인플레이션 완화", "prompt_chars": 1146, "ok": true, "sec": 0.73, "err_class": null}
+{"ts": "2026-08-12T18:38:27+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "스페인, 화요일 국채 입찰에서 20억 7천만 유로 조달", "prompt_chars": 1147, "ok": true, "sec": 0.87, "err_class": null}
+{"ts": "2026-08-12T18:38:31+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 CPI 앞두고 달러 강보합…호르무즈 긴장에 유가 상", "prompt_chars": 1132, "ok": true, "sec": 0.7, "err_class": null}
+{"ts": "2026-08-12T18:38:36+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "남아프리카 랜드, 고용 및 공장 데이터 부진에도 강세 ", "prompt_chars": 1138, "ok": true, "sec": 1.05, "err_class": null}
+{"ts": "2026-08-12T18:38:41+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "캐나다 달러, 유가 상승에 8주 최고치 근접 유지", "prompt_chars": 1133, "ok": true, "sec": 1.13, "err_class": null}
+{"ts": "2026-08-12T18:38:45+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미국 국채 금리, 고용 보고서 랠리 후 숨 고르기; 분", "prompt_chars": 1149, "ok": true, "sec": 0.74, "err_class": null}
+{"ts": "2026-08-12T18:39:11+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "피엔티, 2분기 매출 1176억원, 영업이익 37억원 ", "prompt_chars": 2041, "ok": true, "sec": 23.07, "err_class": null}
+{"ts": "2026-08-12T18:39:12+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "뱅크오브아메리카 카드 데이터, 7월 온라인 지출 증가율", "prompt_chars": 1150, "ok": true, "sec": 0.75, "err_class": null}
+{"ts": "2026-08-12T18:39:17+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "이탈리아 기업 대출, 6월 3.2% 증가", "prompt_chars": 1139, "ok": true, "sec": 0.81, "err_class": null}
+{"ts": "2026-08-12T18:39:21+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "네덜란드 6월 무역 흑자 104억 유로로 확대", "prompt_chars": 1142, "ok": true, "sec": 0.69, "err_class": null}
+{"ts": "2026-08-12T18:39:26+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "그리스 6월 산업 생산 1.1% 증가", "prompt_chars": 1137, "ok": true, "sec": 0.83, "err_class": null}
+{"ts": "2026-08-12T18:39:32+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "기상청, 한·미 공동 ‘차세대 인공증우’ 기술 개발 나", "prompt_chars": 1879, "ok": true, "sec": 1.95, "err_class": null}
+{"ts": "2026-08-12T18:39:35+09:00", "agent": "U2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "인천교통공사, 인천1호선 노후 전차선로 개량공사 완료", "prompt_chars": 1786, "ok": true, "sec": 0.86, "err_class": null}
+{"ts": "2026-08-12T18:39:42+09:00", "agent": "B2", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "기사 분류", "prompt_chars": 5975, "ok": true, "sec": 3.71, "err_class": null}
+{"ts": "2026-08-12T18:39:44+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "뉴스 맥락", "prompt_chars": 2811, "ok": true, "sec": 1.23, "err_class": null}
+{"ts": "2026-08-12T18:40:03+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "20GW 규모 호남·용인 반도체 전력망 구축에 ‘속도’", "prompt_chars": 3182, "ok": true, "sec": 15.57, "err_class": null}
+{"ts": "2026-08-12T18:40:04+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "20GW 규모 호남·용인 반도체 전력망 구축에 ‘속도’", "prompt_chars": 249, "ok": true, "sec": 0.91, "err_class": null}
+{"ts": "2026-08-12T18:40:08+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "20GW 규모 호남·용인 반도체 전력망 구축에 ‘속도’", "prompt_chars": 140, "ok": true, "sec": 0.67, "err_class": null}
+{"ts": "2026-08-12T18:40:32+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "한전, 상반기 영업이익 16.6%↓…실적 악화 현실로", "prompt_chars": 3210, "ok": true, "sec": 20.31, "err_class": null}
+{"ts": "2026-08-12T18:40:33+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한전, 상반기 영업이익 16.6%↓…실적 악화 현실로", "prompt_chars": 253, "ok": true, "sec": 0.84, "err_class": null}
+{"ts": "2026-08-12T18:40:38+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한전, 상반기 영업이익 16.6%↓…실적 악화 현실로", "prompt_chars": 125, "ok": true, "sec": 0.92, "err_class": null}
+{"ts": "2026-08-12T18:41:22+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "미 CPI 앞두고 달러 강보합…호르무즈 긴장에 유가 상", "prompt_chars": 1411, "ok": true, "sec": 40.65, "err_class": null}
+{"ts": "2026-08-12T18:41:23+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 CPI 앞두고 달러 강보합…호르무즈 긴장에 유가 상", "prompt_chars": 248, "ok": true, "sec": 0.6, "err_class": null}
+{"ts": "2026-08-12T18:41:27+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 CPI 앞두고 달러 강보합…호르무즈 긴장에 유가 상", "prompt_chars": 127, "ok": true, "sec": 0.53, "err_class": null}
+{"ts": "2026-08-12T18:41:46+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "한화 건설부문, 438억 규모 AI 데이터센터 에너지 ", "prompt_chars": 2691, "ok": true, "sec": 14.89, "err_class": null}
+{"ts": "2026-08-12T18:41:47+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한화 건설부문, 438억 규모 AI 데이터센터 에너지 ", "prompt_chars": 259, "ok": true, "sec": 0.64, "err_class": null}
+{"ts": "2026-08-12T18:41:51+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한화 건설부문, 438억 규모 AI 데이터센터 에너지 ", "prompt_chars": 141, "ok": true, "sec": 0.85, "err_class": null}
+{"ts": "2026-08-12T18:42:10+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "달러 및 유로 보합세, 환율 트레이더들 인플레이션 테스", "prompt_chars": 1471, "ok": true, "sec": 15.43, "err_class": null}
+{"ts": "2026-08-12T18:42:11+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "달러 및 유로 보합세, 환율 트레이더들 인플레이션 테스", "prompt_chars": 256, "ok": true, "sec": 0.88, "err_class": null}
+{"ts": "2026-08-12T18:42:15+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "달러 및 유로 보합세, 환율 트레이더들 인플레이션 테스", "prompt_chars": 142, "ok": true, "sec": 0.56, "err_class": null}
+{"ts": "2026-08-12T18:42:41+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "댐 몸값 '쑥'…발전사들, 전국 누비며 양수 후보지 ‘", "prompt_chars": 3203, "ok": true, "sec": 21.83, "err_class": null}
+{"ts": "2026-08-12T18:42:42+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "댐 몸값 '쑥'…발전사들, 전국 누비며 양수 후보지 ‘", "prompt_chars": 248, "ok": true, "sec": 0.86, "err_class": null}
+{"ts": "2026-08-12T18:42:46+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "댐 몸값 '쑥'…발전사들, 전국 누비며 양수 후보지 ‘", "prompt_chars": 128, "ok": true, "sec": 0.42, "err_class": null}
+{"ts": "2026-08-12T18:44:01+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "독일 7월 인플레이션, 6월 2.4%에서 2.8%로 상", "prompt_chars": 1454, "ok": true, "sec": 71.2, "err_class": null}
+{"ts": "2026-08-12T18:44:02+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "독일 7월 인플레이션, 6월 2.4%에서 2.8%로 상", "prompt_chars": 241, "ok": true, "sec": 0.8, "err_class": null}
+{"ts": "2026-08-12T18:44:06+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "독일 7월 인플레이션, 6월 2.4%에서 2.8%로 상", "prompt_chars": 127, "ok": true, "sec": 0.57, "err_class": null}
+{"ts": "2026-08-12T18:44:30+09:00", "agent": "알파", "model": "gemini-2.5-flash", "key_no": 1, "topic": "미국 국채 금리, 고용 보고서 랠리 후 숨 고르기; 분", "prompt_chars": 1432, "ok": true, "sec": 19.36, "err_class": null}
+{"ts": "2026-08-12T18:44:30+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미국 국채 금리, 고용 보고서 랠리 후 숨 고르기; 분", "prompt_chars": 260, "ok": true, "sec": 0.67, "err_class": null}
+{"ts": "2026-08-12T18:44:35+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미국 국채 금리, 고용 보고서 랠리 후 숨 고르기; 분", "prompt_chars": 144, "ok": true, "sec": 0.44, "err_class": null}
+{"ts": "2026-08-12T18:44:40+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 2290, "ok": true, "sec": 0.57, "err_class": null}
+{"ts": "2026-08-12T18:44:45+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 4356, "ok": true, "sec": 1.09, "err_class": null}
+{"ts": "2026-08-12T18:44:50+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 2090, "ok": true, "sec": 1.59, "err_class": null}
+{"ts": "2026-08-12T18:44:55+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자", "prompt_chars": 2030, "ok": true, "sec": 1.9, "err_class": null}
+{"ts": "2026-08-12T18:44:58+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 2295, "ok": true, "sec": 0.51, "err_class": null}
+{"ts": "2026-08-12T18:45:03+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 4045, "ok": true, "sec": 1.29, "err_class": null}
+{"ts": "2026-08-12T18:45:08+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 2205, "ok": true, "sec": 1.7, "err_class": null}
+{"ts": "2026-08-12T18:45:13+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 2349, "ok": true, "sec": 2.2, "err_class": null}
+{"ts": "2026-08-12T18:45:16+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 2288, "ok": true, "sec": 0.85, "err_class": null}
+{"ts": "2026-08-12T18:45:21+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 4173, "ok": true, "sec": 1.1, "err_class": null}
+{"ts": "2026-08-12T18:45:26+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 2012, "ok": true, "sec": 1.52, "err_class": null}
+{"ts": "2026-08-12T18:45:29+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피 재조사", "prompt_chars": 1791, "ok": true, "sec": 0.51, "err_class": null}
+{"ts": "2026-08-12T18:45:35+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피 재조사", "prompt_chars": 3631, "ok": true, "sec": 1.5, "err_class": null}
+{"ts": "2026-08-12T18:45:39+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피 재판정", "prompt_chars": 1985, "ok": true, "sec": 1.37, "err_class": null}
+{"ts": "2026-08-12T18:45:44+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피", "prompt_chars": 2679, "ok": true, "sec": 2.0, "err_class": null}
+{"ts": "2026-08-12T18:45:47+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물", "prompt_chars": 2290, "ok": true, "sec": 0.38, "err_class": null}
+{"ts": "2026-08-12T18:46:28+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물", "prompt_chars": 4039, "ok": true, "sec": 36.64, "err_class": null}
+{"ts": "2026-08-12T18:46:56+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물", "prompt_chars": 2236, "ok": true, "sec": 27.61, "err_class": null}
+{"ts": "2026-08-12T18:46:59+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물", "prompt_chars": 2235, "ok": true, "sec": 3.12, "err_class": null}
+{"ts": "2026-08-12T18:47:01+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "오늘의 총평", "prompt_chars": 2224, "ok": true, "sec": 0.99, "err_class": null}
+{"ts": "2026-08-12T18:47:06+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력", "prompt_chars": 1840, "ok": true, "sec": 0.99, "err_class": null}
+{"ts": "2026-08-12T18:47:10+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력", "prompt_chars": 2064, "ok": true, "sec": 1.07, "err_class": null}
+{"ts": "2026-08-12T18:47:14+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "LS ELECTRIC", "prompt_chars": 1843, "ok": true, "sec": 0.8, "err_class": null}
+{"ts": "2026-08-12T18:47:19+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "LS ELECTRIC", "prompt_chars": 2072, "ok": true, "sec": 1.2, "err_class": null}
+{"ts": "2026-08-12T18:47:27+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 1840, "ok": true, "sec": 4.33, "err_class": null}
+{"ts": "2026-08-12T18:47:28+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스", "prompt_chars": 2067, "ok": true, "sec": 1.23, "err_class": null}
+{"ts": "2026-08-12T18:47:33+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "NVIDIA", "prompt_chars": 1831, "ok": true, "sec": 1.01, "err_class": null}
+{"ts": "2026-08-12T18:47:37+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "NVIDIA", "prompt_chars": 2139, "ok": true, "sec": 1.19, "err_class": null}
+{"ts": "2026-08-12T18:47:42+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "Constellation Energy", "prompt_chars": 1860, "ok": true, "sec": 1.17, "err_class": null}
+{"ts": "2026-08-12T18:47:46+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "Constellation Energy", "prompt_chars": 2100, "ok": true, "sec": 1.21, "err_class": null}
+{"ts": "2026-08-12T18:47:51+09:00", "agent": "U3", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "Energy Select SPDR (XLE)", "prompt_chars": 1844, "ok": true, "sec": 1.38, "err_class": null}
+{"ts": "2026-08-12T18:47:55+09:00", "agent": "U4", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "Energy Select SPDR (XLE)", "prompt_chars": 2102, "ok": true, "sec": 0.94, "err_class": null}
+{"ts": "2026-08-12T18:48:00+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "가상계좌 배분", "prompt_chars": 5934, "ok": true, "sec": 1.06, "err_class": null}
+{"ts": "2026-08-12T18:48:06+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피↔삼성전자 연관", "prompt_chars": 1345, "ok": true, "sec": 2.65, "err_class": null}
+{"ts": "2026-08-12T18:48:10+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자↔SK하이닉스 연관", "prompt_chars": 1348, "ok": true, "sec": 2.35, "err_class": null}
+{"ts": "2026-08-12T18:48:15+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피↔SK하이닉스 연관", "prompt_chars": 1347, "ok": true, "sec": 2.54, "err_class": null}
+{"ts": "2026-08-12T18:48:19+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX↔SK하이닉스 연관", "prompt_chars": 1386, "ok": true, "sec": 2.22, "err_class": null}
+{"ts": "2026-08-12T18:48:24+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX↔삼성전자 연관", "prompt_chars": 1382, "ok": true, "sec": 2.59, "err_class": null}
+{"ts": "2026-08-12T18:48:28+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피↔반도체지수 SOX 연관", "prompt_chars": 1378, "ok": true, "sec": 2.77, "err_class": null}
+{"ts": "2026-08-12T18:48:33+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력↔미 10년물 금리 연관", "prompt_chars": 1384, "ok": true, "sec": 2.58, "err_class": null}
+{"ts": "2026-08-12T18:48:37+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물↔미 10년물 금리 연관", "prompt_chars": 1384, "ok": true, "sec": 2.85, "err_class": null}
+{"ts": "2026-08-12T18:48:42+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "구리 선물↔엔비디아 연관", "prompt_chars": 1379, "ok": true, "sec": 2.78, "err_class": null}
+{"ts": "2026-08-12T18:48:46+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력↔금 선물 연관", "prompt_chars": 1377, "ok": true, "sec": 2.71, "err_class": null}
+{"ts": "2026-08-12T18:48:50+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX↔구리 선물 연관", "prompt_chars": 1384, "ok": true, "sec": 2.13, "err_class": null}
+{"ts": "2026-08-12T18:48:55+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX↔엔비디아 연관", "prompt_chars": 1351, "ok": true, "sec": 2.79, "err_class": null}
+{"ts": "2026-08-12T18:49:02+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX↔금 선물 연관", "prompt_chars": 1389, "ok": true, "sec": 4.88, "err_class": null}
+{"ts": "2026-08-12T18:49:04+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX↔미 10년물 금리 연관", "prompt_chars": 1392, "ok": true, "sec": 2.42, "err_class": null}
+{"ts": "2026-08-12T18:49:10+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스↔금 선물 연관", "prompt_chars": 1383, "ok": true, "sec": 3.62, "err_class": null}
+{"ts": "2026-08-12T18:49:33+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX↔한국전력 연관", "prompt_chars": 1389, "ok": true, "sec": 22.18, "err_class": null}
+{"ts": "2026-08-12T18:49:36+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "구리 선물↔미 10년물 금리 연관", "prompt_chars": 1388, "ok": true, "sec": 2.92, "err_class": null}
+{"ts": "2026-08-12T18:49:40+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "구리 선물↔삼성전자 연관", "prompt_chars": 1379, "ok": true, "sec": 2.33, "err_class": null}
+{"ts": "2026-08-12T18:49:45+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피↔엔비디아 연관", "prompt_chars": 1375, "ok": true, "sec": 2.69, "err_class": null}
+{"ts": "2026-08-12T18:49:49+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "구리 선물↔SK하이닉스 연관", "prompt_chars": 1381, "ok": true, "sec": 2.36, "err_class": null}
+{"ts": "2026-08-12T18:49:52+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:무정전전원공급장치", "prompt_chars": 196, "ok": true, "sec": 0.75, "err_class": null}
+{"ts": "2026-08-12T18:49:57+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:전력수급기본계획", "prompt_chars": 195, "ok": true, "sec": 1.19, "err_class": null}
+{"ts": "2026-08-12T18:50:01+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:고전압직류송전", "prompt_chars": 194, "ok": true, "sec": 0.58, "err_class": null}
+{"ts": "2026-08-12T18:50:05+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:구매관리자지수", "prompt_chars": 194, "ok": true, "sec": 0.63, "err_class": null}
+{"ts": "2026-08-12T18:50:10+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:밸류에이션", "prompt_chars": 192, "ok": true, "sec": 0.76, "err_class": null}
+{"ts": "2026-08-12T18:50:14+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:외환시장", "prompt_chars": 191, "ok": true, "sec": 0.71, "err_class": null}
+{"ts": "2026-08-12T18:50:19+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:중부발전", "prompt_chars": 191, "ok": true, "sec": 0.57, "err_class": null}
+{"ts": "2026-08-12T18:50:24+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:ECB", "prompt_chars": 190, "ok": true, "sec": 0.82, "err_class": null}
+{"ts": "2026-08-12T18:50:28+09:00", "agent": "U1", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "용어:클로드", "prompt_chars": 190, "ok": true, "sec": 0.81, "err_class": null}
+{"ts": "2026-08-12T18:50:35+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자 장기흐름", "prompt_chars": 2814, "ok": true, "sec": 2.86, "err_class": null}
+{"ts": "2026-08-12T18:50:39+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스 장기흐름", "prompt_chars": 2808, "ok": true, "sec": 2.82, "err_class": null}
+{"ts": "2026-08-12T18:50:43+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피 장기흐름", "prompt_chars": 2703, "ok": true, "sec": 2.52, "err_class": null}
+{"ts": "2026-08-12T18:50:47+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물 장기흐름", "prompt_chars": 2542, "ok": true, "sec": 2.1, "err_class": null}
+{"ts": "2026-08-12T18:50:52+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "구리 선물 장기흐름", "prompt_chars": 2447, "ok": true, "sec": 2.59, "err_class": null}
+{"ts": "2026-08-12T18:50:57+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX 장기흐름", "prompt_chars": 2490, "ok": true, "sec": 2.71, "err_class": null}
+{"ts": "2026-08-12T18:51:01+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "천연가스 (LNG 대리) 장기흐름", "prompt_chars": 2571, "ok": true, "sec": 2.44, "err_class": null}
+{"ts": "2026-08-12T18:51:06+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력 장기흐름", "prompt_chars": 2749, "ok": true, "sec": 2.43, "err_class": null}
+{"ts": "2026-08-12T18:51:10+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 10년물 금리 장기흐름", "prompt_chars": 2345, "ok": true, "sec": 2.36, "err_class": null}
+{"ts": "2026-08-12T18:51:15+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "WTI 유가 장기흐름", "prompt_chars": 2609, "ok": true, "sec": 2.59, "err_class": null}
+{"ts": "2026-08-12T18:51:20+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "원/달러 환율 장기흐름", "prompt_chars": 2478, "ok": true, "sec": 3.2, "err_class": null}
+{"ts": "2026-08-12T18:51:24+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "엔비디아 장기흐름", "prompt_chars": 2788, "ok": true, "sec": 3.2, "err_class": null}
+{"ts": "2026-08-12T18:52:03+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "삼성전자 배경", "prompt_chars": 1265, "ok": true, "sec": 37.13, "err_class": null}
+{"ts": "2026-08-12T18:52:12+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "SK하이닉스 배경", "prompt_chars": 1268, "ok": true, "sec": 8.75, "err_class": null}
+{"ts": "2026-08-12T18:52:13+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "코스피 배경", "prompt_chars": 1264, "ok": true, "sec": 1.91, "err_class": null}
+{"ts": "2026-08-12T18:52:20+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "금 선물 배경", "prompt_chars": 1265, "ok": true, "sec": 3.77, "err_class": null}
+{"ts": "2026-08-12T18:52:47+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "구리 선물 배경", "prompt_chars": 1268, "ok": true, "sec": 26.17, "err_class": null}
+{"ts": "2026-08-12T18:52:49+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "반도체지수 SOX 배경", "prompt_chars": 1272, "ok": true, "sec": 2.59, "err_class": null}
+{"ts": "2026-08-12T18:52:53+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "천연가스 (LNG 대리) 배경", "prompt_chars": 1272, "ok": true, "sec": 2.13, "err_class": null}
+{"ts": "2026-08-12T18:52:58+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "한국전력 배경", "prompt_chars": 1264, "ok": true, "sec": 2.58, "err_class": null}
+{"ts": "2026-08-12T18:53:02+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "미 10년물 금리 배경", "prompt_chars": 1268, "ok": true, "sec": 1.92, "err_class": null}
+{"ts": "2026-08-12T18:53:07+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "WTI 유가 배경", "prompt_chars": 1266, "ok": true, "sec": 2.74, "err_class": null}
+{"ts": "2026-08-12T18:53:12+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "원/달러 환율 배경", "prompt_chars": 1267, "ok": true, "sec": 2.78, "err_class": null}
+{"ts": "2026-08-12T18:53:16+09:00", "agent": "알파", "model": "gemini-3.1-flash-lite", "key_no": 1, "topic": "엔비디아 배경", "prompt_chars": 1265, "ok": true, "sec": 2.63, "err_class": null}
