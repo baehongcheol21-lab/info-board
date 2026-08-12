@@ -32,19 +32,19 @@
    "verdict": "판정 가능",
    "horizons": {
     "단기": {
-     "weight": 0.245,
+     "weight": 0.1715,
      "n": 4,
      "score": {
-      "hit_rate": 0.25,
+      "hit_rate": 0.75,
       "mean_p": 0.6,
-      "brier": 0.28645,
-      "rel": 0.16872,
+      "brier": 0.23645,
+      "rel": 0.10373,
       "res": 0.0625,
       "unc": 0.1875,
-      "skill": -0.5277,
-      "overconf": 0.35,
-      "bias": -0.5131,
-      "mae": 0.7032,
+      "skill": -0.2611,
+      "overconf": -0.15,
+      "bias": 3.6724,
+      "mae": 3.7476,
       "coverage": 0.5
      },
      "diagnosis": []
@@ -93,20 +93,20 @@
    "verdict": "판정 가능",
    "horizons": {
     "단기": {
-     "weight": 0.245,
-     "n": 4,
+     "weight": 0.1715,
+     "n": 6,
      "score": {
-      "hit_rate": 0.75,
-      "mean_p": 0.5575,
-      "brier": 0.22098,
-      "rel": 0.03706,
-      "res": 0.0,
-      "unc": 0.1875,
-      "skill": -0.1785,
-      "overconf": -0.1925,
-      "bias": 0.4119,
-      "mae": 0.5371,
-      "coverage": 0.75
+      "hit_rate": 0.1667,
+      "mean_p": 0.6,
+      "brier": 0.31167,
+      "rel": 0.19458,
+      "res": 0.01389,
+      "unc": 0.13889,
+      "skill": -1.244,
+      "overconf": 0.4333,
+      "bias": 3.0483,
+      "mae": 3.0483,
+      "coverage": 0.6667
      },
      "diagnosis": []
     }
