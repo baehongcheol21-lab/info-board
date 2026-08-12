@@ -15,3 +15,6 @@
 {"date": "2026-08-12", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 1, "price_krw": 393136.18, "fee": 668.0}
 {"date": "2026-08-12", "id": "lselectric", "name": "LS ELECTRIC", "side": "buy", "shares": 2, "price_krw": 203000.0, "fee": 61.0}
 {"date": "2026-08-12", "id": "xle", "name": "Energy Select SPDR (XLE)", "side": "buy", "shares": 58, "price_krw": 86053.27, "fee": 8485.0}
+{"date": "2026-08-13", "id": "lselectric", "name": "LS ELECTRIC", "side": "sell", "shares": 1, "price_krw": 208500.0, "fee": 407.0}
+{"date": "2026-08-13", "id": "xle", "name": "Energy Select SPDR (XLE)", "side": "buy", "shares": 1, "price_krw": 86481.95, "fee": 147.0}
+{"date": "2026-08-13", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 7, "price_krw": 394900.71, "fee": 4699.0}
