@@ -1,39 +1,39 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 3541094.0,
+ "cash": 5825764.0,
  "holdings": {
   "hynix": 6,
   "nvda": 40,
-  "ceg": 44,
-  "lselectric": 37
+  "ceg": 45,
+  "lselectric": 24
  },
  "cost_basis": {
   "hynix": 1615566.6667,
   "nvda": 314418.7171,
-  "ceg": 382895.8931,
+  "ceg": 383140.9985,
   "lselectric": 199273.153
  },
  "pending": {
-  "date": "2026-08-17",
-  "meeting_id": "20260817T1805",
+  "date": "2026-08-18",
+  "meeting_id": "20260818T0549",
   "weights": {
    "kepco": 0.0,
-   "lselectric": 0.1,
-   "hynix": 0.2,
+   "lselectric": 0.05,
+   "hynix": 0.24,
    "nvda": 0.25,
    "ceg": 0.35,
    "xle": 0.0
   },
   "forecast": {
-   "equity": 51550000.0,
+   "equity": 51350000.0,
    "p": 0.65,
-   "lo": 51350000.0,
-   "hi": 51800000.0,
+   "lo": 51150000.0,
+   "hi": 51600000.0,
    "by": "알파"
   },
-  "note": "데이터센터 전력 공급망의 핵심인 Constellation Energy와 AI 반도체 선도주인 NVIDIA를 중심으로 포트폴리오를 구성합니다. LS ELECTRIC은 구리 가격 반등에 따른 원가 부담 가능성을 고려하여 비중을 15%에서 10%로 축소하며, 해당 비용은 안정적인 수익 모델을 보유한 Constellation Energy로 이동시킵니다. 수수료 비용을 상회하는 실적 개선 기대감이 확보되었다고 판단합니다.\n\n[비중] kepco=0 lselectric=10 hynix=20 nvda=25 ceg=35 xle=0 현금=10\n[평가"
+  "note": "SK하이닉스의 단기 상승 탄력을 신뢰하여 비중을 5%p 상향합니다. 블랙웰 수요와 메모리 공급 부족 기대가 거래 비용 1,738원을 상회하는 단기 수익을 창출할 것으로 해석됩니다. LS ELECTRIC은 구리 가격 하락과 단기 과열을 고려하여 비중을 5%p 축소하며 현금화합니다.\n\n[비중] kepco=0 lselectric=5 hynix=24 nvda=25 ceg=35 xle=0 현금=11\n[평가예측] 내일=51,350,000 확률=0.65 구간=51,150,000~51,600,000"
  },
- "last_settled": "2026-08-17",
- "fees_paid": 104884.0
+ "last_settled": "2026-08-18",
+ "fees_paid": 110789.0
 }

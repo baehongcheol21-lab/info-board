@@ -1,24 +1,45 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0202,
-   "n": 7,
+   "weight": 0.0141,
+   "n": 10,
    "score": {
-    "hit_rate": 1.0,
-    "mean_p": 0.6143,
-    "brier": 0.14954,
-    "rel": 0.14878,
-    "res": 0.0,
-    "unc": 0.0,
-    "skill": null,
-    "overconf": -0.3857,
-    "bias": 1.7357,
-    "mae": 1.7357,
-    "coverage": 0.4286,
-    "sharpness": 0.2286
+    "hit_rate": 0.9,
+    "mean_p": 0.575,
+    "brier": 0.20125,
+    "rel": 0.12125,
+    "res": 0.01,
+    "unc": 0.09,
+    "skill": -1.2361,
+    "overconf": -0.325,
+    "bias": 1.605,
+    "mae": 1.927,
+    "coverage": 0.1,
+    "sharpness": 0.15
    },
-   "diagnosis": [],
-   "verdict": "표본 부족(n=7 < 8) — 판정 보류",
+   "diagnosis": [
+    {
+     "code": "no_skill",
+     "value": -1.2361,
+     "why": "기저확률로 찍는 것보다 못하다"
+    },
+    {
+     "code": "miscalibrated",
+     "value": 0.12125,
+     "why": "확률을 모자라게 부른다(공언 0.57 vs 실제 0.90)"
+    },
+    {
+     "code": "band_too_narrow",
+     "value": 0.1,
+     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    },
+    {
+     "code": "biased",
+     "value": 1.605,
+     "why": "등락폭을 평균 1.60%p 작게 잡는다"
+    }
+   ],
+   "verdict": "판정 가능",
    "horizons": {
     "단기": {
      "weight": 0.0841,
@@ -83,18 +104,18 @@
    "weight": 0.0108,
    "n": 7,
    "score": {
-    "hit_rate": 0.8571,
-    "mean_p": 0.5857,
-    "brier": 0.18666,
-    "rel": 0.08363,
-    "res": 0.01531,
-    "unc": 0.12245,
-    "skill": -0.5244,
-    "overconf": -0.2714,
-    "bias": 1.4857,
-    "mae": 1.4857,
-    "coverage": 0.8571,
-    "sharpness": 0.1714
+    "hit_rate": 1.0,
+    "mean_p": 0.55,
+    "brier": 0.2025,
+    "rel": 0.2025,
+    "res": 0.0,
+    "unc": 0.0,
+    "skill": null,
+    "overconf": -0.45,
+    "bias": 1.9986,
+    "mae": 1.9986,
+    "coverage": 0.2857,
+    "sharpness": 0.1
    },
    "diagnosis": [],
    "verdict": "표본 부족(n=7 < 8) — 판정 보류",
@@ -154,5 +175,5 @@
    }
   }
  },
- "updated": "2026-08-17"
+ "updated": "2026-08-18"
 }
