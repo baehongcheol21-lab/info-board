@@ -533,3 +533,6 @@
 {"ts": "2026-08-18T12:20:28+09:00", "tool": "search_news(자동강제)", "args": "한국전력", "sig": "7a8d3fe4fa", "ok": true, "result_chars": 1906, "cache": "신규", "mismatch": false, "result_hash": "6b194b9f6078", "err_class": null}
 {"ts": "2026-08-18T12:20:33+09:00", "tool": "get_history(U4증거)", "args": "kepco,7d", "sig": "524b413233", "ok": true, "result_chars": 213, "cache": "신규", "mismatch": false, "result_hash": "f501bc20eba7", "err_class": null}
 {"ts": "2026-08-18T12:20:42+09:00", "tool": "search_news(자동강제)", "args": "한국전력 재조사", "sig": "1d2db88492", "ok": true, "result_chars": 952, "cache": "신규", "mismatch": false, "result_hash": "f1eeccd8eaf8", "err_class": null}
+{"ts": "2026-08-18T18:06:32+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 1930, "cache": "신규(값변경)", "mismatch": false, "result_hash": "50036185483e", "err_class": null}
+{"ts": "2026-08-18T18:06:37+09:00", "tool": "get_history(U4증거)", "args": "samsung,7d", "sig": "b9116cf053", "ok": true, "result_chars": 230, "cache": "신규(값변경)", "mismatch": false, "result_hash": "7f8f75afc841", "err_class": null}
+{"ts": "2026-08-18T18:06:45+09:00", "tool": "search_news(자동강제)", "args": "삼성전자 재조사", "sig": "e4d2e9a866", "ok": true, "result_chars": 1737, "cache": "신규(값변경)", "mismatch": false, "result_hash": "31e3e1fd34a0", "err_class": null}
