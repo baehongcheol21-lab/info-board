@@ -12,3 +12,4 @@
 {"date": "2026-08-17", "equity": 51415826.0, "return_pct": 2.832, "cash": 3541094.0, "n_trades": 4}
 {"date": "2026-08-18", "equity": 51122804.0, "return_pct": 2.246, "cash": 5825764.0, "n_trades": 2, "forecast": 51550000.0, "err": -427196.0, "err_pct": -0.836, "in_band": false}
 {"date": "2026-08-19", "equity": 50170381.0, "return_pct": 0.341, "cash": 10591130.0, "n_trades": 2, "forecast": 51450000.0, "err": -1279619.0, "err_pct": -2.551, "in_band": false}
+{"date": "2026-08-20", "equity": 48596625.0, "return_pct": -2.807, "cash": 8303483.0, "n_trades": 1, "forecast": 49250000.0, "err": -653375.0, "err_pct": -1.344, "in_band": true}
