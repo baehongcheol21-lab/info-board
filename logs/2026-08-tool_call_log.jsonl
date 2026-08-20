@@ -628,3 +628,5 @@
 {"ts": "2026-08-20T18:11:05+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 2458, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "aca5fde377a0", "err_class": null}
 {"ts": "2026-08-20T18:11:12+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 179, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "082c5d04d113", "err_class": null}
 {"ts": "2026-08-20T18:11:20+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX 재조사", "sig": "f6962904f1", "ok": true, "result_chars": 2, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "d75171398898", "err_class": null}
+{"ts": "2026-08-21T06:00:43+09:00", "tool": "search_news(자동강제)", "args": "한국전력", "sig": "7a8d3fe4fa", "ok": true, "result_chars": 2053, "cache": "신규", "mismatch": false, "result_hash": "05fcf9f5b126", "err_class": null}
+{"ts": "2026-08-21T06:00:48+09:00", "tool": "get_history(U4증거)", "args": "kepco,7d", "sig": "524b413233", "ok": true, "result_chars": 185, "cache": "신규", "mismatch": false, "result_hash": "a40c2c1c73ea", "err_class": null}
