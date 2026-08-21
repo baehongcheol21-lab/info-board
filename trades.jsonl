@@ -42,3 +42,6 @@
 {"date": "2026-08-21", "id": "lselectric", "name": "LS ELECTRIC", "side": "buy", "shares": 1, "price_krw": 199200.0, "fee": 30.0}
 {"date": "2026-08-21", "id": "nvda", "name": "NVIDIA", "side": "buy", "shares": 1, "price_krw": 302215.17, "fee": 514.0}
 {"date": "2026-08-21", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 1, "price_krw": 380357.69, "fee": 647.0}
+{"date": "2026-08-22", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 1, "price_krw": 378107.99, "fee": 643.0}
+{"date": "2026-08-22", "id": "lselectric", "name": "LS ELECTRIC", "side": "buy", "shares": 3, "price_krw": 187000.0, "fee": 84.0}
+{"date": "2026-08-22", "id": "nvda", "name": "NVIDIA", "side": "buy", "shares": 8, "price_krw": 297520.33, "fee": 4046.0}
