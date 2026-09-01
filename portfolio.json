@@ -1,35 +1,35 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 13823749.0,
+ "cash": 13710079.0,
  "holdings": {
   "hynix": 1,
-  "nvda": 42,
+  "nvda": 41,
   "ceg": 26,
-  "lselectric": 58
+  "lselectric": 60
  },
  "cost_basis": {
   "hynix": 1672073.0159,
   "nvda": 310328.571,
   "ceg": 382124.7749,
-  "lselectric": 202355.1273
+  "lselectric": 202526.6231
  },
  "pending": {
-  "date": "2026-08-31",
-  "meeting_id": "20260831T1745",
+  "date": "2026-09-01",
+  "meeting_id": "20260901T0856",
   "weights": {
    "kepco": 0.0,
    "lselectric": 0.25,
    "hynix": 0.05,
    "nvda": 0.25,
-   "ceg": 0.2,
+   "ceg": 0.15,
    "xle": 0.0
   },
   "forecast": {
    "by": "알파"
   },
-  "note": "엔비디아의 생산 지연 리스크가 단기 주가를 압박하나, 데이터센터 매출 성장세가 실적의 근본을 지지합니다. Constellation Energy는 전력 공급 부족이라는 구조적 테마 안에서 하방 경직성을 확보했습니다. LS ELECTRIC은 기존 포트폴리오의 이익 비중을 유지하며, 거래 비용을 고려해 신규 매매를 멈추고 관망하겠습니다.\n\n[비중] kepco=0 lselectric=25 hynix=5 nvda=25 ceg=20 xle=0 현금=25\n[평가예측] 내일=49,820,000 확률=0.6 구간=-0.2~+0.3"
+  "note": "SK하이닉스와 LS ELECTRIC은 낙폭 과대에 따른 반등 가능성이 높습니다. 반면 Constellation Energy는 원전의 구조적 우위가 유가 상승기와 맞물려 매력적입니다. 기존 포트폴리오를 유지하며 현금 비중을 30%로 조정해 변동성에 대응합니다.\n\n거래 수수료 발생을 피하기 위해 보유 수량은 동결합니다. 비중 변화는 기존 자산의 평가액 변동에 따른 결과치입니다.\n\n[비중] kepco=0 lselectric=25 hynix=5 nvda=25 ceg=15 xle=0 현금=30\n[평가예측] 내일=50,150,000 확률=0."
  },
- "last_settled": "2026-08-31",
- "fees_paid": 192220.0
+ "last_settled": "2026-09-01",
+ "fees_paid": 192795.0
 }
