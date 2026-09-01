@@ -12,3 +12,6 @@
 {"ts": "2026-09-01T09:03:07+09:00", "tool": "search_news(자동강제)", "args": "구리 선물", "sig": "f995cad24c", "ok": true, "result_chars": 2158, "cache": "신규", "mismatch": false, "result_hash": "f847633d666a", "err_class": null}
 {"ts": "2026-09-01T09:03:12+09:00", "tool": "get_history(U4증거)", "args": "copper,7d", "sig": "0d8e32c048", "ok": true, "result_chars": 147, "cache": "신규", "mismatch": false, "result_hash": "41cd2f86a748", "err_class": null}
 {"ts": "2026-09-01T09:03:28+09:00", "tool": "search_news(자동강제)", "args": "구리 선물 재조사", "sig": "ab4f455689", "ok": true, "result_chars": 2, "cache": "신규", "mismatch": false, "result_hash": "d75171398898", "err_class": null}
+{"ts": "2026-09-01T16:59:55+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 2003, "cache": "신규", "mismatch": false, "result_hash": "6431c8f64e78", "err_class": null}
+{"ts": "2026-09-01T17:00:00+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 155, "cache": "신규", "mismatch": false, "result_hash": "2079b459fd0a", "err_class": null}
+{"ts": "2026-09-01T17:00:09+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX 재조사", "sig": "f6962904f1", "ok": true, "result_chars": 2, "cache": "신규", "mismatch": false, "result_hash": "d75171398898", "err_class": null}
