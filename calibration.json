@@ -37,38 +37,38 @@
    "verdict": "판정 가능",
    "horizons": {
     "단기": {
-     "weight": 0.0034,
-     "n": 4,
+     "weight": 0.0024,
+     "n": 2,
      "score": {
       "hit_rate": 0.5,
-      "mean_p": 0.65,
-      "brier": 0.3275,
-      "rel": 0.1425,
-      "res": 0.08333,
+      "mean_p": 0.585,
+      "brier": 0.29345,
+      "rel": 0.29345,
+      "res": 0.25,
       "unc": 0.25,
-      "skill": -0.31,
-      "overconf": 0.15,
-      "bias": 1.3378,
-      "mae": 1.77,
-      "coverage": 0.5
+      "skill": -0.1738,
+      "overconf": 0.085,
+      "bias": -3.7378,
+      "mae": 3.7378,
+      "coverage": 0.0
      },
      "diagnosis": []
     },
     "중기": {
      "weight": 0.0264,
-     "n": 6,
+     "n": 4,
      "score": {
-      "hit_rate": 0.8333,
-      "mean_p": 0.6067,
-      "brier": 0.18827,
-      "rel": 0.05885,
-      "res": 0.00556,
-      "unc": 0.13889,
-      "skill": -0.3555,
-      "overconf": -0.2267,
-      "bias": 0.7285,
-      "mae": 1.5524,
-      "coverage": 0.6667
+      "hit_rate": 0.0,
+      "mean_p": 0.5925,
+      "brier": 0.35193,
+      "rel": 0.35181,
+      "res": 0.0,
+      "unc": 0.0,
+      "skill": null,
+      "overconf": 0.5925,
+      "bias": -7.3366,
+      "mae": 7.3366,
+      "coverage": 0.0
      },
      "diagnosis": []
     }
@@ -112,37 +112,37 @@
    "horizons": {
     "단기": {
      "weight": 0.0199,
-     "n": 4,
+     "n": 2,
      "score": {
-      "hit_rate": 0.25,
-      "mean_p": 0.645,
-      "brier": 0.37185,
-      "rel": 0.16403,
-      "res": 0.02083,
-      "unc": 0.1875,
-      "skill": -0.9832,
-      "overconf": 0.395,
-      "bias": 2.5878,
-      "mae": 2.5878,
-      "coverage": 0.25
+      "hit_rate": 1.0,
+      "mean_p": 0.6,
+      "brier": 0.1625,
+      "rel": 0.1625,
+      "res": 0.0,
+      "unc": 0.0,
+      "skill": null,
+      "overconf": -0.4,
+      "bias": -3.3378,
+      "mae": 3.3378,
+      "coverage": 0.0
      },
      "diagnosis": []
     },
     "중기": {
-     "weight": 0.0172,
-     "n": 6,
+     "weight": 0.012,
+     "n": 4,
      "score": {
-      "hit_rate": 0.3333,
-      "mean_p": 0.565,
-      "brier": 0.26612,
-      "rel": 0.05367,
-      "res": 0.0,
-      "unc": 0.22222,
-      "skill": -0.1975,
-      "overconf": 0.2317,
-      "bias": 2.5118,
-      "mae": 2.5118,
-      "coverage": 0.6667
+      "hit_rate": 0.25,
+      "mean_p": 0.55,
+      "brier": 0.27845,
+      "rel": 0.12,
+      "res": 0.02083,
+      "unc": 0.1875,
+      "skill": -0.4851,
+      "overconf": 0.3,
+      "bias": -6.3366,
+      "mae": 6.3366,
+      "coverage": 0.25
      },
      "diagnosis": []
     }
