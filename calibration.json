@@ -47,20 +47,20 @@
    "verdict": "판정 가능",
    "horizons": {
     "단기": {
-     "weight": 0.0024,
-     "n": 2,
+     "weight": 0.0017,
+     "n": 5,
      "score": {
-      "hit_rate": 0.5,
-      "mean_p": 0.585,
-      "brier": 0.29345,
-      "rel": 0.29345,
-      "res": 0.25,
-      "unc": 0.25,
-      "skill": -0.1738,
-      "overconf": 0.085,
-      "bias": -3.7378,
-      "mae": 3.7378,
-      "coverage": 0.0
+      "hit_rate": 0.6,
+      "mean_p": 0.624,
+      "brier": 0.26288,
+      "rel": 0.05675,
+      "res": 0.04,
+      "unc": 0.24,
+      "skill": -0.0953,
+      "overconf": 0.024,
+      "bias": 0.6863,
+      "mae": 2.0457,
+      "coverage": 0.6
      },
      "diagnosis": []
     },
@@ -69,15 +69,15 @@
      "n": 4,
      "score": {
       "hit_rate": 0.0,
-      "mean_p": 0.5925,
-      "brier": 0.35193,
-      "rel": 0.35181,
+      "mean_p": 0.67,
+      "brier": 0.45505,
+      "rel": 0.4537,
       "res": 0.0,
       "unc": 0.0,
       "skill": null,
-      "overconf": 0.5925,
-      "bias": -7.3366,
-      "mae": 7.3366,
+      "overconf": 0.67,
+      "bias": -7.8418,
+      "mae": 7.8418,
       "coverage": 0.0
      },
      "diagnosis": []
@@ -116,38 +116,38 @@
    "verdict": "판정 가능",
    "horizons": {
     "단기": {
-     "weight": 0.0199,
-     "n": 2,
+     "weight": 0.0139,
+     "n": 5,
      "score": {
-      "hit_rate": 1.0,
-      "mean_p": 0.6,
-      "brier": 0.1625,
-      "rel": 0.1625,
+      "hit_rate": 0.4,
+      "mean_p": 0.646,
+      "brier": 0.28598,
+      "rel": 0.06052,
       "res": 0.0,
-      "unc": 0.0,
-      "skill": null,
-      "overconf": -0.4,
-      "bias": -3.3378,
-      "mae": 3.3378,
-      "coverage": 0.0
+      "unc": 0.24,
+      "skill": -0.1916,
+      "overconf": 0.246,
+      "bias": 2.2363,
+      "mae": 2.2363,
+      "coverage": 0.6
      },
      "diagnosis": []
     },
     "중기": {
-     "weight": 0.012,
+     "weight": 0.0084,
      "n": 4,
      "score": {
-      "hit_rate": 0.25,
-      "mean_p": 0.55,
-      "brier": 0.27845,
-      "rel": 0.12,
-      "res": 0.02083,
-      "unc": 0.1875,
-      "skill": -0.4851,
-      "overconf": 0.3,
-      "bias": -6.3366,
-      "mae": 6.3366,
-      "coverage": 0.25
+      "hit_rate": 0.5,
+      "mean_p": 0.615,
+      "brier": 0.2897,
+      "rel": 0.10863,
+      "res": 0.08333,
+      "unc": 0.25,
+      "skill": -0.1588,
+      "overconf": 0.115,
+      "bias": -6.4043,
+      "mae": 6.4043,
+      "coverage": 0.0
      },
      "diagnosis": []
     }
