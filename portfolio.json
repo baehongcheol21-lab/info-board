@@ -1,35 +1,35 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 11456369.0,
+ "cash": 13217182.0,
  "holdings": {
-  "hynix": 4,
+  "hynix": 3,
   "nvda": 32,
-  "ceg": 37,
-  "lselectric": 38
+  "ceg": 43,
+  "lselectric": 25
  },
  "cost_basis": {
   "hynix": 1636268.254,
   "nvda": 310320.2487,
-  "ceg": 383625.2219,
+  "ceg": 386208.2712,
   "lselectric": 202878.0464
  },
  "pending": {
-  "date": "2026-09-06",
-  "meeting_id": "20260906T2112",
+  "date": "2026-09-07",
+  "meeting_id": "20260907T0710",
   "weights": {
    "kepco": 0.0,
-   "lselectric": 0.1,
-   "hynix": 0.13,
-   "nvda": 0.2,
+   "lselectric": 0.05,
+   "hynix": 0.15,
+   "nvda": 0.25,
    "ceg": 0.35,
    "xle": 0.0
   },
   "forecast": {
    "by": "알파"
   },
-  "note": "반도체 지수의 반등은 기술적 반등으로 판단하여 SK하이닉스와 NVIDIA의 비중을 유지합니다. LS ELECTRIC은 구리 가격 하락과 수주 잔고의 괴리가 단기 변동성을 키울 것으로 보여 비중을 5%p 축소합니다. Constellation Energy는 전력 수요의 구조적 우상향을 확인했으므로 현금 비중을 낮춰 대응합니다.\n\n[비중] kepco=0 lselectric=10 hynix=13 nvda=20 ceg=35 xle=0 현금=22\n[평가예측] 내일=50,580,000 확률=0.65 구간=-0.2%~+1.1%"
+  "note": "SK하이닉스와 엔비디아는 기술주 투자 심리 회복으로 단기 상승 여력이 충분합니다. 콘스텔레이션 에너지는 전력 인프라의 핵심 자산으로 보유 비중을 유지하며 수익을 극대화합니다. LS ELECTRIC은 단기 차익 매물 출회 가능성을 고려하여 비중을 일부 축소하고, 거래 비용을 감안해 현금 비중을 확보합니다.\n\n[비중] kepco=0 lselectric=5 hynix=15 nvda=25 ceg=35 xle=0 현금=20\n[평가예측] 내일=50,550,000 확률=0.65 구간=-0.2~1.2"
  },
- "last_settled": "2026-09-06",
- "fees_paid": 222787.0
+ "last_settled": "2026-09-07",
+ "fees_paid": 235052.0
 }
