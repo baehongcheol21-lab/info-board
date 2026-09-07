@@ -193,3 +193,6 @@
 {"ts": "2026-09-07T16:33:00+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 2003, "cache": "신규(값변경)", "mismatch": false, "result_hash": "a09a52e7b546", "err_class": null}
 {"ts": "2026-09-07T16:33:03+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 181, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "fe195bf741bb", "err_class": null}
 {"ts": "2026-09-07T16:33:13+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX 재조사", "sig": "f6962904f1", "ok": true, "result_chars": 259, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "e324c04ab733", "err_class": null}
+{"ts": "2026-09-07T23:23:16+09:00", "tool": "search_news(자동강제)", "args": "SK하이닉스", "sig": "afd4f165d9", "ok": true, "result_chars": 2425, "cache": "신규(값변경)", "mismatch": false, "result_hash": "4beb96d63282", "err_class": null}
+{"ts": "2026-09-07T23:23:53+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 1934, "cache": "신규(값변경)", "mismatch": false, "result_hash": "8e01fb688fa4", "err_class": null}
+{"ts": "2026-09-07T23:24:21+09:00", "tool": "get_history(U4증거)", "args": "samsung,7d", "sig": "b9116cf053", "ok": true, "result_chars": 230, "cache": "신규(값변경)", "mismatch": false, "result_hash": "b3b7c87fc261", "err_class": null}
