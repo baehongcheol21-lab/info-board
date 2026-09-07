@@ -1,30 +1,24 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0007,
-   "n": 8,
+   "weight": 0.0005,
+   "n": 7,
    "score": {
-    "hit_rate": 0.625,
-    "mean_p": 0.57,
-    "brier": 0.23535,
-    "rel": 0.01103,
-    "res": 0.00521,
-    "unc": 0.23438,
-    "skill": -0.0042,
-    "overconf": -0.055,
-    "bias": 1.4175,
-    "mae": 1.605,
-    "coverage": 0.5,
-    "sharpness": 0.14
+    "hit_rate": 0.8571,
+    "mean_p": 0.5686,
+    "brier": 0.20091,
+    "rel": 0.08824,
+    "res": 0.00816,
+    "unc": 0.12245,
+    "skill": -0.6408,
+    "overconf": -0.2886,
+    "bias": 5.2557,
+    "mae": 5.2557,
+    "coverage": 0.0,
+    "sharpness": 0.1371
    },
-   "diagnosis": [
-    {
-     "code": "biased",
-     "value": 1.4175,
-     "why": "등락폭을 평균 1.42%p 작게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=7 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0012,
@@ -126,34 +120,23 @@
   },
   "U4": {
    "weight": 0.0001,
-   "n": 8,
+   "n": 7,
    "score": {
-    "hit_rate": 0.625,
-    "mean_p": 0.5613,
-    "brier": 0.23771,
-    "rel": 0.00406,
-    "res": 0.0,
-    "unc": 0.23438,
-    "skill": -0.0142,
-    "overconf": -0.0637,
-    "bias": 1.53,
-    "mae": 1.805,
-    "coverage": 0.625,
-    "sharpness": 0.1225
+    "hit_rate": 0.5714,
+    "mean_p": 0.5714,
+    "brier": 0.25011,
+    "rel": 0.00484,
+    "res": 0.00204,
+    "unc": 0.2449,
+    "skill": -0.0213,
+    "overconf": 0.0,
+    "bias": 5.67,
+    "mae": 5.67,
+    "coverage": 0.0,
+    "sharpness": 0.1429
    },
-   "diagnosis": [
-    {
-     "code": "no_resolution",
-     "value": 0.0,
-     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
-    },
-    {
-     "code": "biased",
-     "value": 1.53,
-     "why": "등락폭을 평균 1.53%p 작게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=7 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0068,
@@ -264,5 +247,5 @@
    }
   }
  },
- "updated": "2026-09-07"
+ "updated": "2026-09-08"
 }
