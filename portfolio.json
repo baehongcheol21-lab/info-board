@@ -1,26 +1,26 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 11105578.0,
+ "cash": 10285527.0,
  "holdings": {
-  "hynix": 4,
+  "hynix": 3,
   "nvda": 49,
-  "ceg": 25,
-  "lselectric": 36
+  "ceg": 31,
+  "lselectric": 37
  },
  "cost_basis": {
   "hynix": 1672951.1905,
   "nvda": 310130.8401,
-  "ceg": 386208.2712,
-  "lselectric": 204137.5322
+  "ceg": 389036.8695,
+  "lselectric": 204039.2205
  },
  "pending": {
-  "date": "2026-09-08",
-  "meeting_id": "20260908T2156",
+  "date": "2026-09-09",
+  "meeting_id": "20260909T0747",
   "weights": {
    "kepco": 0.0,
    "lselectric": 0.15,
-   "hynix": 0.14,
+   "hynix": 0.15,
    "nvda": 0.3,
    "ceg": 0.25,
    "xle": 0.0
@@ -28,8 +28,8 @@
   "forecast": {
    "by": "알파"
   },
-  "note": "LS ELECTRIC은 전력 인프라 확장이라는 장기적 방향성이 견고하여 현재의 단기 하락을 매수 기회로 판단했습니다. 보유 중인 SK하이닉스와 NVIDIA는 AI 사이클의 핵심이나, SOX 지수 반영 시차를 고려하여 현재 비중을 유지하며 변동성을 관망하겠습니다. Constellation Energy는 원전 PPA를 통한 이익 가시성이 여전히 높아 포트폴리오의 안정판으로 비중을 소폭 상향합니다.\n\n비중 변경에 따른 수수료보다 Constellation Energy의 중기적 성장 모멘텀이 앞선다고 판단하여 비중을 조정했습니다. 여타 종목"
+  "note": "현재 포트폴리오는 전력 공급망과 AI 섹터에 집중되어 있습니다. LS ELECTRIC의 변압기 수주 잔고와 Constellation Energy의 원전 PPA 계약은 거시적 수요가 실적에 반영되는 구조입니다. 한국전력의 주가 상승은 단순 요금 인상 기대감이므로, 수주 잔고라는 실체가 있는 LS ELECTRIC 비중을 유지하고 SK하이닉스의 HBM 공급 우위를 고려해 보유량을 유지합니다. 비중 변경 시 발생하는 왕복 수수료를 감안할 때 현 상태를 유지하는 것이 수익 극대화에 유리하다고 판단됩니다.\n\n[비중] kepco=0 lselec"
  },
- "last_settled": "2026-09-08",
- "fees_paid": 256915.0
+ "last_settled": "2026-09-09",
+ "fees_paid": 264529.0
 }
