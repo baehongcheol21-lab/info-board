@@ -1,39 +1,35 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 10285527.0,
+ "cash": 10704532.0,
  "holdings": {
-  "hynix": 3,
-  "nvda": 49,
-  "ceg": 31,
-  "lselectric": 37
+  "hynix": 4,
+  "nvda": 33,
+  "ceg": 32,
+  "lselectric": 47
  },
  "cost_basis": {
-  "hynix": 1672951.1905,
+  "hynix": 1718713.3929,
   "nvda": 310130.8401,
-  "ceg": 389036.8695,
-  "lselectric": 204039.2205
+  "ceg": 389180.4937,
+  "lselectric": 205626.6204
  },
  "pending": {
-  "date": "2026-09-09",
-  "meeting_id": "20260909T2202",
+  "date": "2026-09-10",
+  "meeting_id": "20260910T0738",
   "weights": {
    "kepco": 0.0,
    "lselectric": 0.2,
-   "hynix": 0.15,
+   "hynix": 0.1,
    "nvda": 0.2,
    "ceg": 0.25,
    "xle": 0.0
   },
   "forecast": {
-   "equity": 51150000.0,
-   "p": 0.65,
-   "lo": 50500000.0,
-   "hi": 51800000.0,
    "by": "알파"
   },
-  "note": "데이터센터 전력 공급망의 핵심인 LS ELECTRIC과 Constellation Energy의 구조적 성장세를 우선합니다. SK하이닉스는 AI 사이클의 정점론에도 불구하고 HBM 공급 우위가 지속되어 비중을 유지합니다. Nvidia는 단기 변동성을 고려해 비중을 20%로 축소하며 발생하는 거래비용은 장기적인 섹터 내 순환매 대응을 위한 포트폴리오 재구성이므로 합리적입니다.\n\n[비중] kepco=0 lselectric=20 hynix=15 nvda=20 ceg=25 xle=0 현금=20\n[평가예측] 내일=51,150,000 확률=0."
+  "note": "전력기기 수요의 구조적 확장성을 고려하여 LS ELECTRIC 비중을 유지하고, SK하이닉스는 고대역폭메모리 관련 불확실성을 반영하여 일부 차익 실현 후 현금 비중을 확보합니다. 거래비용을 고려해 엔비디아와 Constellation Energy의 비중은 변동 없이 유지하여 장기적 관점의 수익을 추구합니다. 한국전력은 요금 현실화의 불확실성이 크고 유가 상승이 비용 부담으로 직결되기에 매수를 보류합니다.\n\n[비중] kepco=0 lselectric=20 hynix=10 nvda=20 ceg=25 xle=0 현금=25\n[평가예측] 내일"
  },
- "last_settled": "2026-09-09",
- "fees_paid": 264529.0
+ "last_settled": "2026-09-10",
+ "fees_paid": 273941.0
 }
