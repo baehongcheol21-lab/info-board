@@ -1,40 +1,24 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0002,
-   "n": 12,
+   "weight": 0.0001,
+   "n": 5,
    "score": {
-    "hit_rate": 0.3333,
-    "mean_p": 0.575,
-    "brier": 0.28465,
-    "rel": 0.07723,
-    "res": 0.0127,
-    "unc": 0.22222,
-    "skill": -0.2809,
-    "overconf": 0.2417,
-    "bias": 0.1733,
-    "mae": 2.6533,
-    "coverage": 0.3333,
-    "sharpness": 0.15
+    "hit_rate": 0.4,
+    "mean_p": 0.556,
+    "brier": 0.25728,
+    "rel": 0.02434,
+    "res": 0.0,
+    "unc": 0.24,
+    "skill": -0.072,
+    "overconf": 0.156,
+    "bias": 0.948,
+    "mae": 2.98,
+    "coverage": 0.4,
+    "sharpness": 0.112
    },
-   "diagnosis": [
-    {
-     "code": "no_skill",
-     "value": -0.2809,
-     "why": "기저확률로 찍는 것보다 못하다"
-    },
-    {
-     "code": "miscalibrated",
-     "value": 0.07723,
-     "why": "확률을 과하게 부른다(공언 0.58 vs 실제 0.33)"
-    },
-    {
-     "code": "band_too_narrow",
-     "value": 0.3333,
-     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=5 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0192,
@@ -94,39 +78,23 @@
   },
   "U4": {
    "weight": 0.0001,
-   "n": 12,
+   "n": 5,
    "score": {
-    "hit_rate": 0.5,
-    "mean_p": 0.5583,
-    "brier": 0.2573,
-    "rel": 0.03208,
-    "res": 0.02273,
-    "unc": 0.25,
-    "skill": -0.0292,
-    "overconf": 0.0583,
-    "bias": 1.0025,
-    "mae": 2.3725,
-    "coverage": 0.4167,
-    "sharpness": 0.1167
+    "hit_rate": 0.4,
+    "mean_p": 0.56,
+    "brier": 0.274,
+    "rel": 0.074,
+    "res": 0.04,
+    "unc": 0.24,
+    "skill": -0.1417,
+    "overconf": 0.16,
+    "bias": 1.048,
+    "mae": 3.28,
+    "coverage": 0.2,
+    "sharpness": 0.12
    },
-   "diagnosis": [
-    {
-     "code": "miscalibrated",
-     "value": 0.03208,
-     "why": "확률을 과하게 부른다(공언 0.56 vs 실제 0.50)"
-    },
-    {
-     "code": "band_too_narrow",
-     "value": 0.4167,
-     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-    },
-    {
-     "code": "biased",
-     "value": 1.0025,
-     "why": "등락폭을 평균 1.00%p 작게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=5 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0034,
@@ -185,5 +153,5 @@
    }
   }
  },
- "updated": "2026-09-10"
+ "updated": "2026-09-11"
 }
