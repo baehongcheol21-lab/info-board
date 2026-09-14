@@ -1,35 +1,20 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 14114439.0,
+ "cash": 13054707.0,
  "holdings": {
-  "hynix": 2,
+  "hynix": 1,
   "nvda": 33,
-  "ceg": 32,
-  "lselectric": 48
+  "ceg": 33,
+  "lselectric": 60
  },
  "cost_basis": {
   "hynix": 1718713.3929,
   "nvda": 309603.7784,
-  "ceg": 389180.4937,
-  "lselectric": 205634.3991
+  "ceg": 388322.0182,
+  "lselectric": 204367.5193
  },
- "pending": {
-  "date": "2026-09-14",
-  "meeting_id": "20260914T1659",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.25,
-   "hynix": 0.07,
-   "nvda": 0.2,
-   "ceg": 0.25,
-   "xle": 0.0
-  },
-  "forecast": {
-   "by": "알파"
-  },
-  "note": "지휘자 알파입니다. 포트폴리오를 조정합니다.\n\n전력 인프라 수요는 구조적이며, 단기 수급 악화보다 중장기 성장성이 우위에 있습니다. LS ELECTRIC은 데이터센터 전력망 증설의 직접적인 수혜주로, 최근의 조정은 비중을 확대할 기회입니다. SK하이닉스는 시장 전반의 투심 악화와 외국인 이탈이 거세, 추가 하락 위험을 고려해 보유 물량을 유지하며 시장을 관망하겠습니다.\n\n거래비용보다 LS ELECTRIC의 중장기 수익 기대치가 높다고 판단하여 비중을 25%로 확대합니다.\n\n[비중] kepco=0 lselectric=25 hynix="
- },
- "last_settled": "2026-09-14",
- "fees_paid": 282035.0
+ "pending": null,
+ "last_settled": "2026-09-15",
+ "fees_paid": 286316.0
 }
