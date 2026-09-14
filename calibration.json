@@ -48,43 +48,25 @@
    "horizons": {
     "단기": {
      "weight": 0.0134,
-     "n": 3,
+     "n": 15,
      "score": {
-      "hit_rate": 0.6667,
-      "mean_p": 0.57,
-      "brier": 0.23843,
-      "rel": 0.00934,
-      "res": 0.0,
-      "unc": 0.22222,
-      "skill": -0.0729,
-      "overconf": -0.0967,
-      "bias": -0.2417,
-      "mae": 1.3333,
-      "coverage": 0.6667
-     },
-     "diagnosis": []
-    },
-    "중기": {
-     "weight": 0.0353,
-     "n": 10,
-     "score": {
-      "hit_rate": 1.0,
-      "mean_p": 0.658,
-      "brier": 0.1194,
-      "rel": 0.11826,
+      "hit_rate": 0.0,
+      "mean_p": 0.6013,
+      "brier": 0.36363,
+      "rel": 0.36336,
       "res": 0.0,
       "unc": 0.0,
       "skill": null,
-      "overconf": -0.342,
-      "bias": 4.9727,
-      "mae": 4.9727,
-      "coverage": 0.2
+      "overconf": 0.6013,
+      "bias": -4.9793,
+      "mae": 4.9793,
+      "coverage": 0.0
      },
      "diagnosis": [
       {
        "code": "miscalibrated",
-       "value": 0.11826,
-       "why": "확률을 모자라게 부른다(공언 0.66 vs 실제 1.00)"
+       "value": 0.36336,
+       "why": "확률을 과하게 부른다(공언 0.60 vs 실제 0.00)"
       },
       {
        "code": "no_resolution",
@@ -93,33 +75,72 @@
       },
       {
        "code": "band_too_narrow",
-       "value": 0.2,
+       "value": 0.0,
        "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
       },
       {
        "code": "biased",
-       "value": 4.9727,
-       "why": "등락폭을 평균 4.97%p 작게 잡는다"
+       "value": -4.9793,
+       "why": "등락폭을 평균 4.98%p 크게 잡는다"
       }
      ]
     },
-    "장기": {
-     "weight": 0.0841,
+    "중기": {
+     "weight": 0.0353,
      "n": 5,
      "score": {
-      "hit_rate": 0.8,
-      "mean_p": 0.64,
-      "brier": 0.173,
-      "rel": 0.0256,
+      "hit_rate": 0.0,
+      "mean_p": 0.694,
+      "brier": 0.48234,
+      "rel": 0.48164,
       "res": 0.0,
-      "unc": 0.16,
-      "skill": -0.0813,
-      "overconf": -0.16,
-      "bias": 1.6694,
-      "mae": 9.3211,
-      "coverage": 0.2
+      "unc": 0.0,
+      "skill": null,
+      "overconf": 0.694,
+      "bias": -6.2408,
+      "mae": 6.2408,
+      "coverage": 0.0
      },
      "diagnosis": []
+    },
+    "장기": {
+     "weight": 0.0589,
+     "n": 15,
+     "score": {
+      "hit_rate": 0.3333,
+      "mean_p": 0.7087,
+      "brier": 0.43923,
+      "rel": 0.18596,
+      "res": 0.02778,
+      "unc": 0.22222,
+      "skill": -0.9766,
+      "overconf": 0.3753,
+      "bias": -5.1955,
+      "mae": 5.1955,
+      "coverage": 0.2667
+     },
+     "diagnosis": [
+      {
+       "code": "no_skill",
+       "value": -0.9766,
+       "why": "기저확률로 찍는 것보다 못하다"
+      },
+      {
+       "code": "miscalibrated",
+       "value": 0.18596,
+       "why": "확률을 과하게 부른다(공언 0.71 vs 실제 0.33)"
+      },
+      {
+       "code": "band_too_narrow",
+       "value": 0.2667,
+       "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+      },
+      {
+       "code": "biased",
+       "value": -5.1955,
+       "why": "등락폭을 평균 5.20%p 크게 잡는다"
+      }
+     ]
     }
    }
   },
@@ -161,78 +182,99 @@
    "horizons": {
     "단기": {
      "weight": 0.0024,
-     "n": 3,
+     "n": 14,
      "score": {
-      "hit_rate": 0.3333,
-      "mean_p": 0.6167,
-      "brier": 0.34917,
-      "rel": 0.34917,
-      "res": 0.22222,
-      "unc": 0.22222,
-      "skill": -0.5713,
-      "overconf": 0.2833,
-      "bias": 0.9749,
-      "mae": 2.1167,
-      "coverage": 0.0
-     },
-     "diagnosis": []
-    },
-    "중기": {
-     "weight": 0.0176,
-     "n": 10,
-     "score": {
-      "hit_rate": 0.3,
-      "mean_p": 0.581,
-      "brier": 0.29529,
-      "rel": 0.09719,
-      "res": 0.01,
-      "unc": 0.21,
-      "skill": -0.4061,
-      "overconf": 0.281,
-      "bias": 7.1577,
-      "mae": 7.1577,
-      "coverage": 0.1
+      "hit_rate": 1.0,
+      "mean_p": 0.6193,
+      "brier": 0.14608,
+      "rel": 0.1452,
+      "res": 0.0,
+      "unc": 0.0,
+      "skill": null,
+      "overconf": -0.3807,
+      "bias": -3.7994,
+      "mae": 3.7994,
+      "coverage": 0.0714
      },
      "diagnosis": [
       {
-       "code": "no_skill",
-       "value": -0.4061,
-       "why": "기저확률로 찍는 것보다 못하다"
+       "code": "miscalibrated",
+       "value": 0.1452,
+       "why": "확률을 모자라게 부른다(공언 0.62 vs 실제 1.00)"
       },
       {
-       "code": "miscalibrated",
-       "value": 0.09719,
-       "why": "확률을 과하게 부른다(공언 0.58 vs 실제 0.30)"
+       "code": "no_resolution",
+       "value": 0.0,
+       "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
       },
       {
        "code": "band_too_narrow",
-       "value": 0.1,
+       "value": 0.0714,
        "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
       },
       {
        "code": "biased",
-       "value": 7.1577,
-       "why": "등락폭을 평균 7.16%p 작게 잡는다"
+       "value": -3.7994,
+       "why": "등락폭을 평균 3.80%p 크게 잡는다"
       }
      ]
     },
-    "장기": {
-     "weight": 0.1163,
-     "n": 5,
+    "중기": {
+     "weight": 0.0123,
+     "n": 4,
      "score": {
-      "hit_rate": 0.4,
-      "mean_p": 0.6,
-      "brier": 0.242,
-      "rel": 0.12167,
-      "res": 0.10667,
-      "unc": 0.24,
-      "skill": -0.0083,
-      "overconf": 0.2,
-      "bias": 4.9194,
-      "mae": 9.3711,
-      "coverage": 0.4
+      "hit_rate": 0.25,
+      "mean_p": 0.615,
+      "brier": 0.31975,
+      "rel": 0.14463,
+      "res": 0.02083,
+      "unc": 0.1875,
+      "skill": -0.7053,
+      "overconf": 0.365,
+      "bias": -4.2327,
+      "mae": 4.2327,
+      "coverage": 0.5
      },
      "diagnosis": []
+    },
+    "장기": {
+     "weight": 0.0814,
+     "n": 15,
+     "score": {
+      "hit_rate": 0.3333,
+      "mean_p": 0.6153,
+      "brier": 0.27611,
+      "rel": 0.08637,
+      "res": 0.01852,
+      "unc": 0.22222,
+      "skill": -0.2425,
+      "overconf": 0.282,
+      "bias": -2.0255,
+      "mae": 4.3447,
+      "coverage": 0.3333
+     },
+     "diagnosis": [
+      {
+       "code": "no_skill",
+       "value": -0.2425,
+       "why": "기저확률로 찍는 것보다 못하다"
+      },
+      {
+       "code": "miscalibrated",
+       "value": 0.08637,
+       "why": "확률을 과하게 부른다(공언 0.62 vs 실제 0.33)"
+      },
+      {
+       "code": "band_too_narrow",
+       "value": 0.3333,
+       "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+      },
+      {
+       "code": "biased",
+       "value": -2.0255,
+       "why": "등락폭을 평균 2.03%p 크게 잡는다"
+      }
+     ]
     }
    }
   }
