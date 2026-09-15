@@ -1,12 +1,12 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 13054707.0,
+ "cash": 18007072.0,
  "holdings": {
   "hynix": 1,
-  "nvda": 33,
+  "nvda": 32,
   "ceg": 33,
-  "lselectric": 60
+  "lselectric": 36
  },
  "cost_basis": {
   "hynix": 1718713.3929,
@@ -15,21 +15,21 @@
   "lselectric": 204367.5193
  },
  "pending": {
-  "date": "2026-09-15",
-  "meeting_id": "20260915T2242",
+  "date": "2026-09-16",
+  "meeting_id": "20260916T0759",
   "weights": {
    "kepco": 0.0,
-   "lselectric": 0.15,
-   "hynix": 0.05,
-   "nvda": 0.2,
-   "ceg": 0.25,
-   "xle": 0.0
+   "lselectric": 0.2,
+   "hynix": 0.0,
+   "nvda": 0.15,
+   "ceg": 0.2,
+   "xle": 0.1
   },
   "forecast": {
    "by": "알파"
   },
-  "note": "LS ELECTRIC의 단기 과열과 비용 부담을 고려하여 비중을 24%에서 15%로 축소합니다. 매각 대금 중 일부는 변동성 대비 현금으로 보유하고, Constellation Energy(CEG)는 원전 기반의 전력 경쟁력과 PPA 구조의 안정성을 높게 평가하여 비중을 유지합니다. 잦은 매매로 인한 수수료 손실을 방지하기 위해 나머지 종목은 기존 비중을 유지하며 시장 흐름을 관망합니다.\n\n[비중] kepco=0 lselectric=15 hynix=5 nvda=20 ceg=25 xle=0 현금=35\n[평가예측] 내일=47,880,00"
+  "note": "코스피 급락세와 글로벌 투자 심리 위축을 고려해 변동성이 큰 종목의 비중을 축소합니다. Constellation Energy(CEG)는 AI 전력 수요의 구조적 우위가 유지되고 있으나, 최근 단기 조정폭을 감안해 비중을 5%p 줄여 현금화합니다. 매도 비용보다 변동성 완화를 통한 리스크 관리가 이득이라고 판단됩니다.\n\nLS ELECTRIC(lselectric)은 전력망 수주 모멘텀을 신뢰하여 비중을 유지하고, SK하이닉스(hynix)와 NVIDIA(nvda)는 반도체 경기 둔화 우려를 반영해 현금 비중을 높여 시장 대응력을 확보합니"
  },
- "last_settled": "2026-09-15",
- "fees_paid": 286316.0
+ "last_settled": "2026-09-16",
+ "fees_paid": 295920.0
 }
