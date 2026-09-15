@@ -408,3 +408,5 @@
 {"ts": "2026-09-15T08:17:47+09:00", "tool": "search_news(자동강제)", "args": "한국전력 재조사", "sig": "1d2db88492", "ok": false, "result_chars": 180, "cache": "판정생략", "mismatch": false, "result_hash": "", "err_class": "tool_error"}
 {"ts": "2026-09-15T08:18:10+09:00", "tool": "search_news(자동강제)", "args": "엔비디아", "sig": "94b470f76c", "ok": false, "result_chars": 150, "cache": "판정생략", "mismatch": false, "result_hash": "", "err_class": "tool_error"}
 {"ts": "2026-09-15T08:18:24+09:00", "tool": "get_history(U4증거)", "args": "nvidia,7d", "sig": "fe95b5e68e", "ok": true, "result_chars": 221, "cache": "신규", "mismatch": false, "result_hash": "584c7646c612", "err_class": null}
+{"ts": "2026-09-15T16:59:23+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 1904, "cache": "신규(값변경)", "mismatch": false, "result_hash": "4411ec284136", "err_class": null}
+{"ts": "2026-09-15T16:59:25+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 180, "cache": "신규", "mismatch": false, "result_hash": "bf9ce00d41dd", "err_class": null}
