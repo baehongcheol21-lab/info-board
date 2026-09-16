@@ -16,19 +16,19 @@
  },
  "pending": {
   "date": "2026-09-16",
-  "meeting_id": "20260916T0759",
+  "meeting_id": "20260916T1647",
   "weights": {
    "kepco": 0.0,
    "lselectric": 0.2,
-   "hynix": 0.0,
-   "nvda": 0.15,
-   "ceg": 0.2,
-   "xle": 0.1
+   "hynix": 0.05,
+   "nvda": 0.2,
+   "ceg": 0.3,
+   "xle": 0.0
   },
   "forecast": {
    "by": "알파"
   },
-  "note": "코스피 급락세와 글로벌 투자 심리 위축을 고려해 변동성이 큰 종목의 비중을 축소합니다. Constellation Energy(CEG)는 AI 전력 수요의 구조적 우위가 유지되고 있으나, 최근 단기 조정폭을 감안해 비중을 5%p 줄여 현금화합니다. 매도 비용보다 변동성 완화를 통한 리스크 관리가 이득이라고 판단됩니다.\n\nLS ELECTRIC(lselectric)은 전력망 수주 모멘텀을 신뢰하여 비중을 유지하고, SK하이닉스(hynix)와 NVIDIA(nvda)는 반도체 경기 둔화 우려를 반영해 현금 비중을 높여 시장 대응력을 확보합니"
+  "note": "데이터센터 전력 공급망의 핵심인 Constellation Energy와 LS ELECTRIC의 장기 성장성을 최우선으로 판단합니다. SK하이닉스는 AI 사이클의 변동성을 고려하여 비중을 유지하며, 거래 비용을 초과하는 이득이 명확하지 않아 기존 보유 종목의 매매 없이 관망합니다.\n\n[비중] kepco=0 lselectric=20 hynix=5 nvda=20 ceg=30 xle=0 현금=25\n[평가예측] 내일=48,150,000 확률=0.65 구간=-0.5~+1.2"
  },
  "last_settled": "2026-09-16",
  "fees_paid": 295920.0
