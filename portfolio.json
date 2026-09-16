@@ -1,22 +1,22 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 18007072.0,
+ "cash": 13107505.0,
  "holdings": {
   "hynix": 1,
   "nvda": 32,
-  "ceg": 33,
-  "lselectric": 36
+  "ceg": 40,
+  "lselectric": 48
  },
  "cost_basis": {
   "hynix": 1718713.3929,
   "nvda": 309603.7784,
-  "ceg": 388322.0182,
-  "lselectric": 204367.5193
+  "ceg": 382919.5321,
+  "lselectric": 203125.6395
  },
  "pending": {
-  "date": "2026-09-16",
-  "meeting_id": "20260916T1647",
+  "date": "2026-09-17",
+  "meeting_id": "20260917T0803",
   "weights": {
    "kepco": 0.0,
    "lselectric": 0.2,
@@ -28,8 +28,8 @@
   "forecast": {
    "by": "알파"
   },
-  "note": "데이터센터 전력 공급망의 핵심인 Constellation Energy와 LS ELECTRIC의 장기 성장성을 최우선으로 판단합니다. SK하이닉스는 AI 사이클의 변동성을 고려하여 비중을 유지하며, 거래 비용을 초과하는 이득이 명확하지 않아 기존 보유 종목의 매매 없이 관망합니다.\n\n[비중] kepco=0 lselectric=20 hynix=5 nvda=20 ceg=30 xle=0 현금=25\n[평가예측] 내일=48,150,000 확률=0.65 구간=-0.5~+1.2"
+  "note": "현 상태 유지합니다. 현재 계좌의 비중은 AI 공급망과 전력 인프라에 집중되어 있습니다. 수수료 비용을 상쇄할 만큼의 강력한 단기 모멘텀이 시장 전체에서 확인되지 않습니다. 섣부른 조정은 거래 비용만 발생시켜 수익률을 갉아먹는 결과로 이어질 것으로 판단됩니다.\n\n[비중] kepco=0 lselectric=20 hynix=5 nvda=20 ceg=30 xle=0 현금=25\n[평가예측] 내일=48,320,000 확률=0.6 구간=-0.2~+0.8"
  },
- "last_settled": "2026-09-16",
- "fees_paid": 295920.0
+ "last_settled": "2026-09-17",
+ "fees_paid": 300533.0
 }

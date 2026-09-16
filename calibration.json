@@ -2,23 +2,23 @@
  "agents": {
   "U3": {
    "weight": 0.0001,
-   "n": 6,
+   "n": 5,
    "score": {
-    "hit_rate": 0.8333,
-    "mean_p": 0.5667,
-    "brier": 0.205,
-    "rel": 0.08,
-    "res": 0.01389,
-    "unc": 0.13889,
-    "skill": -0.476,
-    "overconf": -0.2667,
-    "bias": -1.34,
-    "mae": 1.7133,
-    "coverage": 0.5,
-    "sharpness": 0.1333
+    "hit_rate": 0.6,
+    "mean_p": 0.6,
+    "brier": 0.24,
+    "rel": 0.0,
+    "res": 0.0,
+    "unc": 0.24,
+    "skill": -0.0,
+    "overconf": 0.0,
+    "bias": 0.298,
+    "mae": 1.566,
+    "coverage": 0.4,
+    "sharpness": 0.2
    },
    "diagnosis": [],
-   "verdict": "표본 부족(n=6 < 8) — 판정 보류",
+   "verdict": "표본 부족(n=5 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0066,
@@ -77,24 +77,24 @@
    }
   },
   "U4": {
-   "weight": 0.0008,
-   "n": 6,
+   "weight": 0.0081,
+   "n": 5,
    "score": {
-    "hit_rate": 0.6667,
-    "mean_p": 0.5583,
-    "brier": 0.22875,
-    "rel": 0.02875,
-    "res": 0.02222,
-    "unc": 0.22222,
-    "skill": -0.0294,
-    "overconf": -0.1083,
-    "bias": -1.3317,
-    "mae": 1.9717,
-    "coverage": 0.6667,
-    "sharpness": 0.1167
+    "hit_rate": 0.6,
+    "mean_p": 0.56,
+    "brier": 0.234,
+    "rel": 0.034,
+    "res": 0.04,
+    "unc": 0.24,
+    "skill": 0.025,
+    "overconf": -0.04,
+    "bias": 0.388,
+    "mae": 1.556,
+    "coverage": 0.4,
+    "sharpness": 0.12
    },
    "diagnosis": [],
-   "verdict": "표본 부족(n=6 < 8) — 판정 보류",
+   "verdict": "표본 부족(n=5 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0017,
@@ -153,5 +153,5 @@
    }
   }
  },
- "updated": "2026-09-16"
+ "updated": "2026-09-17"
 }
