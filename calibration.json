@@ -21,56 +21,56 @@
    "verdict": "표본 부족(n=5 < 8) — 판정 보류",
    "horizons": {
     "단기": {
-     "weight": 0.0066,
-     "n": 7,
+     "weight": 0.0046,
+     "n": 5,
      "score": {
-      "hit_rate": 0.5714,
-      "mean_p": 0.65,
-      "brier": 0.25107,
-      "rel": 0.00617,
+      "hit_rate": 0.6,
+      "mean_p": 0.67,
+      "brier": 0.2705,
+      "rel": 0.0049,
       "res": 0.0,
-      "unc": 0.2449,
-      "skill": -0.0252,
-      "overconf": 0.0786,
-      "bias": -0.0837,
-      "mae": 2.8236,
-      "coverage": 0.0
+      "unc": 0.24,
+      "skill": -0.1271,
+      "overconf": 0.07,
+      "bias": -0.0771,
+      "mae": 1.2333,
+      "coverage": 0.4
      },
      "diagnosis": []
     },
     "중기": {
      "weight": 0.0353,
-     "n": 2,
+     "n": 3,
      "score": {
       "hit_rate": 0.0,
-      "mean_p": 0.73,
-      "brier": 0.533,
-      "rel": 0.5329,
+      "mean_p": 0.6133,
+      "brier": 0.37627,
+      "rel": 0.37618,
       "res": 0.0,
       "unc": 0.0,
       "skill": null,
-      "overconf": 0.73,
-      "bias": -6.3444,
-      "mae": 6.3444,
+      "overconf": 0.6133,
+      "bias": -6.3885,
+      "mae": 6.3885,
       "coverage": 0.0
      },
      "diagnosis": []
     },
     "장기": {
-     "weight": 0.0288,
+     "weight": 0.0202,
      "n": 3,
      "score": {
       "hit_rate": 0.6667,
-      "mean_p": 0.7033,
-      "brier": 0.30203,
-      "rel": 0.30037,
+      "mean_p": 0.5733,
+      "brier": 0.28513,
+      "rel": 0.28498,
       "res": 0.22222,
       "unc": 0.22222,
-      "skill": -0.3592,
-      "overconf": 0.0367,
-      "bias": -3.9853,
-      "mae": 3.9853,
-      "coverage": 0.6667
+      "skill": -0.2831,
+      "overconf": -0.0933,
+      "bias": 0.9311,
+      "mae": 5.2911,
+      "coverage": 0.3333
      },
      "diagnosis": []
     }
@@ -97,56 +97,56 @@
    "verdict": "표본 부족(n=5 < 8) — 판정 보류",
    "horizons": {
     "단기": {
-     "weight": 0.0017,
+     "weight": 0.0012,
      "n": 5,
      "score": {
-      "hit_rate": 0.4,
-      "mean_p": 0.616,
-      "brier": 0.30148,
-      "rel": 0.07455,
-      "res": 0.04,
-      "unc": 0.24,
-      "skill": -0.2562,
-      "overconf": 0.216,
-      "bias": 2.3504,
-      "mae": 3.4055,
-      "coverage": 0.2
+      "hit_rate": 0.2,
+      "mean_p": 0.64,
+      "brier": 0.35,
+      "rel": 0.1936,
+      "res": 0.0,
+      "unc": 0.16,
+      "skill": -1.1875,
+      "overconf": 0.44,
+      "bias": 0.6865,
+      "mae": 1.6232,
+      "coverage": 0.8
      },
      "diagnosis": []
     },
     "중기": {
      "weight": 0.0086,
-     "n": 2,
+     "n": 3,
      "score": {
       "hit_rate": 1.0,
-      "mean_p": 0.6,
-      "brier": 0.1604,
-      "rel": 0.1604,
+      "mean_p": 0.57,
+      "brier": 0.1851,
+      "rel": 0.1849,
       "res": 0.0,
       "unc": 0.0,
       "skill": null,
-      "overconf": -0.4,
-      "bias": -4.1194,
-      "mae": 4.1194,
-      "coverage": 0.5
+      "overconf": -0.43,
+      "bias": -4.5885,
+      "mae": 4.5885,
+      "coverage": 0.0
      },
      "diagnosis": []
     },
     "장기": {
-     "weight": 0.0399,
-     "n": 4,
+     "weight": 0.0279,
+     "n": 3,
      "score": {
-      "hit_rate": 0.5,
-      "mean_p": 0.605,
-      "brier": 0.32085,
-      "rel": 0.31905,
-      "res": 0.25,
-      "unc": 0.25,
-      "skill": -0.2834,
-      "overconf": 0.105,
-      "bias": 2.3902,
-      "mae": 7.7431,
-      "coverage": 0.5
+      "hit_rate": 0.6667,
+      "mean_p": 0.5433,
+      "brier": 0.24197,
+      "rel": 0.01521,
+      "res": 0.0,
+      "unc": 0.22222,
+      "skill": -0.0888,
+      "overconf": -0.1233,
+      "bias": 2.6811,
+      "mae": 6.2077,
+      "coverage": 0.3333
      },
      "diagnosis": []
     }
