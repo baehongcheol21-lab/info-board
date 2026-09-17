@@ -437,3 +437,7 @@
 {"ts": "2026-09-17T08:10:50+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 2200, "cache": "신규", "mismatch": false, "result_hash": "093dce03ecfa", "err_class": null}
 {"ts": "2026-09-17T08:10:54+09:00", "tool": "get_history(U4증거)", "args": "samsung,7d", "sig": "b9116cf053", "ok": true, "result_chars": 230, "cache": "신규", "mismatch": false, "result_hash": "e96873f2f7ad", "err_class": null}
 {"ts": "2026-09-17T08:11:03+09:00", "tool": "search_news(자동강제)", "args": "삼성전자 재조사", "sig": "e4d2e9a866", "ok": true, "result_chars": 1896, "cache": "신규", "mismatch": false, "result_hash": "755442d94c45", "err_class": null}
+{"ts": "2026-09-17T22:40:32+09:00", "tool": "search_news(자동강제)", "args": "구리 선물", "sig": "f995cad24c", "ok": true, "result_chars": 2287, "cache": "신규", "mismatch": false, "result_hash": "76c996abd3fd", "err_class": null}
+{"ts": "2026-09-17T22:41:22+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 1775, "cache": "신규", "mismatch": false, "result_hash": "f21cf8a764e6", "err_class": null}
+{"ts": "2026-09-17T22:41:27+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 179, "cache": "신규", "mismatch": false, "result_hash": "fc748c9637dc", "err_class": null}
+{"ts": "2026-09-17T22:42:17+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX 재조사", "sig": "f6962904f1", "ok": true, "result_chars": 309, "cache": "신규", "mismatch": false, "result_hash": "60c1143aa173", "err_class": null}
