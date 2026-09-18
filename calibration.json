@@ -2,23 +2,49 @@
  "agents": {
   "U3": {
    "weight": 0.0001,
-   "n": 4,
+   "n": 14,
    "score": {
-    "hit_rate": 0.25,
-    "mean_p": 0.575,
-    "brier": 0.30625,
-    "rel": 0.18125,
-    "res": 0.0625,
-    "unc": 0.1875,
-    "skill": -0.6333,
-    "overconf": 0.325,
-    "bias": -0.49,
-    "mae": 1.81,
-    "coverage": 0.25,
-    "sharpness": 0.15
+    "hit_rate": 0.9286,
+    "mean_p": 0.5857,
+    "brier": 0.18643,
+    "rel": 0.12214,
+    "res": 0.00204,
+    "unc": 0.06633,
+    "skill": -1.8108,
+    "overconf": -0.3429,
+    "bias": 1.655,
+    "mae": 2.665,
+    "coverage": 0.2857,
+    "sharpness": 0.1714
    },
-   "diagnosis": [],
-   "verdict": "표본 부족(n=4 < 8) — 판정 보류",
+   "diagnosis": [
+    {
+     "code": "no_skill",
+     "value": -1.8108,
+     "why": "기저확률로 찍는 것보다 못하다"
+    },
+    {
+     "code": "miscalibrated",
+     "value": 0.12214,
+     "why": "확률을 모자라게 부른다(공언 0.59 vs 실제 0.93)"
+    },
+    {
+     "code": "no_resolution",
+     "value": 0.00204,
+     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
+    },
+    {
+     "code": "band_too_narrow",
+     "value": 0.2857,
+     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    },
+    {
+     "code": "biased",
+     "value": 1.655,
+     "why": "등락폭을 평균 1.66%p 작게 잡는다"
+    }
+   ],
+   "verdict": "판정 가능",
    "horizons": {
     "단기": {
      "weight": 0.0046,
@@ -124,24 +150,45 @@
    }
   },
   "U4": {
-   "weight": 0.0057,
-   "n": 4,
+   "weight": 0.004,
+   "n": 14,
    "score": {
-    "hit_rate": 0.5,
-    "mean_p": 0.5625,
-    "brier": 0.26687,
-    "rel": 0.10021,
-    "res": 0.08333,
-    "unc": 0.25,
-    "skill": -0.0675,
-    "overconf": 0.0625,
-    "bias": 0.0225,
-    "mae": 1.4725,
-    "coverage": 0.5,
-    "sharpness": 0.125
+    "hit_rate": 0.7857,
+    "mean_p": 0.5821,
+    "brier": 0.21131,
+    "rel": 0.0513,
+    "res": 0.0051,
+    "unc": 0.16837,
+    "skill": -0.255,
+    "overconf": -0.2036,
+    "bias": 2.0229,
+    "mae": 2.7829,
+    "coverage": 0.1429,
+    "sharpness": 0.1643
    },
-   "diagnosis": [],
-   "verdict": "표본 부족(n=4 < 8) — 판정 보류",
+   "diagnosis": [
+    {
+     "code": "no_skill",
+     "value": -0.255,
+     "why": "기저확률로 찍는 것보다 못하다"
+    },
+    {
+     "code": "miscalibrated",
+     "value": 0.0513,
+     "why": "확률을 모자라게 부른다(공언 0.58 vs 실제 0.79)"
+    },
+    {
+     "code": "band_too_narrow",
+     "value": 0.1429,
+     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    },
+    {
+     "code": "biased",
+     "value": 2.0229,
+     "why": "등락폭을 평균 2.02%p 작게 잡는다"
+    }
+   ],
+   "verdict": "판정 가능",
    "horizons": {
     "단기": {
      "weight": 0.0008,
@@ -232,5 +279,5 @@
    }
   }
  },
- "updated": "2026-09-18"
+ "updated": "2026-09-19"
 }

@@ -1,35 +1,20 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 15402885.0,
+ "cash": 15567889.0,
  "holdings": {
   "hynix": 1,
-  "nvda": 32,
-  "ceg": 47,
-  "lselectric": 24
+  "nvda": 31,
+  "ceg": 48,
+  "lselectric": 23
  },
  "cost_basis": {
   "hynix": 1718713.3929,
   "nvda": 309603.7784,
-  "ceg": 379907.0562,
+  "ceg": 379346.8118,
   "lselectric": 203125.6395
  },
- "pending": {
-  "date": "2026-09-18",
-  "meeting_id": "20260918T2202",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.1,
-   "hynix": 0.05,
-   "nvda": 0.2,
-   "ceg": 0.35,
-   "xle": 0.0
-  },
-  "forecast": {
-   "by": "알파"
-  },
-  "note": "지휘자 알파입니다. 포트폴리오를 조정합니다.\n\nSK하이닉스는 단기 급등에 따른 차익 매물 압력을 반영하여 비중을 4%에서 5%로 미세 조정합니다. Constellation Energy는 원전 인프라의 데이터센터 직접 공급이라는 구조적 성장이 유효하여 35%를 유지하며, LS ELECTRIC은 북미 수주 잔고의 견고함을 신뢰하여 10%를 유지합니다. 잦은 매매는 수수료 비용만 발생시키므로 불필요한 변경을 지양합니다.\n\n[비중] kepco=0 lselectric=10 hynix=5 nvda=20 ceg=35 xle=0 현금=30\n[평가"
- },
- "last_settled": "2026-09-18",
- "fees_paid": 314303.0
+ "pending": null,
+ "last_settled": "2026-09-19",
+ "fees_paid": 315839.0
 }
