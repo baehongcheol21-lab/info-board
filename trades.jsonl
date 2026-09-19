@@ -109,3 +109,5 @@
 {"date": "2026-09-19", "id": "lselectric", "name": "LS ELECTRIC", "side": "sell", "shares": 1, "price_krw": 211500.0, "fee": 412.0}
 {"date": "2026-09-19", "id": "nvda", "name": "NVIDIA", "side": "sell", "shares": 1, "price_krw": 308055.11, "fee": 524.0}
 {"date": "2026-09-19", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 1, "price_krw": 353015.32, "fee": 600.0}
+{"date": "2026-09-20", "id": "hynix", "name": "SK하이닉스", "side": "buy", "shares": 1, "price_krw": 1857000.0, "fee": 279.0}
+{"date": "2026-09-20", "id": "nvda", "name": "NVIDIA", "side": "buy", "shares": 8, "price_krw": 307843.95, "fee": 4187.0}
