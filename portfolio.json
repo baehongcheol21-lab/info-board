@@ -1,12 +1,12 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 11243672.0,
+ "cash": 14105623.0,
  "holdings": {
   "hynix": 2,
   "nvda": 39,
-  "ceg": 48,
-  "lselectric": 23
+  "ceg": 47,
+  "lselectric": 11
  },
  "cost_basis": {
   "hynix": 1787856.6965,
@@ -14,26 +14,7 @@
   "ceg": 379346.8118,
   "lselectric": 203125.6395
  },
- "pending": {
-  "date": "2026-09-21",
-  "meeting_id": "20260921T1703",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.05,
-   "hynix": 0.08,
-   "nvda": 0.25,
-   "ceg": 0.35,
-   "xle": 0.0
-  },
-  "forecast": {
-   "equity": 48700000.0,
-   "p": 0.65,
-   "lo": 48200000.0,
-   "hi": 49200000.0,
-   "by": "알파"
-  },
-  "note": "LS ELECTRIC은 단기 수주 모멘텀 둔화와 차익 실현 압력이 우세하여 비중을 10%에서 5%로 축소합니다. Constellation Energy는 데이터센터 전력 수요가 견조하여 비중 35%를 유지하고, 나머지 종목 또한 현재의 포트폴리오 구성을 유지합니다. 빈번한 매매로 인한 거래비용 발생이 기대 수익을 상회할 것으로 판단되어 현금 비중을 15%로 늘리며 방어적 태세를 취합니다.\n\n[비중] kepco=0 lselectric=5 hynix=8 nvda=25 ceg=35 xle=0 현금=27\n[평가예측] 내일=48,700,000"
- },
- "last_settled": "2026-09-21",
- "fees_paid": 320305.0
+ "pending": null,
+ "last_settled": "2026-09-22",
+ "fees_paid": 325807.0
 }
