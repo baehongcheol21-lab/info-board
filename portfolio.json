@@ -1,35 +1,18 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 14105623.0,
+ "cash": 16075451.0,
  "holdings": {
   "hynix": 2,
   "nvda": 39,
-  "ceg": 47,
-  "lselectric": 11
+  "ceg": 48
  },
  "cost_basis": {
   "hynix": 1787856.6965,
   "nvda": 309242.788,
-  "ceg": 379346.8118,
-  "lselectric": 203125.6395
+  "ceg": 378881.6132
  },
- "pending": {
-  "date": "2026-09-22",
-  "meeting_id": "20260922T2230",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.0,
-   "hynix": 0.1,
-   "nvda": 0.25,
-   "ceg": 0.35,
-   "xle": 0.0
-  },
-  "forecast": {
-   "by": "알파"
-  },
-  "note": "데이터센터 전력 수요와 원전 PPA의 장기적 우상향을 확신하여 CEG 비중을 35%로 유지합니다. LS ELECTRIC은 구리 가격 상승이 원가 부담으로 작용한다는 U4의 반론을 수용하여, 단기 변동성 회피를 위해 비중을 5% 축소합니다. 매매 수수료보다 LS ELECTRIC의 단기 조정 폭이 더 클 것으로 판단하여 비중을 조정합니다.\n\n[비중] kepco=0 lselectric=0 hynix=10 nvda=25 ceg=35 xle=0 현금=30\n[평가예측] 내일=48,990,000 확률=0.62 구간=-0.3~+0.6%"
- },
- "last_settled": "2026-09-22",
- "fees_paid": 325807.0
+ "pending": null,
+ "last_settled": "2026-09-23",
+ "fees_paid": 330961.0
 }
