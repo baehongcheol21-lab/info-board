@@ -14,11 +14,11 @@
  },
  "pending": {
   "date": "2026-09-23",
-  "meeting_id": "20260923T1651",
+  "meeting_id": "20260923T2244",
   "weights": {
    "kepco": 0.0,
    "lselectric": 0.15,
-   "hynix": 0.15,
+   "hynix": 0.1,
    "nvda": 0.25,
    "ceg": 0.35,
    "xle": 0.0
@@ -26,7 +26,7 @@
   "forecast": {
    "by": "알파"
   },
-  "note": "반도체와 전력 기기 섹터의 동반 강세 흐름을 활용하겠습니다. SK하이닉스는 SOX 지수 급등에 따른 HBM 프리미엄 재평가 가능성이 높고, LS ELECTRIC은 북미 수주 잔고를 기반으로 한 전력 인프라 수요가 견고합니다. Constellation Energy는 데이터센터 전력 공급의 핵심주로서 장기 성장이 유효하여 보유 비중을 유지합니다. 거래 비용 발생을 최소화하기 위해 신규 종목인 LS ELECTRIC만 비중을 15%로 신규 편입하며, 나머지 포트폴리오는 기존 보유분 효율을 극대화합니다.\n\n[비중] kepco=0 lselec"
+  "note": "LS ELECTRIC의 조정은 데이터센터 인프라 확충이라는 구조적 성장세를 고려할 때 저점 매수 기회로 판단됩니다. Constellation Energy는 원전 PPA를 통한 수익 고정화 모델이 유효하여 보유 비중을 유지하며, SK하이닉스와 NVIDIA는 HBM 공급 우위를 근거로 비중을 유지합니다. 거래 비용 발생을 감안하여 포트폴리오의 급격한 변동보다는 실적 가시성이 높은 종목 위주로 자산 배분을 최적화했습니다.\n\n[비중] kepco=0 lselectric=15 hynix=10 nvda=25 ceg=35 xle=0 현금=15\n["
  },
  "last_settled": "2026-09-23",
  "fees_paid": 330961.0
