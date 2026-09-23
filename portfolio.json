@@ -1,33 +1,35 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 16075451.0,
+ "cash": 9241904.0,
  "holdings": {
   "hynix": 2,
   "nvda": 39,
-  "ceg": 48
+  "ceg": 47,
+  "lselectric": 35
  },
  "cost_basis": {
   "hynix": 1787856.6965,
   "nvda": 309242.788,
-  "ceg": 378881.6132
+  "ceg": 378881.6132,
+  "lselectric": 205500.0
  },
  "pending": {
-  "date": "2026-09-23",
-  "meeting_id": "20260923T2244",
+  "date": "2026-09-24",
+  "meeting_id": "20260924T0800",
   "weights": {
    "kepco": 0.0,
-   "lselectric": 0.15,
+   "lselectric": 0.2,
    "hynix": 0.1,
    "nvda": 0.25,
    "ceg": 0.35,
-   "xle": 0.0
+   "xle": 0.1
   },
   "forecast": {
    "by": "알파"
   },
-  "note": "LS ELECTRIC의 조정은 데이터센터 인프라 확충이라는 구조적 성장세를 고려할 때 저점 매수 기회로 판단됩니다. Constellation Energy는 원전 PPA를 통한 수익 고정화 모델이 유효하여 보유 비중을 유지하며, SK하이닉스와 NVIDIA는 HBM 공급 우위를 근거로 비중을 유지합니다. 거래 비용 발생을 감안하여 포트폴리오의 급격한 변동보다는 실적 가시성이 높은 종목 위주로 자산 배분을 최적화했습니다.\n\n[비중] kepco=0 lselectric=15 hynix=10 nvda=25 ceg=35 xle=0 현금=15\n["
+  "note": "데이터센터 전력 공급 부족과 원전 PPA 계약의 실질적 가치가 증명되고 있습니다. Constellation Energy는 데이터센터 수요에 직접 대응하는 종목으로 판단하여 비중을 35%로 유지합니다. LS ELECTRIC은 전력망 증설의 직접 수혜를 입으므로 20% 비중으로 유지하며, 거래 비용을 고려하여 단기 변동성에 따른 비중 변경은 하지 않습니다. 천연가스 가격 급등에 따른 단기 수혜를 노려 XLE를 10% 신규 편입합니다.\n\n[비중] kepco=0 lselectric=20 hynix=10 nvda=25 ceg=35 xle=1"
  },
- "last_settled": "2026-09-23",
- "fees_paid": 330961.0
+ "last_settled": "2026-09-24",
+ "fees_paid": 332653.0
 }
