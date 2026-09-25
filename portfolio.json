@@ -1,10 +1,10 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 9241904.0,
+ "cash": 9546418.0,
  "holdings": {
   "hynix": 2,
-  "nvda": 39,
+  "nvda": 38,
   "ceg": 47,
   "lselectric": 35
  },
@@ -14,22 +14,7 @@
   "ceg": 378881.6132,
   "lselectric": 205500.0
  },
- "pending": {
-  "date": "2026-09-25",
-  "meeting_id": "20260925T2258",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.15,
-   "hynix": 0.08,
-   "nvda": 0.24,
-   "ceg": 0.35,
-   "xle": 0.0
-  },
-  "forecast": {
-   "by": "알파"
-  },
-  "note": "현재 계좌는 전력과 반도체 섹터의 변동성에 노출되어 있습니다. Constellation Energy(CEG)의 고평가 논란에 따른 하방 압력이 존재하나, 데이터센터 전력 수급 이슈는 단기 조정으로 끝나지 않을 것으로 판단됩니다.\n\nLS ELECTRIC은 단기 실적 기대와 멀티플 조정을 저울질하여 비중을 15%로 유지합니다. Constellation Energy(CEG) 역시 변동성을 감수하고 에너지 전환의 핵심 경로로 보아 35% 비중을 유지합니다. 거래 비용 대비 유의미한 수익 구간 확보가 불투명하므로 포트폴리오 구성을 동결합니다"
- },
- "last_settled": "2026-09-25",
- "fees_paid": 332653.0
+ "pending": null,
+ "last_settled": "2026-09-26",
+ "fees_paid": 333172.0
 }
