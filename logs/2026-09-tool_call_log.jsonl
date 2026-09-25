@@ -680,3 +680,5 @@
 {"ts": "2026-09-25T08:18:07+09:00", "tool": "get_history(U4증거)", "args": "wti,7d", "sig": "92a1183cd5", "ok": true, "result_chars": 165, "cache": "신규", "mismatch": false, "result_hash": "abeab9e5d8a3", "err_class": null}
 {"ts": "2026-09-25T17:01:58+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 2052, "cache": "신규(값변경)", "mismatch": false, "result_hash": "6ff71c3b6c3a", "err_class": null}
 {"ts": "2026-09-25T17:02:01+09:00", "tool": "get_history(U4증거)", "args": "samsung,7d", "sig": "b9116cf053", "ok": true, "result_chars": 230, "cache": "신규", "mismatch": false, "result_hash": "bbd73671e383", "err_class": null}
+{"ts": "2026-09-25T23:00:18+09:00", "tool": "search_news(자동강제)", "args": "천연가스 (LNG 대리)", "sig": "76791ed673", "ok": true, "result_chars": 2182, "cache": "신규(값변경)", "mismatch": false, "result_hash": "2b8ac07c47ec", "err_class": null}
+{"ts": "2026-09-25T23:00:24+09:00", "tool": "get_history(U4증거)", "args": "natgas,7d", "sig": "63dc89de67", "ok": true, "result_chars": 159, "cache": "신규", "mismatch": false, "result_hash": "f285c46fa9c3", "err_class": null}
