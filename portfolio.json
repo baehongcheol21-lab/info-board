@@ -14,7 +14,22 @@
   "ceg": 378881.6132,
   "lselectric": 205500.0
  },
- "pending": null,
+ "pending": {
+  "date": "2026-09-26",
+  "meeting_id": "20260926T2215",
+  "weights": {
+   "kepco": 0.1,
+   "lselectric": 0.15,
+   "hynix": 0.08,
+   "nvda": 0.24,
+   "ceg": 0.34,
+   "xle": 0.0
+  },
+  "forecast": {
+   "by": "알파"
+  },
+  "note": "데이터센터 전력 공급망의 핵심인 LS ELECTRIC과 Constellation Energy의 중장기 성장성은 유효합니다. LS ELECTRIC의 변동성을 활용하여 수량을 유지하고, Constellation Energy는 데이터센터 PPA(전력구매계약)의 구조적 이익을 고려해 비중을 유지합니다. SK하이닉스는 삼성전자와의 동조화 효과를 반영해 비중을 소폭 유지하며, 신규 종목인 한국전력은 요금 현실화 기대감을 반영해 10% 신규 진입합니다. 거래 비용 대비 기대 수익이 낮으므로 보유 종목의 급격한 비중 축소는 진행하지 않습니다.\n\n"
+ },
  "last_settled": "2026-09-26",
  "fees_paid": 333172.0
 }
