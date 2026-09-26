@@ -1,24 +1,30 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0001,
-   "n": 1,
+   "weight": 0.0053,
+   "n": 8,
    "score": {
-    "hit_rate": 0.0,
-    "mean_p": 0.55,
-    "brier": 0.3025,
-    "rel": 0.3025,
-    "res": 0.0,
-    "unc": 0.0,
-    "skill": null,
-    "overconf": 0.55,
-    "bias": 3.75,
-    "mae": 3.75,
-    "coverage": 0.0,
-    "sharpness": 0.1
+    "hit_rate": 0.5,
+    "mean_p": 0.5875,
+    "brier": 0.24563,
+    "rel": 0.07896,
+    "res": 0.08333,
+    "unc": 0.25,
+    "skill": 0.0175,
+    "overconf": 0.0875,
+    "bias": -0.3875,
+    "mae": 2.575,
+    "coverage": 0.125,
+    "sharpness": 0.175
    },
-   "diagnosis": [],
-   "verdict": "표본 부족(n=1 < 8) — 판정 보류",
+   "diagnosis": [
+    {
+     "code": "band_too_narrow",
+     "value": 0.125,
+     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    }
+   ],
+   "verdict": "판정 가능",
    "horizons": {
     "단기": {
      "weight": 0.0022,
@@ -77,24 +83,40 @@
    }
   },
   "U4": {
-   "weight": 0.0005,
-   "n": 1,
+   "weight": 0.0003,
+   "n": 8,
    "score": {
-    "hit_rate": 0.0,
-    "mean_p": 0.55,
-    "brier": 0.3025,
-    "rel": 0.3025,
-    "res": 0.0,
-    "unc": 0.0,
-    "skill": null,
-    "overconf": 0.55,
-    "bias": 4.0,
-    "mae": 4.0,
+    "hit_rate": 0.75,
+    "mean_p": 0.5563,
+    "brier": 0.22219,
+    "rel": 0.04362,
+    "res": 0.00893,
+    "unc": 0.1875,
+    "skill": -0.185,
+    "overconf": -0.1937,
+    "bias": -0.0,
+    "mae": 2.25,
     "coverage": 0.0,
-    "sharpness": 0.1
+    "sharpness": 0.1125
    },
-   "diagnosis": [],
-   "verdict": "표본 부족(n=1 < 8) — 판정 보류",
+   "diagnosis": [
+    {
+     "code": "no_skill",
+     "value": -0.185,
+     "why": "기저확률로 찍는 것보다 못하다"
+    },
+    {
+     "code": "miscalibrated",
+     "value": 0.04362,
+     "why": "확률을 모자라게 부른다(공언 0.56 vs 실제 0.75)"
+    },
+    {
+     "code": "band_too_narrow",
+     "value": 0.0,
+     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    }
+   ],
+   "verdict": "판정 가능",
    "horizons": {
     "단기": {
      "weight": 0.0004,
@@ -153,5 +175,5 @@
    }
   }
  },
- "updated": "2026-09-26"
+ "updated": "2026-09-27"
 }
