@@ -1,27 +1,47 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0053,
-   "n": 8,
+   "weight": 0.0037,
+   "n": 9,
    "score": {
-    "hit_rate": 0.5,
-    "mean_p": 0.5875,
-    "brier": 0.24563,
-    "rel": 0.07896,
-    "res": 0.08333,
-    "unc": 0.25,
-    "skill": 0.0175,
-    "overconf": 0.0875,
-    "bias": -0.3875,
-    "mae": 2.575,
-    "coverage": 0.125,
-    "sharpness": 0.175
+    "hit_rate": 0.8889,
+    "mean_p": 0.5889,
+    "brier": 0.19167,
+    "rel": 0.09643,
+    "res": 0.00353,
+    "unc": 0.09877,
+    "skill": -0.9406,
+    "overconf": -0.3,
+    "bias": 0.4811,
+    "mae": 1.9011,
+    "coverage": 0.2222,
+    "sharpness": 0.1778
    },
    "diagnosis": [
     {
+     "code": "no_skill",
+     "value": -0.9406,
+     "why": "기저확률로 찍는 것보다 못하다"
+    },
+    {
+     "code": "miscalibrated",
+     "value": 0.09643,
+     "why": "확률을 모자라게 부른다(공언 0.59 vs 실제 0.89)"
+    },
+    {
+     "code": "no_resolution",
+     "value": 0.00353,
+     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
+    },
+    {
      "code": "band_too_narrow",
-     "value": 0.125,
+     "value": 0.2222,
      "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    },
+    {
+     "code": "biased",
+     "value": 0.4811,
+     "why": "등락폭을 평균 0.48%p 작게 잡는다"
     }
    ],
    "verdict": "판정 가능",
@@ -83,37 +103,47 @@
    }
   },
   "U4": {
-   "weight": 0.0003,
+   "weight": 0.0002,
    "n": 8,
    "score": {
     "hit_rate": 0.75,
-    "mean_p": 0.5563,
-    "brier": 0.22219,
-    "rel": 0.04362,
-    "res": 0.00893,
+    "mean_p": 0.55,
+    "brier": 0.2275,
+    "rel": 0.04,
+    "res": 0.0,
     "unc": 0.1875,
-    "skill": -0.185,
-    "overconf": -0.1937,
-    "bias": -0.0,
-    "mae": 2.25,
+    "skill": -0.2133,
+    "overconf": -0.2,
+    "bias": 0.685,
+    "mae": 2.22,
     "coverage": 0.0,
-    "sharpness": 0.1125
+    "sharpness": 0.1
    },
    "diagnosis": [
     {
      "code": "no_skill",
-     "value": -0.185,
+     "value": -0.2133,
      "why": "기저확률로 찍는 것보다 못하다"
     },
     {
      "code": "miscalibrated",
-     "value": 0.04362,
-     "why": "확률을 모자라게 부른다(공언 0.56 vs 실제 0.75)"
+     "value": 0.04,
+     "why": "확률을 모자라게 부른다(공언 0.55 vs 실제 0.75)"
+    },
+    {
+     "code": "no_resolution",
+     "value": 0.0,
+     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
     },
     {
      "code": "band_too_narrow",
      "value": 0.0,
      "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    },
+    {
+     "code": "biased",
+     "value": 0.685,
+     "why": "등락폭을 평균 0.69%p 작게 잡는다"
     }
    ],
    "verdict": "판정 가능",
@@ -175,5 +205,5 @@
    }
   }
  },
- "updated": "2026-09-27"
+ "updated": "2026-09-28"
 }

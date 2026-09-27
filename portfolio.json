@@ -1,26 +1,26 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 5031404.0,
+ "cash": 4674090.0,
  "holdings": {
   "hynix": 2,
   "nvda": 38,
-  "ceg": 46,
+  "ceg": 47,
   "lselectric": 35,
   "kepco": 161
  },
  "cost_basis": {
   "hynix": 1787856.6965,
   "nvda": 309242.788,
-  "ceg": 378881.6132,
+  "ceg": 378409.8162,
   "lselectric": 205500.0,
   "kepco": 30250.0
  },
  "pending": {
-  "date": "2026-09-27",
-  "meeting_id": "20260927T2308",
+  "date": "2026-09-28",
+  "meeting_id": "20260928T0811",
   "weights": {
-   "kepco": 0.1,
+   "kepco": 0.05,
    "lselectric": 0.15,
    "hynix": 0.08,
    "nvda": 0.24,
@@ -30,8 +30,8 @@
   "forecast": {
    "by": "알파"
   },
-  "note": "지휘자 알파입니다. 포트폴리오를 재구성합니다.\n\nConstellation Energy의 비중을 35%로 상향하여 데이터센터 전력 수요 대응력을 강화합니다. 나머지 종목은 기존 비중을 유지하며 거래비용 발생을 억제합니다. 잦은 매매로 인한 수수료 누적보다 보유 전략을 통한 추세 대응이 유리하다고 판단했습니다.\n\n[비중] kepco=10 lselectric=15 hynix=8 nvda=24 ceg=35 xle=0 현금=8\n[평가예측] 내일=48,960,000 확률=0.6 구간=-0.2%~+0.8%"
+  "note": "Constellation Energy의 PPA 계약 가치가 주가에 완전히 반영되지 않았다고 판단하여 비중을 35%로 상향합니다. 한국전력은 정부 정책 리스크가 상존하여 보유 비중을 5%로 축소하고, 그 차액을 Constellation Energy에 투입하여 수익률을 극대화하겠습니다. 거래 비용 발생에도 불구하고 Constellation Energy의 중장기 상승 모멘텀이 더 크다는 판단입니다.\n\n[비중] kepco=5 lselectric=15 hynix=8 nvda=24 ceg=35 xle=0 현금=13\n[평가예측] 내일=49,05"
  },
- "last_settled": "2026-09-27",
- "fees_paid": 334509.0
+ "last_settled": "2026-09-28",
+ "fees_paid": 335115.0
 }
