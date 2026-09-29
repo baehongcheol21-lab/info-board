@@ -757,3 +757,6 @@
 {"ts": "2026-09-29T09:35:01+09:00", "tool": "search_news(자동강제)", "args": "금 선물 재조사", "sig": "8702acf7c5", "ok": true, "result_chars": 289, "cache": "신규", "mismatch": false, "result_hash": "ec91c1093923", "err_class": null}
 {"ts": "2026-09-29T09:35:20+09:00", "tool": "search_news(자동강제)", "args": "코스피", "sig": "5c4a1d7dc8", "ok": true, "result_chars": 2005, "cache": "신규", "mismatch": false, "result_hash": "4bb22ad297e8", "err_class": null}
 {"ts": "2026-09-29T09:35:24+09:00", "tool": "get_history(U4증거)", "args": "kospi,7d", "sig": "d82858bf4f", "ok": true, "result_chars": 177, "cache": "신규", "mismatch": false, "result_hash": "a7115a0d1d32", "err_class": null}
+{"ts": "2026-09-29T17:49:58+09:00", "tool": "search_news(자동강제)", "args": "천연가스 (LNG 대리)", "sig": "76791ed673", "ok": true, "result_chars": 2287, "cache": "신규", "mismatch": false, "result_hash": "5e04e471b39a", "err_class": null}
+{"ts": "2026-09-29T17:50:07+09:00", "tool": "get_history(U4증거)", "args": "natgas,7d", "sig": "63dc89de67", "ok": true, "result_chars": 156, "cache": "신규", "mismatch": false, "result_hash": "bb4157ff18c3", "err_class": null}
+{"ts": "2026-09-29T17:50:34+09:00", "tool": "search_news(자동강제)", "args": "금 선물", "sig": "3964ec3372", "ok": true, "result_chars": 2135, "cache": "신규(값변경)", "mismatch": false, "result_hash": "13759a46fede", "err_class": null}
