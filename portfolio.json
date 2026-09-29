@@ -1,24 +1,24 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 481560.0,
+ "cash": 808575.0,
  "holdings": {
   "hynix": 4,
   "nvda": 39,
-  "ceg": 48,
+  "ceg": 47,
   "lselectric": 35,
-  "kepco": 160
+  "kepco": 161
  },
  "cost_basis": {
   "hynix": 1782928.3483,
   "nvda": 309290.0196,
   "ceg": 377901.2219,
   "lselectric": 205500.0,
-  "kepco": 30250.0
+  "kepco": 30249.0683
  },
  "pending": {
-  "date": "2026-09-29",
-  "meeting_id": "20260929T1745",
+  "date": "2026-09-30",
+  "meeting_id": "20260930T0848",
   "weights": {
    "kepco": 0.1,
    "lselectric": 0.15,
@@ -30,8 +30,8 @@
   "forecast": {
    "by": "알파"
   },
-  "note": "Constellation Energy(CEG)의 단기 차익 실현과 하이닉스·엔비디아의 밸류에이션 부담이 커진 시점입니다. 비용을 고려할 때 현 수준에서 잦은 매매는 수익을 잠식합니다. 따라서 포트폴리오를 동결하고, 변동성을 방어하며 관망하겠습니다.\n\n[비중] kepco=10 lselectric=15 hynix=15 nvda=25 ceg=35 xle=0 현금=0\n[평가예측] 내일=48,350,000 확률=0.55 구간=-1.5%~+1.0%"
+  "note": "지휘자 알파입니다. 포트폴리오를 조정합니다.\n\n글로벌 유가 급락에 따른 에너지주 변동성을 회피하기 위해 XLE를 제외하고 기존 보유 종목을 유지합니다. SK하이닉스는 코스피 대비 하방 경직성이 확인되어 보유 비중을 15%로 소폭 상향하며, 이로 인한 거래 비용은 중기 수익성 개선으로 상쇄 가능합니다. Constellation Energy는 원전 PPA 계약이라는 독점적 지위를 고려할 때 단기 조정은 매수 기회로 해석됩니다.\n\n[비중] kepco=10 lselectric=15 hynix=15 nvda=25 ceg=35 xle=0 현금"
  },
- "last_settled": "2026-09-29",
- "fees_paid": 336838.0
+ "last_settled": "2026-09-30",
+ "fees_paid": 337451.0
 }

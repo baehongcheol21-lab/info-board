@@ -1,40 +1,24 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0026,
-   "n": 8,
+   "weight": 0.0018,
+   "n": 3,
    "score": {
-    "hit_rate": 0.5,
-    "mean_p": 0.5737,
-    "brier": 0.27209,
-    "rel": 0.09775,
-    "res": 0.08333,
-    "unc": 0.25,
-    "skill": -0.0883,
-    "overconf": 0.0737,
-    "bias": -0.8738,
-    "mae": 1.6812,
-    "coverage": 0.625,
-    "sharpness": 0.1475
+    "hit_rate": 0.3333,
+    "mean_p": 0.55,
+    "brier": 0.26917,
+    "rel": 0.04694,
+    "res": 0.0,
+    "unc": 0.22222,
+    "skill": -0.2113,
+    "overconf": 0.2167,
+    "bias": -1.7433,
+    "mae": 2.09,
+    "coverage": 0.3333,
+    "sharpness": 0.1
    },
-   "diagnosis": [
-    {
-     "code": "no_skill",
-     "value": -0.0883,
-     "why": "기저확률로 찍는 것보다 못하다"
-    },
-    {
-     "code": "miscalibrated",
-     "value": 0.09775,
-     "why": "확률을 과하게 부른다(공언 0.57 vs 실제 0.50)"
-    },
-    {
-     "code": "biased",
-     "value": -0.8738,
-     "why": "등락폭을 평균 0.87%p 크게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=3 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.001,
@@ -131,34 +115,23 @@
   },
   "U4": {
    "weight": 0.0001,
-   "n": 8,
+   "n": 3,
    "score": {
-    "hit_rate": 0.5,
-    "mean_p": 0.565,
-    "brier": 0.26195,
-    "rel": 0.00422,
+    "hit_rate": 0.3333,
+    "mean_p": 0.55,
+    "brier": 0.26917,
+    "rel": 0.04694,
     "res": 0.0,
-    "unc": 0.25,
-    "skill": -0.0478,
-    "overconf": 0.065,
-    "bias": -0.7925,
-    "mae": 1.845,
-    "coverage": 0.5,
-    "sharpness": 0.13
+    "unc": 0.22222,
+    "skill": -0.2113,
+    "overconf": 0.2167,
+    "bias": -1.3267,
+    "mae": 1.64,
+    "coverage": 0.3333,
+    "sharpness": 0.1
    },
-   "diagnosis": [
-    {
-     "code": "no_resolution",
-     "value": 0.0,
-     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
-    },
-    {
-     "code": "biased",
-     "value": -0.7925,
-     "why": "등락폭을 평균 0.79%p 크게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=3 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0035,
@@ -249,5 +222,5 @@
    }
   }
  },
- "updated": "2026-09-29"
+ "updated": "2026-09-30"
 }
