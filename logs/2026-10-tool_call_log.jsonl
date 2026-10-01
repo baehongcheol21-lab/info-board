@@ -1,0 +1,6 @@
+{"ts": "2026-10-01T18:10:20+09:00", "tool": "search_news(자동강제)", "args": "SK하이닉스", "sig": "afd4f165d9", "ok": true, "result_chars": 1941, "cache": "신규", "mismatch": false, "result_hash": "690e10c304bf", "err_class": null}
+{"ts": "2026-10-01T18:10:25+09:00", "tool": "get_history(U4증거)", "args": "hynix,7d", "sig": "78761c736c", "ok": true, "result_chars": 230, "cache": "신규", "mismatch": false, "result_hash": "1169076cee3a", "err_class": null}
+{"ts": "2026-10-01T18:10:42+09:00", "tool": "search_news(자동강제)", "args": "WTI 유가", "sig": "a69b883f22", "ok": true, "result_chars": 2002, "cache": "신규", "mismatch": false, "result_hash": "c9e11f80c016", "err_class": null}
+{"ts": "2026-10-01T18:10:47+09:00", "tool": "get_history(U4증거)", "args": "wti,7d", "sig": "92a1183cd5", "ok": true, "result_chars": 165, "cache": "신규", "mismatch": false, "result_hash": "bb6f9b5c4466", "err_class": null}
+{"ts": "2026-10-01T18:10:57+09:00", "tool": "search_news(자동강제)", "args": "WTI 유가 재조사", "sig": "aac47894f5", "ok": true, "result_chars": 266, "cache": "신규", "mismatch": false, "result_hash": "356b0e946454", "err_class": null}
+{"ts": "2026-10-01T18:11:14+09:00", "tool": "search_news(자동강제)", "args": "천연가스 (LNG 대리)", "sig": "76791ed673", "ok": true, "result_chars": 1970, "cache": "신규", "mismatch": false, "result_hash": "76b4b5aa90cb", "err_class": null}
