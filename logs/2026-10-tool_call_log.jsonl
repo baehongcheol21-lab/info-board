@@ -16,3 +16,6 @@
 {"ts": "2026-10-02T09:01:54+09:00", "tool": "search_news(자동강제)", "args": "천연가스 (LNG 대리)", "sig": "76791ed673", "ok": true, "result_chars": 2363, "cache": "신규", "mismatch": false, "result_hash": "f36f0bc06426", "err_class": null}
 {"ts": "2026-10-02T09:01:59+09:00", "tool": "get_history(U4증거)", "args": "natgas,7d", "sig": "63dc89de67", "ok": true, "result_chars": 155, "cache": "신규", "mismatch": false, "result_hash": "b6d668f906b8", "err_class": null}
 {"ts": "2026-10-02T09:02:08+09:00", "tool": "search_news(자동강제)", "args": "천연가스 (LNG 대리) 재조사", "sig": "95d8158ee7", "ok": true, "result_chars": 2, "cache": "신규", "mismatch": false, "result_hash": "d75171398898", "err_class": null}
+{"ts": "2026-10-02T17:50:58+09:00", "tool": "search_news(자동강제)", "args": "WTI 유가", "sig": "a69b883f22", "ok": true, "result_chars": 2116, "cache": "신규(값변경)", "mismatch": false, "result_hash": "88ed11d8c790", "err_class": null}
+{"ts": "2026-10-02T17:51:03+09:00", "tool": "get_history(U4증거)", "args": "wti,7d", "sig": "92a1183cd5", "ok": true, "result_chars": 165, "cache": "신규(값변경)", "mismatch": false, "result_hash": "791eefae2d15", "err_class": null}
+{"ts": "2026-10-02T17:51:11+09:00", "tool": "search_news(자동강제)", "args": "WTI 유가 재조사", "sig": "aac47894f5", "ok": true, "result_chars": 2, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "d75171398898", "err_class": null}
