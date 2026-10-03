@@ -135,3 +135,5 @@
 {"date": "2026-10-03", "id": "hynix", "name": "SK하이닉스", "side": "sell", "shares": 1, "price_krw": 1841000.0, "fee": 3590.0}
 {"date": "2026-10-03", "id": "nvda", "name": "NVIDIA", "side": "sell", "shares": 1, "price_krw": 314080.21, "fee": 534.0}
 {"date": "2026-10-03", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 1, "price_krw": 345682.9, "fee": 588.0}
+{"date": "2026-10-04", "id": "hynix", "name": "SK하이닉스", "side": "sell", "shares": 1, "price_krw": 1841000.0, "fee": 3590.0}
+{"date": "2026-10-04", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 1, "price_krw": 345682.9, "fee": 588.0}

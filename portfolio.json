@@ -1,11 +1,11 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 8046697.0,
+ "cash": 10229202.0,
  "holdings": {
-  "hynix": 3,
+  "hynix": 2,
   "nvda": 37,
-  "ceg": 40,
+  "ceg": 39,
   "lselectric": 23,
   "kepco": 162
  },
@@ -16,26 +16,7 @@
   "lselectric": 205500.0,
   "kepco": 30248.4568
  },
- "pending": {
-  "date": "2026-10-03",
-  "meeting_id": "20261003T2233",
-  "weights": {
-   "kepco": 0.1,
-   "lselectric": 0.1,
-   "hynix": 0.11,
-   "nvda": 0.24,
-   "ceg": 0.28,
-   "xle": 0.0
-  },
-  "forecast": {
-   "equity": 49010000.0,
-   "p": 0.65,
-   "lo": 48800000.0,
-   "hi": 49300000.0,
-   "by": "알파"
-  },
-  "note": "보유 종목 비중을 유지합니다. 현재 시장은 반도체 지수의 반등과 원전 관련 데이터센터 전력 수요가 충돌하는 형국입니다. 무리한 교체 매매는 거래비용으로 계좌 수익률을 잠식할 뿐 실질적인 비대칭적 이득을 창출하지 못합니다. Constellation Energy의 낙폭은 과도하며, 향후 원전 PPA 계약 가시화에 따른 상승 탄력이 비중 조정 비용을 상쇄할 것으로 판단합니다.\n\n[비중] kepco=10 lselectric=10 hynix=11 nvda=24 ceg=28 xle=0 현금=17\n[평가예측] 내일=49,010,000 확률=0."
- },
- "last_settled": "2026-10-03",
- "fees_paid": 359309.0
+ "pending": null,
+ "last_settled": "2026-10-04",
+ "fees_paid": 363487.0
 }
