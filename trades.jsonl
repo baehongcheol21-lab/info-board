@@ -137,3 +137,4 @@
 {"date": "2026-10-03", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 1, "price_krw": 345682.9, "fee": 588.0}
 {"date": "2026-10-04", "id": "hynix", "name": "SK하이닉스", "side": "sell", "shares": 1, "price_krw": 1841000.0, "fee": 3590.0}
 {"date": "2026-10-04", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 1, "price_krw": 345682.9, "fee": 588.0}
+{"date": "2026-10-05", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 7, "price_krw": 345780.75, "fee": 4115.0}
