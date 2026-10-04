@@ -16,7 +16,22 @@
   "lselectric": 205500.0,
   "kepco": 30248.4568
  },
- "pending": null,
+ "pending": {
+  "date": "2026-10-04",
+  "meeting_id": "20261004T1736",
+  "weights": {
+   "kepco": 0.1,
+   "lselectric": 0.1,
+   "hynix": 0.08,
+   "nvda": 0.24,
+   "ceg": 0.33,
+   "xle": 0.0
+  },
+  "forecast": {
+   "by": "알파"
+  },
+  "note": "Constellation Energy의 최근 하락은 데이터센터 관련 전력망 가치 재평가 과정의 일시적 조정으로 판단됩니다. 해당 종목의 장기 성장성과 PPA 계약의 견고함을 신뢰하여 비중을 5%p 확대합니다. 거래 수수료 비용을 고려하더라도 중장기 기대 수익이 훨씬 크다고 판단했습니다.\n\nSK하이닉스와 NVIDIA는 단기적 차익 실현 압력이 존재하나, AI 사이클의 본질적 수요는 유지되고 있습니다. 변동성을 감내하고 기존 포지션을 유지하며 시장의 흐름을 관망하겠습니다.\n\n[비중] kepco=10 lselectric=10 hynix="
+ },
  "last_settled": "2026-10-04",
  "fees_paid": 363487.0
 }
