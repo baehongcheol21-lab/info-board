@@ -50,3 +50,6 @@
 {"ts": "2026-10-05T08:30:21+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 1848, "cache": "신규", "mismatch": false, "result_hash": "d5c4569fee9d", "err_class": null}
 {"ts": "2026-10-05T08:30:43+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 180, "cache": "신규", "mismatch": false, "result_hash": "ea36c0980b9e", "err_class": null}
 {"ts": "2026-10-05T08:30:48+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX 재조사", "sig": "f6962904f1", "ok": true, "result_chars": 638, "cache": "신규", "mismatch": false, "result_hash": "5d80365574e1", "err_class": null}
+{"ts": "2026-10-05T18:19:22+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 1941, "cache": "신규(값변경)", "mismatch": false, "result_hash": "33a461e5db65", "err_class": null}
+{"ts": "2026-10-05T18:19:27+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 180, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "ea36c0980b9e", "err_class": null}
+{"ts": "2026-10-05T18:19:34+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX 재조사", "sig": "f6962904f1", "ok": true, "result_chars": 925, "cache": "신규(값변경)", "mismatch": false, "result_hash": "bcbe45873db1", "err_class": null}
