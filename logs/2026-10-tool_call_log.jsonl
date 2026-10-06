@@ -58,3 +58,5 @@
 {"ts": "2026-10-06T10:23:12+09:00", "tool": "search_news(자동강제)", "args": "구리 선물", "sig": "f995cad24c", "ok": true, "result_chars": 2403, "cache": "신규", "mismatch": false, "result_hash": "80d3cc55830a", "err_class": null}
 {"ts": "2026-10-06T10:23:20+09:00", "tool": "get_history(U4증거)", "args": "copper,7d", "sig": "0d8e32c048", "ok": true, "result_chars": 149, "cache": "신규", "mismatch": false, "result_hash": "45f7998a33c2", "err_class": null}
 {"ts": "2026-10-06T10:23:37+09:00", "tool": "search_news(자동강제)", "args": "구리 선물 재조사", "sig": "ab4f455689", "ok": true, "result_chars": 2, "cache": "신규", "mismatch": false, "result_hash": "d75171398898", "err_class": null}
+{"ts": "2026-10-06T18:10:56+09:00", "tool": "search_news(자동강제)", "args": "SK하이닉스", "sig": "afd4f165d9", "ok": true, "result_chars": 2249, "cache": "신규", "mismatch": false, "result_hash": "fa0ede6a4747", "err_class": null}
+{"ts": "2026-10-06T18:11:01+09:00", "tool": "get_history(U4증거)", "args": "hynix,7d", "sig": "78761c736c", "ok": true, "result_chars": 230, "cache": "신규", "mismatch": false, "result_hash": "eb7ba1613a6b", "err_class": null}
