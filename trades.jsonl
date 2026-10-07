@@ -140,3 +140,7 @@
 {"date": "2026-10-05", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 7, "price_krw": 345780.75, "fee": 4115.0}
 {"date": "2026-10-06", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 1, "price_krw": 359713.39, "fee": 612.0}
 {"date": "2026-10-06", "id": "kepco", "name": "한국전력", "side": "buy", "shares": 2, "price_krw": 30200.0, "fee": 9.0}
+{"date": "2026-10-07", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 7, "price_krw": 402307.7, "fee": 4787.0}
+{"date": "2026-10-07", "id": "hynix", "name": "SK하이닉스", "side": "buy", "shares": 2, "price_krw": 1773000.0, "fee": 532.0}
+{"date": "2026-10-07", "id": "nvda", "name": "NVIDIA", "side": "buy", "shares": 3, "price_krw": 320399.78, "fee": 1634.0}
+{"date": "2026-10-07", "id": "kepco", "name": "한국전력", "side": "buy", "shares": 6, "price_krw": 30300.0, "fee": 27.0}
