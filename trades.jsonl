@@ -160,3 +160,7 @@
 {"date": "2026-10-11", "id": "lselectric", "name": "LS ELECTRIC", "side": "sell", "shares": 25, "price_krw": 195500.0, "fee": 9531.0}
 {"date": "2026-10-11", "id": "xle", "name": "Energy Select SPDR (XLE)", "side": "buy", "shares": 57, "price_krw": 87265.77, "fee": 8456.0}
 {"date": "2026-10-12", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 6, "price_krw": 399914.56, "fee": 4079.0}
+{"date": "2026-10-13", "id": "kepco", "name": "한국전력", "side": "sell", "shares": 85, "price_krw": 28100.0, "fee": 4658.0}
+{"date": "2026-10-13", "id": "xle", "name": "Energy Select SPDR (XLE)", "side": "sell", "shares": 2, "price_krw": 88333.26, "fee": 300.0}
+{"date": "2026-10-13", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 1, "price_krw": 393277.72, "fee": 669.0}
+{"date": "2026-10-13", "id": "lselectric", "name": "LS ELECTRIC", "side": "buy", "shares": 56, "price_krw": 174500.0, "fee": 1466.0}
