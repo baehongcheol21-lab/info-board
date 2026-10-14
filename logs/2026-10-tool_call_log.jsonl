@@ -217,3 +217,5 @@
 {"ts": "2026-10-14T08:54:02+09:00", "tool": "search_news(자동강제)", "args": "한국전력", "sig": "7a8d3fe4fa", "ok": true, "result_chars": 2055, "cache": "신규", "mismatch": false, "result_hash": "ce1643e3b797", "err_class": null}
 {"ts": "2026-10-14T08:54:07+09:00", "tool": "get_history(U4증거)", "args": "kepco,7d", "sig": "524b413233", "ok": true, "result_chars": 212, "cache": "신규", "mismatch": false, "result_hash": "7b3d9e6144ae", "err_class": null}
 {"ts": "2026-10-14T08:54:16+09:00", "tool": "search_news(자동강제)", "args": "한국전력 재조사", "sig": "1d2db88492", "ok": true, "result_chars": 2041, "cache": "신규", "mismatch": false, "result_hash": "e91c316585cc", "err_class": null}
+{"ts": "2026-10-14T22:59:24+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 1946, "cache": "신규", "mismatch": false, "result_hash": "e7fedc9414a0", "err_class": null}
+{"ts": "2026-10-14T22:59:29+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 181, "cache": "신규", "mismatch": false, "result_hash": "14fd6b086fcb", "err_class": null}
