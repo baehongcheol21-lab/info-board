@@ -1,20 +1,20 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0141,
+   "weight": 0.0099,
    "n": 6,
    "score": {
     "hit_rate": 0.5,
     "mean_p": 0.5833,
-    "brier": 0.24083,
-    "rel": 0.11583,
-    "res": 0.125,
+    "brier": 0.2575,
+    "rel": 0.0075,
+    "res": 0.0,
     "unc": 0.25,
-    "skill": 0.0367,
+    "skill": -0.03,
     "overconf": 0.0833,
-    "bias": -3.7,
-    "mae": 4.99,
-    "coverage": 0.3333,
+    "bias": -1.505,
+    "mae": 2.0883,
+    "coverage": 0.5,
     "sharpness": 0.1667
    },
    "diagnosis": [],
@@ -77,21 +77,21 @@
    }
   },
   "U4": {
-   "weight": 0.0032,
+   "weight": 0.0157,
    "n": 6,
    "score": {
-    "hit_rate": 0.8333,
-    "mean_p": 0.575,
-    "brier": 0.21458,
-    "rel": 0.10347,
-    "res": 0.02778,
-    "unc": 0.13889,
-    "skill": -0.545,
-    "overconf": -0.2583,
-    "bias": -3.525,
-    "mae": 4.6883,
-    "coverage": 0.3333,
-    "sharpness": 0.15
+    "hit_rate": 0.5,
+    "mean_p": 0.6083,
+    "brier": 0.23875,
+    "rel": 0.05075,
+    "res": 0.05,
+    "unc": 0.25,
+    "skill": 0.045,
+    "overconf": 0.1083,
+    "bias": -0.8967,
+    "mae": 1.9467,
+    "coverage": 0.6667,
+    "sharpness": 0.2167
    },
    "diagnosis": [],
    "verdict": "표본 부족(n=6 < 8) — 판정 보류",
@@ -153,5 +153,5 @@
    }
   }
  },
- "updated": "2026-10-14"
+ "updated": "2026-10-15"
 }
