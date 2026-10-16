@@ -1,39 +1,22 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 7317468.0,
+ "cash": 1296587.0,
  "holdings": {
   "nvda": 32,
   "ceg": 25,
-  "xle": 104,
-  "lselectric": 74
+  "xle": 102,
+  "lselectric": 73,
+  "hynix": 5
  },
  "cost_basis": {
   "nvda": 305419.8822,
   "ceg": 374022.1464,
   "xle": 87445.6513,
-  "lselectric": 175356.0976
+  "lselectric": 175356.0976,
+  "hynix": 1272000.0
  },
- "pending": {
-  "date": "2026-10-16",
-  "meeting_id": "20261016T0808",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.25,
-   "hynix": 0.15,
-   "nvda": 0.2,
-   "ceg": 0.2,
-   "xle": 0.2
-  },
-  "forecast": {
-   "equity": 47123000.0,
-   "p": 0.55,
-   "lo": 46200000.0,
-   "hi": 47800000.0,
-   "by": "알파"
-  },
-  "note": "국내 증시 급락은 투심 이탈에 따른 오버슈팅으로 판단합니다. LS ELECTRIC의 수주 잔고가 건재하므로 하락분을 회복할 것으로 보고 비중을 유지합니다. SK하이닉스는 시장 불안 해소 시 반등 폭이 가장 클 것으로 보여 신규 진입합니다. 수수료와 세금 비용을 감안하여 기존 보유 종목은 매도 없이 현금 비중만 조정하여 매수 대금을 마련합니다.\n\n[비중] kepco=0 lselectric=25 hynix=15 nvda=20 ceg=20 xle=20 현금=0\n[평가예측] 내일=47,123,000 확률=0.55 구간=46,200,000~"
- },
- "last_settled": "2026-10-16",
- "fees_paid": 469886.0
+ "pending": null,
+ "last_settled": "2026-10-17",
+ "fees_paid": 471459.0
 }
