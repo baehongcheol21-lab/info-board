@@ -16,7 +16,22 @@
   "lselectric": 175356.0976,
   "hynix": 1272000.0
  },
- "pending": null,
+ "pending": {
+  "date": "2026-10-17",
+  "meeting_id": "20261017T1604",
+  "weights": {
+   "kepco": 0.0,
+   "lselectric": 0.25,
+   "hynix": 0.15,
+   "nvda": 0.2,
+   "ceg": 0.2,
+   "xle": 0.05
+  },
+  "forecast": {
+   "by": "알파"
+  },
+  "note": "LS ELECTRIC은 글로벌 전력망 증설이라는 구조적 성장기에 있습니다. 단기 조정 위험보다 중장기 실적 개선에 무게를 두어 비중을 유지합니다. \n\n현금 비중을 15%로 높여 SOX 지수 하락에 따른 변동성에 대비합니다. 거래 비용 발생을 피하고자 기존 종목의 매도와 매수는 동결합니다. \n\n[비중] kepco=0 lselectric=25 hynix=15 nvda=20 ceg=20 xle=5 현금=15\n[평가예측] 내일=46,850,000 확률=0.60 구간=-0.5~+1.5"
+ },
  "last_settled": "2026-10-17",
  "fees_paid": 471459.0
 }
