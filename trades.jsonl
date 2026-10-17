@@ -177,3 +177,7 @@
 {"date": "2026-10-17", "id": "xle", "name": "Energy Select SPDR (XLE)", "side": "sell", "shares": 2, "price_krw": 91045.81, "fee": 310.0}
 {"date": "2026-10-17", "id": "lselectric", "name": "LS ELECTRIC", "side": "sell", "shares": 1, "price_krw": 158600.0, "fee": 309.0}
 {"date": "2026-10-17", "id": "hynix", "name": "SK하이닉스", "side": "buy", "shares": 5, "price_krw": 1272000.0, "fee": 954.0}
+{"date": "2026-10-18", "id": "nvda", "name": "NVIDIA", "side": "sell", "shares": 8, "price_krw": 284707.25, "fee": 3872.0}
+{"date": "2026-10-18", "id": "hynix", "name": "SK하이닉스", "side": "sell", "shares": 2, "price_krw": 1272000.0, "fee": 4961.0}
+{"date": "2026-10-18", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 7, "price_krw": 360813.55, "fee": 4294.0}
+{"date": "2026-10-18", "id": "lselectric", "name": "LS ELECTRIC", "side": "buy", "shares": 15, "price_krw": 158600.0, "fee": 357.0}
