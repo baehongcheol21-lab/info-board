@@ -1,37 +1,22 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 6103088.0,
+ "cash": 6145402.0,
  "holdings": {
   "nvda": 24,
-  "ceg": 32,
-  "xle": 76,
-  "lselectric": 88,
+  "ceg": 39,
+  "xle": 26,
+  "lselectric": 100,
   "hynix": 1
  },
  "cost_basis": {
   "nvda": 305419.8822,
-  "ceg": 371132.7664,
+  "ceg": 368187.2909,
   "xle": 87445.6513,
-  "lselectric": 172499.9446,
+  "lselectric": 171551.9512,
   "hynix": 1272000.0
  },
- "pending": {
-  "date": "2026-10-19",
-  "meeting_id": "20261019T1657",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.35,
-   "hynix": 0.05,
-   "nvda": 0.15,
-   "ceg": 0.3,
-   "xle": 0.05
-  },
-  "forecast": {
-   "by": "알파"
-  },
-  "note": "반도체지수 급락으로 엔비디아와 하이닉스의 단기 하방 압력이 큽니다. 반면 데이터센터 전력 수요는 구조적이며, LS ELECTRIC과 Constellation Energy는 조정 시 매수 기회로 해석됩니다. XLE는 유가 급락에 따른 자본 손실 우려로 비중을 축소합니다. 잦은 거래를 피하기 위해 기존 보유 종목 위주로 대응하며, 수수료 대비 기대 수익이 큰 비중 조절에 집중합니다.\n\n[비중] kepco=0 lselectric=35 hynix=5 nvda=15 ceg=30 xle=5 현금=10\n[평가예측] 내일=47,380,000 확률"
- },
- "last_settled": "2026-10-19",
- "fees_paid": 493930.0
+ "pending": null,
+ "last_settled": "2026-10-20",
+ "fees_paid": 506119.0
 }

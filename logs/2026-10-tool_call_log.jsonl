@@ -352,3 +352,4 @@
 {"ts": "2026-10-19T17:03:26+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX", "sig": "475d205135", "ok": true, "result_chars": 1796, "cache": "신규(값변경)", "mismatch": false, "result_hash": "71a0bedddfc7", "err_class": null}
 {"ts": "2026-10-19T17:03:28+09:00", "tool": "get_history(U4증거)", "args": "sox,7d", "sig": "4396082680", "ok": true, "result_chars": 181, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "971c56bcf48a", "err_class": null}
 {"ts": "2026-10-19T17:03:37+09:00", "tool": "search_news(자동강제)", "args": "반도체지수 SOX 재조사", "sig": "f6962904f1", "ok": true, "result_chars": 462, "cache": "재사용(동일값)", "mismatch": false, "result_hash": "76de4f0e53ab", "err_class": null}
+{"ts": "2026-10-20T00:46:34+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 2500, "cache": "신규", "mismatch": false, "result_hash": "c78c1c8c6106", "err_class": null}

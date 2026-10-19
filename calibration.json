@@ -1,45 +1,24 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0024,
-   "n": 11,
+   "weight": 0.0017,
+   "n": 7,
    "score": {
-    "hit_rate": 0.7273,
-    "mean_p": 0.5527,
-    "brier": 0.23285,
-    "rel": 0.03047,
-    "res": 0.0,
-    "unc": 0.19835,
-    "skill": -0.174,
-    "overconf": -0.1745,
-    "bias": -0.3382,
-    "mae": 2.4309,
-    "coverage": 0.0909,
-    "sharpness": 0.1055
+    "hit_rate": 0.4286,
+    "mean_p": 0.5714,
+    "brier": 0.25571,
+    "rel": 0.05333,
+    "res": 0.04252,
+    "unc": 0.2449,
+    "skill": -0.0442,
+    "overconf": 0.1429,
+    "bias": 1.3886,
+    "mae": 3.4286,
+    "coverage": 0.1429,
+    "sharpness": 0.1429
    },
-   "diagnosis": [
-    {
-     "code": "no_skill",
-     "value": -0.174,
-     "why": "기저확률로 찍는 것보다 못하다"
-    },
-    {
-     "code": "miscalibrated",
-     "value": 0.03047,
-     "why": "확률을 모자라게 부른다(공언 0.55 vs 실제 0.73)"
-    },
-    {
-     "code": "no_resolution",
-     "value": 0.0,
-     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
-    },
-    {
-     "code": "band_too_narrow",
-     "value": 0.0909,
-     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=7 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0015,
@@ -119,35 +98,24 @@
    }
   },
   "U4": {
-   "weight": 0.0118,
-   "n": 11,
+   "weight": 0.0197,
+   "n": 7,
    "score": {
-    "hit_rate": 0.5455,
-    "mean_p": 0.5545,
-    "brier": 0.25318,
-    "rel": 0.035,
-    "res": 0.02975,
-    "unc": 0.24793,
-    "skill": -0.0212,
-    "overconf": 0.0091,
-    "bias": 0.1573,
-    "mae": 2.6082,
-    "coverage": 0.0909,
-    "sharpness": 0.1091
+    "hit_rate": 0.5714,
+    "mean_p": 0.5614,
+    "brier": 0.23556,
+    "rel": 0.02545,
+    "res": 0.03061,
+    "unc": 0.2449,
+    "skill": 0.0381,
+    "overconf": -0.01,
+    "bias": 1.7171,
+    "mae": 3.1857,
+    "coverage": 0.1429,
+    "sharpness": 0.1229
    },
-   "diagnosis": [
-    {
-     "code": "miscalibrated",
-     "value": 0.035,
-     "why": "확률을 과하게 부른다(공언 0.55 vs 실제 0.55)"
-    },
-    {
-     "code": "band_too_narrow",
-     "value": 0.0909,
-     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=7 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0012,
@@ -227,5 +195,5 @@
    }
   }
  },
- "updated": "2026-10-19"
+ "updated": "2026-10-20"
 }
