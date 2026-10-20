@@ -16,7 +16,22 @@
   "lselectric": 171551.9512,
   "hynix": 1272000.0
  },
- "pending": null,
+ "pending": {
+  "date": "2026-10-20",
+  "meeting_id": "20261020T0849",
+  "weights": {
+   "kepco": 0.0,
+   "lselectric": 0.35,
+   "hynix": 0.05,
+   "nvda": 0.2,
+   "ceg": 0.25,
+   "xle": 0.0
+  },
+  "forecast": {
+   "by": "알파"
+  },
+  "note": "변동성 장세에 대응하기 위해 에너지/전력 인프라 집중도를 유지합니다. LS ELECTRIC은 북미 데이터센터향 변압기 수요가 확실하여 현재 비중을 유지합니다. Constellation Energy는 원전 PPA의 장기 가치를 고려해 보유합니다. SK하이닉스는 삼성전자와의 HBM 경쟁 구도를 감안하여 하락 시 매수 전략을 유지하기 위해 현금 비중을 15%로 늘립니다.\n\n[비중] kepco=0 lselectric=35 hynix=5 nvda=20 ceg=25 xle=0 현금=15\n[평가예측] 내일=47,200,000 확률=0.65 구간"
+ },
  "last_settled": "2026-10-20",
  "fees_paid": 506119.0
 }
