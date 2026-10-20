@@ -1,24 +1,35 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0017,
-   "n": 7,
+   "weight": 0.0179,
+   "n": 12,
    "score": {
-    "hit_rate": 0.4286,
-    "mean_p": 0.5714,
-    "brier": 0.25571,
-    "rel": 0.05333,
-    "res": 0.04252,
-    "unc": 0.2449,
-    "skill": -0.0442,
-    "overconf": 0.1429,
-    "bias": 1.3886,
-    "mae": 3.4286,
-    "coverage": 0.1429,
-    "sharpness": 0.1429
+    "hit_rate": 0.5,
+    "mean_p": 0.5792,
+    "brier": 0.23604,
+    "rel": 0.16461,
+    "res": 0.17857,
+    "unc": 0.25,
+    "skill": 0.0558,
+    "overconf": 0.0792,
+    "bias": -2.9333,
+    "mae": 2.9683,
+    "coverage": 0.0833,
+    "sharpness": 0.1583
    },
-   "diagnosis": [],
-   "verdict": "표본 부족(n=7 < 8) — 판정 보류",
+   "diagnosis": [
+    {
+     "code": "band_too_narrow",
+     "value": 0.0833,
+     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    },
+    {
+     "code": "biased",
+     "value": -2.9333,
+     "why": "등락폭을 평균 2.93%p 크게 잡는다"
+    }
+   ],
+   "verdict": "판정 가능",
    "horizons": {
     "단기": {
      "weight": 0.0015,
@@ -77,24 +88,40 @@
    }
   },
   "U4": {
-   "weight": 0.0197,
-   "n": 7,
+   "weight": 0.0138,
+   "n": 12,
    "score": {
-    "hit_rate": 0.5714,
-    "mean_p": 0.5614,
-    "brier": 0.23556,
-    "rel": 0.02545,
-    "res": 0.03061,
-    "unc": 0.2449,
-    "skill": 0.0381,
-    "overconf": -0.01,
-    "bias": 1.7171,
-    "mae": 3.1857,
-    "coverage": 0.1429,
-    "sharpness": 0.1229
+    "hit_rate": 0.6667,
+    "mean_p": 0.5542,
+    "brier": 0.23229,
+    "rel": 0.02017,
+    "res": 0.0101,
+    "unc": 0.22222,
+    "skill": -0.0453,
+    "overconf": -0.1125,
+    "bias": -2.5917,
+    "mae": 2.6267,
+    "coverage": 0.1667,
+    "sharpness": 0.1083
    },
-   "diagnosis": [],
-   "verdict": "표본 부족(n=7 < 8) — 판정 보류",
+   "diagnosis": [
+    {
+     "code": "miscalibrated",
+     "value": 0.02017,
+     "why": "확률을 모자라게 부른다(공언 0.55 vs 실제 0.67)"
+    },
+    {
+     "code": "band_too_narrow",
+     "value": 0.1667,
+     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
+    },
+    {
+     "code": "biased",
+     "value": -2.5917,
+     "why": "등락폭을 평균 2.59%p 크게 잡는다"
+    }
+   ],
+   "verdict": "판정 가능",
    "horizons": {
     "단기": {
      "weight": 0.0012,
@@ -153,5 +180,5 @@
    }
   }
  },
- "updated": "2026-10-20"
+ "updated": "2026-10-21"
 }

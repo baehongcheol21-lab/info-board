@@ -1,41 +1,20 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 6145402.0,
+ "cash": 7238129.0,
  "holdings": {
-  "nvda": 24,
+  "nvda": 23,
   "ceg": 39,
-  "xle": 26,
-  "lselectric": 100,
-  "hynix": 1
+  "lselectric": 102,
+  "hynix": 2
  },
  "cost_basis": {
   "nvda": 305419.8822,
   "ceg": 368187.2909,
-  "xle": 87445.6513,
-  "lselectric": 171551.9512,
-  "hynix": 1272000.0
+  "lselectric": 171231.3247,
+  "hynix": 1247500.0
  },
- "pending": {
-  "date": "2026-10-20",
-  "meeting_id": "20261020T1647",
-  "weights": {
-   "kepco": 0.0,
-   "lselectric": 0.35,
-   "hynix": 0.08,
-   "nvda": 0.15,
-   "ceg": 0.3,
-   "xle": 0.0
-  },
-  "forecast": {
-   "equity": 45890000.0,
-   "p": 0.6,
-   "lo": 45600000.0,
-   "hi": 46300000.0,
-   "by": "알파"
-  },
-  "note": "현재 계좌의 손실이 누적되었으나 급격한 매매는 수수료 비용으로 인해 계좌를 잠식합니다. LS ELECTRIC과 Constellation Energy는 데이터센터 수요라는 구조적 성장이 유효하므로 보유 비중을 유지합니다. SK하이닉스는 시장 하락에 따른 과매도 구간으로 판단되어 비중을 5%p 상향하여 단가 개선을 시도합니다. XLE는 유가 하락 압력을 반영하여 비중을 5%p 축소하고 현금 흐름을 확보합니다.\n\n[비중] kepco=0 lselectric=35 hynix=8 nvda=15 ceg=30 xle=0 현금=12\n[평가예측] 내"
- },
- "last_settled": "2026-10-20",
- "fees_paid": 506119.0
+ "pending": null,
+ "last_settled": "2026-10-21",
+ "fees_paid": 510821.0
 }
