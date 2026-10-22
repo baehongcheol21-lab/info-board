@@ -397,3 +397,7 @@
 {"ts": "2026-10-21T08:23:24+09:00", "tool": "get_history(U4증거)", "args": "natgas,7d", "sig": "63dc89de67", "ok": true, "result_chars": 157, "cache": "신규", "mismatch": false, "result_hash": "38fabedbc13d", "err_class": null}
 {"ts": "2026-10-21T08:23:46+09:00", "tool": "search_news(자동강제)", "args": "코스피", "sig": "5c4a1d7dc8", "ok": true, "result_chars": 2328, "cache": "신규", "mismatch": false, "result_hash": "51ca56d5c5b3", "err_class": null}
 {"ts": "2026-10-21T08:23:52+09:00", "tool": "get_history(U4증거)", "args": "kospi,7d", "sig": "d82858bf4f", "ok": true, "result_chars": 179, "cache": "신규", "mismatch": false, "result_hash": "ace10ca8642d", "err_class": null}
+{"ts": "2026-10-22T16:49:26+09:00", "tool": "search_news(자동강제)", "args": "코스피", "sig": "5c4a1d7dc8", "ok": true, "result_chars": 2330, "cache": "신규", "mismatch": false, "result_hash": "a41ea484d92e", "err_class": null}
+{"ts": "2026-10-22T16:49:35+09:00", "tool": "get_history(U4증거)", "args": "kospi,7d", "sig": "d82858bf4f", "ok": true, "result_chars": 209, "cache": "신규", "mismatch": false, "result_hash": "9821e9947756", "err_class": null}
+{"ts": "2026-10-22T16:49:51+09:00", "tool": "search_news(자동강제)", "args": "엔비디아", "sig": "94b470f76c", "ok": true, "result_chars": 2329, "cache": "신규", "mismatch": false, "result_hash": "28d8e23f7938", "err_class": null}
+{"ts": "2026-10-22T16:49:54+09:00", "tool": "get_history(U4증거)", "args": "nvidia,7d", "sig": "fe95b5e68e", "ok": true, "result_chars": 218, "cache": "신규", "mismatch": false, "result_hash": "bed716a14471", "err_class": null}
