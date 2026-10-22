@@ -1,35 +1,37 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 7238129.0,
+ "cash": 10748989.0,
  "holdings": {
-  "nvda": 23,
-  "ceg": 39,
-  "lselectric": 102,
-  "hynix": 2
+  "nvda": 16,
+  "ceg": 33,
+  "lselectric": 70,
+  "hynix": 1,
+  "kepco": 238
  },
  "cost_basis": {
   "nvda": 305419.8822,
   "ceg": 368187.2909,
   "lselectric": 171231.3247,
-  "hynix": 1247500.0
+  "hynix": 1247500.0,
+  "kepco": 28800.0
  },
  "pending": {
-  "date": "2026-10-22",
-  "meeting_id": "20261022T2256",
+  "date": "2026-10-23",
+  "meeting_id": "20261023T0828",
   "weights": {
-   "kepco": 0.15,
+   "kepco": 0.1,
    "lselectric": 0.25,
-   "hynix": 0.05,
-   "nvda": 0.1,
-   "ceg": 0.25,
+   "hynix": 0.15,
+   "nvda": 0.2,
+   "ceg": 0.2,
    "xle": 0.0
   },
   "forecast": {
    "by": "알파"
   },
-  "note": "시장 전체의 투자 심리가 반도체 중심의 급락으로 위축되었습니다. 변동성을 낮추기 위해 현금 비중을 확대하고, 단기 하락 압력이 거센 LS ELECTRIC의 비중을 일부 축소합니다. 매매 수수료보다 LS ELECTRIC의 추가 하락에 따른 평가 손실 방어가 더 큰 이득을 준다고 판단했습니다. 한국전력은 전력망 관련 특별법의 정책 모멘텀이 하방을 지지할 것으로 보아 신규 편입합니다.\n\n[비중] kepco=15 lselectric=25 hynix=5 nvda=10 ceg=25 xle=0 현금=20\n[평가예측] 내일=46,120,000 확"
+  "note": "반도체 섹터의 단기 투심 악화는 과도하며, 공급망의 핵심인 SK하이닉스와 엔비디아의 가격 조정은 장기 성장을 위한 매수 기회로 해석됩니다. LS ELECTRIC은 단기 하락 압력이 존재하나 중장기 인프라 사이클의 견고함을 고려해 비중을 유지합니다. Constellation Energy는 데이터센터 전력 수요의 직접적인 실적 연동성을 높게 평가하여 비중을 일부 확대하며, 거래 비용을 상쇄할 변동성 수익을 기대합니다.\n\n[비중] kepco=10 lselectric=25 hynix=15 nvda=20 ceg=20 xle=0 현금=10\n["
  },
- "last_settled": "2026-10-22",
- "fees_paid": 510821.0
+ "last_settled": "2026-10-23",
+ "fees_paid": 531102.0
 }
