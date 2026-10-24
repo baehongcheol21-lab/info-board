@@ -197,3 +197,5 @@
 {"date": "2026-10-23", "id": "kepco", "name": "한국전력", "side": "buy", "shares": 238, "price_krw": 28800.0, "fee": 1028.0}
 {"date": "2026-10-24", "id": "lselectric", "name": "LS ELECTRIC", "side": "sell", "shares": 13, "price_krw": 156900.0, "fee": 3977.0}
 {"date": "2026-10-24", "id": "kepco", "name": "한국전력", "side": "sell", "shares": 1, "price_krw": 28650.0, "fee": 56.0}
+{"date": "2026-10-25", "id": "ceg", "name": "Constellation Energy", "side": "sell", "shares": 13, "price_krw": 335922.63, "fee": 7424.0}
+{"date": "2026-10-25", "id": "hynix", "name": "SK하이닉스", "side": "buy", "shares": 2, "price_krw": 1277000.0, "fee": 383.0}

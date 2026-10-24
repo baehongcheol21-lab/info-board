@@ -1,42 +1,47 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0245,
-   "n": 14,
+   "weight": 0.0171,
+   "n": 11,
    "score": {
-    "hit_rate": 0.4286,
-    "mean_p": 0.5679,
-    "brier": 0.27304,
-    "rel": 0.05716,
-    "res": 0.02902,
-    "unc": 0.2449,
-    "skill": -0.1149,
-    "overconf": 0.1393,
-    "bias": 2.845,
-    "mae": 3.4264,
-    "coverage": 0.2143,
-    "sharpness": 0.1357
+    "hit_rate": 0.2727,
+    "mean_p": 0.55,
+    "brier": 0.27523,
+    "rel": 0.07688,
+    "res": 0.0,
+    "unc": 0.19835,
+    "skill": -0.3876,
+    "overconf": 0.2773,
+    "bias": 5.1064,
+    "mae": 5.1064,
+    "coverage": 0.0909,
+    "sharpness": 0.1
    },
    "diagnosis": [
     {
      "code": "no_skill",
-     "value": -0.1149,
+     "value": -0.3876,
      "why": "기저확률로 찍는 것보다 못하다"
     },
     {
      "code": "miscalibrated",
-     "value": 0.05716,
-     "why": "확률을 과하게 부른다(공언 0.57 vs 실제 0.43)"
+     "value": 0.07688,
+     "why": "확률을 과하게 부른다(공언 0.55 vs 실제 0.27)"
+    },
+    {
+     "code": "no_resolution",
+     "value": 0.0,
+     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
     },
     {
      "code": "band_too_narrow",
-     "value": 0.2143,
+     "value": 0.0909,
      "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
     },
     {
      "code": "biased",
-     "value": 2.845,
-     "why": "등락폭을 평균 2.85%p 작게 잡는다"
+     "value": 5.1064,
+     "why": "등락폭을 평균 5.11%p 작게 잡는다"
     }
    ],
    "verdict": "판정 가능",
@@ -114,42 +119,47 @@
    }
   },
   "U4": {
-   "weight": 0.0104,
-   "n": 14,
+   "weight": 0.0073,
+   "n": 11,
    "score": {
-    "hit_rate": 0.4286,
-    "mean_p": 0.5536,
-    "brier": 0.26375,
-    "rel": 0.03298,
-    "res": 0.01413,
-    "unc": 0.2449,
-    "skill": -0.077,
-    "overconf": 0.125,
-    "bias": 3.1236,
-    "mae": 3.3779,
-    "coverage": 0.2143,
-    "sharpness": 0.1071
+    "hit_rate": 0.2727,
+    "mean_p": 0.5418,
+    "brier": 0.26647,
+    "rel": 0.07241,
+    "res": 0.0,
+    "unc": 0.19835,
+    "skill": -0.3435,
+    "overconf": 0.2691,
+    "bias": 5.8064,
+    "mae": 5.8064,
+    "coverage": 0.1818,
+    "sharpness": 0.0836
    },
    "diagnosis": [
     {
      "code": "no_skill",
-     "value": -0.077,
+     "value": -0.3435,
      "why": "기저확률로 찍는 것보다 못하다"
     },
     {
      "code": "miscalibrated",
-     "value": 0.03298,
-     "why": "확률을 과하게 부른다(공언 0.55 vs 실제 0.43)"
+     "value": 0.07241,
+     "why": "확률을 과하게 부른다(공언 0.54 vs 실제 0.27)"
+    },
+    {
+     "code": "no_resolution",
+     "value": 0.0,
+     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
     },
     {
      "code": "band_too_narrow",
-     "value": 0.2143,
+     "value": 0.1818,
      "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
     },
     {
      "code": "biased",
-     "value": 3.1236,
-     "why": "등락폭을 평균 3.12%p 작게 잡는다"
+     "value": 5.8064,
+     "why": "등락폭을 평균 5.81%p 작게 잡는다"
     }
    ],
    "verdict": "판정 가능",
@@ -217,5 +227,5 @@
    }
   }
  },
- "updated": "2026-10-24"
+ "updated": "2026-10-25"
 }
