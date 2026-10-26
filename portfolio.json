@@ -1,39 +1,24 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 9774938.0,
+ "cash": 7789984.0,
  "holdings": {
-  "nvda": 24,
-  "ceg": 20,
-  "lselectric": 43,
+  "nvda": 31,
+  "ceg": 26,
+  "lselectric": 44,
   "hynix": 5,
-  "kepco": 158,
-  "xle": 49
+  "kepco": 161,
+  "xle": 24
  },
  "cost_basis": {
-  "nvda": 296670.5236,
-  "ceg": 368187.2909,
-  "lselectric": 171231.3247,
+  "nvda": 294683.6974,
+  "ceg": 361017.6957,
+  "lselectric": 170814.7037,
   "hynix": 1271100.0,
-  "kepco": 28800.0,
+  "kepco": 28785.0932,
   "xle": 91747.1622
  },
- "pending": {
-  "date": "2026-10-26",
-  "meeting_id": "20261026T1657",
-  "weights": {
-   "kepco": 0.1,
-   "lselectric": 0.15,
-   "hynix": 0.15,
-   "nvda": 0.2,
-   "ceg": 0.2,
-   "xle": 0.05
-  },
-  "forecast": {
-   "by": "알파"
-  },
-  "note": "에너지 섹터의 단기 과열을 고려해 XLE 비중을 일부 축소하고, 반도체 및 전력기기의 중장기 우상향 관점을 유지하여 현금 비중을 조절합니다. LS ELECTRIC은 구리 가격과 관계없이 전력망 수요의 확실성으로 비중을 유지하며, 거래 비용을 초과하는 수익 구간 확보가 가능하다고 판단하여 비중을 유지합니다.\n\n비중 변경을 최소화하여 불필요한 거래 수수료를 방어합니다. 에너지 가격의 변동성이 크지만 전력 수요의 구조적 상승은 흔들리지 않습니다.\n\n[비중] kepco=10 lselectric=15 hynix=15 nvda=20 ceg=2"
- },
- "last_settled": "2026-10-26",
- "fees_paid": 563462.0
+ "pending": null,
+ "last_settled": "2026-10-27",
+ "fees_paid": 574274.0
 }
