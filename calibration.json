@@ -48,70 +48,54 @@
    "horizons": {
     "단기": {
      "weight": 0.0007,
-     "n": 2,
+     "n": 5,
      "score": {
-      "hit_rate": 0.5,
-      "mean_p": 0.65,
-      "brier": 0.2725,
-      "rel": 0.0225,
+      "hit_rate": 0.0,
+      "mean_p": 0.624,
+      "brier": 0.39564,
+      "rel": 0.39552,
       "res": 0.0,
-      "unc": 0.25,
-      "skill": -0.09,
-      "overconf": 0.15,
-      "bias": 1.5223,
-      "mae": 2.3931,
-      "coverage": 0.0
+      "unc": 0.0,
+      "skill": null,
+      "overconf": 0.624,
+      "bias": -2.1539,
+      "mae": 2.1539,
+      "coverage": 0.4
      },
      "diagnosis": []
     },
     "중기": {
      "weight": 0.0287,
-     "n": 12,
-     "score": {
-      "hit_rate": 1.0,
-      "mean_p": 0.6417,
-      "brier": 0.13183,
-      "rel": 0.1303,
-      "res": 0.0,
-      "unc": 0.0,
-      "skill": null,
-      "overconf": -0.3583,
-      "bias": -0.7989,
-      "mae": 0.7989,
-      "coverage": 0.9167
-     },
-     "diagnosis": [
-      {
-       "code": "miscalibrated",
-       "value": 0.1303,
-       "why": "확률을 모자라게 부른다(공언 0.64 vs 실제 1.00)"
-      },
-      {
-       "code": "no_resolution",
-       "value": 0.0,
-       "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
-      },
-      {
-       "code": "biased",
-       "value": -0.7989,
-       "why": "등락폭을 평균 0.80%p 크게 잡는다"
-      }
-     ]
-    },
-    "장기": {
-     "weight": 0.0235,
      "n": 2,
      "score": {
       "hit_rate": 0.0,
-      "mean_p": 0.79,
-      "brier": 0.6242,
-      "rel": 0.6242,
+      "mean_p": 0.665,
+      "brier": 0.44245,
+      "rel": 0.44223,
       "res": 0.0,
       "unc": 0.0,
       "skill": null,
-      "overconf": 0.79,
-      "bias": -9.1053,
-      "mae": 9.1053,
+      "overconf": 0.665,
+      "bias": -2.1273,
+      "mae": 2.1273,
+      "coverage": 0.5
+     },
+     "diagnosis": []
+    },
+    "장기": {
+     "weight": 0.0235,
+     "n": 3,
+     "score": {
+      "hit_rate": 0.0,
+      "mean_p": 0.72,
+      "brier": 0.5216,
+      "rel": 0.5216,
+      "res": 0.0,
+      "unc": 0.0,
+      "skill": null,
+      "overconf": 0.72,
+      "bias": -20.561,
+      "mae": 20.561,
       "coverage": 0.0
      },
      "diagnosis": []
@@ -160,61 +144,55 @@
    "verdict": "판정 가능",
    "horizons": {
     "단기": {
-     "weight": 0.0111,
-     "n": 2,
+     "weight": 0.0078,
+     "n": 6,
      "score": {
-      "hit_rate": 0.5,
-      "mean_p": 0.625,
-      "brier": 0.24125,
-      "rel": 0.01562,
-      "res": 0.0,
-      "unc": 0.25,
-      "skill": 0.035,
-      "overconf": 0.125,
-      "bias": 3.0723,
-      "mae": 3.0723,
+      "hit_rate": 0.6667,
+      "mean_p": 0.5867,
+      "brier": 0.2624,
+      "rel": 0.1433,
+      "res": 0.11111,
+      "unc": 0.22222,
+      "skill": -0.1808,
+      "overconf": -0.08,
+      "bias": -1.5064,
+      "mae": 1.5064,
       "coverage": 0.5
      },
      "diagnosis": []
     },
     "중기": {
      "weight": 0.0204,
-     "n": 11,
-     "score": {
-      "hit_rate": 0.5455,
-      "mean_p": 0.5945,
-      "brier": 0.24936,
-      "rel": 0.00844,
-      "res": 0.00248,
-      "unc": 0.24793,
-      "skill": -0.0058,
-      "overconf": 0.0491,
-      "bias": 0.2291,
-      "mae": 1.0234,
-      "coverage": 1.0
-     },
-     "diagnosis": [
-      {
-       "code": "no_resolution",
-       "value": 0.00248,
-       "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
-      }
-     ]
-    },
-    "장기": {
-     "weight": 0.006,
      "n": 2,
      "score": {
       "hit_rate": 0.0,
-      "mean_p": 0.68,
-      "brier": 0.4624,
-      "rel": 0.4624,
+      "mean_p": 0.575,
+      "brier": 0.33125,
+      "rel": 0.33125,
       "res": 0.0,
       "unc": 0.0,
       "skill": null,
-      "overconf": 0.68,
-      "bias": -8.8053,
-      "mae": 8.8053,
+      "overconf": 0.575,
+      "bias": -2.2523,
+      "mae": 2.2523,
+      "coverage": 0.5
+     },
+     "diagnosis": []
+    },
+    "장기": {
+     "weight": 0.0042,
+     "n": 3,
+     "score": {
+      "hit_rate": 0.6667,
+      "mean_p": 0.7067,
+      "brier": 0.24667,
+      "rel": 0.0016,
+      "res": 0.0,
+      "unc": 0.22222,
+      "skill": -0.11,
+      "overconf": 0.04,
+      "bias": -16.6443,
+      "mae": 16.6443,
       "coverage": 0.0
      },
      "diagnosis": []
