@@ -47,19 +47,19 @@
    "verdict": "판정 가능",
    "horizons": {
     "단기": {
-     "weight": 0.0007,
-     "n": 2,
+     "weight": 0.0085,
+     "n": 4,
      "score": {
-      "hit_rate": 1.0,
-      "mean_p": 0.7,
-      "brier": 0.0964,
-      "rel": 0.09,
+      "hit_rate": 0.75,
+      "mean_p": 0.675,
+      "brier": 0.1825,
+      "rel": 0.00562,
       "res": 0.0,
-      "unc": 0.0,
-      "skill": null,
-      "overconf": -0.3,
-      "bias": 4.2691,
-      "mae": 4.2691,
+      "unc": 0.1875,
+      "skill": 0.0267,
+      "overconf": -0.075,
+      "bias": 8.1147,
+      "mae": 8.1147,
       "coverage": 0.0
      },
      "diagnosis": []
@@ -84,42 +84,21 @@
     },
     "장기": {
      "weight": 0.0235,
-     "n": 11,
+     "n": 3,
      "score": {
       "hit_rate": 0.0,
-      "mean_p": 0.7473,
-      "brier": 0.55955,
-      "rel": 0.55903,
+      "mean_p": 0.72,
+      "brier": 0.52487,
+      "rel": 0.5216,
       "res": 0.0,
       "unc": 0.0,
       "skill": null,
-      "overconf": 0.7473,
-      "bias": -22.7589,
-      "mae": 22.7589,
+      "overconf": 0.72,
+      "bias": -18.1075,
+      "mae": 18.1075,
       "coverage": 0.0
      },
-     "diagnosis": [
-      {
-       "code": "miscalibrated",
-       "value": 0.55903,
-       "why": "확률을 과하게 부른다(공언 0.75 vs 실제 0.00)"
-      },
-      {
-       "code": "no_resolution",
-       "value": 0.0,
-       "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
-      },
-      {
-       "code": "band_too_narrow",
-       "value": 0.0,
-       "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-      },
-      {
-       "code": "biased",
-       "value": -22.7589,
-       "why": "등락폭을 평균 22.76%p 크게 잡는다"
-      }
-     ]
+     "diagnosis": []
     }
    }
   },
@@ -166,78 +145,57 @@
    "horizons": {
     "단기": {
      "weight": 0.0055,
-     "n": 2,
+     "n": 3,
      "score": {
-      "hit_rate": 0.5,
-      "mean_p": 0.565,
-      "brier": 0.26945,
-      "rel": 0.00422,
+      "hit_rate": 0.0,
+      "mean_p": 0.6433,
+      "brier": 0.41963,
+      "rel": 0.41588,
       "res": 0.0,
-      "unc": 0.25,
-      "skill": -0.0778,
-      "overconf": 0.065,
-      "bias": 3.1954,
-      "mae": 3.1954,
-      "coverage": 0.5
+      "unc": 0.0,
+      "skill": null,
+      "overconf": 0.6433,
+      "bias": 8.0242,
+      "mae": 8.0242,
+      "coverage": 0.0
      },
      "diagnosis": []
     },
     "중기": {
      "weight": 0.0143,
-     "n": 4,
+     "n": 1,
      "score": {
-      "hit_rate": 0.5,
-      "mean_p": 0.5625,
-      "brier": 0.26687,
-      "rel": 0.10021,
-      "res": 0.08333,
-      "unc": 0.25,
-      "skill": -0.0675,
-      "overconf": 0.0625,
-      "bias": 2.6276,
-      "mae": 6.2709,
+      "hit_rate": 0.0,
+      "mean_p": 0.6,
+      "brier": 0.36,
+      "rel": 0.36,
+      "res": 0.0,
+      "unc": 0.0,
+      "skill": null,
+      "overconf": 0.6,
+      "bias": 3.8457,
+      "mae": 3.8457,
       "coverage": 0.0
      },
      "diagnosis": []
     },
     "장기": {
-     "weight": 0.0042,
-     "n": 13,
+     "weight": 0.0029,
+     "n": 3,
      "score": {
-      "hit_rate": 0.0,
-      "mean_p": 0.6523,
-      "brier": 0.42971,
-      "rel": 0.42754,
-      "res": 0.0,
-      "unc": 0.0,
-      "skill": null,
-      "overconf": 0.6523,
-      "bias": -22.3391,
-      "mae": 22.3391,
+      "hit_rate": 0.3333,
+      "mean_p": 0.5567,
+      "brier": 0.29763,
+      "rel": 0.12082,
+      "res": 0.05556,
+      "unc": 0.22222,
+      "skill": -0.3394,
+      "overconf": 0.2233,
+      "bias": -16.8242,
+      "mae": 16.8242,
       "coverage": 0.0
      },
-     "diagnosis": [
-      {
-       "code": "miscalibrated",
-       "value": 0.42754,
-       "why": "확률을 과하게 부른다(공언 0.65 vs 실제 0.00)"
-      },
-      {
-       "code": "no_resolution",
-       "value": 0.0,
-       "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
-      },
-      {
-       "code": "band_too_narrow",
-       "value": 0.0,
-       "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-      },
-      {
-       "code": "biased",
-       "value": -22.3391,
-       "why": "등락폭을 평균 22.34%p 크게 잡는다"
-      }
-     ]
+     "diagnosis": []
     }
    }
   }
