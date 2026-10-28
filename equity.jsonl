@@ -81,3 +81,4 @@
 {"date": "2026-10-25", "equity": 45374998.0, "return_pct": -9.25, "cash": 14618493.0, "n_trades": 2, "forecast": 45610000.0, "err": -235002.0, "err_pct": -0.518, "in_band": true}
 {"date": "2026-10-26", "equity": 45337083.0, "return_pct": -9.326, "cash": 9774938.0, "n_trades": 5, "forecast": 45620000.0, "err": -282917.0, "err_pct": -0.624, "in_band": false}
 {"date": "2026-10-27", "equity": 45298253.0, "return_pct": -9.403, "cash": 7789984.0, "n_trades": 5}
+{"date": "2026-10-28", "equity": 45995670.0, "return_pct": -8.009, "cash": 7681479.0, "n_trades": 3}

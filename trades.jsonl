@@ -209,3 +209,6 @@
 {"date": "2026-10-27", "id": "kepco", "name": "한국전력", "side": "buy", "shares": 3, "price_krw": 28000.0, "fee": 13.0}
 {"date": "2026-10-27", "id": "ceg", "name": "Constellation Energy", "side": "buy", "shares": 6, "price_krw": 337119.04, "fee": 3439.0}
 {"date": "2026-10-27", "id": "nvda", "name": "NVIDIA", "side": "buy", "shares": 7, "price_krw": 287871.72, "fee": 3426.0}
+{"date": "2026-10-28", "id": "kepco", "name": "한국전력", "side": "sell", "shares": 79, "price_krw": 27850.0, "fee": 4290.0}
+{"date": "2026-10-28", "id": "xle", "name": "Energy Select SPDR (XLE)", "side": "buy", "shares": 1, "price_krw": 90479.2, "fee": 154.0}
+{"date": "2026-10-28", "id": "lselectric", "name": "LS ELECTRIC", "side": "buy", "shares": 14, "price_krw": 158100.0, "fee": 332.0}
