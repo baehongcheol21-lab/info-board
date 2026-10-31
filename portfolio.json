@@ -20,23 +20,19 @@
  },
  "pending": {
   "date": "2026-10-31",
-  "meeting_id": "20261031T0855",
+  "meeting_id": "20261031T1735",
   "weights": {
    "kepco": 0.05,
-   "lselectric": 0.15,
+   "lselectric": 0.3,
    "hynix": 0.2,
    "nvda": 0.2,
-   "ceg": 0.25,
-   "xle": 0.1
+   "ceg": 0.2,
+   "xle": 0.05
   },
   "forecast": {
-   "equity": 45492000.0,
-   "p": 0.65,
-   "lo": 44800000.0,
-   "hi": 46200000.0,
    "by": "알파"
   },
-  "note": "기술주 조정으로 인한 시장 변동성이 큽니다. LS ELECTRIC은 피크아웃 우려와 시장 하락이 겹쳐 비중을 축소하고, 방어력이 입증된 Constellation Energy와 Energy Select SPDR로 무게를 옮깁니다. 거래 비용은 리밸런싱을 통해 확보할 하락 위험 회피 이득보다 작습니다.\n\n[비중] kepco=5 lselectric=15 hynix=20 nvda=20 ceg=25 xle=10 현금=5\n[평가예측] 내일=45,492,000 확률=0.65 구간=44,800,000~46,200,000"
+  "note": "반도체 섹터의 변동성이 과도하여 기술적 반등을 노리는 대신, 실적 가시성이 높고 시장 방어력이 확인된 Constellation Energy와 전력 인프라의 핵심인 LS ELECTRIC 비중을 확대합니다. SK하이닉스와 NVIDIA는 하락 폭을 고려해 기존 물량을 유지하며, 추가 거래비용 발생을 억제하기 위해 불필요한 매도는 생략합니다. 전력 수요는 경기를 타지 않는 기저부하로 해석되므로, 에너지 섹터 중심의 포트폴리오 재편이 수익률 방어에 유리하다고 판단됩니다.\n\n[비중] kepco=5 lselectric=30 hynix=20 nv"
  },
  "last_settled": "2026-10-31",
  "fees_paid": 589565.0
