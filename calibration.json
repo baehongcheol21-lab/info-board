@@ -2,29 +2,23 @@
  "agents": {
   "U3": {
    "weight": 0.0346,
-   "n": 8,
+   "n": 6,
    "score": {
-    "hit_rate": 0.5,
-    "mean_p": 0.6038,
-    "brier": 0.22459,
-    "rel": 0.05228,
-    "res": 0.0625,
-    "unc": 0.25,
-    "skill": 0.1016,
-    "overconf": 0.1038,
-    "bias": 0.1013,
-    "mae": 2.9087,
-    "coverage": 0.25,
-    "sharpness": 0.2075
+    "hit_rate": 0.0,
+    "mean_p": 0.5583,
+    "brier": 0.31208,
+    "rel": 0.31208,
+    "res": 0.0,
+    "unc": 0.0,
+    "skill": null,
+    "overconf": 0.5583,
+    "bias": -5.2917,
+    "mae": 5.2917,
+    "coverage": 0.0,
+    "sharpness": 0.1167
    },
-   "diagnosis": [
-    {
-     "code": "band_too_narrow",
-     "value": 0.25,
-     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=6 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0608,
@@ -83,35 +77,24 @@
    }
   },
   "U4": {
-   "weight": 0.0103,
-   "n": 8,
+   "weight": 0.0072,
+   "n": 6,
    "score": {
-    "hit_rate": 0.5,
-    "mean_p": 0.57,
-    "brier": 0.25045,
-    "rel": 0.03383,
-    "res": 0.03571,
-    "unc": 0.25,
-    "skill": -0.0018,
-    "overconf": 0.07,
-    "bias": -0.865,
-    "mae": 2.7425,
-    "coverage": 0.375,
-    "sharpness": 0.14
+    "hit_rate": 0.8333,
+    "mean_p": 0.55,
+    "brier": 0.21917,
+    "rel": 0.08028,
+    "res": 0.0,
+    "unc": 0.13889,
+    "skill": -0.578,
+    "overconf": -0.2833,
+    "bias": -4.3283,
+    "mae": 4.3283,
+    "coverage": 0.0,
+    "sharpness": 0.1
    },
-   "diagnosis": [
-    {
-     "code": "band_too_narrow",
-     "value": 0.375,
-     "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
-    },
-    {
-     "code": "biased",
-     "value": -0.865,
-     "why": "등락폭을 평균 0.86%p 크게 잡는다"
-    }
-   ],
-   "verdict": "판정 가능",
+   "diagnosis": [],
+   "verdict": "표본 부족(n=6 < 8) — 판정 보류",
    "horizons": {
     "단기": {
      "weight": 0.0055,
@@ -170,5 +153,5 @@
    }
   }
  },
- "updated": "2026-10-30"
+ "updated": "2026-10-31"
 }

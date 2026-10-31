@@ -1,17 +1,17 @@
 {
  "opened": "2026-08-06",
  "capital": 50000000,
- "cash": 3620915.0,
+ "cash": 4202851.0,
  "holdings": {
-  "nvda": 32,
-  "ceg": 26,
-  "lselectric": 71,
+  "nvda": 33,
+  "ceg": 25,
+  "lselectric": 69,
   "hynix": 6,
-  "kepco": 83,
-  "xle": 25
+  "kepco": 79,
+  "xle": 24
  },
  "cost_basis": {
-  "nvda": 294490.4367,
+  "nvda": 293835.4284,
   "ceg": 360450.2099,
   "lselectric": 167169.6755,
   "hynix": 1398550.0,
@@ -19,21 +19,25 @@
   "xle": 91696.4437
  },
  "pending": {
-  "date": "2026-10-30",
-  "meeting_id": "20261030T1748",
+  "date": "2026-10-31",
+  "meeting_id": "20261031T0855",
   "weights": {
    "kepco": 0.05,
-   "lselectric": 0.23,
-   "hynix": 0.19,
+   "lselectric": 0.15,
+   "hynix": 0.2,
    "nvda": 0.2,
-   "ceg": 0.2,
-   "xle": 0.05
+   "ceg": 0.25,
+   "xle": 0.1
   },
   "forecast": {
+   "equity": 45492000.0,
+   "p": 0.65,
+   "lo": 44800000.0,
+   "hi": 46200000.0,
    "by": "알파"
   },
-  "note": "SK하이닉스 낙폭 과대에 따른 반등 가능성과 미국 데이터센터 전력 수요의 구조적 성장에 무게를 둡니다. LS ELECTRIC은 단기 조정 국면이나 전력망 수혜라는 본질은 변함없으므로 비중을 유지합니다. 거래 비용 대비 수익 효율을 고려하여 전 종목 현상 유지 결정을 내립니다.\n\n[비중] kepco=5 lselectric=23 hynix=19 nvda=20 ceg=20 xle=5 현금=8\n[평가예측] 내일=46,120,000 확률=0.6 구간=-0.5~+1.5"
+  "note": "기술주 조정으로 인한 시장 변동성이 큽니다. LS ELECTRIC은 피크아웃 우려와 시장 하락이 겹쳐 비중을 축소하고, 방어력이 입증된 Constellation Energy와 Energy Select SPDR로 무게를 옮깁니다. 거래 비용은 리밸런싱을 통해 확보할 하락 위험 회피 이득보다 작습니다.\n\n[비중] kepco=5 lselectric=15 hynix=20 nvda=20 ceg=25 xle=10 현금=5\n[평가예측] 내일=45,492,000 확률=0.65 구간=44,800,000~46,200,000"
  },
- "last_settled": "2026-10-30",
- "fees_paid": 587541.0
+ "last_settled": "2026-10-31",
+ "fees_paid": 589565.0
 }
