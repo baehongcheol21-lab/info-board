@@ -1,42 +1,37 @@
 {
  "agents": {
   "U3": {
-   "weight": 0.0242,
-   "n": 10,
+   "weight": 0.0169,
+   "n": 13,
    "score": {
-    "hit_rate": 0.2,
-    "mean_p": 0.565,
-    "brier": 0.27975,
-    "rel": 0.21308,
-    "res": 0.09333,
-    "unc": 0.16,
-    "skill": -0.7484,
-    "overconf": 0.365,
-    "bias": -3.56,
-    "mae": 4.076,
-    "coverage": 0.0,
-    "sharpness": 0.13
+    "hit_rate": 0.4615,
+    "mean_p": 0.55,
+    "brier": 0.25635,
+    "rel": 0.00783,
+    "res": 0.0,
+    "unc": 0.24852,
+    "skill": -0.0315,
+    "overconf": 0.0885,
+    "bias": -3.2969,
+    "mae": 3.4554,
+    "coverage": 0.1538,
+    "sharpness": 0.1
    },
    "diagnosis": [
     {
-     "code": "no_skill",
-     "value": -0.7484,
-     "why": "기저확률로 찍는 것보다 못하다"
-    },
-    {
-     "code": "miscalibrated",
-     "value": 0.21308,
-     "why": "확률을 과하게 부른다(공언 0.57 vs 실제 0.20)"
+     "code": "no_resolution",
+     "value": 0.0,
+     "why": "상황과 무관하게 비슷한 확률만 불러 정보가 없다"
     },
     {
      "code": "band_too_narrow",
-     "value": 0.0,
+     "value": 0.1538,
      "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
     },
     {
      "code": "biased",
-     "value": -3.56,
-     "why": "등락폭을 평균 3.56%p 크게 잡는다"
+     "value": -3.2969,
+     "why": "등락폭을 평균 3.30%p 크게 잡는다"
     }
    ],
    "verdict": "판정 가능",
@@ -98,32 +93,32 @@
    }
   },
   "U4": {
-   "weight": 0.03,
-   "n": 10,
+   "weight": 0.0224,
+   "n": 13,
    "score": {
-    "hit_rate": 0.6,
-    "mean_p": 0.59,
-    "brier": 0.22,
-    "rel": 0.06417,
-    "res": 0.08167,
-    "unc": 0.24,
-    "skill": 0.0833,
-    "overconf": -0.01,
-    "bias": -2.715,
-    "mae": 3.311,
-    "coverage": 0.1,
-    "sharpness": 0.18
+    "hit_rate": 0.6154,
+    "mean_p": 0.5654,
+    "brier": 0.23558,
+    "rel": 0.00694,
+    "res": 0.00805,
+    "unc": 0.23669,
+    "skill": 0.0047,
+    "overconf": -0.05,
+    "bias": -2.2577,
+    "mae": 3.2254,
+    "coverage": 0.1538,
+    "sharpness": 0.1308
    },
    "diagnosis": [
     {
      "code": "band_too_narrow",
-     "value": 0.1,
+     "value": 0.1538,
      "why": "예상 구간이 좁아 실제값이 자주 벗어난다"
     },
     {
      "code": "biased",
-     "value": -2.715,
-     "why": "등락폭을 평균 2.71%p 크게 잡는다"
+     "value": -2.2577,
+     "why": "등락폭을 평균 2.26%p 크게 잡는다"
     }
    ],
    "verdict": "판정 가능",
@@ -185,5 +180,5 @@
    }
   }
  },
- "updated": "2026-11-01"
+ "updated": "2026-11-02"
 }
