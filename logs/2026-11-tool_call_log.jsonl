@@ -38,3 +38,5 @@
 {"ts": "2026-11-02T08:46:33+09:00", "tool": "get_history(U4증거)", "args": "nvidia,7d", "sig": "fe95b5e68e", "ok": true, "result_chars": 217, "cache": "신규", "mismatch": false, "result_hash": "c81a57ddcf9c", "err_class": null}
 {"ts": "2026-11-02T08:46:41+09:00", "tool": "search_news(자동강제)", "args": "엔비디아 재조사", "sig": "e95f2c875a", "ok": true, "result_chars": 1944, "cache": "신규", "mismatch": false, "result_hash": "a07d018b1050", "err_class": null}
 {"ts": "2026-11-02T08:47:16+09:00", "tool": "search_news(자동강제)", "args": "삼성전자", "sig": "292b5f7b69", "ok": true, "result_chars": 2212, "cache": "신규", "mismatch": false, "result_hash": "74d9240bc3da", "err_class": null}
+{"ts": "2026-11-02T18:43:50+09:00", "tool": "search_news(자동강제)", "args": "한국전력", "sig": "7a8d3fe4fa", "ok": true, "result_chars": 2079, "cache": "신규", "mismatch": false, "result_hash": "a8e0560045ba", "err_class": null}
+{"ts": "2026-11-02T18:44:30+09:00", "tool": "search_news(자동강제)", "args": "코스피", "sig": "5c4a1d7dc8", "ok": true, "result_chars": 1977, "cache": "신규", "mismatch": false, "result_hash": "73efe23b3bf2", "err_class": null}
