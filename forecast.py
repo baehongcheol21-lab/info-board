@@ -33,12 +33,56 @@ forecast.py — 예측 → 익일 채점 → 신뢰도 갱신 → **다음 회�
 import os
 import re
 import json
+import sys
 import datetime
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 
 KST = datetime.timezone(datetime.timedelta(hours=9))
 BASE = os.path.dirname(os.path.abspath(__file__))
 FC_FILE = os.path.join(BASE, "forecasts.jsonl")
 CAL_FILE = os.path.join(BASE, "calibration.json")
+GRADED_FILE = os.path.join(BASE, "graded.jsonl")
+
+
+def _append_graded(rows):
+    """채점 완료된 행들을 graded.jsonl에 영구 추가한다."""
+    if not rows:
+        return
+    try:
+        with open(GRADED_FILE, "a", encoding="utf-8") as f:
+            for r in rows:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    except OSError:
+        pass
+
+
+def _load_graded_for_agent(who, horizon=None, limit=40):
+    """특정 요원(및 기간)의 최근 채점 기록을 불러온다."""
+    if not os.path.exists(GRADED_FILE):
+        return []
+    matched = []
+    with open(GRADED_FILE, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+            except ValueError:
+                continue
+            if row.get("who") != who:
+                continue
+            if horizon is not None:
+                if row.get("kind") != "theme" or row.get("horizon") != horizon:
+                    continue
+            else:
+                if row.get("kind") == "theme":
+                    continue
+            matched.append(row)
+    return matched[-limit:]
 
 MIN_N = 8          # 이 표본 수 미만이면 판정도 교정도 하지 않는다
 MAX_BLOCK = 600    # 교정 블록 최대 길이(글자)
@@ -177,6 +221,12 @@ def _yahoo_daily(symbol, rng="3mo"):
 
 
 def _sym(iid):
+    try:
+        import universe
+        if hasattr(universe, "BY_ID") and iid in universe.BY_ID:
+            return universe.BY_ID[iid].get("sym")
+    except Exception:
+        pass
     from publish import INDICATORS
     for _id, name, sym, unit, dec in INDICATORS:
         if _id == iid:
@@ -252,6 +302,7 @@ def settle_themes(emit_fn=None, today=None):
     if not graded:
         return {"checked": 0}
 
+    _append_graded(graded)
     reg = get_registry()
     cal = _cal_load()
     agents = cal.setdefault("agents", {})
@@ -264,8 +315,10 @@ def settle_themes(emit_fn=None, today=None):
                          g["actual"] - (g["lo"] + g["hi"]) / 2.0)
     summary = {}
     for (who, hz), rs in buckets.items():
+        past_rs = _load_graded_for_agent(who, horizon=hz, limit=HALF_LIFE)
+        eval_rs = past_rs if past_rs else rs
         try:
-            sc = reg.run("forecast_score", rows=rs, n_min=MIN_N)
+            sc = reg.run("forecast_score", rows=eval_rs, n_min=MIN_N)
         except Exception:
             continue
         st = agents.setdefault(who, {"weight": 0.5})
@@ -371,14 +424,16 @@ def settle(today_snap, emit_fn=None, today=None):
     if not graded:
         return {"checked": 0, "agents": {}}
 
+    _append_graded(graded)
     reg = get_registry()
     cal = _cal_load()
     agents = cal.setdefault("agents", {})
     result = {}
     for who, rs in by_who.items():
-        rs = rs[-HALF_LIFE:]
+        past_rs = _load_graded_for_agent(who, horizon=None, limit=HALF_LIFE)
+        eval_rs = past_rs if past_rs else rs[-HALF_LIFE:]
         try:
-            sc = reg.run("forecast_score", rows=rs, n_min=MIN_N)
+            sc = reg.run("forecast_score", rows=eval_rs, n_min=MIN_N)
         except Exception:
             continue
         st = agents.setdefault(who, {"weight": 0.5})
@@ -460,29 +515,49 @@ _FIX = {
 
 
 def correction_block(who):
-    """다음 회의 프롬프트에 붙일 교정 블록. 붙일 게 없으면 빈 문자열.
-
-    이게 "다음 명령 때는 수정된 프롬프트를 스스로 세팅한다"의 실물이다. 다만 자유 생성이
-    아니라 _FIX 표의 문장에 실측 수치를 채운 것뿐이라, 어떤 문장이 나올 수 있는지 사람이
-    전부 미리 안다."""
+    """다음 회의 프롬프트에 붙일 교정 블록 (지표 및 6종목 단·중·장기 성적표 통합)."""
     st = (_cal_load().get("agents") or {}).get(who) or {}
-    dx = [d for d in (st.get("diagnosis") or []) if d.get("code") in _FIX]
-    if not dx or (st.get("n") or 0) < MIN_N:
-        return ""
-    s = st.get("score") or {}
-    if any(v is None for v in (s.get("mean_p"), s.get("hit_rate"))):
-        return ""
     lines = []
-    for d in dx:
-        try:
-            lines.append("· " + _FIX[d["code"]](dict(s, n=st.get("n"))))
-        except (KeyError, TypeError, ValueError):
-            continue
+    head = ""
+
+    # 1. 6종목 테마 예측 성적표 (horizons: 단기, 중기, 장기)
+    horizons = st.get("horizons") or {}
+    if horizons:
+        # 단기 또는 중기 중 진단이 있는 기간 우선 활용
+        for h in ("단기", "중기", "장기"):
+            h_st = horizons.get(h) or {}
+            h_n = h_st.get("n") or 0
+            if h_n < MIN_N:
+                continue
+            h_score = h_st.get("score") or {}
+            h_dx = [d for d in (h_st.get("diagnosis") or []) if d.get("code") in _FIX]
+            if h_dx:
+                if not head:
+                    head = f"\n\n[네 최근 성적표 — 6종목 {h} 예측 실측 {h_n}건] 적중률 {h_score.get('hit_rate', 0):.1%}, 브라이어 {h_score.get('brier', 0):.3f}\n"
+                for d in h_dx[:2]:
+                    try:
+                        lines.append(f"· [{h}] " + _FIX[d["code"]](dict(h_score, n=h_n)))
+                    except Exception:
+                        pass
+                if len(lines) >= 3:
+                    break
+
+    # 2. 레거시 일별 지표 성적표 폴백
+    if not lines and (st.get("n") or 0) >= MIN_N:
+        dx = [d for d in (st.get("diagnosis") or []) if d.get("code") in _FIX]
+        s = st.get("score") or {}
+        if dx and not any(v is None for v in (s.get("mean_p"), s.get("hit_rate"))):
+            head = (f"\n\n[네 최근 성적표 — 최근 {st.get('n')}건 실측] "
+                    f"적중률 {s.get('hit_rate')}, 브라이어 {s.get('brier')}, "
+                    f"보정오차 {s.get('rel')}, 변별력 {s.get('res')}\n")
+            for d in dx:
+                try:
+                    lines.append("· " + _FIX[d["code"]](dict(s, n=st.get("n"))))
+                except Exception:
+                    pass
+
     if not lines:
         return ""
-    head = (f"\n\n[네 최근 성적표 — 최근 {st.get('n')}건 실측] "
-            f"적중률 {s.get('hit_rate')}, 브라이어 {s.get('brier')}, "
-            f"보정오차 {s.get('rel')}, 변별력 {s.get('res')}\n")
     body = "\n".join(lines)
     return (head + body)[:MAX_BLOCK]
 

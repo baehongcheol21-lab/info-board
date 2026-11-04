@@ -21,7 +21,12 @@ portfolio.py — 가상계좌 5천만원의 장부. **전부 시뮬레이션이�
 """
 import os
 import json
+import sys
 import datetime
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 
 import universe as U
 
@@ -116,7 +121,10 @@ def settle(prices, fx, today=None, emit_fn=None):
     """다음 거래일 종가로 ①예약 주문 체결 ②평가액 기록 ③어제 예측 채점.
     prices: {id: px}, fx: 원/달러. 반환: 요약 dict."""
     pf = load()
-    today = today or datetime.datetime.now(KST).strftime("%Y-%m-%d")
+    now_dt = datetime.datetime.now(KST)
+    if today is None and now_dt.weekday() >= 5:
+        return {"skipped": "주말(토·일) 시장 휴장 — 리밸런싱 건너뜀 (수수료 누수 방지)"}
+    today = today or now_dt.strftime("%Y-%m-%d")
     if pf.get("last_settled") == today:
         return {"skipped": "오늘 이미 정산됨"}
     if not prices or not fx:

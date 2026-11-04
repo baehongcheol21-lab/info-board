@@ -15,7 +15,12 @@ JSON으로 꽂아넣는 것"뿐이다. 디자인을 바꿀 일이 있으면 시�
 """
 import os
 import json
+import sys
 import datetime
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 
 import requests
 

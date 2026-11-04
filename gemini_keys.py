@@ -37,7 +37,12 @@ gemini_keys.py — Gemini API 다중 계정 키 로테이션
 import os
 import json
 import time
+import sys
 import datetime
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 
 try:  # P5 관측 로그 — 없어도(예: dashboard/ 쪽 복제본) 조용히 무시하고 동작
     import runlog
@@ -257,5 +262,11 @@ class RotatingBudget:
                 if runlog:
                     runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
                                          False, time.time() - t0, "runtime_error")
+                if len(self._rot.keys) > 1 and tried < len(self._rot.keys) * 2 - 1:
+                    print(f"  ⚠️ 키{idx + 1}번 오류({type(e).__name__}: {str(e)[:50]}) → 다른 키로 전환 시도")
+                    self._rot.rotate(f"(오류 전환: {type(e).__name__})")
+                    time.sleep(2)
+                    tried += 1
+                    continue
                 raise
         raise RuntimeError(f"등록된 계정 {len(self._rot.keys)}개 전부 오늘 한도 소진 — 내일 자정(KST) 리셋")

@@ -16,6 +16,7 @@ reality_check.py — 익일 현실 대조 (설계서_ACT_자율실행.md §7-2).
     — 그건 이 시스템이 가장 피하려는 실패다.
 """
 import os
+import gzip
 import json
 import glob
 import datetime
@@ -32,9 +33,12 @@ def _load_stream(days_back=3):
     rows = []
     for m in months:
         p = os.path.join(STREAM_DIR, f"{m}-stream.jsonl")
-        if not os.path.exists(p):
+        gz = p + ".gz"
+        target = p if os.path.exists(p) else (gz if os.path.exists(gz) else None)
+        if not target:
             continue
-        with open(p, encoding="utf-8") as f:
+        opener = gzip.open if target.endswith(".gz") else open
+        with opener(target, "rt", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line:

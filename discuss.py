@@ -22,7 +22,12 @@ import re
 import csv
 import json
 import hashlib
+import sys
 import datetime
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
 import traceback
 
 from publish import INDICATORS, fetch_yahoo, fetch_smp
@@ -803,9 +808,11 @@ def finalize(b, m):
     now, out_ind, news_brief = m.now, m.out_ind, m.news_brief
     # ---- 저장 ----
     # transcript 필수화 (P5 #4): "콜은 썼는데 녹취 0줄"인 조용한 실패를 여기서 반드시 기록한다.
-    meeting_ok = bool(b.transcript)
+    has_brief = bool((m.brief or "").strip())
+    has_ai = any(t.get("role") in ("알파", "U1", "U2", "U3", "U4", "B2") for t in b.transcript)
+    meeting_ok = bool(b.transcript) and b.used > 0 and has_brief and has_ai
     if not meeting_ok:
-        print(f"❌ 회의 실패로 기록 — 콜 {b.used}건을 썼지만 녹취(transcript)가 0줄입니다.")
+        print(f"❌ 회의 실패(또는 미완료)로 기록 — 콜 {b.used}건, 녹취 {len(b.transcript)}줄, 브리핑완성={has_brief}, AI대화={has_ai}")
     if runlog:
         runlog.log_meeting(meeting_ok, b.used, len(b.transcript),
                             note="" if meeting_ok else "transcript 비어있음")
@@ -972,16 +979,51 @@ def _pf_parse_weights(text):
 
 
 def _pf_parse_equity(text):
-    """`[평가예측] 내일=50,320,000 확률=0.6 구간=49,500,000~51,200,000`"""
-    m = _re_pf_e.search(text or "")
-    if not m:
+    """`[평가예측] 내일=50,320,000 확률=0.6 구간=49,500,000~51,200,000` (파이프, 퍼센트, 증감액 허용)"""
+    txt = text or ""
+    m_eq = re.search(r"내일\s*[:=]\s*([\d,]+)", txt)
+    if not m_eq:
         return None
-    f = lambda s: float(s.replace(",", ""))
-    lo, hi = f(m.group(3)), f(m.group(4))
+    try:
+        eq_val = float(m_eq.group(1).replace(",", ""))
+    except ValueError:
+        return None
+
+    # 확률 (0.6 또는 60%)
+    p_val = 0.5
+    m_p = re.search(r"(?:확률|신뢰)\s*[:=]\s*([01]?(?:\.\d+)?|\d+%?)", txt)
+    if m_p:
+        raw_p = m_p.group(1).replace("%", "").strip()
+        try:
+            fp = float(raw_p)
+            p_val = fp / 100.0 if fp > 1.0 else fp
+            p_val = min(max(p_val, 0.0), 1.0)
+        except ValueError:
+            pass
+
+    # 구간
+    m_range = re.search(r"구간\s*[:=]\s*([+\-]?[\d,]+(?:\.\d+)?%?)\s*[~～\-]\s*([+\-]?[\d,]+(?:\.\d+)?%?)", txt)
+    lo, hi = eq_val * 0.99, eq_val * 1.01
+    if m_range:
+        r1, r2 = m_range.group(1).strip(), m_range.group(2).strip()
+        try:
+            if "%" in r1 or "%" in r2:
+                p1 = float(r1.replace("%", "")) / 100.0
+                p2 = float(r2.replace("%", "")) / 100.0
+                lo, hi = eq_val * (1.0 + p1), eq_val * (1.0 + p2)
+            else:
+                v1 = float(r1.replace(",", ""))
+                v2 = float(r2.replace(",", ""))
+                if abs(v1) < 10000000 and abs(v2) < 10000000 and (v1 < 0 or v2 < 0):
+                    # 증감액 구간 (예: -200,000 ~ +500,000)
+                    lo, hi = eq_val + v1, eq_val + v2
+                else:
+                    lo, hi = v1, v2
+        except Exception:
+            pass
     if lo > hi:
         lo, hi = hi, lo
-    return {"equity": f(m.group(1)), "p": min(max(float(m.group(2)), 0.0), 1.0),
-            "lo": lo, "hi": hi}
+    return {"equity": eq_val, "p": p_val, "lo": lo, "hi": hi}
 
 
 def phase_portfolio(b, m):

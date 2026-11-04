@@ -17,6 +17,7 @@ import os
 import re
 import json
 import glob
+import gzip
 import datetime
 import collections
 
@@ -47,7 +48,8 @@ def _j(path, default=None):
 def _jsonl(path, tail=None):
     rows = []
     try:
-        with open(path, encoding="utf-8") as f:
+        opener = gzip.open if path.endswith(".gz") else open
+        with opener(path, "rt", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line:

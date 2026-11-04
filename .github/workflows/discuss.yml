@@ -30,6 +30,8 @@ jobs:
         run: python publish.py
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      - name: 과거 데이터 자동 압축 및 경량화
+        run: python archive_past.py
       - name: 커밋 & 푸시
         run: |
           git config user.name "alpha-bot"
@@ -38,8 +40,8 @@ jobs:
           # 첫 회의 전에는 존재하지 않아서, 목록에 그냥 넣었더니 커밋 단계에서 워크플로가 통째로
           # 실패했다(2026-08-05 19:56 KST 회의가 이걸로 날아감). 있는 것만 골라 add 한다.
           # `git add -A`로 뭉뚱그리지 않는 이유: 임시 CSV 같은 잡파일까지 커밋되기 때문.
-          for f in docs discussions discussions.json exports key_usage.json trends.json logs                    retry_queue.json stream experience glossary.json                    forecasts.jsonl calibration.json themes.json                    portfolio.json equity.jsonl trades.jsonl; do
-            [ -e "$f" ] && git add "$f"
+          for f in docs discussions discussions.json exports key_usage.json trends.json logs                    retry_queue.json stream experience glossary.json                    forecasts.jsonl calibration.json themes.json graded.jsonl                    portfolio.json equity.jsonl trades.jsonl; do
+            [ -e "$f" ] && git add -A "$f"
           done
           true   # 마지막 [ -e ] 가 거짓이어도 스텝이 실패하지 않게
           git commit -m "토론: $(date -u '+%Y-%m-%d %H:%M') UTC" || echo "변경 없음"

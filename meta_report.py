@@ -11,6 +11,7 @@ meta_report.py — 메타리뷰용 집계기 (설계서_ACT_자율실행.md §7-
 """
 import os
 import sys
+import gzip
 import json
 import glob
 import datetime
@@ -23,7 +24,8 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 def _read_jsonl(path):
     rows = []
     try:
-        with open(path, encoding="utf-8") as f:
+        opener = gzip.open if path.endswith(".gz") else open
+        with opener(path, "rt", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if line:
@@ -39,10 +41,11 @@ def _read_jsonl(path):
 def collect(days=7):
     since = (datetime.datetime.now(KST) - datetime.timedelta(days=days)).isoformat()
     stream, exp = [], []
-    for p in glob.glob(os.path.join(BASE, "stream", "*.jsonl")):
-        stream += [r for r in _read_jsonl(p) if r.get("ts", "") >= since]
-    for p in glob.glob(os.path.join(BASE, "experience", "*.jsonl")):
-        exp += [r for r in _read_jsonl(p) if r.get("ts", "") >= since]
+    for ext in ("*.jsonl", "*.jsonl.gz"):
+        for p in glob.glob(os.path.join(BASE, "stream", ext)):
+            stream += [r for r in _read_jsonl(p) if r.get("ts", "") >= since]
+        for p in glob.glob(os.path.join(BASE, "experience", ext)):
+            exp += [r for r in _read_jsonl(p) if r.get("ts", "") >= since]
     stream.sort(key=lambda r: r.get("ts", ""))
     return stream, exp
 
