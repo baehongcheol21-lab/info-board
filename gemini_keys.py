@@ -39,6 +39,7 @@ import json
 import time
 import sys
 import datetime
+import collections
 try:
     sys.stdout.reconfigure(encoding='utf-8')
 except Exception:
@@ -54,6 +55,9 @@ FALLBACK_MODEL = "gemini-2.5-flash-lite"  # 3.1-flash-lite 503 서버혼잡 시 
 HEAVY_MODEL = "gemini-2.5-flash"      # 판단력 강한 보조 모델: 정책 점수·심층 배경설명 등에만
 KST = datetime.timezone(datetime.timedelta(hours=9))
 PER_KEY_DAILY_LIMIT = 500  # Gemini 무료 티어, 계정(키) 1개당 하루 한도
+PER_KEY_RPM_LIMIT = 12     # 무료 티어 15 RPM 대비 안전 상한(여유 3 RPM 확보)
+RPM_WINDOW_SEC = 62.0      # 슬라이딩 윈도우(60초 + 시계 오차 2초)
+MIN_CALL_INTERVAL = 5.0    # 동일 키 연속 호출 최소 간격(60s / 5.0s = 12 RPM)
 _BASE = os.path.dirname(os.path.abspath(__file__))
 USAGE_FILE = os.path.join(_BASE, "key_usage.json")
 
@@ -111,6 +115,7 @@ class KeyRotator:
             raise RuntimeError("GEMINI_API_KEY가 하나도 없음 (.env 확인)")
         self.usage = _load_usage()
         self._client_cache = {}
+        self._call_times = {}   # {idx: deque[float]} 키별 최근 62초 호출 시각
         self.idx = self._pick_start()
 
     def _pick_start(self):
@@ -126,9 +131,31 @@ class KeyRotator:
     def client(self):
         from google import genai
         if self.idx not in self._client_cache:
+            # retry_options.attempts=1 필수: SDK 기본값(5회 자동 재시도)을 그대로 두면
+            # 503/429 한 번에 SDK가 뒷단에서 5번 연속 호출해 15 RPM을 즉시 돌파한다.
             self._client_cache[self.idx] = genai.Client(
-                api_key=self.keys[self.idx], http_options={"timeout": 25000})
+                api_key=self.keys[self.idx],
+                http_options={"timeout": 25000, "retry_options": {"attempts": 1}})
         return self._client_cache[self.idx]
+
+    def throttle(self):
+        """모든 generate_content 호출 직전 관문: 키별 62초 슬라이딩 윈도우(최대 12회) +
+        최소 간격 5.0초를 강제해 무료 티어 15 RPM 한도를 구조적으로 넘지 않게 한다."""
+        q = self._call_times.setdefault(self.idx, collections.deque())
+        now = time.time()
+        while q and now - q[0] >= RPM_WINDOW_SEC:
+            q.popleft()
+        wait = 0.0
+        if q:
+            wait = max(wait, MIN_CALL_INTERVAL - (now - q[-1]))
+        if len(q) >= PER_KEY_RPM_LIMIT:
+            wait = max(wait, RPM_WINDOW_SEC - (now - q[0]) + 0.2)
+        if wait > 0:
+            time.sleep(wait)
+            now = time.time()
+            while q and now - q[0] >= RPM_WINDOW_SEC:
+                q.popleft()
+        q.append(time.time())
 
     def record_call(self):
         """호출 성공 후 사용량 +1 기록 (파일에 즉시 저장)."""
@@ -193,12 +220,10 @@ class RotatingBudget:
         곧바로 주력 모델(flash-lite)로 폴백한다 — heavy 실패가 주력 예산을 망치지 않게."""
         if self.run_used >= self.per_run_cap:
             raise RuntimeError(f"이번 회의 예산 {self.per_run_cap}콜 소진")
-        wait = 4.5 - (time.time() - self._last)
-        if wait > 0:
-            time.sleep(wait)
+        self._rot.throttle()
         t0 = time.time()
         try:
-            self._last = time.time()
+            self._last = t0
             r = self._rot.client().models.generate_content(model=HEAVY_MODEL, contents=prompt)
             text = (r.text or "").strip()
             if not text:
@@ -222,9 +247,6 @@ class RotatingBudget:
     def ask(self, role, prompt, topic="", model=MODEL):
         if self.run_used >= self.per_run_cap:
             raise RuntimeError(f"이번 회의 예산 {self.per_run_cap}콜 소진")
-        wait = 4.5 - (time.time() - self._last)
-        if wait > 0:
-            time.sleep(wait)
 
         cur_model = model
         tried = 0
@@ -235,9 +257,10 @@ class RotatingBudget:
                 self._rot.rotate("(이미 소진된 키 건너뜀)")
                 tried += 1
                 continue
+            self._rot.throttle()
             t0 = time.time()
             try:
-                self._last = time.time()
+                self._last = t0
                 r = self._rot.client().models.generate_content(model=cur_model, contents=prompt)
                 text = (r.text or "").strip()
                 self.run_used += 1
