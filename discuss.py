@@ -862,7 +862,7 @@ def phase_theme(b, m):
     snap, gstate = m.snap, m.gstate
     if not snap:
         return
-    print("[6/6] 테마 실험 — 오늘의 테마 토론·예측")
+    print("[5/7] 테마 실험 — 오늘의 테마 토론·예측")
     try:
         theme = _themes.pick(snap)
         m.theme = theme
@@ -1040,7 +1040,7 @@ def phase_portfolio(b, m):
     """
     if not (_univ and _pf):
         return
-    print("[6/6] 가상계좌 모의투자 — 6종목 토론")
+    print("[6/7] 가상계좌 모의투자 — 6종목 토론")
     try:
         prices, fx = _univ.fetch_prices()
         if not prices or not fx:
@@ -1179,6 +1179,7 @@ PHASES = [
     ("indicators", phase_indicators),
     ("news", phase_news),
     ("deepdive", phase_deepdive),
+    ("theme", phase_theme),                      # 오늘의 테마 토론·예측 (U3 vs U4 + 가중앙상블 + 알파 종합)
     ("brief", phase_brief),
     ("portfolio", phase_portfolio),              # 가상계좌 모의투자 — 6종목 토론·배분
     ("spend_remaining", phase_spend_remaining),  # P12 #4 — 잔여예산 소진
