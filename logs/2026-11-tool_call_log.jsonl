@@ -61,3 +61,5 @@
 {"ts": "2026-11-04T09:48:56+09:00", "tool": "search_news(자동강제)", "args": "엔비디아", "sig": "94b470f76c", "ok": true, "result_chars": 2373, "cache": "신규", "mismatch": false, "result_hash": "fe7645f03aff", "err_class": null}
 {"ts": "2026-11-04T09:49:01+09:00", "tool": "get_history(U4증거)", "args": "nvidia,7d", "sig": "fe95b5e68e", "ok": true, "result_chars": 217, "cache": "신규", "mismatch": false, "result_hash": "edac26c01d57", "err_class": null}
 {"ts": "2026-11-04T09:49:09+09:00", "tool": "search_news(자동강제)", "args": "엔비디아 재조사", "sig": "e95f2c875a", "ok": true, "result_chars": 2241, "cache": "신규", "mismatch": false, "result_hash": "07387657a109", "err_class": null}
+{"ts": "2026-11-04T18:35:16+09:00", "tool": "search_news(자동강제)", "args": "금 선물", "sig": "3964ec3372", "ok": true, "result_chars": 2001, "cache": "신규", "mismatch": false, "result_hash": "4bf544d9212d", "err_class": null}
+{"ts": "2026-11-04T18:35:19+09:00", "tool": "get_history(U4증거)", "args": "gold,7d", "sig": "ed72d62961", "ok": true, "result_chars": 172, "cache": "신규", "mismatch": false, "result_hash": "80bb9ad4f93f", "err_class": null}
