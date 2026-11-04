@@ -50,6 +50,7 @@ except ImportError:
     runlog = None
 
 MODEL = "gemini-3.1-flash-lite"       # 주력(volume): 요약·뉴스분석 등 대량 처리용
+FALLBACK_MODEL = "gemini-2.5-flash-lite"  # 3.1-flash-lite 503 서버혼잡 시 즉시 폴백용 경량 모델
 HEAVY_MODEL = "gemini-2.5-flash"      # 판단력 강한 보조 모델: 정책 점수·심층 배경설명 등에만
 KST = datetime.timezone(datetime.timedelta(hours=9))
 PER_KEY_DAILY_LIMIT = 500  # Gemini 무료 티어, 계정(키) 1개당 하루 한도
@@ -125,7 +126,8 @@ class KeyRotator:
     def client(self):
         from google import genai
         if self.idx not in self._client_cache:
-            self._client_cache[self.idx] = genai.Client(api_key=self.keys[self.idx])
+            self._client_cache[self.idx] = genai.Client(
+                api_key=self.keys[self.idx], http_options={"timeout": 25000})
         return self._client_cache[self.idx]
 
     def record_call(self):
@@ -152,6 +154,12 @@ class KeyRotator:
     def is_quota_error(e):
         msg = str(e)
         return "RESOURCE_EXHAUSTED" in msg or "429" in msg
+
+    @staticmethod
+    def is_server_overload_error(e):
+        """구글 모델 서버 과부하(503 UNAVAILABLE 등) — 키 문제가 아니라 모델 엔드포인트 문제."""
+        msg = str(e)
+        return any(k in msg for k in ("503", "UNAVAILABLE", "500", "504", "DEADLINE_EXCEEDED", "timed out", "Timeout"))
 
 
 class RotatingBudget:
@@ -218,6 +226,7 @@ class RotatingBudget:
         if wait > 0:
             time.sleep(wait)
 
+        cur_model = model
         tried = 0
         while tried < len(self._rot.keys) * 2:
             idx = self._rot.idx
@@ -229,23 +238,23 @@ class RotatingBudget:
             t0 = time.time()
             try:
                 self._last = time.time()
-                r = self._rot.client().models.generate_content(model=model, contents=prompt)
+                r = self._rot.client().models.generate_content(model=cur_model, contents=prompt)
                 text = (r.text or "").strip()
                 self.run_used += 1
                 n = self._rot.record_call()
                 self.transcript.append({"role": role, "topic": topic, "text": text})
-                tag = "★" if model != MODEL else " "
+                tag = "★" if cur_model != MODEL else " "
                 print(f"  [키{idx + 1} {n:>3}/{PER_KEY_DAILY_LIMIT}]{tag}"
                       f"{role}: {text[:40].replace(chr(10), ' ')}...")
                 if runlog:
-                    runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                    runlog.log_api_call(role, cur_model, idx + 1, topic, len(prompt),
                                          True, time.time() - t0)
                 return text
             except Exception as e:
                 if KeyRotator.is_daily_quota_error(e):
                     print(f"  ⚠️ 키{idx + 1}번 일일 한도 소진")
                     if runlog:
-                        runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                        runlog.log_api_call(role, cur_model, idx + 1, topic, len(prompt),
                                              False, time.time() - t0, "tool_error")
                     self._rot.usage["counts"][str(idx)] = PER_KEY_DAILY_LIMIT
                     _save_usage(self._rot.usage)
@@ -255,12 +264,19 @@ class RotatingBudget:
                 if KeyRotator.is_quota_error(e):
                     print("  ⏳ 분당 한도 — 65초 대기 (같은 키 재시도)")
                     if runlog:
-                        runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                        runlog.log_api_call(role, cur_model, idx + 1, topic, len(prompt),
                                              False, time.time() - t0, "tool_error")
                     time.sleep(65)
                     continue
+                if KeyRotator.is_server_overload_error(e) and cur_model == MODEL:
+                    print(f"  ↩️ {MODEL} 서버 과부하(503) → {FALLBACK_MODEL} 모델로 즉시 폴백")
+                    if runlog:
+                        runlog.log_api_call(role, cur_model, idx + 1, topic, len(prompt),
+                                             False, time.time() - t0, "tool_error")
+                    cur_model = FALLBACK_MODEL
+                    continue
                 if runlog:
-                    runlog.log_api_call(role, model, idx + 1, topic, len(prompt),
+                    runlog.log_api_call(role, cur_model, idx + 1, topic, len(prompt),
                                          False, time.time() - t0, "runtime_error")
                 if len(self._rot.keys) > 1 and tried < len(self._rot.keys) * 2 - 1:
                     print(f"  ⚠️ 키{idx + 1}번 오류({type(e).__name__}: {str(e)[:50]}) → 다른 키로 전환 시도")

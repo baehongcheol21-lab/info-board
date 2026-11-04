@@ -215,7 +215,7 @@ class Meeting:
 
 def phase_perceive(b, m):
     # ---- 1. 데이터 수집 (0콜) ----
-    print("[1/5] 데이터 수집")
+    print("[1/8] 데이터 수집")
     snap = {}
     for _id, name, sym, unit, dec in INDICATORS:
         try:
@@ -234,7 +234,7 @@ def phase_perceive(b, m):
 def phase_indicators(b, m):
     snap, gstate, prev_ind = m.snap, m.gstate, m.prev_ind
     # ---- 2. U1 지표요약 (변동 <0.5%는 직전 요약 재사용 = 0콜) ----
-    print("[2/5] U1 지표요약")
+    print("[2/8] U1 지표요약")
     out_ind = m.out_ind
     for _id, d in snap.items():
         if (d["pct"] is not None and abs(d["pct"]) < 0.2   # P12: 0.5→0.2 (거의 안 움직인 것만 재사용)
@@ -257,7 +257,7 @@ def phase_indicators(b, m):
 def phase_news(b, m):
     gstate, prev_brief = m.gstate, m.prev_brief
     # ---- 3. 뉴스 파이프라인 (다중 소스: 전기신문 + 인베스팅닷컴) ----
-    print("[3/5] 뉴스 파이프라인 (다중소스 크롤링→U2 분석→B2 분류→맥락)")
+    print("[3/8] 뉴스 파이프라인 (다중소스 크롤링→U2 분석→B2 분류→맥락)")
     news_brief = {}
     try:
         # 전 소스에서 헤드라인 수집 후 제목 기준 중복 제거
@@ -398,7 +398,7 @@ def phase_deepdive(b, m):
     already = {i for i, _ in anomalies}
     retry_items = [x for x in _load_retry_queue() if x["id"] not in already and x["id"] in snap][:2]
     anomalies = anomalies + [(x["id"], snap[x["id"]]) for x in retry_items]
-    print(f"[4/5] 심층토론 {len(anomalies)}건 (도구 사용, 보류큐 재의제 {len(retry_items)}건 포함)")
+    print(f"[4/8] 심층토론 {len(anomalies)}건 (도구 사용, 보류큐 재의제 {len(retry_items)}건 포함)")
     for _id, d in anomalies:
         try:
             base = f"{d['name']} 전일比 {d['pct']:+}%, 현재 {d['value']} {d['unit']}."
@@ -567,7 +567,7 @@ U4 검증(요약): {u4[:600]}
 def phase_brief(b, m):
     snap, news_brief, gstate, prev_brief = m.snap, m.news_brief, m.gstate, m.prev_brief
     # ---- 5. 알파 총평 ----
-    print("[5/5] 알파 총평")
+    print("[6/8] 알파 총평")
     brief = ""
     try:
         lines = [f"- {d['name']}: {d['value']} {d['unit']} ({d['pct']}%)" for d in snap.values()]
@@ -862,7 +862,7 @@ def phase_theme(b, m):
     snap, gstate = m.snap, m.gstate
     if not snap:
         return
-    print("[5/7] 테마 실험 — 오늘의 테마 토론·예측")
+    print("[5/8] 테마 실험 — 오늘의 테마 토론·예측")
     try:
         theme = _themes.pick(snap)
         m.theme = theme
@@ -1040,7 +1040,7 @@ def phase_portfolio(b, m):
     """
     if not (_univ and _pf):
         return
-    print("[6/7] 가상계좌 모의투자 — 6종목 토론")
+    print("[7/8] 가상계좌 모의투자 — 6종목 토론")
     try:
         prices, fx = _univ.fetch_prices()
         if not prices or not fx:
