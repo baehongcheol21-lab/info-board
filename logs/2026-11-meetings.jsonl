@@ -8,3 +8,4 @@
 {"ts": "2026-11-04T18:37:41+09:00", "ok": true, "calls": 12, "transcript_rows": 15, "note": ""}
 {"ts": "2026-11-05T09:50:37+09:00", "ok": true, "calls": 172, "transcript_rows": 193, "note": ""}
 {"ts": "2026-11-05T10:13:54+09:00", "ok": false, "calls": 38, "transcript_rows": 40, "note": "transcript 비어있음"}
+{"ts": "2026-11-05T17:10:11+09:00", "ok": true, "calls": 90, "transcript_rows": 106, "note": ""}
