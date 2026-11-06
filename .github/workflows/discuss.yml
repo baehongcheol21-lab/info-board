@@ -1,9 +1,10 @@
 name: ai-discussion
 on:
   schedule:
-    # GitHub cron은 보통 10~90분 지각 → 타겟을 30분 앞당겨 06/12/18시대에 걸리게 함.
-    # KST 05:30/11:30/17:30 = UTC 20:30/02:30/08:30
-    - cron: "37 20,2,8 * * *"
+    # GitHub cron은 보통 10~90분 지각 → 타겟을 30분 앞당겨 06/18시대에 걸리게 함.
+    # 2026-11-06 사용자 결정(하루 콜 1단계 450): 회의 하루 3번 → 2번 (장 시작 전 · 장 마감 후).
+    # KST 05:37/17:37 = UTC 20:37/08:37  (옛 값: "37 20,2,8 * * *" — 낮 11:30 회의 제거)
+    - cron: "37 20,8 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -18,7 +19,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install requests google-genai pyyaml
-      - name: AI 오케스트라 토론 (최대 150콜)
+      - name: AI 오케스트라 토론 (최대 175콜 = 회의 150 + 대신 읽기 25)
         # 계정(키) 추가 시: 여기 env에 GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }} 한 줄만 더 추가
         # (gemini_keys.py가 번호를 자동 인식하므로 discuss.py 코드는 건드릴 필요 없음)
         run: python discuss.py

@@ -83,7 +83,13 @@ def _diag(e):
     tb = traceback.format_exc().strip().splitlines()
     return f"{e} | {tb[-1] if tb else ''}"
 
-MAX_CALLS = 300   # 회의 1회당 상한 (P12 풀스로틀: 150→300, 하루 3회면 ~900콜/일)
+# 하루 콜 배분 1단계 (2026-11-06 사용자 결정, 루트 1000콜_배분표_재설계안.md 3장):
+#   회의 300콜(하루 2번 × 150) + 대신 읽기 50콜(하루 2번 × 25) + 스토리 3 + 여유 97 = 450.
+#   두 키의 실제 구글 한도가 로그로 확인되면 2단계(1,000콜: 회의 2번 × 200, 대신 읽기 290)로 올린다.
+#   (옛 값: 300/회 × 하루 3번 — 11-05 키1이 성공 약 199콜에서 '하루 한도'를 받아 근거가 없어졌다.)
+MEETING_CALLS = 150   # 회의 본류 1회 상한
+READER_CALLS = 25     # 대신 읽기 1회 상한 (reader.READ_CAP과 같게)
+MAX_CALLS = MEETING_CALLS + READER_CALLS   # 이번 실행 전체 상한(RotatingBudget이 강제)
 TARGET_CALLS = int(MAX_CALLS * 0.7)  # 이 미만이면 잔여예산 소진 라운드 발동 (P12 #4)
 DEEP_TOPICS = 8   # 심층토론 대상 수 (3→8, 2026-08-05 역할 고정 문제 해소)
 MAX_CRITIQUE_ROUNDS = 1   # topic당 비판→교정 재라운드 상한 (무한 왕복 차단)
@@ -177,15 +183,37 @@ def _fcfmt():
     return _fc.FORMAT_HINT if _fc else ""
 
 
-def build_global_state(snap, now):
-    """전역 상태 버스 (체크리스트 D6) — 모든 요원이 공유하는 2줄 맥락"""
+POWER_ALARM_MW = 5500   # 공급예비력 경보선(MW). 전력 %는 주가식 등락률로 쓰지 않는다(story_facts.ALARM_MW와 같은 값)
+
+
+def power_line(power):
+    """전력 수급 4개 지표 한 줄 (2026-11-06 사용자 결정: 회의에 주입). 값이 없으면 빈 문자열.
+    가짜 숫자 금지 — 못 받은 지표는 줄에서 빠진다."""
+    if not power:
+        return ""
+    parts = []
+    if power.get("curr_demand") is not None:
+        parts.append(f"현재 수요 {power['curr_demand']:,.0f}MW")
+    if power.get("supp_ability") is not None:
+        parts.append(f"공급능력 {power['supp_ability']:,.0f}MW")
+    if power.get("reserve_pwr") is not None:
+        rp = power["reserve_pwr"]
+        parts.append(f"공급예비력 {rp:,.0f}MW (경보선 {POWER_ALARM_MW:,}MW의 {rp / POWER_ALARM_MW:.1f}배)")
+    if power.get("reserve_rate") is not None:
+        parts.append(f"공급예비율 {power['reserve_rate']:.1f}%")
+    return ("[전력 수급 — 전력거래소 실시간] " + " · ".join(parts)) if parts else ""
+
+
+def build_global_state(snap, now, power=None):
+    """전역 상태 버스 (체크리스트 D6) — 모든 요원이 공유하는 2줄 맥락 (+전력 수급 1줄)"""
     movers = sorted((d for d in snap.values() if d["pct"] is not None),
                     key=lambda x: -abs(x["pct"]))[:3]
     mv = ", ".join(f"{d['name']} {d['pct']:+}%" for d in movers)
     kr_open = now.weekday() < 5 and 9 <= now.hour < 16
     session = (f"지금 {now:%m/%d %H시} KST. 한국장 {'열림' if kr_open else '마감'}. "
                "미국 지수(SOX·나스닥 등)는 미국 어젯밤 종가라 한국 오늘장과 시점이 다르다.")
-    return f"[전역 상태] {session}\n[오늘 큰 움직임] {mv or '없음'}"
+    pl = power_line(power)
+    return f"[전역 상태] {session}\n[오늘 큰 움직임] {mv or '없음'}" + (f"\n{pl}" if pl else "")
 
 
 class Meeting:
@@ -198,6 +226,9 @@ class Meeting:
         self.prev_ind = prev.get("indicators", {})
         self.prev_brief = prev.get("alpha_brief", "")
         self.snap = {}
+        self.power = {}
+        self.reader = None
+        self.prev_reader = prev.get("reader") or {}
         self.gstate = ""
         self.memory = ""
         self.out_ind = {}
@@ -226,9 +257,52 @@ def phase_perceive(b, m):
     smp = fetch_smp()
     if smp:
         snap["smp"] = {"name": "SMP 계통한계가격", "value": smp, "pct": None, "unit": "원/kWh"}
+    # 전력 수급 4개 지표 (0콜). 클라우드 수집기와 같은 함수 — 실패해도 회의는 계속.
+    power = {}
+    try:
+        import collect_cloud as _cc
+        power = _cc.fetch_sukub_all()
+    except Exception as e:
+        print(f"  ⚠️ 전력 수급 수집 실패(회의는 계속): {type(e).__name__}: {e}")
+    print(f"  ⚡ 전력 수급 {len(power)}/4개" + (f": {power_line(power)}" if power else " — 빠짐"))
+    m.power = power
     m.snap = snap
-    m.gstate = build_global_state(snap, m.now)
+    m.gstate = build_global_state(snap, m.now, power)
     m.memory = tools.get_conclusions("", n=2)  # 기억 은행 (D10)
+
+
+def phase_reader(b, m):
+    """AI 대신 읽기 1단계 (2026-11-06 사용자 결정) — 산업부·전기신문을 1건 1콜로 읽고,
+    원문 인용 검사를 통과한 것만 회의 전역 상태(gstate)에 붙인다 → 이후 모든 요원이 읽는다."""
+    try:
+        import reader as _rd
+    except ImportError as e:
+        print(f"  ⚠️ 대신읽기 모듈 없음: {e}")
+        return
+    print(f"[1b/8] AI 대신 읽기 (산업부·전기신문, 최대 {READER_CALLS}콜)")
+    inds = [(iid, nm) for iid, nm, *_ in INDICATORS] + [
+        ("smp", "SMP 계통한계가격(전기 도매가격)"), ("reserve_rate", "전력 공급예비율"),
+        ("reserve_pwr", "전력 공급예비력"), ("supp_ability", "전력 공급능력"),
+        ("curr_demand", "현재 전력수요")]
+    prev_links = list((m.prev_reader or {}).get("read_links") or [])
+    n0 = len(b.transcript)
+    try:
+        rank = (lambda items: _registry().run("news_rank", items=items)) if _registry else None
+        res = _rd.run(b, inds, skip_links=prev_links, cap=READER_CALLS, rank=rank)
+    except Exception as e:
+        print(f"  ⚠️ 대신읽기 실패(회의는 계속): {_diag(e)}")
+        return
+    # 공개 저장소 주의: READER 답에는 기사 원문 인용이 들어 있다 → 녹취(discussions.json)에 남기지 않는다.
+    b.transcript[n0:] = [t for t in b.transcript[n0:] if t.get("role") != "READER"]
+    read_now = [x["link"] for x in res["items"] if x.get("passed") is not None]
+    res["read_links"] = (read_now + [l for l in prev_links if l not in read_now])[:300]
+    m.reader = res
+    blk = _rd.gstate_block(res)
+    if blk:
+        m.gstate = m.gstate + "\n" + blk
+    st = res["stats"]
+    print(f"  📰 대신읽기 모음 {st['모음']} · 읽음 {st['읽음']} · 통과 {st['통과']} · 버림 {st['버림']} "
+          f"{st['이유'] or ''}")
 
 
 def phase_indicators(b, m):
@@ -263,7 +337,11 @@ def phase_news(b, m):
         # 전 소스에서 헤드라인 수집 후 제목 기준 중복 제거
         raw = tools.get_headlines(per_source=20)   # 12→20: 더 넓은 풀에서 고른다
         seen, heads = set(), []
+        # 대신 읽기가 이번 회의에 이미 읽은 링크는 U2가 다시 읽지 않는다(콜 아끼기)
+        _read = set(((m.reader or {}).get("read_links") or []))
         for h in raw:
+            if h.get("link") in _read:
+                continue
             key = h["title"][:20]
             if h["title"] and key not in seen:
                 seen.add(key)
@@ -411,7 +489,7 @@ def phase_deepdive(b, m):
 "HBM 독점" 같은 장기 상수는 오늘 급변의 원인이 될 수 없다 — 배제하라.
 도구(search_news, get_history 등)로 근거를 찾아라. 원인 후보 최대 3개, 각각 [출처:]와 발생시점 명시.
 검색어에는 반드시 "{d['name']}" 지표명을 포함하라 — 다른 종목·지표를 검색하지 마라.
-근거를 못 찾으면 "원인 후보 없음"이라고 써라.{_fix("U3")}{_fcfmt()}""", topic=d["name"])
+근거를 못 찾으면 "원인 후보 없음"이라고 써라.""", topic=d["name"])
             # 툴킷: 수급(거래량) 데이터를 자동으로 뽑아 U4의 평가매트릭스 근거로 제공
             try:
                 vol = tools.get_history(_id, days=7)
@@ -431,7 +509,7 @@ U3의 분석: {u3[:1200]}
 [평가 매트릭스] 각 원인 후보를 두 기준으로 채점하라:
   ①24시간 이내 발생한 이벤트인가?  ②위 수급 데이터(거래량 급증 등)로 증명되는가?
 둘 다 충족해야만 [확실]. 하나만 충족 = [추정]. 둘 다 미충족 = [기각].
-마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.{_fix("U4")}{_fcfmt()}""", topic=d["name"])
+마지막 줄에 종합판정: [확실] / [추정] / [원인불명] / [판단불가] 중 하나.""", topic=d["name"])
             def _parse_verdict(txt):
                 return next((v for v in ("[확실]", "[추정]", "[원인불명]", "[판단불가]")
                              if v in txt.split("\n")[-1] or v in txt[-120:]), "[추정]")
@@ -493,18 +571,8 @@ U4가 부족하다고 한 바로 그 지점을 메워라. 같은 검색을 반�
                                   # 교정 성과 측정용(§7-1): 재라운드가 판정을 실제로 바꿨나
                                   "verdict_first": verdict_first, "critique_rounds": rounds,
                                   "improved": bool(rounds) and verdict_first != verdict_kr})
-            # ---- 예측 채집 (추가 콜 0) ----
-            # U3·U4는 이미 부른 응답이다. 그 끝에 붙인 [예측] 한 줄만 뽑아 기록한다.
-            # 이게 있어야 내일 "맞았나"를 물을 대상이 생긴다 — 없으면 §7-2는 채점할 게 없다.
-            if _fc:
-                for who, txt in (("U3", u3), ("U4", u4)):
-                    try:
-                        pred = _fc.parse(txt)
-                        if pred:
-                            _fc.record(m.meeting_id, who, _id, pred,
-                                       emit_fn=(bus.emit if bus else None))
-                    except Exception as e:
-                        print(f"  ⚠️ 예측 기록 실패({who}/{_id}): {type(e).__name__}: {e}")
+            # (2026-11-06 사용자 결정 A안) U3·U4 예측 채집 중단 — 역할 고정(강세/약세) 발언이라
+            # 실력 채점이 아니다. 채점은 알파 최종 판단만(phase_theme·phase_portfolio).
             constraint = ("원인을 단정해도 된다." if verdict_kr == "[확실]" else
                           f"U4 종합판정이 {verdict_kr} 이므로 너는 원인을 단정할 수 없다. "
                           "서두에 '원인은 아직 확정되지 않았습니다'로 시작하라. 서두와 결론이 모순되면 실격이다.")
@@ -818,7 +886,9 @@ def finalize(b, m):
                             note="" if meeting_ok else "transcript 비어있음")
     result = {"time": now.isoformat(timespec="minutes"), "alpha_brief": m.brief,
               "indicators": out_ind, "news_brief": news_brief,
-              "calls_used": b.used, "transcript": b.transcript, "meeting_ok": meeting_ok}
+              "calls_used": b.used, "transcript": b.transcript, "meeting_ok": meeting_ok,
+              # 대신 읽기 결과(제목·링크·출처·우리 요약·지표·방향·검사결과만 — 원문 인용 없음)
+              "reader": m.reader, "power": m.power}
     # ⚠️ 실패한 회의는 **discussions.json을 덮지 않는다**(2026-08-05 실측으로 잡은 실사고).
     # 예산 소진 상태에서 14:27 회의가 콜 0·녹취 0으로 끝났는데도 결과를 그대로 써서,
     # 141콜짜리 13:43 브리핑을 지워 버렸다. 공개 페이지가 "오늘은 심층토론 대상이 없습니다"라는
@@ -888,7 +958,7 @@ def phase_theme(b, m):
 
 이 테마의 **강세 논거**를 편들어 세워라. 억지로 균형 잡지 마라 — 반대편은 U4가 맡는다.
 근거는 24시간 내 사건·수급·가격 데이터로만. 없으면 "강한 근거 없음"이라고 분명히 써라.
-3줄 이내.{fmt}{_fix("U3")}""", topic=theme["name"])
+3줄 이내.""", topic=theme["name"])
     except Exception as e:
         print(f"  ⚠️ U3 강세: {_diag(e)}")
 
@@ -898,7 +968,7 @@ def phase_theme(b, m):
 U3의 강세 논거: {bull[:900]}
 
 이 테마의 **약세 논거**와 U3 논거의 허점을 짚어라. 근거 없는 낙관은 깎아라.
-3줄 이내.{fmt}{_fix("U4")}""", topic=theme["name"])
+3줄 이내.""", topic=theme["name"])
     except Exception as e:
         print(f"  ⚠️ U4 약세: {_diag(e)}")
 
@@ -907,33 +977,14 @@ U3의 강세 논거: {bull[:900]}
 U4의 반론: {bear[:900]}
 
 반론 중 **타당한 것은 인정하고**, 틀린 것만 반박하라. 2줄 이내. 새 근거가 없으면
-"반박 근거 없음"이라고 써라. 그 뒤에 예측을 갱신해 다시 적어라.{fmt}""",
+"반박 근거 없음"이라고 써라.""",
                       topic=theme["name"])
     except Exception as e:
         print(f"  ⚠️ U3 반박: {_diag(e)}")
 
-    # 알파 종합 전에 요원 신뢰도 가중 합의를 0콜로 계산해 보여준다.
-    # 알파가 '누구 말이 그동안 맞았는지'를 모른 채 저울질하면 실험의 학습이 알파를 안 거친다.
+    # (2026-11-06 A안) 예전엔 U3·U4 예측의 신뢰도 가중 합의를 알파에게 보여줬다. U3·U4가 더는
+    # 예측하지 않으므로 뺐다(역할 고정 숫자의 가중합은 정보가 아니다).
     ens_note = ""
-    try:
-        from organs.forecast_score_v1 import ensemble as _ens
-        preds = []
-        for who, txt in (("U3", rebut or bull), ("U4", bear)):
-            for pr in _fc.parse_multi(txt):
-                preds.append({"who": who, "dir": pr["dir"], "p": pr["p"], "hz": pr["horizon_kr"]})
-        w = _fc.weights()
-        rows = []
-        for hz in ("단기", "중기", "장기"):
-            sub = [x for x in preds if x["hz"] == hz]
-            e = _ens(sub, w) if sub else None
-            if e:
-                rows.append(f"{hz}: {'상승' if e['dir'] > 0 else '하락'} p={e['p']} "
-                            f"(요원 일치도 {e['agree']})")
-        if rows:
-            ens_note = ("\n[요원 신뢰도 가중 합의 — 0콜 계산] " + " / ".join(rows)
-                        + "\n이건 참고값이다. 다르게 보면 다르게 적되 이유를 대라.")
-    except Exception as e:
-        print(f"  ⚠️ 앙상블 계산 실패: {type(e).__name__}: {e}")
 
     try:
         final = b.ask("알파", f"""너는 지휘자 알파다. {common}
@@ -948,7 +999,7 @@ U4의 반론: {bear[:900]}
         print(f"  ⚠️ 알파 종합: {_diag(e)}")
 
     saved = 0
-    for who, txt in (("U3", rebut or bull), ("U4", bear), ("알파", final)):
+    for who, txt in (("알파", final),):   # A안: 알파 최종 판단만 채점
         try:
             prs = _fc.parse_multi(txt)
             if prs:
@@ -1026,6 +1077,13 @@ def _pf_parse_equity(text):
     return {"equity": eq_val, "p": p_val, "lo": lo, "hi": hi}
 
 
+def _pf_pred_lines():
+    """알파에게 보여줄 종목별 예측 줄 틀(id는 코드가 넣는다 — AI가 id를 지어내지 않게)."""
+    if not _univ:
+        return ""
+    return "\n".join(f"[예측:{u['id']}:단기] 방향=__ 확률=0.__ 구간=__~__" for u in _univ.UNIVERSE)
+
+
 def phase_portfolio(b, m):
     """가상계좌 5천만원 모의투자 — 6종목 전부 토론하고 목표비중·내일 평가액을 정한다.
 
@@ -1096,8 +1154,7 @@ def phase_portfolio(b, m):
 이 종목을 볼 때 주로 보는 것: {u['watch']}
 
 **매수 논거**를 세워라. 억지 균형 금지 — 반대편은 U4가 맡는다.
-24시간 내 사건·수급·가격으로만. 없으면 "강한 근거 없음"이라고 써라. 2줄 이내.
-{_fc.THEME_FORMAT if _fc else ''}{_fix("U3")}""", topic=nm)
+24시간 내 사건·수급·가격으로만. 없으면 "강한 근거 없음"이라고 써라. 2줄 이내.""", topic=nm)
         except Exception as e:
             print(f"  ⚠️ U3/{nm}: {_diag(e)}")
         try:
@@ -1107,22 +1164,11 @@ def phase_portfolio(b, m):
 종목: {nm} ({u['sector']}) 현재 {prices[uid]['px']:,.2f} {u['ccy']}, 전일比 {prices[uid]['pct']}%
 U3의 매수 논거: {bull[:600]}
 
-**매도/보류 논거**와 U3 논거의 허점을 짚어라. 근거 없는 낙관은 깎아라. 2줄 이내.
-{_fc.THEME_FORMAT if _fc else ''}{_fix("U4")}""", topic=nm)
+**매도/보류 논거**와 U3 논거의 허점을 짚어라. 근거 없는 낙관은 깎아라. 2줄 이내.""", topic=nm)
         except Exception as e:
             print(f"  ⚠️ U4/{nm}: {_diag(e)}")
         views[uid] = (bull, bear)
-        if _fc:
-            for who, txt in (("U3", bull), ("U4", bear)):
-                try:
-                    prs = _fc.parse_multi(txt)
-                    if prs:
-                        _fc.record_theme(m.meeting_id, who,
-                                         {"id": uid, "name": nm, "members": [uid]},
-                                         prs, {uid: prices[uid]["px"]},
-                                         emit_fn=(bus.emit if bus else None))
-                except Exception as e:
-                    print(f"  ⚠️ 예측 기록({who}/{nm}): {type(e).__name__}: {e}")
+        # (2026-11-06 A안) U3·U4 종목 예측 기록 중단 — 종목 예측은 아래 알파 종합 콜에서 받는다.
 
     digest = "\n\n".join(
         f"[{_univ.BY_ID[k]['name']}]\n 매수(U3): {v[0][:320]}\n 매도(U4): {v[1][:320]}"
@@ -1141,6 +1187,9 @@ U3의 매수 논거: {bull[:600]}
 [비중] kepco=__ lselectric=__ hynix=__ nvda=__ ceg=__ xle=__ 현금=__
 [평가예측] 내일=________ 확률=0.__ 구간=________~________
 
+그리고 **종목마다 다음 거래일(단기) 예측 한 줄씩** — 이 줄들이 네 성적으로 채점된다:
+{_pf_pred_lines()}
+
 규칙:
 · 종목 id는 정확히 이것만 쓴다: {ids}
 · 비중은 5 단위 정수(%), 한 종목 최대 {int(_univ.MAX_WEIGHT*100)}. 합계 100 이하, 나머지는 현금.
@@ -1152,10 +1201,25 @@ U3의 매수 논거: {bull[:600]}
   판단을 안 한 것이다.
 · **위 [거래비용]을 근거에 반드시 반영해라.** 어떤 종목의 비중을 바꿨다면, 그 변경이
   비용을 물고도 남는 이유를 한 줄로 밝혀라. 밝히지 못할 변경이면 그대로 둬라.
-· 비중을 왜 그렇게 잡았는지 근거를 2~3줄로 먼저 쓰고, 마지막에 위 두 줄을 적어라.
+· 종목 예측의 방향은 `상승`/`하락` 중 하나, 확률은 그 방향이 맞을 확률(0.50~0.95), 구간은 내일 등락률(%).
+  근거가 약하면 0.55 언저리. 예시 숫자를 베끼지 마라.
+· 비중을 왜 그렇게 잡았는지 근거를 2~3줄로 먼저 쓰고, 마지막에 위 두 줄과 종목 예측 줄들을 적어라.
 {_fix("알파")}""", topic="가상계좌 배분")
     except Exception as e:
         print(f"  ⚠️ 알파 배분: {_diag(e)}")
+
+    # A안: 알파 종목별 예측 기록(채점 대상). 형식을 안 지킨 종목은 기록이 없을 뿐 회의는 계속.
+    if _fc and final:
+        try:
+            got = _fc.parse_multi_ids(final, set(prices))
+            for uid, prs in got.items():
+                _fc.record_theme(m.meeting_id, "알파",
+                                 {"id": uid, "name": _univ.BY_ID[uid]["name"], "members": [uid]},
+                                 prs, {uid: prices[uid]["px"]},
+                                 emit_fn=(bus.emit if bus else None))
+            print(f"  🧪 알파 종목 예측 {sum(len(v) for v in got.values())}건 저장 ({len(got)}/{len(prices)}종목)")
+        except Exception as e:
+            print(f"  ⚠️ 알파 종목 예측 기록 실패: {type(e).__name__}: {e}")
 
     w = _pf_parse_weights(final)
     eq = _pf_parse_equity(final)
@@ -1176,10 +1240,11 @@ U3의 매수 논거: {bull[:600]}
 
 PHASES = [
     ("perceive", phase_perceive),
+    ("reader", phase_reader),                    # AI 대신 읽기 (2026-11-06) — 산업부·전기신문, 검사 통과분만 gstate로
     ("indicators", phase_indicators),
     ("news", phase_news),
     ("deepdive", phase_deepdive),
-    ("theme", phase_theme),                      # 오늘의 테마 토론·예측 (U3 vs U4 + 가중앙상블 + 알파 종합)
+    ("theme", phase_theme),                      # 오늘의 테마 토론·예측 (U3 강세 vs U4 약세 논거 → 알파 종합, 알파만 채점)
     ("brief", phase_brief),
     ("portfolio", phase_portfolio),              # 가상계좌 모의투자 — 6종목 토론·배분
     ("spend_remaining", phase_spend_remaining),  # P12 #4 — 잔여예산 소진

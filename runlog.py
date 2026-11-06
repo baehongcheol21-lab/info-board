@@ -68,13 +68,18 @@ def _sig(tool, args_summary):
     return hashlib.md5(f"{tool}|{args_summary}".encode("utf-8")).hexdigest()[:10]
 
 
-def log_api_call(agent, model, key_no, topic, prompt_chars, ok, sec, err_class=None):
-    """b.ask/ask_heavy 매 호출마다 1행. 실패도 반드시 기록한다."""
-    _append("api_call_log", {
+def log_api_call(agent, model, key_no, topic, prompt_chars, ok, sec, err_class=None, err=None):
+    """b.ask/ask_heavy 매 호출마다 1행. 실패도 반드시 기록한다.
+    err: 한도 오류일 때 구글이 알려 준 한도 이름·숫자만(gemini_keys.quota_detail). 2026-11-06 추가 —
+    키1이 11-05에 성공 약 199콜 만에 '하루 한도'를 받은 이유를 다음 실행 로그로 확인하려고."""
+    row = {
         "agent": agent, "model": model, "key_no": key_no, "topic": (topic or "")[:40],
         "prompt_chars": prompt_chars, "ok": bool(ok), "sec": round(sec, 2),
         "err_class": (err_class or "runtime_error") if not ok else None,
-    })
+    }
+    if err:
+        row["err"] = str(err)[:200]
+    _append("api_call_log", row)
 
 
 def log_tool_call(tool, args_summary, ok, result_chars, mismatch=False, result_hash=""):

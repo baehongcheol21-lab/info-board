@@ -558,6 +558,15 @@ def system_payload():
         if hz:
             agents[who] = hz
     out["calibration"] = agents or None
+    # 성적표 기준선 (2026-11-06 사용자 결정: "성적표에는 항상 동전(50%)과 단순보유 기준선을 나란히")
+    # 채점은 알파 최종 판단만(A안). 기준선을 못 구하면 None — 가짜 숫자를 넣지 않는다.
+    try:
+        import benchmark
+        out["scoreboard"] = {"alpha": benchmark.forecast_scoreboard("알파"),
+                             "account": benchmark.account_vs_hold()}
+    except Exception as e:
+        print(f"  ⚠️ 성적표 기준선 계산 실패: {type(e).__name__}: {e}")
+        out["scoreboard"] = None
     return out
 
 

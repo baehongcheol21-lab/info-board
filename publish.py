@@ -1837,6 +1837,18 @@ function renderPhoneTabs(){
         <span class="vv">${Object.entries(hz).map(([h,v])=>
           `${h} ${v.hit==null?"—":Math.round(v.hit*100)+"%"}(n=${v.n||0})`).join(" · ")}</span></div>`).join("");
     }
+    // 성적표 (2026-11-06 사용자 결정): 알파 최종 판단만 채점 + 동전·늘 "오른다"·단순보유 기준선을 나란히
+    let sb = "";
+    if(S.scoreboard){
+      const A = S.scoreboard.alpha || {}, AC = S.scoreboard.account;
+      const pc = v => v==null ? "—" : (v*100).toFixed(1)+"%";
+      const pp = v => v==null ? "—" : (v>0?"+":"")+v.toFixed(2)+"%";
+      sb = ["단기","중기","장기"].map(h=>{ const v = A[h] || {};
+        return `<div class="prow"><span class="nm">${h} <span style="opacity:.6">n=${v.n||0}</span></span>
+          <span class="vv">${v.n ? `알파 ${pc(v.hit)} · 동전 50% · 늘 오른다 ${pc(v.up_rate)} · Brier ${v.brier} (동전 0.250)` : "채점 대기"}</span></div>`; }).join("");
+      if(AC) sb += `<div class="prow"><span class="nm">가상계좌</span>
+          <span class="vv">${pp(AC.account_pct)} · 같은 6종목 단순보유 ${pp(AC.hold_pct)}${AC.diff_pp==null?"":` (차이 ${AC.diff_pp>0?"+":""}${AC.diff_pp}%p)`}</span></div>`;
+    }
     document.getElementById("psec-system").innerHTML = `
       <div class="pcard"><h4>오늘 AI 예산 <span class="sub">계정 ${b.keys||"?"}개</span></h4>
         <div class="prow"><span class="nm">사용</span>
@@ -1844,7 +1856,9 @@ function renderPhoneTabs(){
         <div class="pbar" style="width:100%;margin-top:6px"><i style="width:${pct}%;background:${pct>=90?"var(--t-up)":"var(--t-accent)"}"></i></div>
         <div style="margin-top:8px">${runs}</div></div>
       <div class="pcard"><h4>이벤트 요약 <span class="sub">최근 스트림</span></h4>${ev||'<div class="pempty">없음</div>'}</div>
-      ${cal?`<div class="pcard"><h4>요원 예측 성적 <span class="sub">기간별 적중률</span></h4>${cal}</div>`:""}
+      ${sb?`<div class="pcard"><h4>예측 성적표 <span class="sub">알파 최종 판단만 · 기준선과 나란히</span></h4>${sb}
+        <div class="pempty">U3·U4는 찬반 논거만 낸다(11-06부터 채점 제외). 확률은 과거 적중률로 보정한 값.</div></div>`:""}
+      ${cal?`<div class="pcard"><h4>요원별 옛 성적 <span class="sub">기간별 적중률 · U3·U4 역할 고정 시절 포함</span></h4>${cal}</div>`:""}
       <div class="pcard"><h4>뇌 시퀀스 <span class="sub">누가 무엇을 호출했나</span></h4>${tl}</div>
       <div class="pcard"><h4>최근 에러</h4>${errs}</div>
       ${pcCard()}`;

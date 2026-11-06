@@ -160,9 +160,88 @@ THEME_FORMAT = (
     "자체가 무의미해진다.** 근거가 있으면 확신을 실어라. 다만 근거 없이 부풀리면 다음 "
     "회의에서 네 성적표로 돌아온다.\n"
     "· 구간은 그 시점까지의 누적 등락률(%) 예상 범위다.\n"
-    "· **네 역할대로 판단하라.** 매수 논거를 맡았으면 그 논거가 맞을 때의 그림을, 매도 "
-    "논거를 맡았으면 그 논거가 맞을 때의 그림을 숫자로 적어라. 상대와 똑같은 예측을 내면 "
-    "토론을 한 의미가 없다.")
+    "· 강세·약세 논거를 다 읽은 **최종 판단**으로 적어라(이 숫자만 채점된다).")
+# (2026-11-06 사용자 결정 A안) 채점은 알파 최종 판단만. 예전 마지막 줄 "네 역할대로 판단하라"는
+# U3(강세)·U4(약세) 역할 고정 예측용이었다 — 역할대로 말한 숫자는 실력 채점이 아니라서 뺐다.
+
+# ---- 채점 대상 (2026-11-06 사용자 결정 A안) -------------------------------------------
+# "U3, U4는 토론 논거만 내고 채점에서 제외해라." 알파 최종 확률만 기록·채점한다.
+# 이 목록 밖의 요원이 record()/record_theme()을 불러도 기록하지 않는다(실수 방지 잠금).
+GRADED_AGENTS = ("알파",)
+
+# ---- 확률 보정 (2026-11-06 사용자 결정, 콜 0) ------------------------------------------
+# 요원이 말한 확률을 "과거에 그 확률대로 말했을 때 실제 적중률"로 덮어쓴다.
+# 실측(1000콜_배분표_재설계안.md 4-3): 확신 구간별 실제 적중이 47~54%로 평평했다 → 보정하면
+# Brier가 크게 준다(장기 0.393→0.255). 단 동전(0.250)은 못 넘었다 — 보정은 손해 방지이지 실력이 아니다.
+# 표본이 적은 구간은 그 기간 전체 적중률 쪽으로 당긴다(CAL_K건 분량의 가상 표본).
+# 알파 자기 기록이 구간에 CAL_OWN_MIN건 이상 쌓이면 알파 기록만, 그 전엔 전 요원 기록을 쓴다.
+CAL_BINS = (0.0, 0.55, 0.60, 0.65, 0.70, 1.01)
+CAL_K = 20
+CAL_OWN_MIN = 30
+CAL_FLOOR, CAL_CEIL = 0.50, 0.95   # 방향은 알파 것을 그대로 두고 확률만 고친다
+
+
+def _graded_rows(horizon):
+    rows = []
+    for r in _load_jsonl(GRADED_FILE):
+        if r.get("horizon") != horizon or r.get("dir") not in (1, -1):
+            continue
+        if r.get("actual") is None or r.get("actual") == 0:
+            continue
+        p = r.get("p_raw", r.get("p"))
+        if p is None:
+            continue
+        rows.append((r.get("who"), float(p), (r["actual"] > 0) == (r["dir"] > 0)))
+    return rows
+
+
+def calibrate_p(p, horizon, who="알파", rows=None):
+    """말한 확률 p → 보정 확률. 반환 (p_cal, 근거 dict). 과거 채점 기록만 쓴다(미래 정보 없음)."""
+    rows = _graded_rows(horizon) if rows is None else rows
+    if not rows:
+        return round(min(max(p, CAL_FLOOR), CAL_CEIL), 3), {"src": "없음", "n": 0}
+    bi = next(i for i in range(len(CAL_BINS) - 1) if CAL_BINS[i] <= p < CAL_BINS[i + 1]) \
+        if p < CAL_BINS[-1] else len(CAL_BINS) - 2
+
+    def _in_bin(x):
+        return CAL_BINS[bi] <= x < CAL_BINS[bi + 1]
+    own = [ok for w, x, ok in rows if w == who and _in_bin(x)]
+    if len(own) >= CAL_OWN_MIN:
+        src, pool = "본인", [(w, x, ok) for w, x, ok in rows if w == who]
+    else:
+        src, pool = "전 요원", rows
+    base = sum(ok for _, _, ok in pool) / len(pool)
+    hits = [ok for _, x, ok in pool if _in_bin(x)]
+    pc = (sum(hits) + CAL_K * base) / (len(hits) + CAL_K)
+    pc = round(min(max(pc, CAL_FLOOR), CAL_CEIL), 3)
+    return pc, {"src": src, "bin": f"{CAL_BINS[bi]:.2f}-{min(CAL_BINS[bi + 1], 1.0):.2f}",
+                "n": len(hits), "base": round(base, 3)}
+
+
+# 종목별 예측(가상계좌 배분 때 알파가 종목마다 한 줄): `[예측:kepco:단기] 방향=상승 확률=0.6 구간=-1~+2`
+_RE_ID = re.compile(
+    r"\[예측[:：]\s*([A-Za-z0-9_]+)\s*[:：]\s*(단기|중기|장기)\]\s*방향\s*=\s*(상승|하락)[\s|,;/]*"
+    r"확률\s*=\s*([01](?:\.\d+)?)[\s|,;/]*"
+    r"구간\s*=\s*([+-]?\d+(?:\.\d+)?)%?\s*~\s*([+-]?\d+(?:\.\d+)?)%?")
+
+
+def parse_multi_ids(text, ids):
+    """종목 id별 다기간 예측. 반환 {id: [{horizon_kr, days, dir, p, lo, hi}, ...]}. 모르는 id는 버린다."""
+    out = {}
+    for m in _RE_ID.finditer(text or ""):
+        uid = m.group(1)
+        if uid not in ids:
+            continue
+        lo, hi = float(m.group(5)), float(m.group(6))
+        if lo > hi:
+            lo, hi = hi, lo
+        lst = out.setdefault(uid, [])
+        if any(x["horizon_kr"] == m.group(2) for x in lst):
+            continue   # 같은 종목·기간을 두 번 쓰면 첫 줄만
+        lst.append({"horizon_kr": m.group(2), "days": HORIZONS[m.group(2)],
+                    "dir": 1 if m.group(3) == "상승" else -1,
+                    "p": min(max(float(m.group(4)), 0.0), 1.0), "lo": lo, "hi": hi})
+    return out
 
 
 def _load_jsonl(path):
@@ -185,6 +264,8 @@ def record(meeting_id, who, indicator, pred, emit_fn=None):
     """예측 1건을 영구 기록. 채점 대상 날짜(target_date)는 '다음 거래일'이 아니라
     '다음 회의가 보는 날'이라 단순히 발행 다음 날짜로 둔다 — 주말이면 다음 평일 스냅샷과
     자연히 맞춰진다(그날 pct가 없으면 대조를 건너뛴다)."""
+    if who not in GRADED_AGENTS:
+        return None
     now = datetime.datetime.now(KST)
     row = {"ts": now.isoformat(timespec="seconds"), "date": now.strftime("%Y-%m-%d"),
            "meeting_id": meeting_id, "who": who, "id": indicator,
@@ -236,15 +317,24 @@ def _sym(iid):
 
 
 def record_theme(meeting_id, who, theme, preds, levels, emit_fn=None):
-    """테마 다기간 예측을 영구 기록. levels는 발행 시점의 구성원 가격(채점 기준선)."""
+    """테마 다기간 예측을 영구 기록. levels는 발행 시점의 구성원 가격(채점 기준선).
+    채점 대상(GRADED_AGENTS)만 기록하고, 확률은 보정값(p)으로 저장한다 — 말한 값은 p_raw."""
+    if who not in GRADED_AGENTS:
+        return []
     now = datetime.datetime.now(KST)
     rows = []
+    cache = {}
     for p in preds:
+        hz = p["horizon_kr"]
+        if hz not in cache:
+            cache[hz] = _graded_rows(hz)
+        p_cal, cal_info = calibrate_p(p["p"], hz, who=who, rows=cache[hz])
         row = {"kind": "theme", "ts": now.isoformat(timespec="seconds"),
                "date": now.strftime("%Y-%m-%d"), "meeting_id": meeting_id, "who": who,
                "theme": theme["id"], "theme_name": theme["name"],
-               "horizon": p["horizon_kr"], "days": p["days"],
-               "dir": p["dir"], "p": p["p"], "lo": p["lo"], "hi": p["hi"],
+               "horizon": hz, "days": p["days"],
+               "dir": p["dir"], "p": p_cal, "p_raw": p["p"], "cal": cal_info,
+               "lo": p["lo"], "hi": p["hi"],
                "levels": levels}
         rows.append(row)
         try:

@@ -31,12 +31,28 @@ _BASE = os.path.dirname(os.path.abspath(__file__))
 TRENDS_FILE = os.path.join(_BASE, "trends.json")
 
 
+class _RoundRobinEmbedClient:
+    """콜마다 키를 번갈아 쓰는 임베딩 클라이언트(키1→키2→키1…, 2026-11-06 사용자 지시
+    "모든 시스템은 번갈아가면서 호출" — gemini_keys.KeyRotator.record_call()과 같은 원칙).
+    기존 코드가 client.models.embed_content(...)로 부르므로 같은 모양을 유지한다."""
+
+    def __init__(self, keys):
+        from google import genai
+        self._clients = [genai.Client(api_key=k) for k in keys]
+        self._i = 0
+        self.models = self
+
+    def embed_content(self, **kw):
+        c = self._clients[self._i % len(self._clients)]
+        self._i += 1
+        return c.models.embed_content(**kw)
+
+
 def _client():
-    from google import genai
     keys = discover_keys()
     if not keys:
         raise RuntimeError("GEMINI_API_KEY 없음")
-    return genai.Client(api_key=keys[0])
+    return _RoundRobinEmbedClient(keys)
 
 
 def embed(text, client=None):
