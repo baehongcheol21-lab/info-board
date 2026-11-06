@@ -760,6 +760,14 @@ img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
   padding:0 9px;border:1px solid currentColor;border-radius:999px;font-size:10px;
   background:transparent;color:inherit;cursor:pointer;letter-spacing:.5px;opacity:.85}
 #pthemebtn:active{opacity:1}
+/* 버전2 스토리 (story_build.py가 만든 docs/story.html을 첫 화면에 겹쳐 띄운다) */
+#pstorybtn{display:flex;align-items:center;min-height:34px;padding:0 10px;border:1px solid currentColor;
+  border-radius:999px;font-size:10px;background:transparent;color:inherit;cursor:pointer;letter-spacing:.5px;opacity:.85}
+#pstorybtn:active{opacity:1}
+#pstorybtn:focus-visible,#pthemebtn:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+#storyLayer{position:fixed;inset:0;z-index:9999;background:#111;display:none}
+#storyLayer.on{display:block}
+#storyLayer iframe{width:100%;height:100%;border:0;display:block}
 #pthemebtn .sw{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
 #pthemesheet{position:fixed;left:0;right:0;bottom:0;z-index:120;
   background:var(--t-card);border-top:2px solid var(--t-accent);
@@ -1059,11 +1067,13 @@ html[data-theme="paper"] .worldclock b{color:var(--t-text)}
 </style>
 </head>
 <body>
+<div id="storyLayer" role="dialog" aria-label="오늘의 스토리"></div>
 <div class="phone" id="app">
 
   <div class="topbar">
     <span><span class="dot"></span><span id="brandName">PIXEL TRADING FLOOR</span></span>
     <span style="display:flex;align-items:center;gap:8px">
+      <button id="pstorybtn" onclick="openStory()" aria-label="오늘의 스토리 보기" hidden>스토리</button>
       <button id="pthemebtn" onclick="openThemes()" aria-label="디자인 바꾸기">
         <span class="sw"></span><span id="pthemename">픽셀</span></button>
       <span id="clockNow">--:--</span>
@@ -1903,6 +1913,46 @@ renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderLab(); r
 setTheme(curTheme());   // 저장된 테마의 이름표·브랜드명·배경 기운을 화면에 맞춘다
 loadPC();   // PC 데이터가 도착하면 지표·뉴스 탭이 저절로 채워진다(실패해도 위 화면은 그대로)
 tickClock(); setInterval(tickClock, 30000);
+
+// ---- 버전2 스토리 ↔ 버전1 탭 (R28·R23) ----
+// 첫 화면은 스토리. 스토리 끝 버튼을 누르면 해당 탭으로, '닫기'는 탭 화면으로.
+// 스토리 끝 컷의 '다음부터 탭부터 열기'를 누르면 다음부터 버전1 탭이 첫 화면(위쪽 '스토리' 버튼으로 언제든 다시).
+function goTarget(to){
+  if(!to) return;
+  const [tab, chip] = to.split(":");
+  if(chip){ _chip = chip; }
+  if(PSECS.includes(tab)){ pgo(tab); if(chip && typeof pchip === "function"){ try{ pchip(chip); }catch(e){} } }
+}
+function openStory(){
+  const L = document.getElementById("storyLayer");
+  if(!L.firstChild){
+    const f = document.createElement("iframe");
+    f.src = "story.html"; f.title = "오늘의 스토리";
+    L.appendChild(f);
+  } else {
+    try{ L.firstChild.contentWindow.postMessage({story:"restart"}, "*"); }catch(e){}
+  }
+  L.classList.add("on"); document.body.style.overflow = "hidden";
+}
+function closeStory(to){
+  document.getElementById("storyLayer").classList.remove("on");
+  document.body.style.overflow = "";
+  goTarget(to);
+}
+window.addEventListener("message", e => { if(e.data && e.data.story === "go") closeStory(e.data.to); });
+window.addEventListener("hashchange", () => goTarget(decodeURIComponent((location.hash||"").slice(1))));
+(function(){
+  const hash = decodeURIComponent((location.hash||"").slice(1));
+  let first = "story";
+  try{ first = localStorage.getItem("v2.first") || "story"; }catch(e){}
+  // story.html이 실제로 있을 때만 스토리를 쓴다 — 없으면(생성 실패) 버전1 화면 그대로
+  fetch("story.html", {method:"HEAD", cache:"no-store"}).then(r => {
+    if(!r.ok) return;
+    document.getElementById("pstorybtn").hidden = false;
+    if(!hash && first === "story") openStory();
+  }).catch(()=>{});
+  if(hash) setTimeout(() => goTarget(hash), 0);
+})();
 </script>
 </body>
 </html>
@@ -1915,6 +1965,13 @@ def main():
     os.makedirs("docs", exist_ok=True)
     with open("docs/index.html", "w", encoding="utf-8") as f:
         f.write(html)
+    # 버전2 스토리 페이지 — 실패해도 위 index.html은 이미 정상으로 썼다
+    try:
+        import story_build
+        st = story_build.write_page("docs/story.html")
+        print(f"docs/story.html 생성 — 버전2 스토리 {st['plan']['cuts']}컷, 옷 {st['theme']}, 배치 {st.get('planned_by')}")
+    except Exception as e:
+        print(f"  · 스토리 생성 실패(버전1 페이지는 정상): {type(e).__name__}: {str(e)[:120]}")
     n_analysts = len(data["analysts"])
     chart_ok = data["chart"]["price"] is not None
     print(f"docs/index.html 생성 완료 — 애널리스트 {n_analysts}명, "
