@@ -1,2 +1,5 @@
 __pycache__/
 gtrends_cache.json
+
+# 버전2 연준 감시 — HTML 원본·호출 기록은 올리지 않음
+v2_fed/.data/
