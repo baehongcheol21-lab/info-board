@@ -1,6 +1,6 @@
 # coding=utf-8
 """event_emit_v1 — 사용자가 정확히 지목한 그 모듈: "저장한 걸 다른 모듈에 전달하는 모듈".
-스트림(stream/YYYY-MM-stream.jsonl)에 이벤트 한 줄을 append한다. 설계서_ACT_자율실행.md
+스트림(stream/YYYY-MM-stream.jsonl)에 이벤트 한 줄을 append한다. archive_v0/버전1_문서/설계서_ACT_자율실행.md
 §3의 Event 스키마(eid·ts·type·actor·topic·payload·cause)를 그대로 따르며, P11-1(bus.py)이
 지어질 때 이 organ이 그 기반이 된다.
 

@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-retrospect.py — 회의 직후 자동 채점 (설계서_ACT_자율실행.md §7-1). P11-4 산출물.
+retrospect.py — 회의 직후 자동 채점 (archive_v0/버전1_문서/설계서_ACT_자율실행.md §7-1). P11-4 산출물.
 
 **0콜**이다. LLM을 부르지 않고 이번 회의가 남긴 이벤트만 세어서 점수를 낸다 — 채점하느라
 예산을 쓰면 본말전도이기 때문. 결과는 meeting_end 이벤트에 실려 experience/에 영구 누적되고,

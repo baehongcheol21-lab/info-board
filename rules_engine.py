@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-rules_engine.py — 반사신경 엔진 (설계서_ACT_자율실행.md §4). P11-2 산출물.
+rules_engine.py — 반사신경 엔진 (archive_v0/버전1_문서/설계서_ACT_자율실행.md §4). P11-2 산출물.
 
 rules.yaml을 읽어 이벤트 스트림에 순서대로 평가한다. cond는 conditions.py의 화이트리스트
 함수로만 해석한다(eval 금지 — §4 "cond는 파이썬 함수 화이트리스트로만 해석"). 이번 단계는

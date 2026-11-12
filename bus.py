@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-bus.py — ACT v2(설계서_ACT_자율실행.md) §3 "혈관·신경". 이벤트 스트림(stream/)에 대한
+bus.py — ACT v2(archive_v0/버전1_문서/설계서_ACT_자율실행.md) §3 "혈관·신경". 이벤트 스트림(stream/)에 대한
 얇은 결선층이다. event_emit·cmd_parse·experience_append 세 기관(P11-0)을 감싸 다음 둘을
 제공한다:
 

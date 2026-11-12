@@ -1,7 +1,7 @@
 # coding=utf-8
 """
 conditions.py — rules.yaml의 cond 문자열 → 검사 함수 화이트리스트
-(설계서_ACT_자율실행.md §4: "cond는 파이썬 함수 화이트리스트로만 해석(eval 금지 —
+(archive_v0/버전1_문서/설계서_ACT_자율실행.md §4: "cond는 파이썬 함수 화이트리스트로만 해석(eval 금지 —
 cond 이름당 검사함수 1개를 conditions.py에 등록)").
 
 키는 rules.yaml에 적힌 cond 문자열 그대로다(설계서 원문 그대로, 더 예쁜 이름으로

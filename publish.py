@@ -2,7 +2,7 @@
 """
 publish.py — 아이폰용 "픽셀 트레이딩 플로어" 생성기 (GitHub Actions에서 매시간 실행)
 
-v3 (2026-07-20, 마스터플랜 P1 2단계): 사용자가 승인한 시안(시안/pixel_floor.html)의
+v3 (2026-07-20, 마스터플랜 P1 2단계): 사용자가 승인한 시안(archive_v0/버전1_문서/시안/pixel_floor.html)의
 HTML·CSS·JS를 그대로 이식하고, 더미 DATA만 실제 데이터로 교체했다.
 CSS/JS(픽셀 캐릭터 렌더링·바텀시트·차트)는 시안A에서 사용자 검증을 마친 코드이므로
 이 파일에서는 절대 다시 손대지 않는다 — 여기서 하는 일은 오직 "진짜 데이터를 만들어
@@ -461,7 +461,7 @@ PIXEL_TEMPLATE = r"""<!DOCTYPE html>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>정보 브리핑 // PIXEL TRADING FLOOR</title>
-<!-- 자동 생성 파일 (publish.py) — 디자인 수정은 시안/pixel_floor.html에서 먼저 승인받은 뒤 반영할 것 -->
+<!-- 자동 생성 파일 (publish.py) — 디자인 수정은 archive_v0/버전1_문서/시안/pixel_floor.html에서 먼저 승인받은 뒤 반영할 것 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/quiple/galmuri@latest/dist/galmuri.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 테마별 서체. 링크는 한 번만 걸지만 실제 폰트 파일은 그 테마가 켜졌을 때만 내려받는다. -->

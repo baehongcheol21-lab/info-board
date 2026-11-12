@@ -1,11 +1,11 @@
 # coding=utf-8
 """pixel_char_v1 — 픽셀 캐릭터 렌더러(JS)의 정본. publish.py의 PIXEL_TEMPLATE 안에 있는
 CHAR_GRID·pixelChar() 코드를 그대로 복제해 둔 것 — 화면 조각도 "복사해서 흩어놓지 말고
-한 군데(기관)에서 가져다 쓰자"는 설계서_기관도서관.md의 원칙("화면 조각도 기관이다").
+한 군데(기관)에서 가져다 쓰자"는 archive_v0/버전1_문서/설계서_기관도서관.md의 원칙("화면 조각도 기관이다").
 
 새 화면(예: P10 트레이딩 데스크 층)이 같은 캐릭터 렌더러가 필요하면 이 organ의 run()이
 돌려주는 JS 텍스트를 <script> 블록에 그대로 삽입하면 된다 — 복붙 드리프트 방지.
-정본은 시안/pixel_floor.html(사용자 승인본) → publish.py → 이 organ 순으로 전파된다;
+정본은 archive_v0/버전1_문서/시안/pixel_floor.html(사용자 승인본) → publish.py → 이 organ 순으로 전파된다;
 셋이 어긋나면 시안이 진실(마스터플랜 P1 원칙)."""
 
 PIXEL_CHAR_JS = r"""
