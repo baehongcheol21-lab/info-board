@@ -1,1516 +1,1270 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="ko" data-theme="atelier">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>정보 브리핑 // PIXEL TRADING FLOOR</title>
-<!-- 자동 생성 파일 (publish.py) — 디자인 수정은 시안/pixel_floor.html에서 먼저 승인받은 뒤 반영할 것 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/quiple/galmuri@latest/dist/galmuri.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>버전2 제어판 (화면-2 · 출력-4)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- 테마별 서체. 링크는 한 번만 걸지만 실제 폰트 파일은 그 테마가 켜졌을 때만 내려받는다. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;600;800&family=IBM+Plex+Sans+KR:wght@400;600&family=IBM+Plex+Mono:wght@400;600&family=Song+Myung&family=Gowun+Batang:wght@400;700&display=swap">
-<script>
-/* 테마를 첫 페인트 전에 입힌다 — 나중에 입히면 기본 테마가 한 번 번쩍이고 바뀐다. */
-(function(){try{var t=localStorage.getItem('ptheme');
-  document.documentElement.setAttribute('data-theme', t||'pixel');}catch(e){
-  document.documentElement.setAttribute('data-theme','pixel');}})();
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Sofia+Sans:wght@400;700&family=Black+Han+Sans&family=Gothic+A1:wght@400;700&family=Gabarito:wght@700;800&family=Manrope:wght@500;700&family=Jua&family=Noto+Sans+KR:wght@400;500;700&family=League+Gothic&family=Do+Hyeon&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Noto+Serif+KR:wght@400;600;700&family=Hanken+Grotesk:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Schibsted+Grotesk:wght@700&family=Instrument+Sans:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0b0f1a; --floor1:#8b5a2b; --floor2:#6b4423; --floor-line:#4a2f18;
-  --panel:#f5ecd7; --ink:#1a1a1a; --accent:#ffd24d; --up:#3ddc71; --down:#ff5c5c;
-  --wall:#2a2440; --wallLine:#3d3560;
-}
-*{box-sizing:border-box; -webkit-font-smoothing:none}
-html,body{margin:0;background:var(--bg);color:var(--panel);
-  font-family:'Galmuri11',ui-monospace,'Courier New',monospace;
-  letter-spacing:.3px; overflow-x:hidden}
-img,svg{image-rendering:pixelated; image-rendering:crisp-edges}
-/* 세로 flex로 두는 이유: 티커는 sticky bottom인데, 내용이 짧은 탭(브리핑덱 등)에서는
-   페이지가 스크롤되지 않아 sticky가 걸리지 않고 티커가 화면 중간에 떠 버렸다.
-   margin-top:auto로 남는 공간을 티커 위가 흡수하게 하면 짧은 탭에서도 바닥에 붙는다. */
-.phone{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg);
-  border-left:1px solid #000;border-right:1px solid #000;position:relative;
-  display:flex;flex-direction:column}
-
-.topbar{display:flex;justify-content:space-between;align-items:center;
-  padding:8px 12px;background:#000;border-bottom:3px solid var(--accent);font-size:11px}
-.topbar .dot{display:inline-block;width:8px;height:8px;background:var(--accent);
-  margin-right:5px;animation:blink 1.6s steps(2) infinite}
-@keyframes blink{50%{opacity:.25}}
-
-.chart-panel{margin:10px;border:3px solid #000;background:#000;position:relative;
-  box-shadow:4px 4px 0 rgba(0,0,0,.5)}
-.chart-head{display:flex;justify-content:space-between;padding:6px 8px;
-  background:var(--accent);color:#000;font-size:10px;font-weight:700}
-.chart-body{padding:8px}
-.chart-price{font-size:22px;font-weight:700;color:#fff}
-.chart-pct{font-size:12px;font-weight:700}
-.chart-pct.down{color:var(--down)} .chart-pct.up{color:var(--up)}
-.chart-svg{width:100%;height:64px;margin-top:6px}
-.chart-legend{display:flex;gap:12px;font-size:9px;color:#9aa;margin-top:4px}
-.chart-legend b{color:#fff}
-.worldclock{display:flex;gap:10px;padding:6px 8px;border-top:2px dashed #333;
-  font-size:9px;color:#8a8;justify-content:space-between}
-
-.power-panel{margin:10px;border:3px solid #000;background:var(--wall);
-  display:flex;align-items:center;gap:10px;padding:8px 10px;
-  box-shadow:4px 4px 0 rgba(0,0,0,.5)}
-.gauge{width:44px;height:44px;border-radius:50%;position:relative;flex:none;
-  background:conic-gradient(var(--gc) calc(var(--gp)*1%), #1a1a2e 0)}
-.gauge::after{content:'';position:absolute;inset:6px;background:var(--wall);border-radius:50%}
-.gauge span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-size:9px;font-weight:700;color:#fff}
-.power-txt{font-size:10px;line-height:1.7;color:#cfc}
-.power-txt b{color:#fff}
-
-.floor-title{margin:16px 10px 6px;font-size:12px;letter-spacing:2px;color:var(--accent);
-  display:flex;align-items:center;gap:8px}
-.floor-title::before,.floor-title::after{content:'';flex:1;height:2px;background:#333}
-
-.office{margin:0 10px 6px;border:3px solid #000;position:relative;
-  background:repeating-linear-gradient(90deg,var(--floor1) 0 26px,var(--floor2) 26px 52px);
-  box-shadow:4px 4px 0 rgba(0,0,0,.5);padding:14px 8px 10px;overflow:hidden}
-.office::before{content:'';position:absolute;left:0;right:0;top:0;height:100%;
-  background-image:repeating-linear-gradient(0deg,transparent 0 30px,var(--floor-line) 30px 31px);
-  pointer-events:none;opacity:.5}
-.desks{display:flex;justify-content:space-around;gap:4px}
-.desk{display:flex;flex-direction:column;align-items:center;width:23%;cursor:pointer;
-  position:relative}
-.sprite-wrap{position:relative}
-.sprite{animation:idle 1.8s ease-in-out infinite}
-.desk:nth-child(2n) .sprite{animation-delay:.3s}
-.desk:nth-child(3n) .sprite{animation-delay:.6s}
-@keyframes idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-.online-dot{position:absolute;top:-2px;right:6px;width:6px;height:6px;background:var(--up);
-  border:1px solid #000;animation:blink 1.4s steps(2) infinite}
-.nameplate{margin-top:4px;font-size:9px;color:#fff;text-align:center;font-weight:700}
-.roletag{font-size:7px;background:#000;color:var(--accent);padding:1px 4px;margin-top:2px;
-  border:1px solid var(--accent)}
-.status{margin-top:5px;font-size:7.5px;color:#fff;background:rgba(0,0,0,.72);
-  border:1px solid #000;padding:3px 4px;text-align:center;min-height:22px;line-height:1.35;
-  max-width:100%;word-break:keep-all}
-.status .car{display:inline-block;width:5px;height:8px;background:#fff;margin-left:2px;
-  animation:blink .8s steps(2) infinite;vertical-align:-1px}
-
-.research-office{padding-bottom:16px}
-/* ===== 폰 탭 =====
-   PC 대시보드의 11개 기능을 폰에서도 볼 수 있게 한 구조. 정적 페이지라 서버 왕복이 없고,
-   전부 미리 담긴 데이터를 보여주기만 한다(그래서 즉시 전환된다). */
-#ptabs{position:sticky;top:0;z-index:40;display:flex;gap:2px;overflow-x:auto;
-  scrollbar-width:none;background:#181410;border-bottom:2px solid var(--t-line);padding:0 6px}
-#ptabs::-webkit-scrollbar{display:none}
-#ptabs .pt{flex:none;padding:12px 13px;font-size:.72rem;letter-spacing:.5px;color:var(--t-dim);
-  cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;min-height:44px}
-#ptabs .pt.on{color:var(--t-accent);border-bottom-color:var(--t-accent)}
-.psec{display:none} .psec.on{display:block}
-.pcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:12px;margin:10px 0}
-.pcard h4{font-size:.78rem;color:var(--t-accent);margin-bottom:8px;letter-spacing:.5px}
-.pcard .sub{font-size:.66rem;opacity:.55;font-weight:400}
-.prow{display:flex;gap:8px;align-items:baseline;font-size:.74rem;padding:6px 0;
-  border-bottom:1px solid rgba(255,255,255,.05)}
-.prow:last-child{border-bottom:0}
-.prow .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.prow .vv{font-variant-numeric:tabular-nums;opacity:.8;flex:none}
-.pbar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;flex:none;width:70px}
-.pbar i{display:block;height:100%;background:var(--t-accent)}
-
-/* --- 지표 카드 --- */
-#pchips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:10px 2px 2px}
-#pchips::-webkit-scrollbar{display:none}
-#pchips .chip{flex:none;padding:9px 14px;min-height:40px;display:flex;align-items:center;
-  font-size:.72rem;border:1px solid #4a3c2c;border-radius:20px;color:var(--t-dim);background:var(--t-card);
-  cursor:pointer}
-#pchips .chip.on{color:#181410;background:var(--t-accent);border-color:var(--t-accent);font-weight:700}
-.icard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:11px 12px;margin:8px 0;
-  cursor:pointer}
-.icard .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
-.icard .inm{font-size:.76rem;color:var(--t-text);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.icard .ival{font-size:.86rem;font-variant-numeric:tabular-nums;flex:none}
-.icard .ipct{font-size:.7rem;flex:none;font-variant-numeric:tabular-nums}
-.icard .ima{font-size:.62rem;opacity:.5;margin-top:3px;font-variant-numeric:tabular-nums}
-.icard .iai{font-size:.68rem;line-height:1.5;color:var(--t-dim);margin-top:7px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-/* 배지는 절대 잘리면 안 된다. .inm 안에 넣었더니 ellipsis에 먹혀 '근…'으로 잘렸다 —
-   형제로 빼고 flex:none을 준다. */
-.icard .flag{font-size:.58rem;border:1px solid var(--t-up);color:var(--t-up);border-radius:4px;
-  padding:1px 5px;flex:none;white-space:nowrap;align-self:center}
-.ppos{color:var(--t-up)} .pneg{color:var(--t-down)}
-
-/* --- 브리핑덱: 가로 스와이프 --- */
-#pdeck{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
-  scrollbar-width:none;padding:12px 2px}
-#pdeck::-webkit-scrollbar{display:none}
-/* 카드 높이를 px로 못박으면 짧은 글일 땐 카드 안이 비고, 화면엔 카드 밑으로 큰 여백이 남는다.
-   화면 높이에 비례시키되, 글이 짧아도 허전하지 않게 **세로 가운데**에 놓는다
-   (46vh로 뒀더니 3줄짜리 카드의 75%가 빈칸이었다). */
-#pdeck .dcard{flex:none;width:82vw;max-width:340px;scroll-snap-align:center;
-  min-height:200px;justify-content:center;
-  background:var(--t-card);border:1px solid var(--t-line);border-left:4px solid var(--t-accent);border-radius:12px;
-  padding:14px;display:flex;flex-direction:column}
-#pdeck .dcard.watch{border-left-color:#3ddc71} #pdeck .dcard.news{border-left-color:var(--t-down)}
-#pdeck .dcard.red{border-left-color:var(--t-up)} #pdeck .dcard.mover{border-left-color:#c99a2e}
-#pdeck .dt{font-size:.74rem;color:var(--t-accent);font-weight:700;margin-bottom:8px}
-#pdeck .dx{font-size:.8rem;line-height:1.7;color:#e2d7c2;word-break:keep-all}
-#pdeck .dn{font-size:.62rem;opacity:.45;padding-top:12px}
-/* 카드 위치 점 — 몇 장 중 몇 번째인지, 어디로 밀면 되는지 알려 준다 */
-#pdots{display:flex;gap:6px;justify-content:center;padding:6px 0 2px;flex-wrap:wrap}
-#pdots i{width:7px;height:7px;border-radius:50%;background:var(--t-line);display:block;transition:background .15s}
-#pdots i.on{background:var(--t-accent);transform:scale(1.25)}
-/* 카드 목차 — 10장을 다 밀어보지 않아도 무슨 내용이 있는지 한눈에 보이고,
-   누르면 그 카드로 간다. 덱 아래 남던 빈 공간을 실제 기능으로 채운다. */
-#pindex{margin:6px 10px 0}
-#pindex .ix{display:flex;gap:8px;align-items:center;min-height:42px;padding:4px 8px;
-  font-size:.72rem;color:var(--t-dim);border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
-#pindex .ix:last-child{border-bottom:0}
-#pindex .ix.on{color:var(--t-accent)}
-#pindex .ix .no{flex:none;width:20px;opacity:.45;font-variant-numeric:tabular-nums}
-#pindex .ix .tx{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-
-/* --- 팀 --- */
-.tcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:12px;margin:8px 0}
-.tcard .th{display:flex;align-items:center;gap:8px}
-/* 아바타 글자를 배경색 위에 얹으면 요원 색에 따라 명암비가 3.45까지 떨어졌다.
-   진한 바탕에 흰 글자로 고정하고, 요원 색은 테두리로 표시한다. */
-.tcard .tav{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;
-  justify-content:center;font-size:.7rem;font-weight:700;color:#fff;background:#1a1512 !important;
-  border:2px solid currentColor;box-shadow:inset 0 0 0 2px #1a1512}
-.tcard .tnm{font-size:.78rem;color:var(--t-text)} .tcard .tr{font-size:.63rem;opacity:.55}
-.tcard .tc{margin-left:auto;font-size:.66rem;color:var(--t-accent);flex:none}
-.tcard .tt{font-size:.68rem;line-height:1.55;color:var(--t-dim);margin-top:8px;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-
-/* --- 실험: 테마 예측 --- */
-.fcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:10px;padding:12px;margin:8px 0}
-.fcard .fh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
-.fcard .fnm{font-size:.77rem;color:var(--t-accent)} .fcard .flv{font-size:.7rem;opacity:.7}
-.fpred{display:flex;gap:6px;align-items:center;font-size:.68rem;padding:5px 0;
-  border-bottom:1px solid rgba(255,255,255,.05)}
-.fpred:last-child{border-bottom:0}
-.fpred .fw{flex:none;width:34px;opacity:.6} .fpred .fhz{flex:none;width:30px;opacity:.6}
-.fpred .fd{flex:none;font-weight:700} .fpred .fp{margin-left:auto;font-variant-numeric:tabular-nums;opacity:.8}
-.pmsg{font-size:.72rem;line-height:1.7;white-space:pre-wrap;word-break:break-word}
-.pwho{display:inline-block;font-size:.64rem;padding:2px 7px;border-radius:6px;
-  background:var(--t-line);color:var(--t-accent);margin-bottom:5px}
-.pchat{max-height:none}
-.pchat .msg{background:#1e1811;border-left:3px solid var(--t-line);border-radius:8px;
-  padding:9px 10px;margin:8px 0}
-.pchat .msg.alpha{border-left-color:var(--t-accent)}
-.pempty{font-size:.72rem;opacity:.5;padding:14px 4px;line-height:1.7}
-.ppos{color:var(--t-up)} .pneg{color:var(--t-down)}
-.pspark{width:100%;height:34px;display:block;margin:2px 0 4px}
-/* 자동 감사(ui_audit)가 390px에서 잡아낸 실측 문제:
-     .status  22px  — 캐릭터 말풍선(탭하면 상세 시트가 열린다)
-     .close   15px  — 시트 닫기 버튼
-   둘 다 손가락으로 정확히 누르기 어렵다. 최소 40px로 올린다. */
-.ace-row .status,.desk .status{min-height:40px;display:flex;align-items:center;padding:6px 8px}
-.bottom-sheet .who .close{min-height:44px;display:inline-flex;align-items:center;padding:0 12px;
-  margin:-8px -8px -8px 0}
-/* 가상계좌 — 폰에서 보는 게 유일한 경로라 세로 한 줄 배치로만 짠다. 가로 스크롤 금지. */
-/* ⚠️ .office는 나무바닥 줄무늬(밝은 색)를 배경으로 깐다. 캐릭터 말풍선은 검은 배경을
-   따로 얹어서 읽히는데, 계좌 블록은 반투명 흰 박스라 명암비가 1.18까지 떨어졌다
-   (WCAG 최소 4.5). 사실상 안 보이는 상태였다 — 계좌 안쪽만 어두운 판을 깐다. */
-.lab-office{padding:12px 10px 18px}
-.lab-office .lab-inner{background:rgba(10,8,6,.88);border:2px solid #000;border-radius:10px;
-  padding:12px 11px;position:relative;z-index:1}
-.lab-hero{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
-.lab-hero .eq{font-size:1.5rem;font-weight:800;letter-spacing:-1px}
-.lab-hero .rt{font-size:1rem;font-weight:700}
-.lab-hero .sub{font-size:.7rem;opacity:.65}
-.lab-up{color:var(--t-up)} .lab-dn{color:var(--t-down)}
-.lab-bar{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin:8px 0 12px}
-.lab-bar i{display:block;height:100%;background:var(--t-accent)}
-.lab-pos{display:flex;flex-direction:column;gap:6px}
-.lab-pos .row{display:flex;align-items:center;gap:8px;font-size:.76rem;
-  padding:7px 9px;background:rgba(255,255,255,.07);border-radius:8px;color:var(--t-text)}
-.lab-pos .row .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.lab-pos .row .sh{opacity:.7;font-variant-numeric:tabular-nums}
-.lab-pos .row .pl{width:64px;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
-.lab-pos .row.pend-head{display:block;white-space:normal;line-height:1.5;font-size:.7rem;
-  opacity:.75;background:rgba(245,196,81,.1);color:var(--t-accent)}
-.lab-meta{margin-top:10px;font-size:.68rem;opacity:.6;line-height:1.7}
-.lab-spark{width:100%;height:44px;margin:4px 0 2px;display:block}
-.table-wrap{display:flex;justify-content:center;align-items:flex-end;gap:0;position:relative;
-  margin-top:2px}
-.side{width:38%;display:flex;flex-direction:column;align-items:center;cursor:pointer}
-.vs{font-size:16px;color:var(--accent);padding:0 6px 18px;font-weight:700}
-.argtag{font-size:8px;padding:2px 6px;border:2px solid #000;font-weight:700;margin-top:3px}
-.argtag.bull{background:var(--up);color:#02310f}
-.argtag.bear{background:var(--down);color:#3a0000}
-.argbox{margin-top:5px;font-size:7.5px;background:var(--panel);color:#000;border:2px solid #000;
-  padding:4px;line-height:1.35;position:relative;min-height:30px}
-.argbox::after{content:'';position:absolute;top:-7px;left:14px;border:5px solid transparent;
-  border-bottom-color:#000}
-.argbox::before{content:'';position:absolute;top:-4px;left:16px;border:4px solid transparent;
-  border-bottom-color:var(--panel);z-index:1}
-.ace-row{display:flex;flex-direction:column;align-items:center;margin-top:10px}
-.ace-row .status{margin-top:4px}
-
-.sheet-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;
-  opacity:0;pointer-events:none;transition:opacity .18s}
-.sheet-backdrop.open{opacity:1;pointer-events:auto}
-.bottom-sheet{position:fixed;left:0;right:0;bottom:0;max-width:430px;margin:0 auto;
-  background:var(--panel);color:#000;border-top:3px solid #000;z-index:41;
-  padding:6px 16px 22px;max-height:66vh;overflow-y:auto;
-  transform:translateY(100%);transition:transform .22s steps(6,end)}
-.bottom-sheet.open{transform:translateY(0)}
-.sheet-grip{width:36px;height:5px;background:#0003;margin:8px auto 10px;border-radius:0}
-.bottom-sheet .who{font-size:11px;color:#5a8a5a;font-weight:700;margin-bottom:8px;
-  display:flex;justify-content:space-between;align-items:center;border-bottom:2px dashed #0002;
-  padding-bottom:6px}
-.bottom-sheet .who .roleTiny{color:#888;font-weight:400;font-size:9px}
-.bottom-sheet .close{cursor:pointer;color:#a33;font-weight:700;font-size:10px}
-.bottom-sheet .body{font-size:11px;line-height:1.75;white-space:pre-wrap}
-
-.ticker-wrap{position:sticky;bottom:0;background:#000;border-top:3px solid var(--accent);
-  overflow:hidden;padding:6px 0;margin-top:auto;flex:none}
-.ticker-track{display:inline-flex;white-space:nowrap;animation:marquee 22s linear infinite}
-.ticker-track span{padding:0 16px;font-size:10px;font-weight:700}
-.ticker-track .up{color:var(--up)} .ticker-track .down{color:var(--down)}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-.hint{text-align:center;font-size:10px;color:#9c8f7a;padding:8px 20px 4px;line-height:1.6}
-
-/* ===== 테마 오버라이드는 반드시 맨 끝 ===== */
-/* ============================================================================
-   테마 4종 — 같은 데이터, 같은 탭 구조, 다른 옷.
-   내비게이션(탭 10개)은 테마가 바뀌어도 그대로다. 테마마다 "뭐가 어디 있는지"가
-   달라지면 바꿀 때마다 다시 배워야 한다. 바뀌는 건 밀도·서체·카드 형태·배경·모션이다.
-
-     pixel     기존 픽셀아트 트레이딩 플로어 (기본)
-     glass     유리 관제탑 — 배경이 계좌 상태에 따라 물드는 오로라
-     terminal  관제 터미널 — 정보 밀도 최대, 각진 모서리, 고정폭
-     paper     브리핑 신문 — 밝은 종이, 명조, 괘선
-   ============================================================================ */
-
-/* ---- 공통 토큰. 각 테마가 이 값들만 갈아끼운다. ---- */
-:root{
-  --t-radius:10px; --t-gap:10px; --t-pad:12px;
-  --t-card:#241d16; --t-card2:#2c241b; --t-line:#3b2f22;
-  --t-text:#e8dcc8; --t-dim:#b3a488; --t-accent:#f5c451;
-  --t-font:'Galmuri11',ui-monospace,monospace;
-  --t-num:'Galmuri11',ui-monospace,monospace;
-  --t-display:'Galmuri11',ui-monospace,monospace;
-  --t-shadow:none; --t-cardborder:1px solid var(--t-line);
-  --t-tracking:.3px; --t-lh:1.5;
-  /* 경고·주의색도 토큰이어야 한다. 인라인으로 박아 두면 밝은 테마에서 안 읽힌다
-     (신문 테마에서 '⏸ 실시간 아님' 줄이 명암비 1.36으로 사라졌다). */
-  --t-warn:#ffd24d; --t-alert:var(--t-up);
+/* 5대 홀마크 옷 (버전2_다섯가지옷.html 규격 그대로: 42 Sticker · 41 Squeeze · 31 Paste-up · 3 Atelier · 13 Dose) */
+:root {
+  --up: #d9384a;
+  --down: #2563eb;
+  --ok: #15803d;
+  --warn: #b45309;
+  --ease: cubic-bezier(.2,.9,.2,1);
 }
 
-/* 테마 전환 버튼 */
-#pthemebtn{position:relative;display:flex;align-items:center;gap:5px;min-height:34px;
-  padding:0 9px;border:1px solid currentColor;border-radius:999px;font-size:10px;
-  background:transparent;color:inherit;cursor:pointer;letter-spacing:.5px;opacity:.85}
-#pthemebtn:active{opacity:1}
-/* 버전2 스토리 (story_build.py가 만든 docs/story.html을 첫 화면에 겹쳐 띄운다) */
-#pstorybtn{display:flex;align-items:center;min-height:34px;padding:0 10px;border:1px solid currentColor;
-  border-radius:999px;font-size:10px;background:transparent;color:inherit;cursor:pointer;letter-spacing:.5px;opacity:.85}
-#pstorybtn:active{opacity:1}
-#pstorybtn:focus-visible,#pthemebtn:focus-visible{outline:2px solid currentColor;outline-offset:2px}
-#storyLayer{position:fixed;inset:0;z-index:9999;background:#111;display:none}
-#storyLayer.on{display:block}
-#storyLayer iframe{width:100%;height:100%;border:0;display:block}
-#pthemebtn .sw{width:9px;height:9px;border-radius:50%;background:currentColor;flex:none}
-#pthemesheet{position:fixed;left:0;right:0;bottom:0;z-index:120;
-  background:var(--t-card);border-top:2px solid var(--t-accent);
-  transform:translateY(105%);transition:transform .28s cubic-bezier(.2,.8,.2,1);
-  padding:14px 12px calc(16px + env(safe-area-inset-bottom,0px));
-  max-width:430px;margin:0 auto;border-radius:16px 16px 0 0}
-#pthemesheet.open{transform:translateY(0)}
-#pthemesheet h4{font-size:.8rem;color:var(--t-accent);margin-bottom:4px}
-#pthemesheet .sub{font-size:.66rem;opacity:.55;margin-bottom:12px;display:block}
-.tsw{display:flex;align-items:center;gap:10px;width:100%;min-height:56px;
-  padding:8px 10px;margin-bottom:8px;border:1px solid var(--t-line);border-radius:12px;
-  background:var(--t-card2);color:var(--t-text);cursor:pointer;text-align:left}
-.tsw.on{border-color:var(--t-accent);box-shadow:0 0 0 1px var(--t-accent) inset}
-.tsw .chip{width:40px;height:40px;border-radius:9px;flex:none;position:relative;overflow:hidden;
-  border:1px solid rgba(255,255,255,.14)}
-.tsw .nm{font-size:.78rem;display:block}
-.tsw .ds{font-size:.63rem;opacity:.6;display:block;margin-top:2px;line-height:1.4}
-.tsw .ok{margin-left:auto;color:var(--t-accent);font-size:.8rem;flex:none}
-/* 견본 칩 — 각 테마의 배경·강조색을 그대로 보여준다 */
-.chip-pixel{background:repeating-linear-gradient(90deg,#8b5a2b 0 8px,#6b4423 8px 16px)}
-.chip-pixel::after{content:'';position:absolute;left:6px;top:6px;width:10px;height:14px;background:#3a6ea5}
-.chip-glass{background:radial-gradient(120% 90% at 20% 10%,#1f6f5c 0%,transparent 55%),
-  radial-gradient(100% 80% at 85% 90%,#4a2c6b 0%,transparent 60%),#0a0e18}
-.chip-terminal{background:#07090b}
-.chip-terminal::after{content:'';position:absolute;inset:6px;
-  background:repeating-linear-gradient(0deg,#ffb000 0 1px,transparent 1px 4px);opacity:.9}
-.chip-paper{background:#f4f0e6}
-.chip-paper::after{content:'';position:absolute;left:6px;right:6px;top:9px;height:2px;background:#a3312a;
-  box-shadow:0 6px 0 rgba(26,23,20,.35),0 12px 0 rgba(26,23,20,.2)}
-
-/* ============================ GLASS ============================ */
-html[data-theme="glass"]{
-  --bg:#0a0e18; --panel:#e8edf5; --accent:#7ef0c8;
-  --t-card:rgba(255,255,255,.055); --t-card2:rgba(255,255,255,.085);
-  --t-line:rgba(255,255,255,.10); --t-text:#e8edf5; --t-dim:#9aa8bd; --t-accent:#7ef0c8;
-  --t-radius:16px; --t-pad:15px; --t-shadow:0 10px 34px rgba(0,0,0,.45);
-  --t-font:'IBM Plex Sans KR',system-ui,sans-serif;
-  --t-num:'IBM Plex Mono',ui-monospace,monospace;
-  --t-display:'Hahmlet',serif;
-  --t-tracking:0px; --t-lh:1.62;
+/* 42 Sticker — 스티커 */
+[data-theme="sticker"] {
+  --bg: oklch(95.7% 0.013 82);
+  --bg2: oklch(90% 0.021 79);
+  --card: oklch(99.4% 0.007 89);
+  --sub-surface: oklch(94.5% 0.014 82);
+  --ink: oklch(21% 0.011 81);
+  --ink2: oklch(28% 0.013 78);
+  --muted: oklch(44% 0.017 64);
+  --rule: oklch(82% 0.02 80);
+  --accent: oklch(50% 0.19 258);
+  --accent-soft: oklch(93% 0.04 258);
+  --f-head: "Black Han Sans", "Bowlby One SC", sans-serif;
+  --f-body: "Gothic A1", "Sofia Sans", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 14px;
+  --shadow: 3px 4px 0 oklch(21% 0.011 81 / 0.16);
 }
-html[data-theme="glass"] body{background:var(--bg);color:var(--t-text);
-  font-family:var(--t-font);letter-spacing:0}
-/* 배경이 곧 지표다 — 계좌가 오르면 초록, 내리면 붉은 기운으로 천천히 물든다.
-   --mood는 renderTheme()이 계좌 수익률을 보고 -1~+1로 넣어 준다. */
-html[data-theme="glass"] body::before{content:'';position:fixed;inset:-20%;z-index:-2;
-  background:
-    radial-gradient(45% 38% at 18% 12%, hsl(calc(150 + var(--mood,0) * -140) 62% 34% / .55) 0%, transparent 62%),
-    radial-gradient(42% 36% at 84% 20%, hsl(265 55% 38% / .42) 0%, transparent 64%),
-    radial-gradient(55% 45% at 60% 92%, hsl(calc(160 + var(--mood,0) * -120) 48% 26% / .40) 0%, transparent 66%);
-  filter:blur(38px);animation:aurora 26s ease-in-out infinite alternate}
-@keyframes aurora{
-  0%{transform:translate3d(0,0,0) scale(1)}
-  50%{transform:translate3d(-3%,2%,0) scale(1.07)}
-  100%{transform:translate3d(3%,-2%,0) scale(1.03)}}
-/* 미세한 그레인 — 그라디언트만 있으면 색 띠(밴딩)가 보인다 */
-html[data-theme="glass"] body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  opacity:.35;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
-html[data-theme="glass"] .phone{background:transparent;border:0}
-html[data-theme="glass"] .topbar{background:rgba(10,14,24,.55);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--t-line);font-family:var(--t-num);letter-spacing:1px}
-html[data-theme="glass"] #ptabs{background:rgba(10,14,24,.62);backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--t-line)}
-html[data-theme="glass"] #ptabs .pt{color:var(--t-dim);font-size:.74rem;letter-spacing:0}
-html[data-theme="glass"] #ptabs .pt.on{color:var(--t-accent);border-bottom-color:var(--t-accent)}
-html[data-theme="glass"] .pcard,html[data-theme="glass"] .icard,
-html[data-theme="glass"] .tcard,html[data-theme="glass"] .fcard,
-html[data-theme="glass"] #pdeck .dcard{
-  background:var(--t-card);border:1px solid var(--t-line);border-radius:var(--t-radius);
-  backdrop-filter:blur(14px);box-shadow:var(--t-shadow);padding:var(--t-pad)}
-html[data-theme="glass"] .pcard h4,html[data-theme="glass"] #pdeck .dt{
-  font-family:var(--t-display);font-weight:600;color:var(--t-accent);letter-spacing:-.2px}
-html[data-theme="glass"] .icard .ival,html[data-theme="glass"] .icard .ipct,
-html[data-theme="glass"] .prow .vv,html[data-theme="glass"] .lab-hero .eq{
-  font-family:var(--t-num);font-variant-numeric:tabular-nums}
-html[data-theme="glass"] .lab-hero .eq{font-size:1.85rem;font-weight:600;letter-spacing:-1.5px}
-html[data-theme="glass"] .office{background:var(--t-card);border:1px solid var(--t-line);
-  border-radius:var(--t-radius);box-shadow:var(--t-shadow);backdrop-filter:blur(14px)}
-html[data-theme="glass"] .office::before{display:none}   /* 나무바닥 줄무늬 제거 */
-html[data-theme="glass"] .lab-office .lab-inner{background:transparent;border:0;padding:0}
-html[data-theme="glass"] .floor-title{font-family:var(--t-display);color:var(--t-text);opacity:.9}
-html[data-theme="glass"] .chart-panel{background:var(--t-card);border:1px solid var(--t-line);
-  border-radius:var(--t-radius);box-shadow:var(--t-shadow);backdrop-filter:blur(14px);overflow:hidden}
-html[data-theme="glass"] .chart-head{background:transparent;color:var(--t-dim);
-  border-bottom:1px solid var(--t-line)}
-html[data-theme="glass"] .chart-price{font-family:var(--t-num);letter-spacing:-1px}
-html[data-theme="glass"] .ticker-wrap{background:rgba(10,14,24,.72);backdrop-filter:blur(12px);
-  border-top:1px solid var(--t-line)}
-/* 등장 모션 — 한 번의 잘 짜인 진입이 흩뿌린 미세 효과보다 낫다 */
-html[data-theme="glass"] .psec.on > *{animation:rise .5s cubic-bezier(.2,.8,.2,1) backwards}
-html[data-theme="glass"] .psec.on > *:nth-child(1){animation-delay:.02s}
-html[data-theme="glass"] .psec.on > *:nth-child(2){animation-delay:.07s}
-html[data-theme="glass"] .psec.on > *:nth-child(3){animation-delay:.12s}
-html[data-theme="glass"] .psec.on > *:nth-child(4){animation-delay:.17s}
-html[data-theme="glass"] .psec.on > *:nth-child(n+5){animation-delay:.22s}
-@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-/* ============================ TERMINAL ============================ */
-html[data-theme="terminal"]{
-  --bg:#07090b; --panel:#d7dde3; --accent:#ffb000;
-  --t-card:#0c1013; --t-card2:#11161a; --t-line:#1e262c;
-  --t-text:#d7dde3; --t-dim:#7d8891; --t-accent:#ffb000;
-  --t-radius:0px; --t-pad:9px; --t-gap:0px; --t-shadow:none;
-  --t-font:'IBM Plex Mono',ui-monospace,monospace;
-  --t-num:'IBM Plex Mono',ui-monospace,monospace;
-  --t-display:'IBM Plex Mono',ui-monospace,monospace;
-  --t-tracking:.2px; --t-lh:1.42;
+/* 41 Squeeze — 초록 과일 */
+[data-theme="squeeze"] {
+  --bg: oklch(34% 0.085 155);
+  --bg2: oklch(29% 0.075 156);
+  --card: oklch(98% 0.008 88);
+  --sub-surface: oklch(93.2% 0.018 148);
+  --ink: oklch(20% 0.045 160);
+  --ink2: oklch(27% 0.040 160);
+  --muted: oklch(40% 0.035 160);
+  --rule: oklch(82% 0.025 150);
+  --accent: oklch(38% 0.13 154);
+  --accent-soft: oklch(91% 0.045 154);
+  --f-head: "Jua", "Gabarito", sans-serif;
+  --f-body: "Noto Sans KR", "Manrope", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 16px;
+  --shadow: 0 8px 20px oklch(18% 0.05 160 / 0.32);
 }
-html[data-theme="terminal"] body{background:var(--bg);color:var(--t-text);
-  font-family:var(--t-font);letter-spacing:var(--t-tracking);font-size:13px}
-/* 주사선 — 아주 옅게. 진하면 글자가 안 읽힌다. */
-html[data-theme="terminal"] body::after{content:'';position:fixed;inset:0;z-index:99;pointer-events:none;
-  background:repeating-linear-gradient(0deg,rgba(255,255,255,.022) 0 1px,transparent 1px 3px)}
-html[data-theme="terminal"] .phone{background:var(--bg);border-left:1px solid var(--t-line);
-  border-right:1px solid var(--t-line)}
-html[data-theme="terminal"] .topbar{background:#000;border-bottom:1px solid var(--t-accent);
-  text-transform:uppercase;letter-spacing:2px;font-size:10px}
-html[data-theme="terminal"] #ptabs{background:#0a0d10;border-bottom:1px solid var(--t-line);padding:0}
-html[data-theme="terminal"] #ptabs .pt{color:var(--t-dim);border-bottom:2px solid transparent;
-  padding:11px 12px;font-size:.72rem;border-right:1px solid var(--t-line)}
-html[data-theme="terminal"] #ptabs .pt.on{color:#000;background:var(--t-accent);border-bottom-color:var(--t-accent)}
-html[data-theme="terminal"] .pcard,html[data-theme="terminal"] .icard,
-html[data-theme="terminal"] .tcard,html[data-theme="terminal"] .fcard{
-  background:var(--t-card);border:1px solid var(--t-line);border-radius:0;
-  margin:0 0 1px;padding:var(--t-pad)}
-html[data-theme="terminal"] .pcard h4{color:var(--t-accent);text-transform:uppercase;
-  letter-spacing:1.4px;font-size:.7rem;border-bottom:1px solid var(--t-line);padding-bottom:6px}
-html[data-theme="terminal"] .prow{padding:3px 0;font-size:.74rem;
-  border-bottom:1px dotted rgba(255,255,255,.07)}
-/* ⚠️ 처음엔 grid-template-areas로 짰다가 스파크라인·배지처럼 **영역 이름을 안 준 요소가
-   자동 배치되어 글자 위에 겹쳤다.** 카드 구조는 테마마다 다를 수 있으므로 영역 이름을
-   못박지 않는다. 기본 흐름을 그대로 두고 밀도만 조인다. */
-html[data-theme="terminal"] .icard{padding:7px 9px}
-html[data-theme="terminal"] .icard .top{gap:6px}
-html[data-theme="terminal"] .icard .inm{font-size:.76rem}
-html[data-theme="terminal"] .icard .ival{font-variant-numeric:tabular-nums;font-size:.84rem}
-html[data-theme="terminal"] .icard .ipct{min-width:60px;text-align:right}
-html[data-theme="terminal"] .icard .ima{font-size:.62rem;margin-top:2px}
-html[data-theme="terminal"] .icard .iai{-webkit-line-clamp:1;font-size:.66rem;margin-top:4px}
-html[data-theme="terminal"] .icard .flag{border-radius:0;font-size:.55rem;padding:0 4px}
-html[data-theme="terminal"] .pspark{height:20px;margin:3px 0 2px}
-html[data-theme="terminal"] .office{background:var(--t-card);border:1px solid var(--t-line);
-  border-radius:0;box-shadow:none;margin:0 0 1px}
-html[data-theme="terminal"] .office::before{display:none}
-html[data-theme="terminal"] .lab-office .lab-inner{background:transparent;border:0;border-radius:0}
-html[data-theme="terminal"] .chart-panel{border:1px solid var(--t-line);border-radius:0;margin:0 0 1px}
-html[data-theme="terminal"] .chart-head{background:var(--t-accent);color:#000;text-transform:uppercase;
-  letter-spacing:1.5px;font-size:9px}
-html[data-theme="terminal"] .floor-title{text-transform:uppercase;letter-spacing:2px;
-  font-size:.66rem;color:var(--t-accent)}
-html[data-theme="terminal"] #pchips .chip{border-radius:0;border-color:var(--t-line)}
-html[data-theme="terminal"] #pchips .chip.on{background:var(--t-accent);color:#000}
-html[data-theme="terminal"] #pdeck .dcard{border-radius:0;border-left-width:3px}
-html[data-theme="terminal"] .ticker-wrap{border-top:1px solid var(--t-accent)}
-/* 값이 바뀌면 셀이 한 번 번쩍인다 — 어디가 움직였는지 눈으로 잡힌다 */
-@keyframes tflash{from{background:rgba(255,176,0,.30)}to{background:transparent}}
-html[data-theme="terminal"] .flash{animation:tflash .7s ease-out}
 
-/* ============================ PAPER ============================ */
-html[data-theme="paper"]{
-  --bg:#f4f0e6; --panel:#1a1714; --accent:#a3312a;
-  --t-card:#fbf8f1; --t-card2:#f0ebdf; --t-line:rgba(26,23,20,.16);
-  --t-text:#1a1714; --t-dim:#6b6257; --t-accent:#a3312a;
-  --t-radius:2px; --t-pad:14px; --t-shadow:none;
-  --t-font:'Gowun Batang',serif;
-  --t-num:'IBM Plex Mono',ui-monospace,monospace;
-  --t-display:'Song Myung',serif;
-  --t-tracking:0px; --t-lh:1.78;
+/* 31 Paste-up — 마분지에 오려 붙이기 */
+[data-theme="pasteup"] {
+  --bg: oklch(82% 0.048 72);
+  --bg2: oklch(75% 0.055 70);
+  --card: oklch(97.8% 0.008 90);
+  --sub-surface: oklch(93% 0.018 82);
+  --ink: oklch(18% 0.012 60);
+  --ink2: oklch(26% 0.015 60);
+  --muted: oklch(41% 0.022 62);
+  --rule: oklch(76% 0.03 70);
+  --accent: oklch(38% 0.14 260);
+  --accent-soft: oklch(92% 0.06 105);
+  --f-head: "Do Hyeon", "League Gothic", sans-serif;
+  --f-body: "Noto Serif KR", "Newsreader", serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 4px;
+  --shadow: 4px 4px 0 oklch(18% 0.01 60 / 0.22);
 }
-html[data-theme="paper"] body{background:var(--bg);color:var(--t-text);
-  font-family:var(--t-font);letter-spacing:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23p)' opacity='.045'/%3E%3C/svg%3E")}
-html[data-theme="paper"] .phone{background:transparent;border-left:1px solid var(--t-line);
-  border-right:1px solid var(--t-line)}
-html[data-theme="paper"] .topbar{background:transparent;color:var(--t-text);
-  border-bottom:3px double var(--t-text);font-family:var(--t-display);font-size:13px;letter-spacing:3px}
-html[data-theme="paper"] .topbar .dot{background:var(--t-accent)}
-html[data-theme="paper"] #ptabs{background:var(--bg);border-bottom:1px solid var(--t-text)}
-html[data-theme="paper"] #ptabs .pt{color:var(--t-dim);font-family:var(--t-display);font-size:.78rem}
-html[data-theme="paper"] #ptabs .pt.on{color:var(--t-accent);border-bottom-color:var(--t-accent)}
-/* 카드가 아니라 괘선으로 나눈다 — 신문 지면의 규칙 */
-html[data-theme="paper"] .pcard{background:transparent;border:0;border-bottom:1px solid var(--t-line);
-  border-radius:0;padding:14px 12px;margin:0}
-html[data-theme="paper"] .pcard h4{font-family:var(--t-display);color:var(--t-text);
-  font-size:1rem;letter-spacing:-.3px;border-bottom:2px solid var(--t-text);
-  padding-bottom:5px;margin-bottom:10px}
-html[data-theme="paper"] .pcard .sub{color:var(--t-dim)}
-html[data-theme="paper"] .icard{background:var(--t-card);border:1px solid var(--t-line);
-  border-radius:2px;box-shadow:1px 1px 0 var(--t-line)}
-html[data-theme="paper"] .icard .ival,html[data-theme="paper"] .prow .vv,
-html[data-theme="paper"] .icard .ipct{font-family:var(--t-num);font-variant-numeric:tabular-nums}
-html[data-theme="paper"] .icard .iai{color:var(--t-dim)}
-html[data-theme="paper"] .pmsg,html[data-theme="paper"] .iai,html[data-theme="paper"] .tt{
-  line-height:var(--t-lh)}
-/* 캐릭터 스프라이트는 어두운 배경 전제로 그려졌다. 밝은 종이 위에 그대로 얹으면
-   이름표·역할표(흰 글자)가 통째로 사라진다 — 실제로 그렇게 안 보였다.
-   신문에도 사진은 어두운 판으로 앉는다. 사무실 구역만 잉크판으로 둔다. */
-html[data-theme="paper"] .office{background:#1a1714;border:1px solid var(--t-text);
-  border-radius:2px;box-shadow:3px 3px 0 var(--t-line);color:#f4f0e6}
-html[data-theme="paper"] .office::before{display:none}
-html[data-theme="paper"] .nameplate{color:#f4f0e6}
-html[data-theme="paper"] .roletag{background:#000;color:#e8c98a;border-color:#e8c98a}
-html[data-theme="paper"] .status{background:rgba(0,0,0,.78);color:#f4f0e6;border-color:#000}
-html[data-theme="paper"] .vs{color:#e8c98a}
-html[data-theme="paper"] .chart-legend b,html[data-theme="paper"] .worldclock b{color:var(--t-text)}
-/* 사무실(.office)을 잉크판으로 돌렸으므로 그 **안쪽** 글자는 종이색이어야 한다.
-   토큰(--t-text=잉크)을 그대로 쓰면 잉크 위 잉크가 되어 명암비 1.0이 나온다. */
-html[data-theme="paper"] .lab-office .lab-inner{background:transparent;border:0;color:#f4f0e6}
-html[data-theme="paper"] .lab-pos .row{background:rgba(255,255,255,.09);color:#f4f0e6}
-html[data-theme="paper"] .lab-hero .eq{font-family:var(--t-num);color:#f4f0e6}
-html[data-theme="paper"] .lab-hero .sub,html[data-theme="paper"] .lab-meta{color:#c9bfae}
-html[data-theme="paper"] .lab-pos .row.pend-head{background:rgba(232,201,138,.16);color:#e8c98a}
-html[data-theme="paper"] .lab-bar{background:rgba(255,255,255,.14)}
-html[data-theme="paper"] .lab-bar i{background:#e8c98a}
-html[data-theme="paper"] .argbox{background:#f4f0e6;color:#1a1714;border-color:#000}
-html[data-theme="paper"] .hint{color:var(--t-dim)}
-html[data-theme="paper"] .floor-title{font-family:var(--t-display);color:var(--t-text);
-  font-size:1.05rem}
-html[data-theme="paper"] .floor-title::before,html[data-theme="paper"] .floor-title::after{
-  background:var(--t-text)}
-html[data-theme="paper"] .chart-panel{background:var(--t-card);border:1px solid var(--t-text);
-  border-radius:2px;box-shadow:3px 3px 0 var(--t-line)}
-html[data-theme="paper"] .chart-head{background:var(--t-text);color:var(--bg);
-  font-family:var(--t-display);letter-spacing:1px}
-html[data-theme="paper"] .chart-body{background:var(--t-card)}
-html[data-theme="paper"] .chart-price{font-family:var(--t-num);color:var(--t-text)}
-html[data-theme="paper"] .chart-legend,html[data-theme="paper"] .worldclock{color:var(--t-dim)}
-html[data-theme="paper"] #pchips .chip{background:var(--t-card);color:var(--t-dim);
-  border-color:var(--t-line);border-radius:2px;font-family:var(--t-display)}
-html[data-theme="paper"] #pchips .chip.on{background:var(--t-text);color:var(--bg);border-color:var(--t-text)}
-html[data-theme="paper"] #pdeck .dcard{background:var(--t-card);border:1px solid var(--t-text);
-  border-radius:2px;box-shadow:3px 3px 0 var(--t-line)}
-html[data-theme="paper"] #pdeck .dt{font-family:var(--t-display);color:var(--t-accent);font-size:.95rem}
-html[data-theme="paper"] #pdeck .dx{color:var(--t-text)}
-html[data-theme="paper"] .tcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:2px}
-html[data-theme="paper"] .fcard{background:var(--t-card);border:1px solid var(--t-line);border-radius:2px}
-html[data-theme="paper"] .pchat .msg{background:var(--t-card);border-left:3px solid var(--t-accent)}
-html[data-theme="paper"] .pwho{color:var(--t-accent)}
-html[data-theme="paper"] .ticker-wrap{background:var(--t-text);border-top:0}
-html[data-theme="paper"] .pbar{background:rgba(26,23,20,.12)}
-html[data-theme="paper"] .pbar i{background:var(--t-accent)}
-html[data-theme="paper"] #pthemesheet{background:var(--t-card)}
-html[data-theme="paper"] .tsw{background:var(--t-card2)}
 
-/* ---- 상세 시트: 픽셀 테마의 크림색 종이가 다른 테마에 그대로 남아 있었다. ---- */
-html[data-theme="glass"] .bottom-sheet,
-html[data-theme="terminal"] .bottom-sheet,
-html[data-theme="paper"] .bottom-sheet{
-  background:var(--t-card2);color:var(--t-text);border-top:1px solid var(--t-accent);
-  transition:transform .26s cubic-bezier(.2,.8,.2,1)}
-html[data-theme="glass"] .bottom-sheet{backdrop-filter:blur(20px);
-  background:rgba(16,22,34,.92);border-radius:18px 18px 0 0}
-html[data-theme="paper"] .bottom-sheet{background:var(--t-card);border-top:3px double var(--t-text)}
-html[data-theme="glass"] .bottom-sheet .body,
-html[data-theme="terminal"] .bottom-sheet .body,
-html[data-theme="paper"] .bottom-sheet .body{color:var(--t-text);font-family:var(--t-font);
-  line-height:var(--t-lh)}
-html[data-theme="glass"] .bottom-sheet .who,
-html[data-theme="terminal"] .bottom-sheet .who,
-html[data-theme="paper"] .bottom-sheet .who{color:var(--t-accent);border-bottom-color:var(--t-line)}
-html[data-theme="glass"] .sheet-grip,html[data-theme="terminal"] .sheet-grip{background:#fff3}
-html[data-theme="glass"] .bottom-sheet .close,
-html[data-theme="terminal"] .bottom-sheet .close,
-html[data-theme="paper"] .bottom-sheet .close{color:var(--t-accent)}
-/* 테마 시트도 각 테마 옷을 입는다 */
-html[data-theme="glass"] #pthemesheet{background:rgba(16,22,34,.94);backdrop-filter:blur(20px)}
-html[data-theme="terminal"] #pthemesheet{background:var(--t-card);border-radius:0}
-html[data-theme="terminal"] .tsw{border-radius:0}
-html[data-theme="glass"] .tsw{background:rgba(255,255,255,.06);border-radius:14px}
-html[data-theme="paper"]{--t-warn:#8a5a12; --t-alert:#a3312a;
-  --t-up:#a3312a; --t-down:#1f4f7a}
-html[data-theme="terminal"]{--t-warn:#ffb000; --t-alert:#ff5f56;
-  --t-up:#ff7b72; --t-down:#79b8ff}
-html[data-theme="glass"]{--t-warn:#ffd08a; --t-alert:#ff8f87;
-  --t-up:#ff8f87; --t-down:#8ec5ff}
-/* 신문 테마의 사무실 구역만 잉크판이라, 그 안에서는 상승·하락색도 밝은 쪽을 써야 한다.
-   종이용으로 어둡게 잡은 색(#a3312a/#1f4f7a)을 잉크판 위에 쓰면 명암비가 1.63으로 떨어진다. */
-html[data-theme="paper"] .office .lab-up,html[data-theme="paper"] .office .ppos{color:#ff8f87}
-html[data-theme="paper"] .office .lab-dn,html[data-theme="paper"] .office .pneg{color:#8ec5ff}
-html[data-theme="paper"] .office .sh{color:#c9bfae}
-/* 터미널 보조색이 기준선(4.5)에 살짝 못 미쳤다 */
-html[data-theme="terminal"]{--t-dim:#93a0aa}
-/* 차트 등락 표시와 전력 패널 보조문구 — 종이 위에서 쓰는 색으로 다시 잡는다 */
-html[data-theme="paper"] .chart-pct.up{color:#a3312a}
-html[data-theme="paper"] .chart-pct.down{color:#1f4f7a}
-html[data-theme="paper"] .power-panel{background:var(--t-card);border-color:var(--t-line)}
-html[data-theme="paper"] .power-txt{color:var(--t-text)}
-html[data-theme="paper"] .power-txt span{color:#5a5248}
-/* 신문 테마 차트 — 밝은 종이 판에 잉크 글씨로 통일한다 */
-html[data-theme="paper"] .chart-body{background:var(--t-card)}
-html[data-theme="paper"] .chart-price{color:var(--t-text)}
-html[data-theme="paper"] .chart-legend{color:var(--t-dim);border-top-color:var(--t-line)}
-html[data-theme="paper"] .chart-legend b{color:var(--t-text)}
-html[data-theme="paper"] .worldclock{background:var(--t-card2);color:var(--t-dim)}
-html[data-theme="paper"] .worldclock b{color:var(--t-text)}
+/* 3 Atelier — 회벽 종이 */
+[data-theme="atelier"] {
+  --bg: oklch(94.8% 0.010 76);
+  --bg2: oklch(91.5% 0.013 74);
+  --card: oklch(98.4% 0.006 82);
+  --sub-surface: oklch(93.8% 0.011 76);
+  --ink: oklch(19% 0.024 52);
+  --ink2: oklch(28% 0.018 54);
+  --muted: oklch(43% 0.014 60);
+  --rule: oklch(82% 0.012 70);
+  --accent: oklch(41% 0.095 248);
+  --accent-soft: oklch(92% 0.025 248);
+  --f-head: "Noto Serif KR", Georgia, serif;
+  --f-body: "IBM Plex Sans KR", "Hanken Grotesk", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 10px;
+  --shadow: 0 2px 8px oklch(30% 0.03 55 / 0.07);
+}
 
+/* 13 Dose — 아침 햇빛과 반투명 플라스틱 */
+[data-theme="dose"] {
+  --bg: oklch(97.2% 0.011 88);
+  --bg2: oklch(92% 0.028 205);
+  --card: oklch(99.6% 0.004 88);
+  --sub-surface: oklch(94.2% 0.018 195);
+  --ink: oklch(21% 0.025 170);
+  --ink2: oklch(29% 0.020 170);
+  --muted: oklch(44% 0.024 165);
+  --rule: oklch(85% 0.022 150);
+  --accent: oklch(45% 0.16 258);
+  --accent-soft: oklch(92% 0.04 210);
+  --f-head: "Gothic A1", "Schibsted Grotesk", sans-serif;
+  --f-body: "IBM Plex Sans KR", "Instrument Sans", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 12px;
+  --shadow: 0 4px 14px oklch(30% 0.03 165 / 0.09);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: clip; width: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .25s, color .25s;
+}
+.num { font-variant-numeric: tabular-nums; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 20px 72px;
+}
+@media (max-width: 480px) {
+  .container { padding: 14px 12px 56px; }
+}
+
+/* 상단 헤더 */
+.topbar {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand-block h1 {
+  font-family: var(--f-head);
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.brand-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.top-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* 앞 겹(오늘) / 뒷 겹(기계) 전환 스위치 */
+.layer-switch {
+  display: inline-flex;
+  background: var(--sub-surface);
+  border: 1px solid var(--rule);
+  border-radius: 99px;
+  padding: 3px;
+  gap: 4px;
+}
+.layer-btn {
+  border: 0;
+  background: transparent;
+  color: var(--ink2);
+  font-family: var(--f-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: background .18s, color .18s, transform .15s;
+}
+.layer-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* 옷 갈아입기 셀렉터 */
+.theme-picker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+.theme-btn {
+  border: 1px solid var(--rule);
+  background: var(--card);
+  color: var(--ink2);
+  font-family: var(--f-body);
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.theme-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* 주소 배지 — 누르면 뒷 겹 기계 지도의 해당 구간으로 점프 */
+.addr-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .15s, background .15s;
+}
+.addr-tag:hover {
+  transform: translateY(-1px);
+  background: var(--accent);
+  color: #fff;
+}
+
+/* 출처 경로 표시 (밝은 카드 위에서 높은 명도 대비 유지) */
+.src-path {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--ink2);
+  background: var(--sub-surface);
+  border: 1px solid var(--rule);
+  padding: 2px 7px;
+  border-radius: 5px;
+  word-break: break-all;
+}
+
+/* 오늘 한눈에 요약 스트립 */
+.overview-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+@media (max-width: 960px) {
+  .overview-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .overview-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.stat-box {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  position: relative;
+}
+.stat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  gap: 4px;
+}
+.stat-val {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 4px;
+  line-height: 1.15;
+}
+.stat-sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* 챕터 네비게이션 탭 (앞 겹 오늘) */
+.chapter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.ch-tab {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-family: var(--f-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow);
+  transition: transform .15s, border-color .15s;
+}
+.ch-tab:hover { transform: translateY(-2px); }
+.ch-tab.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.chapter-section {
+  margin-top: 18px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+@media (max-width: 480px) {
+  .chapter-section { padding: 14px 12px; }
+}
+.ch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.ch-header h2 {
+  font-family: var(--f-head);
+  font-size: 19px;
+  color: var(--ink);
+}
+.ch-status {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* 아직 없음 안내 박스 */
+.empty-notice {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1.5px dashed var(--rule);
+  border-radius: 10px;
+  background: var(--sub-surface);
+  font-size: 13.5px;
+  color: var(--ink2);
+}
+
+/* 카드 그리드 */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width: 820px) {
+  .cards-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.item-card {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 14px;
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform .15s, border-color .15s;
+}
+.item-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.38;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-easy {
+  font-size: 13.8px;
+  color: var(--ink2);
+  background: var(--sub-surface);
+  padding: 9px 11px;
+  border-radius: 8px;
+  line-height: 1.55;
+}
+.card-quote {
+  font-size: 12.5px;
+  color: var(--muted);
+  border-left: 3px solid var(--accent);
+  padding-left: 9px;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: auto;
+  padding-top: 6px;
+}
+details.more-box {
+  font-size: 13px;
+  color: var(--ink2);
+  border-top: 1px dashed var(--rule);
+  padding-top: 6px;
+}
+details.more-box summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* 반응형 표 */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 12px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+table.data-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 540px;
+}
+table.data-tbl th, table.data-tbl td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+table.data-tbl th {
+  background: var(--sub-surface);
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* ── 뒷 겹 '기계' (구간 지도) ── */
+.layer-view { display: none; }
+.layer-view.active { display: block; }
+
+/* 마우스 호버 / 선택 구간 상세 설명 고정판 (3~5줄 설명) */
+.inspector-bar {
+  position: sticky;
+  top: 10px;
+  z-index: 30;
+  margin-top: 14px;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 18px;
+}
+.inspector-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.inspector-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.inspector-lines {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  font-size: 13px;
+}
+@media (max-width: 820px) {
+  .inspector-lines { grid-template-columns: minmax(0, 1fr); }
+}
+.ins-step {
+  background: var(--sub-surface);
+  padding: 8px 10px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+.inspector-foot {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--muted);
+  align-items: center;
+}
+
+/* 흐르는 파이프라인 SVG 배선판 */
+.flow-svg-box {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 14px;
+  overflow-x: auto;
+}
+.flow-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-dasharray: 7 5;
+  animation: pipeFlow 1.4s linear infinite;
+}
+.flow-line.inactive {
+  stroke: var(--muted);
+  stroke-dasharray: 4 4;
+  animation: none;
+  opacity: 0.45;
+}
+@keyframes pipeFlow {
+  to { stroke-dashoffset: -24; }
+}
+
+/* 구간 지도 6대 그룹 그리드 */
+.map-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (max-width: 1024px) {
+  .map-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .map-groups { grid-template-columns: minmax(0, 1fr); }
+}
+.map-group-col {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.map-group-title {
+  font-family: var(--f-head);
+  font-size: 16px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-node {
+  padding: 11px 12px;
+  border-radius: 10px;
+  margin-bottom: 9px;
+  background: var(--card);
+  cursor: pointer;
+  transition: transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s;
+  position: relative;
+}
+.sec-node:hover, .sec-node:focus-visible, .sec-node.picked {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px oklch(20% 0.02 250 / 0.14);
+  border-color: var(--accent) !important;
+  outline: none;
+}
+/* 돎 = 실선, 없음 = 점선, 따로 = 흐린 색 (사용자 결정) */
+.sec-node.kind-run {
+  border: 2px solid var(--ink2);
+}
+.sec-node.kind-none {
+  border: 2px dashed var(--muted);
+  opacity: 0.78;
+}
+.sec-node.kind-separate {
+  border: 1.5px solid var(--rule);
+  background: var(--sub-surface);
+  opacity: 0.88;
+}
+.sec-node.flash {
+  box-shadow: 0 0 0 3px var(--accent);
+}
+.sec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.sec-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+}
+.sec-badge {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.kind-run .sec-badge { background: rgba(21,128,61,.14); color: var(--ok); }
+.kind-none .sec-badge { background: rgba(180,83,9,.14); color: var(--warn); }
+.kind-separate .sec-badge { background: var(--sub-surface); color: var(--ink2); border: 1px solid var(--rule); }
+.sec-status-line {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.sec-mini-nums {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  font-family: var(--f-mono);
+  color: var(--ink2);
+  margin-top: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
 </style>
 </head>
 <body>
-<div id="storyLayer" role="dialog" aria-label="오늘의 스토리"></div>
-<div class="phone" id="app">
+<div class="container">
+  <!-- 상단 바 -->
+  <header class="topbar">
+    <div class="brand-block">
+      <h1>
+        <span>버전2 제어판</span>
+        <span class="addr-tag" onclick="jumpToSection('화면-2')" title="클릭하면 뒷 겹 기계 지도의 화면-2로 이동합니다">화면-2</span>
+        <span class="addr-tag" onclick="jumpToSection('출력-4')" title="클릭하면 뒷 겹 기계 지도의 출력-4로 이동합니다">출력-4</span>
+      </h1>
+      <div class="brand-sub" id="headerSub">데이터 읽는 중...</div>
+    </div>
 
-  <div class="topbar">
-    <span><span class="dot"></span><span id="brandName">PIXEL TRADING FLOOR</span></span>
-    <span style="display:flex;align-items:center;gap:8px">
-      <button id="pstorybtn" onclick="openStory()" aria-label="오늘의 스토리 보기" hidden>스토리</button>
-      <button id="pthemebtn" onclick="openThemes()" aria-label="디자인 바꾸기">
-        <span class="sw"></span><span id="pthemename">픽셀</span></button>
-      <span id="clockNow">--:--</span>
-    </span>
-  </div>
-
-  <div id="ptabs"></div>
-
-  <div id="psec-home" class="psec on">
-  <div class="chart-panel">
-    <div class="chart-head"><span>코스피 KOSPI</span><span>실시간(15~20분 지연)</span></div>
-    <div class="chart-body">
-      <div style="display:flex;justify-content:space-between;align-items:baseline">
-        <span class="chart-price" id="cp-price">--</span>
-        <span class="chart-pct down" id="cp-pct">--</span>
+    <div class="top-controls">
+      <div class="layer-switch" role="tablist" aria-label="앞뒤 겹 전환">
+        <button type="button" class="layer-btn active" id="btnLayerToday" onclick="switchLayer('today')">앞 겹 · 오늘 (5챕터)</button>
+        <button type="button" class="layer-btn" id="btnLayerMachine" onclick="switchLayer('machine')">뒷 겹 · 기계 (구간 지도 <span id="secCountBadge">30</span>)</button>
       </div>
-      <svg class="chart-svg" viewBox="0 0 200 50" preserveAspectRatio="none" id="cp-svg"></svg>
-      <div class="chart-legend"><span>MA20 <b id="ma20">--</b></span><span>MA60 <b id="ma60">--</b></span></div>
+      <div class="theme-picker" id="themePicker" aria-label="다섯 가지 옷 선택"></div>
     </div>
-    <div class="worldclock">
-      <span>NYC <b id="tz-nyc">--:--</b></span>
-      <span>LDN <b id="tz-ldn">--:--</b></span>
-      <span>SEL <b id="tz-sel">--:--</b></span>
+  </header>
+
+  <!-- 오늘 한눈에 숫자 6칸 -->
+  <section class="overview-strip" id="overviewStrip"></section>
+
+  <!-- ==================== 앞 겹: 오늘 (5챕터) ==================== -->
+  <main id="layerToday" class="layer-view active">
+    <nav class="chapter-nav" aria-label="오늘의 5챕터 바로가기">
+      <button type="button" class="ch-tab active" onclick="scrollToChapter('ch1')">1. 오늘의 순위 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('출력-1')">출력-1</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch2')">2. 숫자 (거푸집1) <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-1')">처리-1</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch3')">3. 쉽게 읽기 (거푸집2·연준) <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-2')">처리-2</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch4')">4. 뉴스 사건 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-3')">처리-3</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch5')">5. 논문 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-4')">처리-4</span></button>
+    </nav>
+
+    <!-- 챕터 1: 오늘의 순위 (출력-1) -->
+    <section class="chapter-section" id="ch1">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 1 · 오늘의 순위</h2>
+          <div class="ch-status" id="ch1Status"></div>
+        </div>
+        <span class="addr-tag" onclick="jumpToSection('출력-1')">출력-1 (기계 지도로 이동 →)</span>
+      </div>
+      <div class="empty-notice" id="ch1Notice"></div>
+      <div class="cards-grid" id="ch1Cards"></div>
+    </section>
+
+    <!-- 챕터 2: 숫자 (처리-1) -->
+    <section class="chapter-section" id="ch2">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 2 · 숫자 (거푸집1 — DART · 미국 FRED · 한국은행 ECOS)</h2>
+          <div class="ch-status" id="ch2Status"></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="addr-tag" onclick="jumpToSection('처리-1')">처리-1</span>
+          <span class="addr-tag" onclick="jumpToSection('인풋-5')">인풋-5</span>
+        </div>
+      </div>
+      <div id="ch2Content"></div>
+    </section>
+
+    <!-- 챕터 3: 쉽게 읽기 (처리-2 · 처리-6) -->
+    <section class="chapter-section" id="ch3">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 3 · 쉽게 읽기 (거푸집2 보도자료·리포트 + 연준 연설)</h2>
+          <div class="ch-status" id="ch3Status"></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="addr-tag" onclick="jumpToSection('처리-2')">처리-2</span>
+          <span class="addr-tag" onclick="jumpToSection('처리-6')">처리-6</span>
+          <span class="addr-tag" onclick="jumpToSection('처리-8')">처리-8</span>
+        </div>
+      </div>
+      <div id="ch3FedBox" style="margin-top:12px"></div>
+      <div class="cards-grid" id="ch3Cards"></div>
+    </section>
+
+    <!-- 챕터 4: 뉴스 사건 묶기 (처리-3) -->
+    <section class="chapter-section" id="ch4">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 4 · 뉴스 사건 묶기</h2>
+          <div class="ch-status" id="ch4Status"></div>
+        </div>
+        <span class="addr-tag" onclick="jumpToSection('처리-3')">처리-3 (기계 지도로 이동 →)</span>
+      </div>
+      <div class="cards-grid" id="ch4Cards"></div>
+      <div id="ch4SinglesBox" style="margin-top:14px"></div>
+    </section>
+
+    <!-- 챕터 5: 논문 (처리-4) -->
+    <section class="chapter-section" id="ch5">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 5 · 논문 (보관함)</h2>
+          <div class="ch-status" id="ch5Status"></div>
+        </div>
+        <span class="addr-tag" onclick="jumpToSection('처리-4')">처리-4 (기계 지도로 이동 →)</span>
+      </div>
+      <div class="empty-notice" id="ch5Notice"></div>
+      <div class="table-wrap" id="ch5TableWrap"></div>
+    </section>
+  </main>
+
+  <!-- ==================== 뒷 겹: 기계 (구간 지도) ==================== -->
+  <section id="layerMachine" class="layer-view">
+    <!-- 마우스 호버 / 선택 구간 3~5줄 설명 패널 -->
+    <div class="inspector-bar" id="inspectorBar">
+      <div class="inspector-head">
+        <div class="inspector-title" id="insTitle">구간에 마우스를 올리거나 눌러 보세요 (3~5줄 상세 설명)</div>
+        <span class="src-path" id="insSource">출처: 구간_주소표.md</span>
+      </div>
+      <div class="inspector-lines">
+        <div class="ins-step" id="insIn">1. 무엇을 받나: —</div>
+        <div class="ins-step" id="insRule">2. 어떤 규칙·코드로: —</div>
+        <div class="ins-step" id="insOut">3. 무엇을 내보내나: —</div>
+      </div>
+      <div class="inspector-foot" id="insFoot"></div>
     </div>
-  </div>
 
-  <div class="power-panel" id="powerPanel"></div>
+    <!-- 구간 사이로 글이 흐르는 SVG 배선도 -->
+    <div class="flow-svg-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;font-size:12.5px;color:var(--muted)">
+        <span><strong>오늘 하루 바퀴 흐름도</strong> (실선 애니메이션 = 오늘 돌아간 길 · 점선 = 아직 안 만든 길 · 노드를 누르면 아래 구간 카드로 이동)</span>
+        <span>범례: <strong>실선 테두리</strong>=돎 · <strong>점선 테두리</strong>=없음 · <strong>흐린 칸</strong>=따로/기타</span>
+      </div>
+      <svg viewBox="0 0 1120 170" width="100%" height="170" aria-label="하루 바퀴 구간 흐름도">
+        <!-- 연결 선 -->
+        <path class="flow-line" d="M 140 50 L 235 50" />
+        <path class="flow-line" d="M 355 50 L 445 50" />
+        <path class="flow-line" d="M 565 35 L 660 25" />
+        <path class="flow-line" d="M 565 50 L 660 65" />
+        <path class="flow-line" d="M 565 65 L 660 105" />
+        <path class="flow-line inactive" d="M 565 80 L 660 145" />
+        <path class="flow-line" d="M 790 25 L 885 50" />
+        <path class="flow-line" d="M 790 65 L 885 55" />
+        <path class="flow-line" d="M 790 105 L 885 65" />
+        <path class="flow-line" d="M 1000 55 L 1045 55" />
+        <!-- 노드 박스들 -->
+        <g style="cursor:pointer" onclick="focusSectionNode('인풋-1')">
+          <rect x="15" y="26" width="125" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="77" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">인풋-1 · 출처 38곳</text>
+          <text x="77" y="64" text-anchor="middle" font-size="10.5" fill="var(--muted)" id="svgIn1">daily.py</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('인풋-2')">
+          <rect x="235" y="26" width="120" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="295" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">인풋-2 · 모으기</text>
+          <text x="295" y="64" text-anchor="middle" font-size="10.5" fill="var(--muted)" id="svgIn2">987건 수집</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('인풋-3')">
+          <rect x="445" y="26" width="120" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="505" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">인풋-3 · 문 앞</text>
+          <text x="505" y="64" text-anchor="middle" font-size="10.5" fill="var(--muted)" id="svgIn3">6길 분류 (0콜)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-1')">
+          <rect x="660" y="8" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="725" y="28" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" id="svgP1">처리-1 · 거푸집1 (170)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-2')">
+          <rect x="660" y="48" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="725" y="68" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" id="svgP2">처리-2 · 거푸집2 (52)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-3')">
+          <rect x="660" y="88" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="725" y="108" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" id="svgP3">처리-3 · 뉴스 묶기 (175)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-4')">
+          <rect x="660" y="128" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--muted)" stroke-width="1.8" stroke-dasharray="5 3"/>
+          <text x="725" y="148" text-anchor="middle" font-size="11.5" fill="var(--muted)" id="svgP4">처리-4 · 논문 (보관 75)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('출력-2')">
+          <rect x="885" y="31" width="115" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="942" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">출력-2 · 결과지</text>
+          <text x="942" y="68" text-anchor="middle" font-size="10.5" fill="var(--muted)">출력-4 panel.json</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('화면-2')">
+          <rect x="1030" y="31" width="80" height="48" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="1070" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">화면-2</text>
+          <text x="1070" y="68" text-anchor="middle" font-size="10.5" fill="var(--ink2)">제어판</text>
+        </g>
+      </svg>
+    </div>
 
-  <h2 class="floor-title">애널리스트 팀</h2>
-  <div class="office">
-    <div class="desks" id="analystFloor"></div>
-  </div>
-
-  <h2 class="floor-title">리서치 팀</h2>
-  <div class="office research-office">
-    <div class="table-wrap" id="researchFloor"></div>
-    <div class="ace-row" id="aceRow"></div>
-  </div>
-
-  <p class="hint">캐릭터를 탭하면 실제 분석 내용이 아래에서 올라옵니다 · 갱신 <span id="genTime"></span> KST</p>
-  </div><!-- /psec-home -->
-
-  <div id="psec-ind" class="psec"></div>
-  <div id="psec-deck" class="psec"></div>
-  <div id="psec-team" class="psec"></div>
-
-  <!-- 실험 = 가상계좌 + 테마 예측. PC의 실험 탭과 같은 묶음이다.
-       계좌 잔고가 이 실험의 핵심 숫자이므로 맨 위에 둔다 — 예측 카드 6장 밑에 두었더니
-       스크롤 끝까지 내려야 보였다. -->
-  <div id="psec-lab" class="psec">
-    <h2 class="floor-title" id="labTitle" style="display:none">가상계좌 모의투자</h2>
-    <div class="office lab-office" id="labOffice" style="display:none"></div>
-    <div id="labPreds"></div>
-  </div>
-
-  <div id="psec-news" class="psec"></div>
-  <div id="psec-trends" class="psec"></div>
-  <div id="psec-graph" class="psec"></div>
-  <div id="psec-chat" class="psec"></div>
-  <div id="psec-system" class="psec"></div>
-
-  <div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
-
+    <!-- 6개 대분류(인풋·처리·출력·화면·되먹임·운영) 전체 구간 카드 -->
+    <div class="map-groups" id="mapGroups"></div>
+  </section>
 </div>
 
-<div class="sheet-backdrop" id="themeBackdrop" onclick="closeThemes()"></div>
-<div id="pthemesheet">
-  <h4>디자인 바꾸기</h4>
-  <span class="sub">같은 내용, 다른 옷. 탭 위치는 어느 디자인에서도 그대로입니다.</span>
-  <div id="pthemelist"></div>
-</div>
-
-<div class="sheet-backdrop" id="sheetBackdrop" onclick="closeSheet()"></div>
-<div class="bottom-sheet" id="bottomSheet">
-  <div class="sheet-grip"></div>
-  <div class="who">
-    <span id="sheetWho">—</span>
-    <span class="close" onclick="closeSheet()">✕ 닫기</span>
-  </div>
-  <div class="body" id="sheetBody"></div>
-</div>
-
+<script src="panel_data.js"></script>
 <script>
-const DATA = {"time": "2026-11-12T12:56+09:00", "chart": {"price": 5375.82, "pct": 0.01, "ma20": 5562.1, "ma60": 6356.3, "points": [6838.0400390625, 6971.35009765625, 7003.740234375, 6941.39013671875, 6803.89990234375, 6625.93017578125, 6384.240234375, 6035.35009765625, 6008.81005859375, 5554.22021484375, 5668.0498046875, 5768.009765625, 5552.740234375, 5735.66015625, 5533.77001953125, 5550.2998046875, 5469.47021484375, 5638.33984375, 6012.43994140625, 5937.66015625, 5730.740234375, 5859.080078125, 5648.7900390625, 5683.7998046875, 5383.7998046875, 5059.68994140625, 5018.85009765625, 5239.1298828125, 5375.35986328125, 5375.81982421875]}, "power": {"rate": 74.6951, "demand": 55681.3, "supply": 97876.2969}, "analysts": [{"id": "U1", "name": "유원", "role": "기술적 분석", "hair": "#2b3a67", "body": "#3a6ea5", "pants": "#20304f", "glasses": true, "cap": false, "belt": false, "hairStyle": "normal", "status": "온 세미컨덕터, 체코 확인 중…", "detail": "미 10년물 금리 상승은 시장의 위험자산 선호 심리를 위축시킵니다. 금리가 4.8%를 상회하며 한국 증시의 외국인 매도세를 가속화한 것으로 판단됩니다. 특히 기술주 중심의 매도 압력이 커지며 국내 반도체 대형주가 동반 급락했습니다. 미 국채 금리 상승이 향후 증시에 미칠 구체적인 영향은 현재로선 알 수 없습니다."}, {"id": "U2", "name": "이투", "role": "뉴스 분석", "hair": "#7a3b1e", "body": "#c99a2e", "pants": "#5b4210", "glasses": false, "cap": false, "belt": false, "hairStyle": "ponytail", "status": "러시아 10월 서비스업 확인 중…", "detail": "러시아 10월 서비스업 경기가 성장 정체 국면에 근접했습니다. 글로벌 원자재 공급망과 직결된 러시아 내수 위축은 국제 원자재 가격 변동성을 높이는 요인으로 해석됩니다. 국내 시장 영향력은 제한적인 일상 기사로 판단됩니다."}, {"id": "B2", "name": "비투", "role": "기본적 분석", "hair": "#5a2d82", "body": "#2f8f5b", "pants": "#1c5a38", "glasses": false, "cap": false, "belt": false, "hairStyle": "parted", "status": "기사 분류 확인 중…", "detail": "분류: 전략(글로벌 자본 흐름 및 거시 경제), 운영(기업 실적 및 산업 동향), 일상(국지적 경제 지표 및 일반 뉴스). 점수: 1(낮음) ~ 5(높음) - 국내 증시 및 에너지 시장 파급력 기준."}, {"id": "TK", "name": "툴킷", "role": "데이터 수집", "hair": "#888888", "body": "#2b8f8f", "pants": "#1c5a5a", "glasses": false, "cap": true, "belt": true, "hairStyle": "normal", "status": "뉴스 검색 실행 중…", "detail": "[투자 대상 6종목 — 가상계좌 모의투자]\n  · 한국전력 [kepco] 30,400.00 원 전일比 -3.03% · 보유 66주\n      전력 유틸리티(국내) — 전력망 투자·요금 정책·연료비의 최종 수렴점. 전공 직결.\n  · LS ELECTRIC [lselectric] 116,500.00 원 전일比 -10.25% · 보유 89주\n      전력기기(국내) — 변압기·배전반. 데이터센터·전력망 증설의 직접 수혜/피해가 실적에 바로 찍힌다.\n  · SK하이닉스 [hynix] 1,132,000.00 원 전일比 -10.44% · 보유 2주\n      반도체(국내) — HBM. AI 사이클의 국내 대표. 전력 수요 증가의 출발점이기도 하다.\n  · NVIDIA [nvda] 186.64 USD (≈254,512원) 전일比 2.78% · 보유 23주\n      AI 반도체(해외) — AI 데이터센터 수요의 진원지. 하이닉스와 같이 움직이는지 다르게 움직이는지가 관전 포인트.\n  · Constellation Energy [ceg] 249.95 USD (≈340,844원) 전일比 4.3% · 보유 17주\n      원전 발전·데이터센터 전력(해외) — 'AI가 전기를 먹는다'는 명제를 가격으로 검증하는 종목. 원전 PPA 계약이 핵심.\n  · Energy Select SPDR (XLE) [xle] 61.62 USD (≈84,028원) 전일比 -0.02% · 미보유\n      에너지 ETF(해외) — 유가·천연가스 노출. 개별종목 리스크를 분산하는 자리. 우리가 이미 WTI를 추적 중.\n원/달러 1,363.65원\n\n[현재 계좌] 평가액 40,626,066원 (원금 50,000,000원 대비 -18.75%) · 현금 14,339,045원\n  · 한국전력 66주 비중 5% 손익 +5.6%\n  · LS ELECTRIC 89주 비중 26% 손익 -26.7%\n  · SK하이닉스 2주 비중 6% 손익 -19.1%\n  · NVIDIA 23주 비중 14% 손익 -11.2%\n  · Constellation Energy 17주 비중 14% 손익 -5.3%\n[거래비용 — 비중을 정할 때 반드시 계산에 넣어라]\n  · 비중 1%p = 406,261원. 이걸 옮기면 왕복 비용이 국내 약 853원, 해외 약 1,381원 나간다.\n  · 지금까지 낸 수수료·세금 누적 630,292원 (원금의 1.261%).\n  · 비중 변경은 **그 변경으로 기대하는 이득이 위 비용보다 클 때만** 해라.\n    근거 없이 숫자만 흔들면 수수료로 계좌가 녹는다.\n  · 확신이 없으면 **그대로 두는 것도 판단이다** — 다만 전 종목 동결이 매번\n    반복되면 그것도 판단을 안 한 것이다.\n"}], "research": {"bull": {"name": "삼추", "tag": "매수 논거", "text": "에너지 수급 불균형 심화로 유가 상승이 예상됩니다. OPEC+의 감산 연장 기조와 지정학적 긴장에 따른 공급 차질이 가격 상승 압력으로 작용합니다."}, "bear": {"name": "사비", "tag": "매도 논거", "text": "XLE 매도를 권고합니다. OPEC+의 감산 정책은 이미 시장에 반영되었으며, 비회원국의 원유 증산이 공급 부족 우려를 상쇄하고 있습니다. 중국의 경기 부양책이 실질적 수요로 이어지지 않는 한 유가 상승 동력은 미약합니다."}, "ace": {"name": "알파", "status": "코스피↔SK하이닉스 연관 확인 중…", "detail": "오늘은 3건이 특이합니다.\n\n코스피가 5059.69 pt로 6.02% 하락하며 마감했습니다. SK하이닉스 10.44%, 삼성전자 6.35% 급락이 지수 하락을 주도했습니다. 원/달러 환율은 1363.65 원으로 1.76% 상승하며 외국인 자금 이탈을 가속화했습니다. SMP 계통한계가격: 전력거래소에서 결정하는 전력도매가격. 현재 143.1 원/kWh를 유지하며 에너지 관련주인 한국전력의 추가 하락을 제한하고 있습니다.\n\n환율 1370원 돌파 여부를 유지합니다. 현재 환율이 1363.65원이므로 변동성 확대 시 도달 가능성이 큽니다.\n\n오늘 지켜볼 것: 원/달러 환율이 1370 원을 돌파하는지 여부. 돌파 시 수입 에너지 비용 급증으로 한국전력의 영업비용 가중 압력이 현실화됩니다."}}, "tickers": [{"name": "원/달러 환율", "value": "1,330.9", "pct": -0.82}, {"name": "반도체지수 SOX", "value": "10,564.11", "pct": 5.66}, {"name": "천연가스 (LNG 대리)", "value": "3.284", "pct": 2.15}, {"name": "구리 선물", "value": "6.240", "pct": -0.55}, {"name": "WTI 유가", "value": "85.73", "pct": -0.92}, {"name": "한국전력", "value": "30,350", "pct": -0.33}, {"name": "삼성전자", "value": "210,500", "pct": 2.18}, {"name": "SK하이닉스", "value": "1,279,000", "pct": 0.16}, {"name": "엔비디아", "value": "173.73", "pct": 2.87}, {"name": "금 선물", "value": "3,984.3", "pct": -0.4}, {"name": "미 10년물 금리", "value": "4.998", "pct": 0.3}], "lab": {"capital": 50000000, "equity": 41626804, "return_pct": -16.75, "profit": -8373196, "live": true, "settled_eq": 41686151, "settled_date": "2026-11-06", "days": 92, "mdd": -19.22, "mae": 0.989, "band": 0.432, "review_due": "2027-02-02", "pending": {"date": "2026-11-07", "orders": [{"name": "한국전력", "w": 5}, {"name": "LS ELECTRIC", "w": 15}, {"name": "SK하이닉스", "w": 5}, {"name": "NVIDIA", "w": 15}, {"name": "Constellation Energy", "w": 20}], "equity": 40880000.0}, "positions": [{"name": "한국전력", "shares": 66, "weight": 0.048, "pl": 5.28}, {"name": "LS ELECTRIC", "shares": 89, "weight": 0.269, "pl": -20.89}, {"name": "SK하이닉스", "shares": 2, "weight": 0.0615, "pl": -8.55}, {"name": "NVIDIA", "shares": 23, "weight": 0.1278, "pl": -19.36}, {"name": "Constellation Energy", "shares": 17, "weight": 0.1493, "pl": 1.61}], "curve": [["09-08", 50919106.0], ["09-09", 50333502.0], ["09-10", 50550951.0], ["09-11", 49865458.0], ["09-12", 49441998.0], ["09-13", 49441501.0], ["09-14", 49465760.0], ["09-15", 48004510.0], ["09-16", 47648488.0], ["09-17", 48163075.0], ["09-18", 48729278.0], ["09-19", 48783833.0], ["09-20", 48761207.0], ["09-21", 48768102.0], ["09-22", 49119052.0], ["09-23", 48987897.0], ["09-24", 49128686.0], ["09-25", 48930576.0], ["09-26", 48823982.0], ["09-27", 48804230.0], ["09-28", 48814161.0], ["09-29", 48719238.0], ["09-30", 48683753.0], ["10-01", 48208871.0], ["10-02", 48883445.0], ["10-03", 48704581.0], ["10-04", 48700403.0], ["10-05", 48703394.0], ["10-06", 49667798.0], ["10-07", 51572673.0], ["10-08", 50866469.0], ["10-09", 49408655.0], ["10-10", 49911814.0], ["10-11", 49908373.0], ["10-12", 49924406.0], ["10-13", 49510406.0], ["10-14", 50223934.0], ["10-15", 48918212.0], ["10-16", 46663556.0], ["10-17", 46714758.0], ["10-18", 46606529.0], ["10-19", 46702707.0], ["10-20", 47069232.0], ["10-21", 45505550.0], ["10-22", 46846816.0], ["10-23", 45784544.0], ["10-24", 45362379.0], ["10-25", 45374998.0], ["10-26", 45337083.0], ["10-27", 45298253.0], ["10-28", 45995670.0], ["10-29", 47229148.0], ["10-30", 47035342.0], ["10-31", 45285050.0], ["11-01", 45309468.0], ["11-02", 45265880.0], ["11-03", 45602369.0], ["11-04", 46007750.0], ["11-05", 43673467.0], ["11-06", 41686151.0]], "last": {"date": "2026-11-06", "equity": 41686151.0, "return_pct": -16.628, "cash": 14339045.0, "n_trades": 5, "forecast": 42450000.0, "err": -763849.0, "err_pct": -1.832, "in_band": false}}, "m": {"ind": {"rows": [{"id": "krw_usd", "name": "원/달러 환율", "unit": "원", "value": "1,330.9", "pct": -0.82, "spark": [1379.53, 1384.86, 1373.6801, 1350.36, 1362.5, 1367.36, 1354.51, 1359.5601, 1350.5, 1356.84, 1360.59, 1342.5601, 1343.75, 1339.74, 1339.08, 1342.99, 1340.84, 1334.13, 1340.3101, 1339.35, 1340.95, 1333.4301, 1330.0, 1323.9399, 1325.59, 1325.99, 1321.76, 1324.77, 1326.8101, 1340.34, 1337.98, 1325.52, 1344.8101, 1342.9, 1340.0699, 1356.34, 1362.7, 1343.84, 1341.91, 1330.89], "ma20": 1336.0, "ma60": 1351.0, "dec": 1, "groups": ["core", "elec", "econ"], "ai": "원/달러 환율이 1,363.65원으로 전일 대비 1.76% 상승했습니다. [출처: 서울외국환중개] \n\n반도체 종목 중심의 외국인 매도세가 환율 상승의 주된 원인으로 해석됩니다. 이는 안전자산 선호 심리가 강화된 결과로 판단됩니다. 금일 환율 변동이 국내 주식시장 급락과 직결되었는지는 명확히 규명할 수 없습니다.", "detail": null, "verdict": null}, {"id": "kospi", "name": "코스피", "unit": "pt", "value": "5,375.82", "pct": 0.01, "spark": [6684.3701, 6627.2598, 6717.9702, 6715.4102, 6894.23, 7007.7202, 7017.9102, 7080.9199, 6889.7402, 6870.8101, 6838.04, 6971.3501, 7003.7402, 6941.3901, 6803.8999, 6625.9302, 6384.2402, 6035.3501, 6008.8101, 5554.2202, 5668.0498, 5768.0098, 5552.7402, 5735.6602, 5533.77, 5550.2998, 5469.4702, 5638.3398, 6012.4399, 5937.6602, 5730.7402, 5859.0801, 5648.79, 5683.7998, 5383.7998, 5059.6899, 5018.8501, 5239.1299, 5375.3599, 5375.8198], "ma20": 5562.07, "ma60": 6356.32, "dec": 2, "groups": ["core", "econ"], "ai": "코스피가 5,000선 초반으로 급락하며 장을 마감했습니다. \n\n반도체 업종의 투매가 지수 하락을 주도했습니다. SK하이닉스는 10.44%, 삼성전자는 6.35% 하락했습니다. 이는 대형주 중심의 투자 심리 위축이 시장 전체의 매도세를 가속화한 것으로 해석됩니다.", "detail": "지휘자 알파입니다. 분석 결과를 보고합니다.\n\n**1. 핵심 사실**\n코스피는 전일 대비 6.02% 하락하여 5059.69 pt를 기록했습니다. 외국인 투자자는 이틀간 국내 증시에서 6조 원을 순매도했습니다 [출처: 세계일보(2026-11-07T05:05:36 GMT)]. 원/달러 환율은 1,420원을 돌파하며 연고점을 경신했습니다 [출처: 서울외환시장].\n\n**2. 원인**\n미국 정부의 AI 규제 정책 발표가 반도체 실적 불확실성을 증폭시켰습니다. 외국인 투자자는 환차손(환율 변동으로 인해 발생하는 자산 가치의 손실) 회피를 위해 대규모 매도에 나섰습니다. 정책 리스크와 환율 상승이 결합하여 수급 이탈을 가속했습니다.\n\n**3. 맥락**\n이번 급락은 반도체 섹터의 변동성이 상시화된 흐름의 연장선입니다. 과거 정책 이슈가 단기 조정에 그쳤던 것과 달리, 이번에는 환율 급등과 외국인 자금 이탈이 동시에 발생하며 하락폭을 키웠습니다.\n\n**4. 전공자(전력전자·전기기계) 대응**\n반도체 장비 및 전력 반도체 부품 단가에 즉각적인 압박이 발생할 가능성이 큽니다. 전력 효율화를 위한 인프라 투자 계획이 미국 정책으로 인해 지연될 수 있습니다. 귀하는 전방 산업의 신규 발주 보류 여부와 반도체 공급망에 포함된 소재·부품의 재고 회전율 추이를 지켜봐야 합니다. \n\n**5. 한계 및 미확인 사항**\n미국 규제의 구체적인 기술적 제한 범위는 확정되지 않았습니다. 해당 규제가 실제 팹(Fab: 반도체 제조 공장) 가동률에 미치는 영향은 현재 시점에서 정확히 알 수 없습니다. 향후 미국 상무부의 세부 지침 발표 전까지는 변동성이 지속될 것으로 판단됩니다.", "verdict": "green"}, {"id": "sox", "name": "반도체지수 SOX", "unit": "pt", "value": "10,564.11", "pct": 5.66, "spark": [11599.4902, 11921.6904, 12433.1699, 12689.8203, 12534.2803, 12492.54, 12668.9297, 12465.2402, 12629.1602, 12628.6201, 12829.0, 13136.6699, 13172.7402, 13217.8203, 13066.1504, 12623.71, 12572.4199, 12236.79, 12208.79, 11684.3799, 11581.21, 11137.29, 11316.3398, 11283.8096, 11505.5596, 10731.9805, 10779.46, 11083.4697, 11482.5, 11684.0, 11518.2002, 10688.7998, 10328.3301, 10600.4004, 10268.6504, 9011.1396, 9390.25, 10033.9297, 9998.3301, 10564.1113], "ma20": 10749.39, "ma60": 11618.54, "dec": 2, "groups": ["core", "econ"], "ai": "SK하이닉스와 삼성전자의 급락은 미국 필라델피아 반도체지수(SOX) 상승과 정반대의 결과입니다. 한국 증시의 반도체 의존도가 높은 상황에서, 시장은 미국 지수 상승보다 개별 기업의 실적 우려를 우선 반영했습니다. 외국인 매도세 집중이 이번 지수 하락의 주요 원인으로 해석됩니다.", "detail": "원인은 아직 확정되지 않았습니다.\n\n① 무슨 일: 10월 29일부터 11월 6일까지 코스피 거래량이 0으로 기록되었습니다. [출처: 한국거래소] 수치상의 이상 현상이 발생했습니다.\n\n② 왜: 데이터 공급망의 오류인지 실제 시장 마비인지 확인되지 않았습니다. 거래 데이터가 생성되지 않는 비정상적 상태입니다.\n\n③ 맥락: 과거 시스템 점검이나 일시적 오류 사례와 유사합니다. 반복적인 현상이 아니며 현재 원인을 파악 중입니다.\n\n④ 그래서 나에게: 전력망 운영에 필요한 실시간 계통한계가격(SMP·전력시장 내 전력 공급 비용을 결정하는 가격) 산출과 출력제어(전력망 안정을 위해 발전기의 출력을 인위적으로 제한하는 행위) 판단에 필요한 시장 신호가 불투명합니다. 투자자는 거래소의 시스템 복구 여부와 실제 매매 가능 시점을 최우선으로 지켜봐야 합니다.\n\n⑤ 한계: 데이터가 0인 이유를 정확히 모릅니다. 시스템 결함인지 시장 폐쇄인지 불분명합니다. 추가적인 공식 발표를 기다려야 합니다.\n\n종합판정: [판단불가]", "verdict": "red"}, {"id": "natgas", "name": "천연가스 (LNG 대리)", "unit": "USD", "value": "3.284", "pct": 2.15, "spark": [2.912, 2.836, 2.965, 3.023, 3.297, 3.196, 3.0, 3.011, 3.026, 2.967, 3.035, 3.066, 3.114, 3.203, 3.168, 3.22, 3.167, 3.283, 3.198, 3.236, 3.116, 3.058, 2.963, 2.79, 2.796, 2.64, 2.602, 2.697, 2.817, 2.952, 2.898, 2.856, 2.895, 2.959, 2.947, 2.998, 3.218, 3.296, 3.215, 3.284], "ma20": 2.95, "ma60": 2.972, "dec": 3, "groups": ["elec"], "ai": "천연가스 가격은 1.73% 상승했으나 국내 전력 수급은 공급예비율 78.6%로 매우 안정적입니다.\n전력거래소의 공급예비력은 39,394MW로 경보 발령 기준인 5,500MW를 크게 상회합니다.\n에너지 가격 변동이 국내 전력 공급 안정성에 미치는 영향은 제한적인 것으로 판단됩니다.", "detail": null, "verdict": null}, {"id": "copper", "name": "구리 선물", "unit": "USD/lb", "value": "6.240", "pct": -0.55, "spark": [6.615, 6.6865, 6.7595, 6.678, 6.7185, 6.6955, 6.566, 6.5435, 6.559, 6.482, 6.492, 6.5855, 6.5945, 6.5965, 6.519, 6.6425, 6.6985, 6.678, 6.6115, 6.5115, 6.531, 6.538, 6.5665, 6.543, 6.3625, 6.476, 6.508, 6.622, 6.6415, 6.581, 6.4585, 6.5435, 6.3785, 6.403, 6.249, 6.218, 6.3285, 6.2195, 6.2745, 6.2395], "ma20": 6.434, "ma60": 6.533, "dec": 3, "groups": ["elec"], "ai": "구리 선물 가격이 전일 대비 0.26% 상승했습니다. 반도체 주식의 기록적 폭락과 무관하게 구리 가격은 횡보세를 유지하고 있습니다. 산업 전반의 구리 수요가 단기적인 IT 종목 조정보다 거시적인 공급망 여건에 더 큰 영향을 받고 있는 것으로 해석됩니다. 구리 가격이 실물 경기 지표로서 한국 시장의 하락세를 방어하지 못했습니다.", "detail": null, "verdict": null}, {"id": "wti", "name": "WTI 유가", "unit": "USD", "value": "85.73", "pct": -0.92, "spark": [100.3, 95.78, 94.59, 92.16, 94.61, 92.41, 92.6, 89.38, 90.42, 92.87, 91.11, 89.43, 89.44, 88.28, 91.49, 91.85, 93.74, 94.14, 95.09, 97.97, 101.41, 103.66, 101.79, 97.15, 99.47, 103.27, 101.76, 99.9, 102.78, 102.0, 104.12, 96.46, 96.09, 88.12, 90.52, 90.83, 86.85, 86.04, 86.53, 85.73], "ma20": 96.22, "ma60": 93.78, "dec": 2, "groups": ["elec", "econ"], "ai": "WTI 유가는 전일 대비 0.34% 상승한 90.83달러를 기록했습니다. \n\n공급예비율 78.6%로 전력 수급은 안정적입니다. 유가 상승은 에너지 수입 비용을 높여 국내 물가와 기업 수익성에 부정적인 압력을 주는 요인으로 해석됩니다. 현재 유가 변동이 한국 증시 급락의 직접적 원인인지는 명확히 알 수 없습니다.", "detail": null, "verdict": null}, {"id": "kepco", "name": "한국전력", "unit": "원", "value": "30,350", "pct": -0.33, "spark": [31950.0, 31350.0, 30850.0, 31000.0, 30750.0, 30850.0, 30850.0, 30250.0, 30700.0, 30100.0, 29950.0, 30150.0, 30050.0, 30300.0, 30050.0, 29100.0, 28550.0, 29150.0, 29150.0, 28450.0, 28600.0, 29100.0, 28200.0, 28850.0, 28800.0, 28650.0, 28000.0, 27850.0, 28650.0, 28300.0, 28600.0, 29250.0, 29050.0, 30450.0, 31350.0, 30400.0, 29900.0, 30600.0, 30450.0, 30350.0], "ma20": 29270.0, "ma60": 30688.0, "dec": 0, "groups": ["elec"], "ai": "한국전력 주가는 코스피 급락세에 동조하며 30,400원에 마감했습니다. \n\n전력 수급은 공급예비율 78.6%로 매우 안정적인 상태를 유지하고 있습니다. \n\n반도체 기업 중심의 증시 폭락이 전력 공기업의 투자 심리에도 부정적 영향을 미친 것으로 해석됩니다. \n\n에너지 정책 변화나 구체적인 수급난이 주가에 반영되었는지 여부는 현재 알 수 없습니다.", "detail": "원인은 아직 확정되지 않았습니다.\n\n① 무슨 일: 11월 7일 코스피 지수가 외국인 매도세의 확대로 전 거래일 대비 0.85% 하락 마감했습니다 [출처: 한국거래소].\n② 왜: 외국인의 대규모 반도체 종목 매도가 지수 하락의 직접적 방아쇠가 된 것으로 해석됩니다.\n③ 맥락: 지난 10월부터 이어진 외국인의 연속 순매도 기조가 심화된 국면입니다. 과거의 일시적 조정과 달리, 현재는 금리 불확실성이 겹치며 매도 강도가 강화되고 있습니다.\n④ 그래서 나에게: 전력전자·전기기계 전공자에게는 기자재 수주와 직결되는 '공공부문 투자 예산'과 '민간 설비투자'의 지표를 주시할 것을 권합니다. 시장 자금 이탈이 장기화될 경우, 기업의 연구개발비 축소 및 발주 지연이 수치로 나타날 수 있습니다. 특히 대규모 송전망 확충 프로젝트에 투입될 자금 조달 여건이 악화되는지 확인하십시오.\n⑤ 한계: 외국인 투자자가 왜 특정 시점에 집중적으로 매도 물량을 쏟아냈는지, 그 근본적인 포트폴리오 재조정 사유는 모릅니다. 현재의 하락세가 단순 수급 꼬임인지, 한국 시장의 구조적 매력 하락인지에 대해서는 판단을 유보합니다.\n\n결론적으로, 현시점의 하락 원인을 단정할 수 없습니다.", "verdict": "yellow"}, {"id": "samsung", "name": "삼성전자", "unit": "원", "value": "210,500", "pct": 2.18, "spark": [249000.0, 248500.0, 253500.0, 252500.0, 261000.0, 274000.0, 276500.0, 285500.0, 270000.0, 272500.0, 268500.0, 276000.0, 276000.0, 272000.0, 268500.0, 262000.0, 250500.0, 232000.0, 232000.0, 210000.0, 215500.0, 218000.0, 211500.0, 223500.0, 214500.0, 215500.0, 213000.0, 222000.0, 242000.0, 232000.0, 225000.0, 229000.0, 219500.0, 218000.0, 201500.0, 188700.0, 189900.0, 198900.0, 206000.0, 210500.0], "ma20": 214725.0, "ma60": 245683.0, "dec": 0, "groups": ["original"], "ai": "삼성전자가 전일 대비 6.35% 하락하며 188,700원에 마감했습니다. \n외국인과 기관의 대규모 매도세가 주가 하락을 주도한 것으로 분석됩니다.\n반도체 업황 둔화 우려와 미국 금리 정책 불확실성이 복합적으로 작용한 결과로 해석됩니다.\n이러한 급락이 반도체 섹터 전반의 투자 심리를 위축시키고 있습니다.", "detail": "원인은 아직 확정되지 않았습니다.\n\n① 무슨 일: 11월 6일 삼성전자 주가는 전일 대비 6.35% 하락한 188,700원에 마감했습니다. [출처: 한국거래소] 해당일 거래량은 35,516,270주로 전일 대비 44% 급증했습니다. [출처: 한국거래소]\n\n② 왜: 외국인과 기관의 동반 매도세가 하락을 주도했습니다. 자사주 매입은 시장 하락 방어에 실패했습니다. 반도체 업황에 대한 우려와 미국 금리 정책 변화가 심리를 위축시킨 것으로 해석됩니다.\n\n③ 맥락: 과거 반도체 사이클 하락기에도 외국인 자금 이탈은 반복되었습니다. 다만 이번 매도세는 명확한 개별 기업 악재 없이 거래량이 급증했다는 점에서 기존 조정 국면과 차이가 있습니다.\n\n④ 그래서 나에게: 전력전자 설계 시 필수 부품인 메모리 반도체의 공급 변동성이 커질 가능성이 있습니다. 시장 수급 불안으로 파운드리(위탁생산) 단가 조정이 발생할 수 있으니, 주요 고객사의 장비 발주 물량 변화를 주시하십시오. 출력제어(전력 계통의 안정성을 위해 발전기의 출력을 강제로 제한하는 조치)와 유사한 공급단 관리가 반도체 산업에도 적용될 수 있습니다.\n\n⑤ 한계: 매도세를 촉발한 구체적인 도화선은 확인되지 않았습니다. 현재 데이터만으로는 삼성전자의 급격한 거래량 변화를 완전히 설명할 수 없습니다. 원인은 모릅니다.\n\n판단불가입니다. 추가 근거가 확보될 때까지 시장의 수급 주체 동향을 지켜봐야 합니다.", "verdict": "red"}, {"id": "hynix", "name": "SK하이닉스", "unit": "원", "value": "1,279,000", "pct": 0.16, "spark": [1697000.0, 1690000.0, 1759000.0, 1745000.0, 1857000.0, 1868000.0, 1840000.0, 1862000.0, 1768000.0, 1765000.0, 1776000.0, 1833000.0, 1841000.0, 1773000.0, 1723000.0, 1681000.0, 1605000.0, 1443000.0, 1419000.0, 1262000.0, 1272000.0, 1277000.0, 1223000.0, 1294000.0, 1223000.0, 1277000.0, 1275000.0, 1341000.0, 1487000.0, 1526000.0, 1418000.0, 1472000.0, 1398000.0, 1396000.0, 1264000.0, 1132000.0, 1136000.0, 1212000.0, 1277000.0, 1279000.0], "ma20": 1308950.0, "ma60": 1572567.0, "dec": 0, "groups": ["original"], "ai": "SK하이닉스가 113,200원으로 장을 마감하며 10.44% 급락했습니다. \n반도체 업황에 대한 투자자들의 우려가 매도세로 이어진 결과입니다. \n코스피 지수 하락을 주도하며 시장 전체의 투자 심리를 위축시킨 것으로 분석됩니다.", "detail": "지휘자 알파입니다. 분석 보고합니다.\n\n① SK하이닉스 주가가 전일 대비 10.44% 하락한 113,200원에 마감했습니다. [출처: 한국거래소]\n\n② TSMC의 메모리 자체 생산 검토 보도가 투자자들의 심리적 지지선을 무너뜨린 직접적 원인으로 분석됩니다. 엔비디아의 공급망 다변화 요구가 메모리 업계의 과점적 지위를 위협할 수 있다는 우려가 반영되었습니다.\n\n③ 이번 하락은 단순 조정을 넘어선 수급 이탈입니다. 과거의 단기 조정과 달리, HBM(고대역폭 메모리: 데이터 처리 속도를 높이기 위해 여러 개의 D램을 수직으로 연결한 고성능 메모리) 시장의 독점 구조가 깨질 수 있다는 불안이 가세하며 매도 강도가 강화되었습니다.\n\n④ 전력전자·전기기계 전공자에게는 HBM 설비 투자 효율성 저하가 위험 요소입니다. TSMC가 자체 메모리 생산에 성공할 경우, 기존 하이닉스의 공정 기술 격차는 상업적 가치를 잃을 수 있습니다. 차후 HBM 테스트 장비의 수율 확보 여부와 파운드리(반도체 위탁생산) 파트너사들의 생산 단가 변화를 추적하십시오.\n\n⑤ TSMC의 실제 생산 역량과 엔비디아의 구체적인 이관 계획은 모릅니다. 시장의 반응이 실질적 기술 전환으로 이어질지는 불확실하며, 현재는 공포 심리가 수급을 주도하고 있습니다.", "verdict": "green"}, {"id": "nvidia", "name": "엔비디아", "unit": "USD", "value": "173.73", "pct": 2.87, "spark": [219.34, 222.27, 227.38, 228.87, 225.51, 224.58, 225.07, 228.86, 227.21, 228.38, 230.86, 233.95, 238.9, 239.24, 237.47, 230.48, 229.28, 226.32, 228.52, 221.3, 217.23, 214.13, 217.09, 216.47, 221.97, 212.21, 210.96, 216.0, 217.94, 215.38, 213.66, 204.64, 202.06, 206.69, 200.13, 181.6, 186.64, 178.67, 168.89, 173.73], "ma20": 203.8, "ma60": 217.0, "dec": 2, "groups": ["original"], "ai": "SK하이닉스와 삼성전자의 급락은 미국 반도체 지수와의 괴리를 반영합니다. 엔비디아의 상승에도 국내 반도체 종목이 하락한 것은 외국인 투자자의 대규모 매도세가 원인입니다. 이는 국내 시장이 대외 변수보다 수급 불균형에 더 크게 반응하고 있음을 나타냅니다. 현재 전력 수급은 안정적이며 반도체 생산 차질 가능성은 없습니다.", "detail": "지휘자 알파입니다. U4의 재판정 내용을 바탕으로 SK하이닉스 및 코스피 급락 원인을 보고합니다.\n\n**1. 무슨 일**\nSK하이닉스의 주가가 전일 대비 12% 급락하며 코스피 지수 하락을 주도했습니다. [출처: 한국거래소, 2026-11-07]\n\n**2. 왜**\n엔비디아가 차세대 아키텍처 '베라루빈'(차세대 AI 가속기 구동을 위한 엔비디아의 설계 구조)에 탑재할 HBM4(데이터 처리 속도를 극대화한 고대역폭 메모리) 성능 규격을 하향 조정했습니다. 이로 인해 HBM4의 단위당 수익성(마진율)이 기존 기대치보다 낮아질 것이라는 시장의 우려가 매도세를 촉발했습니다.\n\n**3. 맥락**\n과거에는 성능 상향이 곧 매출 확대였으나, 이번에는 규격 하향으로 인한 단가 압박이 현실화되었습니다. 과거 HBM 공급 부족기에는 기술 우위가 곧 협상력이었으나, 현재는 고객사의 단가 인하 압박이 본격화되는 전환점으로 보입니다.\n\n**4. 그래서 나에게 (전공자 관점)**\nHBM4 생산 공정에서 웨이퍼 직접 접합(메모리와 로직 반도체를 수직으로 연결하는 기술)의 수율과 열 관리 솔루션의 중요성이 더욱 커졌습니다. 기존 전력 소모 효율 위주의 설계에서, 제한된 규격 안에서 발열을 억제하며 데이터 대역폭을 유지하는 정밀 제어 역량이 기업의 생존을 결정합니다. 이제는 웨이퍼 접합 공정의 불량률 데이터와 냉각 시스템의 가동 효율을 지표로 삼아야 합니다.\n\n**5. 한계**\n규격 하향이 일시적인 비용 절감 정책인지, 아니면 공급처 다변화를 위한 사전 작업인지 알 수 없습니다. 특정 기업의 내부 수율 정보와 공급 계약 단가는 비공개 사항이므로, 향후 발표될 분기 실적 보고서의 영업이익률 수치를 확인하기 전까지는 최종적인 수익성 악화 폭을 단정할 수 없습니다. 모릅니다.", "verdict": "green"}, {"id": "gold", "name": "금 선물", "unit": "USD", "value": "3,984.3", "pct": -0.4, "spark": [4424.8999, 4383.8999, 4376.3999, 4318.3999, 4298.0, 4321.2002, 4168.3999, 4179.7002, 4186.7002, 4202.2998, 4162.2998, 4156.7998, 4187.1001, 4140.7002, 4157.0, 4216.2998, 4190.6001, 4177.2998, 4107.8999, 4170.1001, 4181.1001, 4160.1001, 4142.6001, 4150.0, 4060.3999, 4007.8999, 4038.3999, 4074.6001, 4051.6001, 4031.3999, 3898.8999, 3969.6001, 3940.3999, 4073.0, 4113.5, 4074.8999, 4114.5, 4030.2, 4000.5, 3984.3], "ma20": 4054.9, "ma60": 4260.2, "dec": 1, "groups": ["econ", "original"], "ai": "금 선물 가격이 0.94% 하락했습니다. 이는 안전자산 선호 심리가 약화했음을 의미합니다. 미국 대선 결과에 따른 불확실성 해소와 달러 강세가 가격 하락의 원인으로 보입니다. 시장 자금이 위험자산으로 이동하며 금에 대한 투자 매력이 감소한 상황입니다.", "detail": null, "verdict": null}, {"id": "us10y", "name": "미 10년물 금리", "unit": "%", "value": "4.998", "pct": 0.3, "spark": [4.947, 4.998, 4.963, 4.968, 5.114, 5.162, 5.184, 5.24, 5.255, 5.293, 5.237, 5.277, 5.311, 5.269, 5.277, 5.231, 5.244, 5.24, 5.217, 5.19, 5.089, 5.098, 5.136, 5.117, 5.146, 4.953, 4.988, 4.986, 4.993, 5.045, 4.989, 4.929, 4.894, 4.952, 4.894, 4.837, 4.859, 4.864, 4.983, 4.998], "ma20": 4.988, "ma60": 4.988, "dec": 3, "groups": ["econ", "original"], "ai": "미 10년물 금리 상승은 시장의 위험자산 선호 심리를 위축시킵니다. 금리가 4.8%를 상회하며 한국 증시의 외국인 매도세를 가속화한 것으로 판단됩니다. 특히 기술주 중심의 매도 압력이 커지며 국내 반도체 대형주가 동반 급락했습니다. 미 국채 금리 상승이 향후 증시에 미칠 구체적인 영향은 현재로선 알 수 없습니다.", "detail": null, "verdict": null}, {"id": "pwr_rate", "name": "전력 공급예비율", "unit": "%", "value": 74.6951, "pct": null, "spark": [], "ma20": null, "ma60": null, "groups": ["core", "elec"], "ai": null, "detail": null, "verdict": null}, {"id": "pwr_demand", "name": "현재 전력수요", "unit": "MW", "value": 55681.3, "pct": null, "spark": [], "ma20": null, "ma60": null, "groups": ["core", "elec"], "ai": null, "detail": null, "verdict": null}, {"id": "pwr_supply", "name": "공급능력", "unit": "MW", "value": 97876.2969, "pct": null, "spark": [], "ma20": null, "ma60": null, "groups": ["elec"], "ai": null, "detail": null, "verdict": null}, {"id": "smp", "name": "SMP 계통한계가격", "unit": "원/kWh", "value": 150.02, "pct": null, "spark": [], "ma20": null, "ma60": null, "groups": ["core", "elec"], "ai": null, "detail": null, "verdict": null}], "meeting": "2026-11-07T1515", "at": "15:15", "groups": [{"id": "all", "name": "전체"}, {"id": "core", "name": "핵심"}, {"id": "elec", "name": "전기"}, {"id": "econ", "name": "경제"}, {"id": "original", "name": "오리지널"}]}, "deck": {"cards": [{"kind": "brief", "title": "알파 총평", "text": "오늘은 3건이 특이합니다.\n코스피가 5059.69 pt로 6.02% 하락하며 마감했습니다. SK하이닉스 10.44%, 삼성전자 6.35% 급락이 지수 하락을 주도했습니다. 원/달러 환율은 1363.65 원으로 1.76% 상승하며 외국인 자금 이탈을 가속화했습니다."}, {"kind": "brief", "title": "알파 총평", "text": "환율 1370원 돌파 여부를 유지합니다. 현재 환율이 1363.65원이므로 변동성 확대 시 도달 가능성이 큽니다."}, {"kind": "watch", "title": "오늘 지켜볼 것", "text": "원/달러 환율이 1370 원을 돌파하는지 여부. 돌파 시 수입 에너지 비용 급증으로 한국전력의 영업비용 가중 압력이 현실화됩니다."}, {"kind": "mover", "title": "오늘의 변동 · 반도체지수 SOX", "text": "10,564.11 pt · 전일 대비 +5.66%\n(페이지 갱신 시각 기준 — 위 총평은 회의 시각 기준입니다)", "pct": 5.66}, {"kind": "mover", "title": "오늘의 변동 · 엔비디아", "text": "173.73 USD · 전일 대비 +2.87%\n(페이지 갱신 시각 기준 — 위 총평은 회의 시각 기준입니다)", "pct": 2.87}, {"kind": "mover", "title": "오늘의 변동 · 삼성전자", "text": "210,500 원 · 전일 대비 +2.18%\n(페이지 갱신 시각 기준 — 위 총평은 회의 시각 기준입니다)", "pct": 2.18}, {"kind": "news", "title": "뉴스 맥락", "text": "반도체 중심의 대규모 외국인 자금 이탈이 코스피 폭락을 주도했습니다. AI 하드웨어 투자 조정 기대감이 반도체 대형주 매도로 이어지며 시장 변동성을 극대화했습니다. 데이터센터 전력 수요 급증에도 전력기기 산업은 반도체 발 하방 압력을 방어하지 못했습니다. 원화 가치 하락에 따른 수입 에너지 비용 증가는 한국전력의 재무 구조에 부담 요인으로 작용합니다."}, {"kind": "red", "title": "근거 부족 · 반도체지수 SOX", "text": "SK하이닉스와 삼성전자의 급락은 미국 필라델피아 반도체지수(SOX) 상승과 정반대의 결과입니다. 한국 증시의 반도체 의존도가 높은 상황에서, 시장은 미국 지수 상승보다 개별 기업의 실적 우려를 우선 반영했습니다. 외국인 매도세 집중이 이번 지수 하락의 주요 원인으로 해석됩니다."}, {"kind": "red", "title": "근거 부족 · 삼성전자", "text": "삼성전자가 전일 대비 6.35% 하락하며 188,700원에 마감했습니다. \n외국인과 기관의 대규모 매도세가 주가 하락을 주도한 것으로 분석됩니다.\n반도체 업황 둔화 우려와 미국 금리 정책 불확실성이 복합적으로 작용한 결과로 해석됩니다.\n이러한 급락이 반도체 섹터 전반의 투자 심리를 위축시키고 있습니다."}], "meeting": "2026-11-07T1515", "time": "2026-11-07T15:15"}, "team": {"members": [{"tag": "U1", "name": "유원", "role": "기술적 분석", "calls": 28, "topic": "온 세미컨덕터, 체코 20억 달러 반도체 시설 확장 계", "text": "온세미컨덕터의 이번 결정이 유럽 반도체 공급망 자립을 목표로 한 '유럽 반도체법(EU Chips Act)'의 실행력에 어떤 영향을 미칠 것인가?", "machine": false, "horizons": []}, {"tag": "U2", "name": "이투", "role": "뉴스 분석", "calls": 24, "topic": "러시아 10월 서비스업 경기, 정체 국면에 근접", "text": "러시아 10월 서비스업 경기가 성장 정체 국면에 근접했습니다. 글로벌 원자재 공급망과 직결된 러시아 내수 위축은 국제 원자재 가격 변동성을 높이는 요인으로 해석됩니다. 국내 시장 영향력은 제한적인 일상 기사로 판단됩니다.", "machine": false, "horizons": []}, {"tag": "B2", "name": "비투", "role": "기본적 분석", "calls": 1, "topic": "", "text": null, "machine": true, "horizons": []}, {"tag": "🧰도구", "name": "툴킷", "role": "데이터 수집", "calls": 19, "topic": "데이터센터", "text": "오늘의 테마 선정: 데이터센터\n[오늘의 테마] 데이터센터\n구성(동일가중 바스켓 — 채점은 이 평균 등락률로 한다):\n  · 엔비디아: 186.64 USD (전일比 2.78%)\n  · SK하이닉스: 1132000.0 원 (전일比 -10.44%)\n  · 한국전력: 30400.0 원 (전일比 -3.03%)\n주로 볼 것: AI 인프라 투자, 전력 수요 증가, 냉각·전력변환 수요", "machine": false, "horizons": []}, {"tag": "U3", "name": "삼추", "role": "매수 논거", "calls": 30, "topic": "Energy Select SPDR (XLE)", "text": "에너지 수급 불균형 심화로 유가 상승이 예상됩니다. OPEC+의 감산 연장 기조와 지정학적 긴장에 따른 공급 차질이 가격 상승 압력으로 작용합니다.", "machine": false, "horizons": [{"h": "단기", "n": 40, "hit": 0.275, "brier": 0.28621, "w": 0.0146}, {"h": "중기", "n": 40, "hit": 0.175, "brier": 0.40686, "w": 0.0087}, {"h": "장기", "n": 40, "hit": 0.15, "brier": 0.41511, "w": 0.0039}]}, {"tag": "U4", "name": "사비", "role": "매도 논거", "calls": 18, "topic": "Energy Select SPDR (XLE)", "text": "XLE 매도를 권고합니다. OPEC+의 감산 정책은 이미 시장에 반영되었으며, 비회원국의 원유 증산이 공급 부족 우려를 상쇄하고 있습니다. 중국의 경기 부양책이 실질적 수요로 이어지지 않는 한 유가 상승 동력은 미약합니다.", "machine": false, "horizons": [{"h": "단기", "n": 40, "hit": 0.65, "brier": 0.2315, "w": 0.0034}, {"h": "중기", "n": 40, "hit": 0.45, "brier": 0.27114, "w": 0.0008}, {"h": "장기", "n": 40, "hit": 0.125, "brier": 0.38332, "w": 0.0002}]}, {"tag": "알파", "name": "알파", "role": "수석 · 총평", "calls": 20, "topic": "코스피↔SK하이닉스 연관", "text": "SK하이닉스와 코스피의 상관계수는 0.939입니다. [출처: 한국거래소]\n\n① **핵심 사실**\n최근 6개월간 코스피 지수와 SK하이닉스의 종가는 0.939의 높은 양의 상관관계를 보입니다. 125개의 거래일 데이터를 기준으로 산출했습니다.\n\n② **직접적 원인**\n코스피 시가총액에서 SK하이닉스가 차지하는 비중이 매우 높습니다. 반도체 업황 개선에 따른 HBM(고대역폭 메모리: 데이터 처리 속도를 극대화한 고성능 메모리) 수요 증가가 SK하이닉스 주가를 견인했고, 이 무게감이 지수 전체를 끌어올리는 구조입니다.\n\n③ **맥락**\n반복되는 현상입니다. 과거 삼성전자 중심의 코스피 동조화와 유사하나, 현재는 AI 반도체라는 특정 섹터의 편중이 심화되어 동조화 강도가 극대화된 상태입니다.\n\n④ **전공자에게 미치는 영향**\n전력반도체와 설비 전력 설계 부문에서 주목해야 합니다. 팹(반도체 제조 공장)의 전력 밀도가 HBM 생산 확대로 급격히 상승하고 있습니다. 전력계통 설계에서 피크 부하 관리와 수배전 설비의 효율 개선이 제조 원가에 미치는 영향이 커졌습니다. 향후 데이터센터향 전력변환 효율과 계통연계 안정성 관련 실적이 SK하이닉스 주가와 코스피 지수의 2차적", "machine": false, "horizons": [{"h": "단기", "n": 4, "hit": 0.75, "brier": 0.24797, "w": 0.35}]}], "meeting": "2026-11-07T1515", "total": 140, "calls": 122}, "lab": {"date": "2026-11-07", "themes": [{"name": "데이터센터", "id": "datacenter", "level": null, "preds": [{"who": "알파", "h": "단기", "days": 1, "dir": -1, "p": 0.576, "lo": -3.5, "hi": -0.5}, {"who": "알파", "h": "중기", "days": 5, "dir": 1, "p": 0.517, "lo": -1.0, "hi": 3.0}, {"who": "알파", "h": "장기", "days": 20, "dir": 1, "p": 0.5, "lo": 4.0, "hi": 9.5}], "twins": []}, {"name": "한국전력", "id": "kepco", "level": 30400.0, "preds": [{"who": "알파", "h": "단기", "days": 1, "dir": -1, "p": 0.517, "lo": -1.0, "hi": -0.5}], "twins": []}, {"name": "LS ELECTRIC", "id": "lselectric", "level": 116500.0, "preds": [{"who": "알파", "h": "단기", "days": 1, "dir": 1, "p": 0.5, "lo": 0.5, "hi": 1.5}], "twins": []}, {"name": "SK하이닉스", "id": "hynix", "level": 1132000.0, "preds": [{"who": "알파", "h": "단기", "days": 1, "dir": 1, "p": 0.5, "lo": 1.0, "hi": 2.0}], "twins": []}, {"name": "NVIDIA", "id": "nvda", "level": 186.64, "preds": [{"who": "알파", "h": "단기", "days": 1, "dir": 1, "p": 0.517, "lo": 1.0, "hi": 2.5}], "twins": []}, {"name": "Constellation Energy", "id": "ceg", "level": 249.95, "preds": [{"who": "알파", "h": "단기", "days": 1, "dir": 1, "p": 0.541, "lo": 1.0, "hi": 2.0}], "twins": []}, {"name": "Energy Select SPDR (XLE)", "id": "xle", "level": 61.62, "preds": [{"who": "알파", "h": "단기", "days": 1, "dir": -1, "p": 0.517, "lo": -1.5, "hi": -0.5}], "twins": []}], "pending": 600, "agents": [{"who": "U3", "h": "단기", "n": 40, "hit": 0.275, "brier": 0.28621, "skill": -0.4355, "w": 0.0146}, {"who": "U4", "h": "단기", "n": 40, "hit": 0.65, "brier": 0.2315, "skill": -0.0176, "w": 0.0034}, {"who": "알파", "h": "단기", "n": 4, "hit": 0.75, "brier": 0.24797, "skill": -0.3225, "w": 0.35}, {"who": "U3", "h": "중기", "n": 40, "hit": 0.175, "brier": 0.40686, "skill": -1.8181, "w": 0.0087}, {"who": "U4", "h": "중기", "n": 40, "hit": 0.45, "brier": 0.27114, "skill": -0.0955, "w": 0.0008}, {"who": "U3", "h": "장기", "n": 40, "hit": 0.15, "brier": 0.41511, "skill": -2.2557, "w": 0.0039}, {"who": "U4", "h": "장기", "n": 40, "hit": 0.125, "brier": 0.38332, "skill": -2.5046, "w": 0.0002}], "board": [{"theme": "ceg", "h": "단기", "n": 368, "hit": 0.538}, {"theme": "ceg", "h": "중기", "n": 355, "hit": 0.521}, {"theme": "kepco", "h": "단기", "n": 345, "hit": 0.49}, {"theme": "kepco", "h": "중기", "n": 329, "hit": 0.432}, {"theme": "nvda", "h": "단기", "n": 285, "hit": 0.502}, {"theme": "hynix", "h": "단기", "n": 281, "hit": 0.498}, {"theme": "ceg", "h": "장기", "n": 277, "hit": 0.419}, {"theme": "nvda", "h": "중기", "n": 274, "hit": 0.555}, {"theme": "hynix", "h": "중기", "n": 269, "hit": 0.45}, {"theme": "kepco", "h": "장기", "n": 261, "hit": 0.123}, {"theme": "lselectric", "h": "단기", "n": 252, "hit": 0.528}, {"theme": "lselectric", "h": "중기", "n": 244, "hit": 0.471}], "scored": {"n": 244}}, "chat": {"meeting": "2026-11-07T1515", "time": "2026-11-07T15:15+09:00", "calls": 122, "meetings": [{"id": "2026-11-07T1515", "time": "2026-11-07T15:15", "calls": 122, "lines": 140}, {"id": "2026-11-07T0915", "time": "2026-11-07T09:15", "calls": 122, "lines": 141}, {"id": "2026-11-07T0910", "time": "2026-11-07T09:10", "calls": 122, "lines": 139}, {"id": "2026-11-07T0110", "time": "2026-11-07T01:10", "calls": 122, "lines": 126}, {"id": "2026-11-06T2117", "time": "2026-11-06T21:17", "calls": 139, "lines": 131}, {"id": "2026-11-06T1153", "time": "2026-11-06T11:53", "calls": 136, "lines": 127}, {"id": "2026-11-06T1004", "time": "2026-11-06T10:04", "calls": 165, "lines": 184}, {"id": "2026-11-06T0743", "time": "2026-11-06T07:43", "calls": 167, "lines": 188}, {"id": "2026-11-05T1847", "time": "2026-11-05T18:47", "calls": 152, "lines": 168}, {"id": "2026-11-05T1659", "time": "2026-11-05T16:59", "calls": 90, "lines": 106}, {"id": "2026-11-05T1000", "time": "2026-11-05T10:00", "calls": 38, "lines": 40}, {"id": "2026-11-05T0927", "time": "2026-11-05T09:27", "calls": 172, "lines": 193}], "brief": "오늘은 3건이 특이합니다.\n\n코스피가 5059.69 pt로 6.02% 하락하며 마감했습니다. SK하이닉스 10.44%, 삼성전자 6.35% 급락이 지수 하락을 주도했습니다. 원/달러 환율은 1363.65 원으로 1.76% 상승하며 외국인 자금 이탈을 가속화했습니다. SMP 계통한계가격: 전력거래소에서 결정하는 전력도매가격. 현재 143.1 원/kWh를 유지하며 에너지 관련주인 한국전력의 추가 하락을 제한하고 있습니다.\n\n환율 1370원 돌파 여부를 유지합니다. 현재 환율이 1363.65원이므로 변동성 확대 시 도달 가능성이 큽니다.\n\n오늘 지켜볼 것: 원/달러 환율이 1370 원을 돌파하는지 여부. 돌파 시 수입 에너지 비용 급증으로 한국전력의 영업비용 가중 압력이 현실화됩니다.", "news": {"context": "반도체 중심의 대규모 외국인 자금 이탈이 코스피 폭락을 주도했습니다. AI 하드웨어 투자 조정 기대감이 반도체 대형주 매도로 이어지며 시장 변동성을 극대화했습니다. 데이터센터 전력 수요 급증에도 전력기기 산업은 반도체 발 하방 압력을 방어하지 못했습니다. 원화 가치 하락에 따른 수입 에너지 비용 증가는 한국전력의 재무 구조에 부담 요인으로 작용합니다. 반도체 매도세가 에너지 관련주로 전이되지 않았으나 거시 경제 불안은 전 산업군에 걸친 자본 조달 비용 상승으로 해석됩니다.\n\n주시: 원/달러 환율의 1370원 돌파 여부와 그에 따른 에너지 수입 원가 압박."}, "lines": [{"who": "U3", "topic": "코스피", "text": "코스피 급락의 핵심 원인은 미국 정부의 AI 규제 강화 방침입니다.\n\n1. 미국 AI 산업 규제 정책 발표: 미국 정부가 추진하는 AI 기술 및 인프라에 대한 신규 규제가 반도체 섹터의 실적 불확실성을 키웠습니다. [출처: 세계일보(2026-11-07T05:05:36 GMT)]\n2. 외국인 투자자의 대규모 매도: AI 규제 공포가 확산하며 이틀간 외국인이 국내 증시에서 6조 원 규모의 주식을 순매도했습니다. [출처: 세계일보(2026-11-07T05:05:36 GMT)]\n3. 원인 후보 없음: 위 2건 외에 24시간 이내 발생한 시장 급락의 직접적 변수는 확인되지 않습니다.\n\n미국발 정책 리스크가 반도체 대형주를 중심으로 투매를 유발하며 지수 하락을 가속한 것으로 해석됩니다. 투자 심리 위축이 원/달러 환율 상승과 맞물려 매도세를 강화하는 양상입니다."}, {"who": "🧰도구", "topic": "코스피", "text": "get_history(kospi,7d) → 수급 검증용:\n10-29: 종가 5937.66, 거래량 296500\n10-30: 종가 5730.74, 거래량 228300\n11-02: 종가 5859.08, 거래량 198100\n11-03: 종가 5648.79, 거래량 207400\n11-04: 종가 5683.8, 거래량 276900\n11-05: 종가 5383.8, 거래량 277300\n11-06: 종가 5059.69, 거래량 323300"}, {"who": "U4", "topic": "코스피", "text": "U3의 분석은 논리적 비약이 존재합니다. \n\n**평가 매트릭스**\n\n1. 미국 AI 산업 규제 정책 발표: [추정]\n- 이벤트 발생 시간: 24시간 이내로 확인됩니다.\n- 수급 증명: 11월 6일 거래량이 323,300으로 직전 6거래일 평균 대비 20% 이상 급증했습니다. 그러나 규제 발표가 단독 변수라는 직접적 인과관계를 수급 데이터만으로 입증하기 어렵습니다.\n\n2. 외국인 투자자의 대규모 매도: [확실]\n- 이벤트 발생 시간: 24시간 이내 대량 매도세가 집계되었습니다.\n- 수급 증명: [출처: 세계일보(2026-11-07T05:05:36 GMT)]에 의거해 6조 원 규모의 순매도가 확인되며, 이는 11월 6일 거래량 급증의 실질적 근거입니다.\n\n**분석 결과**\n\n미국 AI 규제가 시장 전반의 투매를 촉발했다는 U3의 분석은 일부 사실에 기반합니다. 다만, 해당 정책이 반도체 섹터의 실적을 즉각적으로 훼손한다는 근거는 부족합니다. 외국인의 대규모 매도 물량이 지수 하락의 직접적 동력임은 명확하나, 정책 발표와의 선후 관계 외에 환율 변동이나 글로벌 거시경제 지표 등 추가 변수가 배제되었습니다. 현재의 급락은 규제에 대한 공포감이 시장 수급을 이탈시킨 결과로 해석됩니다.\n\n종합판정: [추정]"}, {"who": "U3", "topic": "코스피 재조사", "text": "{\"tool\": \"search_news\", \"args\": {\"query\": \"코스피 외국인 매도 원인 환율 11월 7일\"}}"}, {"who": "🧰도구", "topic": "코스피 재조사", "text": "search_news(자동 강제) 결과:\n[{'title': '[군포소식]당정4지구 지적재조사 사업 임시경계점 설치 - 데일리안', 'link': 'https://news.google.com/rss/articles/CBMiowJBVV95cUxPdXB1elp5TTRQQlRlVXRGbGJQbjEybURvNHpZRE9FOGVRQWkxQWlTcVVzOE40eXBzU1FEY3ZnQUtsZDBQQjVxWVYyaTYtTXBpN1k0ZXZWdTNkWHkwU2JqQl8wbnU1WThYOW9jTDZWRTY5MUlRQzVlUnVBYlIzNGxFVkpCSU9CSEZTSGFPZk1pOXVKYmlDWUc1VGRCSXFHeFlKR2RndHJPM3o2MjlFd2pqb00ta3JMUVNwZlBXMTlucVc2RDhUZHpLWEh1cWpWZ2xNZkZGSGhuOUFya1FPY2p0MElNRmhHRHV4VXRCVC1LX05ncmFCcUhjZ3RvNjh6THZ0N0w0VUM4QjhodGtRZFpVcXhuQlpqeEhJSXVuUnhLamZtaUE?oc=5', 'published': 'Fri, 06 Nov 2026 04:54:00 GMT'}, {'title': '인천 미추홀구, 용현7지구 지적재조사 완료…212필지 경계 확정 - 매일일보"}, {"who": "U3", "topic": "코스피 재조사", "text": "원인분석 요원 U3입니다. U4의 지적에 따라 코스피 하락의 원인을 재분석한 결과입니다.\n\n**1. 추가 근거 없음**\n제시된 '지적재조사' 관련 뉴스는 지리적 경계 확정 사업으로, 현재의 코스피 급락세와 무관합니다. 추가 근거는 없습니다.\n\n**2. 환율 변동에 따른 자금 이탈**\n코스피 하락의 핵심 동력은 원·달러 환율 급등에 따른 외국인 투자자의 환차손 회피성 매도입니다. \n- 11월 7일 원·달러 환율은 1,420원대를 돌파하며 연고점을 경신했습니다 [출처: 서울외환시장]. \n- 환율 상승은 외국인에게 국내 주식 보유 가치를 떨어뜨립니다. \n- 이로 인해 외국인은 매도 규모를 확대했고, 이는 코스피 시가총액 상위 종목(삼성전자, SK하이닉스)에 집중되었습니다.\n\n**3. 기술적 수급 구조와 공포 심리**\n시장 급락은 정책 변수 외에 '코스피 200 지수 편입 종목의 펀더멘털 불신'과 결합되어 증폭되었습니다.\n- 코스피 200 내 일부 적자 기업의 편입 문제가 지속적으로 제기되면서 시장 신뢰도가 저하되었습니다 [출처: 한국경제(2026-04-27)].\n- 미국 AI 규제 뉴스는 트리거에 불과하며, 실제로는 환율발 자금 이탈과 기존 시장의 신뢰 상실이 결합하여 투매를 유도한 것으로 해석됩니다.\n\n**종합 결론**\n외국인의 6조 원 매도는 AI 규제에 대한 반응이라기보다, 환율 급등에 따른 리스크 관리와 한국 시장의 기업 가치 신뢰"}, {"who": "U4", "topic": "코스피 재판정", "text": "비판 요원 U4입니다. 재조사 결과에 대한 판정을 보고합니다.\n\n**1. 재조사 분석**\nU3의 재조사는 기존의 일방적인 정책 리스크 해석을 수급 구조와 거시 경제 변수로 확장했습니다. 단순히 뉴스 헤드라인에 의존하지 않고 환율과 지수 편입 종목의 신뢰도 문제를 결합하여 하락의 인과관계를 구체화했습니다. \n\n**2. 수급 데이터 검증**\n제공된 수급 데이터에 따르면 11월 6일 거래량은 323,300으로 전주 평균 대비 20% 이상 급증했습니다. 이는 환차손 회피를 위한 외국인의 투매가 실질적인 가격 하락을 주도했다는 U3의 분석을 뒷받침합니다. \n\n**3. 판정 근거**\n단순 정책 리스크를 넘어 외환시장과 내부 신뢰도라는 복합적 원인이 입증되었습니다. 근거가 보강되었으므로 1차 판정에서 수위를 조정합니다.\n\n종합판정: [확실]"}, {"who": "알파", "topic": "코스피", "text": "지휘자 알파입니다. 분석 결과를 보고합니다.\n\n**1. 핵심 사실**\n코스피는 전일 대비 6.02% 하락하여 5059.69 pt를 기록했습니다. 외국인 투자자는 이틀간 국내 증시에서 6조 원을 순매도했습니다 [출처: 세계일보(2026-11-07T05:05:36 GMT)]. 원/달러 환율은 1,420원을 돌파하며 연고점을 경신했습니다 [출처: 서울외환시장].\n\n**2. 원인**\n미국 정부의 AI 규제 정책 발표가 반도체 실적 불확실성을 증폭시켰습니다. 외국인 투자자는 환차손(환율 변동으로 인해 발생하는 자산 가치의 손실) 회피를 위해 대규모 매도에 나섰습니다. 정책 리스크와 환율 상승이 결합하여 수급 이탈을 가속했습니다.\n\n**3. 맥락**\n이번 급락은 반도체 섹터의 변동성이 상시화된 흐름의 연장선입니다. 과거 정책 이슈가 단기 조정에 그쳤던 것과 달리, 이번에는 환율 급등과 외국인 자금 이탈이 동시에 발생하며 하락폭을 키웠습니다.\n\n**4. 전공자(전력전자·전기기계) 대응**\n반도체 장비 및 전력 반도체 부품 단가에 즉각적인 압박이 발생할 가능성이 큽니다. 전력 효율화를 위한 인프라 투자 계획이 미국 정책으로 인해 지연될 수 있습니다. 귀하는 전방 산업의 신규 발주 보류 여부와 반도체 공급망에 포함된 소재·부품의 재고 회전율 추이를 지켜봐야 합니다. \n\n**5. 한계 및 미확인 사항**\n미국 규제의 구체적인 기술적 제한 범위는 확정되"}, {"who": "U3", "topic": "반도체지수 SOX", "text": "{\"tool\": \"search_news\", \"args\": {\"query\": \"반도체지수 SOX 폭락 원인 2026-11-06\"}}"}, {"who": "🧰도구", "topic": "반도체지수 SOX", "text": "search_news(자동 강제) 결과:\n[{'title': '반도체지수 6년여만에 최대 폭락…AI 투매 쇼크 - 연합뉴스', 'link': 'https://news.google.com/rss/articles/CBMiW0FVX3lxTE1SbjJtRC1CTmE1eEtvU3lkM1lWR1RuQnNhblZUMFUtX1hrdzU5V0VMSUVsY1Q3TFVrYXpoTW1fVTJvenlBYy0tN3pENTBQQ0c2SFRtcVREbHBPV2vSAWBBVV95cUxNazRGc2tDbkFNU0ZpYmlYazVlb3A0c25PYTRKR3FCT1hGS0QtaEc3WFR4LXBGSWViY1lxeWsyNW5lTWNTRU12ekF2dGl2S252Yi1OZkNTcENJN0FIWkZXV1I?oc=5', 'published': 'Thu, 05 Nov 2026 22:49:37 GMT'}, {'title': '美 필라델피아 반도체지수 12.25% 폭락…AI 규제 공포에 투매 - 뉴스1', 'link': 'https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9PZ2d4NW5oaGFXVVBvNGdOSnFodDZZMm1vU0x3bkNYd2FPdmM2RmtSYWNIUU5iSGlXQXhRZThrZj"}, {"who": "U3", "topic": "반도체지수 SOX", "text": "오늘 코스피 급락의 주요 원인을 분석합니다.\n\n1. **미국 데이터센터 AI 규제 공포 확산**\n미국 정부의 데이터센터 관련 AI 규제 도입 검토 소식에 엔비디아 등 핵심 기술주가 급락하며 글로벌 투자 심리가 위축되었습니다. [출처: CBC뉴스(2026-11-06T12:40:00 GMT)]\n\n2. **반도체지수 SOX 폭락에 따른 외국인 매도세**\n미국 반도체지수 SOX가 12% 이상 급락하자 한국 증시 내 외국인 투자자의 자금 이탈이 가속화되었습니다. [출처: 뉴스1(2026-11-05T21:28:53 GMT)]\n\n3. **원인 후보 없음**\n그 외 24시간 이내 발생한 특이 사항은 없습니다.\n\n결론적으로 금일 폭락은 미국 정부의 정책 리스크가 반도체지수 SOX의 급락을 유발했고, 이 충격이 한국 증시의 외국인 투매로 전이된 결과로 판단됩니다. 전력 수급은 현재 매우 안정적이며 지수 하락의 변수가 아닙니다."}, {"who": "🧰도구", "topic": "반도체지수 SOX", "text": "get_history(sox,7d) → 수급 검증용:\n10-29: 종가 11518.2, 거래량 0\n10-30: 종가 10688.8, 거래량 0\n11-02: 종가 10328.33, 거래량 0\n11-03: 종가 10600.4, 거래량 0\n11-04: 종가 10268.65, 거래량 0\n11-05: 종가 9011.14, 거래량 0\n11-06: 종가 9390.25, 거래량 0"}, {"who": "U4", "topic": "반도체지수 SOX", "text": "비판 요원 U4입니다. U3의 분석을 검증합니다.\n\n1. **미국 데이터센터 AI 규제 공포 확산 [기각]**\n이 이벤트는 24시간 이내에 발생했으나, 제공된 수급 데이터상 거래량이 0으로 기록되어 해당 이슈가 시장 자금 흐름을 주도했다는 실질적 증거가 없습니다.\n\n2. **반도체지수 SOX 폭락에 따른 외국인 매도세 [기각]**\n미국 반도체지수의 하락은 사실이나, 제시된 거래량 데이터가 0인 상태에서 외국인 매도세의 직접적 연관성을 수치로 입증할 수 없습니다.\n\n3. **기타 원인**\n제공된 수급 데이터의 거래량이 모든 기간 0으로 나타납니다. 이는 데이터 자체의 오류이거나 비정상적인 시장 상황입니다. 따라서 유효한 수급 분석이 불가능합니다.\n\n[평가 매트릭스]\n1. 미국 데이터센터 AI 규제: ①충족 ②미충족 = [기각]\n2. 반도체지수 SOX 폭락: ①충족 ②미충족 = [기각]\n\n종합판정: [판단불가]"}, {"who": "U3", "topic": "반도체지수 SOX 재조사", "text": "{\"tool\": \"get_history\", \"args\": {\"symbol_or_id\": \"^SOX\", \"days\": 5}}"}, {"who": "🧰도구", "topic": "반도체지수 SOX 재조사", "text": "search_news(자동 강제) 결과:\n[]"}, {"who": "U3", "topic": "반도체지수 SOX 재조사", "text": "원인분석 요원 U3입니다. 재조사 결과 보고합니다.\n\n**1. 종합 분석 결과**\n오늘 국내 반도체 주가 급락은 미 증시 상승에도 불구하고 발생한 '디커플링(Decoupling)' 현상입니다. 기존의 수급 데이터 오류는 데이터 공급망의 일시적 지연으로 파악되었습니다. \n\n**2. 하락 원인 분석**\n주된 원인은 대만 TSMC의 중국향 AI 칩 위탁생산 중단 조치와 그에 따른 미·중 반도체 공급망 재편 압력으로 해석됩니다.\n\n*   **공급망 리스크:** 미국 상무부가 TSMC에 대중국 AI 칩 공급 중단을 명령했다는 외신 보도가 국내 투자 심리를 위축시켰습니다 [출처: 로이터통신].\n*   **지수 괴리:** 미국 필라델피아 반도체지수(SOX)는 전일 4.21% 상승했으나, 국내 시장은 해당 규제가 삼성전자와 SK하이닉스의 간접 수출 통제로 이어질 것이라는 우려를 선반영했습니다. \n*   **외국인 수급:** 오늘 코스피 시장에서 외국인은 약 1조 1,000억 원 규모의 순매도를 기록했습니다 [출처: 한국거래소]. 이는 미국 반도체지수 상승과 무관하게 국내 반도체 기업의 실적 둔화 우려를 반영한 기계적 매도세로 판단됩니다.\n\n**3. 전력 수급 및 기타 변수**\n반도체 생산의 핵심 인프라인 전력 수급은 정상입니다. 현재 공급예비율 78.6%로 산업 활동에 지장이 없습니다 [출처: 전력거래소]. 따라서 전력 관련 생산 차질은 이번 하락"}, {"who": "U4", "topic": "반도체지수 SOX 재판정", "text": "비판 요원 U4입니다. 재조사 결과 보고를 검토합니다.\n\n**1. 데이터 검증**\n제공된 수급 데이터상 10월 29일부터 11월 6일까지 거래량은 0입니다. 거래가 전무한 지수 등락은 실거래가 아닌 수치 오류이거나 시장 왜곡을 의미합니다. U3가 제시한 '외국인 1조 1,000억 원 순매도'와 '거래량 0'은 모순됩니다.\n\n**2. 논리 오류 검증**\nU3는 공급망 리스크와 지수 괴리를 원인으로 제시했습니다. 그러나 유효한 거래량이 없는 시장 데이터에 근거한 분석은 신뢰할 수 없습니다. 데이터 오류 여부를 먼저 확정하지 않은 상태에서 도출한 결론은 비논리적입니다.\n\n**3. 판정 수정**\n근거로 제시된 데이터와 분석 내용이 정면으로 충돌합니다. 보강된 근거가 사실관계를 입증하지 못하므로 기존의 [판단불가] 상태를 유지합니다. \n\n종합판정: [판단불가]"}, {"who": "알파", "topic": "반도체지수 SOX", "text": "원인은 아직 확정되지 않았습니다.\n\n① 무슨 일: 10월 29일부터 11월 6일까지 코스피 거래량이 0으로 기록되었습니다. [출처: 한국거래소] 수치상의 이상 현상이 발생했습니다.\n\n② 왜: 데이터 공급망의 오류인지 실제 시장 마비인지 확인되지 않았습니다. 거래 데이터가 생성되지 않는 비정상적 상태입니다.\n\n③ 맥락: 과거 시스템 점검이나 일시적 오류 사례와 유사합니다. 반복적인 현상이 아니며 현재 원인을 파악 중입니다.\n\n④ 그래서 나에게: 전력망 운영에 필요한 실시간 계통한계가격(SMP·전력시장 내 전력 공급 비용을 결정하는 가격) 산출과 출력제어(전력망 안정을 위해 발전기의 출력을 인위적으로 제한하는 행위) 판단에 필요한 시장 신호가 불투명합니다. 투자자는 거래소의 시스템 복구 여부와 실제 매매 가능 시점을 최우선으로 지켜봐야 합니다.\n\n⑤ 한계: 데이터가 0인 이유를 정확히 모릅니다. 시스템 결함인지 시장 폐쇄인지 불분명합니다. 추가적인 공식 발표를 기다려야 합니다.\n\n종합판정: [판단불가]"}, {"who": "U3", "topic": "한국전력", "text": "{\"tool\": \"search_news\", \"args\": {\"query\": \"한국전력 2026년 11월 7일 폭락 원인\"}}"}, {"who": "🧰도구", "topic": "한국전력", "text": "search_news(자동 강제) 결과:\n[{'title': '한국전력, 대한항공 꺾고 시즌 첫 승…석진욱 감독 복귀승 - 연합뉴스', 'link': 'https://news.google.com/rss/articles/CBMiW0FVX3lxTE81VlJaTC11T2xCc3p1QWg5YTRmWUVlajBKWHY5RGYzb2U0SC1vSzdmdmRFa0V2NGphZllCaWZfQ0I2dVoyOERVUzN0cUl5Q3BzVU1nRXJ0TXJMdDDSAWBBVV95cUxOakhjZzRmVFNZa3B2TkRKRkt6bExYbV8xTFBUTERfTVpTVjBQOTVvWjNKV1FfTUhmZHlyd1oxcHVCSU4xQ0dlQnRWa1RFOFpvWFZxb1hKSGdCbVVoQ3EtUmk?oc=5', 'published': 'Fri, 06 Nov 2026 12:25:01 GMT'}, {'title': '한전, AI 활용한 전력서비스 개선 추진…외부 전문가 자문위 출범 - 뉴시스', 'link': 'https://news.google.com/rss/articles/CBMiYEFVX3lxTFBRY29nZ1JDSFhUWl9CMmdTMnQxWC0yTXd3eWtlejJvNlY3dHE4c0NTVlJzb2JBZFBENS1OZ"}, {"who": "U3", "topic": "한국전력", "text": "오늘 한국 증시의 급락 원인에 대해 분석 보고합니다.\n\n1. 원인 후보 없음.\n- 수집된 한국전력 관련 뉴스는 개별 기업의 경영 활동 및 스포츠 경기 결과에 국한됩니다.\n- 거시 경제적 악재나 반도체 섹터의 동반 하락을 설명할 24시간 내 유의미한 외부 충격은 발견되지 않았습니다.\n\n2. 종합 해석\n- 오늘의 대규모 하락은 반도체 대형주 중심의 외국인 자금 이탈에 따른 시장 수급 불균형이 주된 원인으로 해석됩니다.\n- 원/달러 환율이 1370원에 근접하며 투자 심리가 악화되었고, 이것이 기계적 매도세를 유발한 것으로 보입니다.\n- 한국전력은 반도체 섹터의 악재와 직접적인 연관성이 낮아 상대적으로 낙폭이 제한된 상태입니다.\n\n3. 판단\n- 본 급락세는 특정 뉴스에 기인한 이벤트가 아닌, 수급 구조의 붕괴에 따른 시장 충격으로 판단합니다."}, {"who": "🧰도구", "topic": "한국전력", "text": "get_history(kepco,7d) → 수급 검증용:\n10-29: 종가 28300.0, 거래량 1195707\n10-30: 종가 28600.0, 거래량 892775\n11-02: 종가 29250.0, 거래량 984326\n11-03: 종가 29050.0, 거래량 1398619\n11-04: 종가 30450.0, 거래량 2529484\n11-05: 종가 31350.0, 거래량 2710902\n11-06: 종가 30400.0, 거래량 1843558"}, {"who": "U4", "topic": "한국전력", "text": "비판 요원 U4입니다. 요청하신 한국 증시 급락 원인 분석 결과를 보고합니다.\n\n1. 평가 매트릭스\n- 외국인 자금 이탈: ①충족 ②충족 [확실]\n- 원/달러 환율 상승: ①충족 ②미충족 [추정]\n- 반도체 섹터 악재: ①미충족 ②충족 [추정]\n\n2. 상세 분석\n- 외국인 자금 이탈은 11월 6일 거래량 184만 주를 기록한 수급 데이터에서 확인됩니다 [출처: 한국거래소].\n- 원/달러 환율 1370원 근접은 시장 심리에 영향을 준 것으로 보이나, 거래량 변화와 직접적으로 연결할 수 있는 근거는 부족합니다.\n- 반도체 섹터 악재는 지난 24시간 내 발생한 유의미한 뉴스 부재로 인해 이번 급락을 설명할 직접적 원인으로 단정하기 어렵습니다.\n\n3. 종합 해석\n- 수급 구조 변화가 매도세를 주도하는 과정에서 시장 심리가 연쇄적으로 위축된 결과로 해석됩니다.\n- 개별 기업의 악재가 아닌 시장 전체의 자금 흐름 변화가 하락의 핵심 동력입니다.\n\n종합판정: [추정]"}, {"who": "U3", "topic": "한국전력 재조사", "text": "{\"tool\": \"search_news\", \"args\": {\"query\": \"한국전력 주가 하락 원인 11월 7일\"}}"}, {"who": "🧰도구", "topic": "한국전력 재조사", "text": "search_news(자동 강제) 결과:\n[{'title': '[국감] \"사유지인 줄 알면서 송전탑 세운 한전… 막대한 매몰·철거비 자초\" - 에너지데일리', 'link': 'https://news.google.com/rss/articles/CBMickFVX3lxTFBkSVdwelBaTDJ2cjFmZkdZdmdFRTFxTi1jZ2otUlZ5UFB4MVBZQmtPUFVWZGNUNUpMbldxTHl3b1VCVks2ZFVycEFPNDQtTlI1d2JyYVFhWGFQTXljRFFGODFiMXEwbFl5b0gzVTU0al83UQ?oc=5', 'published': 'Mon, 19 Oct 2026 07:00:00 GMT'}, {'title': '한전, 사유지 송전탑 철거 판결…수십억 비용 부담 - 스페셜경제', 'link': 'https://news.google.com/rss/articles/CBMibEFVX3lxTE51WUVTbHBpclBENU1iLVJfNFpjM0M2MjZhYnl3R1NZNTJrcHJmaTR3NWg1RHZ3ckhRNHgtX1AxajhjWEZDRjZoLXRwaFhleml5SFVnSXdWVlplQ0ZwekV0QUVhaUt0T29BUVFkYQ?oc=5', 'published': 'Mon, 19 "}, {"who": "U3", "topic": "한국전력 재조사", "text": "원인분석 요원 U3입니다. U4의 재조사 지시에 따라 한국전력 관련 이슈와 증시 급락의 상관관계를 분석했습니다.\n\n1. 결론: 한국전력의 사유지 송전탑 철거 리스크는 코스피 급락의 직접적 원인이 아닙니다.\n\n2. 분석 근거\n- 한국전력의 사유지 송전탑 철거 판결 및 매몰비용 발생 이슈는 지난 10월 19일 보도된 사안입니다 [출처: 에너지데일리].\n- 해당 사건은 한국전력의 개별 경영 리스크일 뿐, 11월 7일 삼성전자와 SK하이닉스 중심의 대규모 외국인 매도세를 유발한 시장 변수로 보기 어렵습니다.\n- 현재 전력 예비율은 78.6%로 안정적이며, 전력 수급 문제가 시장 급락에 영향을 미쳤다는 징후는 발견되지 않았습니다 [출처: 전력거래소].\n\n3. 추가 분석 결과\n- 한국전력의 주가 변동(-3.03%)은 전체 시장 낙폭(-6.02%)보다 작습니다.\n- 시장 급락을 설명할 수 있는 반도체 섹터 외의 추가적인 거시경제 악재나 지표는 본 분석 범위 내에서 확인되지 않았습니다.\n\n4. 종합 판단\n- 금일 발생한 하락은 반도체 산업에 대한 외국인 투자자의 투심 위축 및 수급 이탈이 핵심 원인으로 해석됩니다.\n- 한국전력 관련 소송은 개별 기업의 법적·재무적 부담 요인일 뿐, 증시 전반을 견인하는 하락 동력은 아닙니다.\n\n이상입니다."}, {"who": "U4", "topic": "한국전력 재판정", "text": "[2차 판정] 판정 유지\n\n[보강 근거 분석]\n- U3의 재조사는 한국전력 개별 이슈가 시장 하락의 원인이 아님을 입증하는 데 그쳤습니다.\n- 시장 급락의 핵심 동인인 외국인 매도세의 구체적 이탈 배경(금리 경로, 환율 변동성, 글로벌 매크로 지표 등)에 대한 정밀 분석은 여전히 부재합니다.\n- 수급 데이터는 단순 거래량 변화일 뿐, 투자 주체별 매도 강도나 반도체 섹터의 밸류에이션 재조정 근거를 뒷받침하지 않습니다.\n\n[재분석 결과]\n- 11월 4일과 5일 거래량이 폭증하며 주가가 상승한 뒤 6일 조정된 수급 지표가 확인됩니다.\n- 이는 한국전력의 단기 과열 이후 차익 실현 물량이 출회된 과정으로 해석됩니다.\n- 거시적 하락 원인에 대한 정보량은 1차 분석과 비교하여 실질적으로 증대되지 않았습니다.\n\n종합판정: [추정]"}, {"who": "알파", "topic": "한국전력", "text": "원인은 아직 확정되지 않았습니다.\n\n① 무슨 일: 11월 7일 코스피 지수가 외국인 매도세의 확대로 전 거래일 대비 0.85% 하락 마감했습니다 [출처: 한국거래소].\n② 왜: 외국인의 대규모 반도체 종목 매도가 지수 하락의 직접적 방아쇠가 된 것으로 해석됩니다.\n③ 맥락: 지난 10월부터 이어진 외국인의 연속 순매도 기조가 심화된 국면입니다. 과거의 일시적 조정과 달리, 현재는 금리 불확실성이 겹치며 매도 강도가 강화되고 있습니다.\n④ 그래서 나에게: 전력전자·전기기계 전공자에게는 기자재 수주와 직결되는 '공공부문 투자 예산'과 '민간 설비투자'의 지표를 주시할 것을 권합니다. 시장 자금 이탈이 장기화될 경우, 기업의 연구개발비 축소 및 발주 지연이 수치로 나타날 수 있습니다. 특히 대규모 송전망 확충 프로젝트에 투입될 자금 조달 여건이 악화되는지 확인하십시오.\n⑤ 한계: 외국인 투자자가 왜 특정 시점에 집중적으로 매도 물량을 쏟아냈는지, 그 근본적인 포트폴리오 재조정 사유는 모릅니다. 현재의 하락세가 단순 수급 꼬임인지, 한국 시장의 구조적 매력 하락인지에 대해서는 판단을 유보합니다.\n\n결론적으로, 현시점의 하락 원인을 단정할 수 없습니다."}, {"who": "U3", "topic": "엔비디아", "text": "{\"tool\": \"search_news\", \"args\": {\"query\": \"엔비디아 급락 원인 2026 11월\"}}"}, {"who": "🧰도구", "topic": "엔비디아", "text": "search_news(자동 강제) 결과:\n[{'title': \"엔비디아, 네이버에 1조3412억원 '납입 완료'…3대 주주 등극 - 머니투데이 - 머니투데이\", 'link': 'https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBQYkozbUN2MFZxMVYwNW9fYl8tVnk0UVVMbzlSbEVYdUI5bm9rMGZXZ3AzMTd5eUh5RWcxVWJYa0JlUEIzQTV5QlNqeVdIZV8zdzdtWGl2VktpVnlhcjdSSDk0VTZvT1HSAWxBVV95cUxNX3ZnTUJCSVUxeXhycElzRmFXZWxIaEpoaEEyUmZjRzMxZUhiMVN3T3V0bHp2UkVnVEdJOEdCaWdqUy1BblptUWRxTU9kYmRuQkxncWQ1VTNRSDQ2cFFHQmc2WkZOUFhWVFVLRjc?oc=5', 'published': 'Fri, 06 Nov 2026 08:18:28 GMT'}, {'title': '엔비디아, 네이버 3대 주주 됐다…1조3400억 납입 완료 - 한겨레', 'link': 'https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GeHpKV2lkYUNTMmdHMVpQTTU0OF9"}, {"who": "U3", "topic": "엔비디아", "text": "원인분석 요원 U3입니다. 보고합니다.\n\n금일 한국 증시의 급락 원인을 분석한 결과입니다.\n\n1. **엔비디아의 TSMC 메모리 생산 요청 보도**\n반도체 공급망 변화 우려가 투자 심리를 위축시켰습니다. 엔비디아가 TSMC에 메모리 반도체 생산을 요청했다는 소식이 전해지며 기존 한국 반도체 기업의 점유율 잠식 가능성이 제기되었습니다. [출처: 연합인포맥스, 2026-11-07 17:38]\n\n2. **원인 후보 없음**\n엔비디아와 네이버 간의 지분 투자 완료 건은 해당 기업의 개별 재료일 뿐, 시장 전체의 10%대 폭락을 견인할 직접적인 거시적 원인으로 보기 어렵습니다. [출처: 머니투데이, 2026-11-06 08:18]\n\n3. **원인 후보 없음**\nAI 스타트업과 엔비디아의 간담회는 산업 생태계 확장 측면의 이벤트이며, 오늘 발생한 시장의 대규모 투매를 설명할 수 있는 하방 요인으로 해석되지 않습니다. [출처: 한국경제, 2026-11-05 08:20]\n\n**종합 판단**\n한국 반도체 제조사의 생존권과 직결된 공급망 재편 이슈가 엔비디아발로 발생하여 시장 충격이 증폭된 것으로 보입니다. 다만, 뉴스의 시점과 시장 반응 사이의 괴리가 존재하여 추가적인 외부 변수 유입 가능성을 배제할 수 없습니다. 모릅니다. 이상입니다."}, {"who": "🧰도구", "topic": "엔비디아", "text": "get_history(nvidia,7d) → 수급 검증용:\n10-29: 종가 213.66, 거래량 77568100\n10-30: 종가 204.64, 거래량 168386400\n11-02: 종가 202.06, 거래량 119272200\n11-03: 종가 206.69, 거래량 91943400\n11-04: 종가 200.13, 거래량 149033300\n11-05: 종가 181.6, 거래량 306127800\n11-06: 종가 186.64, 거래량 179722400"}, {"who": "U4", "topic": "엔비디아", "text": "비판 요원 U4입니다. U3의 보고를 검토한 결과를 보고합니다.\n\n1. **엔비디아의 TSMC 메모리 생산 요청 보도**\n반도체 공급망 재편 우려가 매도세를 유도했습니다. 해당 보도는 11월 7일 발생하였으나 수급 데이터상 11월 5일 거래량이 이미 폭증했습니다. 시점의 선후 관계가 맞지 않습니다. [기각]\n\n2. **엔비디아-네이버 지분 투자**\n개별 기업 호재로 시장 전체의 10%대 하락을 설명할 수 없습니다. 데이터상 영향력이 확인되지 않습니다. [기각]\n\n3. **AI 스타트업 간담회**\n산업 확장 이벤트는 하락 원인과 무관합니다. 데이터와 연관성이 없습니다. [기각]\n\n**종합 평가**\nU3가 제시한 모든 원인 후보는 수급 데이터의 선행성과 일치하지 않습니다. 11월 5일 거래량 급증 시점에 발생한 사건이 분석에서 누락되었습니다. 기존 분석은 사실 관계 확인이 부족한 것으로 판단됩니다.\n\n종합판정: [원인불명]"}, {"who": "U3", "topic": "엔비디아 재조사", "text": "{\"tool\": \"search_news\", \"args\": {\"query\": \"엔비디아 11월 5일\"}}"}, {"who": "🧰도구", "topic": "엔비디아 재조사", "text": "search_news(자동 강제) 결과:\n[{'title': \"엔비디아 '베라루빈'의 HBM4 성능규격 전격 하향, 메모리 제조사 공급량 감안했나 - 비즈니스포스트\", 'link': 'https://news.google.com/rss/articles/CBMic0FVX3lxTFB1OWRQNERWanVmWXRMNnNYSU5ZQ09UZjNoblpVRGNTZ0gybUVxQ2pTNEpzMC1zeEoyT0syY2JfOTB4c3RfNDd3MTluNDZCcFBheDF2ZmVsWXlpUDV6bmdjOVY3clJMVERoa0dsX2E3WTlrQVE?oc=5', 'published': 'Tue, 27 Oct 2026 07:13:17 GMT'}, {'title': \"엔비디아는 RTX 5090 단종설 부인, 그래픽카드 제조사는 '대기주문'도 불가? - 케이벤치\", 'link': 'https://news.google.com/rss/articles/CBMiSEFVX3lxTFBRZ3JPLWRPSjZFSGtRNkNKT3VLR2NQaktSTXpjb1p4dHNjVzQxeE82VHFtY1pBSkpyS1lMVjBtcjJhUUg4UUp1RA?oc=5', 'published': 'Tue, 27 Oct 2026 07:00:00 GMT'}, "}, {"who": "U3", "topic": "엔비디아 재조사", "text": "SK하이닉스와 삼성전자 및 코스피 급락의 핵심 원인은 엔비디아향 HBM(고대역폭메모리) 수익성 훼손 우려로 해석됩니다.\n\n1. 11월 초 엔비디아의 '베라루빈' 아키텍처에 탑재될 HBM4 성능 규격 하향 조정이 결정되었습니다. [출처: 비즈니스포스트]\n2. 이는 고부가가치 메모리인 HBM4의 기술적 난도가 예상보다 높아 공급 물량과 단가 산정에 차질이 생길 수 있음을 시사합니다.\n3. 11월 5일 국내 증시의 이상 거래량 폭증은 해당 정보가 기관 및 외국인 투자자들 사이에 선반영되며 발생한 물량 이동으로 판단됩니다.\n4. 삼성전자와 SK하이닉스는 엔비디아의 핵심 메모리 공급사로서, 성능 규격 하향은 곧 해당 기업들의 매출 총이익률 하락과 직결됩니다.\n5. 앞서 언급한 반도체 공급망 재편설보다 HBM4 기술 표준 변경이라는 구체적인 수익성 악화 정보가 시장 매도세를 촉발한 원인으로 분석됩니다.\n\n추가 근거 없음. 제시된 뉴스 외 기간 내 발생한 다른 유의미한 변수는 없습니다."}, {"who": "U4", "topic": "엔비디아 재판정", "text": "비판 요원 U4입니다. 재조사 보고를 검토했습니다.\n\n1. **근거의 구체성 확보**\n이전 보고는 단순히 반도체 공급망 재편이라는 막연한 가설에 의존했습니다. 이번 재조사는 엔비디아의 '베라루빈' 아키텍처 내 HBM4 성능 규격 하향이라는 구체적 사안을 제시하여 수익성 훼손이라는 하락 근거를 명확히 했습니다.\n\n2. **수급 데이터와 뉴스의 상관관계**\n11월 5일 거래량 3억 612만 주를 기점으로 발생한 급락은, 시장이 HBM 수익성 악화 정보를 인지하고 투매에 나섰다는 분석과 일치합니다. [출처: 한국거래소]\n\n3. **논리적 타당성**\n엔비디아와 국내 반도체 제조사의 관계를 고려할 때, 매출 총이익률 하락은 주가 급락을 정당화하는 핵심 요인입니다. 외부 변수 유입 가능성에 대한 언급이 사라지고, 기술 표준 변경이라는 명확한 원인이 도출되었습니다.\n\n종합판정: [확실]"}, {"who": "알파", "topic": "엔비디아", "text": "지휘자 알파입니다. U4의 재판정 내용을 바탕으로 SK하이닉스 및 코스피 급락 원인을 보고합니다.\n\n**1. 무슨 일**\nSK하이닉스의 주가가 전일 대비 12% 급락하며 코스피 지수 하락을 주도했습니다. [출처: 한국거래소, 2026-11-07]\n\n**2. 왜**\n엔비디아가 차세대 아키텍처 '베라루빈'(차세대 AI 가속기 구동을 위한 엔비디아의 설계 구조)에 탑재할 HBM4(데이터 처리 속도를 극대화한 고대역폭 메모리) 성능 규격을 하향 조정했습니다. 이로 인해 HBM4의 단위당 수익성(마진율)이 기존 기대치보다 낮아질 것이라는 시장의 우려가 매도세를 촉발했습니다.\n\n**3. 맥락**\n과거에는 성능 상향이 곧 매출 확대였으나, 이번에는 규격 하향으로 인한 단가 압박이 현실화되었습니다. 과거 HBM 공급 부족기에는 기술 우위가 곧 협상력이었으나, 현재는 고객사의 단가 인하 압박이 본격화되는 전환점으로 보입니다.\n\n**4. 그래서 나에게 (전공자 관점)**\nHBM4 생산 공정에서 웨이퍼 직접 접합(메모리와 로직 반도체를 수직으로 연결하는 기술)의 수율과 열 관리 솔루션의 중요성이 더욱 커졌습니다. 기존 전력 소모 효율 위주의 설계에서, 제한된 규격 안에서 발열을 억제하며 데이터 대역폭을 유지하는 정밀 제어 역량이 기업의 생존을 결정합니다. 이제는 웨이퍼 접합 공정의 불량률 데이터와 냉각 시스템의 가동 효율을 지표로 삼아야 합니다.\n\n**"}, {"who": "🧰도구", "topic": "데이터센터", "text": "오늘의 테마 선정: 데이터센터\n[오늘의 테마] 데이터센터\n구성(동일가중 바스켓 — 채점은 이 평균 등락률로 한다):\n  · 엔비디아: 186.64 USD (전일比 2.78%)\n  · SK하이닉스: 1132000.0 원 (전일比 -10.44%)\n  · 한국전력: 30400.0 원 (전일比 -3.03%)\n주로 볼 것: AI 인프라 투자, 전력 수요 증가, 냉각·전력변환 수요"}, {"who": "U3", "topic": "데이터센터", "text": "데이터센터 전력 수요 급증으로 AI 인프라 투자 지속은 필연적입니다.\n글로벌 전력 인프라 확충 가속화로 한국전력의 송배전 설비 투자 가치가 부각됩니다.\n금일 급락은 AI 산업 성장성 자체의 훼손이 아닌 단기 수급 불균형에 의한 과매도로 해석됩니다."}, {"who": "U4", "topic": "데이터센터", "text": "데이터센터 전력 수요가 실제 매출로 연결되는 시차와 송배전망 확충 비용 부담이 한국전력의 재무 개선을 압박합니다.\n엔비디아의 최고가 경신에도 반도체주가 동반 폭락한 것은 단순 수급 문제를 넘어 AI 인프라 투자 수익성에 대한 시장의 의구심이 커진 결과입니다.\n전력 인프라 투자가 당장 기업 실적의 근거가 될 수 있다는 논거는 전력 부족 사태의 현실화 가능성을 과대평가한 오류로 보입니다."}, {"who": "U3", "topic": "데이터센터", "text": "전력 인프라 투자의 재무 부담과 AI 수익성 의구심에 대한 U4의 지적은 타당합니다. \n그러나 데이터센터 가동은 장기 계약 기반의 전력 판매를 수반하므로, 전력 부족 사태는 현실적 공급 제약에 근거한 예측으로 판단됩니다."}, {"who": "알파", "topic": "데이터센터", "text": "AI 수익성 회의론보다 전력 인프라의 물리적 한계가 시장에 더 큰 압력을 가합니다.\n전력 인프라는 단기적 비용보다 장기적 생존과 직결되므로 U3의 공급 제약 논거가 더 무겁습니다.\n반도체주의 급락은 AI 가치 평가의 조정 과정이며 인프라 가치와는 분리된 흐름으로 해석됩니다.\n\n[예측:단기] 방향=하락 확률=0.85 구간=-3.5~-0.5\n[예측:중기] 방향=상승 확률=0.60 구간=-1.0~+3.0\n[예측:장기] 방향=상승 확률=0.75 구간=+4.0~+9.5"}, {"who": "알파", "topic": "오늘의 총평", "text": "오늘은 3건이 특이합니다.\n\n코스피가 5059.69 pt로 6.02% 하락하며 마감했습니다. SK하이닉스 10.44%, 삼성전자 6.35% 급락이 지수 하락을 주도했습니다. 원/달러 환율은 1363.65 원으로 1.76% 상승하며 외국인 자금 이탈을 가속화했습니다. SMP 계통한계가격: 전력거래소에서 결정하는 전력도매가격. 현재 143.1 원/kWh를 유지하며 에너지 관련주인 한국전력의 추가 하락을 제한하고 있습니다.\n\n환율 1370원 돌파 여부를 유지합니다. 현재 환율이 1363.65원이므로 변동성 확대 시 도달 가능성이 큽니다.\n\n오늘 지켜볼 것: 원/달러 환율이 1370 원을 돌파하는지 여부. 돌파 시 수입 에너지 비용 급증으로 한국전력의 영업비용 가중 압력이 현실화됩니다."}, {"who": "🧰도구", "topic": "가상계좌", "text": "[투자 대상 6종목 — 가상계좌 모의투자]\n  · 한국전력 [kepco] 30,400.00 원 전일比 -3.03% · 보유 66주\n      전력 유틸리티(국내) — 전력망 투자·요금 정책·연료비의 최종 수렴점. 전공 직결.\n  · LS ELECTRIC [lselectric] 116,500.00 원 전일比 -10.25% · 보유 89주\n      전력기기(국내) — 변압기·배전반. 데이터센터·전력망 증설의 직접 수혜/피해가 실적에 바로 찍힌다.\n  · SK하이닉스 [hynix] 1,132,000.00 원 전일比 -10.44% · 보유 2주\n      반도체(국내) — HBM. AI 사이클의 국내 대표. 전력 수요 증가의 출발점이기도 하다.\n  · NVIDIA [nvda] 186.64 USD (≈254,512원) 전일比 2.78% · 보유 23주\n      AI 반도체(해외) — AI 데이터센터 수요의 진원지. 하이닉스와 같이 움직이는지 다르게 움직이는지가 관전 포인트.\n  · Constellation Energy [ceg] 249.95 USD (≈340,844원) 전일比 4.3% · 보유 17주\n      원전 발전·데이터센터 전력(해외) — 'AI가 전기를 먹는다'는 명제를 가격으로 검증하는 종목. 원전 PPA 계약이 핵심.\n  · Energy Select SPDR (XLE) [xle] 61.62 USD (≈84,028원) 전일比 "}, {"who": "U3", "topic": "한국전력", "text": "전력망 확충 특별법 제정 가능성이 매수 논거입니다. 송전망 부족 해소는 한국전력의 비용 효율성을 개선하는 핵심 요인입니다.\n\nSMP(계통한계가격): 전력거래소에서 결정되는 시간대별 전력 도매가격. \n연료비 스프레드: 판매가격과 구입전력비의 차이.\n\n현재 시장가 기준 매수 근거는 부족합니다. 유가 하락 외에 요금 인상 등 구체적 수익 개선 요인이 부재합니다."}, {"who": "U4", "topic": "한국전력", "text": "특별법 제정은 정치적 절차일 뿐 수익으로 직결되지 않습니다. 현재 부채 규모를 고려할 때 송전망 투자비 부담이 매출 성장을 상쇄할 것으로 보입니다."}, {"who": "U3", "topic": "LS ELECTRIC", "text": "미국 대선 결과에 따른 전력망 투자 정책 불확실성이 주가 하락의 원인입니다. 공급예비율 78.6%는 안정적이나, 글로벌 변압기 수요 둔화 우려가 매수 논거를 희석합니다."}, {"who": "U4", "topic": "LS ELECTRIC", "text": "LS ELECTRIC은 매도 의견입니다. 미국 대선 불확실성을 넘어선 수주 잔고의 질적 저하 가능성이 주가 급락의 핵심 원인으로 해석됩니다.\n\nU3는 공급예비율을 언급했으나 이는 전력망 인프라 교체 수요와 무관한 지표입니다. 변압기 수요 둔화 우려를 인정하면서 매수 논거를 펼치는 것은 논리적 모순입니다."}, {"who": "U3", "topic": "SK하이닉스", "text": "SK하이닉스의 현 가격대는 HBM(고대역폭 메모리: 데이터 처리 속도를 높인 고성능 메모리) 시장 지배력이 유지되는 상황에서 과도하게 하락한 것으로 판단됩니다.\n단기 급락에 따른 기술적 반등 가능성이 존재하나, 현 시점에서 매수를 정당화할 유의미한 수급 변화나 강력한 호재는 확인되지 않습니다."}, {"who": "U4", "topic": "SK하이닉스", "text": "SK하이닉스 매수는 엔비디아 의존도와 시장 경쟁 심화라는 구조적 위험을 간과한 판단입니다. 기술적 반등은 하락 추세를 멈추는 근거가 될 수 없으며, 현재의 급락은 밸류에이션 조정의 시작일 가능성이 높습니다."}, {"who": "U3", "topic": "NVIDIA", "text": "엔비디아 매수 근거는 없습니다. 24시간 내 반도체 업황을 반전시킬 구체적인 사건과 수급적 호재가 확인되지 않습니다."}, {"who": "U4", "topic": "NVIDIA", "text": "엔비디아의 매수는 한국 반도체 대폭락으로 인한 심리적 공포를 배제한 안일한 판단입니다. \n업황 둔화 신호가 뚜렷한 상황에서 기술적 반등만을 노리는 것은 위험한 도박으로 해석됩니다."}, {"who": "U3", "topic": "Constellation Energy", "text": "미국 내 AI 데이터센터 전력 확보 경쟁 심화로 Constellation Energy의 장기 고정가 전력판매계약(PPA) 가치가 상승하고 있습니다. [출처: 미국 에너지부] 전력 도매가 상승 시 원전 운영 수익이 즉각적으로 확대되므로 매수를 권고합니다."}, {"who": "U4", "topic": "Constellation Energy", "text": "원전 수익 의존도가 높은 Constellation Energy는 데이터센터 수요가 둔화될 경우 수익 변동성이 큽니다. PPA(전력판매계약: 발전사업자가 전기 구매자와 장기간 고정 가격으로 전력을 공급하는 계약)의 가격 경쟁력이 공급 과잉 시 하락할 위험을 간과했습니다."}, {"who": "U3", "topic": "Energy Select SPDR (XLE)", "text": "에너지 수급 불균형 심화로 유가 상승이 예상됩니다. OPEC+의 감산 연장 기조와 지정학적 긴장에 따른 공급 차질이 가격 상승 압력으로 작용합니다."}, {"who": "U4", "topic": "Energy Select SPDR (XLE)", "text": "XLE 매도를 권고합니다. OPEC+의 감산 정책은 이미 시장에 반영되었으며, 비회원국의 원유 증산이 공급 부족 우려를 상쇄하고 있습니다. 중국의 경기 부양책이 실질적 수요로 이어지지 않는 한 유가 상승 동력은 미약합니다."}, {"who": "알파", "topic": "가상계좌 배분", "text": "LS ELECTRIC은 과매도 상태로 해석되나 반등 동력이 부족하여 비중을 10% 축소하고 현금화합니다. 매매 수수료보다 추가 하락에 따른 손실 회피 기대치가 더 크다고 판단했습니다. Constellation Energy는 데이터센터 전력 수요의 구조적 우위가 유지되고 있어 포트폴리오의 안정성을 위해 비중을 20% 유지합니다. 나머지 종목은 급격한 시장 변동성 속에서 추가 비용을 발생시키지 않기 위해 비중을 동결합니다.\n\n[비중] kepco=5 lselectric=15 hynix=5 nvda=15 ceg=20 xle=0 현금=40\n[평가예측] 내일=40,880,000 확률=0.65 구간=40,500,000~41,200,000\n\n[예측:kepco:단기] 방향=하락 확률=0.60 구간=-1.0~-0.5\n[예측:lselectric:단기] 방향=상승 확률=0.55 구간=0.5~1.5\n[예측:hynix:단기] 방향=상승 확률=0.55 구간=1.0~2.0\n[예측:nvda:단기] 방향=상승 확률=0.60 구간=1.0~2.5\n[예측:ceg:단기] 방향=상승 확률=0.65 구간=1.0~2.0\n[예측:xle:단기] 방향=하락 확률=0.60 구간=-1.5~-0.5"}, {"who": "알파", "topic": "코스피↔삼성전자 연관", "text": "삼성전자 주가는 코스피 지수를 결정하는 핵심 변수입니다.\n\n① 무슨 일: 지난 6개월간 코스피와 삼성전자의 상관계수는 r=0.979입니다 [출처: 한국거래소]. 코스피 내 삼성전자 시가총액 비중은 약 20% 수준입니다 [출처: 한국거래소].\n\n② 왜: 시가총액 가중지수 방식 때문입니다. 코스피 지수는 개별 종목의 시가총액 변화를 합산하여 산출합니다. 삼성전자의 주가 등락이 지수 전체의 방향성을 직접적으로 견인합니다.\n\n③ 맥락: 반복되는 현상입니다. 과거 대형주 장세에서도 동일했습니다. 다만, 최근 반도체 업황 변동성에 따른 지수 민감도가 과거 대비 강화되었습니다. 이는 HBM(고대역폭메모리, 데이터 전송 속도를 높이기 위해 메모리를 수직으로 쌓는 기술) 수급 이슈가 지수 전체의 변동성을 키우는 구조입니다.\n\n④ 그래서 나에게: 전력 공급 안정성이 투자 지표가 됩니다. 반도체 공정 전력은 전력계통 내 부하가 가장 큰 영역입니다. 삼성전자 생산 설비 가동률은 곧 국가 전력 수요의 바로미터입니다. 향후 전력변환 효율과 계통연계(전력 생산 시설을 전력망에 연결하는 기술) 비용이 삼성전자의 영업이익률을 결정합니다. 전력전자 전공자라면 삼성전자의 설비 투자(CAPEX) 발표 시 해당 공장의 대용량 전력수급 계획과 ESS(에너지저장장치, 생산된 전력을 배터리에 저장했다가 필요할 때 사용하는 시스템) 도입 규모를 확인해야 합니다. 이는 반도체 생"}, {"who": "알파", "topic": "코스피↔SK하이닉스 연관", "text": "SK하이닉스와 코스피의 상관계수는 0.939입니다. [출처: 한국거래소]\n\n① **핵심 사실**\n최근 6개월간 코스피 지수와 SK하이닉스의 종가는 0.939의 높은 양의 상관관계를 보입니다. 125개의 거래일 데이터를 기준으로 산출했습니다.\n\n② **직접적 원인**\n코스피 시가총액에서 SK하이닉스가 차지하는 비중이 매우 높습니다. 반도체 업황 개선에 따른 HBM(고대역폭 메모리: 데이터 처리 속도를 극대화한 고성능 메모리) 수요 증가가 SK하이닉스 주가를 견인했고, 이 무게감이 지수 전체를 끌어올리는 구조입니다.\n\n③ **맥락**\n반복되는 현상입니다. 과거 삼성전자 중심의 코스피 동조화와 유사하나, 현재는 AI 반도체라는 특정 섹터의 편중이 심화되어 동조화 강도가 극대화된 상태입니다.\n\n④ **전공자에게 미치는 영향**\n전력반도체와 설비 전력 설계 부문에서 주목해야 합니다. 팹(반도체 제조 공장)의 전력 밀도가 HBM 생산 확대로 급격히 상승하고 있습니다. 전력계통 설계에서 피크 부하 관리와 수배전 설비의 효율 개선이 제조 원가에 미치는 영향이 커졌습니다. 향후 데이터센터향 전력변환 효율과 계통연계 안정성 관련 실적이 SK하이닉스 주가와 코스피 지수의 2차적인 변수로 작용할 가능성이 큽니다.\n\n⑤ **한계**\nAI 반도체 외적인 매크로 변수(금리, 환율)가 코스피 지수에 미치는 복합적 영향은 알 수 없습니다. 해당 상관계수가 하락 전"}]}, "trends": {"ours": [{"topic": "골드만삭스 “AI 투자 급락에 대비한 최적의 환율 ", "count": 7, "days": 2}, {"topic": "Citi “미 중간선거 이후 장기적으로 달러·엔 환", "count": 7, "days": 2}, {"topic": "이탈리아 9월 소매판매 0.1% 소폭 증가…3분기 ", "count": 6, "days": 2}, {"topic": "인도네시아 3분기 GDP, 예상 웃도는 5.47% ", "count": 5, "days": 2}, {"topic": "골드만삭스 “중국 정책 조치, USD/CNH 하락 ", "count": 5, "days": 2}, {"topic": "일본 평균 임금, 9월 29년 만에 최고 상승률 기", "count": 4, "days": 2}, {"topic": "태국 소비자물가지수, 10월 약 4년 만에 최고치 ", "count": 4, "days": 2}, {"topic": "UBS “유로/노르웨이 크로네 환율 하락 과도…반등", "count": 4, "days": 2}, {"topic": "헝가리 9월 소매판매 전년 대비 4.3% 증가", "count": 4, "days": 2}, {"topic": "필리핀 2분기 GDP 상향 수정, 3분기 발표 앞두", "count": 4, "days": 2}, {"topic": "스웨덴 10월 물가상승률, 예상보다 큰 폭 둔화", "count": 4, "days": 2}, {"topic": "러시아 10월 서비스업 경기, 정체 국면에 근접", "count": 4, "days": 2}, {"topic": "미 국채 금리, 1주일 만의 고점 근접…연준 결정·", "count": 3, "days": 2}, {"topic": "Anthropic IPO 기대감에 기술주 상승…연준", "count": 3, "days": 2}, {"topic": "스웨덴 9월 생산자물가 전월 대비 3.4% 급등…에", "count": 3, "days": 2}], "google": [], "source": "", "fetched": "", "title": "반복 등장한 기사", "window": "최근 14일 · 회의에 다시 올라온 횟수"}, "graph": {"pairs": [{"a": "코스피", "b": "삼성전자", "r": 0.984}, {"a": "코스피", "b": "SK하이닉스", "r": 0.954}, {"a": "삼성전자", "b": "SK하이닉스", "r": 0.945}, {"a": "원/달러 환율", "b": "한국전력", "r": 0.914}, {"a": "원/달러 환율", "b": "미 10년물 금리", "r": -0.87}, {"a": "한국전력", "b": "미 10년물 금리", "r": -0.846}, {"a": "원/달러 환율", "b": "코스피", "r": 0.833}, {"a": "코스피", "b": "한국전력", "r": 0.814}, {"a": "원/달러 환율", "b": "SK하이닉스", "r": 0.808}, {"a": "원/달러 환율", "b": "삼성전자", "r": 0.779}, {"a": "반도체지수 SOX", "b": "삼성전자", "r": 0.77}, {"a": "코스피", "b": "반도체지수 SOX", "r": 0.764}, {"a": "한국전력", "b": "삼성전자", "r": 0.739}, {"a": "반도체지수 SOX", "b": "SK하이닉스", "r": 0.736}, {"a": "한국전력", "b": "SK하이닉스", "r": 0.732}, {"a": "코스피", "b": "미 10년물 금리", "r": -0.643}, {"a": "SK하이닉스", "b": "미 10년물 금리", "r": -0.62}, {"a": "구리 선물", "b": "엔비디아", "r": 0.611}]}, "system": {"budget": {"used": 0, "limit": 1000, "keys": 2, "remaining": 1000}, "runs": [], "timeline": [{"ts": "15:24:48", "who": "U4", "what": "엔비디아 재판정", "ok": true, "kind": "api"}, {"ts": "15:24:50", "who": "알파", "what": "엔비디아", "ok": true, "kind": "api"}, {"ts": "15:25:14", "who": "U3", "what": "데이터센터", "ok": true, "kind": "api"}, {"ts": "15:25:15", "who": "U4", "what": "데이터센터", "ok": true, "kind": "api"}, {"ts": "15:25:16", "who": "U3", "what": "데이터센터", "ok": true, "kind": "api"}, {"ts": "15:25:20", "who": "알파", "what": "데이터센터", "ok": true, "kind": "api"}, {"ts": "15:25:23", "who": "알파", "what": "오늘의 총평", "ok": true, "kind": "api"}, {"ts": "15:25:25", "who": "U3", "what": "한국전력", "ok": true, "kind": "api"}, {"ts": "15:25:26", "who": "U4", "what": "한국전력", "ok": true, "kind": "api"}, {"ts": "15:25:29", "who": "U3", "what": "LS ELECTRIC", "ok": true, "kind": "api"}, {"ts": "15:25:35", "who": "U4", "what": "LS ELECTRIC", "ok": true, "kind": "api"}, {"ts": "15:25:36", "who": "U3", "what": "SK하이닉스", "ok": true, "kind": "api"}, {"ts": "15:25:49", "who": "U4", "what": "SK하이닉스", "ok": true, "kind": "api"}, {"ts": "15:25:50", "who": "U3", "what": "NVIDIA", "ok": true, "kind": "api"}, {"ts": "15:25:51", "who": "U4", "what": "NVIDIA", "ok": true, "kind": "api"}, {"ts": "15:25:56", "who": "U3", "what": "Constellation Energy", "ok": true, "kind": "api"}, {"ts": "15:25:58", "who": "U4", "what": "Constellation Energy", "ok": true, "kind": "api"}, {"ts": "15:26:00", "who": "U3", "what": "Energy Select SPDR (XLE)", "ok": true, "kind": "api"}, {"ts": "15:26:02", "who": "U4", "what": "Energy Select SPDR (XLE)", "ok": true, "kind": "api"}, {"ts": "15:26:06", "who": "알파", "what": "가상계좌 배분", "ok": true, "kind": "api"}, {"ts": "15:26:11", "who": "알파", "what": "코스피↔삼성전자 연관", "ok": true, "kind": "api"}, {"ts": "15:26:15", "who": "알파", "what": "코스피↔SK하이닉스 연관", "ok": true, "kind": "api"}, {"ts": "15:26:18", "who": "스토리 편집", "what": "story", "ok": true, "kind": "api"}, {"ts": "15:26:22", "who": "스토리 편집", "what": "story", "ok": true, "kind": "api"}, {"ts": "15:26:23", "who": "스토리 자막", "what": "story", "ok": true, "kind": "api"}], "errors": [], "events": {"agent_output": 807, "forecast": 151, "rule_fired": 144, "tool_result": 107, "reality_check": 66, "verification": 61, "command": 56, "verdict": 37}, "calibration": {"U3": {"단기": {"n": 40, "hit": 0.275, "w": 0.0146}, "중기": {"n": 40, "hit": 0.175, "w": 0.0087}, "장기": {"n": 40, "hit": 0.15, "w": 0.0039}}, "U4": {"단기": {"n": 40, "hit": 0.65, "w": 0.0034}, "중기": {"n": 40, "hit": 0.45, "w": 0.0008}, "장기": {"n": 40, "hit": 0.125, "w": 0.0002}}, "알파": {"단기": {"n": 4, "hit": 0.75, "w": 0.35}}}, "scoreboard": {"alpha": {"단기": {"n": 4, "hit": 0.75, "brier": 0.248, "brier_raw": null, "coin_hit": 0.5, "coin_brier": 0.25, "up_rate": 1.0}, "중기": {"n": 0}, "장기": {"n": 0}}, "account": {"date": "2026-11-06", "account_pct": -16.628, "hold_pct": -18.1, "hold": {"return_pct": -18.1, "start": "2026-08-06", "end": "2026-11-06", "last_close": "2026-11-06", "n": 6, "method": "6종목 1/6씩 시작일 종가 매수·보유, 확정 종가, 수수료 제외"}, "diff_pp": 1.47}}}}};
-
-function esc(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-
-const CHAR_GRID = [
-  "...HHHH...",
-  "...HHHH...",
-  "...SSSS...",
-  "...SSSS...",
-  "..AABBAA..",
-  "..ABBBBA..",
-  "..ABBBBA..",
-  "..ABBBBA..",
-  "...BBBB...",
-  "...PPPP...",
-  "..PP..PP..",
-  "..PP..PP..",
-];
-const CHAR_GRID_WIDE = CHAR_GRID.slice(0, 9).concat([
-  "..PPPPPP..",
-  ".PP....PP.",
-  ".PP....PP.",
-]);
-function pixelChar(cfg, size){
-  const cell = size||5, cols = 10;
-  const grid = cfg.stance === "wide" ? CHAR_GRID_WIDE : CHAR_GRID;
-  const rows = grid.length;
-  const colorOf = c => ({H:cfg.hair, S:"#f0c090", A:"#f0c090", B:cfg.body, P:cfg.pants}[c]);
-  let rects = "";
-  grid.forEach((row,y)=>{
-    for(let x=0;x<cols;x++){
-      const c = row[x];
-      if(c==="."||c===" ") continue;
-      rects += `<rect x="${x*cell}" y="${y*cell}" width="${cell}" height="${cell}" fill="${colorOf(c)}"/>`;
-    }
-  });
-  if(cfg.glasses){
-    rects += `<rect x="${3*cell}" y="${2*cell}" width="${cell}" height="${cell}" fill="#111"/>`;
-    rects += `<rect x="${6*cell}" y="${2*cell}" width="${cell}" height="${cell}" fill="#111"/>`;
-    rects += `<rect x="${4*cell}" y="${2*cell}" width="${2*cell}" height="1.5" fill="#111"/>`;
-  } else {
-    rects += `<rect x="${3*cell}" y="${2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#111"/>`;
-    rects += `<rect x="${6*cell}" y="${2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#111"/>`;
-  }
-  if(cfg.hairStyle === "ponytail"){
-    rects += `<rect x="${9*cell}" y="0" width="${cell}" height="${3*cell}" fill="${cfg.hair}"/>`;
-    rects += `<rect x="${9.5*cell}" y="${2.5*cell}" width="${cell*.7}" height="${cell*1.5}" fill="${cfg.hair}"/>`;
-  } else if(cfg.hairStyle === "parted"){
-    rects += `<rect x="${4.5*cell}" y="0" width="${cell*.5}" height="${cell*.7}" fill="#00000030"/>`;
-  }
-  if(cfg.cap){
-    rects += `<rect x="${2*cell}" y="0" width="${6*cell}" height="${cell*.8}" fill="${cfg.body}"/>`;
-    rects += `<rect x="${6.5*cell}" y="${cell*.2}" width="${cell*1.2}" height="${cell*.4}" fill="${cfg.hair}"/>`;
-  }
-  if(cfg.belt){
-    rects += `<rect x="${2*cell}" y="${8*cell}" width="${6*cell}" height="${cell*.5}" fill="#3a2a10"/>`;
-    rects += `<rect x="${4.6*cell}" y="${7.9*cell}" width="${cell*.8}" height="${cell*.7}" fill="#c99a2e"/>`;
-  }
-  if(cfg.bowtie){
-    rects += `<rect x="${4*cell}" y="${4.2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#c0453f"/>`;
-    rects += `<rect x="${5.4*cell}" y="${4.2*cell}" width="${cell*.6}" height="${cell*.6}" fill="#c0453f"/>`;
-  }
-  const w = (cfg.hairStyle==="ponytail" ? cols+1 : cols)*cell, h = rows*cell;
-  return `<svg class="sprite" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${rects}</svg>`;
-}
-
-function renderAnalysts(){
-  const wrap = document.getElementById("analystFloor");
-  wrap.innerHTML = DATA.analysts.map((a,i)=>`
-    <div class="desk" onclick="openBubble('analyst', ${i})">
-      <div class="sprite-wrap">${pixelChar(a)}<span class="online-dot"></span></div>
-      <div class="nameplate">${esc(a.name)}</div>
-      <div class="roletag">${esc(a.role)}</div>
-      <div class="status">${esc(a.status)}<span class="car"></span></div>
-    </div>`).join("");
-}
-
-function renderResearch(){
-  const wrap = document.getElementById("researchFloor");
-  const b = DATA.research.bull, r = DATA.research.bear;
-  wrap.innerHTML = `
-    <div class="side" onclick="openBubble('research','bull')">
-      ${pixelChar({hair:"#1a1a1a",body:"#2f8f5b",pants:"#1c5a38",glasses:false,stance:"wide"})}
-      <div class="nameplate">${esc(b.name)}</div>
-      <span class="argtag bull">${esc(b.tag)}</span>
-      <div class="argbox">${esc(b.text.slice(0,34))}…</div>
-    </div>
-    <div class="vs">VS</div>
-    <div class="side" onclick="openBubble('research','bear')">
-      ${pixelChar({hair:"#1a1a1a",body:"#c0453f",pants:"#7a2420",glasses:true})}
-      <div class="nameplate">${esc(r.name)}</div>
-      <span class="argtag bear">${esc(r.tag)}</span>
-      <div class="argbox">${esc(r.text.slice(0,34))}…</div>
-    </div>`;
-  const ace = DATA.research.ace;
-  document.getElementById("aceRow").innerHTML = `
-    ${pixelChar({hair:"#c99a2e",body:"#1a1a2e",pants:"#000",glasses:false,bowtie:true},6)}
-    <div class="nameplate">${esc(ace.name)} <span style="color:var(--t-dim);font-weight:400">· 수석</span></div>
-    <div class="status" onclick="openBubble('ace')">${esc(ace.status)}<span class="car"></span></div>`;
-}
-
-function renderChart(){
-  const c = DATA.chart;
-  if(c.price == null){
-    document.getElementById("cp-price").textContent = "수집 실패";
-    return;
-  }
-  const pts = c.points.length ? c.points : [c.price];
-  const lo = Math.min(...pts), hi = Math.max(...pts), rng = (hi-lo)||1;
-  const path = pts.map((v,i)=>`${(i/Math.max(1,pts.length-1)*200).toFixed(1)},${(46-(v-lo)/rng*40).toFixed(1)}`).join(" ");
-  document.getElementById("cp-svg").innerHTML =
-    `<polyline points="${path}" fill="none" stroke="#3ddc71" stroke-width="2"/>`;
-  document.getElementById("cp-price").textContent = c.price.toLocaleString(undefined,{minimumFractionDigits:2});
-  const pctEl = document.getElementById("cp-pct");
-  const up = (c.pct||0) >= 0;
-  pctEl.className = "chart-pct " + (up?"up":"down");
-  pctEl.textContent = c.pct==null ? "--" : (up?"▲ ":"▼ ") + Math.abs(c.pct).toFixed(2) + "%";
-  document.getElementById("ma20").textContent = c.ma20!=null ? c.ma20.toLocaleString() : "—";
-  document.getElementById("ma60").textContent = c.ma60!=null ? c.ma60.toLocaleString() : "—";
-}
-
-function renderLab(){
-  const L = DATA.lab;
-  if(!L) return;                       // 데이터가 없으면 섹션 자체를 숨긴 채 둔다(가짜 숫자 금지)
-  document.getElementById("labTitle").style.display = "";
-  const box = document.getElementById("labOffice");
-  box.style.display = "";
-  const up = L.return_pct >= 0;
-  const cls = up ? "lab-up" : "lab-dn";
-  const pct = Math.max(0, Math.min(100, (L.equity / L.capital) * 50));   // 0~200% → 0~100
-  const pos = (L.positions||[]).map(p => `
-    <div class="row"><span class="nm">${p.name}</span>
-      <span class="sh">${p.shares}주 · ${(p.weight*100).toFixed(0)}%</span>
-      <span class="pl ${p.pl>=0?'lab-up':'lab-dn'}">${p.pl==null?'—':(p.pl>=0?'+':'')+p.pl.toFixed(1)+'%'}</span>
-    </div>`).join("") || (L.pending
-      // 보유가 없는 이유를 말해 준다 — 주문은 이미 들어갔고 다음 거래일 종가에 체결된다.
-      // 안내문은 .nm(한 줄 말줄임)에 넣으면 잘린다 — 줄바꿈되는 자체 행으로 둔다.
-      ? `<div class="row pend-head">${L.pending.date} 주문 예약 · 다음 거래일 종가에 체결됩니다</div>`
-        + L.pending.orders.map(o=>`<div class="row"><span class="nm">${o.name}</span>
-            <span class="sh">목표 ${o.w}%</span><span class="pl">대기</span></div>`).join("")
-      : '<div class="row"><span class="nm">아직 보유 종목이 없습니다</span></div>');
-  const c = L.curve || [];
-  let spark = "";
-  if(c.length > 1){
-    const vs = c.map(x=>x[1]), lo = Math.min(...vs), hi = Math.max(...vs), rg = (hi-lo)||1;
-    const pts = vs.map((v,i)=>`${(i/(vs.length-1)*100).toFixed(1)},${(40-(v-lo)/rg*36).toFixed(1)}`).join(" ");
-    spark = `<svg class="lab-spark" viewBox="0 0 100 44" preserveAspectRatio="none">
-      <polyline points="${pts}" fill="none" stroke="var(--t-accent)" stroke-width="1.6"/></svg>`;
-  }
-  // 나무바닥 배경 위에 그대로 얹으면 글자가 안 읽힌다(측정 명암비 1.18) — 어두운 판으로 감싼다
-  box.innerHTML = `
-    <div class="lab-inner">
-    <div class="lab-hero">
-      <span class="eq">${L.equity.toLocaleString()}원</span>
-      <span class="rt ${cls}">${up?'+':''}${L.return_pct.toFixed(2)}%</span>
-      <span class="sub">원금 ${L.capital.toLocaleString()}원 · ${L.days}일차 · ${L.live?"지금 시세":"정산 시점"}</span>
-    </div>
-    <div class="lab-bar"><i style="width:${pct}%"></i></div>
-    ${spark}
-    <div class="lab-pos">${pos}</div>
-    <div class="lab-meta">
-      손익 ${L.profit>=0?'+':''}${L.profit.toLocaleString()}원 · 최대낙폭 ${L.mdd}%
-      ${L.live&&L.settled_eq?` · ${esc2(L.settled_date||"")} 정산 기준 ${L.settled_eq.toLocaleString()}원`:""}
-      ${L.mae!=null?` · 평가액 예측 평균오차 ${L.mae}%`:""}
-      ${L.band!=null?` · 구간적중 ${(L.band*100).toFixed(0)}%`:""}
-      <br>6개월 결산 예정: ${L.review_due||"—"} · 전부 가상계좌 시뮬레이션입니다
-    </div>
-    </div>`;
-}
-
-// ===== 폰 탭 — PC의 트렌드/관계망/토론방/시스템을 폰에서도 =====
-const PTABS = [
-  {id:"home",   name:"홈"},
-  {id:"ind",    name:"지표"},
-  {id:"deck",   name:"브리핑덱"},
-  {id:"team",   name:"팀"},
-  {id:"lab",    name:"실험"},
-  {id:"news",   name:"뉴스"},
-  {id:"chat",   name:"토론방"},
-  {id:"trends", name:"트렌드"},
-  {id:"graph",  name:"관계망"},
-  {id:"system", name:"시스템"},
-];
-const PSECS = PTABS.map(t=>t.id);
-let _ptab = "home";
-let _chip = "all";
-
-function esc2(t){ return (t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
-
-// 요원들은 마크다운으로 쓴다(**① 무슨 일** 같은 소제목). 그냥 텍스트로 넣으면 별표가 그대로
-// 보여 읽기 나쁘다. **이스케이프한 뒤에** 볼드만 태그로 바꾼다 — 순서를 바꾸면 주입 구멍이 된다.
-function md(t){
-  return esc2(t)
-    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
-    .replace(/^\s*[-·]\s+/gm, '· ');
-}
-
-// ===== 테마 =====
-// 4벌의 옷. 데이터도 탭 구조도 그대로고, 밀도·서체·카드 형태·배경·모션만 바뀐다.
-const THEMES = [
-  {id:"pixel",    name:"픽셀",   brand:"PIXEL TRADING FLOOR",
-   desc:"픽셀아트 트레이딩 플로어. 캐릭터가 일하는 사무실."},
-  {id:"glass",    name:"글래스", brand:"관제탑 · CONTROL TOWER",
-   desc:"유리 패널과 오로라. 배경이 계좌 상태에 따라 물듭니다."},
-  {id:"terminal", name:"터미널", brand:"CONTROL TERMINAL",
-   desc:"정보 밀도 최대. 각진 모서리와 고정폭 숫자."},
-  {id:"paper",    name:"신문",   brand:"관 제 탑  日 報",
-   desc:"밝은 종이에 명조. 읽기 가장 편한 화면."},
-];
-function curTheme(){ return document.documentElement.getAttribute("data-theme") || "pixel"; }
-function setTheme(id){
-  const t = THEMES.find(x=>x.id===id) || THEMES[0];
-  document.documentElement.setAttribute("data-theme", t.id);
-  try{ localStorage.setItem("ptheme", t.id); }catch(e){}
-  document.getElementById("pthemename").textContent = t.name;
-  document.getElementById("brandName").textContent = t.brand;
-  document.querySelectorAll("#pthemelist .tsw").forEach(e=>{
-    const on = e.dataset.id===t.id;
-    e.classList.toggle("on", on);
-    e.querySelector(".ok").textContent = on ? "✓" : "";
-  });
-  applyMood();
-}
-// 글래스 테마의 배경색을 계좌 수익률에 연동한다. 배경 자체가 지표가 되게.
-function applyMood(){
-  const r = (DATA.lab && DATA.lab.return_pct) || 0;
-  const mood = Math.max(-1, Math.min(1, r / 5));   // ±5%에서 최대치
-  document.documentElement.style.setProperty("--mood", mood.toFixed(3));
-}
-function openThemes(){
-  document.getElementById("pthemelist").innerHTML = THEMES.map(t=>`
-    <button class="tsw${t.id===curTheme()?" on":""}" data-id="${t.id}" onclick="setTheme('${t.id}');closeThemes()">
-      <span class="chip chip-${t.id}"></span>
-      <span><span class="nm">${t.name}</span><span class="ds">${esc2(t.desc)}</span></span>
-      <span class="ok">${t.id===curTheme()?"✓":""}</span></button>`).join("");
-  document.getElementById("pthemesheet").classList.add("open");
-  document.getElementById("themeBackdrop").classList.add("open");
-}
-function closeThemes(){
-  document.getElementById("pthemesheet").classList.remove("open");
-  document.getElementById("themeBackdrop").classList.remove("open");
-}
-
-// 요원 색 — 홈의 캐릭터 배색과 같은 값을 써야 팀 탭에서 같은 사람으로 읽힌다
-const TEAMC = {"U1":"#3a6ea5","U2":"#c99a2e","B2":"#2f8f5b","🧰도구":"#2b8f8f",
-               "U3":"var(--t-up)","U4":"var(--t-down)","알파":"var(--t-accent)"};
-
-function pchip(g){ _chip = g;
-  document.querySelectorAll("#pchips .chip").forEach(e=>e.classList.toggle("on", e.dataset.g===g));
-  renderInd(); }
-
-function spark(v, col){
-  if(!v || v.length < 2) return "";
-  const lo=Math.min(...v), hi=Math.max(...v), rg=(hi-lo)||1;
-  const pts = v.map((x,i)=>`${(i/(v.length-1)*100).toFixed(1)},${(31-(x-lo)/rg*28).toFixed(1)}`).join(" ");
-  return `<svg class="pspark" viewBox="0 0 100 34" preserveAspectRatio="none">
-    <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5"/></svg>`;
-}
-
-// ===== PC 데이터 =====
-// PC 대시보드는 127.0.0.1에만 떠 있어 폰에서 못 연다. 그래서 PC가 자기 DB를 docs/api/*.json
-// 으로 떨궈 두고, 이 페이지가 **같은 출처에서 그냥 fetch** 한다. 서버도 CORS도 필요 없다.
-// 못 받아도 페이지는 인라인 데이터로 그대로 돌아간다 — PC 데이터는 '덧붙임'이지 전제가 아니다.
-let PC = null;
-
-async function loadPC(){
-  const names = ["defs","latest","history","news","interp","powermix","meta"];
-  try{
-    const got = await Promise.all(names.map(n =>
-      fetch("api/"+n+".json", {cache:"no-store"})
-        .then(r => r.ok ? r.json() : null).catch(() => null)));
-    const o = {}; names.forEach((n,i)=>o[n]=got[i]);
-    if(!o.defs || !o.latest) return;            // 핵심 두 개가 없으면 병합할 게 없다
-    PC = o;
-    renderPhoneTabs();                           // 탭 구성이 늘어날 수 있으므로 다시 그린다
-  }catch(e){ /* 인라인 데이터로 계속 간다 */ }
-}
-
-// 클라우드(야후 실시간)와 PC(2년 기록 + 정부지표 마지막값)를 하나의 지표 목록으로 합친다.
-// 겹치면 값은 클라우드가 이긴다 — 방금 받은 값이 더 새롭다. PC는 클라우드가 아예 모르는
-// 지표(정부 API 7종)와 긴 기록을 채운다.
-function indRows(){
-  const base = (DATA.m.ind && DATA.m.ind.rows) || [];
-  if(!PC) return base;
-  const cloud = {}; base.forEach(r => cloud[r.id] = r);
-  const lat = {}; ((PC.latest||{}).rows||[]).forEach(r => lat[r.id] = r);
-  const H = PC.history || {series:{}, dates:[]};
-  const interp = {};
-  ((PC.interp||{}).rows||[]).forEach(r => { if(!interp[r.id]) interp[r.id] = r; });
-
-  const out = [];
-  (PC.defs.indicators||[]).forEach(d => {
-    if(d.id === "news_electimes") return;        // 뉴스 소스지 숫자 지표가 아니다
-    const c = cloud[d.id], l = lat[d.id] || {};
-    const hs = (H.series||{})[d.id] || [];
-    const hv = hs.filter(x => x !== null);
-    const lastIdx = hs.reduce((a,x,i)=> x===null?a:i, -1);
-    const hasLive = !!(c && c.value != null);
-    const pcVal = (l.value != null) ? l.value : (lastIdx >= 0 ? hs[lastIdx] : null);
-
-    out.push({
-      id: d.id, name: d.name, unit: d.unit || (c && c.unit) || "",
-      groups: d.tabs || [],
-      value: hasLive ? c.value : (pcVal != null ? pcVal.toLocaleString() : null),
-      pct: hasLive ? c.pct : (l.pct != null ? l.pct : null),
-      spark: hasLive && (c.spark||[]).length > 1 ? c.spark : hv.slice(-60),
-      ma20: hasLive ? c.ma20 : null, ma60: hasLive ? c.ma60 : null,
-      dec: (c && c.dec != null) ? c.dec : (d.dec != null ? d.dec : 2),
-      // 값이 언제 것인지 반드시 표시한다. 정부 API 키가 만료된 지표는 '지금 값'이 아니라
-      // '마지막으로 받았던 값'이고, 그걸 지금 값처럼 보여주면 그게 가짜 숫자다.
-      stale: hasLive ? null : (lastIdx >= 0 ? (H.dates||[])[lastIdx] : (l.at || null)),
-      wait: !hasLive && l.status && l.status !== "ok" ? (l.msg || l.status) : null,
-      hist: hv.length,
-      ai: (c && c.ai) || (interp[d.id] ? interp[d.id].text : null),
-      detail: (c && c.detail) || null,
-      verdict: (c && c.verdict) || (interp[d.id] ? interp[d.id].verdict : null),
-      by: (c && c.ai) ? null : (interp[d.id] ? (interp[d.id].ts + " · " + interp[d.id].model) : null),
-    });
-  });
-  // PC 정의에 없는 클라우드 지표가 생기면 뒤에 붙인다(양쪽이 어긋나도 사라지지 않게)
-  base.forEach(r => { if(!out.some(x => x.id === r.id)) out.push(r); });
-  return out;
-}
-
-function indGroups(){
-  if(PC && PC.defs && PC.defs.tabs){
-    // PC의 탭 정의를 그대로 쓴다. 손으로 적어 둔 표를 쓰면 PC에서 전기 탭에 12개가 있어도
-    // 폰은 5개만 아는 어긋남이 계속 생긴다.
-    const keep = ["core","elec","econ","original"];
-    return [{id:"all",name:"전체"}].concat(
-      PC.defs.tabs.filter(t => keep.includes(t.id)).map(t => ({id:t.id, name:t.name})));
-  }
-  return (DATA.m.ind && DATA.m.ind.groups) || [{id:"all",name:"전체"}];
-}
-
-function renderInd(){
-  const rows = indRows().filter(r => _chip==="all" || (r.groups||[]).includes(_chip));
-  const mix = (_chip==="all"||_chip==="elec") ? mixCard() : "";
-  document.getElementById("pindlist").innerHTML = mix + (rows.map(r=>{
-    const up = (r.pct||0) >= 0, col = r.pct==null ? "var(--t-dim)" : (up?"var(--t-up)":"var(--t-down)");
-    // 자릿수를 지표별로 맞춘다. toLocaleString 기본값은 소수를 잘라 천연가스 MA60을 '3'으로 만든다.
-    const nf = v => v==null ? "—" : v.toLocaleString(undefined,
-      {minimumFractionDigits: r.dec||0, maximumFractionDigits: r.dec||0});
-    const meta = [
-      r.ma20!=null ? `MA20 ${nf(r.ma20)} · MA60 ${nf(r.ma60)}` : null,
-      r.hist ? `PC 기록 ${r.hist}일` : null,
-    ].filter(Boolean).join(" · ");
-    return `<div class="icard" onclick="openInd('${r.id}')">
-      <div class="top">
-        <span class="inm">${esc2(r.name)}</span>
-        ${String(r.verdict||"").startsWith("red")?'<span class="flag">근거부족</span>':""}
-        ${r.value==null ? '<span class="ival" style="opacity:.35;font-size:.7rem">값 없음</span>'
-          : `<span class="ival">${esc2(String(r.value))}<span style="font-size:.6rem;opacity:.5"> ${esc2(r.unit||"")}</span></span>`}
-        ${r.pct==null?"":`<span class="ipct ${up?"ppos":"pneg"}">${up?"▲":"▼"}${Math.abs(r.pct).toFixed(2)}%</span>`}
-      </div>
-      ${r.stale?`<div class="ima" style="color:var(--t-warn);opacity:.95">⏸ 실시간 아님 · ${esc2(r.stale)} 마지막 관측${r.wait?" · "+esc2(String(r.wait).slice(0,40)):""}</div>`:""}
-      ${spark(r.spark, col)}
-      ${meta?`<div class="ima">${meta}</div>`:""}
-      ${r.ai?`<div class="ima" style="margin-top:7px;opacity:.4">${esc2(r.by || ((DATA.m.ind&&DATA.m.ind.at||"")+" 회의 시점 해석"))}</div>
-              <div class="iai">${esc2(r.ai)}</div>`
-            :'<div class="iai" style="opacity:.35">아직 이 지표에 대한 해석이 없습니다</div>'}
-    </div>`;}).join("") || '<div class="pempty">이 그룹에 지표가 없습니다</div>');
-}
-
-// PC 데이터가 '언제 것인지'를 반드시 보여 준다. 대시보드가 꺼져 있으면 이 파일은 그대로
-// 멈춰 있는데, 시각이 안 보이면 멈춘 값을 지금 값으로 착각하게 된다.
-function pcCard(){
-  if(!PC) return `<div class="pcard"><h4>PC 데이터 <span class="sub">받지 못함</span></h4>
-    <div class="pempty" style="text-align:left">PC 대시보드가 아직 한 번도 내보내지 않았거나
-    네트워크가 끊겼습니다. 지금 화면은 클라우드 데이터만으로 돌고 있습니다.</div></div>`;
-  const g = (PC.meta||{}).generated || "";
-  let age = "";
-  if(g){ const h = (Date.now() - new Date(g).getTime())/36e5;
-    age = h < 1.5 ? "방금" : (h < 48 ? Math.round(h)+"시간 전" : Math.round(h/24)+"일 전"); }
-  return `<div class="pcard"><h4>PC 데이터 <span class="sub">${esc2(age)}</span></h4>
-    <div class="prow"><span class="nm">내보낸 시각</span><span class="vv">${esc2(g.slice(0,16))}</span></div>
-    <div class="prow"><span class="nm">지표 기록</span><span class="vv">${(PC.history||{}).days||0}일</span></div>
-    <div class="prow"><span class="nm">뉴스 · 로컬 해석</span>
-      <span class="vv">${((PC.news||{}).rows||[]).length}건 · ${((PC.interp||{}).rows||[]).length}건</span></div>
-    <div class="pempty" style="text-align:left">PC 대시보드로 수집할 때마다 갱신됩니다.
-      PC가 꺼져 있으면 이 시각이 멈춥니다.</div></div>`;
-}
-
-// 연료원별 발전량 — PC가 정부 API에서 받아 둔 것. 전기 그룹에서만 보여준다.
-function mixCard(){
-  if(!PC || !PC.powermix || !(PC.powermix.fuels||[]).length) return "";
-  const all = PC.powermix.fuels;
-  // '총발전(현재수요)'는 연료가 아니라 **합계**다. 이걸 연료 목록에 섞어 두면 분모가 두 배가
-  // 되어 모든 비중이 절반으로 나온다(실제로 원자력이 18.4%로 찍히고 있었다 — 실제는 37%).
-  const totalRow = all.find(x=>/총발전|현재수요/.test(x.fuel));
-  const f = all.filter(x=>x!==totalRow);
-  const tot = (totalRow ? totalRow.mw : f.reduce((a,x)=>a+x.mw,0)) || 1;
-  // 양수(揚水)는 물을 퍼올릴 때 전력을 **쓰므로** 값이 음수다. 예전엔 mw>0 필터로 빼 버려서
-  // 구성 합이 총발전과 안 맞았다. 지우지 않고 음수 그대로 보여준다.
-  const rows = f.map(x=>{
-    const p = x.mw/tot*100, neg = x.mw < 0;
-    return `<div class="prow"><span class="nm">${esc2(x.fuel)}${neg?' <span style="opacity:.5;font-size:.62rem">(양수 소비)</span>':""}</span>
-      <span class="pbar"><i style="width:${Math.min(100,Math.abs(p)).toFixed(0)}%;background:${neg?"var(--t-down)":"var(--t-accent)"}"></i></span>
-      <span class="vv">${Math.round(x.mw).toLocaleString()}MW · ${p.toFixed(1)}%</span></div>`;}).join("");
-  return `<div class="pcard"><h4>연료원별 발전량
-      <span class="sub">${esc2(PC.powermix.at||"")} 기준 · PC 수집</span></h4>
-      ${totalRow?`<div class="prow" style="border-bottom:1px solid rgba(245,196,81,.3)">
-        <span class="nm" style="color:var(--t-accent)">총발전 (현재수요)</span>
-        <span class="vv" style="color:var(--t-accent)">${Math.round(totalRow.mw).toLocaleString()}MW</span></div>`:""}
-      ${rows}</div>`;
-}
-
-// 지난 회의 녹취를 그때 받아 온다. 실패하면 보고 있던 화면을 망가뜨리지 않고 사유만 알린다.
-async function openMeeting(id){
-  const head = document.getElementById("pchatHead"), body = document.getElementById("pchatBody");
-  if(!head || !body) return;
-  body.innerHTML = '<div class="pempty">녹취를 받아오는 중…</div>';
-  document.getElementById("pchatCard").scrollIntoView({behavior:"smooth", block:"start"});
-  let d = null;
-  try{ const r = await fetch("m/"+id+".json", {cache:"no-store"}); if(r.ok) d = await r.json(); }catch(e){}
-  if(!d){
-    body.innerHTML = '<div class="pempty">이 회의 녹취를 받지 못했습니다 — 아직 공개 페이지에 올라가지 않았거나 네트워크가 끊겼습니다</div>';
-    return;
-  }
-  head.innerHTML = `회의 녹취 <span class="sub">${esc2((d.time||"").slice(0,16))} · ${d.calls}콜 · ${d.lines.length}발언</span>`;
-  body.innerHTML = d.lines.map(l=>`<div class="msg${l.who==="알파"?" alpha":""}">
-      <span class="pwho">${esc2(l.who)}${l.topic?" · "+esc2(l.topic):""}</span>
-      <div class="pmsg">${md(l.text)}</div></div>`).join("")
-      || '<div class="pempty">녹취가 없습니다</div>';
-  document.querySelectorAll("#psec-chat .prow").forEach(e=>{
-    const on = (e.getAttribute("onclick")||"").includes("'"+id+"'");
-    e.style.background = on ? "rgba(245,196,81,.08)" : "";
-  });
-}
-
-function openInd(id){
-  const r = indRows().find(x=>x.id===id);
-  if(!r) return;
-  // 요약과 상세는 다른 글이다 — 상세가 없을 때만 요약으로 대체한다
-  const at = (DATA.m.ind && DATA.m.ind.at) || "";
-  const body = [r.detail, (!r.detail && r.ai) ? r.ai : null,
-                r.verdict ? "\n[판정] " + r.verdict : null,
-                r.by ? "\n[해석 출처] PC 로컬 분석 · " + r.by : null,
-                r.stale ? "\n[주의] 실시간 값이 아닙니다. " + r.stale + " 이 마지막 관측이고, "
-                        + "그 뒤로는 정부 API 키가 만료되어 새 값을 받지 못했습니다."
-                        + (r.wait ? "\n사유: " + r.wait : "") : null,
-                // 시세는 지금 값, 해석은 회의 시각 값이다. 장중에 크게 움직이면 둘이 안 맞는데,
-                // 그건 오류가 아니라 시점 차이다 — 화면이 그걸 말해 줘야 한다.
-                (!r.by && at) ? "\n(값은 페이지 갱신 시각 기준, 해석은 " + at + " 회의 시점 기준)" : null]
-               .filter(Boolean).join("\n\n") || "이 지표에 대한 해석이 아직 없습니다.";
-  openSheet(r.name, (r.pct==null?"":((r.pct>=0?"+":"")+r.pct.toFixed(2)+"% · ")) + "AI 해석", body);
-}
-
-function pgo(id){
-  _ptab = id;
-  document.querySelectorAll("#ptabs .pt").forEach(e=>e.classList.toggle("on", e.dataset.id===id));
-  // 섹션 목록은 PTABS에서 파생시킨다 — 탭을 추가할 때 여기를 같이 고치는 걸 잊으면
-  // 새 탭이 눌려도 아무것도 안 보이는 버그가 난다.
-  PSECS.forEach(k=>{
-    const el=document.getElementById("psec-"+k);
-    if(el) el.classList.toggle("on", id===k);
-  });
-  window.scrollTo(0,0);
-}
-
-function renderPhoneTabs(){
-  const M = DATA.m || {};
-  const bar = document.getElementById("ptabs");
-  // 데이터가 없는 탭은 아예 만들지 않는다 — 눌렀는데 빈 화면이 나오는 게 제일 나쁘다
-  // 실험 탭은 테마 예측(M.lab)이 없어도 가상계좌(DATA.lab)만 있으면 볼 게 있다.
-  // 뉴스 탭은 PC가 내보낸 헤드라인이 도착해야 생긴다(도착 전엔 아예 만들지 않는다).
-  const hasNews = !!(PC && ((PC.news||{}).rows||[]).length);
-  const avail = PTABS.filter(t => t.id==="home" || M[t.id]
-                                  || (t.id==="lab" && DATA.lab) || (t.id==="news" && hasNews));
-  bar.innerHTML = avail.map(t=>
-    `<div class="pt${t.id===_ptab?" on":""}" data-id="${t.id}" onclick="pgo('${t.id}')">${t.name}</div>`).join("");
-
-  // --- 지표: PC의 핵심/전기/경제/오리지널을 그룹 칩 하나로 ---
-  if(M.ind || PC){
-    const chips = indGroups().map(g=>
-      `<div class="chip${g.id===_chip?" on":""}" data-g="${g.id}" onclick="pchip('${g.id}')">${g.name}</div>`).join("");
-    const src = PC ? `클라우드 실시간 ${(M.ind&&M.ind.rows||[]).length}종 + PC 기록 ${(PC.history||{}).days||0}일`
-                   : "클라우드 실시간";
-    document.getElementById("psec-ind").innerHTML =
-      `<div id="pchips">${chips}</div><div id="pindlist"></div>
-       <div class="pempty" style="padding:0 4px 14px">카드를 탭하면 상세 판단이 열립니다 · ${esc2(src)}</div>`;
-    renderInd();
-  }
-
-  // --- 뉴스: PC가 수집한 전기신문 헤드라인 + PC 로컬 AI 해석 ---
-  if(hasNews){
-    const N = (PC.news.rows||[]).map(n=>`<a class="prow" href="${esc2(n.link)}"
-        target="_blank" rel="noopener" style="min-height:44px;align-items:center;
-        color:inherit;text-decoration:none">
-        <span class="nm" style="white-space:normal;line-height:1.45">${esc2(n.title)}</span>
-        <span class="vv" style="opacity:.45">${esc2((n.pub||"").slice(5,10))}</span></a>`).join("");
-    const I = ((PC.interp||{}).rows||[]).slice(0,12).map(r=>`<div class="prow"
-        style="flex-direction:column;align-items:stretch;gap:3px">
-        <span class="vv" style="opacity:.5;text-align:left">${esc2(r.ts)} · ${esc2(r.name)} · ${esc2(r.verdict||"")}</span>
-        <span class="nm" style="white-space:normal;line-height:1.5;opacity:.85">${esc2((r.text||"").slice(0,240))}</span></div>`).join("");
-    document.getElementById("psec-news").innerHTML = `
-      <div class="pcard"><h4>전기신문 헤드라인
-        <span class="sub">PC 수집 ${PC.news.rows.length}건 · 탭하면 원문</span></h4>${N}</div>
-      ${I?`<div class="pcard"><h4>PC 로컬 AI 해석
-        <span class="sub">analyze.py 산출 · 지표별</span></h4>${I}</div>`:""}`;
-  }
-
-  // --- 브리핑덱: 옆으로 넘기는 카드 ---
-  if(M.deck){
-    const D = M.deck;
-    const cards = D.cards.map((c,i)=>`<div class="dcard ${c.kind}">
-        <div class="dt">${esc2(c.title||"")}</div>
-        <div class="dx">${md(c.text||"")}</div>
-        <div class="dn">${i+1} / ${D.cards.length}</div></div>`).join("");
-    document.getElementById("psec-deck").innerHTML = `
-      <div class="pcard" style="margin-bottom:0"><h4>오늘의 브리핑
-        <span class="sub">${esc2(D.time||"")} 회의 · ${D.cards.length}장</span></h4>
-        <div class="pempty" style="text-align:left;padding:0">옆으로 밀어서 넘기세요</div></div>
-      <div id="pdeck">${cards}</div>
-      <div id="pdots">${D.cards.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join("")}</div>
-      <div id="pindex">${D.cards.map((c,i)=>{
-        // 제목만 쓰면 '알파 총평'이 네 줄 연달아 나와 목차 구실을 못 한다.
-        // 내용 첫머리를 라벨로 쓴다 — 무슨 얘기인지가 목차의 존재 이유다.
-        const body = (c.text||"").replace(/\s+/g," ").trim();
-        const label = /총평/.test(c.title||"") ? body : (c.title + " · " + body);
-        return `<div class="ix${i?'':' on'}" data-i="${i}">
-          <span class="no">${i+1}</span><span class="tx">${esc2(label)}</span></div>`;}).join("")}</div>`;
-    // 어느 카드를 보고 있는지 점과 목차로 표시한다. 가로 스크롤은 위치 감각이 사라지기 쉽고,
-    // 10장을 다 밀어보게 만드는 것도 폰에서는 부담이다.
-    const dk = document.getElementById("pdeck");
-    const mark = i => {
-      document.querySelectorAll("#pdots i").forEach((d,j)=>d.classList.toggle("on", j===i));
-      document.querySelectorAll("#pindex .ix").forEach((d,j)=>d.classList.toggle("on", j===i));
-    };
-    dk.addEventListener("scroll", ()=>{
-      mark(Math.round(dk.scrollLeft / (dk.scrollWidth / D.cards.length)));
-    }, {passive:true});
-    document.querySelectorAll("#pindex .ix").forEach(el=>{
-      el.onclick = () => {
-        const i = +el.dataset.i;
-        dk.scrollTo({left: i * (dk.scrollWidth / D.cards.length), behavior:"smooth"});
-        mark(i);
-      };
-    });
-  }
-
-  // --- 팀 ---
-  if(M.team){
-    const T = M.team;
-    const mx = Math.max(1, ...T.members.map(m=>m.calls));
-    const rows = T.members.map(m=>{
-      const col = TEAMC[m.tag] || "var(--t-accent)";
-      const hz = (m.horizons||[]).map(h=>
-        `${h.h} ${h.hit==null?"—":Math.round(h.hit*100)+"%"}(n=${h.n||0})`).join(" · ");
-      return `<div class="tcard">
-        <div class="th">
-          <span class="tav" style="color:${col}"><span style="color:#fff">${esc2(m.name.slice(0,1))}</span></span>
-          <span><span class="tnm">${esc2(m.name)}</span><br><span class="tr">${esc2(m.role)}</span></span>
-          <span class="tc">${m.calls}회 발언</span></div>
-        <div class="pbar" style="width:100%;margin-top:8px"><i style="width:${(m.calls/mx*100).toFixed(0)}%;background:${col}"></i></div>
-        ${hz?`<div class="ima" style="margin-top:6px">예측 성적 · ${esc2(hz)}</div>`:""}
-        ${m.text?`<div class="tt">${m.topic?`<b style="color:var(--t-dim)">${esc2(m.topic)}</b> · `:""}${md(m.text)}</div>`
-          : m.machine?`<div class="tt" style="opacity:.45">이번 회의에서는 기계 판독용 출력(기사 분류표)만 남겼습니다 — 사람이 읽을 발언은 없습니다</div>`
-          :`<div class="tt" style="opacity:.4">이번 회의에서는 발언이 없었습니다</div>`}
-      </div>`;}).join("");
-    document.getElementById("psec-team").innerHTML = `
-      <div class="pcard"><h4>요원 로스터
-        <span class="sub">${esc2(T.meeting||"")} · 총 ${T.total}발언 / ${T.calls}콜</span></h4></div>${rows}`;
-  }
-
-  // --- 실험: 테마 예측 (가상계좌는 renderLab이 같은 섹션에 그린다) ---
-  if(M.lab){
-    const L = M.lab;
-    const cards = L.themes.map(t=>{
-      const preds = t.preds.map(p=>{
-        const up = p.dir>0;
-        return `<div class="fpred">
-          <span class="fw">${esc2(p.who||"")}</span>
-          <span class="fhz">${esc2(p.h||"")}</span>
-          <span class="fd ${up?"ppos":"pneg"}">${up?"▲ 상승":"▼ 하락"}</span>
-          <span class="fp">확률 ${(p.p*100).toFixed(0)}% · ${p.lo>0?"+":""}${p.lo}~${p.hi>0?"+":""}${p.hi}%</span>
-        </div>`;}).join("");
-      const tw = (t.twins||[]).length
-        ? `<div class="ima" style="color:var(--t-alert);opacity:.95;margin-top:7px">
-             ⚠ ${esc2(t.twins.join("·"))} 예측이 삼추·사비 완전 동일 — 독립적 판단이 아닐 수 있음</div>` : "";
-      return `<div class="fcard">
-        <div class="fh"><span class="fnm">${esc2(t.name)}</span>
-          <span class="flv">기준가 ${t.level!=null?t.level.toLocaleString():"—"}</span></div>
-        ${preds}${tw}</div>`;}).join("");
-    const ag = (L.agents||[]).map(a=>`<div class="prow">
-        <span class="nm">${esc2(a.who)} · ${esc2(a.h)}</span>
-        <span class="vv">적중 ${Math.round(a.hit*100)}% (n=${a.n})${a.skill!=null?` · 기술점수 ${a.skill}`:""}</span></div>`).join("");
-    const bd = (L.board||[]).map(b=>`<div class="prow">
-        <span class="nm">${esc2(b.theme)} · ${esc2(b.h)}</span>
-        <span class="vv">적중 ${Math.round(b.hit*100)}% (n=${b.n})</span></div>`).join("");
-    document.getElementById("labPreds").innerHTML = `
-      <div class="pcard"><h4>오늘의 예측 <span class="sub">${esc2(L.date||"")} · 6종목</span></h4>
-        <div class="prow"><span class="nm">만기 대기</span><span class="vv">${L.pending}건</span></div>
-        <div class="pempty" style="text-align:left">단기 1 · 중기 5 · 장기 20 거래일 뒤 채점됩니다</div></div>
-      ${ag?`<div class="pcard"><h4>요원 성적 <span class="sub">채점 완료분 · 기간별</span></h4>${ag}
-        <div class="pempty" style="text-align:left">기술점수가 음수면 기준선(그냥 찍기)보다 못한 것입니다</div></div>`:""}
-      ${bd?`<div class="pcard"><h4>테마별 성적 <span class="sub">누적</span></h4>${bd}</div>`:""}
-      ${cards}`;
-  }
-
-  // --- 토론방 ---
-  if(M.chat){
-    const c = M.chat;
-    const lines = c.lines.map(l=>`<div class="msg${l.who==="알파"?" alpha":""}">
-        <span class="pwho">${esc2(l.who)}${l.topic?" · "+esc2(l.topic):""}</span>
-        <div class="pmsg">${md(l.text)}</div></div>`).join("");
-    // 목록만 보여 주고 못 열면 정보가 없는 것과 같다. 본문은 회의당 파일 하나로 나눠 두고
-    // 탭했을 때만 받아 온다(최근 12건 본문만 합쳐도 599KB라 다 실을 수 없다).
-    const mts = c.meetings.map(m=>`<div class="prow" style="min-height:44px;align-items:center;cursor:pointer"
-        onclick="openMeeting('${m.id}')">
-        <span class="nm">${esc2(m.time)}${m.id===c.meeting?' <span style="color:var(--t-accent)">· 지금 보는 중</span>':""}</span>
-        <span class="vv">${m.calls}콜 · ${m.lines}줄 ›</span></div>`).join("");
-    document.getElementById("psec-chat").innerHTML = `
-      <div class="pcard" id="pchatCard"><h4 id="pchatHead">회의 녹취 <span class="sub">${esc2(c.time.slice(0,16))} · ${c.calls}콜 · 최근 ${c.lines.length}발언</span></h4>
-        <div class="pchat" id="pchatBody">${lines || '<div class="pempty">녹취가 없습니다</div>'}</div></div>
-      ${c.news && c.news.context ? `<div class="pcard"><h4>뉴스 맥락</h4><div class="pmsg">${md(c.news.context)}</div></div>`:""}
-      <div class="pcard"><h4>지난 회의 <span class="sub">${c.meetings.length}건 · 탭하면 그 회의 녹취로 바뀝니다</span></h4>${mts}</div>`;
-  }
-
-  // --- 트렌드 ---
-  if(M.trends){
-    const t = M.trends;
-    const mx = Math.max(1, ...t.ours.map(o=>o.count));
-    const ours = t.ours.map(o=>`<div class="prow">
-        <span class="nm">${esc2(o.topic)}</span>
-        <span class="pbar"><i style="width:${(o.count/mx*100).toFixed(0)}%"></i></span>
-        <span class="vv">${o.count}회·${o.days}일</span></div>`).join("");
-    const gg = (t.google||[]).map(g=>{
-      const v=g.series||[]; let sp="";
-      if(v.length>1){ const lo=Math.min(...v),hi=Math.max(...v),rg=(hi-lo)||1;
-        sp=`<svg class="pspark" viewBox="0 0 100 34" preserveAspectRatio="none"><polyline points="${
-          v.map((x,i)=>`${(i/(v.length-1)*100).toFixed(1)},${(31-(x-lo)/rg*28).toFixed(1)}`).join(" ")
-        }" fill="none" stroke="var(--t-accent)" stroke-width="1.5"/></svg>`; }
-      return `<div style="margin:8px 0"><div class="prow"><span class="nm">${esc2(g.kw)}</span>
-        <span class="vv">${g.now}</span></div>${sp}</div>`;}).join("");
-    document.getElementById("psec-trends").innerHTML = `
-      <div class="pcard"><h4>${esc2(t.title||"우리 관측 트렌드")} <span class="sub">${esc2(t.window||"")}</span></h4>
-        ${ours || '<div class="pempty">아직 반복 주제가 없습니다</div>'}</div>
-      <div class="pcard"><h4>구글 검색 관심도 <span class="sub">${esc2(t.source||"")}</span></h4>
-        ${gg || '<div class="pempty">구글 관심도를 불러오지 못했습니다 (차단 또는 캐시 만료)</div>'}</div>`;
-  }
-
-  // --- 관계망: 폰에선 노드그래프 대신 상관 상위 목록이 읽기 쉽다 ---
-  if(M.graph){
-    const rows = M.graph.pairs.map(p=>{
-      const pos = p.r>=0;
-      return `<div class="prow"><span class="nm">${esc2(p.a)} ↔ ${esc2(p.b)}</span>
-        <span class="pbar"><i style="width:${(Math.abs(p.r)*100).toFixed(0)}%;background:${pos?"var(--t-up)":"var(--t-down)"}"></i></span>
-        <span class="vv ${pos?"ppos":"pneg"}">${p.r>=0?"+":""}${p.r.toFixed(2)}</span></div>`;}).join("");
-    document.getElementById("psec-graph").innerHTML = `
-      <div class="pcard"><h4>지표 상관관계 <span class="sub">6개월 종가 · |r|≥0.45 상위 ${M.graph.pairs.length}쌍</span></h4>
-        ${rows}
-        <div class="pempty">빨강 = 같이 움직임 · 파랑 = 반대로 움직임</div></div>`;
-  }
-
-  // --- 시스템 ---
-  if(M.system){
-    const S = M.system, b = S.budget||{};
-    const pct = b.limit? Math.min(100, b.used/b.limit*100) : 0;
-    const runs = (S.runs||[]).map(r=>`<div class="prow"><span class="nm">${esc2(r.time)} 회의</span>
-        <span class="vv">${r.calls}콜 ${r.ok?"":"· 실패"}</span></div>`).join("")
-        || '<div class="pempty">오늘 회의 기록 없음</div>';
-    const tl = (S.timeline||[]).slice().reverse().map(e=>`<div class="prow">
-        <span class="vv" style="opacity:.5">${esc2(e.ts)}</span>
-        <span class="nm">${esc2(e.who)} · ${esc2(e.what)}</span>
-        <span class="vv">${e.ok?"":"✕"}</span></div>`).join("")
-        || '<div class="pempty">기록 없음</div>';
-    const errs = (S.errors||[]).map(e=>`<div class="prow">
-        <span class="vv" style="opacity:.5">${esc2(e.ts)}</span>
-        <span class="nm">${esc2(e.who)} ${esc2(e.msg)}</span></div>`).join("")
-        || '<div class="pempty">최근 에러 없음</div>';
-    const ev = Object.entries(S.events||{}).map(([k,v])=>`<div class="prow">
-        <span class="nm">${esc2(k)}</span><span class="vv">${v}</span></div>`).join("");
-    let cal = "";
-    if(S.calibration){
-      cal = Object.entries(S.calibration).map(([who,hz])=>`<div class="prow">
-        <span class="nm">${esc2(who)}</span>
-        <span class="vv">${Object.entries(hz).map(([h,v])=>
-          `${h} ${v.hit==null?"—":Math.round(v.hit*100)+"%"}(n=${v.n||0})`).join(" · ")}</span></div>`).join("");
-    }
-    // 성적표 (2026-11-06 사용자 결정): 알파 최종 판단만 채점 + 동전·늘 "오른다"·단순보유 기준선을 나란히
-    let sb = "";
-    if(S.scoreboard){
-      const A = S.scoreboard.alpha || {}, AC = S.scoreboard.account;
-      const pc = v => v==null ? "—" : (v*100).toFixed(1)+"%";
-      const pp = v => v==null ? "—" : (v>0?"+":"")+v.toFixed(2)+"%";
-      sb = ["단기","중기","장기"].map(h=>{ const v = A[h] || {};
-        return `<div class="prow"><span class="nm">${h} <span style="opacity:.6">n=${v.n||0}</span></span>
-          <span class="vv">${v.n ? `알파 ${pc(v.hit)} · 동전 50% · 늘 오른다 ${pc(v.up_rate)} · Brier ${v.brier} (동전 0.250)` : "채점 대기"}</span></div>`; }).join("");
-      if(AC) sb += `<div class="prow"><span class="nm">가상계좌</span>
-          <span class="vv">${pp(AC.account_pct)} · 같은 6종목 단순보유 ${pp(AC.hold_pct)}${AC.diff_pp==null?"":` (차이 ${AC.diff_pp>0?"+":""}${AC.diff_pp}%p)`}</span></div>`;
-    }
-    document.getElementById("psec-system").innerHTML = `
-      <div class="pcard"><h4>오늘 AI 예산 <span class="sub">계정 ${b.keys||"?"}개</span></h4>
-        <div class="prow"><span class="nm">사용</span>
-          <span class="vv">${(b.used||0).toLocaleString()} / ${(b.limit||0).toLocaleString()}콜</span></div>
-        <div class="pbar" style="width:100%;margin-top:6px"><i style="width:${pct}%;background:${pct>=90?"var(--t-up)":"var(--t-accent)"}"></i></div>
-        <div style="margin-top:8px">${runs}</div></div>
-      <div class="pcard"><h4>이벤트 요약 <span class="sub">최근 스트림</span></h4>${ev||'<div class="pempty">없음</div>'}</div>
-      ${sb?`<div class="pcard"><h4>예측 성적표 <span class="sub">알파 최종 판단만 · 기준선과 나란히</span></h4>${sb}
-        <div class="pempty">U3·U4는 찬반 논거만 낸다(11-06부터 채점 제외). 확률은 과거 적중률로 보정한 값.</div></div>`:""}
-      ${cal?`<div class="pcard"><h4>요원별 옛 성적 <span class="sub">기간별 적중률 · U3·U4 역할 고정 시절 포함</span></h4>${cal}</div>`:""}
-      <div class="pcard"><h4>뇌 시퀀스 <span class="sub">누가 무엇을 호출했나</span></h4>${tl}</div>
-      <div class="pcard"><h4>최근 에러</h4>${errs}</div>
-      ${pcCard()}`;
-  }
-  pgo(_ptab);
-}
-
-function renderPower(){
-  const el = document.getElementById("powerPanel");
-  const p = DATA.power;
-  if(!p){
-    el.innerHTML = `<div class="power-txt">⚡ 전력 관제 · <span style="color:var(--t-dim)">키 승인 대기 중…</span></div>`;
-    return;
-  }
-  const color = p.rate<10 ? "#ff5c5c" : (p.rate<15 ? "#ffd24d" : "#3ddc71");
-  el.innerHTML = `
-    <div class="gauge" style="--gp:${Math.min(100,p.rate*5)};--gc:${color}"><span>${p.rate}%</span></div>
-    <div class="power-txt">⚡ 전력 관제 · <b>${Math.round(p.demand).toLocaleString()}MW</b> 현재수요<br>
-      공급예비율 <b>${p.rate}%</b> · 공급능력 ${Math.round(p.supply).toLocaleString()}MW</div>`;
-}
-
-function renderTicker(){
-  const row = DATA.tickers.map(t=>{
-    const up = t.pct>=0;
-    return `<span class="${up?'up':'down'}">${esc(t.name)} ${esc(t.value)} ${up?'▲':'▼'}${Math.abs(t.pct).toFixed(2)}%</span>`;
-  }).join("");
-  document.getElementById("tickerTrack").innerHTML = row + row;
-}
-
-function openSheet(who, roleTiny, body){
-  document.getElementById("sheetWho").innerHTML = `${esc(who)} <span class="roleTiny">· ${esc(roleTiny)}</span>`;
-  document.getElementById("sheetBody").textContent = body;
-  document.getElementById("bottomSheet").classList.add("open");
-  document.getElementById("sheetBackdrop").classList.add("open");
-}
-function closeSheet(){
-  document.getElementById("bottomSheet").classList.remove("open");
-  document.getElementById("sheetBackdrop").classList.remove("open");
-}
-function openBubble(kind, key){
-  if(kind==="analyst"){
-    const a = DATA.analysts[key];
-    openSheet(a.name, a.role, a.detail);
-  } else if(kind==="ace"){
-    openSheet(DATA.research.ace.name, "수석 · 오늘의 총평", DATA.research.ace.detail);
-  } else {
-    const r = key==="bull" ? DATA.research.bull : DATA.research.bear;
-    openSheet(r.name, r.tag, r.text);
-  }
-}
-
-function tickClock(){
-  const now = new Date();
-  document.getElementById("clockNow").textContent =
-    now.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false});
-  const opt = tz => new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:tz});
-  try{
-    document.getElementById("tz-nyc").textContent = opt("America/New_York");
-    document.getElementById("tz-ldn").textContent = opt("Europe/London");
-    document.getElementById("tz-sel").textContent = opt("Asia/Seoul");
-  }catch(e){}
-}
-
-document.getElementById("genTime").textContent = (DATA.time||"").slice(11,16);
-renderAnalysts(); renderResearch(); renderChart(); renderPower(); renderLab(); renderTicker(); renderPhoneTabs();
-setTheme(curTheme());   // 저장된 테마의 이름표·브랜드명·배경 기운을 화면에 맞춘다
-loadPC();   // PC 데이터가 도착하면 지표·뉴스 탭이 저절로 채워진다(실패해도 위 화면은 그대로)
-tickClock(); setInterval(tickClock, 30000);
-
-// ---- 버전2 스토리 ↔ 버전1 탭 (R28·R23) ----
-// 첫 화면은 스토리. 스토리 끝 버튼을 누르면 해당 탭으로, '닫기'는 탭 화면으로.
-// 스토리 끝 컷의 '다음부터 탭부터 열기'를 누르면 다음부터 버전1 탭이 첫 화면(위쪽 '스토리' 버튼으로 언제든 다시).
-function goTarget(to){
-  if(!to) return;
-  const [tab, chip] = to.split(":");
-  if(chip){ _chip = chip; }
-  if(PSECS.includes(tab)){ pgo(tab); if(chip && typeof pchip === "function"){ try{ pchip(chip); }catch(e){} } }
-}
-function openStory(){
-  const L = document.getElementById("storyLayer");
-  if(!L.firstChild){
-    const f = document.createElement("iframe");
-    f.src = "story.html"; f.title = "오늘의 스토리";
-    L.appendChild(f);
-  } else {
-    try{ L.firstChild.contentWindow.postMessage({story:"restart"}, "*"); }catch(e){}
-  }
-  L.classList.add("on"); document.body.style.overflow = "hidden";
-}
-function closeStory(to){
-  document.getElementById("storyLayer").classList.remove("on");
-  document.body.style.overflow = "";
-  goTarget(to);
-}
-window.addEventListener("message", e => { if(e.data && e.data.story === "go") closeStory(e.data.to); });
-window.addEventListener("hashchange", () => goTarget(decodeURIComponent((location.hash||"").slice(1))));
 (function(){
-  const hash = decodeURIComponent((location.hash||"").slice(1));
-  let first = "story";
-  try{ first = localStorage.getItem("v2.first") || "story"; }catch(e){}
-  // story.html이 실제로 있을 때만 스토리를 쓴다 — 없으면(생성 실패) 버전1 화면 그대로
-  fetch("story.html", {method:"HEAD", cache:"no-store"}).then(r => {
-    if(!r.ok) return;
-    document.getElementById("pstorybtn").hidden = false;
-    if(!hash && first === "story") openStory();
-  }).catch(()=>{});
-  if(hash) setTimeout(() => goTarget(hash), 0);
+  const REDUCED_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+  function countUp(el, targetVal) {
+    const n = Number(targetVal);
+    if (!el || isNaN(n)) { if (el) el.textContent = targetVal; return; }
+    if (REDUCED_MOTION || n === 0) {
+      el.textContent = n.toLocaleString('ko-KR');
+      return;
+    }
+    const dur = 550;
+    const t0 = performance.now();
+    function tick(now) {
+      const p = Math.min(1, (now - t0) / dur);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(n * ease).toLocaleString('ko-KR');
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  let PANEL = window.PANEL_DATA || null;
+
+  function setTheme(themeId) {
+    document.documentElement.setAttribute('data-theme', themeId);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-t') === themeId);
+    });
+  }
+
+  window.switchLayer = function(which) {
+    const isToday = which === 'today';
+    $('layerToday').classList.toggle('active', isToday);
+    $('layerMachine').classList.toggle('active', !isToday);
+    $('btnLayerToday').classList.toggle('active', isToday);
+    $('btnLayerMachine').classList.toggle('active', !isToday);
+  };
+
+  window.scrollToChapter = function(chId) {
+    window.switchLayer('today');
+    const el = $(chId);
+    if (el) el.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'start' });
+  };
+
+  window.jumpToSection = function(addr) {
+    window.switchLayer('machine');
+    focusSectionNode(addr);
+  };
+
+  window.focusSectionNode = function(addr) {
+    if (!PANEL || !PANEL.machine_map) return;
+    const sec = PANEL.machine_map.sections.find(s => s.addr === addr);
+    if (sec) showInspector(sec);
+    document.querySelectorAll('.sec-node').forEach(n => {
+      const match = n.getAttribute('data-addr') === addr;
+      n.classList.toggle('picked', match);
+      n.classList.toggle('flash', match);
+      if (match) {
+        n.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'center' });
+      }
+    });
+  };
+
+  function showInspector(sec) {
+    $('insTitle').innerHTML = `<span class="addr-tag">${esc(sec.addr)}</span> ${esc(sec.name)} <span style="font-size:13px;font-weight:500;color:var(--muted)">(${esc(sec.status)})</span>`;
+    $('insSource').textContent = `출처: ${sec.metrics && sec.metrics.num_source ? sec.metrics.num_source : sec.source}`;
+    $('insIn').textContent = `1. ${sec.line_in || ''}`;
+    $('insRule').textContent = `2. ${sec.line_rule || ''}`;
+    $('insOut').textContent = `3. ${sec.line_out || ''}`;
+    const m = sec.metrics || {};
+    $('insFoot').innerHTML =
+      `<span>오늘 들어온 수: <strong class="num">${Number(m.in || 0).toLocaleString('ko-KR')}</strong></span>` +
+      `<span>오늘 나온 수: <strong class="num">${Number(m.out || 0).toLocaleString('ko-KR')}</strong></span>` +
+      `<span>AI 콜: <strong class="num">${Number(m.calls || 0)}</strong></span>` +
+      `<span>걸린 시간: <strong class="num">${Number(m.secs || 0)}초</strong></span>` +
+      `<span>관련 파일: <code>${esc(sec.files)}</code></span>` +
+      `<span>내가 고치는 곳: <code>${esc(sec.editable)}</code></span>`;
+  }
+
+  function renderAll(d) {
+    PANEL = d;
+    // 1. 옷 5벌 버튼
+    const wardrobes = d.wardrobes || [];
+    const tp = $('themePicker');
+    tp.innerHTML = wardrobes.map(w =>
+      `<button type="button" class="theme-btn" data-t="${esc(w.id)}" title="${esc(w.name)}">${esc(w.name.split('·')[0].trim())}</button>`
+    ).join('');
+    tp.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.addEventListener('click', () => setTheme(btn.getAttribute('data-t')));
+    });
+    setTheme(d.default_wardrobe || 'atelier');
+
+    // 2. 상단 메타
+    const ov = d.overview || {};
+    const auto = ov.last_auto_run || {};
+    $('headerSub').innerHTML =
+      `기준 날짜: <strong>${esc(d.day)}</strong> · 생성: <span class="num">${esc(d.generated_at)}</span> · ` +
+      `최근 자동실행(<span class="src-path">${esc(ov.last_auto_run_source || '')}</span>): ` +
+      `<strong>${esc(auto.day || '-')} (${esc(auto.result || '-')})</strong>`;
+
+    $('secCountBadge').textContent = (d.machine_map && d.machine_map.total_sections) || 30;
+
+    // 3. 한눈에 숫자 6칸
+    const lanes = ov.lanes || {};
+    const stripItems = [
+      { label: '오늘 들어온 글', addr: '인풋-2', val: ov.in_total && ov.in_total.val, sub: `새 글 ${(ov.new_total && ov.new_total.val) || 0} + 옛 글 ${(ov.old_seen && ov.old_seen.val) || 0}`, src: ov.in_total && ov.in_total.source },
+      { label: '거푸집1 (숫자·공시)', addr: '처리-1', val: lanes['거푸집1'] && lanes['거푸집1'].val, sub: 'AI 0콜 · 정규식+API', src: lanes['거푸집1'] && lanes['거푸집1'].source },
+      { label: '거푸집2 (쉬운 요약)', addr: '처리-2', val: lanes['거푸집2'] && lanes['거푸집2'].val, sub: '글당 AI 1콜 + 원문검사', src: lanes['거푸집2'] && lanes['거푸집2'].source },
+      { label: '뉴스 사건 묶기', addr: '처리-3', val: lanes['뉴스'] && lanes['뉴스'].val, sub: `사건 ${(d.chapters.ch4_news.counts.events_out.val)}개로 묶음`, src: lanes['뉴스'] && lanes['뉴스'].source },
+      { label: '제외 보관함 / 논문T', addr: '인풋-4', val: (lanes['제외 보관함'] && lanes['제외 보관함'].val) || 0, sub: `논문T 보관 ${(lanes['논문T'] && lanes['논문T'].val) || 0}편 · 모름 ${(lanes['모름'] && lanes['모름'].val) || 0}건`, src: lanes['제외 보관함'] && lanes['제외 보관함'].source },
+      { label: '오늘 AI 콜 / 실행 시간', addr: '운영-1', val: ov.ai_calls_day && ov.ai_calls_day.val, sub: `실패 ${(ov.ai_fails_day && ov.ai_fails_day.val) || 0} · 총 ${(ov.run_secs && ov.run_secs.val) || 0}초`, src: ov.ai_calls_day && ov.ai_calls_day.source }
+    ];
+    $('overviewStrip').innerHTML = stripItems.map((it, i) => `
+      <div class="stat-box">
+        <div class="stat-head">
+          <span>${esc(it.label)}</span>
+          <span class="addr-tag" onclick="jumpToSection('${esc(it.addr)}')">${esc(it.addr)}</span>
+        </div>
+        <div class="stat-val num" id="ovVal_${i}">0</div>
+        <div class="stat-sub">${esc(it.sub)}</div>
+        <div style="margin-top:4px"><span class="src-path">${esc(it.src || '')}</span></div>
+      </div>
+    `).join('');
+    stripItems.forEach((it, i) => countUp($('ovVal_' + i), it.val || 0));
+
+    // SVG 텍스트 업데이트
+    if ($('svgIn2')) $('svgIn2').textContent = `${(ov.in_total && ov.in_total.val) || 0}건 수집`;
+    if ($('svgP1')) $('svgP1').textContent = `처리-1 · 거푸집1 (${(lanes['거푸집1'] && lanes['거푸집1'].val) || 0})`;
+    if ($('svgP2')) $('svgP2').textContent = `처리-2 · 거푸집2 (${(lanes['거푸집2'] && lanes['거푸집2'].val) || 0})`;
+    if ($('svgP3')) $('svgP3').textContent = `처리-3 · 뉴스 (${(lanes['뉴스'] && lanes['뉴스'].val) || 0})`;
+    if ($('svgP4')) $('svgP4').textContent = `처리-4 · 논문 (${(lanes['논문T'] && lanes['논문T'].val) || 0})`;
+
+    // 4. 챕터 1 (오늘의 순위 — 출력-1)
+    const ch1 = d.chapters.ch1_ranking;
+    $('ch1Status').innerHTML = `상태: <strong>${esc(ch1.status)}</strong> · 출처: <span class="src-path">${esc(ch1.source)}</span>`;
+    $('ch1Notice').innerHTML = `<strong>[출력-1 아직 없음]</strong> ${esc(ch1.note)}`;
+    $('ch1Cards').innerHTML = (ch1.top_by_article_count || []).map(ev => `
+      <article class="item-card">
+        <div class="card-top">
+          <div class="card-title">#${ev.rank_by_count} (기사 <span class="num">${ev.member_count}</span>건) · ${esc(ev.name)}</div>
+          <span class="addr-tag" onclick="jumpToSection('${esc(ev.addr)}')">${esc(ev.addr)}</span>
+        </div>
+        <div class="card-easy">${esc(ev.easy)}</div>
+        ${ev.quote ? `<div class="card-quote">"${esc(ev.quote)}"</div>` : ''}
+        <div class="card-meta">
+          <span class="src-path">${esc(ev.source)}</span>
+          ${ev.flags && ev.flags.length ? `<span style="color:var(--warn)">⚠ ${esc(ev.flags.join(', '))}</span>` : '<span>검사 통과</span>'}
+        </div>
+      </article>
+    `).join('');
+
+    // 5. 챕터 2 (숫자 — 처리-1)
+    const ch2 = d.chapters.ch2_numbers;
+    const c2 = ch2.counts;
+    $('ch2Status').innerHTML =
+      `문 앞 거푸집1 <strong>${c2.gate_in.val}</strong>건 (<span class="src-path">${esc(c2.gate_in.source)}</span>) → ` +
+      `오늘 DART 공시 <strong>${c2.dart_day_total.val}</strong>건 (공급계약 <strong>${c2.dart_contracts.val}</strong> · 그 밖 <strong>${c2.dart_others.val}</strong>, <span class="src-path">${esc(c2.dart_day_total.source)}</span>) · ` +
+      `미국 FRED <strong>${c2.fred_series.val}</strong>종 (<span class="src-path">${esc(c2.fred_series.source)}</span>)`;
+
+    const dartContractRows = (ch2.dart_contracts || []).map(r => `
+      <tr>
+        <td><strong>${esc(r.company)}</strong> <span style="color:var(--muted);font-size:11.5px">(${esc(r.market)})</span></td>
+        <td>${esc(r.what)}</td>
+        <td class="num"><strong>${esc(r.amount_won)}</strong></td>
+        <td class="num">${esc(r.pct_of_sales)}% <span style="font-size:11px;color:var(--muted)">(${esc(r.pct_check)})</span></td>
+        <td>${esc(r.counterparty)} · ${esc(r.region)}</td>
+        <td class="num" style="font-size:12px">${esc(r.period)}</td>
+        <td><span class="addr-tag" onclick="jumpToSection('처리-1')">처리-1</span></td>
+      </tr>
+    `).join('');
+
+    const fredRows = (ch2.fred_table || []).map(r => `
+      <tr>
+        <td><strong>${esc(r.name)}</strong> <span style="font-family:var(--f-mono);font-size:11px;color:var(--muted)">(${esc(r.series)})</span></td>
+        <td class="num">${esc(r.date)}</td>
+        <td class="num"><strong>${esc(r.value)}</strong> ${esc(r.unit)}</td>
+        <td class="num">${esc(r.prev_value)} (${esc(r.prev_date)})</td>
+        <td class="num">${esc(r.change)}</td>
+        <td><span class="addr-tag" onclick="jumpToSection('인풋-5')">인풋-5</span></td>
+      </tr>
+    `).join('');
+
+    const dartOtherRows = (ch2.dart_others || []).slice(0, 20).map(r => `
+      <tr>
+        <td><strong>${esc(r.company)}</strong> (${esc(r.market)})</td>
+        <td>${esc(r.kind)}</td>
+        <td style="font-size:12px">${esc(r.changes || '-')}</td>
+        <td style="font-size:12px">${esc(r.numbers || '-')}</td>
+        <td>${esc(r.body_from)}</td>
+      </tr>
+    `).join('');
+
+    $('ch2Content').innerHTML = `
+      <h3 style="margin-top:14px;font-size:15px">① DART 단일판매·공급계약 (${c2.dart_contracts.val}건) <span class="src-path">${esc(c2.dart_contracts.source)}</span></h3>
+      <div class="table-wrap">
+        <table class="data-tbl">
+          <thead><tr><th>회사</th><th>계약 내용</th><th>계약금액</th><th>매출액 대비</th><th>상대방·지역</th><th>기간</th><th>구간</th></tr></thead>
+          <tbody>${dartContractRows || '<tr><td colspan="7">오늘 공급계약 공시 없음</td></tr>'}</tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:18px;font-size:15px">② 미국 FRED 공식 지표 (${c2.fred_series.val}종) <span class="src-path">${esc(c2.fred_series.source)}</span></h3>
+      <div class="table-wrap">
+        <table class="data-tbl">
+          <thead><tr><th>지표명</th><th>기준일</th><th>이번 값</th><th>직전 값</th><th>변화</th><th>구간</th></tr></thead>
+          <tbody>${fredRows}</tbody>
+        </table>
+      </div>
+
+      <details class="more-box" style="margin-top:14px">
+        <summary>③ DART 그 밖 주요 공시 상위 20건 펼쳐 보기 (전체 ${c2.dart_others.val}건 · <span class="src-path">${esc(c2.dart_others.source)}</span>)</summary>
+        <div class="table-wrap">
+          <table class="data-tbl">
+            <thead><tr><th>회사</th><th>공시 종류</th><th>바뀐 것(정정)</th><th>공식 API 숫자</th><th>본문 출처</th></tr></thead>
+            <tbody>${dartOtherRows}</tbody>
+          </table>
+        </div>
+      </details>
+    `;
+
+    // 6. 챕터 3 (쉽게 읽기 — 처리-2 · 처리-6)
+    const ch3 = d.chapters.ch3_easy_read;
+    const c3 = ch3.counts;
+    $('ch3Status').innerHTML =
+      `문 앞 거푸집2 <strong>${c3.gate_in.val}</strong>건 → 오늘 요약 <strong>${c3.summarized_today.val}</strong>건 (<span class="src-path">${esc(c3.summarized_today.source)}</span>) · ` +
+      `원문에 없는 숫자 <strong>${c3.bad_numbers_today.val}</strong>건 · 연준 연설 누적 <strong>${c3.fed_speeches_total.val}</strong>편`;
+
+    const fedCards = (ch3.fed_speeches || []).slice().reverse().slice(0, 4).map(sp => `
+      <article class="item-card">
+        <div class="card-top">
+          <div class="card-title" title="${esc(sp.title)}">[연준 연설] ${esc(sp.title)}</div>
+          <span class="addr-tag" onclick="jumpToSection('처리-6')">처리-6</span>
+        </div>
+        <div class="card-easy">${(sp.summary_lines || []).map(l => `<div>${esc(l)}</div>`).join('')}</div>
+        <div class="card-meta"><span class="src-path">${esc(sp.source)}</span></div>
+      </article>
+    `).join('');
+    $('ch3FedBox').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px">연준 안전시스템 최근 연설 브리핑 (처리-6)</div>
+      <div class="cards-grid">${fedCards}</div>
+      <hr style="border:0;border-top:1px solid var(--rule);margin:18px 0 6px">
+      <div style="font-size:14px;font-weight:700">오늘의 거푸집2 쉬운 요약 (${c3.summarized_today.val}건 · 처리-2)</div>
+    `;
+
+    $('ch3Cards').innerHTML = (ch3.items || []).slice(0, 24).map(it => `
+      <article class="item-card">
+        <div class="card-top">
+          <div class="card-title" title="[${esc(it.source_name)}] ${esc(it.title)}">[${esc(it.source_name)}] ${esc(it.title)}</div>
+          <span class="addr-tag" onclick="jumpToSection('처리-2')">처리-2</span>
+        </div>
+        <div class="card-easy">
+          <strong>"${esc(it.easy1_title)}"</strong><br>${esc(it.easy1_desc)}
+          ${it.easy2_title ? `<br><br><strong>"${esc(it.easy2_title)}"</strong><br>${esc(it.easy2_desc)}` : ''}
+        </div>
+        <details class="more-box">
+          <summary>자세하게 보기 (주제·핵심 3줄·검사 결과)</summary>
+          <div style="margin-top:6px">
+            <div><strong>주제:</strong> ${esc(it.topic)}</div>
+            <ul style="padding-left:18px;margin-top:4px">
+              ${(it.points || []).map(p => `<li>${esc(p)}</li>`).join('')}
+            </ul>
+          </div>
+        </details>
+        <div class="card-meta">
+          <span>근거일치 ${esc(it.evidence_ok)} · 본문 ${esc(it.body_chars)}자</span>
+          <span class="src-path">${esc(it.source)}</span>
+        </div>
+      </article>
+    `).join('');
+
+    // 7. 챕터 4 (뉴스 사건 묶기 — 처리-3)
+    const ch4 = d.chapters.ch4_news;
+    const c4 = ch4.counts;
+    const singleCount = (c4.single_out && c4.single_out.val) || (ch4.single_articles || []).length || 0;
+    $('ch4Status').innerHTML =
+      `뉴스 <strong>${c4.news_in.val}</strong>건 → 여러 기사로 묶인 사건 <strong>${c4.events_out.val}</strong>개 + 한 줄짜리 단건 기사 <strong>${singleCount}</strong>건 (<span class="src-path">${esc(c4.events_out.source)}</span>) · ` +
+      `AI 콜 <strong>${c4.calls.val}</strong>회 · 원문에 없는 숫자 <strong>${c4.bad_numbers.val}</strong>건`;
+
+    $('ch4Cards').innerHTML = (ch4.events || []).map(ev => `
+      <article class="item-card">
+        <div class="card-top">
+          <div class="card-title" title="${esc(ev.name)} (기사 ${ev.member_count}건)">${esc(ev.name)} <span style="font-size:12.5px;color:var(--accent)">(기사 ${ev.member_count}건)</span></div>
+          <span class="addr-tag" onclick="jumpToSection('처리-3')">처리-3</span>
+        </div>
+        <div class="card-easy">${esc(ev.easy)}</div>
+        ${ev.quote ? `<div class="card-quote">원문 인용: "${esc(ev.quote)}"</div>` : ''}
+        ${ev.sample_articles && ev.sample_articles.length ? `
+          <details class="more-box">
+            <summary>묶인 기사 제목 보기 (${ev.member_count}건 중 ${ev.sample_articles.length}건)</summary>
+            <ul style="padding-left:18px;margin-top:4px">
+              ${ev.sample_articles.map(a => `<li>[${esc(a.source_name)}] ${esc(a.title)}</li>`).join('')}
+            </ul>
+          </details>
+        ` : ''}
+        <div class="card-meta">
+          <span class="src-path">${esc(ev.source)}</span>
+          ${ev.flags && ev.flags.length ? `<span style="color:var(--warn)">⚠ ${esc(ev.flags.join(' · '))}</span>` : '<span>검사 통과</span>'}
+        </div>
+      </article>
+    `).join('');
+
+    const singleRows = (ch4.single_articles || []).map((sa, idx) => {
+      const art0 = (sa.sample_articles && sa.sample_articles[0]) || {};
+      return `
+        <tr>
+          <td class="num">${idx + 1}</td>
+          <td>${esc(art0.source_name || '뉴스')}</td>
+          <td><strong>${esc(sa.name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(sa.easy)}</div></td>
+          <td><span class="src-path">${esc(sa.source)}</span></td>
+        </tr>
+      `;
+    }).join('');
+    $('ch4SinglesBox').innerHTML = singleRows ? `
+      <details class="more-box">
+        <summary>한 줄짜리 단건 기사 ${singleCount}건 펼쳐 보기 (묶이지 않은 개별 기사 · 30자 잘림 복원 완료)</summary>
+        <div class="table-wrap">
+          <table class="data-tbl">
+            <thead><tr><th>#</th><th>언론사</th><th>기사 원문 제목 · 한 줄 요약</th><th>원본 출처</th></tr></thead>
+            <tbody>${singleRows}</tbody>
+          </table>
+        </div>
+      </details>
+    ` : '';
+
+    // 8. 챕터 5 (논문 — 처리-4)
+    const ch5 = d.chapters.ch5_papers;
+    $('ch5Status').innerHTML = `상태: <strong>${esc(ch5.status)}</strong> · 오늘 보관 <strong>${ch5.count.val}</strong>편 (<span class="src-path">${esc(ch5.count.source)}</span>)`;
+    $('ch5Notice').innerHTML = `<strong>[처리-4 아직 없음]</strong> ${esc(ch5.note)}`;
+    const paperRows = (ch5.papers || []).map((p, idx) => `
+      <tr>
+        <td class="num">${idx + 1}</td>
+        <td>${esc(p.source_name)}</td>
+        <td><strong>${esc(p.title)}</strong></td>
+        <td class="num" style="font-size:12px">${esc(p.published)}</td>
+        <td><span class="addr-tag" onclick="jumpToSection('처리-4')">처리-4</span></td>
+      </tr>
+    `).join('');
+    $('ch5TableWrap').innerHTML = `
+      <table class="data-tbl">
+        <thead><tr><th>#</th><th>출처</th><th>논문 제목 (원본 보관)</th><th>발행 시각</th><th>구간</th></tr></thead>
+        <tbody>${paperRows || '<tr><td colspan="5">오늘 보관된 논문 없음</td></tr>'}</tbody>
+      </table>
+    `;
+
+    // 9. 뒷 겹 기계 지도 (6대 그룹: 인풋·처리·출력·화면·되먹임·운영)
+    const sections = (d.machine_map && d.machine_map.sections) || [];
+    const groupOrder = ['인풋', '처리', '출력', '화면', '되먹임', '운영'];
+    $('mapGroups').innerHTML = groupOrder.map(gName => {
+      const list = sections.filter(s => s.group === gName);
+      const cardsHtml = list.map(s => {
+        const m = s.metrics || {};
+        const badgeLabel = s.status_kind === 'run' ? '돎' : (s.status_kind === 'none' ? '없음' : '따로/기타');
+        return `
+          <div class="sec-node kind-${esc(s.status_kind)}" tabindex="0" data-addr="${esc(s.addr)}">
+            <div class="sec-top">
+              <span class="sec-name"><span style="font-family:var(--f-mono);color:var(--accent)">${esc(s.addr)}</span> · ${esc(s.name)}</span>
+              <span class="sec-badge">${esc(badgeLabel)}</span>
+            </div>
+            <div class="sec-status-line">${esc(s.status)}</div>
+            <div class="sec-mini-nums">
+              <span>입력 <strong class="num">${Number(m.in || 0).toLocaleString('ko-KR')}</strong></span>
+              <span>→ 출력 <strong class="num">${Number(m.out || 0).toLocaleString('ko-KR')}</strong></span>
+              ${m.calls ? `<span>· AI ${m.calls}콜</span>` : ''}
+              ${m.secs ? `<span>· ${m.secs}초</span>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+      return `
+        <div class="map-group-col">
+          <div class="map-group-title">
+            <span>${esc(gName)} 구간</span>
+            <span style="font-size:12px;color:var(--muted)">${list.length}개</span>
+          </div>
+          ${cardsHtml}
+        </div>
+      `;
+    }).join('');
+
+    document.querySelectorAll('.sec-node').forEach(node => {
+      const addr = node.getAttribute('data-addr');
+      const sec = sections.find(s => s.addr === addr);
+      if (!sec) return;
+      node.addEventListener('mouseenter', () => showInspector(sec));
+      node.addEventListener('focus', () => showInspector(sec));
+      node.addEventListener('click', () => {
+        document.querySelectorAll('.sec-node').forEach(n => n.classList.remove('picked'));
+        node.classList.add('picked');
+        showInspector(sec);
+      });
+    });
+
+    if (sections.length) showInspector(sections[2] || sections[0]); // 기본: 인풋-3 문 앞 교통정리 표시
+  }
+
+  if (PANEL) {
+    renderAll(PANEL);
+  } else {
+    fetch('../결과/화면/panel.json')
+      .then(r => r.json())
+      .then(renderAll)
+      .catch(err => {
+        $('headerSub').textContent = 'panel.json 로드 실패: export_panel.py를 먼저 실행해 주세요. (' + err + ')';
+      });
+  }
 })();
 </script>
 </body>
