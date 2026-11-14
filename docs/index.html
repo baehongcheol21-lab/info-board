@@ -451,6 +451,14 @@ details.more-box summary {
   color: var(--accent);
 }
 
+/* 챕터 5 논문 — 주제 막대 (가장 많은 주제 = 100%) */
+.topic-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--accent);
+  min-width: 3px;
+}
+
 /* 반응형 표 */
 .table-wrap {
   width: 100%;
@@ -761,13 +769,16 @@ table.data-tbl th {
     <section class="chapter-section" id="ch5">
       <div class="ch-header">
         <div>
-          <h2>챕터 5 · 논문 (보관함)</h2>
+          <h2>챕터 5 · 논문</h2>
           <div class="ch-status" id="ch5Status"></div>
         </div>
         <span class="addr-tag" onclick="jumpToSection('처리-4')">처리-4 (기계 지도로 이동 →)</span>
       </div>
-      <div class="empty-notice" id="ch5Notice"></div>
-      <div class="table-wrap" id="ch5TableWrap"></div>
+      <div id="ch5Flow"></div>
+      <div id="ch5Map"></div>
+      <div id="ch5Picks"></div>
+      <div id="ch5Filter"></div>
+      <div id="ch5List"></div>
     </section>
   </main>
 
@@ -939,6 +950,254 @@ table.data-tbl th {
       `<span>내가 고치는 곳: <code>${esc(sec.editable)}</code></span>`;
   }
 
+  // ── 챕터 5 · 논문 (처리-4) — 지시서 9-2. 있는 부품만 씀, 새 CSS는 .topic-bar 하나 ──
+  const P5 = { ch: null, tag: '', src: 'all', waitOnly: false, abs: false, more: {} };
+  const P5_WAIT = '풀이 대기 (주제 아직 없음)';
+  const P5_SRC = [['all', '전부'], ['eess.SY', '전공(전력·제어)'], ['cs.AI', '인공지능'], ['허깅페이스', '허깅페이스']];
+  const p5Tag = c => (c.ai && ((c.check && c.check.tag) || c.ai.topic_tag)) || P5_WAIT;
+  const p5Field = f => f === 'eess.SY' ? '전공(eess.SY)' : (f === 'cs.AI' ? '인공지능(cs.AI)' : (f || ''));
+  const p5Detail = c => {   // panel_papers.js로 떼어 낸 날(파일이 클 때)은 다시 합쳐서 씀
+    const ex = (window.PANEL_PAPERS || {})[c.canon_id];
+    return ex ? Object.assign({}, c.ai, ex) : (c.ai || {});
+  };
+  const p5Btn = (attr, label, on) =>
+    `<button type="button" class="ch-tab${on ? ' active' : ''}" ${attr} style="padding:6px 11px;font-size:12.5px">${esc(label)}</button>`;
+
+  function p5Load(src, done) {   // 따로 떼어 둔 파일(초록·세부)은 필요할 때만 불러옴
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = done;
+    s.onerror = () => { const n = $('ch5List'); if (n) n.insertAdjacentHTML('afterbegin', `<div class="empty-notice">${esc(src)} 파일을 못 불러왔어요.</div>`); };
+    document.body.appendChild(s);
+  }
+
+  function p5Links(c) {
+    const L = c.links || {};
+    return [L.arxiv ? `<a href="${esc(L.arxiv)}" target="_blank" rel="noopener">arXiv 원문</a>` : '',
+            L.hf ? `<a href="${esc(L.hf)}" target="_blank" rel="noopener">허깅페이스 페이지</a>` : ''].filter(Boolean).join(' · ');
+  }
+
+  function p5Abs(c) {
+    if (!P5.abs) return '';
+    if (!window.PANEL_ABSTRACTS) return '<div style="margin-top:8px;font-size:12px;color:var(--muted)">초록 불러오는 중…</div>';
+    const t = window.PANEL_ABSTRACTS[c.canon_id];
+    return t
+      ? `<div style="margin-top:8px"><strong>영어 초록 (원문 그대로)</strong><div style="font-size:12px;color:var(--muted);line-height:1.5;margin-top:2px">${esc(t)}</div></div>`
+      : '<div style="margin-top:8px;font-size:12px;color:var(--muted)">초록 파일에 이 논문이 없어요.</div>';
+  }
+
+  function p5Body(c) {   // 줄을 펼쳤을 때 — 미리 끝난 풀이
+    const why = `<div style="margin-top:6px;font-size:12px"><strong>왜 이 순서인지:</strong> ${esc(c.score_why || '-')} (점수 ${esc(c.score)})</div>`;
+    const links = `<div style="margin-top:6px;font-size:12px">${p5Links(c)}</div>`;
+    if (!c.ai) {
+      return `<div style="margin-top:6px">아직 풀이 전이에요 (오늘 풀이 상한 밖이라 대기 줄에 있어요). 영어 제목: ${esc(c.title)}</div>${why}${links}${p5Abs(c)}`;
+    }
+    const a = p5Detail(c), k = c.check || {};
+    const pts = (a.points || []).map(p => `<li><strong>${esc(p.subtitle)}</strong> — ${esc(p.desc)}</li>`).join('');
+    const ev = [a.easy1_evidence, a.easy2_evidence, a.topic_evidence].concat((a.points || []).map(p => p.evidence)).filter(Boolean);
+    const warn = [].concat(k.flags || [], k.format || []);
+    const bad = k.bad_numbers || [];
+    return `
+      <div style="margin-top:6px"><strong>"${esc(a.easy1_title)}"</strong><br>${esc(a.easy1_desc)}</div>
+      <div style="margin-top:6px"><strong>"${esc(a.easy2_title)}"</strong><br>${esc(a.easy2_desc)}</div>
+      <div style="margin-top:6px"><strong>주제:</strong> ${esc(a.topic)}</div>
+      ${pts ? `<div style="margin-top:6px"><strong>주요 내용</strong><ul style="padding-left:18px;margin-top:4px">${pts}</ul></div>` : ''}
+      ${k.show_limit && a.limit ? `<div style="margin-top:6px"><strong>저자가 밝힌 한계:</strong> ${esc(a.limit)}</div>` : ''}
+      ${ev.length ? `<div style="margin-top:6px;font-size:11.5px;color:var(--muted);overflow-wrap:anywhere"><strong>근거 문장 (초록 그대로)</strong>${ev.map(s => `<div style="margin-top:2px">"${esc(s)}"</div>`).join('')}</div>` : ''}
+      <div style="margin-top:6px;font-size:12px">검사: 근거 일치 ${esc(k.evidence_ok || '-')} · 초록에 없는 숫자 ${bad.length ? `<span style="color:var(--warn)">${esc(bad.join(', '))}</span>` : '0'}${warn.length ? ` · <span style="color:var(--warn)">⚠ ${esc(warn.join(' · '))}</span>` : ''}</div>
+      ${why}${links}${p5Abs(c)}`;
+  }
+
+  function p5Picks() {
+    const ch = P5.ch;
+    const byId = {};
+    (ch.cards || []).forEach(c => { byId[c.canon_id] = c; });
+    const cards = (ch.picks || []).map(p => {
+      const c = byId[p.canon_id];
+      if (!c || !c.ai) return '';
+      const a = c.ai;
+      return `
+        <article class="item-card">
+          <div class="card-top">
+            <div class="card-title">${esc(a.one_line || c.title)}</div>
+            <span class="addr-tag" style="cursor:default">${esc(p.badge)}</span>
+          </div>
+          <div class="card-easy">
+            <div>① ${esc(a.easy1_title)}</div>
+            <div style="margin-top:4px">② ${esc(a.easy2_title)}</div>
+          </div>
+          <details class="more-box">
+            <summary>자세하게 보기</summary>
+            ${p5Body(c)}
+          </details>
+          <div class="card-meta">
+            <span>왜 골랐나: ${esc(p.why)}</span>
+            <a href="#paper-${esc(c.canon_id)}" data-jump="${esc(c.canon_id)}">목록에서 보기</a>
+          </div>
+        </article>`;
+    }).filter(Boolean);
+    $('ch5Picks').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-top:16px">강조 (${cards.length}편 · 창구마다 1등, 문턱을 못 넘은 창구는 비움)</div>
+      ${cards.length ? `<div class="cards-grid">${cards.join('')}</div>`
+                     : '<div class="empty-notice">오늘은 눈에 띄는 논문이 없어요(문턱을 넘은 것 없음).</div>'}`;
+  }
+
+  function p5Map() {
+    const map = P5.ch.map || [];
+    if (!map.length) { $('ch5Map').innerHTML = ''; return; }
+    const max = Math.max(1, ...map.map(m => m.n || 0));
+    $('ch5Map').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-top:16px">주제별 편수 <span style="font-size:12px;font-weight:500;color:var(--muted)">(풀이한 논문 기준 · 누르면 아래 목록이 그 주제만, 다시 누르면 풀림)</span></div>
+      <div style="margin-top:6px">${map.map(m => `
+        <div data-tag="${esc(m.tag)}" role="button" tabindex="0" title="${esc((m.one_lines || []).join(' / '))}"
+             style="display:grid;grid-template-columns:minmax(0,9.5em) 3.4em minmax(0,1fr);gap:8px;align-items:center;padding:5px 6px;border-radius:6px;cursor:pointer;${P5.tag === m.tag ? 'background:var(--accent-soft);' : ''}">
+          <span style="font-size:13px;color:var(--ink2);overflow-wrap:anywhere">${esc(m.tag)}</span>
+          <span class="num" style="font-size:12.5px;text-align:right">${m.n}편</span>
+          <div class="topic-bar" style="width:${Math.round((m.n || 0) / max * 100)}%"></div>
+        </div>`).join('')}
+      </div>`;
+  }
+
+  function p5Filter() {
+    $('ch5Filter').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-top:16px">전체 목록 ${P5.tag ? `<span style="font-size:12.5px;font-weight:500;color:var(--accent)">— 주제 '${esc(P5.tag)}'만 보는 중</span>` : ''}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+        ${P5_SRC.map(([k, label]) => p5Btn(`data-src="${esc(k)}"`, label, P5.src === k)).join('')}
+        ${p5Btn('data-wait="1"', '풀이 대기만', P5.waitOnly)}
+        ${p5Btn('data-abs="1"', '초록도 같이 보기', P5.abs)}
+      </div>`;
+  }
+
+  function p5List() {
+    const ch = P5.ch;
+    const box = $('ch5List');
+    const opened = Array.from(box.querySelectorAll('details[open]')).map(x => x.id).filter(Boolean);
+    const cs = (ch.cards || []).filter(c =>
+      (P5.src === 'all' || c.field === P5.src || (c.sources || []).includes(P5.src)) &&
+      (!P5.waitOnly || !c.ai) &&
+      (!P5.tag || p5Tag(c) === P5.tag));
+    const order = (ch.map || []).map(m => m.tag);
+    const groups = {};
+    cs.forEach(c => { const t = p5Tag(c); (groups[t] = groups[t] || []).push(c); });
+    const tags = Object.keys(groups).sort((x, y) => {
+      const rx = x === P5_WAIT ? 999 : (order.indexOf(x) < 0 ? 500 : order.indexOf(x));
+      const ry = y === P5_WAIT ? 999 : (order.indexOf(y) < 0 ? 500 : order.indexOf(y));
+      return rx - ry;
+    });
+    if (!cs.length) { box.innerHTML = '<div class="empty-notice">조건에 맞는 논문이 없어요.</div>'; return; }
+    box.innerHTML = tags.map(t => {
+      const list = groups[t].slice().sort((a, b) => (b.score || 0) - (a.score || 0));
+      const shown = P5.more[t] ? list : list.slice(0, 10);
+      const rows = shown.map(c => {
+        const up = c.hf_upvotes != null ? ` · 추천 ${esc(c.hf_upvotes)}` : '';
+        const head = c.ai ? esc(c.ai.one_line || c.title)
+                          : `${esc(c.title)} <span class="addr-tag" style="cursor:default">풀이 대기</span>`;
+        return `
+          <details class="more-box" id="paper-${esc(c.canon_id)}">
+            <summary style="color:var(--ink);font-weight:500;overflow-wrap:anywhere">${head}
+              <span style="font-size:11.5px;color:var(--muted)">· ${esc(p5Field(c.field))}${up}</span></summary>
+            ${p5Body(c)}
+          </details>`;
+      }).join('');
+      const rest = list.length - shown.length;
+      return `
+        <div style="margin-top:14px">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink)">${esc(t)} <span style="font-weight:500;color:var(--muted)">${list.length}편</span></div>
+          ${rows}
+          ${rest > 0 ? `<button type="button" class="ch-tab" data-more="${esc(t)}" style="padding:5px 10px;font-size:12.5px;margin-top:6px">더 보기 (남은 ${rest}편)</button>` : ''}
+        </div>`;
+    }).join('');
+    opened.forEach(id => { const el = document.getElementById(id); if (el) el.open = true; });
+  }
+
+  function p5Jump(id) {   // 강조 카드·스토리 화면에서 '#paper-<id>'로 들어올 때
+    const c = (P5.ch.cards || []).find(x => x.canon_id === id);
+    if (!c) return;
+    let el = document.getElementById('paper-' + id);
+    if (!el) {   // 거르기·'더 보기'에 가려져 있으면 풀고 다시 그림
+      P5.tag = ''; P5.src = 'all'; P5.waitOnly = false; P5.more[p5Tag(c)] = true;
+      p5Map(); p5Filter(); p5List();
+      el = document.getElementById('paper-' + id);
+    }
+    if (el) { el.open = true; el.scrollIntoView({ block: 'start' }); }
+  }
+
+  function renderPapers(ch) {
+    P5.ch = ch;
+    const st = $('ch5Status');
+    if (!ch || ch.kind !== 'papers') {   // 옛 모양: 논문 풀이 json이 없는 날 — 문 앞 제목 표
+      ['ch5Flow', 'ch5Map', 'ch5Picks', 'ch5Filter'].forEach(id => { $(id).innerHTML = ''; });
+      if (!ch) { st.textContent = '논문 자료 없음'; $('ch5List').innerHTML = ''; return; }
+      st.innerHTML = `상태: <strong>${esc(ch.status)}</strong> · 오늘 보관 <strong>${ch.count ? ch.count.val : 0}</strong>편 (<span class="src-path">${esc(ch.count ? ch.count.source : '')}</span>)`;
+      const rows = (ch.papers || []).map((p, idx) => `
+        <tr>
+          <td class="num">${idx + 1}</td>
+          <td>${esc(p.source_name)}</td>
+          <td><strong>${esc(p.title)}</strong></td>
+          <td class="num" style="font-size:12px">${esc(p.published)}</td>
+        </tr>`).join('');
+      $('ch5List').innerHTML = `
+        <div class="empty-notice">${esc(ch.note || '')}</div>
+        <div class="table-wrap">
+          <table class="data-tbl">
+            <thead><tr><th>#</th><th>출처</th><th>논문 제목 (원본)</th><th>발행 시각</th></tr></thead>
+            <tbody>${rows || '<tr><td colspan="4">오늘 보관된 논문 없음</td></tr>'}</tbody>
+          </table>
+        </div>`;
+      return;
+    }
+    const h = ch.headline || {}, cl = ch.calls || {};
+    const n = x => (x && x.val != null) ? x.val : 0;
+    st.innerHTML =
+      `<div style="font-size:14px;color:var(--ink);font-weight:700;margin-bottom:3px">${esc(h.text || '')}</div>` +
+      `논문 날짜 <strong>${esc(ch.day)}</strong> · 새 논문 <strong>${n(h.n_new)}</strong>편 · 풀이 끝 <strong>${n(h.n_done)}</strong> · 대기 <strong>${n(h.n_waiting)}</strong>` +
+      `${n(h.n_failed) ? ` · 실패 <strong>${n(h.n_failed)}</strong>` : ''} · AI <strong>${n(cl.summary) + n(cl.flow)}</strong>콜` +
+      `${n(cl.http429) ? ` · <span style="color:var(--warn)">사용량 초과 ${n(cl.http429)}번</span>` : ''} · 오늘 상한 ${n(ch.cap)} ` +
+      `(<span class="src-path">${esc(ch.source)}</span>)` +
+      `${(ch.notes || []).length ? `<div style="margin-top:3px">알림: ${esc(ch.notes.join(' · '))}</div>` : ''}`;
+    if (!(ch.cards || []).length) {   // 새 카드 0편인 날은 대표 한 줄만
+      ['ch5Flow', 'ch5Map', 'ch5Picks', 'ch5Filter', 'ch5List'].forEach(id => { $(id).innerHTML = ''; });
+      return;
+    }
+    const fl = ch.flow || {};
+    $('ch5Flow').innerHTML = fl.text ? `
+      <div class="card-easy" style="margin-top:12px">${esc(fl.text)}
+        ${fl.by === '틀' ? '<div style="font-size:11.5px;color:var(--muted);margin-top:4px">(AI 글 없음 — 센 값으로 쓴 문장)</div>' : ''}
+        ${(fl.flags || []).length ? `<div style="font-size:11.5px;color:var(--warn);margin-top:4px">⚠ ${esc(fl.flags.join(' · '))}</div>` : ''}
+      </div>` : '';
+    p5Map(); p5Picks(); p5Filter(); p5List();
+    const hashJump = () => {   // 스토리 화면·다른 곳에서 '#paper-<id>'로 들어오면 그 줄을 펼침
+      const m = /^#paper-(.+)$/.exec(decodeURIComponent(location.hash || ''));
+      if (m) p5Jump(m[1]);
+    };
+    if (ch.split) p5Load(ch.split.file, () => { p5Picks(); p5List(); hashJump(); });
+    else setTimeout(hashJump, 0);
+
+    const sec = $('ch5');
+    if (!sec.dataset.p5) {   // 누름 처리는 한 번만 붙임
+      sec.dataset.p5 = '1';
+      sec.addEventListener('click', e => {
+        const t = e.target.closest('[data-tag],[data-src],[data-wait],[data-abs],[data-more],[data-jump]');
+        if (!t) return;
+        if (t.dataset.jump) { e.preventDefault(); p5Jump(t.dataset.jump); return; }
+        if (t.dataset.tag != null) P5.tag = P5.tag === t.dataset.tag ? '' : t.dataset.tag;
+        else if (t.dataset.src) P5.src = t.dataset.src;
+        else if (t.dataset.wait) P5.waitOnly = !P5.waitOnly;
+        else if (t.dataset.more) P5.more[t.dataset.more] = true;
+        else if (t.dataset.abs) {
+          P5.abs = !P5.abs;
+          if (P5.abs && !window.PANEL_ABSTRACTS) p5Load((P5.ch.abstracts && P5.ch.abstracts.file) || 'panel_abstracts.js', () => { p5Picks(); p5List(); });
+          p5Picks();
+        }
+        p5Map(); p5Filter(); p5List();
+      });
+      sec.addEventListener('keydown', e => {
+        const t = e.target.closest('[data-tag]');
+        if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); t.click(); }
+      });
+    }
+  }
+
   function renderAll(d) {
     PANEL = d;
     // 1. 옷 5벌 버튼
@@ -990,7 +1249,10 @@ table.data-tbl th {
     if ($('svgP1')) $('svgP1').textContent = `처리-1 · 거푸집1 (${(lanes['거푸집1'] && lanes['거푸집1'].val) || 0})`;
     if ($('svgP2')) $('svgP2').textContent = `처리-2 · 거푸집2 (${(lanes['거푸집2'] && lanes['거푸집2'].val) || 0})`;
     if ($('svgP3')) $('svgP3').textContent = `처리-3 · 뉴스 (${(lanes['뉴스'] && lanes['뉴스'].val) || 0})`;
-    if ($('svgP4')) $('svgP4').textContent = `처리-4 · 논문 (${(lanes['논문T'] && lanes['논문T'].val) || 0})`;
+    const ch5k = d.chapters && d.chapters.ch5_papers;
+    if ($('svgP4')) $('svgP4').textContent = (ch5k && ch5k.kind === 'papers')
+      ? `처리-4 · 논문 (풀이 ${(ch5k.headline.n_done && ch5k.headline.n_done.val) || 0})`
+      : `처리-4 · 논문 (${(lanes['논문T'] && lanes['논문T'].val) || 0})`;
 
     // 4. 챕터 1 (오늘의 순위 — 출력-1)
     const ch1 = d.chapters.ch1_ranking;
@@ -1185,24 +1447,7 @@ table.data-tbl th {
     ` : '';
 
     // 8. 챕터 5 (논문 — 처리-4)
-    const ch5 = d.chapters.ch5_papers;
-    $('ch5Status').innerHTML = `상태: <strong>${esc(ch5.status)}</strong> · 오늘 보관 <strong>${ch5.count.val}</strong>편 (<span class="src-path">${esc(ch5.count.source)}</span>)`;
-    $('ch5Notice').innerHTML = `<strong>[처리-4 아직 없음]</strong> ${esc(ch5.note)}`;
-    const paperRows = (ch5.papers || []).map((p, idx) => `
-      <tr>
-        <td class="num">${idx + 1}</td>
-        <td>${esc(p.source_name)}</td>
-        <td><strong>${esc(p.title)}</strong></td>
-        <td class="num" style="font-size:12px">${esc(p.published)}</td>
-        <td><span class="addr-tag" onclick="jumpToSection('처리-4')">처리-4</span></td>
-      </tr>
-    `).join('');
-    $('ch5TableWrap').innerHTML = `
-      <table class="data-tbl">
-        <thead><tr><th>#</th><th>출처</th><th>논문 제목 (원본 보관)</th><th>발행 시각</th><th>구간</th></tr></thead>
-        <tbody>${paperRows || '<tr><td colspan="5">오늘 보관된 논문 없음</td></tr>'}</tbody>
-      </table>
-    `;
+    renderPapers(d.chapters.ch5_papers);
 
     // 9. 뒷 겹 기계 지도 (6대 그룹: 인풋·처리·출력·화면·되먹임·운영)
     const sections = (d.machine_map && d.machine_map.sections) || [];
