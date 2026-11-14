@@ -704,7 +704,7 @@ table.data-tbl th {
       <button type="button" class="ch-tab" onclick="scrollToChapter('ch2')">2. 숫자 (거푸집1) <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-1')">처리-1</span></button>
       <button type="button" class="ch-tab" onclick="scrollToChapter('ch3')">3. 쉽게 읽기 (거푸집2·연준) <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-2')">처리-2</span></button>
       <button type="button" class="ch-tab" onclick="scrollToChapter('ch4')">4. 뉴스 사건 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-3')">처리-3</span></button>
-      <button type="button" class="ch-tab" onclick="scrollToChapter('ch5')">5. 논문 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-4')">처리-4</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch5')"><span id="tabCh5Label">5. 논문</span> <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-4')">처리-4</span></button>
     </nav>
 
     <!-- 챕터 1: 오늘의 순위 (출력-1) -->
@@ -811,7 +811,7 @@ table.data-tbl th {
         <path class="flow-line" d="M 565 35 L 660 25" />
         <path class="flow-line" d="M 565 50 L 660 65" />
         <path class="flow-line" d="M 565 65 L 660 105" />
-        <path class="flow-line inactive" d="M 565 80 L 660 145" />
+        <path class="flow-line inactive" id="svgLineP4" d="M 295 74 L 660 145" />
         <path class="flow-line" d="M 790 25 L 885 50" />
         <path class="flow-line" d="M 790 65 L 885 55" />
         <path class="flow-line" d="M 790 105 L 885 65" />
@@ -845,7 +845,7 @@ table.data-tbl th {
           <text x="725" y="108" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" id="svgP3">처리-3 · 뉴스 묶기 (175)</text>
         </g>
         <g style="cursor:pointer" onclick="focusSectionNode('처리-4')">
-          <rect x="660" y="128" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--muted)" stroke-width="1.8" stroke-dasharray="5 3"/>
+          <rect id="svgRectP4" x="660" y="128" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--muted)" stroke-width="1.8" stroke-dasharray="5 3"/>
           <text x="725" y="148" text-anchor="middle" font-size="11.5" fill="var(--muted)" id="svgP4">처리-4 · 논문 (보관 75)</text>
         </g>
         <g style="cursor:pointer" onclick="focusSectionNode('출력-2')">
@@ -1037,7 +1037,7 @@ table.data-tbl th {
         </article>`;
     }).filter(Boolean);
     $('ch5Picks').innerHTML = `
-      <div style="font-size:14px;font-weight:700;margin-top:16px">강조 (${cards.length}편 · 창구마다 1등, 문턱을 못 넘은 창구는 비움)</div>
+      <div style="font-size:14px;font-weight:700;margin-top:16px">강조 ${cards.length}편 (${ch.picks_max ? `최대 ${ch.picks_max}편 · ` : ''}관점마다 문턱을 넘은 것만, 못 넘은 자리는 비움)</div>
       ${cards.length ? `<div class="cards-grid">${cards.join('')}</div>`
                      : '<div class="empty-notice">오늘은 눈에 띄는 논문이 없어요(문턱을 넘은 것 없음).</div>'}`;
   }
@@ -1149,10 +1149,11 @@ table.data-tbl th {
     const h = ch.headline || {}, cl = ch.calls || {};
     const n = x => (x && x.val != null) ? x.val : 0;
     st.innerHTML =
+      (ch.day_note ? `<div class="empty-notice" style="margin:4px 0 8px;font-size:13px">${esc(ch.day_note)}</div>` : '') +
       `<div style="font-size:14px;color:var(--ink);font-weight:700;margin-bottom:3px">${esc(h.text || '')}</div>` +
       `논문 날짜 <strong>${esc(ch.day)}</strong> · 새 논문 <strong>${n(h.n_new)}</strong>편 · 풀이 끝 <strong>${n(h.n_done)}</strong> · 대기 <strong>${n(h.n_waiting)}</strong>` +
       `${n(h.n_failed) ? ` · 실패 <strong>${n(h.n_failed)}</strong>` : ''} · AI <strong>${n(cl.summary) + n(cl.flow)}</strong>콜` +
-      `${n(cl.http429) ? ` · <span style="color:var(--warn)">사용량 초과 ${n(cl.http429)}번</span>` : ''} · 오늘 상한 ${n(ch.cap)} ` +
+      `${n(cl.http429) ? ` · <span style="color:var(--warn)">사용량 초과 ${n(cl.http429)}번</span>` : ''} · ${ch.day_rel && ch.day_rel !== '오늘' ? '그날' : '오늘'} 상한 ${n(ch.cap)} ` +
       `(<span class="src-path">${esc(ch.source)}</span>)` +
       `${(ch.notes || []).length ? `<div style="margin-top:3px">알림: ${esc(ch.notes.join(' · '))}</div>` : ''}`;
     if (!(ch.cards || []).length) {   // 새 카드 0편인 날은 대표 한 줄만
@@ -1214,10 +1215,16 @@ table.data-tbl th {
     // 2. 상단 메타
     const ov = d.overview || {};
     const auto = ov.last_auto_run || {};
+    const pp = ov.papers || {};
     $('headerSub').innerHTML =
-      `기준 날짜: <strong>${esc(d.day)}</strong> · 생성: <span class="num">${esc(d.generated_at)}</span> · ` +
-      `최근 자동실행(<span class="src-path">${esc(ov.last_auto_run_source || '')}</span>): ` +
-      `<strong>${esc(auto.day || '-')} (${esc(auto.result || '-')})</strong>`;
+      `뉴스 기준 날짜: <strong>${esc(d.day)}</strong>` +
+      (pp.day ? ` · 논문: <strong>${esc(pp.day_label || pp.day)}</strong>${pp.same_day ? '' : ' (오늘 논문은 낮 풀이 뒤)'}` : '') +
+      ` · 생성: <span class="num">${esc(d.generated_at)}</span> · ` +
+      `최근 끝난 새벽 바퀴(<span class="src-path">${esc(ov.last_auto_run_source || '')}</span>): ` +
+      `<strong>${esc(auto.day || '-')} (${esc(auto.result || '-')})</strong>` +
+      (pp.made ? ` · 논문 파일 마지막 갱신: <strong>${esc(String(pp.made).replace('T', ' ').slice(0, 16))}</strong>` : '');
+    const tab5 = $('tabCh5Label');
+    if (tab5) tab5.textContent = pp.day_label ? `5. 논문 · ${pp.day_label}` : '5. 논문';
 
     $('secCountBadge').textContent = (d.machine_map && d.machine_map.total_sections) || 30;
 
@@ -1228,8 +1235,11 @@ table.data-tbl th {
       { label: '거푸집1 (숫자·공시)', addr: '처리-1', val: lanes['거푸집1'] && lanes['거푸집1'].val, sub: 'AI 0콜 · 정규식+API', src: lanes['거푸집1'] && lanes['거푸집1'].source },
       { label: '거푸집2 (쉬운 요약)', addr: '처리-2', val: lanes['거푸집2'] && lanes['거푸집2'].val, sub: '글당 AI 1콜 + 원문검사', src: lanes['거푸집2'] && lanes['거푸집2'].source },
       { label: '뉴스 사건 묶기', addr: '처리-3', val: lanes['뉴스'] && lanes['뉴스'].val, sub: `사건 ${(d.chapters.ch4_news.counts.events_out.val)}개로 묶음`, src: lanes['뉴스'] && lanes['뉴스'].source },
-      { label: '제외 보관함 / 논문T', addr: '인풋-4', val: (lanes['제외 보관함'] && lanes['제외 보관함'].val) || 0, sub: `논문T 보관 ${(lanes['논문T'] && lanes['논문T'].val) || 0}편 · 모름 ${(lanes['모름'] && lanes['모름'].val) || 0}건`, src: lanes['제외 보관함'] && lanes['제외 보관함'].source },
-      { label: '오늘 AI 콜 / 실행 시간', addr: '운영-1', val: ov.ai_calls_day && ov.ai_calls_day.val, sub: `실패 ${(ov.ai_fails_day && ov.ai_fails_day.val) || 0} · 총 ${(ov.run_secs && ov.run_secs.val) || 0}초`, src: ov.ai_calls_day && ov.ai_calls_day.source }
+      { label: '제외 보관함', addr: '인풋-4', val: (lanes['제외 보관함'] && lanes['제외 보관함'].val) || 0, sub: `모름 ${(lanes['모름'] && lanes['모름'].val) || 0}건 · 오늘 문 앞에 들어온 논문 제목 ${(lanes['논문T'] && lanes['논문T'].val) || 0}편(챕터 5 편수와 다른 것 — 챕터 5는 논문 카드)`, src: lanes['제외 보관함'] && lanes['제외 보관함'].source },
+      { label: '오늘 AI 콜', addr: '운영-1', val: ((ov.ai_calls_day && ov.ai_calls_day.val) || 0) + (pp.same_day ? (pp.calls || 0) : 0),
+        sub: `새벽 바퀴 ${(ov.ai_calls_day && ov.ai_calls_day.val) || 0}콜(실패 ${(ov.ai_fails_day && ov.ai_fails_day.val) || 0} · ${(ov.run_secs && ov.run_secs.val) || 0}초) + 낮 논문 ` +
+             (pp.same_day ? `${pp.calls || 0}콜` : '아직(12:07 예약)'),
+        src: ov.ai_calls_day && ov.ai_calls_day.source }
     ];
     $('overviewStrip').innerHTML = stripItems.map((it, i) => `
       <div class="stat-box">
@@ -1250,9 +1260,15 @@ table.data-tbl th {
     if ($('svgP2')) $('svgP2').textContent = `처리-2 · 거푸집2 (${(lanes['거푸집2'] && lanes['거푸집2'].val) || 0})`;
     if ($('svgP3')) $('svgP3').textContent = `처리-3 · 뉴스 (${(lanes['뉴스'] && lanes['뉴스'].val) || 0})`;
     const ch5k = d.chapters && d.chapters.ch5_papers;
-    if ($('svgP4')) $('svgP4').textContent = (ch5k && ch5k.kind === 'papers')
-      ? `처리-4 · 논문 (풀이 ${(ch5k.headline.n_done && ch5k.headline.n_done.val) || 0})`
+    const p4on = !!(ch5k && ch5k.kind === 'papers');
+    if ($('svgP4')) $('svgP4').textContent = p4on
+      ? `처리-4 · 논문 ${ch5k.day.slice(5).replace('-', '/')} 풀이 ${(ch5k.headline.n_done && ch5k.headline.n_done.val) || 0}`
       : `처리-4 · 논문 (${(lanes['논문T'] && lanes['논문T'].val) || 0})`;
+    if (p4on) {   // 11-14 점검: 논문 풀이가 돌면 흐름도에서도 실선(도는 길)으로 — 원래 HTML에 점선으로 박혀 있었음
+      if ($('svgLineP4')) $('svgLineP4').classList.remove('inactive');
+      if ($('svgRectP4')) { $('svgRectP4').setAttribute('stroke', 'var(--ink)'); $('svgRectP4').setAttribute('stroke-width', '2'); $('svgRectP4').removeAttribute('stroke-dasharray'); }
+      if ($('svgP4')) { $('svgP4').setAttribute('fill', 'var(--ink)'); $('svgP4').setAttribute('font-weight', '700'); }
+    }
 
     // 4. 챕터 1 (오늘의 순위 — 출력-1)
     const ch1 = d.chapters.ch1_ranking;
