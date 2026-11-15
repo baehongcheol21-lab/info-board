@@ -1151,7 +1151,10 @@ table.data-tbl th {
     st.innerHTML =
       (ch.day_note ? `<div class="empty-notice" style="margin:4px 0 8px;font-size:13px">${esc(ch.day_note)}</div>` : '') +
       `<div style="font-size:14px;color:var(--ink);font-weight:700;margin-bottom:3px">${esc(h.text || '')}</div>` +
-      `논문 날짜 <strong>${esc(ch.day)}</strong> · 새 논문 <strong>${n(h.n_new)}</strong>편 · 풀이 끝 <strong>${n(h.n_done)}</strong> · 대기 <strong>${n(h.n_waiting)}</strong>` +
+      `논문 날짜 <strong>${esc(ch.day)}</strong> · 새 논문 <strong>${n(h.n_new)}</strong>편 · 풀이 끝 <strong>${n(h.n_done)}</strong>` +
+      (h.n_done_backlog && n(h.n_done_backlog) ? ` (새 ${n(h.n_done_new)} + 밀린 ${n(h.n_done_backlog)})` : '') +
+      ` · 새 논문 중 대기 <strong>${n(h.n_waiting)}</strong>` +
+      (ch.backlog && ch.backlog.n_waiting_all != null ? ` · 밀린 줄 전체 ${esc(ch.backlog.n_waiting_all)}` : '') +
       `${n(h.n_failed) ? ` · 실패 <strong>${n(h.n_failed)}</strong>` : ''} · AI <strong>${n(cl.summary) + n(cl.flow)}</strong>콜` +
       `${n(cl.http429) ? ` · <span style="color:var(--warn)">사용량 초과 ${n(cl.http429)}번</span>` : ''} · ${ch.day_rel && ch.day_rel !== '오늘' ? '그날' : '오늘'} 상한 ${n(ch.cap)} ` +
       `(<span class="src-path">${esc(ch.source)}</span>)` +
@@ -1218,7 +1221,7 @@ table.data-tbl th {
     const pp = ov.papers || {};
     $('headerSub').innerHTML =
       `뉴스 기준 날짜: <strong>${esc(d.day)}</strong>` +
-      (pp.day ? ` · 논문: <strong>${esc(pp.day_label || pp.day)}</strong>${pp.same_day ? '' : ' (오늘 논문은 낮 풀이 뒤)'}` : '') +
+      (pp.day ? ` · 논문: <strong>${esc(pp.day_label || pp.day)}</strong>${pp.same_day ? '' : ' (오늘 논문은 논문 풀이 뒤)'}` : '') +
       ` · 생성: <span class="num">${esc(d.generated_at)}</span> · ` +
       `최근 끝난 새벽 바퀴(<span class="src-path">${esc(ov.last_auto_run_source || '')}</span>): ` +
       `<strong>${esc(auto.day || '-')} (${esc(auto.result || '-')})</strong>` +
@@ -1237,8 +1240,8 @@ table.data-tbl th {
       { label: '뉴스 사건 묶기', addr: '처리-3', val: lanes['뉴스'] && lanes['뉴스'].val, sub: `사건 ${(d.chapters.ch4_news.counts.events_out.val)}개로 묶음`, src: lanes['뉴스'] && lanes['뉴스'].source },
       { label: '제외 보관함', addr: '인풋-4', val: (lanes['제외 보관함'] && lanes['제외 보관함'].val) || 0, sub: `모름 ${(lanes['모름'] && lanes['모름'].val) || 0}건 · 오늘 문 앞에 들어온 논문 제목 ${(lanes['논문T'] && lanes['논문T'].val) || 0}편(챕터 5 편수와 다른 것 — 챕터 5는 논문 카드)`, src: lanes['제외 보관함'] && lanes['제외 보관함'].source },
       { label: '오늘 AI 콜', addr: '운영-1', val: ((ov.ai_calls_day && ov.ai_calls_day.val) || 0) + (pp.same_day ? (pp.calls || 0) : 0),
-        sub: `새벽 바퀴 ${(ov.ai_calls_day && ov.ai_calls_day.val) || 0}콜(실패 ${(ov.ai_fails_day && ov.ai_fails_day.val) || 0} · ${(ov.run_secs && ov.run_secs.val) || 0}초) + 낮 논문 ` +
-             (pp.same_day ? `${pp.calls || 0}콜` : '아직(12:07 예약)'),
+        sub: `새벽 바퀴 ${(ov.ai_calls_day && ov.ai_calls_day.val) || 0}콜(실패 ${(ov.ai_fails_day && ov.ai_fails_day.val) || 0} · ${(ov.run_secs && ov.run_secs.val) || 0}초) + 논문 풀이 ` +
+             (pp.same_day ? `${pp.calls || 0}콜` : '아직(새벽 바퀴 바로 뒤에 돎)'),
         src: ov.ai_calls_day && ov.ai_calls_day.source }
     ];
     $('overviewStrip').innerHTML = stripItems.map((it, i) => `
