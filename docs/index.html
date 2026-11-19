@@ -16,6 +16,27 @@
   --warn: #b45309;
   --ease: cubic-bezier(.2,.9,.2,1);
 }
+/* 세션 가-5: 신선도 띠 (어느 옷이든 같은 색 — 놓치면 안 되는 경고) */
+.fresh-bar { margin: 8px 0; padding: 10px 14px; border-radius: 10px; background: #fff4e5; color: #7a3e00;
+  border: 2px solid var(--warn); font-weight: 700; line-height: 1.45; overflow-wrap: anywhere; }
+.fresh-note { margin: 4px 0 8px; padding: 6px 12px; border-radius: 8px; background: rgba(180,83,9,.10); color: inherit;
+  font-size: .9em; line-height: 1.45; overflow-wrap: anywhere; }
+.fresh-bar[hidden], .fresh-note[hidden] { display: none; }
+/* 세션 라 (11-18): 카드마다 '쓸모 있다/없다' + 아래 '표시 보내기 (n)' — 엄지 크기 44px 이상 */
+.mk-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 4px; }
+.mk-btn { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 10px 12px; border-radius: 10px; font: inherit; font-size: 14px;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; touch-action: manipulation; }
+.mk-btn[aria-pressed="true"].g { background: var(--ok); border-color: var(--ok); color: #fff; font-weight: 700; }
+.mk-btn[aria-pressed="true"].b { background: var(--warn); border-color: var(--warn); color: #fff; font-weight: 700; }
+.mk-st { flex: 1 0 100%; font-size: 12px; color: var(--muted); }
+.mk-st:empty { display: none; }
+.mk-note { margin: 4px 0 8px; padding: 6px 12px; border-radius: 8px; background: rgba(21,128,61,.10); font-size: .9em;
+  line-height: 1.45; overflow-wrap: anywhere; }
+.mk-note[hidden], .mk-send[hidden] { display: none; }
+.container::after { content: ""; display: block; height: 76px; }   /* 떠 있는 '표시 보내기'가 맨 아래 카드 버튼을 가리지 않게 */
+.mk-send { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 50;
+  min-height: 48px; max-width: calc(100vw - 32px); padding: 12px 18px; border-radius: 24px; border: 0; font: inherit;
+  font-weight: 700; font-size: 15px; background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.25); cursor: pointer; }
 
 /* 42 Sticker — 스티커 */
 [data-theme="sticker"] {
@@ -674,6 +695,12 @@ table.data-tbl th {
 </head>
 <body>
 <div class="container">
+  <!-- 세션 가-5 (11-16): 화면 신선도 경고 — made_iso가 30시간 넘으면 띠, 실패 단계·429·시작 지연은 한 줄 -->
+  <div class="fresh-bar" id="freshBar" role="alert" hidden></div>
+  <div class="fresh-note" id="freshNote" hidden></div>
+  <!-- 세션 라 (11-18): 아이폰 표시 받음 / 기억 못 씀 안내 -->
+  <div class="mk-note" id="mkNote" role="status" hidden></div>
+  <button type="button" class="mk-send" id="mkSend" hidden>표시 보내기 (0)</button>
   <!-- 상단 바 -->
   <header class="topbar">
     <div class="brand-block">
@@ -874,6 +901,118 @@ table.data-tbl th {
   const esc = s => String(s == null ? '' : s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 
+  // ── 세션 라 (11-18, 되먹임-3): 카드 표시 → 폰 기억(v2marks) → '표시 보내기 (n)' → 미리 채운 깃허브 이슈 작성 창 ──
+  // 화면에 열쇠·토큰은 없다. 보내기는 이슈 작성 창을 열 뿐이고 '제출'은 사용자가 누른다.
+  // 기억 모양: {번호: {m: "g"|"b", day, sent: 0|1}}. 기억을 못 쓰는 창(개인정보 보호 등)이면 이 창 안에서만 기억.
+  const MK_KEY = 'v2marks', MK_MAX = 6000;
+  let MK_MEM = {}, MK_OK = true, MK_PANEL = {}, MK_CLEARED = 0;
+  function mkLoad() {
+    try {
+      const raw = window.localStorage.getItem(MK_KEY);
+      const o = raw ? JSON.parse(raw) : {};
+      return (o && typeof o === 'object') ? o : {};
+    } catch (e) { MK_OK = false; return MK_MEM; }
+  }
+  function mkSave(o) {
+    MK_MEM = o;
+    try { window.localStorage.setItem(MK_KEY, JSON.stringify(o)); } catch (e) { MK_OK = false; }
+  }
+  function mkToday() {
+    const d = new Date(), z = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${z(d.getMonth() + 1)}-${z(d.getDate())}`;
+  }
+  function mkBar(id) {
+    if (!id) return '';
+    const o = mkLoad()[id];
+    const m = o ? o.m : '';
+    const st = !o ? '' : (o.sent ? '보냄 — 깃허브가 받으면 다음 화면에서 사라져요' : '표시함 — 아래 \'표시 보내기\'로 보내요');
+    return `<div class="mk-bar" data-mk="${esc(id)}">
+        <button type="button" class="mk-btn g" data-id="${esc(id)}" data-m="g" aria-pressed="${m === 'g'}">쓸모 있다</button>
+        <button type="button" class="mk-btn b" data-id="${esc(id)}" data-m="b" aria-pressed="${m === 'b'}">쓸모 없다</button>
+        <span class="mk-st">${esc(st)}</span>
+      </div>`;
+  }
+  function mkRefresh(id) {
+    document.querySelectorAll('.mk-bar').forEach(el => {
+      if (el.getAttribute('data-mk') === id) el.outerHTML = mkBar(id);
+    });
+  }
+  function mkUpdate() {
+    const o = mkLoad(), ids = Object.keys(o);
+    const unsent = ids.filter(i => !o[i].sent).length, waiting = ids.length - unsent;
+    const btn = $('mkSend');
+    if (btn) {
+      btn.hidden = !ids.length;
+      btn.textContent = unsent ? `표시 보내기 (${unsent})` : `다시 보내기 (${waiting})`;
+    }
+    const note = $('mkNote');
+    if (!note) return;
+    const parts = [];
+    if (MK_CLEARED) parts.push(`보낸 표시 ${MK_CLEARED}개 받음 — 폰 기억에서 지웠어요`);
+    if (MK_PANEL.n_got) parts.push(`깃허브 장부의 아이폰 표시 최근 ${MK_PANEL.n_got}개` + (MK_PANEL.last_issue ? ` (마지막 이슈 #${MK_PANEL.last_issue})` : ''));
+    if (!MK_OK) parts.push('이 창은 기억을 못 써서, 표시가 창을 닫으면 사라져요(개인정보 보호 창이면 일반 창에서 해 주세요)');
+    note.textContent = parts.join(' · ');
+    note.hidden = !parts.length;
+  }
+  function mkReceive(mk) {   // 화면 데이터의 '받음'과 같은 번호·같은 표시면 폰 기억에서 지움
+    MK_PANEL = mk || {};
+    const got = {};
+    (MK_PANEL.got || []).forEach(g => { got[g.id] = g.m; });
+    const o = mkLoad();
+    let n = 0;
+    Object.keys(o).forEach(i => { if (got[i] && got[i] === o[i].m) { delete o[i]; n++; } });
+    if (n) mkSave(o);
+    MK_CLEARED = n;
+    mkUpdate();
+  }
+  function mkSend() {
+    const repo = MK_PANEL.repo;
+    const note = $('mkNote');
+    if (!repo || !/^[A-Za-z0-9._-]+\/[A-Za-z0-9._-]+$/.test(repo)) {
+      if (note) { note.textContent = '보낼 저장소 이름이 화면 데이터에 없어요 — 보내기를 못 해요'; note.hidden = false; }
+      return;
+    }
+    const o = mkLoad(), ids = Object.keys(o);
+    const pick = ids.filter(i => !o[i].sent);
+    const todo = pick.length ? pick : ids;          // 안 보낸 것이 없으면 '다시 보내기' = 보냈는데 아직 안 받은 것
+    let body = '# 버전2 아이폰 표시 — 아래 줄은 고치지 말고 그대로 제출(Submit)해 주세요. g=쓸모 있다, b=쓸모 없다\n';
+    const sent = [];
+    for (const i of todo) {
+      const line = `${i},${o[i].m}\n`;
+      if (body.length + line.length > MK_MAX) break;
+      body += line; sent.push(i);
+    }
+    if (!sent.length) return;
+    const url = `https://github.com/${repo}/issues/new?title=${encodeURIComponent('marks ' + mkToday())}&body=${encodeURIComponent(body)}`;
+    sent.forEach(i => { o[i].sent = 1; });
+    mkSave(o);
+    sent.forEach(mkRefresh);
+    mkUpdate();
+    const left = todo.length - sent.length;
+    if (left > 0 && note) {
+      note.textContent = `본문이 ${MK_MAX.toLocaleString('ko-KR')}자를 넘어 ${sent.length}개만 실었어요. 제출한 뒤 '표시 보내기'를 한 번 더 눌러 남은 ${left}개를 보내 주세요`;
+      note.hidden = false;
+    }
+    const w = window.open(url, '_blank');
+    if (w) { try { w.opener = null; } catch (e) {} } else { window.location.href = url; }
+  }
+  document.addEventListener('click', ev => {
+    const b = ev.target.closest && ev.target.closest('.mk-btn');
+    if (b) {
+      ev.preventDefault();
+      const id = b.getAttribute('data-id'), m = b.getAttribute('data-m');
+      const o = mkLoad();
+      if (o[id] && o[id].m === m) delete o[id];       // 같은 버튼을 한 번 더 누르면 표시 지움
+      else o[id] = { m, day: (PANEL && PANEL.day) || mkToday(), sent: 0 };
+      mkSave(o);
+      MK_CLEARED = 0;
+      mkRefresh(id);
+      mkUpdate();
+      return;
+    }
+    if (ev.target.closest && ev.target.closest('#mkSend')) { ev.preventDefault(); mkSend(); }
+  });
+
   function countUp(el, targetVal) {
     const n = Number(targetVal);
     if (!el || isNaN(n)) { if (el) el.textContent = targetVal; return; }
@@ -1017,7 +1156,7 @@ table.data-tbl th {
       if (!c || !c.ai) return '';
       const a = c.ai;
       return `
-        <article class="item-card">
+        <article class="item-card" data-id="${esc(c.canon_id)}">
           <div class="card-top">
             <div class="card-title">${esc(a.one_line || c.title)}</div>
             <span class="addr-tag" style="cursor:default">${esc(p.badge)}</span>
@@ -1030,6 +1169,7 @@ table.data-tbl th {
             <summary>자세하게 보기</summary>
             ${p5Body(c)}
           </details>
+          ${mkBar(c.canon_id)}
           <div class="card-meta">
             <span>왜 골랐나: ${esc(p.why)}</span>
             <a href="#paper-${esc(c.canon_id)}" data-jump="${esc(c.canon_id)}">목록에서 보기</a>
@@ -1097,6 +1237,7 @@ table.data-tbl th {
             <summary style="color:var(--ink);font-weight:500;overflow-wrap:anywhere">${head}
               <span style="font-size:11.5px;color:var(--muted)">· ${esc(p5Field(c.field))}${up}</span></summary>
             ${p5Body(c)}
+            ${mkBar(c.canon_id)}
           </details>`;
       }).join('');
       const rest = list.length - shown.length;
@@ -1228,6 +1369,25 @@ table.data-tbl th {
       (pp.made ? ` · 논문 파일 마지막 갱신: <strong>${esc(String(pp.made).replace('T', ' ').slice(0, 16))}</strong>` : '');
     const tab5 = $('tabCh5Label');
     if (tab5) tab5.textContent = pp.day_label ? `5. 논문 · ${pp.day_label}` : '5. 논문';
+
+    // 세션 가-5: 신선도 — 화면 데이터를 만든 시각(made_iso)이 지금보다 30시간 넘게 지났으면 맨 위 띠
+    const fb = $('freshBar'), fn = $('freshNote');
+    const madeMs = Date.parse(d.made_iso || '');
+    if (fb) {
+      const hrs = isNaN(madeMs) ? null : (Date.now() - madeMs) / 3600000;
+      if (hrs !== null && hrs > 30) {
+        fb.textContent = `이 화면은 ${Math.floor(hrs)}시간 전 것입니다 — 바퀴가 안 돌았을 수 있어요`;
+        fb.hidden = false;
+      } else {
+        fb.hidden = true;
+      }
+    }
+    const fl = ((d.freshness || {}).lines) || [];
+    if (fn) {
+      fn.textContent = fl.length ? '⚠ ' + fl.join(' · ') : '';
+      fn.hidden = !fl.length;
+    }
+    mkReceive(d.marks);   // 세션 라: 깃허브가 받은 표시는 폰 기억에서 지움 + '표시 보내기 (n)'
 
     $('secCountBadge').textContent = (d.machine_map && d.machine_map.total_sections) || 30;
 
@@ -1386,7 +1546,7 @@ table.data-tbl th {
     `;
 
     $('ch3Cards').innerHTML = (ch3.items || []).slice(0, 24).map(it => `
-      <article class="item-card">
+      <article class="item-card" data-id="${esc(it.id || '')}">
         <div class="card-top">
           <div class="card-title" title="[${esc(it.source_name)}] ${esc(it.title)}">[${esc(it.source_name)}] ${esc(it.title)}</div>
           <span class="addr-tag" onclick="jumpToSection('처리-2')">처리-2</span>
@@ -1404,6 +1564,7 @@ table.data-tbl th {
             </ul>
           </div>
         </details>
+        ${mkBar(it.id)}
         <div class="card-meta">
           <span>근거일치 ${esc(it.evidence_ok)} · 본문 ${esc(it.body_chars)}자</span>
           <span class="src-path">${esc(it.source)}</span>
@@ -1420,7 +1581,7 @@ table.data-tbl th {
       `AI 콜 <strong>${c4.calls.val}</strong>회 · 원문에 없는 숫자 <strong>${c4.bad_numbers.val}</strong>건`;
 
     $('ch4Cards').innerHTML = (ch4.events || []).map(ev => `
-      <article class="item-card">
+      <article class="item-card" data-id="${esc(ev.id || '')}">
         <div class="card-top">
           <div class="card-title" title="${esc(ev.name)} (기사 ${ev.member_count}건)">${esc(ev.name)} <span style="font-size:12.5px;color:var(--accent)">(기사 ${ev.member_count}건)</span></div>
           <span class="addr-tag" onclick="jumpToSection('처리-3')">처리-3</span>
@@ -1435,6 +1596,7 @@ table.data-tbl th {
             </ul>
           </details>
         ` : ''}
+        ${mkBar(ev.id)}
         <div class="card-meta">
           <span class="src-path">${esc(ev.source)}</span>
           ${ev.flags && ev.flags.length ? `<span style="color:var(--warn)">⚠ ${esc(ev.flags.join(' · '))}</span>` : '<span>검사 통과</span>'}
