@@ -22,6 +22,17 @@
 .fresh-note { margin: 4px 0 8px; padding: 6px 12px; border-radius: 8px; background: rgba(180,83,9,.10); color: inherit;
   font-size: .9em; line-height: 1.45; overflow-wrap: anywhere; }
 .fresh-bar[hidden], .fresh-note[hidden] { display: none; }
+/* 11-22 (원장 114번): 가벼운 갱신 — 아침 이후 새로 들어온 뉴스 띠. 아침 내용은 그대로, 이 띠만 낮·저녁에 바뀜 */
+.rf-band { margin: 8px 0 12px; padding: 12px; border-radius: 12px; background: var(--card, #fff); color: var(--ink, inherit);
+  border: 1px solid var(--rule, #ccc); border-left: 4px solid var(--accent, #2563eb); line-height: 1.5; overflow-wrap: anywhere; }
+.rf-band[hidden] { display: none; }
+.rf-band h3 { margin: 0 0 4px; font-size: 1em; }
+.rf-band .rf-sub { color: var(--muted, inherit); font-size: .85em; margin-bottom: 6px; }
+.rf-band ol { margin: 0; padding-left: 1.3em; }
+.rf-band li { margin: 4px 0; }
+.rf-band .rf-chip { display: inline-block; font-size: .78em; padding: 0 6px; border-radius: 6px; border: 1px solid var(--rule, #ccc); margin-right: 4px; }
+.rf-band .rf-arts { font-size: .85em; color: var(--muted, inherit); }
+.rf-band .rf-arts a { color: inherit; }
 /* 세션 라 (11-18): 카드마다 '쓸모 있다/없다' + 아래 '표시 보내기 (n)' — 엄지 크기 44px 이상 */
 .mk-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 4px; }
 .mk-btn { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 10px 12px; border-radius: 10px; font: inherit; font-size: 14px;
@@ -721,6 +732,9 @@ table.data-tbl th {
     </div>
   </header>
 
+  <!-- 11-22 (원장 114번): 가벼운 갱신 — 아침 이후 새로 들어온 뉴스 띠 -->
+  <section class="rf-band" id="refreshBand" aria-live="polite" hidden></section>
+
   <!-- 오늘 한눈에 숫자 6칸 -->
   <section class="overview-strip" id="overviewStrip"></section>
 
@@ -1386,6 +1400,24 @@ table.data-tbl th {
     if (fn) {
       fn.textContent = fl.length ? '⚠ ' + fl.join(' · ') : '';
       fn.hidden = !fl.length;
+    }
+    // 11-22 (원장 114번): 아침 이후 새로 들어온 것 — refresh.py 가장 최근 1회. 없으면 띠 숨김
+    const rb = $('refreshBand'), rf = d.refresh || {};
+    if (rb) {
+      if (rf.tag) {
+        const hm = `${rf.tag.slice(0, 2)}:${rf.tag.slice(2)}`;
+        const items = (rf.picks || []).map(p => `<li><span class="rf-chip">${esc(p.seat === '거시' ? '거시' : '뉴스')}</span><b>${esc(p.title)}</b>`
+          + ` <span class="rf-arts">· 기사 ${p.n || 1}개 · 점수 ${p.score}</span>`
+          + (p.easy ? `<div>${esc(p.easy)}</div>` : '')
+          + `<div class="rf-arts">${(p.arts || []).map(a => `<a href="${esc(a.u || '#')}" target="_blank" rel="noopener">${esc(a.s)}: ${esc(a.t)}</a>`).join('<br>')}</div></li>`).join('');
+        rb.innerHTML = `<h3>아침 이후 새로 들어온 것 · ${esc(hm)} 갱신</h3>`
+          + `<div class="rf-sub">아침 바퀴 뒤 새 글 ${rf.new || 0}개(뉴스 ${rf.news_new || 0}개)를 같은 점수식으로 골랐어요. 아침 내용은 그대로예요.`
+          + ` 오늘 갱신: ${(rf.times || []).map(t => t.slice(0, 2) + ':' + t.slice(2)).join(', ')} · AI ${rf.calls || 0}콜${rf.error ? ' · ' + esc(rf.error) : ''}</div>`
+          + (items ? `<ol>${items}</ol>` : '<div>문턱을 넘은 새 사건 없음 — 조용한 시간이었어요</div>');
+        rb.hidden = false;
+      } else {
+        rb.hidden = true;
+      }
     }
     mkReceive(d.marks);   // 세션 라: 깃허브가 받은 표시는 폰 기억에서 지움 + '표시 보내기 (n)'
 

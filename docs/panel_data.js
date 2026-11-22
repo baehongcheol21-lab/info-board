@@ -2,14 +2,105 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-22",
-  "generated_at": "2026-11-22 04:30:57",
-  "made_iso": "2026-11-22T04:30:57+09:00",
+  "generated_at": "2026-11-22 12:30:53",
+  "made_iso": "2026-11-22T12:30:53+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 4번"
     ],
     "pc_locked": "",
     "source": "v2_secretary/data/auto/runs.jsonl"
+  },
+  "refresh": {
+    "tag": "1229",
+    "made_iso": "2026-11-22T12:29:50+09:00",
+    "new": 85,
+    "news_new": 85,
+    "calls": 2,
+    "error": "",
+    "times": [
+      "1229"
+    ],
+    "picks": [
+      {
+        "seat": "뉴스",
+        "title": "한은 기준금리 인상 전망",
+        "easy": "한국은행이 석 달 만에 기준금리 인상을 재개할 것이라는 전망이 나왔습니다. 전문가들의 10곳 중 9곳은 내년까지 긴축 기조와 함께 금리 인상을 예상했는데요. 쉽게 말하면 물가와 성장률 부담 속에서 금리가 오를 것으로 보입니다.",
+        "score": 0.45,
+        "macro": [
+          "기준금리",
+          "한은"
+        ],
+        "n": 4,
+        "arts": [
+          {
+            "t": "한은, 석 달 만에 금리 인상 재개 전망…\"내년까지 긴축\"",
+            "s": "연합뉴스TV",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1qZ2plUXNXRnA3X01WU3NGbFp0TnZJVDdpdDFuMkFZZVVFMjJnWk5kczhJTXo2bmgtLWR4eXAwbE9zRzhpb0pZOHRUWXVadHotOWU2Vkg0ZFQ3VEZPQVBSdjdWVlZDSW8?oc=5"
+          },
+          {
+            "t": "한은, 석 달 만에 금리 인상 재개 전망…\"내년까지 긴축\"",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA2a2w0dkxyOERFRTZnSW0zUEJsUGtWUDZmQ0hkWnJERFlpeElnN2lwcHEzSWhFZmhILU5LYVdzZzFJaGE1RU4tSFF5bWdVczhkZDd6RjJVZmNrRVnSAWBBVV95cUxPOEFtQTczV1JEYUFMb2ZFVlk1LS1VeEFOVEhBT2RHRVhIRGx6dUxMSmVTeDBwNE5MYVVLaEN6ZkNBRVM2T0V6eXhlQ012clA5RVJVMi1MR3lJMXA2bmd4enY?oc=5"
+          },
+          {
+            "t": "\"한은, 26일 기준금리 인상\" 한목소리…10곳 중 9곳 \"내년 3.50%\" [금통위 폴]",
+            "s": "뉴스1",
+            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5UQnpILTlnSTVIc3VUcWo2NFpHd09rRVhUcWxvZHo4eS1YR2FVQVZpZVVCWFd5dll6MlhheXRjaTVhMXJmcm1hNWkwRktWaHBWakd4dA?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "미국 전력망 인허가법 상원 통과…AI 시대 송전 병목 해소",
+        "easy": "",
+        "score": 0.4,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "미국 전력망 인허가법 상원 통과…AI 시대 송전 병목 해소",
+            "s": "에너지안전신문",
+            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9lM0E0eHZsU2Q1YklvRHFPY01EWG9VX3lBYWgxSjZGNm9TZ05YcUJUMW1IeTAyR29ZNDJrSTBFa1Znb1hIeFhvRDNWX3V6TWZtT3JMQ0htMmtsOFBqZHJ0T3p6bng?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "스페인, 2030 전력망에 25조원 투입…변압기·전선 대란 속 초대형 발주",
+        "easy": "",
+        "score": 0.4,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "스페인, 2030 전력망에 25조원 투입…변압기·전선 대란 속 초대형 발주",
+            "s": "글로벌이코노믹",
+            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQzhmcjdIanlMLUhvRWRnc252OGZOMm9HUC1LYkx1T0hRWGN1eUVEU1ppcl80OHlFbUNvdHRmWXNsNUEtSGtrMWxLSW9fSFRMWURUeGxkZjhzYUxhN2w5REVTcUo2X2NPQngyUlV4ZmwtMUdCNUdoS3V2SDNOLVFLZkRqal9YY1p5?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "물가·성장 모두 ↑…시장은 힘겨워도 \"한은 금리는 올라간다\"",
+        "easy": "",
+        "score": 0.3,
+        "macro": [
+          "금리",
+          "물가",
+          "한은"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "물가·성장 모두 ↑…시장은 힘겨워도 \"한은 금리는 올라간다\"",
+            "s": "조선일보",
+            "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTWZGaHVHRTRqSnNobWNmeXYwS2p0YUMxaVladDh4eXFLNFBMRURKcU1xeWxMODZrdnhxeHlzVGJIa1BrVkdNTUNkYkU2cTlWMXBVb3dTN3BQVURrbFRBTGZsd1dhQ3ppVUhvYnBJQnA1Szc4M2djOUZaaUJPRVF0c0Z5RWdHZmZheWRyQ0tn?oc=5"
+          }
+        ]
+      }
+    ],
+    "source": "v2_secretary/결과/갱신/2026-11-22_1229.json"
   },
   "wardrobes": [
     {
@@ -103,16 +194,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-22",
-      "start": "2026-11-22 04:13:33",
+      "start": "2026-11-22 12:29:50",
       "by": "github",
       "where": "GitHub",
-      "mode": "run",
-      "end": "2026-11-22 04:15:13",
-      "secs": 100,
+      "mode": "refresh",
+      "end": "2026-11-22 12:30:52",
+      "secs": 63,
       "exit": 0,
-      "result_md": true,
-      "failed_stages": 0,
-      "calls": 5,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -14418,12 +14507,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 16건 (최근: 2026-11-22 ok)",
+        "line_out": "내보냄: 실행 기록 17건 (최근: 2026-11-22 ok)",
         "metrics": {
           "in": 1,
-          "out": 16,
-          "calls": 5,
-          "secs": 100.0,
+          "out": 17,
+          "calls": 2,
+          "secs": 63.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
