@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-22",
-  "generated_at": "2026-11-22 16:07:14",
-  "made_iso": "2026-11-22T16:07:14+09:00",
+  "generated_at": "2026-11-22 21:09:53",
+  "made_iso": "2026-11-22T21:09:53+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 4번"
@@ -12,42 +12,68 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1606",
-    "made_iso": "2026-11-22T16:06:13+09:00",
-    "new": 105,
-    "news_new": 105,
+    "tag": "2108",
+    "made_iso": "2026-11-22T21:08:45+09:00",
+    "new": 162,
+    "news_new": 159,
     "calls": 2,
     "error": "",
     "times": [
       "1229",
-      "1606"
+      "1606",
+      "2108"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "한국은행 금리 인상 전망",
-        "easy": "물가와 성장이 모두 오르는 흐름 속에서 한국은행이 금리 인상을 재개할지 주목되는데요, 시장의 어려움에도 불구하고 긴축 기조가 이어질 것이라는 전망이 나왔습니다. 쉽게 말하면, 다음 주 금통위의 결정에 관심이 쏠린다는 셈이에요.",
-        "score": 0.45,
-        "macro": [
-          "금리",
-          "한국은행"
-        ],
-        "n": 4,
+        "title": "한전 개인정보 유출 사고",
+        "easy": "한국전력에서 이용 고객의 주민등록번호와 계좌·카드번호 등 152만명분의 개인정보가 유출되는 사고가 발생했습니다. 전산시스템을 통해 털린 건데요, 그게 뭔 소리냐면 전기요금 조회나 납부 서비스를 이용하려고 입력했던 정보들이 밖으로 새어 나갔다는 말이에요. 한국전력은 2차 피해를 막기 위해 총력을 다하겠다고 밝혔지만, 고객들은 불안을 겪을 수밖에 없다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 15,
         "arts": [
           {
-            "t": "한은, 다음 주 금리 인상 재개 여부 결정…디지털자산법 정부안도 공개",
-            "s": "블루밍비트",
-            "u": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE44dnV6LUhzOTIwSVoxOHlhU200Tk1RZTdrSi05cU9DUk9JZ0dZeTYyMnpCbGp5NHpnZmpST29UbWFYNGZ3dlZJcWowUnk4bTdG?oc=5"
+            "t": "한전, 고객 등 152만명 개인정보 유출 확인…“2차 피해 예방 총력”",
+            "s": "전기신문",
+            "u": "https://www.electimes.com/news/articleView.html?idxno=375104"
           },
+          {
+            "t": "한전도 해킹당했다…65만명 주민번호·계좌·카드번호 유출",
+            "s": "경향신문",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE93TVRITGJMN0plWV9NSFJWNlR1eDd1WGVWb3B2SVRnbUJYMXA2US1wcDdMb1ZlQVJwWXZ3alBtenBTNTlYU0lfR3IxaW1WdFdta196aVJPSGtmQdIBX0FVX3lxTE13NWVmMVRzM3pzZE9YUTJ3eEFxU0F4RllMVWgwMlJFeml6dmxmX2FlNGlDZjJCS1hXOUdYSlBYVElLTXFab1RPbHM4SDZnQTVvMzhyTDRPSW9WNXNFb0Rj?oc=5"
+          },
+          {
+            "t": "한전, 150만명 개인정보 털렸다…계좌·카드번호 등 유출",
+            "s": "한겨레",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBKNC1SOXBhZkhySll1TEp6UW82WVV2TFhXNWFoWEk5WDNlMElZSkcxRUNYVXVfcncyVHVIRXFTRjl6TXFDaE5MOUVsMUVWWnlMMXpld0xZQm9jcXdwUGdKUEUzcG54czRzbENJdg?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한국은행 기준금리 인상 전망",
+        "easy": "한국은행이 석 달 만에 기준금리 인상을 재개할 것이라는 전망이 나왔습니다. 물가 상승과 성장률 상향 조정 때문에 긴축 고를 바짝 죄는 건데요, 뭔 소리냐면 시중의 돈줄을 조이기 위해 기준금리를 0.25%포인트 올릴 가능성이 크다는 말이에요. 시장은 힘겨워지지만 물가 잡기가 시급하다는 판단에 따른 겁니다.",
+        "score": 0.5,
+        "macro": [
+          "기준금리",
+          "한국은행"
+        ],
+        "n": 7,
+        "arts": [
           {
             "t": "물가·성장 모두 ↑…시장은 힘겨워도 \"한은 금리는 올라간다\"",
             "s": "조선일보",
             "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTWZGaHVHRTRqSnNobWNmeXYwS2p0YUMxaVladDh4eXFLNFBMRURKcU1xeWxMODZrdnhxeHlzVGJIa1BrVkdNTUNkYkU2cTlWMXBVb3dTN3BQVURrbFRBTGZsd1dhQ3ppVUhvYnBJQnA1Szc4M2djOUZaaUJPRVF0c0Z5RWdHZmZheWRyQ0tn?oc=5"
           },
           {
+            "t": "한은 금주 금리인상 유력…긴축 고삐 죈다",
+            "s": "국제신문",
+            "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONC1QVEVRNmNzZlIxbzV5a0RndUttOGZBbjQ1YkY5Wmk3RGhuN09tT01kbVh3aGhUeFh6bHdsZmw4ekE4NDRqcE9RYkoxMWNaT0xlLWcyY0lMc1BieUxhZUQxcEh0bkZ0ZDhtSElFYV9zdlN5ZjdIRmRLY25LdVdCLTNqUms0dzlWRU5WcjFR?oc=5"
+          },
+          {
             "t": "한은, 석 달 만에 금리 인상 재개 전망…\"내년까지 긴축\"",
-            "s": "연합뉴스TV",
-            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1qZ2plUXNXRnA3X01WU3NGbFp0TnZJVDdpdDFuMkFZZVVFMjJnWk5kczhJTXo2bmgtLWR4eXAwbE9zRzhpb0pZOHRUWXVadHotOWU2Vkg0ZFQ3VEZPQVBSdjdWVlZDSW8?oc=5"
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA2a2w0dkxyOERFRTZnSW0zUEJsUGtWUDZmQ0hkWnJERFlpeElnN2lwcHEzSWhFZmhILU5LYVdzZzFJaGE1RU4tSFF5bWdVczhkZDd6RjJVZmNrRVnSAWBBVV95cUxPOEFtQTczV1JEYUFMb2ZFVlk1LS1VeEFOVEhBT2RHRVhIRGx6dUxMSmVTeDBwNE5MYVVLaEN6ZkNBRVM2T0V6eXhlQ012clA5RVJVMi1MR3lJMXA2bmd4enY?oc=5"
           }
         ]
       },
@@ -63,21 +89,6 @@ window.PANEL_DATA = {
             "t": "미국 전력망 인허가법 상원 통과…AI 시대 송전 병목 해소",
             "s": "에너지안전신문",
             "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9lM0E0eHZsU2Q1YklvRHFPY01EWG9VX3lBYWgxSjZGNm9TZ05YcUJUMW1IeTAyR29ZNDJrSTBFa1Znb1hIeFhvRDNWX3V6TWZtT3JMQ0htMmtsOFBqZHJ0T3p6bng?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "스페인, 2030 전력망에 25조원 투입…변압기·전선 대란 속 초대형 발주",
-        "easy": "",
-        "score": 0.4,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "스페인, 2030 전력망에 25조원 투입…변압기·전선 대란 속 초대형 발주",
-            "s": "글로벌이코노믹",
-            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQzhmcjdIanlMLUhvRWRnc252OGZOMm9HUC1LYkx1T0hRWGN1eUVEU1ppcl80OHlFbUNvdHRmWXNsNUEtSGtrMWxLSW9fSFRMWURUeGxkZjhzYUxhN2w5REVTcUo2X2NPQngyUlV4ZmwtMUdCNUdoS3V2SDNOLVFLZkRqal9YY1p5?oc=5"
           }
         ]
       },
@@ -101,7 +112,7 @@ window.PANEL_DATA = {
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-22_1606.json"
+    "source": "v2_secretary/결과/갱신/2026-11-22_2108.json"
   },
   "wardrobes": [
     {
@@ -195,14 +206,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-22",
-      "start": "2026-11-22 16:06:13",
+      "start": "2026-11-22 21:08:45",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
-      "end": "2026-11-22 16:07:13",
-      "secs": 61,
+      "end": "2026-11-22 21:09:53",
+      "secs": 68,
       "exit": 0,
-      "calls": 3,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -14508,12 +14519,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 18건 (최근: 2026-11-22 ok)",
+        "line_out": "내보냄: 실행 기록 19건 (최근: 2026-11-22 ok)",
         "metrics": {
           "in": 1,
-          "out": 18,
-          "calls": 3,
-          "secs": 61.0,
+          "out": 19,
+          "calls": 2,
+          "secs": 68.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
