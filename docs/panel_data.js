@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-22",
-  "generated_at": "2026-11-22 12:30:53",
-  "made_iso": "2026-11-22T12:30:53+09:00",
+  "generated_at": "2026-11-22 16:07:14",
+  "made_iso": "2026-11-22T16:07:14+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 4번"
@@ -12,41 +12,42 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1229",
-    "made_iso": "2026-11-22T12:29:50+09:00",
-    "new": 85,
-    "news_new": 85,
+    "tag": "1606",
+    "made_iso": "2026-11-22T16:06:13+09:00",
+    "new": 105,
+    "news_new": 105,
     "calls": 2,
     "error": "",
     "times": [
-      "1229"
+      "1229",
+      "1606"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "한은 기준금리 인상 전망",
-        "easy": "한국은행이 석 달 만에 기준금리 인상을 재개할 것이라는 전망이 나왔습니다. 전문가들의 10곳 중 9곳은 내년까지 긴축 기조와 함께 금리 인상을 예상했는데요. 쉽게 말하면 물가와 성장률 부담 속에서 금리가 오를 것으로 보입니다.",
+        "title": "한국은행 금리 인상 전망",
+        "easy": "물가와 성장이 모두 오르는 흐름 속에서 한국은행이 금리 인상을 재개할지 주목되는데요, 시장의 어려움에도 불구하고 긴축 기조가 이어질 것이라는 전망이 나왔습니다. 쉽게 말하면, 다음 주 금통위의 결정에 관심이 쏠린다는 셈이에요.",
         "score": 0.45,
         "macro": [
-          "기준금리",
-          "한은"
+          "금리",
+          "한국은행"
         ],
         "n": 4,
         "arts": [
           {
+            "t": "한은, 다음 주 금리 인상 재개 여부 결정…디지털자산법 정부안도 공개",
+            "s": "블루밍비트",
+            "u": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE44dnV6LUhzOTIwSVoxOHlhU200Tk1RZTdrSi05cU9DUk9JZ0dZeTYyMnpCbGp5NHpnZmpST29UbWFYNGZ3dlZJcWowUnk4bTdG?oc=5"
+          },
+          {
+            "t": "물가·성장 모두 ↑…시장은 힘겨워도 \"한은 금리는 올라간다\"",
+            "s": "조선일보",
+            "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTWZGaHVHRTRqSnNobWNmeXYwS2p0YUMxaVladDh4eXFLNFBMRURKcU1xeWxMODZrdnhxeHlzVGJIa1BrVkdNTUNkYkU2cTlWMXBVb3dTN3BQVURrbFRBTGZsd1dhQ3ppVUhvYnBJQnA1Szc4M2djOUZaaUJPRVF0c0Z5RWdHZmZheWRyQ0tn?oc=5"
+          },
+          {
             "t": "한은, 석 달 만에 금리 인상 재개 전망…\"내년까지 긴축\"",
             "s": "연합뉴스TV",
             "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1qZ2plUXNXRnA3X01WU3NGbFp0TnZJVDdpdDFuMkFZZVVFMjJnWk5kczhJTXo2bmgtLWR4eXAwbE9zRzhpb0pZOHRUWXVadHotOWU2Vkg0ZFQ3VEZPQVBSdjdWVlZDSW8?oc=5"
-          },
-          {
-            "t": "한은, 석 달 만에 금리 인상 재개 전망…\"내년까지 긴축\"",
-            "s": "연합뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA2a2w0dkxyOERFRTZnSW0zUEJsUGtWUDZmQ0hkWnJERFlpeElnN2lwcHEzSWhFZmhILU5LYVdzZzFJaGE1RU4tSFF5bWdVczhkZDd6RjJVZmNrRVnSAWBBVV95cUxPOEFtQTczV1JEYUFMb2ZFVlk1LS1VeEFOVEhBT2RHRVhIRGx6dUxMSmVTeDBwNE5MYVVLaEN6ZkNBRVM2T0V6eXhlQ012clA5RVJVMi1MR3lJMXA2bmd4enY?oc=5"
-          },
-          {
-            "t": "\"한은, 26일 기준금리 인상\" 한목소리…10곳 중 9곳 \"내년 3.50%\" [금통위 폴]",
-            "s": "뉴스1",
-            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5UQnpILTlnSTVIc3VUcWo2NFpHd09rRVhUcWxvZHo4eS1YR2FVQVZpZVVCWFd5dll6MlhheXRjaTVhMXJmcm1hNWkwRktWaHBWakd4dA?oc=5"
           }
         ]
       },
@@ -82,25 +83,25 @@ window.PANEL_DATA = {
       },
       {
         "seat": "거시",
-        "title": "물가·성장 모두 ↑…시장은 힘겨워도 \"한은 금리는 올라간다\"",
+        "title": "증시는 폭락했는데, 연준은 금리 올린다?[11/23~27 투자캘린더]｜Global Money Club",
         "easy": "",
         "score": 0.3,
         "macro": [
           "금리",
-          "물가",
-          "한은"
+          "연준",
+          "증시"
         ],
         "n": 1,
         "arts": [
           {
-            "t": "물가·성장 모두 ↑…시장은 힘겨워도 \"한은 금리는 올라간다\"",
-            "s": "조선일보",
-            "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOTWZGaHVHRTRqSnNobWNmeXYwS2p0YUMxaVladDh4eXFLNFBMRURKcU1xeWxMODZrdnhxeHlzVGJIa1BrVkdNTUNkYkU2cTlWMXBVb3dTN3BQVURrbFRBTGZsd1dhQ3ppVUhvYnBJQnA1Szc4M2djOUZaaUJPRVF0c0Z5RWdHZmZheWRyQ0tn?oc=5"
+            "t": "증시는 폭락했는데, 연준은 금리 올린다?[11/23~27 투자캘린더]｜Global Money Club",
+            "s": "중앙일보",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9Yem1nQU4tOTdtLTk2dGxSdjRSSnMtcWdqSmdiZnhubFBtaGxuMkhWVjU5SkYzTWxweTl5QWhKUWYzV2tYOVhSemNIb0FaQ1AwRGdZY2o2YzVqbTg?oc=5"
           }
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-22_1229.json"
+    "source": "v2_secretary/결과/갱신/2026-11-22_1606.json"
   },
   "wardrobes": [
     {
@@ -194,14 +195,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-22",
-      "start": "2026-11-22 12:29:50",
+      "start": "2026-11-22 16:06:13",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
-      "end": "2026-11-22 12:30:52",
-      "secs": 63,
+      "end": "2026-11-22 16:07:13",
+      "secs": 61,
       "exit": 0,
-      "calls": 2,
+      "calls": 3,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -14507,12 +14508,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 17건 (최근: 2026-11-22 ok)",
+        "line_out": "내보냄: 실행 기록 18건 (최근: 2026-11-22 ok)",
         "metrics": {
           "in": 1,
-          "out": 17,
-          "calls": 2,
-          "secs": 63.0,
+          "out": 18,
+          "calls": 3,
+          "secs": 61.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
