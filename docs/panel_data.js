@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-23",
-  "generated_at": "2026-11-23 04:19:43",
-  "made_iso": "2026-11-23T04:19:43+09:00",
+  "generated_at": "2026-11-23 12:07:38",
+  "made_iso": "2026-11-23T12:07:38+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -11,7 +11,176 @@ window.PANEL_DATA = {
     "pc_locked": "",
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
-  "refresh": {},
+  "refresh": {
+    "tag": "1206",
+    "made_iso": "2026-11-23T12:06:43+09:00",
+    "new": 196,
+    "news_new": 138,
+    "calls": 2,
+    "error": "",
+    "times": [
+      "1206"
+    ],
+    "picks": [
+      {
+        "seat": "뉴스",
+        "title": "미국 반도체주 폭락",
+        "easy": "미국 반도체 쇼크 여파로 국내 증시에서 삼성전자와 SK하이닉스가 장 초반 동반 급락해 18만 전자와 110만 닉스가 붕괴되는 일이 벌어졌는데요. 미국 반도체지수가 10% 급락하면서 국내 시장까지 충격을 받았다는 겁니다. 뭔 소리냐면 글로벌 반도체 투자 심리가 크게 얼어붙었다는 말이에요. 그로 인해 코스피와 주요 반도체 주가가 3%에서 6% 안팎의 큰 폭으로 떨어졌습니다.",
+        "score": 0.8,
+        "macro": [],
+        "n": 7,
+        "arts": [
+          {
+            "t": "삼성전자·SK하이닉스 장 초반 동반 급락…'18만전자·110만닉스' 붕괴",
+            "s": "진일보 | 전남일보",
+            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1HMi1MQ3NoRlZ1REd6aVFCLTItNmlJT0d3bEdWZkZqdWVEZlFyR3J1Q056NkVPd3hkOENSN2djNDdjZzYzeGVFYjN3aUFlcVVaZmJLUVY2YmduQno5QVhCemI2blNndkwzSFNubU5iTQ?oc=5"
+          },
+          {
+            "t": "[핫스톡] 美 반도체 쇼크에 삼성전자·SK하이닉스 5% 급락",
+            "s": "뉴시안",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1hdFRMb0RwbjhCSTFqREJqbVFxck1QcGstdXhqVzkxU180d1hWWGhvR0pJcHNKUUVVYnpES3Y4b3Jma2hUTUtKa3p3MWRlWTdjbFlFZ2djdDJLRXVmNVFIZkU5QXh4T2pHY3QzRg?oc=5"
+          },
+          {
+            "t": "[특징주] 삼성전자·SK하이닉스, 美 반도체주 폭락 여파.. '급락'",
+            "s": "글로벌이코노믹",
+            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQLUN0eVlNY3lBQWFwQlpHZ0hUbTYydkczM2NiaklOUlZyTk5aS1QzQ1l0WXpIOUxITXdXRWtSanpQdEdEaWNCUUJmWlJwX0xtNnhKYVdKVXRuMk13dmNSNnExVzlfZC1vQ19xVmFJb0VDc2QyeUlncGdvYlZ4Ni1XZlpNN2xiaE9C?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한국전력 개인정보 유출",
+        "easy": "한국전력에서 152만 명분의 고객 개인정보가 유출되는 일이 일어났는데요. 전기요금 납부 정보까지 털리면서 이용자들이 2차 피해 우려로 비상에 걸렸다는 겁니다. 뭔 소리냐면 직원 정보에 이어 대규모 고객 정보까지 보안이 뚫렸다는 말이에요. 그 바람에 증시 하락장 속에서 한국전력 주가가 3%에서 4% 가까이 하락하는 악재를 겪었습니다.",
+        "score": 0.7,
+        "macro": [],
+        "n": 7,
+        "arts": [
+          {
+            "t": "전기요금 납부정보까지 털려, 한전 개인정보 152만 명분 유출",
+            "s": "우먼컨슈머",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBmUERGdi05SDNpU1RjM2RzOHlMQzE5WW9tbkgwd0ppQzBrVHNGZTUzWlZqdDFVX1pfalhnTVNFdFlqNEdieWEzUEhxeC11UHlzUVFxSWpEYUMtOHNSaGI4VEVVODNtSDJSXzdr?oc=5"
+          },
+          {
+            "t": "한국전력도 개인정보 152만명 유출…직원 정보 이어 고객정보까지 뚫렸다",
+            "s": "뉴시안",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1oNm9lbGMzSWJDR0RsSlpvSkFTelB4VWVaNXB2eGh4ajU0d1Z1QURZaEtUUFFzWWI1cGswRTdOTDl1ckVCUGRHcEhDMk43WDVZM1JDR3FITE8xT0hUblotRjcyaWh2TEE1dUQxbQ?oc=5"
+          },
+          {
+            "t": "한전, 152만명 고객정보 유출 '비상'…2차피해 예방 어떻게?",
+            "s": "뉴스핌",
+            "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBmVFFzTGplbW5LbmtOenBsYWg5OWxQWExIdVVQRmxWSk1jN1gweEtKdGtCUEFrdzRndE1yZEg2dWlZT2JKYnFXYXBJYnZwcUpoaVNHMmo4LWVCcFlz?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "엔비디아 수출통제 논란",
+        "easy": "미 재무장관이 엔비디아의 수출통제 준수 여부가 핵심이라고 밝히면서 젠슨 황 CEO의 복귀 가능성과 밀반입 의혹이 미·중 무역전쟁의 새로운 변수로 떠올랐는데요. 칩에 이어 통신까지 규제가 이어지면서 무역전쟁이 재점화될 우려가 커졌다는 겁니다. 뭔 소리냐면 미·중 무역휴전 종결을 앞두고 엔비디아 사태가 갈등의 도화선이 될 수 있다는 말이에요.",
+        "score": 0.6,
+        "macro": [],
+        "n": 11,
+        "arts": [
+          {
+            "t": "선전 정상회담서도 못 푼 반도체·희토류 갈등…엔비디아 사태로 무역전쟁 재점화 우려",
+            "s": "마켓잉크",
+            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE10MmNWbXdOdTc0N2UxSjVjLWpnVnVsX1Ztcm5OUTBqTmdmQnhKRUVjci05NzJ4RFFMVldZY243V0Ric0RpcE54U00zdlhrclVNN2sxZFFrRmhEMHFnWm1sZVVPRzJjbm14d3BtQzEwMA?oc=5"
+          },
+          {
+            "t": "미 재무 “엔비디아 수출통제 준수 여부가 핵심”…젠슨 황 복귀 가능성 배제 안 해",
+            "s": "KBS 뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1TNzlnZW9NdzY3UzVXdUZERURvR2Yxb1QxbWRGVkg5VnNoUkZFT1lEQ09SV0RfTV9DUVhpRGRIeEpvT2dwbVltVkVwdk5xY0F5WDU1dGU2YmRLeTQ?oc=5"
+          },
+          {
+            "t": "美 재무장관 \"엔비디아 수출통제 위반 여부, 젠슨 황과 별개\"",
+            "s": "한국경제",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE45cVlyUlFoTVJ1b3BTdDFxUlF1bmFrNi1xVF9pNHNEaTNReU9kYlM4TWFSN2JBU3J5ZHJjSjdfd29Md1RvNHZvaVlMUElPVi0xbmsyWGxPY2pwdw?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "효성굿스프링스 원전 인증",
+        "easy": "효성굿스프링스가 미국 원전 인증을 획득해 체코 등 글로벌 시장 수주 기회를 모색해 봤더니, 원전용 펌프 전 제품에 대해 ASME 인증을 받았다는 건데요. 뭔 소리냐면 해외 원전 시장 진출을 위한 까다로운 기술 검증을 마쳤다는 말이에요. 그래서 앞으로 체코와 미국 등 글로벌 원전 시장 공략에 청신호가 켜질 것으로 보입니다. 쉽게 말하면 이번 인증으로 원전 수주 경쟁력이 한층 높아졌다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 5,
+        "arts": [
+          {
+            "t": "효성굿스프링스, 美 원전 인증 확보…체코 등 수주 기회 모색",
+            "s": "지디넷코리아",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9Ndm9lQmowOWltdGFrSmFvWldxM3VPVWlpR0hsV2FGZmQ5ZU14Zm5vekZtVzNfV1RMMlF1N0hsODBmd1lHNmFld1FySzE1dUpIQjV2YVhR?oc=5"
+          },
+          {
+            "t": "효성굿스프링스, 美 ASME 인증 획득…글로벌 원전 수주 기대",
+            "s": "머니투데이",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE91T2hvSDNuMzdYandPT1kzOUdlYk5WX0Ywc0JCd2Nmd3dPeHhfek1hM0dUX2p0a3YwcGllMWNuMWpXME9qVWU2a3p3WGVnaFJlRElaS1cyQV91OV8ySVZuRzI1MkJITlhJWDVXVUw5SlEzd9IBckFVX3lxTE91T2hvSDNuMzdYandPT1kzOUdlYk5WX0Ywc0JCd2Nmd3dPeHhfek1hM0dUX2p0a3YwcGllMWNuMWpXME9qVWU2a3p3WGVnaFJlRElaS1cyQV91OV8ySVZuRzI1MkJITlhJWDVXVUw5SlEzdw?oc=5"
+          },
+          {
+            "t": "효성굿스프링스, 원전 펌프 전 제품 미국 ASME 인증 획득",
+            "s": "https://www.2news.co.kr/",
+            "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFM2xEd2R3b0hrZDB4ZURUNjF1VktSX0pYZXl6ZDNueTlwQ0ZqUFlmR25hX2ZzVmFhZXZYTTFjeGRSSjF3WWdLeHZ6SEt5bkJMQTZQbjc5blh1QUhJSDdVaXJidDVyVlE4?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한국은행 금리 결정 앞두고 반도체 호황에도 제조업 경기 악화",
+        "easy": "",
+        "score": 0.6,
+        "macro": [
+          "금리",
+          "한국은행"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "한국은행 금리 결정 앞두고 반도체 호황에도 제조업 경기 악화",
+            "s": "Korea IT Times",
+            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE83bWlLSG1SZzh3U1VFSFRtanNoWFN0X2oyNk1fT2tyUFY0Mno1S19Ja3FBTHNXellaUTQ0RmRjTVlpbFY2UVg1OEpaVjg1WTFGODljNmlJVDU3Mk9ZenpZYl96NHFOMkFOd0dpR3VpdHc?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "\"연준 금리인하 기대 재부상…미 국채 10년물 4.8% 주목\"",
+        "easy": "",
+        "score": 0.3,
+        "macro": [
+          "국채",
+          "금리",
+          "연준"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "\"연준 금리인하 기대 재부상…미 국채 10년물 4.8% 주목\"",
+            "s": "뉴스투데이",
+            "u": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBFY213Q2FjUXdQVERFMjBQUHo3TS00dElIQkZWWW9kMTJYOE1vZ3lmQjVFYjJoQlFCWWhWM1Q1MXpmY2U1TWVSWjlNcWxNSEhjZGF4YzYwRWlseXRnanc?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "‘AI 패닉셀’ 美증시 조정 진입…월가, 연준 추가 금리인상 베팅",
+        "easy": "",
+        "score": 0.3,
+        "macro": [
+          "금리",
+          "연준",
+          "증시"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "‘AI 패닉셀’ 美증시 조정 진입…월가, 연준 추가 금리인상 베팅",
+            "s": "헤럴드경제",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5sN0E1c0NYNEpwWWpxZVFxTTh5ajBGdmpnd2lQM2JtRzVCSlpiaUtWZmlWNllVMGVIejFkSVZQWWlkWGhTRVdjbWN6dlpfQnh6QUQtLUlB?oc=5"
+          }
+        ]
+      }
+    ],
+    "source": "v2_secretary/결과/갱신/2026-11-23_1206.json"
+  },
   "wardrobes": [
     {
       "id": "sticker",
@@ -104,16 +273,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-23",
-      "start": "2026-11-23 04:13:33",
+      "start": "2026-11-23 12:06:42",
       "by": "github",
       "where": "GitHub",
-      "mode": "run",
-      "end": "2026-11-23 04:15:54",
-      "secs": 141,
+      "mode": "refresh",
+      "end": "2026-11-23 12:07:38",
+      "secs": 56,
       "exit": 0,
-      "result_md": true,
-      "failed_stages": 0,
-      "calls": 7,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -7112,12 +7279,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 20건 (최근: 2026-11-23 ok)",
+        "line_out": "내보냄: 실행 기록 21건 (최근: 2026-11-23 ok)",
         "metrics": {
           "in": 1,
-          "out": 20,
-          "calls": 7,
-          "secs": 141.0,
+          "out": 21,
+          "calls": 2,
+          "secs": 56.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
