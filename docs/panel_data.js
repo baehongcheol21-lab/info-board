@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-23",
-  "generated_at": "2026-11-23 12:07:38",
-  "made_iso": "2026-11-23T12:07:38+09:00",
+  "generated_at": "2026-11-23 16:07:08",
+  "made_iso": "2026-11-23T16:07:08+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -12,174 +12,192 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1206",
-    "made_iso": "2026-11-23T12:06:43+09:00",
-    "new": 196,
-    "news_new": 138,
+    "tag": "1606",
+    "made_iso": "2026-11-23T16:06:15+09:00",
+    "new": 313,
+    "news_new": 187,
     "calls": 2,
     "error": "",
     "times": [
-      "1206"
+      "1206",
+      "1606"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "미국 반도체주 폭락",
-        "easy": "미국 반도체 쇼크 여파로 국내 증시에서 삼성전자와 SK하이닉스가 장 초반 동반 급락해 18만 전자와 110만 닉스가 붕괴되는 일이 벌어졌는데요. 미국 반도체지수가 10% 급락하면서 국내 시장까지 충격을 받았다는 겁니다. 뭔 소리냐면 글로벌 반도체 투자 심리가 크게 얼어붙었다는 말이에요. 그로 인해 코스피와 주요 반도체 주가가 3%에서 6% 안팎의 큰 폭으로 떨어졌습니다.",
-        "score": 0.8,
+        "title": "효성굿스프링스 ASME 인증",
+        "easy": "효성굿스프링스가 원자력 발전소 공급용 펌프 전 제품군에 대해 미국기계학회인 ASME 인증을 취득했습니다. 글로벌 원전 시장에서 수주를 확대할 수 있는 청신호가 켜졌다는 건데요, 해외 공략에 탄력을 받을 것으로 보입니다.",
+        "score": 0.6,
         "macro": [],
         "n": 7,
         "arts": [
           {
-            "t": "삼성전자·SK하이닉스 장 초반 동반 급락…'18만전자·110만닉스' 붕괴",
-            "s": "진일보 | 전남일보",
-            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1HMi1MQ3NoRlZ1REd6aVFCLTItNmlJT0d3bEdWZkZqdWVEZlFyR3J1Q056NkVPd3hkOENSN2djNDdjZzYzeGVFYjN3aUFlcVVaZmJLUVY2YmduQno5QVhCemI2blNndkwzSFNubU5iTQ?oc=5"
+            "t": "효성굿스프링스, 美 ASME 인증 획득…원전 수주 확대 기대",
+            "s": "더팩트",
+            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE40VVJOVHM3NTBmNGEwamJIYVRUQjZUdXBrSXFSdEEzdDI4ZmRHSWgxeFhZVDk4NXlxVURKcHp3V2xBRUtFUmFpbnlWanJUU3RZdnFzc9IBVEFVX3lxTE40VVJOVHM3NTBmNGEwamJIYVRUQjZUdXBrSXFSdEEzdDI4ZmRHSWgxeFhZVDk4NXlxVURKcHp3V2xBRUtFUmFpbnlWanJUU3RZdnFzcw?oc=5"
           },
           {
-            "t": "[핫스톡] 美 반도체 쇼크에 삼성전자·SK하이닉스 5% 급락",
-            "s": "뉴시안",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1hdFRMb0RwbjhCSTFqREJqbVFxck1QcGstdXhqVzkxU180d1hWWGhvR0pJcHNKUUVVYnpES3Y4b3Jma2hUTUtKa3p3MWRlWTdjbFlFZ2djdDJLRXVmNVFIZkU5QXh4T2pHY3QzRg?oc=5"
+            "t": "효성굿스프링스, 원전 펌프 전 제품 ASME 인증…글로벌 수주 ‘청신호’",
+            "s": "전기신문",
+            "u": "https://www.electimes.com/news/articleView.html?idxno=375143"
           },
           {
-            "t": "[특징주] 삼성전자·SK하이닉스, 美 반도체주 폭락 여파.. '급락'",
-            "s": "글로벌이코노믹",
-            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQLUN0eVlNY3lBQWFwQlpHZ0hUbTYydkczM2NiaklOUlZyTk5aS1QzQ1l0WXpIOUxITXdXRWtSanpQdEdEaWNCUUJmWlJwX0xtNnhKYVdKVXRuMk13dmNSNnExVzlfZC1vQ19xVmFJb0VDc2QyeUlncGdvYlZ4Ni1XZlpNN2xiaE9C?oc=5"
+            "t": "효성굿스프링스, 원전용 펌프 ASME 인증…체코·미국 시장 공략",
+            "s": "에너지신문",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9fdzFjUERyS1NTcFNJYU03Q0tBaHZIN1VBRlIyeEpva3JOM3BHclcxUjdsRVJSUXV6NVBabDBtclJydXFVRmdDQ0dvY3ROcFFVU1ZzRkE2d0pMb0FqQ29PaEdFUTNPaXR1LXdHYWhZQVJodw?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
         "title": "한국전력 개인정보 유출",
-        "easy": "한국전력에서 152만 명분의 고객 개인정보가 유출되는 일이 일어났는데요. 전기요금 납부 정보까지 털리면서 이용자들이 2차 피해 우려로 비상에 걸렸다는 겁니다. 뭔 소리냐면 직원 정보에 이어 대규모 고객 정보까지 보안이 뚫렸다는 말이에요. 그 바람에 증시 하락장 속에서 한국전력 주가가 3%에서 4% 가까이 하락하는 악재를 겪었습니다.",
-        "score": 0.7,
-        "macro": [],
-        "n": 7,
-        "arts": [
-          {
-            "t": "전기요금 납부정보까지 털려, 한전 개인정보 152만 명분 유출",
-            "s": "우먼컨슈머",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBmUERGdi05SDNpU1RjM2RzOHlMQzE5WW9tbkgwd0ppQzBrVHNGZTUzWlZqdDFVX1pfalhnTVNFdFlqNEdieWEzUEhxeC11UHlzUVFxSWpEYUMtOHNSaGI4VEVVODNtSDJSXzdr?oc=5"
-          },
-          {
-            "t": "한국전력도 개인정보 152만명 유출…직원 정보 이어 고객정보까지 뚫렸다",
-            "s": "뉴시안",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1oNm9lbGMzSWJDR0RsSlpvSkFTelB4VWVaNXB2eGh4ajU0d1Z1QURZaEtUUFFzWWI1cGswRTdOTDl1ckVCUGRHcEhDMk43WDVZM1JDR3FITE8xT0hUblotRjcyaWh2TEE1dUQxbQ?oc=5"
-          },
-          {
-            "t": "한전, 152만명 고객정보 유출 '비상'…2차피해 예방 어떻게?",
-            "s": "뉴스핌",
-            "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBmVFFzTGplbW5LbmtOenBsYWg5OWxQWExIdVVQRmxWSk1jN1gweEtKdGtCUEFrdzRndE1yZEg2dWlZT2JKYnFXYXBJYnZwcUpoaVNHMmo4LWVCcFlz?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "엔비디아 수출통제 논란",
-        "easy": "미 재무장관이 엔비디아의 수출통제 준수 여부가 핵심이라고 밝히면서 젠슨 황 CEO의 복귀 가능성과 밀반입 의혹이 미·중 무역전쟁의 새로운 변수로 떠올랐는데요. 칩에 이어 통신까지 규제가 이어지면서 무역전쟁이 재점화될 우려가 커졌다는 겁니다. 뭔 소리냐면 미·중 무역휴전 종결을 앞두고 엔비디아 사태가 갈등의 도화선이 될 수 있다는 말이에요.",
-        "score": 0.6,
-        "macro": [],
-        "n": 11,
-        "arts": [
-          {
-            "t": "선전 정상회담서도 못 푼 반도체·희토류 갈등…엔비디아 사태로 무역전쟁 재점화 우려",
-            "s": "마켓잉크",
-            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE10MmNWbXdOdTc0N2UxSjVjLWpnVnVsX1Ztcm5OUTBqTmdmQnhKRUVjci05NzJ4RFFMVldZY243V0Ric0RpcE54U00zdlhrclVNN2sxZFFrRmhEMHFnWm1sZVVPRzJjbm14d3BtQzEwMA?oc=5"
-          },
-          {
-            "t": "미 재무 “엔비디아 수출통제 준수 여부가 핵심”…젠슨 황 복귀 가능성 배제 안 해",
-            "s": "KBS 뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1TNzlnZW9NdzY3UzVXdUZERURvR2Yxb1QxbWRGVkg5VnNoUkZFT1lEQ09SV0RfTV9DUVhpRGRIeEpvT2dwbVltVkVwdk5xY0F5WDU1dGU2YmRLeTQ?oc=5"
-          },
-          {
-            "t": "美 재무장관 \"엔비디아 수출통제 위반 여부, 젠슨 황과 별개\"",
-            "s": "한국경제",
-            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE45cVlyUlFoTVJ1b3BTdDFxUlF1bmFrNi1xVF9pNHNEaTNReU9kYlM4TWFSN2JBU3J5ZHJjSjdfd29Md1RvNHZvaVlMUElPVi0xbmsyWGxPY2pwdw?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "효성굿스프링스 원전 인증",
-        "easy": "효성굿스프링스가 미국 원전 인증을 획득해 체코 등 글로벌 시장 수주 기회를 모색해 봤더니, 원전용 펌프 전 제품에 대해 ASME 인증을 받았다는 건데요. 뭔 소리냐면 해외 원전 시장 진출을 위한 까다로운 기술 검증을 마쳤다는 말이에요. 그래서 앞으로 체코와 미국 등 글로벌 원전 시장 공략에 청신호가 켜질 것으로 보입니다. 쉽게 말하면 이번 인증으로 원전 수주 경쟁력이 한층 높아졌다는 겁니다.",
+        "easy": "한국전력공사에서 고객번호와 계좌번호를 비롯해 152만여 명의 개인정보가 유출되는 사고가 발생했습니다. 전기요금 납부정보까지 털렸다는 건데요, 보안 관리에 비상이 걸렸다는 말이에요.",
         "score": 0.6,
         "macro": [],
         "n": 5,
         "arts": [
           {
-            "t": "효성굿스프링스, 美 원전 인증 확보…체코 등 수주 기회 모색",
-            "s": "지디넷코리아",
-            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9Ndm9lQmowOWltdGFrSmFvWldxM3VPVWlpR0hsV2FGZmQ5ZU14Zm5vekZtVzNfV1RMMlF1N0hsODBmd1lHNmFld1FySzE1dUpIQjV2YVhR?oc=5"
+            "t": "152만여 명 정보 유출된 한국전력공사",
+            "s": "뉴시스",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE04d2NTMEZ5YldidkJBemlJX2IzVFpRU1ZlVThJVWJ0SEprNWdfSVFpMC15Q09pM1hGYUQ1MDcyM3BQOFkzUlZmMnZzdUNoVjY3Z3ZzNFJqNDBLQXlTTGNxRQ?oc=5"
           },
           {
-            "t": "효성굿스프링스, 美 ASME 인증 획득…글로벌 원전 수주 기대",
-            "s": "머니투데이",
-            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE91T2hvSDNuMzdYandPT1kzOUdlYk5WX0Ywc0JCd2Nmd3dPeHhfek1hM0dUX2p0a3YwcGllMWNuMWpXME9qVWU2a3p3WGVnaFJlRElaS1cyQV91OV8ySVZuRzI1MkJITlhJWDVXVUw5SlEzd9IBckFVX3lxTE91T2hvSDNuMzdYandPT1kzOUdlYk5WX0Ywc0JCd2Nmd3dPeHhfek1hM0dUX2p0a3YwcGllMWNuMWpXME9qVWU2a3p3WGVnaFJlRElaS1cyQV91OV8ySVZuRzI1MkJITlhJWDVXVUw5SlEzdw?oc=5"
+            "t": "[1123시황레이더] 한국전력, 개인정보 152만여 건 유출 소식 등",
+            "s": "인포스탁데일리",
+            "u": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5uZkd3MkJwMGJIalg2ZDVnbXp0X3drdTVNMmpmMHFMVEh6bHc3QmtPTUV6RHRUM3Mtem9QSWpBNC1fdExNaFFZalhERURvSjI4d2pRdFkxYlRwbnFRUHhKTHU0SThCeDRIajF0aUNlSXN2cTBldnc?oc=5"
           },
           {
-            "t": "효성굿스프링스, 원전 펌프 전 제품 미국 ASME 인증 획득",
-            "s": "https://www.2news.co.kr/",
-            "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBFM2xEd2R3b0hrZDB4ZURUNjF1VktSX0pYZXl6ZDNueTlwQ0ZqUFlmR25hX2ZzVmFhZXZYTTFjeGRSSjF3WWdLeHZ6SEt5bkJMQTZQbjc5blh1QUhJSDdVaXJidDVyVlE4?oc=5"
+            "t": "[포토] 한국전력에서 개인정보 152만건 유출",
+            "s": "전자신문",
+            "u": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE12NzFjd2FmV3RacmZfV3NIV1hRQTJJendINm1EUEhvZXNOckI0dHRkbjByWF9IeEtHdlFTVm5OSFNqZGV1WEFvbmdnZ3JRdw?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "한국은행 금리 결정 앞두고 반도체 호황에도 제조업 경기 악화",
-        "easy": "",
-        "score": 0.6,
-        "macro": [
-          "금리",
-          "한국은행"
-        ],
-        "n": 1,
+        "title": "일본 희토류 비축분 방출",
+        "easy": "중국의 수출통제에 맞서 일본 정부가 비축 중인 희토류를 방출하면서 관련 수입이 센카쿠 사태 때의 5배에 달하는 규모로 급증했습니다. 독자적인 공급망 부활을 위해 속도를 내고 있다는 겁니다.",
+        "score": 0.55,
+        "macro": [],
+        "n": 4,
         "arts": [
           {
-            "t": "한국은행 금리 결정 앞두고 반도체 호황에도 제조업 경기 악화",
-            "s": "Korea IT Times",
-            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE83bWlLSG1SZzh3U1VFSFRtanNoWFN0X2oyNk1fT2tyUFY0Mno1S19Ja3FBTHNXellaUTQ0RmRjTVlpbFY2UVg1OEpaVjg1WTFGODljNmlJVDU3Mk9ZenpZYl96NHFOMkFOd0dpR3VpdHc?oc=5"
+            "t": "\"日정부, 中수출규제에 비축 희토류 방출↑…센카쿠 사태의 5배\"",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE02SFRfUHVIZ2V6ZEtBVEx0STI3ZndGN1NFVHh0WEhNNmdxT0xUS2JRZFFaSE9JYVBGcWlUNXVzNGk2bGkyV0kzT3BMRXlZRDBfWmhNVEpySWIxNmPSAWBBVV95cUxNNlRCX3BWTDRaaG5Ram82SXN2Uy1US0FfQi1JZEVqTGhEZGVfTDZhZDFCLWRseWl6eGVybndwcmxTYTJjbVQyLXM5ak9fVkpuQWNZc1NCN0xkemFMOFdCOFk?oc=5"
+          },
+          {
+            "t": "日 기업들, 中 희토류 수출통제 맞서 ‘독자 공급망 부활’ 속도전",
+            "s": "글로벌이코노믹",
+            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNaVoxVEQ1UkR1WVlFQk5NZVgwLV9idVFhV1NRMC10aVd0Yk1xTlBlTXFmcXVnaHlXOVRsSHBDVElkNFZla2ZyQmNmZTZrYW92UU1mS29WUER6SlJ6clQ2SEVXRlZVYzBsY2E5bWZ5UkJqSk9XNVVzUTBIajZWWGhuUVpSWkJDdzdD?oc=5"
+          },
+          {
+            "t": "중국발 희토류 공급 불안에…日 비축 광물 관련 수입 5배 급증",
+            "s": "뉴시스",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBGZG8tUm1lRFUzejE1OXdzUDcweU1wVTB1LUZyV1Y3djJScEI3Ml9HOEhwVkM3WEdZdy1FUUxJWWVhUUtsZ2N6Um9KWlU5bjlKOERJZmxxTWZabVhManlZWtIBeEFVX3lxTE85ZWVTUUdUMmRaeXA0U1NvajFuNnMzVDNGMzNoejI2SG5ReFc2QUdhemlBQVkxSjB6bGRkT2xWcXdBVkVLODNCWjdEXy1BTGRqMF9HQWtEd3JpelFJcjJhbTZvck1scFJjNkIzSWdnLVJzcVpORVp0Tw?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "슈퍼브에이아이 로봇대회 은상",
+        "easy": "슈퍼브에이아이의 피지컬 AI 연구 성과가 마트 환경 기반 휴머노이드 로봇 경진대회에서 은상을 수상했습니다. 에이전틱 로보틱스 기술을 적용해 로봇 성능을 높였다는 건데요, 앞으로 로봇 산업에서의 활용이 기대된다는 셈이에요.",
+        "score": 0.5,
+        "macro": [],
+        "n": 3,
+        "arts": [
+          {
+            "t": "슈퍼브에이아이, 휴머노이드 로봇대회 은상...피지컬 AI 연구 성과",
+            "s": "더에이아이",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4yMUtKVXlDSS1UVnh5WV96Nk4xVWszTDQyNEpuMmVUS2NTTXNvX3YyOVRBRFcyS2tGTFRkQ2tYZkx2VVgwNWY2UkpqSkNPdjhEOHFOdUJlZjZNSnN0MHNGTGhmZGlxUjlqWlRV?oc=5"
+          },
+          {
+            "t": "슈퍼브에이아이, ‘마트 환경 기반 휴머노이드 로봇 경진대회’ 은상 수상",
+            "s": "한스경제",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1qM0ZQNzl5RFY4cnhFa2VfdHZWTGNRSkJkOURxZFBtdE9SWGRxc1dncDl5ODJFdl9vY2k2UTBmQXlDa2dtZzAwVTJ2QWhwY3hGT0EtbUVrRndmTVkyVkEtTFlYc0ZiNWxudEo1RQ?oc=5"
+          },
+          {
+            "t": "슈퍼브에이아이, ‘마트 휴머노이드 로봇 경진대회’ 은상…에이전틱 로보틱스 적용",
+            "s": "테크월드",
+            "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBvNzhueUVmbXhjVHpEQWFyZzU3OTdQWk9jalhRRklUSUhsSU9mcVg3S0JiX3RxVVlmTkY2TjIyWXcyc21VcnJaM015VVFBYjM0bk9oUGJTTmthM1YwaEF6LTlSN3NKWnUx?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "GS건설 데이터센터 통합엔지니어링",
+        "easy": "GS건설이 전력과 시공, 통합제어 분야 전문기업들과 협력해 AI 데이터센터 구축 기간을 단축하기 위한 통합엔지니어링 체계를 구축했습니다. 구축 단계 간 연계를 강화해 병목 현상을 푼다는 말이에요.",
+        "score": 0.5,
+        "macro": [],
+        "n": 3,
+        "arts": [
+          {
+            "t": "GS건설, 데이터센터 구축 병목 푼다…통합엔지니어링 체계 구축",
+            "s": "전기신문",
+            "u": "https://www.electimes.com/news/articleView.html?idxno=375149"
+          },
+          {
+            "t": "GS건설, LS일렉트릭·LG유플러스·하니웰과 맞손…AI 데이터센터 구축 기간 단축 추진",
+            "s": "더트래커",
+            "u": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE41SzJGRkh1dk11eFl4ZUFZNkg3NTljcFhfaDZIQ1RaQTE1NlF1WjY3WTQ2b3dXVW42UlYxTTRtMnRNT3dVMHRXVm9wVWtDTHJKNHk1UzUwUE4?oc=5"
+          },
+          {
+            "t": "GS건설, 통합엔지니어링 체계로 데이터센터 구축 ’속도전’",
+            "s": "인베스팅 주식",
+            "u": "https://kr.investing.com/news/stock-market-news/article-2186652"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "\"연준 금리인하 기대 재부상…미 국채 10년물 4.8% 주목\"",
-        "easy": "",
-        "score": 0.3,
+        "title": "빌 애크먼 연준 금리 인하 촉구",
+        "easy": "월가 투자자인 빌 애크먼이 연준이 12월에 금리를 올리면 세계적인 경기 침체를 불러올 수 있다며 금리를 인상해서는 안 된다고 주장했습니다. 금융이 이미 크게 긴축되었다는 말이에요.",
+        "score": 0.4,
         "macro": [
-          "국채",
           "금리",
           "연준"
         ],
-        "n": 1,
+        "n": 3,
         "arts": [
           {
-            "t": "\"연준 금리인하 기대 재부상…미 국채 10년물 4.8% 주목\"",
-            "s": "뉴스투데이",
-            "u": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBFY213Q2FjUXdQVERFMjBQUHo3TS00dElIQkZWWW9kMTJYOE1vZ3lmQjVFYjJoQlFCWWhWM1Q1MXpmY2U1TWVSWjlNcWxNSEhjZGF4YzYwRWlseXRnanc?oc=5"
+            "t": "빌 애크먼 \"금융 매우 크게 긴축…연준, 12월 금리 올리면 안 돼\"",
+            "s": "연합인포맥스",
+            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9XVHpSQ1JaeU5EVVcxaEVpSWVOV0RkQ3V6Ulg4RVNhaFMtU0s0MlNScUdkNVIzbC02VkxJc2oxT3RSWHg1ZkJRWnZmMlA5LUZqY1loMUZmQUh6NDdlY3RMX2ZFRDJUNGxvS2M3cVh0RDY?oc=5"
+          },
+          {
+            "t": "'월가 큰손' 애크먼 \"연준, 12월 또 실수할 것 … 금리 더 올리면 세계 경기침체\"",
+            "s": "뉴데일리",
+            "u": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5RUHZtOEcxcWgtVjRDbmtwLUtPOElBU2U0QmtPVnpuUklnQjJIbGNvamxRT3VoWWFZSjB3eE5YX3YxSnlPcEIxVDU2N2JTTV82dHp4b0VCay1ONVJEMFhTMzF1eDQ2dWxaR3pwVnpyVzNMQnJadV9EZHRZTdIBgAFBVV95cUxNMmZYcFdzS3pvMldDbk5qcFhOOFJSNm1yWXYxdUlWbmFrMXJ3a3FpUjNCbnJlOFlaQnFUeG50bEY2RzJhY0x5dnVnLS10V21vcnptdUk1T2tRRllyM1QwNElXUllsaTFQakRaSk5lRnJNQlE3bHZ3Q3Y2YjU4RlBpMg?oc=5"
+          },
+          {
+            "t": "美연준, 12월 금리 올리면 안 돼 빌 애크먼",
+            "s": "SBS Biz",
+            "u": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1pUkQwV1VkNEktOEJQMF8wQ05kNl9GeUxWZnhtM2FGNVJlTEdqSElIdnlybGJyN1cwcjZsQ0RMSDVScEc3OFJWYUZuRzR0M0RfOXJn0gFYQVVfeXFMTUdZMmNDZFBrQ2M5cTc5d1QyaER2ZGt0OVFtMEVoZ2tHYUUza3pHWW9hcnVIWXJhM2syY0l1YVVjazRMVmRrYW5oOG42Z2NlZlpHcnd2MjFFSA?oc=5"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "‘AI 패닉셀’ 美증시 조정 진입…월가, 연준 추가 금리인상 베팅",
+        "title": "美 증시 폭락에 연준 '빅스텝' 전망 소멸…12월 금리 인상 기대 후퇴",
         "easy": "",
         "score": 0.3,
         "macro": [
           "금리",
+          "빅스텝",
           "연준",
           "증시"
         ],
         "n": 1,
         "arts": [
           {
-            "t": "‘AI 패닉셀’ 美증시 조정 진입…월가, 연준 추가 금리인상 베팅",
-            "s": "헤럴드경제",
-            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5sN0E1c0NYNEpwWWpxZVFxTTh5ajBGdmpnd2lQM2JtRzVCSlpiaUtWZmlWNllVMGVIejFkSVZQWWlkWGhTRVdjbWN6dlpfQnh6QUQtLUlB?oc=5"
+            "t": "美 증시 폭락에 연준 '빅스텝' 전망 소멸…12월 금리 인상 기대 후퇴",
+            "s": "블루밍비트",
+            "u": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE80LUQxTkZyNkh2dm5KYnQ2WklacXNlVW1xX0Z0Rmp1d3M4ZzU1SElxWG9kTWtkS0N5UldWblllM0U4UDJudFV6STFzNEFDcjNX?oc=5"
           }
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-23_1206.json"
+    "source": "v2_secretary/결과/갱신/2026-11-23_1606.json"
   },
   "wardrobes": [
     {
@@ -273,12 +291,12 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-23",
-      "start": "2026-11-23 12:06:42",
+      "start": "2026-11-23 16:06:14",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
-      "end": "2026-11-23 12:07:38",
-      "secs": 56,
+      "end": "2026-11-23 16:07:08",
+      "secs": 54,
       "exit": 0,
       "calls": 2,
       "result": "ok"
@@ -7279,12 +7297,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 21건 (최근: 2026-11-23 ok)",
+        "line_out": "내보냄: 실행 기록 22건 (최근: 2026-11-23 ok)",
         "metrics": {
           "in": 1,
-          "out": 21,
+          "out": 22,
           "calls": 2,
-          "secs": 56.0,
+          "secs": 54.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
