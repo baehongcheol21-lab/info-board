@@ -702,6 +702,23 @@ table.data-tbl th {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* 11-23(원장 134): 챕터 6 흐름 엮기·채점 카드 */
+.fl-card { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--card); padding: 14px; margin-top: 12px; overflow-wrap: anywhere; }
+.fl-card h3 { margin: 0 0 8px; font-size: 16px; color: var(--ink); }
+.fl-steps { margin: 0; padding-left: 0; list-style: none; }
+.fl-steps li { padding: 7px 0 7px 10px; border-left: 3px solid var(--rule); margin: 4px 0; line-height: 1.55; color: var(--ink2); }
+.fl-steps li.fact { border-left-color: var(--accent); }
+.fl-chip { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 999px; margin-right: 6px;
+  background: var(--sub-surface); color: var(--muted); border: 1px solid var(--rule); }
+.fl-steps li.fact .fl-chip { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.fl-refs { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.fl-claim { margin-top: 8px; padding: 8px 10px; border: 1px dashed var(--rule); border-radius: 10px; font-size: 13px; color: var(--ink2); background: var(--sub-surface); }
+.fl-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.fl-score { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-top: 10px; }
+.fl-score div { border: 1px solid var(--rule); border-radius: 10px; padding: 8px 10px; background: var(--card); }
+.fl-score b { display: block; font-size: 20px; color: var(--ink); }
+.fl-score span { font-size: 12px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -746,6 +763,7 @@ table.data-tbl th {
       <button type="button" class="ch-tab" onclick="scrollToChapter('ch3')">3. 쉽게 읽기 (거푸집2·연준) <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-2')">처리-2</span></button>
       <button type="button" class="ch-tab" onclick="scrollToChapter('ch4')">4. 뉴스 사건 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-3')">처리-3</span></button>
       <button type="button" class="ch-tab" onclick="scrollToChapter('ch5')"><span id="tabCh5Label">5. 논문</span> <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-4')">처리-4</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch6')">6. 흐름·채점 카드</button>
     </nav>
 
     <!-- 챕터 1: 오늘의 순위 (출력-1) -->
@@ -820,6 +838,17 @@ table.data-tbl th {
       <div id="ch5Picks"></div>
       <div id="ch5Filter"></div>
       <div id="ch5List"></div>
+    </section>
+    <!-- 챕터 6: 흐름 엮기 + 채점 카드 (11-23 원장 134 — 바퀴 5-D, 구간 주소는 아직 없음) -->
+    <section class="chapter-section" id="ch6">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 6 · 흐름 엮기 + 채점 카드</h2>
+          <div class="ch-status" id="ch6Status"></div>
+        </div>
+      </div>
+      <div id="ch6Ledger"></div>
+      <div id="ch6Flows"></div>
     </section>
   </main>
 
@@ -1357,6 +1386,45 @@ table.data-tbl th {
     }
   }
 
+
+  // 11-23(원장 134): 챕터 6 — 흐름 엮기(팩트/추정 구분) + 채점 카드 장부(기저율과 나란히)
+  function renderFlows(F) {
+    const st = $('ch6Status'), lg = $('ch6Ledger'), fl = $('ch6Flows');
+    if (!st) return;
+    if (!F || (!F.flows && !F.ledger)) { st.textContent = '흐름 자료 없음 — 새벽 바퀴 5-D 단계가 아직 안 돎'; lg.innerHTML = ''; fl.innerHTML = ''; return; }
+    const L = F.ledger || {};
+    st.innerHTML = F.flows
+      ? `흐름 날짜 <strong>${esc(F.day)}</strong>${F.same_day ? '' : ' (오늘 것 아님 — 가장 최근)'} · 카드 ${F.n_cards}장 · 모델 ${esc(F.model)} · 검사 문제 <strong>${(F.problems || []).length}</strong>건 · <span class="src-path">${esc(F.source)}</span>`
+      : '오늘 흐름 파일 없음';
+    const pct = x => (x == null ? '-' : Math.round(x * 100) + '%');
+    const hitLine = L.n_graded
+      ? `맞음 <b>${L.n_hit}</b><span>채점 ${L.n_graded}장 중</span>`
+      : `<b>-</b><span>아직 채점된 카드 없음${L.next_due ? ' · 첫 만기 ' + esc(L.next_due) : ''}</span>`;
+    const expLine = L.expected_hit != null
+      ? `<b>${L.expected_hit}</b><span>기저율로 기대되는 맞음 수(실력 0일 때)</span>`
+      : `<b>-</b><span>기저율 기대값 — 채점 뒤에 생김</span>`;
+    const pend = (L.pending || []).map(r => `<tr><td class="num">${esc((r.due || '').slice(5))}</td><td>${esc(r.measure)}${r.baseline && r.baseline !== '없음' ? ' <span class="fl-refs">vs ' + esc(r.baseline) + '</span>' : ''}</td><td>${esc(r.win_if)}</td><td class="num">${r.status === '채점 불가' ? '채점 불가' : pct(r.base_rate)}</td></tr>`).join('');
+    const done = (L.graded || []).map(g => `<tr><td class="num">${esc((g.due || '').slice(5))}</td><td>${esc(g.measure)}</td><td><strong>${esc(g.status)}</strong>${g.result != null ? ' ' + (g.result > 0 ? '+' : '') + Number(g.result).toFixed(1) + esc(g.unit || '') : ''}${g.reason ? ' <span class="fl-refs">' + esc(g.reason) + '</span>' : ''}</td><td class="num">${pct(g.base_rate)}</td></tr>`).join('');
+    lg.innerHTML = `
+      <div class="fl-score">
+        <div>${hitLine}</div>
+        <div>${expLine}</div>
+        <div><b>${L.n_pending || 0}</b><span>기다리는 카드(만기 전)</span></div>
+      </div>
+      <div class="fl-sub">맞음 수는 아래 '기저율'과 같이 봐야 해요. 기저율 = 같은 조건을 지난 2년 아무 날에나 시작했을 때 맞은 비율. 맞음이 기대값보다 많아야 실력이에요. <span class="src-path">${esc(L.source || '')}</span></div>
+      ${done ? `<div class="table-wrap"><table class="data-tbl"><thead><tr><th>만기</th><th>잰 것</th><th>결과</th><th>기저율</th></tr></thead><tbody>${done}</tbody></table></div>` : ''}
+      ${pend ? `<details style="margin-top:8px"><summary>기다리는 카드 ${L.n_pending}장 보기</summary><div class="table-wrap"><table class="data-tbl"><thead><tr><th>만기</th><th>잰 것</th><th>맞음 기준</th><th>기저율</th></tr></thead><tbody>${pend}</tbody></table></div></details>` : ''}`;
+    fl.innerHTML = (F.flows || []).map((f, i) => `
+      <div class="fl-card">
+        <h3>${i + 1}. ${esc(f.title)}</h3>
+        <ol class="fl-steps">${(f.steps || []).map(s => `<li class="${s.kind === '팩트' ? 'fact' : ''}"><span class="fl-chip">${esc(s.kind)}</span>${esc(s.text)}
+          ${(s.refs || []).length ? `<div class="fl-refs">근거: ${(s.refs || []).map(r => esc((r.day || '').slice(5) + ' ' + r.kind + (r.grade ? '·' + r.grade : ''))).join(' / ')}</div>` : ''}</li>`).join('')}</ol>
+        ${(f.same_dart || []).length ? `<div class="fl-sub">같은 주제 공시(파이썬 자동 연결): ${(f.same_dart || []).map(esc).join(' / ')}</div>` : ''}
+        ${f.counter ? `<div class="fl-sub">반대 신호: ${esc(f.counter)}</div>` : ''}
+        ${(f.claims || []).map(c => `<div class="fl-claim"><span class="fl-chip">채점 카드 [추정]</span>${esc(c.claim)}<div class="fl-refs">${c.after_days}일 뒤 · 잴 것 ${esc(c.measure)} · 비교 ${esc(c.baseline)} · 맞음 ${esc(c.win_if)}${c.reader === '채점 불가' ? ' · 채점기가 못 읽음' : ''}</div></div>`).join('')}
+      </div>`).join('') +
+      (F.flows ? `<div class="fl-sub">'팩트'는 카드 원문에 있는 것만(검사기가 낱말 수준으로 봄), '추정'은 AI가 이어 생각한 것이에요. 근거의 등급: 공식 / 복수 보도 / 한 매체 보도 / 기관 의견.</div>` : '');
+  }
   function renderAll(d) {
     PANEL = d;
     // 1. 옷 5벌 버튼
@@ -1661,6 +1729,7 @@ table.data-tbl th {
 
     // 8. 챕터 5 (논문 — 처리-4)
     renderPapers(d.chapters.ch5_papers);
+    renderFlows(d.flows);
 
     // 9. 뒷 겹 기계 지도 (6대 그룹: 인풋·처리·출력·화면·되먹임·운영)
     const sections = (d.machine_map && d.machine_map.sections) || [];

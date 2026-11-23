@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-23",
-  "generated_at": "2026-11-23 21:10:11",
-  "made_iso": "2026-11-23T21:10:11+09:00",
+  "generated_at": "2026-11-24 00:53:37",
+  "made_iso": "2026-11-24T00:53:37+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -190,6 +190,19 @@ window.PANEL_DATA = {
     ],
     "source": "v2_secretary/결과/갱신/2026-11-23_2108.json"
   },
+  "flows": {
+    "ledger": {
+      "pending": [],
+      "n_pending": 0,
+      "graded": [],
+      "n_graded": 0,
+      "n_hit": 0,
+      "expected_hit": null,
+      "n_with_base": 0,
+      "next_due": "",
+      "source": "v2_secretary/data/claims.jsonl · v2_secretary/data/claims_graded.jsonl"
+    }
+  },
   "wardrobes": [
     {
       "id": "sticker",
@@ -282,15 +295,13 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-23",
-      "start": "2026-11-23 21:08:42",
+      "start": "2026-11-23 21:10:48",
       "by": "github",
       "where": "GitHub",
-      "mode": "refresh",
-      "end": "2026-11-23 21:10:11",
-      "secs": 89,
-      "exit": 0,
-      "calls": 4,
-      "result": "ok"
+      "mode": "dry",
+      "end": "2026-11-23 21:10:50",
+      "result": "dry_ok",
+      "bad": []
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
     "papers": {
@@ -7288,12 +7299,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 23건 (최근: 2026-11-23 ok)",
+        "line_out": "내보냄: 실행 기록 24건 (최근: 2026-11-23 dry_ok)",
         "metrics": {
           "in": 1,
-          "out": 23,
-          "calls": 4,
-          "secs": 89.0,
+          "out": 24,
+          "calls": 0,
+          "secs": 0.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
