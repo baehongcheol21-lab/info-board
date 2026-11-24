@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-24",
-  "generated_at": "2026-11-24 12:13:30",
-  "made_iso": "2026-11-24T12:13:30+09:00",
+  "generated_at": "2026-11-24 16:07:27",
+  "made_iso": "2026-11-24T16:07:27+09:00",
   "freshness": {
     "lines": [
       "실패 단계 1개",
@@ -15,23 +15,24 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1206",
-    "made_iso": "2026-11-24T12:06:50+09:00",
-    "new": 441,
-    "news_new": 368,
+    "tag": "1606",
+    "made_iso": "2026-11-24T16:06:16+09:00",
+    "new": 475,
+    "news_new": 382,
     "calls": 2,
     "error": "",
     "times": [
-      "1206"
+      "1206",
+      "1606"
     ],
     "picks": [
       {
         "seat": "뉴스",
         "title": "삼성전자 2027년 임원 인사",
-        "easy": "삼성전자가 2027년 정기 임원 인사를 통해 총 131명을 승진시켰습니다. 전체 승진자 규모는 작년보다 19% 줄었지만, 반도체(DS) 부문에는 전체의 절반이 넘는 70명을 대거 배치하며 성과주의와 HBM·AI 반도체 경쟁력 강화에 집중했습니다. 쉽게 말하면 승진 수는 줄였어도 핵심 반도체 인재는 확실히 챙겼다는 겁니다.",
+        "easy": "삼성전자가 2027년 정기 임원 인사를 통해 총 131명을 승진시켰습니다. 반도체 부문인 DS부문에서 70명을 발탁하며 성과주의를 재확인했는데요. 쉽게 말하면 승진자 규모는 줄였지만 고성능 메모리인 HBM 등 핵심 반도체 인재는 전면에 배치해 인공지능 수요에 대응하겠다는 겁니다.",
         "score": 0.7,
         "macro": [],
-        "n": 12,
+        "n": 8,
         "arts": [
           {
             "t": "삼성전자, 임원 131명 승진...HBM·반도체 인재 전진 배치",
@@ -39,14 +40,14 @@ window.PANEL_DATA = {
             "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9mQmRhLWdUUGp5emRLNW92bm1xQmJ4T3l1clpLY0ZITXNPOTFmdEt1WVQ2bXdESDBzd0ltb1FXWE5PcndFMjNjb0VVdEoyMDItZkFCWTNYbGlxb2ZSdWZlTEM2ZDk?oc=5"
           },
           {
-            "t": "삼성전자, 임원 승진 19% 줄였지만 반도체선 70명 대거 발탁",
+            "t": "삼성전자, 9년만에 최소 131명 승진…반도체서만 70명 발탁(종합2보)",
             "s": "연합뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1WT3oyWHRmNWpzSGhVR3k4amFDdTBDdWhkNExZZW1lMVd0czdOSmw0WjBsQjhpN1BoclFLR28xWllsQ1FMXzQ4SGNhcnhTUll6QXdMd3I4WTY0OXN6a2V4ddIBYEFVX3lxTE1WT3oyWHRmNWpzSGhVR3k4amFDdTBDdWhkNExZZW1lMVd0czdOSmw0WjBsQjhpN1BoclFLR28xWllsQ1FMXzQ4SGNhcnhTUll6QXdMd3I4WTY0OXN6a2V4dQ?oc=5"
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1URnIzTko2V05uWklydXlVd1JYZmRycThxOEQ4b19maG9xcXhfbC02TGRheFlsa2U5OHViS2czQTNxbnh6SU9mVm1GT2dwSGlkRF9uWGZLQTlGcTZyVmdrdNIBYEFVX3lxTE1URnIzTko2V05uWklydXlVd1JYZmRycThxOEQ4b19maG9xcXhfbC02TGRheFlsa2U5OHViS2czQTNxbnh6SU9mVm1GT2dwSGlkRF9uWGZLQTlGcTZyVmdrdA?oc=5"
           },
           {
-            "t": "삼성전자, 2027년 임원인사 131명 승진…HBM·AI 반도체 핵심인재 전진 배치",
-            "s": "나눔경제뉴스",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5HVzI2WjRITVZhcXhKR0h2anFFU0ZwYldJT2dxLVhOcWpiQ0JlWldJQWY2UDh3SFIxNVY2RlJGSFN6OW54NmYwVEF2LXBCX1o3Ny1uSGVtTElXOGoxQWFkaTFYNWV4NU0tZjhTMw?oc=5"
+            "t": "임원 승진 줄인 삼성전자, 반도체엔 확실한 보상",
+            "s": "비즈워치",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1XZ2lQX0gxWThWN0lpdlpRa244bFJkQ3pBVU1oQ0dKVGxEME9TWndmTTU5d2xCdHBHZTFkd1lMbHFzSXR3UXhJdU1DdFVWYzVfeVAweDUwTmFyMEFScl9ZeHpnb3ZSVWtCMGtXTA?oc=5"
           }
         ]
       },
@@ -67,73 +68,65 @@ window.PANEL_DATA = {
       },
       {
         "seat": "뉴스",
-        "title": "젠슨 황 복귀시킨 트럼프, 엔비디아 주식으로 하루 200억 벌었다",
+        "title": "직원들 환호 속 복귀한 젠슨 황 \"더 나은 CEO 되겠다\"…엔비디아 주가 31% 폭등",
         "easy": "",
         "score": 0.6,
         "macro": [],
         "n": 1,
         "arts": [
           {
-            "t": "젠슨 황 복귀시킨 트럼프, 엔비디아 주식으로 하루 200억 벌었다",
+            "t": "직원들 환호 속 복귀한 젠슨 황 \"더 나은 CEO 되겠다\"…엔비디아 주가 31% 폭등",
+            "s": "JTBC",
+            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE55d3pQU25ERi1KZmtad2lISG1wcmwtOWtoVGc4YWFOUG1QOTc5bVF4c3c0OFRhZ01Pc1ZkR2lkZ0k0VkRNQ3BpVjJCZWxPRExTbl8tbw?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "젠슨 황 돌아왔지만… 빅테크들 ‘엔비디아 추격’ 더 빨라진다",
+        "easy": "",
+        "score": 0.6,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "젠슨 황 돌아왔지만… 빅테크들 ‘엔비디아 추격’ 더 빨라진다",
             "s": "조선일보",
-            "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaktBWXRMLV9IZkJPTi1qWGFtbWVZYUpJNTQzbUFGcUJlZWFCRlhZZjZHSEozSG0wd1FidTJVMW5oSEtFVWZVRDRGdHNEY0RrMGxSRFpTLXVidGphRUJEOGI2Y29aem95a1FqSTh0eGRJU0k2WVN4WmdzdkxKWHhwbDlXRm5oU0xHXzF6cXQ3ZmhXYm50OGFnY2dlMENjQQ?oc=5"
+            "u": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQN0NRX01yQ2JDallUR0hnajBULTB6WElRTjR5ajJjMXVQSE8yUEpEME9HMU52Z2V0TDN3NklmTExaZXBuX29peTR1QjFTUmI4V2o4V2tOM0pheFlnakd4TGRzenN2dzE2VzMyUnR2eXl4aHlpM2dkS0lNNGJrTGFDRXhxbw?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "‘트럼프 개입’ 젠슨 황 전격 복귀…엔비디아 주가 폭등",
+        "title": "'엔비디아 숏베팅' 나락 갔다…공매도 16조 손실·3배 인버스 92% 폭락",
         "easy": "",
         "score": 0.6,
         "macro": [],
         "n": 1,
         "arts": [
           {
-            "t": "‘트럼프 개입’ 젠슨 황 전격 복귀…엔비디아 주가 폭등",
-            "s": "KBS 뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE00cWdGTWhoR1dKdkdSUUI3YVRzSTAyZFJTRmlidzhTX2JjMVdmdXhITTlYaU5JR0Fya3R5X21qZEdhZkdGS1lxc2VDdUw4REpETlVDOE4xTDRmbU0?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "젠슨 황 CEO 복귀에 존재감 잃은 엔비디아 임시 CEO…크레스 CFO 거취 주목",
-        "easy": "",
-        "score": 0.6,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "젠슨 황 CEO 복귀에 존재감 잃은 엔비디아 임시 CEO…크레스 CFO 거취 주목",
-            "s": "연합인포맥스",
-            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1ucXN2Znl6cUhJZHBtWDFmTlZyZDVsenhXZkVFR1lCbVFXaXlwTWxRVmZ2SXhNZkN3U0FWaS14M1VMQXBJSXE0Wk80SEdVQjM5SkxYZHctR0FkRkxWQkwxZHlzNUdFaUxvZFMzdlA1dkc?oc=5"
+            "t": "'엔비디아 숏베팅' 나락 갔다…공매도 16조 손실·3배 인버스 92% 폭락",
+            "s": "뉴스1",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kYmxiM09SWEIxNXM3ZTZZR0VTT3J3SjFxVjd0eVN6REpLUHlGUXo0YjJEOF9ZWVA2VlRTWE1zMUNGZWdfRHlFNnJLRy0tbUpIVk9XWEZyNFB2N21GdHJtdDE1alRyeG8?oc=5"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "기준금리 인상 전망",
-        "easy": "채권시장 참여자와 전문가들의 54%가 이번 11월 한국은행 금융통화위원회에서 기준금리가 인상될 것으로 예상하고 있습니다. 성과급과 배당 등으로 인한 물가 상승 불씨가 남아있기 때문인데요, 이로 인해 긴축 우려가 커지면서 투자 심리가 위축되는 모습입니다. 쉽게 말하면 금리가 더 오를 수 있다는 부담 때문에 시장이 얼어붙었다는 겁니다.",
-        "score": 0.5,
+        "title": "연준, 12월 FOMC서 구원투수로 등판할까…'美증시 불안'",
+        "easy": "",
+        "score": 0.3,
         "macro": [
-          "기준금리"
+          "fomc",
+          "연준",
+          "증시"
         ],
-        "n": 7,
+        "n": 1,
         "arts": [
           {
-            "t": "채권시장 전문가 54% \"한은 기준금리 인상\"…긴축 우려에 투자심리 급랭",
-            "s": "경인방송 뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fVlRBY28ydDFPWVpNLUdPQ3VMSk85U3BTYVFBRkVEOW1mUEI3U0JraVA2eUU4TXpTMGQ5cWJ6Q2VMYmpxb1BIb2FUM1BzMFVvQXNSNHdaT1pmSGlqTjJzZ2VJUmk?oc=5"
-          },
-          {
-            "t": "채권시장 참여자 54% \"11월 금통위서 기준금리 인상 예상\"",
-            "s": "연합뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5zei12aWV5NVBXWXVUX3pkYjdDWEttaDRWbnB5dDJYdGZFN1h0OHUwV1RKWEpUdjIzWngwTkxJYVljNVZJcVcyaFROZ1JNSEl2a3U4Rk1rZkZhUEHSAWBBVV95cUxQWmhZdTBjZ3JRRDBhbXZ4d1lGR0FacXVsMXFRY1VPR0lCMGhmYWRMMm5fRi1PR1dZWEcxbl9mMDY3cHRqTEhOVTI3NGEwZVk4RWR0clBBenI3MTVxVXZ3VS0?oc=5"
-          },
-          {
-            "t": "채권전문가 54% “11월 금통위, 기준금리 인상 전망”",
-            "s": "조세일보",
-            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBjOXZRYnFSQmh1dHlkUlpUUXYxQkRXUm9GMUNsR2pTYWhFMVJCTUVSUnM5ZnY5TnBkNzlSSi1veUotQ0FYYzFHaFZiRGJpV09FU1FSVzBheHlZUDJTWG9VamNTWWx4aGxwQndENGZzTlZFN3Bt?oc=5"
+            "t": "연준, 12월 FOMC서 구원투수로 등판할까…'美증시 불안'",
+            "s": "연합인포맥스",
+            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBMWlkzUEJUNkU1M3lBSVVmRnFKN0hyTjlHMFRnNlROZEtZdlFKWVdvdEpkSERTRmhBTG1SbFFyM3ZpN1MwM3F5Y2NnX0ZtTWdPSkpUNHZ1eFhIQXRvX1A3MEN5M3VqQ2lUVl9NUEhiTkR1YUFL0gF0QVVfeXFMUExaWTNQQlQ2RTUzeUFJVWZGcUo3SHJOOUcwVGc2VE5kS1l2UUpZV290SmRIRFNGaEFMbVJsUXIzdmk3UzAzcXljY2dfRm1NZ09KSlQ0dnV4WEhBdG9fUDcwQ3kzdWpDaVRWX01QSGJORHVhQUs?oc=5"
           }
         ]
       },
@@ -157,7 +150,7 @@ window.PANEL_DATA = {
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-24_1206.json"
+    "source": "v2_secretary/결과/갱신/2026-11-24_1606.json"
   },
   "flows": {
     "day": "2026-11-24",
@@ -803,15 +796,15 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-24",
-      "start": "2026-11-24 12:06:49",
+      "start": "2026-11-24 16:06:15",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
       "flows_retry_exit": 0,
-      "end": "2026-11-24 12:13:30",
-      "secs": 400,
+      "end": "2026-11-24 16:07:27",
+      "secs": 72,
       "exit": 0,
-      "calls": 14,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -9429,11 +9422,11 @@ window.PANEL_DATA = {
     }
   },
   "machine_map": {
-    "total_sections": 34,
+    "total_sections": 36,
     "counts_by_kind": {
-      "run": 20,
+      "run": 23,
       "separate": 11,
-      "none": 3
+      "none": 2
     },
     "source": "구간_주소표.md",
     "sections": [
@@ -9540,11 +9533,11 @@ window.PANEL_DATA = {
       {
         "addr": "인풋-6",
         "group": "인풋",
-        "name": "발표 일정표",
-        "files": "—",
-        "status": "없음",
-        "status_kind": "none",
-        "editable": "—",
+        "name": "발표 일정표 (거시 일정 D-Day)",
+        "files": "`macro_calendar.py` → `결과/일정/<날짜>_거시일정.json`·`.md` · 손 일정 `gate_rules/거시_일정.txt`",
+        "status": "돎 (11-23 결함 확인 세션, 하루 바퀴 2-2 단계, 0콜. 연준 FOMC·한은 금통위 공식 일정표 — 한은 페이지는 연도를 무시해 요일로 해 확인. 미국 CPI·고용은 노동통계국이 막아(403) 손 일정으로. 11-24 깃허브 올림 a7a5dce. 화면에는 아직 안 나옴. 원장 137)",
+        "status_kind": "run",
+        "editable": "`gate_rules/거시_일정.txt`",
         "source": "구간_주소표.md",
         "line_in": "받음: 주요 경제지표·실적 발표 일정 (예정)",
         "line_rule": "규칙: 아직 코드 없음 (설계 대기)",
@@ -9568,6 +9561,26 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: `indicators.py` → 장부 `data/indicators.jsonl`(덧붙이기만, 같은 날·같은 지표 다시 안 씀) · 받기 기록 `data/indicators_runs.jsonl`",
         "line_rule": "상태: 돎 (11-18 세션 나, 0콜. 버전1 data.db 옛 값 7,949줄 옮김. 시장 12개는 야후 — 안 끝난 오늘 장은 뺌. 전력 6개는 깃허브 비밀값 `DATA_GO_KR_KEY`가 없으면 '열쇠 없음'으로 건너뜀. 복사본 시험 통과, 깃허브 미반영)",
+        "line_out": "고치는 곳: —",
+        "metrics": {
+          "in": 0,
+          "out": 0,
+          "calls": 0,
+          "secs": 0.0,
+          "num_source": "구간_주소표.md"
+        }
+      },
+      {
+        "addr": "인풋-8",
+        "group": "인풋",
+        "name": "핵심 기사 본문 (고른 기사만)",
+        "files": "`article_body.py` → 본문 `data/body/<글번호>.txt` · `결과/본문/<날짜>_핵심기사.json`·`.md`",
+        "status": "돎 (11-23 결함 확인 세션, 하루 바퀴 5-B2 단계, 0콜. 그날 고른 뉴스·거시 사건마다 기사 3개까지 — 구글뉴스 주소 풀기 + 본문·기사 날짜, 기사 날짜가 7일 넘게 앞이면 '옛 내용 의심' 표시(감점은 12-07에 다시 판단). 11-24 깃허브 올림 a7a5dce. 원장 138·139)",
+        "status_kind": "run",
+        "editable": "—",
+        "source": "구간_주소표.md",
+        "line_in": "받음: `article_body.py` → 본문 `data/body/<글번호>.txt` · `결과/본문/<날짜>_핵심기사.json`·`.md`",
+        "line_rule": "상태: 돎 (11-23 결함 확인 세션, 하루 바퀴 5-B2 단계, 0콜. 그날 고른 뉴스·거시 사건마다 기사 3개까지 — 구글뉴스 주소 풀기 + 본문·기사 날짜, 기사 날짜가 7일 넘게 앞이면 '옛 내용 의심' 표시(감점은 12-07에 다시 판단). 11-24 깃허브 올림 a7a5dce. 원장 138·139)",
         "line_out": "고치는 곳: —",
         "metrics": {
           "in": 0,
@@ -9735,6 +9748,26 @@ window.PANEL_DATA = {
           "calls": 0,
           "secs": 0.0,
           "num_source": "v2_secretary/gate_rules/말투_규칙.txt"
+        }
+      },
+      {
+        "addr": "처리-9",
+        "group": "처리",
+        "name": "흐름 엮기 + 채점 카드 (사후 채점)",
+        "files": "`flows.py`(사실 카드 → 흐름 5개 → 채점 카드) · `fact_check.py`(귀속·인과·숫자 검사) · `claim_grade.py`(14·30일 뒤 실제 시세로 채점, 기저율) → `data/flows/<날짜>.json` · `data/claims.jsonl` · `data/claims_graded.jsonl` · `결과/흐름/<날짜>_흐름.md`",
+        "status": "돎 (11-23 결함 확인 세션, 하루 바퀴 5-D 단계, 하루 3~11콜. 실패하면 `data/flows/대기.jsonl` → 낮 갱신이 다시. 11-24 12:05 첫 실전 성공(흐름 5개·채점 카드 5장). 아이폰 챕터 6. 본질 인계 `문서/버전2_계획/본질_인계_흐름엮기_2026-11-24.md`. 원장 123~145)",
+        "status_kind": "run",
+        "editable": "—",
+        "source": "구간_주소표.md",
+        "line_in": "받음: `flows.py`(사실 카드 → 흐름 5개 → 채점 카드) · `fact_check.py`(귀속·인과·숫자 검사) · `claim_grade.py`(14·30일 뒤 실제 시세로 채점, 기저율) → `data/flows/<날짜>.json` · `data/claims.jsonl` · `data/claims_graded.jsonl` · `결과/흐름/<날짜>_흐름.md`",
+        "line_rule": "상태: 돎 (11-23 결함 확인 세션, 하루 바퀴 5-D 단계, 하루 3~11콜. 실패하면 `data/flows/대기.jsonl` → 낮 갱신이 다시. 11-24 12:05 첫 실전 성공(흐름 5개·채점 카드 5장). 아이폰 챕터 6. 본질 인계 `문서/버전2_계획/본질_인계_흐름엮기_2026-11-24.md`. 원장 123~145)",
+        "line_out": "고치는 곳: —",
+        "metrics": {
+          "in": 0,
+          "out": 0,
+          "calls": 0,
+          "secs": 0.0,
+          "num_source": "구간_주소표.md"
         }
       },
       {
@@ -10008,12 +10041,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 27건 (최근: 2026-11-24 ok)",
+        "line_out": "내보냄: 실행 기록 28건 (최근: 2026-11-24 ok)",
         "metrics": {
           "in": 1,
-          "out": 27,
-          "calls": 14,
-          "secs": 400.0,
+          "out": 28,
+          "calls": 2,
+          "secs": 72.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
@@ -10212,6 +10245,41 @@ window.PANEL_DATA = {
       {
         "from": "출력-4",
         "to": "화면-2",
+        "active": true
+      },
+      {
+        "from": "인풋-6",
+        "to": "출력-2",
+        "active": true
+      },
+      {
+        "from": "출력-1",
+        "to": "인풋-8",
+        "active": true
+      },
+      {
+        "from": "인풋-8",
+        "to": "처리-9",
+        "active": true
+      },
+      {
+        "from": "출력-1",
+        "to": "처리-9",
+        "active": true
+      },
+      {
+        "from": "처리-2",
+        "to": "처리-9",
+        "active": true
+      },
+      {
+        "from": "처리-9",
+        "to": "출력-2",
+        "active": true
+      },
+      {
+        "from": "처리-9",
+        "to": "출력-4",
         "active": true
       },
       {
