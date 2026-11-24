@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-24",
-  "generated_at": "2026-11-24 05:07:23",
-  "made_iso": "2026-11-24T05:07:23+09:00",
+  "generated_at": "2026-11-24 12:13:30",
+  "made_iso": "2026-11-24T12:13:30+09:00",
   "freshness": {
     "lines": [
       "실패 단계 1개",
@@ -14,17 +14,700 @@ window.PANEL_DATA = {
     "pc_locked": "",
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
-  "refresh": {},
+  "refresh": {
+    "tag": "1206",
+    "made_iso": "2026-11-24T12:06:50+09:00",
+    "new": 441,
+    "news_new": 368,
+    "calls": 2,
+    "error": "",
+    "times": [
+      "1206"
+    ],
+    "picks": [
+      {
+        "seat": "뉴스",
+        "title": "삼성전자 2027년 임원 인사",
+        "easy": "삼성전자가 2027년 정기 임원 인사를 통해 총 131명을 승진시켰습니다. 전체 승진자 규모는 작년보다 19% 줄었지만, 반도체(DS) 부문에는 전체의 절반이 넘는 70명을 대거 배치하며 성과주의와 HBM·AI 반도체 경쟁력 강화에 집중했습니다. 쉽게 말하면 승진 수는 줄였어도 핵심 반도체 인재는 확실히 챙겼다는 겁니다.",
+        "score": 0.7,
+        "macro": [],
+        "n": 12,
+        "arts": [
+          {
+            "t": "삼성전자, 임원 131명 승진...HBM·반도체 인재 전진 배치",
+            "s": "서울경제TV",
+            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9mQmRhLWdUUGp5emRLNW92bm1xQmJ4T3l1clpLY0ZITXNPOTFmdEt1WVQ2bXdESDBzd0ltb1FXWE5PcndFMjNjb0VVdEoyMDItZkFCWTNYbGlxb2ZSdWZlTEM2ZDk?oc=5"
+          },
+          {
+            "t": "삼성전자, 임원 승진 19% 줄였지만 반도체선 70명 대거 발탁",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1WT3oyWHRmNWpzSGhVR3k4amFDdTBDdWhkNExZZW1lMVd0czdOSmw0WjBsQjhpN1BoclFLR28xWllsQ1FMXzQ4SGNhcnhTUll6QXdMd3I4WTY0OXN6a2V4ddIBYEFVX3lxTE1WT3oyWHRmNWpzSGhVR3k4amFDdTBDdWhkNExZZW1lMVd0czdOSmw0WjBsQjhpN1BoclFLR28xWllsQ1FMXzQ4SGNhcnhTUll6QXdMd3I4WTY0OXN6a2V4dQ?oc=5"
+          },
+          {
+            "t": "삼성전자, 2027년 임원인사 131명 승진…HBM·AI 반도체 핵심인재 전진 배치",
+            "s": "나눔경제뉴스",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5HVzI2WjRITVZhcXhKR0h2anFFU0ZwYldJT2dxLVhOcWpiQ0JlWldJQWY2UDh3SFIxNVY2RlJGSFN6OW54NmYwVEF2LXBCX1o3Ny1uSGVtTElXOGoxQWFkaTFYNWV4NU0tZjhTMw?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "젠슨 황 엔비디아 복귀에… 프리마켓서 SK하이닉스 12%·삼성전자 9%대 급등",
+        "easy": "",
+        "score": 0.6,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "젠슨 황 엔비디아 복귀에… 프리마켓서 SK하이닉스 12%·삼성전자 9%대 급등",
+            "s": "Chosunbiz",
+            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNLTZULWFWRTdCSW8yRnY2cXB4TkJBOXZ4aTJYbno5WGFnSy1mN1BPT0FGTy1DOXdVaGtDZzlEOHNjaFF3WDRiVUhCUXBDMEg3Z3dfZkVTel9WbEtENUdGcFh1UXkxRENmYWtlZ1lGY1lpaE9CZjNvV3J3SXNQeFZBVW1EckFqcTlN0gGcAUFVX3lxTE1xN092dWMxZU5pVVVmRXVJV09GMkc0QUx4X2loVU4zRi1RZ1Y4aFFKemNCUFhwS2UybnlJZlU1VkhmdGE5c25KbURlc1p0dGh6WHBoUzlLUjgyNjBPX1pJZlVLRm5FMnUyUHV2bG1nZmdjWmxIQ0J0Q3U0UGlnekZ"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "젠슨 황 복귀시킨 트럼프, 엔비디아 주식으로 하루 200억 벌었다",
+        "easy": "",
+        "score": 0.6,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "젠슨 황 복귀시킨 트럼프, 엔비디아 주식으로 하루 200억 벌었다",
+            "s": "조선일보",
+            "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxNaktBWXRMLV9IZkJPTi1qWGFtbWVZYUpJNTQzbUFGcUJlZWFCRlhZZjZHSEozSG0wd1FidTJVMW5oSEtFVWZVRDRGdHNEY0RrMGxSRFpTLXVidGphRUJEOGI2Y29aem95a1FqSTh0eGRJU0k2WVN4WmdzdkxKWHhwbDlXRm5oU0xHXzF6cXQ3ZmhXYm50OGFnY2dlMENjQQ?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "‘트럼프 개입’ 젠슨 황 전격 복귀…엔비디아 주가 폭등",
+        "easy": "",
+        "score": 0.6,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "‘트럼프 개입’ 젠슨 황 전격 복귀…엔비디아 주가 폭등",
+            "s": "KBS 뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE00cWdGTWhoR1dKdkdSUUI3YVRzSTAyZFJTRmlidzhTX2JjMVdmdXhITTlYaU5JR0Fya3R5X21qZEdhZkdGS1lxc2VDdUw4REpETlVDOE4xTDRmbU0?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "젠슨 황 CEO 복귀에 존재감 잃은 엔비디아 임시 CEO…크레스 CFO 거취 주목",
+        "easy": "",
+        "score": 0.6,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "젠슨 황 CEO 복귀에 존재감 잃은 엔비디아 임시 CEO…크레스 CFO 거취 주목",
+            "s": "연합인포맥스",
+            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1ucXN2Znl6cUhJZHBtWDFmTlZyZDVsenhXZkVFR1lCbVFXaXlwTWxRVmZ2SXhNZkN3U0FWaS14M1VMQXBJSXE0Wk80SEdVQjM5SkxYZHctR0FkRkxWQkwxZHlzNUdFaUxvZFMzdlA1dkc?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "기준금리 인상 전망",
+        "easy": "채권시장 참여자와 전문가들의 54%가 이번 11월 한국은행 금융통화위원회에서 기준금리가 인상될 것으로 예상하고 있습니다. 성과급과 배당 등으로 인한 물가 상승 불씨가 남아있기 때문인데요, 이로 인해 긴축 우려가 커지면서 투자 심리가 위축되는 모습입니다. 쉽게 말하면 금리가 더 오를 수 있다는 부담 때문에 시장이 얼어붙었다는 겁니다.",
+        "score": 0.5,
+        "macro": [
+          "기준금리"
+        ],
+        "n": 7,
+        "arts": [
+          {
+            "t": "채권시장 전문가 54% \"한은 기준금리 인상\"…긴축 우려에 투자심리 급랭",
+            "s": "경인방송 뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fVlRBY28ydDFPWVpNLUdPQ3VMSk85U3BTYVFBRkVEOW1mUEI3U0JraVA2eUU4TXpTMGQ5cWJ6Q2VMYmpxb1BIb2FUM1BzMFVvQXNSNHdaT1pmSGlqTjJzZ2VJUmk?oc=5"
+          },
+          {
+            "t": "채권시장 참여자 54% \"11월 금통위서 기준금리 인상 예상\"",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5zei12aWV5NVBXWXVUX3pkYjdDWEttaDRWbnB5dDJYdGZFN1h0OHUwV1RKWEpUdjIzWngwTkxJYVljNVZJcVcyaFROZ1JNSEl2a3U4Rk1rZkZhUEHSAWBBVV95cUxQWmhZdTBjZ3JRRDBhbXZ4d1lGR0FacXVsMXFRY1VPR0lCMGhmYWRMMm5fRi1PR1dZWEcxbl9mMDY3cHRqTEhOVTI3NGEwZVk4RWR0clBBenI3MTVxVXZ3VS0?oc=5"
+          },
+          {
+            "t": "채권전문가 54% “11월 금통위, 기준금리 인상 전망”",
+            "s": "조세일보",
+            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBjOXZRYnFSQmh1dHlkUlpUUXYxQkRXUm9GMUNsR2pTYWhFMVJCTUVSUnM5ZnY5TnBkNzlSSi1veUotQ0FYYzFHaFZiRGJpV09FU1FSVzBheHlZUDJTWG9VamNTWWx4aGxwQndENGZzTlZFN3Bt?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "증안펀드 카드 꺼낸 정부…증시 반등 열쇠는 美 연준 금리정책",
+        "easy": "",
+        "score": 0.3,
+        "macro": [
+          "금리",
+          "연준",
+          "증시"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "증안펀드 카드 꺼낸 정부…증시 반등 열쇠는 美 연준 금리정책",
+            "s": "조세일보",
+            "u": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5PcTBqNi1OYUtQandkeHB0cE4tczl3NHJnRmE5M2NFUGFwY2RHVzZoenNpa2lfRjRIUXNwdmlJdXNXOXdyd0hpdXpUYmlYM0Q0VzZhOG45dGxrbG11dEVJ?oc=5"
+          }
+        ]
+      }
+    ],
+    "source": "v2_secretary/결과/갱신/2026-11-24_1206.json"
+  },
   "flows": {
+    "day": "2026-11-24",
+    "same_day": true,
+    "model": "gemini-3.6-flash",
+    "secs": 48.9,
+    "problems": [
+      "흐름1 팩트 검사: 인과 '에 따라': 근거에 없는 인과(지어냄) — 한국경제 보도에 따르면 AI 전력망 호황에 따라 대형 변압기 수출이 31"
+    ],
+    "n_cards": 271,
+    "flows": [
+      {
+        "title": "미국 경제 성장과 인공지능 인프라 확대에 따른 원자재(구리) 수요 증가 및 금리 변동성 흐름",
+        "steps": [
+          {
+            "kind": "팩트",
+            "text": "연준 Cook 이사는 미국의 3분기 국내총생산 성장률이 연율 3.4%를 기록하며 경제 성장이 가속화되고 있으며 전 세계적인 인공지능 인프라 투자 진행으로 칠레 같은 자원 부국에 구리와 리튬 수요가 늘어나고 있다고 지적했다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "연준 연설",
+                "grade": "기관 의견",
+                "fact": "연준은 전 세계적으로 인공지능 인프라 투자가 진행되면서 칠레 같은 자원 부국에 구리와 리튬 수요가 늘어나고 있다고 지적했다."
+              },
+              {
+                "day": "2026-11-20",
+                "kind": "연준 연설",
+                "grade": "기관 의견",
+                "fact": "연준은 미국의 3분기 국내총생산 성장률이 연율 3.4%를 기록하는 등 경제 성장이 가속화되고 있다고 말했다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "한국경제 보도에 따르면 AI 전력망 호황에 따라 대형 변압기 수출이 31% 증가했다.",
+            "refs": [
+              {
+                "day": "2026-11-23",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "AI 전력망 호황에 대형 변압기 수출이 31% 증가하고 소형은 39% 급감했다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "인베스팅 외환 보도에 따르면 기술주 폭락으로 안전자산 수요가 확대되면서 미 국채 금리 하락세가 지속되고 있다.",
+            "refs": [
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "기술주 폭락으로 인해 안전자산 수요가 확대되면서 미 국채 금리 하락세가 지속되고 있습니다."
+              }
+            ]
+          },
+          {
+            "kind": "추정·연결",
+            "text": "미국 경제의 견조한 성장세와 글로벌 AI 인프라 구축 수요는 변압기 등 전력망 호황과 연결되어 전력망 필수 자원인 구리 수요 증가를 유발하고 있으며 금리 하락 및 기술주 변동성 속에서도 구리 자원 가치에 지속적 영향을 주는 것으로 분석된다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "연준 연설",
+                "grade": "기관 의견",
+                "fact": "연준은 전 세계적으로 인공지능 인프라 투자가 진행되면서 칠레 같은 자원 부국에 구리와 리튬 수요가 늘어나고 있다고 지적했다."
+              },
+              {
+                "day": "2026-11-20",
+                "kind": "연준 연설",
+                "grade": "기관 의견",
+                "fact": "연준은 미국의 3분기 국내총생산 성장률이 연율 3.4%를 기록하는 등 경제 성장이 가속화되고 있다고 말했다."
+              },
+              {
+                "day": "2026-11-23",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "AI 전력망 호황에 대형 변압기 수출이 31% 증가하고 소형은 39% 급감했다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "기술주 폭락으로 인해 안전자산 수요가 확대되면서 미 국채 금리 하락세가 지속되고 있습니다."
+              }
+            ]
+          }
+        ],
+        "counter": "인베스팅 외환 보도에 따르면 기술주 폭락으로 국채 시장 등 안전자산 선호가 커지며 미 국채 금리가 지속 하락하고 있다.",
+        "same_dart": [],
+        "claims": [
+          {
+            "claim": "AI 인프라 확대로 인한 30일 후 구리 가격 상승 추정",
+            "measure": "구리 가격",
+            "baseline": "없음",
+            "win_if": "+2.0% 이상 상승",
+            "after_days": 30,
+            "reader": "읽음"
+          }
+        ]
+      },
+      {
+        "title": "글로벌 전력망 확충 및 케이블 수주 공시 확대를 통한 전선 인프라 성장 흐름",
+        "steps": [
+          {
+            "kind": "팩트",
+            "text": "일진전기는 11월 19일 매출 대비 5.5% 규모의 단일판매·공급계약을 체결했다고 공시했다.",
+            "refs": [
+              {
+                "day": "2026-11-19",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "일진전기 단일판매ㆍ공급계약체결: 단일판매ㆍ공급계약 체결 (매출 대비 5.5%)"
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "팍스경제TV 보도에 따르면 LS전선이 한국전력의 화원-안좌 해저케이블 증설 사업을 수주했다.",
+            "refs": [
+              {
+                "day": "2026-11-22",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "LS전선이 한국전력의 화원-안좌 해저케이블 증설 사업을 수주했다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "한국신용신문 및 더구루 보도에 따르면 LS전선과 대한전선이 4.5조 원 규모의 미국 뉴욕주 프로펠 NY 전력망 프로젝트 케이블 공급업체로 선정되었다.",
+            "refs": [
+              {
+                "day": "2026-11-23",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "LS전선과 대한전선이 美 4.5조 프로펠 NY 전력망 케이블을 공급한다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "LS전선과 대한전선이 4.5조 규모의 미국 뉴욕주 전력망 프로젝트 공급업체로 선정되었습니다."
+              }
+            ]
+          },
+          {
+            "kind": "추정·연결",
+            "text": "국내외 전력망 개보수 및 미국 초대형 전력망 프로젝트 사업자로 전선 제조사들이 선정되고 주요 기업 공시 수주가 잇따르면서 전선 인프라 업종 전반의 중장기 실적 기반이 강화되고 있는 것으로 추정된다.",
+            "refs": [
+              {
+                "day": "2026-11-19",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "일진전기 단일판매ㆍ공급계약체결: 단일판매ㆍ공급계약 체결 (매출 대비 5.5%)"
+              },
+              {
+                "day": "2026-11-22",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "LS전선이 한국전력의 화원-안좌 해저케이블 증설 사업을 수주했다."
+              },
+              {
+                "day": "2026-11-23",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "LS전선과 대한전선이 美 4.5조 프로펠 NY 전력망 케이블을 공급한다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "LS전선과 대한전선이 4.5조 규모의 미국 뉴욕주 전력망 프로젝트 공급업체로 선정되었습니다."
+              }
+            ]
+          }
+        ],
+        "counter": "",
+        "same_dart": [
+          "한울소재과학 단일판매ㆍ공급계약체결: 경수로 원자력연료 비축재고 운영을 위한 가돌리늄 분말(Gadolinium Oxide Powder) 공급 한전 (매출 대비 14.25%)"
+        ],
+        "claims": [
+          {
+            "claim": "전선 수주 모멘텀 보유 기업들의 30일 후 주가 초과 수익률 검증",
+            "measure": "일진전기, 대한전선",
+            "baseline": "코스피",
+            "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+            "after_days": 30,
+            "reader": "읽음"
+          }
+        ]
+      },
+      {
+        "title": "반도체 팹 투자와 수주 공시 확대에 기반한 장비 및 부품 공급망 모멘텀 흐름",
+        "steps": [
+          {
+            "kind": "팩트",
+            "text": "프로텍은 11월 20일 삼성전자 주식회사와 매출 대비 10.2% 규모의 반도체 제조장비 공급계약을 체결했고 기가비스는 11월 23일 한국 반도체 기판 제조회사와 매출 대비 74% 규모의 장비 공급계약을 공시했다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "프로텍 단일판매ㆍ공급계약체결: 반도체 제조장비 삼성전자 주식회사 (매출 대비 10.2%)"
+              },
+              {
+                "day": "2026-11-23",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "기가비스 단일판매ㆍ공급계약체결: 반도체 기판 수리장비 외 한국 반도체 기판 제조회사 (매출 대비 74%)"
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "지디넷코리아 및 핀포인트뉴스 보도에 따르면 삼성과 SK의 투자 효과로 코스닥 장비 3인방의 매출이 작년 실적을 추월했고 테스와 SFA반도체 등 장비주가 들썩였다.",
+            "refs": [
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "반도체 호황에 따른 삼성과 SK의 투자 효과로 코스닥 장비 3인방의 매출이 작년 실적을 추월했습니다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "테스 및 SFA반도체가 강세를 보이며 장비주가 들썩였다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "한화투자증권은 삼성전자 평택 P5가 2027년 상반기부터 전공정 장비 발주가 본격화될 것으로 예상한다고 밝혔다.",
+            "refs": [
+              {
+                "day": "2026-11-24",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "한화투자증권은 삼성전자 평택 P5가 2027년 상반기부터 전공정 장비 발주가 본격화될 것으로 예상한다고 밝혔다."
+              }
+            ]
+          },
+          {
+            "kind": "추정·연결",
+            "text": "삼성전자 등 주요 반도체 제조사의 시설 투자 및 장비 수주 공시가 잇따르면서 반도체 장비 및 기판 검사 부품업체들의 당기 실적 증대와 장기 발주 모멘텀이 이어지는 것으로 분석된다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "프로텍 단일판매ㆍ공급계약체결: 반도체 제조장비 삼성전자 주식회사 (매출 대비 10.2%)"
+              },
+              {
+                "day": "2026-11-23",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "기가비스 단일판매ㆍ공급계약체결: 반도체 기판 수리장비 외 한국 반도체 기판 제조회사 (매출 대비 74%)"
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "반도체 호황에 따른 삼성과 SK의 투자 효과로 코스닥 장비 3인방의 매출이 작년 실적을 추월했습니다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "테스 및 SFA반도체가 강세를 보이며 장비주가 들썩였다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "한화투자증권은 삼성전자 평택 P5가 2027년 상반기부터 전공정 장비 발주가 본격화될 것으로 예상한다고 밝혔다."
+              }
+            ]
+          }
+        ],
+        "counter": "핀포인트뉴스 보도에 따르면 HBM 슈퍼사이클 기대가 꺾였다는 보도 속에서 삼성전자부터 테크윙까지 매도세가 확산되기도 했다.",
+        "same_dart": [
+          "에이직랜드 단일판매ㆍ공급계약체결: 주문형 반도체 양산 공급 계약 (매출 대비 19.1%)",
+          "PS일렉트로닉스 [기재정정]단일판매ㆍ공급계약체결: 고성능 서버 장비 및 부품 공급 국내 반도체 관련 업체 (매출 대비 24.61%)",
+          "파두 [기재정정]단일판매ㆍ공급계약체결: 기업용 SSD 컨트롤러 공급 국내 반도체 제조사 (매출 대비 23.16%)",
+          "사피엔반도체 [기재정정]단일판매ㆍ공급계약체결: CMOS Backplane development 글로벌 마이크로 디스플레이 솔루션 기업 (매출 대비 68%)",
+          "아이에스티이 단일판매ㆍ공급계약체결(자율공시): 반도체 FOUP Cleaner 장비 판매 Amkor Technology Arizona, Inc. (매출 대비 6.07%)"
+        ],
+        "claims": [
+          {
+            "claim": "반도체 장비 공급계약 및 투자를 확정한 기업들의 30일 후 코스닥 대비 수익률 검증",
+            "measure": "프로텍, 기가비스, 테스, SFA반도체",
+            "baseline": "코스닥",
+            "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+            "after_days": 30,
+            "reader": "읽음"
+          }
+        ]
+      },
+      {
+        "title": "AI 데이터센터 전력 규제 완화 및 데이터센터 연계 ESS·건축 전력망 투자 흐름",
+        "steps": [
+          {
+            "kind": "팩트",
+            "text": "금양그린파워는 11월 20일 주식회사 메가데이타코리아와 원주메가클러스터AI데이터센터 전기·통신 공사 계약을 매출 대비 86.87% 규모로 체결했다고 공시했다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "금양그린파워 단일판매ㆍ공급계약체결: 원주메가클러스터AI데이터센터 전기,통신 공사 계약 주식회사 메가데이타코리아 (매출 대비 86.87%)"
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "핀포인트뉴스 보도에 따르면 AI 데이터센터가 새 고객이 되면서 LG에너지솔루션이 북미 ESS 시장 공략에 속도를 내고 있다.",
+            "refs": [
+              {
+                "day": "2026-11-22",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "AI 데이터센터가 새 고객이 되면서 LG에너지솔루션이 북미 ESS 시장 공략에 속도를 낸다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "테크데일리 보도에 따르면 정부는 AI 데이터센터 전력계통영향평가를 개선하여 비수도권 50MW 이하를 면제하고 복수 보도에 따르면 GS건설은 데이터센터 구축을 위해 전력, 시공, 운영 등 4개사와 협력한다.",
+            "refs": [
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "GS건설이 데이터센터 구축을 위해 전력, 시공, 운영 등 4개사와 협력합니다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "정부가 AI 데이터센터 전력계통영향평가를 개선하여 비수도권 50MW 이하를 면제한다."
+              }
+            ]
+          },
+          {
+            "kind": "추정·연결",
+            "text": "비수도권 데이터센터 규제 완화와 맞물려 데이터센터 전용 공사 수주, 건설사 밸류체인 협업, 배터리사의 데이터센터향 ESS 공급 추진 등 AI 인프라 연관 산업 전반에 활기가 돌고 있는 것으로 추정된다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "금양그린파워 단일판매ㆍ공급계약체결: 원주메가클러스터AI데이터센터 전기,통신 공사 계약 주식회사 메가데이타코리아 (매출 대비 86.87%)"
+              },
+              {
+                "day": "2026-11-22",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "AI 데이터센터가 새 고객이 되면서 LG에너지솔루션이 북미 ESS 시장 공략에 속도를 낸다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "GS건설이 데이터센터 구축을 위해 전력, 시공, 운영 등 4개사와 협력합니다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "정부가 AI 데이터센터 전력계통영향평가를 개선하여 비수도권 50MW 이하를 면제한다."
+              }
+            ]
+          }
+        ],
+        "counter": "주간장성신문 보도에 따르면 싱가포르가 데이터센터 신규 개발을 유예하고 마이크로소프트는 영국 AI 데이터센터 사업에서 철수했다.",
+        "same_dart": [],
+        "claims": [
+          {
+            "claim": "데이터센터 인프라 수주 및 건설 참여 기업의 30일 후 코스피 대비 초과 수익률 검증",
+            "measure": "금양그린파워, GS건설",
+            "baseline": "코스피",
+            "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+            "after_days": 30,
+            "reader": "읽음"
+          }
+        ]
+      },
+      {
+        "title": "차세대 소형원자로(SMR) 기술 협력 및 원전 기자재·연료 비축 계약 흐름",
+        "steps": [
+          {
+            "kind": "팩트",
+            "text": "한울소재과학은 11월 20일 한전에 경수로 원자력연료 비축재고 운영용 가돌리늄 분말 공급 계약(매출 대비 14.25%)을 공시했고 오르비텍은 한국원자력환경공단과 RI폐기물 해체 용역 계약(매출 대비 9.24%)을 정정 공시했다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "오르비텍 [기재정정]단일판매ㆍ공급계약체결(자율공시): RI폐기물 관리시설 해체(방사성오염 제거) 용역 한국원자력환경공단 (매출 대비 9.24%)"
+              },
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "한울소재과학 단일판매ㆍ공급계약체결: 경수로 원자력연료 비축재고 운영을 위한 가돌리늄 분말(Gadolinium Oxide Powder) 공급 한전 (매출 대비 14.25%)"
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "보도자료에 따르면 미국 원자력규제위원회(NRC)가 래디언트 인더스트리의 소형 원자로 연료 시설에 특별 핵물질 라이선스를 발급했다.",
+            "refs": [
+              {
+                "day": "2026-11-22",
+                "kind": "보도자료",
+                "grade": "공식",
+                "fact": "미국 원자력규제위원회(NRC)가 래디언트 인더스트리의 소형 원자로 연료 시설에 특별 핵물질 라이선스를 발급했다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "이투데이 보도에 따르면 SNT에너지가 국립창원대와 차세대 SMR 기술 개발에 나섰으며 복수 보도에 따르면 효성굿스프링스는 원전 펌프 전 제품에 대해 ASME 인증을 획득했다.",
+            "refs": [
+              {
+                "day": "2026-11-22",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "SNT에너지가 국립창원대와 손잡고 차세대 SMR 기술 개발에 나섭니다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "효성굿스프링스가 원전 펌프 전 제품에 대해 ASME 인증을 획득했습니다."
+              }
+            ]
+          },
+          {
+            "kind": "추정·연결",
+            "text": "미국 규제기관의 SMR 관련 승인과 기술 개발 동향 속에서 국내 기업들의 원전 연료 분말·해체 수주 공시 및 SMR 기술 개발·기자재 인증 노력이 원전 벨류체인 전반의 기술적 신뢰도와 수주 기반을 높이고 있는 것으로 분석된다.",
+            "refs": [
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "오르비텍 [기재정정]단일판매ㆍ공급계약체결(자율공시): RI폐기물 관리시설 해체(방사성오염 제거) 용역 한국원자력환경공단 (매출 대비 9.24%)"
+              },
+              {
+                "day": "2026-11-20",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "한울소재과학 단일판매ㆍ공급계약체결: 경수로 원자력연료 비축재고 운영을 위한 가돌리늄 분말(Gadolinium Oxide Powder) 공급 한전 (매출 대비 14.25%)"
+              },
+              {
+                "day": "2026-11-22",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "SNT에너지가 국립창원대와 손잡고 차세대 SMR 기술 개발에 나섭니다."
+              },
+              {
+                "day": "2026-11-22",
+                "kind": "보도자료",
+                "grade": "공식",
+                "fact": "미국 원자력규제위원회(NRC)가 래디언트 인더스트리의 소형 원자로 연료 시설에 특별 핵물질 라이선스를 발급했다."
+              },
+              {
+                "day": "2026-11-24",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "효성굿스프링스가 원전 펌프 전 제품에 대해 ASME 인증을 획득했습니다."
+              }
+            ]
+          }
+        ],
+        "counter": "한화투자증권은 10월 체코 원전 협상이 결렬되면서 관련주들의 주가가 조정을 받았다고 밝혔다.",
+        "same_dart": [],
+        "claims": [
+          {
+            "claim": "원전 기자재 공시 및 SMR 개발 참여 기업의 30일 후 코스닥 대비 초과 수익률 검증",
+            "measure": "한울소재과학, SNT에너지, 오르비텍",
+            "baseline": "코스닥",
+            "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+            "after_days": 30,
+            "reader": "읽음"
+          }
+        ]
+      }
+    ],
+    "source": "v2_secretary/data/flows/2026-11-24.json",
     "ledger": {
-      "pending": [],
-      "n_pending": 0,
+      "pending": [
+        {
+          "made": "2026-11-24",
+          "due": "2026-12-24",
+          "measure": "구리 가격",
+          "baseline": "없음",
+          "win_if": "+2.0% 이상 상승",
+          "base_rate": 0.518,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-24",
+          "due": "2026-12-24",
+          "measure": "금양그린파워, GS건설",
+          "baseline": "코스피",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.304,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-24",
+          "due": "2026-12-24",
+          "measure": "일진전기, 대한전선",
+          "baseline": "코스피",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.422,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-24",
+          "due": "2026-12-24",
+          "measure": "프로텍, 기가비스, 테스, SFA반도체",
+          "baseline": "코스닥",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.497,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-24",
+          "due": "2026-12-24",
+          "measure": "한울소재과학, SNT에너지, 오르비텍",
+          "baseline": "코스닥",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.418,
+          "status": "대기",
+          "reason": ""
+        }
+      ],
+      "n_pending": 5,
       "graded": [],
       "n_graded": 0,
       "n_hit": 0,
       "expected_hit": null,
       "n_with_base": 0,
-      "next_due": "",
+      "next_due": "2026-12-24",
       "source": "v2_secretary/data/claims.jsonl · v2_secretary/data/claims_graded.jsonl"
     }
   },
@@ -120,17 +803,16 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-24",
-      "start": "2026-11-24 04:13:38",
+      "start": "2026-11-24 12:06:49",
       "by": "github",
       "where": "GitHub",
-      "mode": "run",
-      "end": "2026-11-24 05:07:23",
-      "secs": 3224,
+      "mode": "refresh",
+      "flows_retry_exit": 0,
+      "end": "2026-11-24 12:13:30",
+      "secs": 400,
       "exit": 0,
-      "result_md": true,
-      "failed_stages": 1,
-      "calls": 272,
-      "result": "partial"
+      "calls": 14,
+      "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
     "papers": {
@@ -9326,12 +10008,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 25건 (최근: 2026-11-24 partial)",
+        "line_out": "내보냄: 실행 기록 27건 (최근: 2026-11-24 ok)",
         "metrics": {
           "in": 1,
-          "out": 25,
-          "calls": 272,
-          "secs": 3224.0,
+          "out": 27,
+          "calls": 14,
+          "secs": 400.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
