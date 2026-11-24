@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-24",
-  "generated_at": "2026-11-24 16:07:27",
-  "made_iso": "2026-11-24T16:07:27+09:00",
+  "generated_at": "2026-11-24 21:10:33",
+  "made_iso": "2026-11-24T21:10:33+09:00",
   "freshness": {
     "lines": [
       "실패 단계 1개",
@@ -15,24 +15,75 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1606",
-    "made_iso": "2026-11-24T16:06:16+09:00",
-    "new": 475,
-    "news_new": 382,
+    "tag": "2108",
+    "made_iso": "2026-11-24T21:08:55+09:00",
+    "new": 563,
+    "news_new": 385,
     "calls": 2,
     "error": "",
     "times": [
       "1206",
-      "1606"
+      "1606",
+      "2108"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "삼성전자 2027년 임원 인사",
-        "easy": "삼성전자가 2027년 정기 임원 인사를 통해 총 131명을 승진시켰습니다. 반도체 부문인 DS부문에서 70명을 발탁하며 성과주의를 재확인했는데요. 쉽게 말하면 승진자 규모는 줄였지만 고성능 메모리인 HBM 등 핵심 반도체 인재는 전면에 배치해 인공지능 수요에 대응하겠다는 겁니다.",
-        "score": 0.7,
+        "title": "지방 산업용 전기료 인하 논란",
+        "easy": "정부가 지방 산업용 전기료 인하를 추진하고 있지만 연간 2조 8천억 원에 달하는 비용을 두고 부담 주체 논란이 일고 있습니다. 비수도권 발전사에 책임을 떠넘긴다는 비판이 나온다는 겁니다.",
+        "score": 0.8,
         "macro": [],
-        "n": 8,
+        "n": 6,
+        "arts": [
+          {
+            "t": "정부 '지방 산업용 전기료 인하' 추진에 난항, 연간 2조8천억 비용은 누가 부담하나",
+            "s": "비즈니스포스트",
+            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rOEtIVEYzRjJVSVdMMXdMakVZNFJwY0E1YnFqNE1NLXhaeURlVDY1TnpsYVVjSmozX01PMXd1TFJ1eFRyZjJheUx5RU5HNW1MbkhmYW9qUjhUZ2dCZ21OeDlaYVE3dEd0TzBWMHY5Y3lWRk0?oc=5"
+          },
+          {
+            "t": "'지역별 전력 도매가격제' 도입 땐 6500억 손실..민간발전사 '생존 위기'",
+            "s": "머니투데이",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE8tRUN0TXpSejRIZ1Q3S2lERHh1aGIyYnBUSm8yeTNReGs3UmZRS1BkYks2RUtXdS1wVmdrR2oycVhldDNvRmNEbTZGMGphRUNZQnE0Wm1KZnNRVTVWc3BGcHNrcUEtcDc2enNaOWNoMmdFd9IBckFVX3lxTE8tRUN0TXpSejRIZ1Q3S2lERHh1aGIyYnBUSm8yeTNReGs3UmZRS1BkYks2RUtXdS1wVmdrR2oycVhldDNvRmNEbTZGMGphRUNZQnE0Wm1KZnNRVTVWc3BGcHNrcUEtcDc2enNaOWNoMmdFdw?oc=5"
+          },
+          {
+            "t": "“소매요금 깎고 구멍은 발전사에?”…국회서 ‘거꾸로 가는 LMP’ 질타 쏟아져",
+            "s": "전기신문",
+            "u": "https://www.electimes.com/news/articleView.html?idxno=375215"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "핵융합연 AI 가상 플랫폼",
+        "easy": "핵융합연구소가 인공지능을 활용해 컴퓨터 속에서 가상의 핵융합로를 만드는 기술을 개발했습니다. 설계와 운전을 미리 실험해 보면서 연구 속도를 높인다는 셈이에요.",
+        "score": 0.6,
+        "macro": [],
+        "n": 5,
+        "arts": [
+          {
+            "t": "컴퓨터 속 핵융합로 만든다…AI로 설계·운전 최적화",
+            "s": "굿모닝충청",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE5obllRd19scGNqd3haWFJTN1ZnR3BmZzd0OUtycHhLdUtpNHI5elpoODZNZGZPU3Atd3dmbjl1blE5UDFIV3p2TzZIV0ZQX081Y3NzWmJlSHd1ZWVYdzdEM3FrUkxvcjF2enRDY1JBdVJjdw?oc=5"
+          },
+          {
+            "t": "AI로 핵융합로 미리 설계·실험…핵융합연, 가상 플랫폼 개발",
+            "s": "데일리안",
+            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBldzczS1JBQVNOVXUyTmYwZ2FuNXcxZW9SNDRyZUJ2R21QYWVGX2Iza2FCOV9VWmZ5S0ZqQi1uZGhnNUZQaEJWaEhvZVlaVHdXckJQRw?oc=5"
+          },
+          {
+            "t": "핵융합硏, AI로 가상 핵융합로 만든다",
+            "s": "헤럴드경제",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0tWFJmcUlIV2YtSlVpcEZ5N1hsMDVHaUhONWFLTFBMeUl6NUpqbk56ZkxrQkg5bTViSk1vN1lxWTlPMmVpamMyRU5vcHZnT2FZN3V4QllB?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "삼성전자 임원 승진 인사",
+        "easy": "삼성전자가 임원 131명을 승진시키는 인사를 단행했는데, HBM과 반도체 인재가 전진 배치되었습니다. 그중에서 반도체 부문이 차지하는 비중이 53%에 달한다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 3,
         "arts": [
           {
             "t": "삼성전자, 임원 131명 승진...HBM·반도체 인재 전진 배치",
@@ -40,93 +91,48 @@ window.PANEL_DATA = {
             "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9mQmRhLWdUUGp5emRLNW92bm1xQmJ4T3l1clpLY0ZITXNPOTFmdEt1WVQ2bXdESDBzd0ltb1FXWE5PcndFMjNjb0VVdEoyMDItZkFCWTNYbGlxb2ZSdWZlTEM2ZDk?oc=5"
           },
           {
-            "t": "삼성전자, 9년만에 최소 131명 승진…반도체서만 70명 발탁(종합2보)",
-            "s": "연합뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1URnIzTko2V05uWklydXlVd1JYZmRycThxOEQ4b19maG9xcXhfbC02TGRheFlsa2U5OHViS2czQTNxbnh6SU9mVm1GT2dwSGlkRF9uWGZLQTlGcTZyVmdrdNIBYEFVX3lxTE1URnIzTko2V05uWklydXlVd1JYZmRycThxOEQ4b19maG9xcXhfbC02TGRheFlsa2U5OHViS2czQTNxbnh6SU9mVm1GT2dwSGlkRF9uWGZLQTlGcTZyVmdrdA?oc=5"
+            "t": "삼성전자 임원 131명 승진 인사…반도체 부문이 53% 차지",
+            "s": "동아일보",
+            "u": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5ObE90WnpZcTMxbnRnYXh2OXdValkzcklJcnFqNHc2c29Xejc3aXZNT1RYZnBCZGQwN3JDYXNjdGt5cS15X3UyMnExTkl2WFdDOGpIWHZQeTdUWU05b1U0UXFSd3l6bHYzWHlHSUhrbkpxLWo4LVHSAWZBVV95cUxNUG55TFI4dTFUNnhqVS1SOXlyeTB1UjlwQ2NDdUxsLVgxQU52V1kyUWxJR1FwT1d4Mm1uV1B6V2xHV2QzSWtxSGpacWw5QlhLbUpCWU05N3QxOE15SFp6QjNsdUx2RHc?oc=5"
           },
           {
-            "t": "임원 승진 줄인 삼성전자, 반도체엔 확실한 보상",
-            "s": "비즈워치",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1XZ2lQX0gxWThWN0lpdlpRa244bFJkQ3pBVU1oQ0dKVGxEME9TWndmTTU5d2xCdHBHZTFkd1lMbHFzSXR3UXhJdU1DdFVWYzVfeVAweDUwTmFyMEFScl9ZeHpnb3ZSVWtCMGtXTA?oc=5"
+            "t": "삼성전자, ‘반도체 성과주의’ 재확인…DS부문 부사장·상무 대거 승진",
+            "s": "아시아경제",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBCTjVSSHJrSFVQSHF0NGJtLXZGY0VNUzNnTkhsaDQtd3RmT0o1M1FZVV96Umo0UGtlVkRTOUhOU1pYTzVwaVhneUM0djNRVUpnT1VUTHo1T1RyWmg3S1Rvcg?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "젠슨 황 엔비디아 복귀에… 프리마켓서 SK하이닉스 12%·삼성전자 9%대 급등",
-        "easy": "",
+        "title": "엔비디아 공매도 손실",
+        "easy": "엔비디아가 31% 급등하는 모습을 보여줬는데요, 그 바람에 공매도 세력이 하루 만에 15조 원의 손실을 입었습니다. 뭔 소리냐면 3배 인버스 상품이 휴지조각처럼 변해버렸다는 말이에요.",
         "score": 0.6,
         "macro": [],
         "n": 1,
         "arts": [
           {
-            "t": "젠슨 황 엔비디아 복귀에… 프리마켓서 SK하이닉스 12%·삼성전자 9%대 급등",
-            "s": "Chosunbiz",
-            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNLTZULWFWRTdCSW8yRnY2cXB4TkJBOXZ4aTJYbno5WGFnSy1mN1BPT0FGTy1DOXdVaGtDZzlEOHNjaFF3WDRiVUhCUXBDMEg3Z3dfZkVTel9WbEtENUdGcFh1UXkxRENmYWtlZ1lGY1lpaE9CZjNvV3J3SXNQeFZBVW1EckFqcTlN0gGcAUFVX3lxTE1xN092dWMxZU5pVVVmRXVJV09GMkc0QUx4X2loVU4zRi1RZ1Y4aFFKemNCUFhwS2UybnlJZlU1VkhmdGE5c25KbURlc1p0dGh6WHBoUzlLUjgyNjBPX1pJZlVLRm5FMnUyUHV2bG1nZmdjWmxIQ0J0Q3U0UGlnekZ"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "직원들 환호 속 복귀한 젠슨 황 \"더 나은 CEO 되겠다\"…엔비디아 주가 31% 폭등",
-        "easy": "",
-        "score": 0.6,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "직원들 환호 속 복귀한 젠슨 황 \"더 나은 CEO 되겠다\"…엔비디아 주가 31% 폭등",
-            "s": "JTBC",
-            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE55d3pQU25ERi1KZmtad2lISG1wcmwtOWtoVGc4YWFOUG1QOTc5bVF4c3c0OFRhZ01Pc1ZkR2lkZ0k0VkRNQ3BpVjJCZWxPRExTbl8tbw?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "젠슨 황 돌아왔지만… 빅테크들 ‘엔비디아 추격’ 더 빨라진다",
-        "easy": "",
-        "score": 0.6,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "젠슨 황 돌아왔지만… 빅테크들 ‘엔비디아 추격’ 더 빨라진다",
-            "s": "조선일보",
-            "u": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQN0NRX01yQ2JDallUR0hnajBULTB6WElRTjR5ajJjMXVQSE8yUEpEME9HMU52Z2V0TDN3NklmTExaZXBuX29peTR1QjFTUmI4V2o4V2tOM0pheFlnakd4TGRzenN2dzE2VzMyUnR2eXl4aHlpM2dkS0lNNGJrTGFDRXhxbw?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "'엔비디아 숏베팅' 나락 갔다…공매도 16조 손실·3배 인버스 92% 폭락",
-        "easy": "",
-        "score": 0.6,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "'엔비디아 숏베팅' 나락 갔다…공매도 16조 손실·3배 인버스 92% 폭락",
-            "s": "뉴스1",
-            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1kYmxiM09SWEIxNXM3ZTZZR0VTT3J3SjFxVjd0eVN6REpLUHlGUXo0YjJEOF9ZWVA2VlRTWE1zMUNGZWdfRHlFNnJLRy0tbUpIVk9XWEZyNFB2N21GdHJtdDE1alRyeG8?oc=5"
+            "t": "엔비디아 31% 급등에 공매도 하루 15조원 손실…3배 인버스 ‘휴지조각’",
+            "s": "중앙일보",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5TdHpvcTJzeVZ4QngtajFGWnNNaDdwazRuU3NibllfaVBuLXl3bU5ZWTdSSmh2czZ0X0c2eC1FM3dFWDZsN0xxZmduLTE5THRvTHJ2b0F3?oc=5"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "연준, 12월 FOMC서 구원투수로 등판할까…'美증시 불안'",
+        "title": "25일 PCE 물가지수, 美연준 금리 결정 분수령⋯상승률 4% 육박할 듯",
         "easy": "",
         "score": 0.3,
         "macro": [
-          "fomc",
-          "연준",
-          "증시"
+          "금리",
+          "물가",
+          "연준"
         ],
         "n": 1,
         "arts": [
           {
-            "t": "연준, 12월 FOMC서 구원투수로 등판할까…'美증시 불안'",
-            "s": "연합인포맥스",
-            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBMWlkzUEJUNkU1M3lBSVVmRnFKN0hyTjlHMFRnNlROZEtZdlFKWVdvdEpkSERTRmhBTG1SbFFyM3ZpN1MwM3F5Y2NnX0ZtTWdPSkpUNHZ1eFhIQXRvX1A3MEN5M3VqQ2lUVl9NUEhiTkR1YUFL0gF0QVVfeXFMUExaWTNQQlQ2RTUzeUFJVWZGcUo3SHJOOUcwVGc2VE5kS1l2UUpZV290SmRIRFNGaEFMbVJsUXIzdmk3UzAzcXljY2dfRm1NZ09KSlQ0dnV4WEhBdG9fUDcwQ3kzdWpDaVRWX01QSGJORHVhQUs?oc=5"
+            "t": "25일 PCE 물가지수, 美연준 금리 결정 분수령⋯상승률 4% 육박할 듯",
+            "s": "이투데이",
+            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE40cWIxcTYtVkEzYWdfdC1MLTJNZDBGLVRMeW5VTEc0YmlUZUtKT2N3SV84NVpWdVlOUDVFQmZaaDJja1lwSmtsbXFLVnUxUkUyeHVGcQ?oc=5"
           }
         ]
       },
@@ -150,7 +156,7 @@ window.PANEL_DATA = {
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-24_1606.json"
+    "source": "v2_secretary/결과/갱신/2026-11-24_2108.json"
   },
   "flows": {
     "day": "2026-11-24",
@@ -796,15 +802,15 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-24",
-      "start": "2026-11-24 16:06:15",
+      "start": "2026-11-24 21:08:54",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
       "flows_retry_exit": 0,
-      "end": "2026-11-24 16:07:27",
-      "secs": 72,
+      "end": "2026-11-24 21:10:33",
+      "secs": 99,
       "exit": 0,
-      "calls": 2,
+      "calls": 4,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -10041,12 +10047,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 28건 (최근: 2026-11-24 ok)",
+        "line_out": "내보냄: 실행 기록 29건 (최근: 2026-11-24 ok)",
         "metrics": {
           "in": 1,
-          "out": 28,
-          "calls": 2,
-          "secs": 72.0,
+          "out": 29,
+          "calls": 4,
+          "secs": 99.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
