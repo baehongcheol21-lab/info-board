@@ -2,10 +2,11 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-26",
-  "generated_at": "2026-11-26 04:40:46",
-  "made_iso": "2026-11-26T04:40:46+09:00",
+  "generated_at": "2026-11-26 05:24:08",
+  "made_iso": "2026-11-26T05:24:08+09:00",
   "freshness": {
     "lines": [
+      "AI 사용량 초과(429) 1번",
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
     ],
     "pc_locked": "",
@@ -772,8 +773,8 @@ window.PANEL_DATA = {
     "papers": {
       "day": "2026-11-26",
       "day_label": "11월 26일(오늘)",
-      "made": "2026-11-26T04:36:43",
-      "calls": 101,
+      "made": "2026-11-26T05:24:07",
+      "calls": 215,
       "same_day": true,
       "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
     }
@@ -11260,74 +11261,174 @@ window.PANEL_DATA = {
       "day_label": "11월 26일(오늘)",
       "day_rel": "오늘",
       "day_note": "11월 26일(오늘) 논문 — 논문 풀이가 끝난 결과예요.",
-      "made": "2026-11-26T04:36:43",
+      "made": "2026-11-26T05:24:07",
       "picks_max": 10,
-      "status": "돎 — 2026-11-26 논문 풀이 3편 / 새 논문 166편",
+      "status": "돎 — 2026-11-26 논문 풀이 114편 / 새 논문 166편",
       "headline": {
-        "text": "오늘 새 논문 166편 · 풀이한 3편 중 AI 모델·학습법 쪽이 1편으로 가장 많아요.",
+        "text": "오늘 새 논문 166편 · 풀이한 114편 중 AI 모델·학습법 쪽이 52편으로 가장 많아요.",
         "text_orig": "",
         "n_new": {
           "val": 166,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "n_done": {
-          "val": 3,
+          "val": 114,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "n_done_new": {
-          "val": 0,
+          "val": 110,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "n_done_backlog": {
-          "val": 3,
+          "val": 4,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "n_waiting": {
-          "val": 166,
+          "val": 54,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "n_failed": {
-          "val": 0,
+          "val": 2,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "top_tag": "AI 모델·학습법",
         "top_tag_n": {
-          "val": 1,
+          "val": 52,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         }
       },
       "flow": {
-        "text": "오늘 풀이한 논문들 중에서는 인공지능 모델과 학습법이나 도구를 다룬 이야기가 가장 많았고, 인공지능 안전이나 평가를 다룬 쪽도 눈에 띄었는데요. 구체적으로는 출력 채널 그룹화를 통해 모바일 신경망 처리 장치에서 대형 언어 모델의 디코딩 속도와 효율을 끌어올리는 연구가 나왔습니다. 뭔 소리냐면, 연산 방식을 바꿔서 기기 안에서 거대 모델이 더 빠르게 작동하도록 만든다는 말이에요. 이와 함께 로봇 조작 과정에서 중요한 순간을 기억하는 구조를 제안하며 성능을 검증한 연구도 함께 눈에 띄었습니다.",
+        "text": "오늘 풀이한 논문들 중에서는 인공지능 모델의 학습법을 개선하거나 에이전트의 도구 활용 능력을 높이는 연구가 가장 많이 눈에 띄었습니다. 특히 비동기 에이전트 팀을 활용해 로봇 제어 시간을 대폭 줄인 사례처럼, 복잡한 작업을 더 효율적으로 처리하려는 시도가 많았거든요. 이와는 조금 다르게 전력망의 주파수 안정성을 확보하거나 데이터 센터의 전력 변화를 예측하는 등 에너지 시스템의 효율을 다루는 논문들도 여럿 보였습니다. 쉽게 말하면 인공지능의 지능을 높이는 연구와 이를 실제 물리 환경이나 전력망 같은 기반 시설에 적용하려는 연구가 주를 이뤘다고 볼 수 있습니다.",
         "by": "ai",
         "flags": []
       },
       "map": [
         {
           "tag": "AI 모델·학습법",
-          "n": 1,
-          "n_done": 1,
+          "n": 52,
+          "n_done": 52,
           "one_lines": [
-            "출력 채널 그룹화로 모바일 NPU에서 LLM 디코딩 속도와 효율을 높였어요"
-          ]
-        },
-        {
-          "tag": "AI 에이전트·도구",
-          "n": 1,
-          "n_done": 1,
-          "one_lines": [
-            "로봇 조작에서 핵심 순간을 기억하는 MomentMem 구조를 제안하고 VMBench로 성능을 검증했어요."
+            "시퀀스, 표, 그래프를 합친 결제 기초 모델을 만들고 위험 탐지 성능을 검증했어요.",
+            "믿음 검증 강화학습으로 인공지능 에이전트의 섣부른 결정을 막았다",
+            "토큰마다 회로를 동적으로 엮는 루움포머 구조를 제안하고 성능을 평가했어요."
           ]
         },
         {
           "tag": "AI 안전·평가",
+          "n": 19,
+          "n_done": 19,
+          "one_lines": [
+            "스스로 진화하는 컴퓨터 사용 AI 에이전트 평가 환경을 개발했어요",
+            "디지털과 물리 세계를 아우르는 AI 에이전트 학습 평가 도구를 개발했어요.",
+            "대규모 멀티모달 가짜 데이터셋과 평가 도구를 만들어 탐지 성능을 높였어요."
+          ]
+        },
+        {
+          "tag": "제어·로봇",
+          "n": 15,
+          "n_done": 15,
+          "one_lines": [
+            "비동기 에이전트 팀으로 로봇을 제어해 시간을 28.2% 줄였어요.",
+            "작동 설계 영역(ODD) 기반 자율주행 아키텍처 합리화 프레임워크를 제안하고 비용 절감 효과를 검증했어요.",
+            "사이버물리시스템의 불확실성을 관리할 도달집합 순응 모델을 제안하고 그 성질을 증명했어요."
+          ]
+        },
+        {
+          "tag": "AI 에이전트·도구",
+          "n": 15,
+          "n_done": 15,
+          "one_lines": [
+            "실시간 화면을 감시하는 가벼운 모델을 더해 에이전트의 인식 지연을 줄였다.",
+            "픽셀을 코드로 다루는 시각 생성 에이전트 틀을 개발했어요.",
+            "삼차원 부위 분할을 위해 전문가들을 묶고 스스로 고치는 인공지능 체계를 만들었어요."
+          ]
+        },
+        {
+          "tag": "전력망·계통",
+          "n": 8,
+          "n_done": 8,
+          "one_lines": [
+            "북해 전력망을 바탕으로 두 가지 전력 시장 설계의 주파수 안정성과 비용을 비교했어요.",
+            "인버터 기반 전력망의 감쇠비와 수렴 속도를 근궤적으로 분석했어요.",
+            "거대 언어 모델을 활용해 데이터 센터의 전력 변화를 빠르게 예측하는 디지털 트윈을 개발했어요."
+          ]
+        },
+        {
+          "tag": "영상·음성·멀티모달",
+          "n": 2,
+          "n_done": 2,
+          "one_lines": [
+            "물리적 동역학을 다루는 비디오 편집 벤치마크를 만들고 모델들을 평가했어요.",
+            "학습 없이 잔차를 활용해 실시간 비디오 생성의 프롬프트 전환 능력을 높였다."
+          ]
+        },
+        {
+          "tag": "반도체·하드웨어",
           "n": 1,
           "n_done": 1,
           "one_lines": [
-            "패치 수준 시각 표현을 평가하는 HIVE-Bench를 도입했어요."
+            "디엔에이 미니마이저의 4진 순서를 직접 최적화해 밀도를 낮췄어요."
+          ]
+        },
+        {
+          "tag": "의료·바이오",
+          "n": 1,
+          "n_done": 1,
+          "one_lines": [
+            "시각 에이전트의 위치 출처 검증을 위한 줌트레이스를 제안하고 성능을 검증했어요."
+          ]
+        },
+        {
+          "tag": "수학·이론",
+          "n": 1,
+          "n_done": 1,
+          "one_lines": [
+            "위험 성향이 다른 에이전트들의 학습 모델을 분석하고 개입을 통해 효율성을 높였어요."
           ]
         }
       ],
-      "picks": [],
+      "picks": [
+        {
+          "canon_id": "2611.31572",
+          "badge": "전공",
+          "why": "전공(전력·제어) 중 키워드가 많이 걸림: frequency, renewable, HVDC"
+        },
+        {
+          "canon_id": "2611.32884",
+          "badge": "실무 인기",
+          "why": "허깅페이스 추천 87"
+        },
+        {
+          "canon_id": "2611.31653",
+          "badge": "AI 교집합",
+          "why": "인공지능 쪽인데 관심 키워드가 걸림: reactor"
+        },
+        {
+          "canon_id": "2611.31974",
+          "badge": "교차 출현",
+          "why": "여러 곳에 같이 올라옴: cs.AI + 허깅페이스"
+        },
+        {
+          "canon_id": "2611.31568",
+          "badge": "의외",
+          "why": "오늘 풀이 중 드문 주제 '수학·이론'(1편) — 키워드·추천수와 상관없이 고름"
+        },
+        {
+          "canon_id": "2611.32882",
+          "badge": "전공",
+          "why": "전공(전력·제어) 중 키워드가 많이 걸림: data center"
+        },
+        {
+          "canon_id": "2611.30634",
+          "badge": "실무 인기",
+          "why": "허깅페이스 추천 86"
+        },
+        {
+          "canon_id": "2611.32820",
+          "badge": "의외",
+          "why": "오늘 풀이 중 드문 주제 '영상·음성·멀티모달'(2편) — 키워드·추천수와 상관없이 고름"
+        }
+      ],
       "cards": [
         {
           "canon_id": "2611.25403",
@@ -11346,8 +11447,57 @@ window.PANEL_DATA = {
           "hf_upvotes": 100,
           "score": 11.0,
           "score_why": "추천 100 → +10 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "결제 위험을 한 번에 잡으려고 시퀀스, 표, 그래프를 섞어 봤는데요",
+            "easy1_desc": "연구진은 Antom 3-in-1 Transformer라는 결제 기초 모델을 만들어서 결제 위험을 잡으려고 시퀀스, 표, 그래프 정보를 한데 묶어 봤는데요. 이 모델은 약 70억 개의 매개변수를 가졌고, 각 작업 경로마다 약 17억 개가 활성화된다고 해요. 앤트 인터내셔널의 내부 결제 데이터를 주로 써서 행동과 관계를 미리 익히도록 사전 학습을 시켰다는 말이에요. 쉽게 말하면, 결제 데이터를 골고루 섞어서 위험을 미리 찾아내려고 준비한 셈이라는 겁니다.",
+            "easy2_title": "미리 학습시켰더니 적은 데이터로도 성능이 크게 올랐습니다",
+            "easy2_desc": "그래서 다른 사업으로 옮겨서 실험을 해봤더니, 미리 학습시킨 쪽이 처음부터 새로 학습시킨 것보다 목표 지표가 34.5% 좋아졌다고 하는데요. 전체 레이블의 25%만 써도 처음부터 다 학습시킨 기준 모델보다 AP와 Recall@0.5% 성능이 더 높게 나왔다는 겁니다. 4개월 동안 앤트 인터내셔널의 거대한 결제 플랫폼에서 실제로 돌려봤더니 전체 손실률이 XGB-Online보다 37.88% 줄어들었다는 장점이 있는데요, 대신 내부 데이터를 주로 써서 학습했다는 조건이 붙는다는 점도 같이 알아둬야 합니다.",
+            "topic": "앤트 인터내셔널의 내부 결제 데이터를 써서 시퀀스, 표, 그래프를 합친 결제 기초 모델인 Antom 3-in-1 Transformer를 개발하고, 위험 탐지 성능을 실험해 본 연구예요.",
+            "one_line": "시퀀스, 표, 그래프를 합친 결제 기초 모델을 만들고 위험 탐지 성능을 검증했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "앤트 인터내셔널의 내부 결제 데이터를 주로 써서 사전 학습을 진행했다는 조건이 있습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [
+              "10"
+            ],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Weiyu Han, Haoyu Jiang, Jie Sheng, Youxi Pan, Xianglong Liu, Zeqi Ren, Dongquan Yi, Yinhao Liu, Ruobing Zuo, Ze Zhao, Huilin He, Nairong Zhang, Xinyi He, Xiao Tan, Jun Wang, Pan Fang, Wei Zeng, Jianan Su, Kaixin Shen, Jingtong Wu, Hao Li, Shuai Chen, Jiangming Yang, Tianyi Zhang",
           "categories": [],
           "comments": 2,
@@ -11369,12 +11519,59 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 10.0,
           "score_why": "전공 +3 · 키워드 3개(frequency, renewable, HVDC) → +6 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "frequency",
             "renewable",
             "HVDC"
           ],
+          "ai": {
+            "easy1_title": "재생에너지와 정전 위험을 두고 하루 앞서 시장을 정리해 봤습니다",
+            "easy1_desc": "연구진은 하루 앞서 전력 시장을 정리하는 문제를 두 단계의 적응형 강건 최적화(Adaptive Robust Optimisation) 문제로 세웠는데요, 첫 단계에서는 발전기 조합과 에너지 배치, 예비력 조달을 정하고 둘째 단계에서는 재생에너지와 부하, 초고압 직류송전(HVDC) 변환기 고장이 동시에 불확실할 때 가장 나쁜 상황에 대처하는 행동을 다뤘다는 겁니다. 이때 동기화 지역 수준에서 관성(Inertia)과 빠른 주파수 응답(Fast Frequency Response) 제약으로 주파수 안전을 확실히 잡으려고 했는데요, 초고압 직류송전 선로는 쓸 수 있는 여유 한도 안에서 비상 전력을 도울 수 있게 했다는 말이에요. 쉽게 말하면, 발전과 소비가 흔들리고 송전선이 망가지는 최악의 상황 속에서도 전력망이 안 무너지게 미리 틀을 짜 본 셈이라는 겁니다.",
+            "easy2_title": "해상 입찰 구역을 따로 두니 실시간 정전을 눈에 띄게 줄였다는 겁니다",
+            "easy2_desc": "그래서 연구진은 북해에 있는 8개 나라의 테스트 시스템을 가지고 본국 시장(HM)과 해상 입찰 구역(OBZ)이라는 두 가지 설계를 비교해 봤는데요, 해상 입찰 구역 방식을 쓰면 송전선 막힘이 하루 전 시장에 바로 보여서 맞춤형 예비력을 챙기게 되므로 하루 전 비용은 좀 오르지만 실시간 전력 차단은 크게 줄어들어 전체 시스템 비용이 줄어든다는 겁니다. 단점은 해상 풍력 발전과 초고압 직류송전 선로 용량의 비율에 따라 이 이득이 계절을 타기도 하고, 육지 발전이 전체 공급을 이끌면 장점이 줄어든다는 점도 같이 따라온다는 말이에요. 쉽게 말하면, 미리 위험을 따져보는 설계가 평소에는 비용을 조금 더 쓰게 만들지만 위기 상황에서는 정전을 막는 든든한 방패가 된다는 셈입니다.",
+            "topic": "재생에너지와 송전선 고장이 겹치는 최악의 상황에서 주파수를 지키기 위해 전력 시장을 어떻게 설계해야 하는지 비교해 본 연구예요.",
+            "one_line": "북해 전력망을 바탕으로 두 가지 전력 시장 설계의 주파수 안정성과 비용을 비교했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "\\\"Ozlem Mahmuto\\u{g}ullar{\\i}, Hakan Ergun",
           "categories": [
             "eess.SY",
@@ -11402,8 +11599,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 87,
           "score": 9.7,
           "score_why": "추천 87 → +8.7 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "충분한 증거가 없는데도 너무 일찍 결론을 내려 버린다",
+            "easy1_desc": "긴 작업을 처리하는 인공지능 에이전트들이 증거가 모자란 상태인데도 미리 답을 정해 버리는 이른바 게으름(laziness) 현상을 일으키는데요, 연구진이 평가해 봤더니 에이전트들은 자기가 가진 믿음 속에서 여러 가능성이 남아 있는데도 섣불리 답을 확정해 버린다는 거예요. 끝에 받는 최종 결과 보상만으로는 언제 결론을 내려야 할지 가르칠 수가 없는데, 운 좋은 짐작도 증거를 제대로 갖춘 답과 똑같은 점수를 받기 때문이라는 말이에요. 쉽게 말하면, 과정은 따지지 않고 결과만 보니까 에이전트가 서둘러 대충 찍게 된다는 겁니다.",
+            "easy2_title": "믿음을 검증하는 강화학습으로 섣부른 결정을 막아 성능을 끌어올렸다",
+            "easy2_desc": "그래서 연구진은 시뮬레이터가 매 단계마다 정확한 후행 확률을 계산해 증거가 충분한지 알려 주는 방식인 검증 가능한 믿음 기반 강화학습(RLVB)을 제안했는데요, 이 방법은 여러 답이 가능할 때는 더 나아가게 하고 증거가 충분해지면 결론을 내리도록 보상을 준다는 거예요. 따로 판정자나 보상 모델이 필요 없어서 GPU 사용 시간을 1.6배나 줄이면서도 LLM 판정자의 과정 보상을 쓴 기존 PPO 방식보다 평균 9.3% 더 뛰어난 성능을 냈다고 하는데요, 장점은 정확도가 크게 오른다는 것이고 대신 학습 과정에서 시뮬레이터가 매 단계 후행 확률을 계산할 수 있어야 한다는 조건이 붙는다는 겁니다. 쉽게 말하면, 증거가 확실할 때만 답을 내리도록 훈련시켰더니 9가지 모든 환경에서 기본 모델보다 평균 17.1%나 좋아졌다는 셈이에요.",
+            "topic": "인공지능 에이전트가 증거가 부족할 때 서둘러 결론을 내리는 게으름 문제를 해결하기 위해, 믿음을 검증하는 강화학습(RLVB) 방법을 제안하고 성능을 평가한 연구예요.",
+            "one_line": "믿음 검증 강화학습으로 인공지능 에이전트의 섣부른 결정을 막았다",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Richmond Sin Jing Xuan, Peilin Feng, Wenbin Wang, Soujanya Poria",
           "categories": [
             "cs.AI"
@@ -11428,8 +11672,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 86,
           "score": 9.6,
           "score_why": "추천 86 → +8.6 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 모델은 토큰마다 회로를 자유롭게 바꾸지 못해 아쉬웠는데요",
+            "easy1_desc": "연구진은 토큰마다 회로를 동적으로 다시 엮는 새로운 방식인 룸 어텐션(loom attention)을 제안해 봤는데요. 이전 헤드들의 출력과 토큰에 대한 수평 어텐션을 엮어서 쿼리, 키, 밸류를 얻는 방식이라는 거예요. 쉽게 말하면, 모델이 계산할 때 회로를 유연하게 바꿀 수 있게 만든 셈이에요.",
+            "easy2_title": "적은 컴퓨팅 자원으로도 훨씬 큰 모델과 맞먹는 성능을 보여줬거든요",
+            "easy2_desc": "이 방식으로 만든 루움포머(LoomFormer)는 제어와 내용을 벡터와 매트릭스 스트림으로 나누는 듀얼 스트림 구조를 쓰는데요. 같은 300B(3000억 개) 토큰으로 학습했을 때 mHC-Pythia-2.8B보다 약 1.6배 높은 다운스트림 성능 향상을 보였다고 해요. 성능이 좋아지는 장점이 있는 반면 2%의 추가 FLOPs(연산 횟수)가 든다는 점도 함께 기억해 두어야 한다는 겁니다.",
+            "topic": "토큰마다 회로를 유연하게 재배치하는 새로운 듀얼 스트림 아키텍처인 루움포머(LoomFormer)를 제안하고 그 성능을 평가한 연구예요.",
+            "one_line": "토큰마다 회로를 동적으로 엮는 루움포머 구조를 제안하고 성능을 평가했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Da Xiao, Qingye Meng, Shengping Li, Xingyuan Yuan",
           "categories": [],
           "comments": 2,
@@ -11452,8 +11743,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 84,
           "score": 9.4,
           "score_why": "추천 84 → +8.4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "화면이 계속 바뀌는데 에이전트가 상황을 놓치고 있었어요",
+            "easy1_desc": "컴퓨터 사용 에이전트(CUAs)가 실시간으로 변하는 화면에서 긴 작업을 맡아 처리하는데요, 현재는 띄엄띄엄 스냅샷으로만 주변을 본다는 겁니다. 문제는 비전 언어 모델(VLM)의 추론 시간이 길어서, 행동을 실행할 때쯤이면 이미 화면 상태가 낡아 버리는 간격이 생긴다는 말이에요. 쉽게 말하면, 옛날 화면만 보고 엉뚱한 행동을 하거나 멍하게 기다리는 셈이라는 겁니다.",
+            "easy2_title": "가벼운 감시 모델을 붙여서 낡은 화면 문제를 해결했어요",
+            "easy2_desc": "그래서 연구진은 에이전트의 모델이나 프롬프트를 건드리지 않고도 연속으로 화면을 보게 만드는 나이트워치(NightWatch) 틀을 내놨는데요, 0.8B 크기의 가벼운 모델인 나이트워치-0.8B를 붙여서 인터페이스를 실시간으로 스트리밍 감시하게 만들었다는 겁니다. 이렇게 하면 적은 계산 비용으로도 현재 상태에 딱 맞춰 결정을 내리게 돼서 낡은 행동과 쓸데없는 대기를 줄여 준다는 장점이 있는데요, 대신 작업 성공률은 그대로 유지한다는 거예요. 쉽게 말하면, 작은 감시병을 하나 더 붙여서 에이전트가 멍때리는 시간을 확 줄였다는 말이에요.",
+            "topic": "컴퓨터 사용 에이전트가 실시간 화면 변화에 대응하도록 가벼운 감시 모델을 더해 인식과 행동의 간격을 줄인 나이트워치(NightWatch) 프레임워크를 제안한 내용이에요.",
+            "one_line": "실시간 화면을 감시하는 가벼운 모델을 더해 에이전트의 인식 지연을 줄였다.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jiaqi Su, Jie-Jing Shao, Yichen Liu, Long-Kai Huang, Haiyan Yin",
           "categories": [],
           "comments": 1,
@@ -11476,8 +11814,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 78,
           "score": 8.8,
           "score_why": "추천 78 → +7.8 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "시각적 표현과 정확한 통제는 왜 동시에 얻기 어려웠나",
+            "easy1_desc": "시각적 콘텐츠를 만들려면 표현력 있는 이미지와 텍스트나 구조를 향한 정확한 통제가 다 필요한데요, 기존에는 이 둘을 매끄럽게 잇기가 어려웠다는 겁니다. 연구진은 픽셀을 코드처럼 다루는 방법으로 이 문제를 풀어 보려고 했는데요. 쉽게 말하면 그림과 구조화된 요소를 하나의 틀에서 함께 다루도록 만든 셈이에요.",
+            "easy2_title": "픽셀을 코드로 다루는 에이전트 틀을 만들었더니 무엇이 달라졌나",
+            "easy2_desc": "연구진은 픽셀을 코드처럼 다루는 네모트론 연구소의 시각적 생성(Nemotron-Labs-VisualCreation)이라는 에이전트 틀을 선보였는데요. 래스터 이미지는 학습된 시각 토큰으로 바꾸고, 구조화된 결과물은 명시적 프로그램으로 나타내어 하나의 인터페이스로 엮었다는 겁니다. 그 결과 토크나이저의 재구성 성능과 속도가 좋아졌고, 시스템 수준에서도 성능 지표가 크게 올랐다는 장점이 있는데요. 대신 복잡한 구조를 얽는 과정에서 모델 구성이 무거워질 수 있다는 점도 함께 따라온다는 겁니다.",
+            "topic": "픽셀을 코드처럼 다루는 에이전트 틀을 이용해 이미지와 구조화된 시각 자료를 함께 만들고 다듬는 방식을 제안한 연구예요.",
+            "one_line": "픽셀을 코드로 다루는 시각 생성 에이전트 틀을 개발했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Guo Chen, Fuxiao Liu, Haoqin Tu, Yiyang Zhou, Andrew Tao, Bryan Catanzaro, Cihang Xie, Yuyin Zhou, Huaxiu Yao, Didong Lu, Zongxia Li, Guilin Liu",
           "categories": [],
           "comments": 2,
@@ -11499,11 +11884,60 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 8.0,
           "score_why": "전공 +3 · 키워드 2개(inverter, frequency) → +4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "inverter",
             "frequency"
           ],
+          "ai": {
+            "easy1_title": "재생에너지가 늘면서 옛날 방식으로는 진동을 잡기 어렵게 됐습니다",
+            "easy1_desc": "재생에너지가 전력망에 많이 들어오면서, 옛날처럼 전체 관성 중심 주파수만 보고는 일시적인 떨림 현상을 제대로 알기 어렵게 됐는데요. 그래서 연구진은 인버터 기반 전력망의 일시적인 주파수 성능을 분석해 봤다는 겁니다. 감쇠비와 수렴 속도라는 두 가지 핵심 성능 기준을 가지고 따져 봤는데요. 쉽게 말하면, 떨림이 얼마나 빨리 가라앉고 안정이 얼마나 빨리 찾아오는지 살펴보 셈이에요.",
+            "easy2_title": "복잡한 전력망을 쪼개서 근본적인 성능 조건을 찾아냈습니다",
+            "easy2_desc": "전체 네트워크 시스템을 스칼라 피드백 시스템들로 쪼개서, 닫힌 고리 극점을 분석할 수 있는 방법을 찾아냈는데요. 이걸 바탕으로 원하는 감쇠와 수렴 성능을 보장하는 충분조건들을 이끌어 냈다는 겁니다. 최악의 상황은 스칼라 랩라시안의 가장 큰 고유값과 가장 작은 0이 아닌 고유값에서 일어난다는 걸 밝혔는데요. 분석이 훨씬 단순해지는 장점이 있는데, 대신 시스템을 단순화하는 과정에서 세부적인 조건들이 엄격하게 맞아떨어져야 한다는 점도 같이 따라온다는 겁니다.",
+            "topic": "인버터 기반 전력망에서 감쇠비와 수렴 속도를 분석하기 위해 근궤적을 활용하는 방법과 성능 평가 기준을 다룬 연구예요.",
+            "one_line": "인버터 기반 전력망의 감쇠비와 수렴 속도를 근궤적으로 분석했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [
+              "0"
+            ],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Dan Wang, Wei Chen, Yan Jiang, Shinji Hara",
           "categories": [
             "eess.SY",
@@ -11529,8 +11963,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 61,
           "score": 7.1,
           "score_why": "추천 61 → +6.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "하나의 로봇에이전트로 통째로 제어하려니 일이 자꾸 늦어졌습니다",
+            "easy1_desc": "로봇을 움직이려고 코딩 에이전트를 쓰는데요, 에이전트 하나가 로봇 전체를 맡아서 처리하다 보니까 따로 처리해도 되는 일까지 줄 서서 기다리게 되는 문제가 생겼거든요. 연구진은 그래서 로봇을 여러 에이전트 팀으로 쪼개서 각자 맡은 부위를 따로따로 동시에 움직이게 만들었는데요. 독립된 작업은 각자 알아서 빠르게 처리하면서도, 서로 맞물려야 하는 부위는 조율할 수 있게 설계했다는 말이에요. 쉽게 말하면, 로봇 하나를 한 명이 전부 조종하던 걸 여러 명이 나눠 맡아서 동시에 일하게 바꾼 셈이라는 겁니다.",
+            "easy2_title": "팀을 이끌어 줄 상위 에이전트를 도입해서 역할을 착착 나눠줬습니다",
+            "easy2_desc": "그래서 연구진은 작업을 나눠주고 부위 간의 연결 고리를 조율하는 하이퍼 에이전트(상위 에이전트)를 도입했는데요. 이 상위 에이전트가 리드 에이전트와 멤버 에이전트 사이의 제어 권한을 상황에 맞춰 유연하게 쪼개준다는 거예요. 덕분에 따로 움직여도 되는 작업은 동시에 진행하고, 꽉 맞물려야 하는 조작 작업은紧밀하게 협력할 수 있게 됐는데요. 단점으로는 조율 과정이 복잡해질 수 있다는 점이 있지만, 장점은 실제 25가지 작업 환경에서 테스트해 보니 단일 에이전트 방식보다 시간이 28.2%나 줄어들었다는 겁니다.",
+            "topic": "로봇의 부위별 제어를 비동기식 에이전트 팀으로 쪼개어 작업 시간을 줄인 ACAP 프레임워크에 대한 연구예요.",
+            "one_line": "비동기 에이전트 팀으로 로봇을 제어해 시간을 28.2% 줄였어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Zexin He, Rui Li, Yushi Lan, Chengkai Jin, Zhi Hou, Xingang Pan",
           "categories": [],
           "comments": 2,
@@ -11552,10 +12033,59 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 6.0,
           "score_why": "전공 +3 · 키워드 1개(data center) → +2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "data center"
           ],
+          "ai": {
+            "easy1_title": "데이터 센터의 전력 변화를 예측하기가 너무 어려웠거든요",
+            "easy1_desc": "인공지능(AI) 작업이 늘어나면서 데이터 센터의 전력 수요가 급격히 커졌는데, 작업이 바뀔 때마다 전력망에 갑작스러운 전기적 과도 현상(EMT)이 발생하곤 합니다. 이걸 정확히 예측해야 데이터 센터를 안정적으로 운영할 수 있는데, 기존의 정밀한 시뮬레이션 방식은 계산하는 데 시간이 너무 많이 걸린다는 단점이 있어요. 그래서 디지털 트윈(가상 모델)을 쓰기도 하지만, 데이터 센터의 환경이 조금만 바뀌어도 제대로 대응하지 못하고 성능이 떨어지는 한계가 있다는 겁니다.",
+            "easy2_title": "거대 언어 모델로 상황에 맞춰 스스로 배우는 디지털 트윈을 만들었어요",
+            "easy2_desc": "연구진은 거대 언어 모델(LLM)의 문맥 내 학습(ICL) 기능을 활용해서, 데이터 센터 환경이 바뀌어도 스스로 적응하는 새로운 디지털 트윈을 개발했습니다. 모델을 다시 학습시킬 필요 없이, 아주 적은 양의 데이터만 보고도 새로운 환경에 맞춰 전력 변화를 바로 예측할 수 있게 만든 거예요. 기존 방식보다 훨씬 빠르게 계산하면서도 예측 정확도는 더 높다는 장점이 있는데, 덕분에 복잡한 데이터 센터 운영 환경에서도 유연하게 대처할 수 있게 된 셈입니다.",
+            "topic": "거대 언어 모델의 문맥 내 학습을 활용하여 데이터 센터의 환경 변화에 적응할 수 있는 전력 과도 현상 예측용 디지털 트윈을 제안했어요.",
+            "one_line": "거대 언어 모델을 활용해 데이터 센터의 전력 변화를 빠르게 예측하는 디지털 트윈을 개발했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [
+              "one_line 52자"
+            ],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Amit Jena, Bin Wang, Aoxia Chen, Brad Chadwell, Billy Yancey, Le Xie",
           "categories": [
             "eess.SY",
@@ -11581,10 +12111,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 6.0,
           "score_why": "전공 +3 · 키워드 1개(renewable) → +2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "renewable"
           ],
+          "ai": {
+            "easy1_title": "이름을 가려도 전력 시장에서 발전소가 어디인지 다 찾아지더군요",
+            "easy1_desc": "연구진이 2024년부터 2026년까지의 전력망 데이터인 ERCOT 자료를 가지고 PJM의 방식대로 발전소 이름을 숨겨 봤는데요, 미국 에너지정보청(EIA)과 환경청(EPA)의 공공 데이터를 활용해 채점해 봤더니 전체의 25%에 달하는 발전소(용량 기준으로는 32%)가 원래 어디인지 정확히 특정되었다고 합니다. 게다가 상위 5개 추정 안에 든 비율도 45%나 된다는 거예요. 쉽게 말하면, 이름을 가려도 발전소를 찾아내는 데는 큰 지장이 없다는 말입니다.",
+            "easy2_title": "이름 대신 노이즈를 얹은 차등 프라이버시 방식을 제안했습니다",
+            "easy2_desc": "그래서 연구진은 영구적으로 이름을 감추는 대신 영점 집중 차등 프라이버시(zero-concentrated differential privacy)를 적용해 가우스 노이즈를 섞은 새로운 공개 방식을 제안했는데요, 1유닛-년에 10의 프라이버시 예산(ε)을 쓰면 시장 공급 곡선은 실제와 11% 이내로 유지되고 청산 가격은 3.0달러/MWh 오차 안에서 맞아떨어지면서 공격자의 상관관계는 0.23까지 떨어진다고 합니다. 정보 보호는 확실해지는데 핵심 지표는 쓸 수 있다는 장점이 있는 반면, 단일 시간이나 단일 유닛 단위의 세부적인 질문에는 답할 수 없다는 한계도 같이 따라온다는 겁니다.",
+            "topic": "익명화된 전력 시장 데이터에서 발전소를 다시 찾아내는 위험성을 확인하고, 이를 막기 위한 차등 프라이버시 기반의 데이터 공개 대안을 제안한 논문이에요.",
+            "one_line": "익명화된 전력 입찰 데이터의 재식별 위험을 보이고 차등 프라이버시 기반 대안을 제안했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": "단, 어떤 분석이 유효한지는 월별 실제 데이터의 변동량과 노이즈 크기의 비율 하나에 달려 있습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Nikhil Ravi",
           "categories": [
             "eess.SY",
@@ -11611,12 +12188,132 @@ window.PANEL_DATA = {
           "hf_upvotes": 41,
           "score": 5.1,
           "score_why": "추천 41 → +4.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "공간을 이해하는 능력이 왜 부족한가 살펴봤습니다",
+            "easy1_desc": "멀티모달 대형 언어 모델(MLLM)이 현실 세계로 들어오면서 3차원 공간을 생각하는 능력이 꼭 필요한데요, 여러 시점을 하나로 묶고 새로운 시점으로 머릿속에서 돌리는 인간의 두 가지 핵심 능력이 모델에는 거의 없다는 걸 확인했어요. 공간 미세 조정까지 거쳤는데도 이 두 가지 능력이 부족하다는 말이에요. 쉽게 말하면, 눈에 보이는 걸 각자 따로 보기는 해도 전체 공간을 하나로 굴려 가며 생각하진 못한다는 셈이에요.",
+            "easy2_title": "공간 토큰을 넣어 3차원 기하학을 모델 안에 심었습니다",
+            "easy2_desc": "그래서 연구진은 압축된 공간 토큰을 써서 멀티모달 대형 언어 모델 안에 여러 시점의 기하학을 집어넣는 에스마인드(S-Mind)를 선보였는데요, 이 토큰들이 합쳐진 3차원 장면을 붙들고 있다가 필요한 시점마다 다시 뿜어내도록 지도한다는 거예요. 네 가지 공간 벤치마크에서 큐원3.5(Qwen3.5) 뼈대 모델보다 최대 22.26점 좋아졌고 지피티-6-아스트라(GPT-6-Astra), 키미-케이3.1-프로(Kimi-K3.1-Pro), 지엘엠-5.3-플래시(GLM-5.3-Flash) 같은 최첨단 일반 모델들의 평균 정확도도 넘어섰다는 장점이 있어요. 대신 토큰을 빼고 쓸 때도 능력이 유지되긴 하지만 훈련 중에 이 토큰들을 깊게 심어야 한다는 조건이 붙는다는 겁니다.",
+            "topic": "멀티모달 대형 언어 모델이 3차원 공간을 이해하도록 여러 시점의 기하학을 내면화하는 에스마인드를 제안한 연구예요.",
+            "one_line": "공간 토큰을 활용해 여러 시점의 3차원 기하학을 멀티모달 대형 언어 모델에 내면화함",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Muxin Fu, Peike Yu, Guibin Zhang, Wenrui Zhou, Runze Liu, Lang Feng, Fuchao Yang, Feng Chen, Yixuan Li, Mengao Zhang, Shiying Zhang, Wen Shen, Ling Pan, Shuicheng Yan, Bo An",
           "categories": [],
           "comments": 2,
           "pdf": "https://arxiv.org/pdf/2611.28649"
+        },
+        {
+          "canon_id": "2611.30962",
+          "title": "Self-Evolving Evaluation Environments for Computer-Use Agents",
+          "field": "cs.AI",
+          "sources": [
+            "cs.AI"
+          ],
+          "links": {
+            "arxiv": "https://arxiv.org/abs/2611.30962"
+          },
+          "published": "2026-11-24",
+          "first_seen": "2026-11-25",
+          "backlog": true,
+          "hf_upvotes": 45,
+          "score": 4.5,
+          "score_why": "추천 45 → +4.5",
+          "state": "풀이 끝",
+          "keywords": [],
+          "ai": {
+            "easy1_title": "고정된 시험 문제로는 AI 에이전트 실력을 제대로 못 알아보거든요",
+            "easy1_desc": "컴퓨터를 쓰는 AI 에이전트는 빠르게 좋아지고 있는데요, 평가는 여전히 옛날 방식 그대로 멈춰 있거든요. 기존의 시험 문제들은 난이도가 고정되어 있거나 다루는 범위가 좁아서, AI가 얼마나 발전했는지 촘촘하게 가려내지 못한다는 거예요. 쉽게 말하면, 실력은 늘었는데 시험이 너무 낡아서 변별력이 떨어진 셈이라는 말이에요.",
+            "easy2_title": "실험하면서 스스로 진화하는 평가 환경을 만들었습니다",
+            "easy2_desc": "그래서 연구진은 실행 과정에서 나온 증거를 바탕으로 문제와 검증기를 함께 발전시키는 닫힌 고리 평가 환경인 CUA-SEE를 만들었는데요. 난이도를 조절하고 에이전트의 한계선을 정밀하게 찌르는 방식으로 평가 범위를 넓힌다는 거예요. 에이전트가 발전하는 만큼 시험도 같이 어려워져서 실력을 정확하게 잴 수 있다는 장점이 있는데, 대신 시스템이 계속 움직이기 때문에 평가 기준이 복잡해진다는 점도 같이 따라온다는 겁니다.",
+            "topic": "컴퓨터를 사용하는 AI 에이전트를 위해 스스로 진화하며 평가하는 환경인 CUA-SEE를 제안한 논문이에요.",
+            "one_line": "스스로 진화하는 컴퓨터 사용 AI 에이전트 평가 환경을 개발했어요",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
+          "authors": "Wenhao Wang, Panrong Tong, Quyu Kong, Pengxiang Li, Haowen Yang, chenglin Cai, Siheng Chen, Yue Wang",
+          "categories": [
+            "cs.AI",
+            "cs.CV"
+          ],
+          "comments": 1,
+          "pdf": "https://arxiv.org/pdf/2611.30962"
         },
         {
           "canon_id": "2611.25509",
@@ -11635,8 +12332,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 34,
           "score": 4.4,
           "score_why": "추천 34 → +3.4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "의료용 AI가 위험한 말을 하는지 막아야 하는데요",
+            "easy1_desc": "의료 인공지능이 환자 상담이나 진료 결정에 점점 많이 쓰이면서, 해롭거나 기준에 어긋나는 대답을 찾아내는 일이 중요해졌는데요. 이런 위험을 따지려면 진료 주장에 맞는 근거를 대고 계산을 확인해야 하는데, 이게 보통 까다로운 게 아니거든요. 쉽게 말하면, 안전하고 올바른 의료 인공지능을 쓰려면 숨은 위험을 꼼꼼히 걸러낼 방패가 꼭 필요하다는 겁니다.",
+            "easy2_title": "의료 전문 지식을 하나로 묶은 방어막을 만들었어요",
+            "easy2_desc": "그래서 연구진은 여러 의료 전문가 모델과 감독 모델의 힘을 합쳐 하나로 묶은 가드레일인 링샌테 메드가드(LingSante MedGuard)를 만들었는데요. 교사 모델의 지도와 오프라인 미세 조정, 그리고 다중 교사 정책 증류 방식을 거쳐 위험 감지 능력을 탄탄하게 끌어올렸다는 겁니다. 벤치마크 시험을 해 봤더니 크기에 따라 F1 점수가 4B에서 82.3%, 9B에서 82.4%, 27B에서 87.4%로 나왔는데요. 성능이 좋아진다는 장점이 있지만, 여러 전문 모델을 엮어야 해서 구조가 복잡해진다는 점도 같이 따라온다는 셈이에요.",
+            "topic": "의료용 인공지능의 위험을 안전하게 걸러내기 위해 여러 전문 모델을 하나로 묶은 가드레일과 그 성능 평가에 대한 연구예요.",
+            "one_line": "의료 AI 위험을 걸러내는 통합 가드레일과 벤치마크를 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "LingSante MedGuard Team",
           "categories": [],
           "comments": 1,
@@ -11659,8 +12403,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 33,
           "score": 4.3,
           "score_why": "추천 33 → +3.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "삼차원 물체를 부위별로 쪼개려는데 두 정보가 따로 돌았다",
+            "easy1_desc": "삼차원 물체를 의미 있는 부위로 나누려면 기하학적 구조와 의미를 함께 따져야 하는데요, 삼차원 전문가가 공간 후보를 대주고 이차원 전문가가 이름표를 붙여 주는 식이었다는 겁니다. 문제는 이 두 가지 능력을 하나로 합쳐서 제대로 나누고 다듬을 틀이 마땅찮았다는 말이에요. 쉽게 말하면, 눈에 보이는 모양과 뜻을 매끄럽게 엮어 내기가 까다로웠던 셈이에요.",
+            "easy2_title": "따로 놀던 전문가를 묶어 스스로 고치는 인공지능을 만들었다",
+            "easy2_desc": "그래서 연구진은 훈련이 필요 없는 인공지능 체계인 파트너제트(PartAgent)를 내놓았는데요, 삼차원 구조 정보와 이차원 의미를 이미지와 표면 연결로 묶은 뒤에 스스로 고치게 만든 거예요. 여러 크기로 쪼개 보고 직접 살펴보며 고치는 과정을 거친다는 장점이 있는데, 대신 여러 단계를 거치느라 처리 과정이 복잡해진다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 전문가 둘을 한 팀으로 묶고 스스로 검사하게 만들었더니 성능이 훨씬 높아졌다는 말이에요.",
+            "topic": "삼차원 부위 분할 성능을 높이기 위해 구조와 의미 전문가를 묶고 스스로 고치도록 만든 인공지능 체계에 대한 내용이에요.",
+            "one_line": "삼차원 부위 분할을 위해 전문가들을 묶고 스스로 고치는 인공지능 체계를 만들었어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yang Cao, Zhe Zhu, Yiheng Zhang, Zhengqiang Zhang, Haoyuan Li, Le Wan, Dan Xu",
           "categories": [],
           "comments": 2,
@@ -11682,8 +12473,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "복잡해지는 자율주행 아키텍처를 어떻게 손볼지가 문제였는데요",
+            "easy1_desc": "레벨 4 자율주행차가 산업화 과정으로 나아가면서, 시스템이 너무 복잡해지고 비용과 검증 부담이 커진다는 점이 문제였는데요. 연구진은 안전을 지키면서도 불필요한 요소를 줄여 효율을 높여야 한다는 필요성에서 출발했어요. 쉽게 말하면, 차가 안전해야 하는 건 기본인데 구조가 너무 무거워져서 이대로는 쓰기 어렵다는 말이에요.",
+            "easy2_title": "작동 영역을 기준으로 안전과 비용을 함께 맞추는 체계를 만들었는데요",
+            "easy2_desc": "그래서 연구진은 작동 설계 영역(ODD)을 기준으로 안전 조건을 먼저 따진 뒤 구조를 바꾸는 엔지니어링 프레임워크를 제안했는데요. 직접 구조를 없애기보다는 기능을 재배치하고 합쳤더니, 5,000개의 불확실성 조건 속에서도 비용을 낮추는 대안들을 찾아냈다는 거예요. 서류상의 설계 후보라는 한계는 있지만, 안전을 해치지 않으면서도 비용을 줄일 수 있는 가능성을 보여줬다는 셈이에요.",
+            "topic": "레벨 4 자율주행차의 안전을 지키면서도 비용과 구조를 효율적으로 다듬기 위해 작동 설계 영역(ODD)을 활용한 시스템 엔지니어링 프레임워크를 제안하고, 이를 가상의 사례로 검증한 연구예요.",
+            "one_line": "작동 설계 영역(ODD) 기반 자율주행 아키텍처 합리화 프레임워크를 제안하고 비용 절감 효과를 검증했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": "이번 연구에서 보고된 변환 결과는 실제 검증된 양산형 아키텍처가 아니라 설계 후보군에 불과합니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [
+              "one_line 59자"
+            ],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Tiago Sim\\~ao Ferreira (Federal Institute of Minas Gerais - IFMG), Farzad Fallahi (University of Luxembourg)",
           "categories": [
             "eess.SY",
@@ -11709,8 +12549,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 모델은 한 가지만 예측해서 문제가 생겼다",
+            "easy1_desc": "연구진은 사이버물리시스템(CPS)을 개발할 때 전통적인 모델은 가장 가능성이 높은 행동 하나만 예측해 왔는데요, 이러면 실제 시스템과 모델 사이에 오차가 생겨서 뒤늦은 시험 단계에서야 문제가 터진다는 겁니다. 이 시기에는 다시 설계하기가 가장 비싸고 힘들어진다는 말이에요. 쉽게 말하면, 미리 불확실성을 다 잡지 못해서 나중에 큰 코를 다치게 된다는 셈이에요.",
+            "easy2_title": "데이터로 불확실성을 감싸는 새로운 모델을 제안했다",
+            "easy2_desc": "그래서 연구진은 단일 경로 대신 통계적 보장과 함께 실제 시스템 행동을 보수적으로 감싸는 도달집합 순응 모델(reachset-conformant modeling)이라는 프레임워크를 선보였는데요, 모델에서 확인된 안전 성질이 실제 시스템으로 그대로 이어진다는 장점이 있어요. 다만 설계를 바꿨을 때 불확실성 집합을 다시 맞추는 과정이 필요하다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 데이터 기반으로 여러 가능성을 미리 묶어 두어 나중에 비싼 수정 비용을 아끼게 된다는 말이에요.",
+            "topic": "사이버물리시스템 개발 과정에서 불확실성을 관리하기 위해 도달집합 순응 모델을 제안하고 그 이론적 성질과 적용 결과를 다룬 연구예요.",
+            "one_line": "사이버물리시스템의 불확실성을 관리할 도달집합 순응 모델을 제안하고 그 성질을 증명했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Laura L\\\"utzow, Francesco Pio Urbano, Tobias D\\\"user, Matthias Althoff",
           "categories": [
             "eess.SY",
@@ -11735,8 +12622,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "우주 물류는 하고 싶은데 궤도 계산이 너무 어렵고 복잡하다",
+            "easy1_desc": "우주 쓰레기 치우기나 연료 채워주기 같은 사업들은 원래 궤도 역학이랑 최적화 기술이 엄청 필요한데요, 페이로드나 위성 만드는 회사들이 이런 걸 다 직접 하기는 힘들거든요. 그래서 젊은 스타트업들이 우주 물류 시장에 들어오기 어렵거나, 아니면 비싸게 손으로 일일이 일정을 짜야 한다는 말이에요. 쉽게 말하면, 기술 장벽 때문에 진입 자체가 막혀 있는 셈이라는 겁니다.",
+            "easy2_title": "소프트웨어로 먼저 궤도를 짜 주고 나중에 터그를 붙인다",
+            "easy2_desc": "그래서 연구진은 목표 목록과 우주선, 시간 예산을 넣으면 가격이 매겨지고 검증된 임무 계획을 만들어주는 스페이스 포스트맨(Space Postman)이라는 계획 서비스를 내놨는데요, 페이로드 베이에 각종 장비를 싣는 터그 개념인 아틀라스(ATLAS)도 같이 소개했어요. 돈이 떨어지면 망하는 스타트업들의 특성을 고려해서 소프트웨어를 먼저 제공하고 우주선은 나중에 붙이는 방식을 쓴다는 거예요. 서비스 진입 장벽을 낮춰주는 장점이 있는데, 대신 결과 숫자를 얻은 정밀도 그대로 읽어야 한다는 조건도 같이 붙는다는 겁니다.",
+            "topic": "우주 물류 사업에 새로 뛰어드는 스타트업들을 위해 궤도 계획 소프트웨어와 터그 개념을 함께 제안한 논문이에요.",
+            "one_line": "우주 물류 스타트업을 위한 궤도 계획 서비스와 터그 개념을 제안하고 검증했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": "제안된 보정된 계획기를 쓸 때는 그 숫자들이 얻어진 정밀도 그대로 읽어야 한다는 조건이 붙습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Omer Burak Iskender, Kaan G\\\"okt\\\"urk",
           "categories": [
             "eess.SY",
@@ -11762,8 +12696,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 방식은 변수 고르기에 너무 민감했다",
+            "easy1_desc": "물리 기반 신경망(PINNs)을 쓰면 차원이 높은 시스템도 분석할 수 있지만, 하이퍼파라미터나 시스템 움직임에 따라 성능이 크게 흔들린다는 문제가 있었거든요. 연구진은 이 문제를 해결하려고 끝이 정해진 유한 구간 분석을 수축하는 고정점 문제로 바꿔서 뒤로 시간을 거슬러 가며 푸는 방법을 써봤는데요. 할인 요소를 따로 넣지 않고도 시간이랑 공간의 미분 값을 합쳐서 수축 매핑을 만들어 낸 겁니다. 쉽게 말하면, 흔들리기 쉬운 기존 방식 대신 더 단단한 구조로 계산을 바꿨다는 말이에요.",
+            "easy2_title": "시간과 공간을 잘 쪼개서 수축 매핑으로 해결했다",
+            "easy2_desc": "그래서 연구진은 Contract2Reach라는 방식을 내놓았는데요, 시간과 공간의 간격을 쪼개서 정확한 해로 수렴한다는 걸 증명했어요. 공간 기울기를 거슬러 계산하지 않고 한 번의 회귀로 값을 맞추는 방식인데, 적응형 샘플링과 보수적 타깃 결합을 써서 높은 차원에서 생기는 표본 부족과 오탐을 막았다는 겁니다. 드론이나 13차원 쿼드콥터, 40차원 시스템 실험에서 기존 방식보다 나은 성능을 보여줬는데요. 장점은 민감도가 낮아지고 정확도가 올라간다는 것인데, 대신 복잡한 신경망 구현 과정에서 신경 써야 할 조건들이 늘어난다는 점도 같이 따라온다는 셈이에요.",
+            "topic": "고차원 시스템을 다루기 위해 할인 요소 없이 수축 매핑을 활용하는 새로운 분석 방식인 Contract2Reach를 제안하고 검증한 연구예요.",
+            "one_line": "할인 없는 수축 동적 프로그래밍 기반의 고차원 분석법을 제안했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jaeyoung Lee, Donggun Lee, Jason J. Choi, Namhoon Cho",
           "categories": [
             "eess.SY",
@@ -11788,8 +12769,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "계산이 너무 무거워서 실시간으로 쓰기 힘들었거든요",
+            "easy1_desc": "모델 예측 제어(MPC)를 쓸 때 계산이 너무 많아지는 게 걸림돌이었는데요, 알맞은 제어 변환(transcription) 방식을 고르려면 깊은 지식과 노력이 많이 필요하다는 겁니다. 뭔 소리냐면, 어떤 방식을 골라야 가장 빠른지 찾는 과정 자체가 복잡하다는 말이에요.",
+            "easy2_title": "알아서 최적의 방식을 찾아주는 자동 파이프라인을 만들었거든요",
+            "easy2_desc": "그래서 연구진은 제어 변환 방식을 자동으로 설계하고 평가하는 파이프라인을 제안했는데요, 베이지안 최적화(Bayesian Optimization)를 써서 가장 알맞은 구성을 찾는 방식이에요. 계산 시간이나 닫힌 고리 성능 같은 목표를 직접 정해서 줄일 수 있다는 장점이 있는데, 대신 우주선 궤도 서비스 같은 시나리오로 검증해 봐야 한다는 조건이 같이 따라온다는 겁니다.",
+            "topic": "모델 예측 제어에서 가장 알맞은 제어 변환 방식을 자동으로 설계하고 평가하는 파이프라인을 제안한 내용이에요.",
+            "one_line": "모델 예측 제어 변환 방식을 자동으로 설계하는 파이프라인을 만들었어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Fabio Schneider, Peter K\\\"otting, Renato Loureiro",
           "categories": [
             "eess.SY",
@@ -11814,8 +12842,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "긴 데이터를 넣으면 계산이 꼬이는 문제점이 있었어요",
+            "easy1_desc": "비선형 시스템(복잡한 변화를 보이는 시스템)을 분석할 때 시뮬레이션 오차를 줄이는 방식은 흔히 쓰이는데요, 데이터 기간인 N이 길어질수록 최적화할 공간이 울퉁불퉁해지고 상태가 기하급수적으로 나빠진다는 약점이 있었어요. 연구진은 이 문제를 풀기 위해 각 단계마다 부드럽게 벌점을 주는 방식으로 궤도를 끌어올리는 방법을 제안했는데요, 그 결과 경사하강법이 최솟값을 확실하게 찾아낼 수 있는 조건을 만족하게 된다는 거예요. 쉽게 말하면, 데이터가 길어져도 계산이 무너지지 않는 길을 찾았다는 말입니다.",
+            "easy2_title": "벌점을 주는 방식을 더해서 진짜 값을 찾아내도록 바꿨어요",
+            "easy2_desc": "손실이 0인 상태만으로는 실제 물리 파라미터를 정확히 알 수 없는데, 연구진은 최소한의 벌점을 골라내는 원리를 더해 이 문제를 해결했는데요, 구조적 식별성이 보장된 상태에서는 어떤 양의 벌점 가중치를 쓰든 진짜 파라미터를 정확히 찾아낸다는 거예요. 잡음이나 모델에 없는 동역학이 들어와도 오차가 불일치 수준에 비례해서만 커진다는 장점이 있는 반면, 벌점 가중치를 조절하는 과정이 추가된다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 복잡한 데이터에서도 진짜 값을 놓치지 않고 찾아내는 추정기를 만들었다는 셈이에요.",
+            "topic": "비선형 시스템을 분석할 때 데이터가 길어져도 계산이 무너지지 않도록 시뮬레이션 오차 최소화 방식을 개선한 연구예요.",
+            "one_line": "긴 데이터에서도 안정적인 비선형 시스템 분석법을 개발했어요",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Cesare Donati, Constantino Lagoa",
           "categories": [
             "eess.SY",
@@ -11840,8 +12915,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "왜 예전 방식으로는 안 되나 봤더니",
+            "easy1_desc": "선형 시불변 공정과 부동 구간 하이브리드 적분기가 얽힌 조각별 선형 시스템의 안정성을 살펴봤는데요. 상태에 따라 바뀌는 전환 순서가 시간이 흐르면 주기적인 행동을 보인다는 점을 이용해, 기존의 충분조건 중심인 리아푸노프 방식 대신 새로운 스펙트럼 분석법을 개발했다는 거예요. 쉽게 말하면, 기존 방법으로는 다루기 까다로웠던 복잡한 시스템의 안정성을 다른 각도에서 파고들 수 있게 했다는 셈이에요.",
+            "easy2_title": "주기적 성질을 파고들어 안정성을 따져봤다",
+            "easy2_desc": "연구진은 초기 조건이나 시스템 안정성과 상관없이 점근적 주기가 항상 성립한다는 추측을 세우고, 극한 시스템의 형태를 설명하며 그 매개변수를 구하는 알고리즘을 제안했는데요. 2차 선형 시불변 공정에 대해서는 이를 엄밀하게 증명해 냈다는 겁니다. 그 결과 나온 주기적 극한 시스템의 스펙트럼 성질을 바탕으로 충분한 안정성 조건을 이끌어냈는데, 일반적인 조각별 선형 시스템의 정확한 안정성 분석에 새로운 시각을 준다는 장점이 있어요.",
+            "topic": "조각별 선형 시스템의 안정성을 분석하기 위해 스펙트럼 접근법을 도입하고 주기적 극한 시스템을 활용한 연구예요.",
+            "one_line": "조각별 선형 시스템의 안정성 분석을 위한 스펙트럼 접근법을 개발함",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Sebastiaan van den Eijnden, Kai Wulff, Christoph Weise, Johann Reger",
           "categories": [
             "eess.SY",
@@ -11866,8 +12988,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "값이 튀는 데이터 때문에 시스템 상태를 제대로 못 짚어내는 게 문제였어요",
+            "easy1_desc": "선형 시스템에서 실시간으로 들어오는 출력 측정값에 엉뚱하게 튀는 값들이 섞여 들어오면 상태를 정확히 추정하기 어려운데요. 연구진은 시스템 모델을 직접 구하지 않고 예전 데이터만 가지고 이 문제를 해결해 봤거든요. 뭔 소리냐면, 엉뚱한 값이 섞여 들어와도 흔들리지 않게 상태를 추정하는 새로운 방식을 제안했다는 말이에요. 쉽게 말하면, 데이터에 오류가 섞여 있어도 속지 않고 진짜 상태를 찾아내겠다는 겁니다.",
+            "easy2_title": "엉뚱한 값을 걸러내는 손실 함수를 써서 정확한 상태를 찾아냈어요",
+            "easy2_desc": "그래서 연구진은 윌렘스의 기본 보조정리를 바탕으로, 튀는 값을 걸러낼 수 있는 잘린 이차 손실을 쓰는 추정 방식을 제안했는데요. 이 방식을 쓰면 추정 오차가 일정하게 제한되는 조건도 이론적으로 확실히 세워졌다는 거예요. 시뮬레이션을 돌려봤더니 엉뚱한 값이 섞인 상황에서도 정확한 상태 값을 잘 찾아낸다는 점을 확인했다고 하는데요. 계산이 복잡해질 수 있다는 점은 있지만, 노이즈에 강해진다는 확실한 장점이 함께 따라온다는 겁니다.",
+            "topic": "임의의 튐 값이 섞인 선형 시스템에서 데이터를 바탕으로 상태를 안정적으로 추정하는 기법에 대한 연구예요.",
+            "one_line": "데이터 기반의 이상치 강인 상태 추정 기법을 제안했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jingshi Yao, Zenghong Huang, Xiaojie Li, Xunyuan Yin",
           "categories": [
             "eess.SY",
@@ -11892,8 +13061,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "불규칙하게 측정한 데이터로 제어 모델을 만들려고 했다",
+            "easy1_desc": "연구진은 주기적이지 않게 신호를 모은 데이터에서 연속 시간 선형 시스템의 제어용 모델을 찾아내는 방식을 제안했는데요. 연속 시간 행렬을 그대로 복원하는 대신, 샘플링 간격의 변화에 따라 변하는 이산 시간 선형 매개변수 변동(LPV) 상태 공간 모델을 직접 찾아냈다는 겁니다. 뭔 소리냐면, 간격이 들쭉날쭉한 데이터에서도 제어에 바로 쓸 수 있는 모델 구조를 바로 뽑아냈다는 말이에요.",
+            "easy2_title": "반복해서 다듬어 봤더니 정확도가 크게 높아졌다",
+            "easy2_desc": "그래서 처음에는 표준 선형 시불변(LTI) 부분 공간 모델에서 대략적인 값을 먼저 얻은 다음, 상태 서열 복원과 매개변수 조절을 반복해서 거쳤는데요. 숫자를 확인해 봤더니, 기존의 고정된 LTI 모델이 망가지는 넓은 샘플링 간격 변화 속에서도 높은 검증 정확도를 유지하는 것으로 보입니다. 반복 과정을 거치면서 상태를 직접 잰 기준에 아주 가까워진다는 장점이 있는데, 대신 초기 추정치부터 다시 다듬는 과정을 거쳐야 한다는 점도 같이 따라온다는 겁니다.",
+            "topic": "불규칙한 샘플링 간격 데이터를 활용해 이산 시간 선형 매개변수 변동(LPV) 제어 모델을 반복적으로 찾아내는 방법과 그 정확도를 확인한 연구예요.",
+            "one_line": "불규칙한 샘플링 데이터의 LPV 제어 모델 식별법 제안",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Hiroshi Okajima, Yohei Hosoe",
           "categories": [
             "eess.SY",
@@ -11918,8 +13134,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "복잡한 소음을 잡아야 하는데 연산은 가볍게 줄여야 했습니다",
+            "easy1_desc": "연구진은 다채널 능동 도로 소음 제어(ARNC) 상황에서 인과 관계와 연산 한계를 지키며 소음을 줄여야 하는 문제를 다뤘는데요, 선형 제어와 조건부 비선형 잔차 보상을 서로 떼어놓는 방식으로 효율적인 방안을 제안해 봤습니다. 뭔 소리냐면, 기본 필터는 네트워크 기반 학습으로 구하고 복잡한 보상은 전문가 모듈이 맡아서 처리한다는 말이에요. 이 과정에서 샘플 그래프로 라우팅 확률을 규제하고 다중 해상도로 최적화를 거친다는 겁니다. 쉽게 말하면, 성능은 높이면서 계산 부담은 확 낮추려고 했다는 셈이에요.",
+            "easy2_title": "가벼운 전문가 모듈을 써서 계산 비용은 확 낮추고 소음은 더 잘 잡았습니다",
+            "easy2_desc": "그래서 연구진은 유한 임펄스 응답(FIR) 기본 필터와 다중 해상도 FIR 전문가 혼합(MRF-MoE) 모듈을 함께 쓰는 구조를 만들어 봤는데요, 추론할 때는 단일 전문가만 라우팅하도록 골라서 계산량을 크게 줄였다는 겁니다. 실험해 봤더니 같은 설정을 쓴 WaveNet-VNN과 비교해서 추론 비용은 96.3% 줄어드는 대신 테스트 세트에서는 더 높은 소음 저감(NR)을 보여줬다고 해요. 계산은 훨씬 가벼워졌는데 성능은 오히려 더 좋아졌다는 장점이 있는 반면, 구조가 복잡해져서 학습 단계가 여러 개로 나뉜다는 점도 같이 따라온다는 겁니다.",
+            "topic": "연산 한계를 극복하기 위해 선형 제어와 조건부 비선형 잔차 보상을 분리하고 가벼운 전문가 모듈을 활용하여 다채널 능동 도로 소음 제어를 수행하는 효율적인 방법에 대한 연구예요.",
+            "one_line": "선형 제어와 보상을 분리한 가벼운 소음 제어법을 제안했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xingzhao Huang, Hengzhi Zhou, Yu Shi, Ming Wu, Bin Liao, Yijing Chu",
           "categories": [
             "eess.SY",
@@ -11944,8 +13207,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "장애물 피해 날아가려는데 가속도 한계까지 겹쳐서 불안했거든요",
+            "easy1_desc": "연구진은 쿼드로터(드론)가 장애물이 많은 곳을 일정한 높이로 날아갈 때, 단순히 목표 경로만 잘 쫓아가는 것으로는 안전을 지키기 어렵다는 점에 주목했는데요. 원래 쓰던 제어기에 고차 제어 장벽 제약 조건과 가속도 제한 최적화 프로그램을 합쳐서 안전 필터 틀을 만들어 봤어요. 안전 필터는 장애물과의 거리가 충분할 때는 원래 가속도를 그대로 두고, 위험할 때만 가속도를 바꿔서 충돌을 막아주는 방식이라는 겁니다. 쉽게 말하면, 경로를 따라가면서도 장애물에 부딪히지 않게 중간에서 조종을 바로바로 잡아주는 셈이에요.",
+            "easy2_title": "안전 필터를 붙여 봤더니 최소 거리가 크게 늘어났는데요",
+            "easy2_desc": "그래서 연구진이 가상의 평면 장애물 환경에서 실험을 해 봤더니, 안전 필터를 썼을 때는 최소 거리가 0.000~0.001 m로 유지된 반면 안 썼을 때는 마이너스 값으로 떨어졌다고 해요. 대신 속도 규모를 0.6에서 1.6으로 키울 때 추종 오차(RMSE)가 0.618에서 0.950 m로 늘어난다는 단점도 함께 나타났는데요. 안전을 지키는 과정에서 정확도가 살짝 떨어진다는 장단점을 동시에 보여주는 결과라는 겁니다. 쉽게 말하면, 안전을 챙기려니 경로를 딱 맞추기는 조금 더 벅차졌다는 말이에요.",
+            "topic": "가속도 한계가 있는 장애물 환경에서 쿼드로터의 안전한 비행을 돕는 안전 필터 기반 경로 추종 틀을 제안하고 그 성능을 분석한 논문이에요.",
+            "one_line": "쿼드로터 비행을 위한 안전 필터 기반 경로 추종 틀을 제안하고 분석했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Andi Rahmadiansah",
           "categories": [
             "eess.SY",
@@ -11970,8 +13280,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "여러 로봇이 움직일 때 통신망 때문에 뜻대로 안 되는 게 문제였어요",
+            "easy1_desc": "연구진은 여러 로봇이나 에이전트(대리인)가 함께 움직이는 분산 제어(중앙 통제 없이 각자 움직이는 기술) 시스템을 살펴봤는데요, 통신 네트워크의 구조적인 특성 때문에 공간마다 상태가 달라져서 제어가 무척 까다로워진다는 점을 문제로 짚었어요. 뭔 소리냐면, 각 로봇이 어떻게 움직이는지 다 알아도 연결된 망의 특성 때문에 전체 조율이 쉽게 틀어진다는 말이에요. 결국 정보가 부족해서가 아니라 통신망의 한계 때문에 전체 시스템을 최적화하기 어렵다는 셈이에요.",
+            "easy2_title": "연합 학습과 정책 경사를 합쳐서 전체 합의를 찾아냈다는 겁니다",
+            "easy2_desc": "그래서 연구진은 분산 제어 이론과 연합 정책 경사(여러 주체가 협력해 최적의 행동 방침을 찾는 알고리즘)를 연결하는 새로운 최적화 방식을 제안했는데요, 그래프의 특성 분석을 통해 전체 수렴을 보장하는 조건을 찾아내고 초기 안정화 정책 없이도 작동하는 알고리즘을 만들었어요. 이 방식을 쓰면 정책 최적화 과정이 빠르게 수렴한다는 장점이 있는데, 대신 네트워크의 특성에 따라 성능이 크게 좌우된다는 점도 함께 따라온다는 겁니다. 쉽게 말하면, 복잡한 통신망 속에서도 초기 조건에 연연하지 않고 전체가 조화를 이루도록 만드는 길을 열었다는 말이에요.",
+            "topic": "동적 합의(여러 주체가 실시간으로 의견이나 상태를 맞추는 과정)를 이루기 위해 분산 제어 이론과 연합 정책 경사를 연결하는 새로운 최적화 프레임워크를 제안하고, 그 수렴 성능을 분석했어요.",
+            "one_line": "동적 합의를 위한 연합 최적화 프레임워크를 제안하고 수렴 조건을 분석했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Maryam Babazadeh",
           "categories": [
             "eess.SY",
@@ -11996,8 +13353,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "정확한 모델이 없어 안전을 따지기 어려웠어요",
+            "easy1_desc": "비선형 시스템의 안전을 검증하는 기존의 방식인 Hamilton-Jacobi 도달 가능성 분석은 정확한 동역학 모델이 필요하다는 한계가 있었는데요, 데이터를 기반으로 해밀턴 함수를 직접 구하는 방식이 나왔지만 알 수 없는 동역학의 립시츠 상수를 유한한 데이터로 증명하기 어렵고 보수적인 결과를 낳는다는 문제가 있었거든요. 뭔 소리냐면, 기존 방식은 정확한 모델이 없으면 안전한 영역을 너무 좁게 잡게 된다는 말이에요. 그래서 연구진은 가우스 과정(Gaussian process)을 활용해 이 문제를 해결해 보기로 한 겁니다.",
+            "easy2_title": "가우스 과정을 써서 더 넓고 안전한 영역을 찾았어요",
+            "easy2_desc": "그래서 연구진은 가우스 과정 기반 데이터 구동 해밀턴 함수(GP-DDH)라는 방식을 제안했는데요, 동역학에 가우스 과정 사전 확률을 적용해 확률적 보장이 되는 안전 영역을 만든다는 계획이에요. 신뢰 매개변수를 고르는 두 가지 방법을 제안해 해밀턴 함수 하한을 보장하도록 만들었는데, 장점은 기존 방식보다 실제 안전 영역의 더 넓은 부피를 찾아낸다는 것이고 대신 계산 과정에서 확률적 보장을 거쳐야 한다는 점이 같이 따라온다는 겁니다. 쉽게 말하면, 기존보다 훨씬 정확하면서도 더 넓은 안전 영역을 찾아낼 수 있다는 셈이에요.",
+            "topic": "가우스 과정을 활용해 데이터 기반으로 확률적 안전 영역을 구축하는 GP-DDH 프레임워크를 제안한 내용이에요.",
+            "one_line": "가우스 과정 기반 해밀턴 함수로 안전 영역을 구축했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Seungseok Oh, Junho Kim, Jason J. Choi, Namhoon Cho",
           "categories": [
             "eess.SY",
@@ -12022,8 +13426,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "사람마다 위험을 대하는 태도가 달라서 생기는 문제예요",
+            "easy1_desc": "협력 게임에서 사람들이 학습할 때 위험을 어떻게 받아들이는지 그 태도를 다르게 설정해 봤는데요, 그랬더니 두 집단이 서로 다른 행동을 선택하며 갈라지는 편향된 상태가 나타나는 걸 확인했습니다. 이게 왜 문제냐면, 모두에게 더 이득이 되는 최선의 균형점보다 훨씬 못한 결과에 머무르게 되기 때문이에요. 쉽게 말하면, 구성원들의 위험 성향이 제각각인 것만으로도 전체의 효율성이 떨어지는 비효율적인 결과가 고착화될 수 있다는 겁니다.",
+            "easy2_title": "사람들의 위험 성향을 살짝 바꿔서 효율을 높여 봤어요",
+            "easy2_desc": "그래서 연구진은 이런 비효율을 줄이려고 학습 과정에서 에이전트들의 위험 성향을 조정하는 개입 방식을 제안했는데요, 일정 비율 이상의 에이전트를 대상으로 위험 파라미터를 충분히 높여 주면 가장 이득이 큰 균형 상태로 돌아온다는 걸 밝혀냈습니다. 다만 개입하는 사람의 수와 강도 중 하나라도 부족하면 효과가 없다는 한계도 분명히 했거든요. 결국 두 조건이 모두 충족되어야만 효율적인 상태를 안정적으로 유지할 수 있다는 말이에요.",
+            "topic": "위험 성향이 다른 에이전트들이 협력 게임을 학습할 때 발생하는 비효율적인 결과를 분석하고, 이를 해결하기 위한 개입 전략을 제시했어요.",
+            "one_line": "위험 성향이 다른 에이전트들의 학습 모델을 분석하고 개입을 통해 효율성을 높였어요.",
+            "topic_tag": "수학·이론",
+            "limit": "개입의 효과를 보려면 개입 대상의 비율과 강도가 모두 충분해야 한다는 조건이 있습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "수학·이론",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Solaleh Mohammadi, Yiman Fong, Kaiqing Zhang",
           "categories": [
             "eess.SY",
@@ -12050,8 +13501,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "시끄러운 데이터로 시스템을 제어하려니 오차가 생기는 문제",
+            "easy1_desc": "연구진은 잡음이 섞인 입력과 상태 데이터를 가지고 선형 매개변수 변화 시스템을 제어하는 방법을 제안했는데요,  Hankel 계수를 제한했더니 노이즈 때문에 생기는 예측 오차는 잡을 수 있었지만 중요한 궤적들을 놓칠 수 있다는 한계가 생겼다는 거예요. 뭔 소리냐면, 데이터를 다루는 과정에서 오차를 막으려다 보니 쓸 수 있는 유효한 움직임까지 일부 잘려 나갈 수 있다는 말이에요.",
+            "easy2_title": "오프라인 데이터와 튜브 기법을 엮어 안정적인 제어기를 만들었습니다",
+            "easy2_desc": "그래서 연구진은 볼록 껍질 조건과 데이터 일관성을 활용해 필요한 표현력을 되살렸고, 튜브 조이기 요소를 직접 계산해 온라인 문제를 이차 계획법으로 풀었는데요, 그 결과 재귀적 실현 가능성과 제약 조건 만족, 그리고 실용적인 입력-상태 안정성을 확인했다고 해요. 쉽게 말하면, 노이즈가 있는 상황에서도 시스템이 안정적으로 작동하도록 만드는 제어 체계를 완성했다는 겁니다.",
+            "topic": "잡음이 포함된 데이터를 활용해 선형 매개변수 변화 시스템을 안정적으로 다루기 위한 튜브 기반 강인 데이터驱动 예측 제어 기법을 제안한 논문이에요.",
+            "one_line": "잡음 데이터 기반 선형 시스템의 튜브 기반 강인 예측 제어 기법을 제안했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": "데이터를 제어에 쓸 때 헹켈 계수를 제한하면 노이즈 예측 오차는 잡지만 관련 궤적들이 제외될 수 있는 한계가 있습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Chi Wang, David Angeli",
           "categories": [
             "eess.SY",
@@ -12078,8 +13576,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 28,
           "score": 3.8,
           "score_why": "추천 28 → +2.8 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "거울 하나 놓았을 때 로봇 정책이 얼마나 흔들리는지 알아봤습니다",
+            "easy1_desc": "연구진은 거울 자기 인식 테스트에서 영감을 받아, 거울이 있는 장면에서 로봇 정책이 물리적 물체를 제대로 다루는지 알아봤는데요. 비전-언어-행동 모델과 월드 액션 모델, 에이전트 정책을 포함하는 5가지 정책을 시험해 봤더니, 모든 거울 조건에서 전체 성공률이 10.8에서 56.7 퍼센트포인트까지 떨어졌다는 겁니다. 거울이 달린 탁자 위에서는 낙폭이 62.5포인트까지 커졌다는 말이에요. 쉽게 말하면, 단순한 거울 환경 하나만으로도 다양한 로봇 정책이 공통된 취약점을 드러낸 셈이라는 겁니다.",
+            "easy2_title": "단순 충돌 때문이 아니라 반사된 대상에 대한 착각 때문이라는 겁니다",
+            "easy2_desc": "거울이 물리적인 장애물이라서 생기는 문제인지 확인하려고 기하학적으로 일치하는 반사되지 않는 판넬과 비교해 봤는데요. 거울 관련 실패의 50--88%는 로봇과 판넬의 접촉 없이 일어났기 때문에, 단순한 충돌만으로는 성능 저하를 설명할 수 없다는 겁니다. 대신 궤적과 접촉을 분석해 보니 반사된 물체를 향한 허깨비 겨냥과 진짜 물체의 공간 위치 오인과 일치하는 반복 행동이 드러났다고 하는데요. 장점은 문제의 원인을 구체적으로 파악했다는 점인데, 단점은 여전히 거울 환경에서 로봇이 약하다는 사실 자체가 남는다는 말이에요.",
+            "topic": "거울 환경이 다양한 로봇 조작 정책에 미치는 영향을 평가하고 반사된 이미지로 인한 취약점을 분석한 연구예요.",
+            "one_line": "거울 환경이 로봇 조작 정책에 미치는 취약점과 원인을 분석했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xuanchen Liu, Hejun Zhang, Boxuan Dong, Ying Wu, Heshuai Li, Wen Gao, Yonghong Tian, Weihao Yu",
           "categories": [],
           "comments": 1,
@@ -12102,8 +13647,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 23,
           "score": 3.3,
           "score_why": "추천 23 → +2.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 날씨 예측은 숨겨진 패턴 때문에 결과를 믿기 힘들었습니다",
+            "easy1_desc": "데이터 기반 날씨 예측 모델들은 학습한 패턴을 겉으로 드러내지 않고 숨겨 두기 때문에 그 영향을 해석하기 어렵다고 하는데요. 지역별로 시간이 흐르며 변하는 모습을 제대로 구분하지 못하면, 다르게 발전할 곳들도 비슷하게 예측해 버려서 결국 예측 오차가 커진다는 겁니다. 쉽게 말하면, 왜 그런 예측이 나왔는지 이유를 알 수 없다는 말이에요.",
+            "easy2_title": "프로토타입을 활용해 지역별 맞춤 예측을 하고 해석까지 가능하게 만들었습니다",
+            "easy2_desc": "그래서 연구진은 ProtoCast라는 방식을 설계해 그룹별 프로토타입(원형)을 활용해 지역별 특성을 조절하도록 했는데요. 각 그룹의 과거 특징과 시간 변화를 크로스 변수 어텐션에서 얻은 예측 맥락과 결합해 진화 인식형 프로토타입 매칭을 수행한다는 거예요. 장점은 예측 정확도가 높아지고 프로토타입 삭제 실험을 통해 지역별 기여도를 오차 변화와 연결해 명확히 해석할 수 있다는 건데, 대신 복잡한 구조와 철저한 훈련 과정이 필요하다는 점도 함께 따라온다는 겁니다.",
+            "topic": "지역별 패턴을 명확히 구분하고 해석할 수 있는 프로토타입 기반의 데이터driven 날씨 예측 모델인 ProtoCast를 제안하는 연구예요.",
+            "one_line": "해석 가능한 프로토타입 기반 날씨 예측 모델을 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Zhixuan Li, Hao Jiang, Chen Hui, Kai Geng, Weisi Lin",
           "categories": [],
           "comments": 4,
@@ -12126,8 +13718,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 21,
           "score": 3.1,
           "score_why": "추천 21 → +2.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "그림이랑 글을 섞어 푸는 법을 가르치려니 모으기가 너무 힘들었어요",
+            "easy1_desc": "사람들은 글과 그림을 같이 보며 문제를 푸는데요, AI 모델도 중간에 그림을 직접 그리면서 생각하게 만들려면 예시 데이터가 꼭 필요해요. 그런데 이 학습용 예시를 사람이 일일이 모으기가 너무 어렵다는 문제가 있었거든요. 쉽게 말하면, 똑똑한 AI를 가르치고 싶어도 교재가 부족해서 손을 못 대고 있던 셈이에요.",
+            "easy2_title": "그림 자체를 정답 삼아 가르치는 새로운 방법을 만들어냈어요",
+            "easy2_desc": "그래서 연구진은 'ThinkMorph-SSL'이라는 두 단계 학습법을 내놨는데요, 사람이 만든 정답 대신 그림 그 자체를 감독 신호로 쓰겠다는 거예요. 첫 단계에서는 색칠하기나 노이즈 제거 같은 시각적 과제를 풀면서 AI가 스스로 생각하는 과정을 만들고, 두 번째 단계에서 질문 중심의 지시 조정을 거치게 하는데요. 그 결과 열두 개 평가에서 기본 모델보다 정확도가 평균 11.33점 높아지는 성능을 보여줬다는 겁니다.",
+            "topic": "이미지 자체를 정답으로 삼아 인터리브드 멀티모달 추론 능력을 기르는 두 단계 학습법 'ThinkMorph-SSL'을 제안한 연구예요.",
+            "one_line": "그림 자체를 정답으로 쓰는 ThinkMorph-SSL 학습법을 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jiawei Gu, Linjie Li, Yiming Liu, Yunzhuo Hao, Huichen Wang, Guanzheng Chen, Zhichao Peng, Luxin Xu, Xinyu Zhang, Li Luo, Disen Lan, Zican Hu, Mingyang Song, David Valente, Alex Jinpeng Wang, Yafu Li, Ganqu Cui, Zhengyuan Yang, Qizhe Xie, Yejin Choi, Ranjay Krishna, Yu Cheng",
           "categories": [],
           "comments": 1,
@@ -12149,10 +13788,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 3.0,
           "score_why": "키워드 1개(reactor) → +2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "reactor"
           ],
+          "ai": {
+            "easy1_title": "과학 속 반복되는 메커니즘을 왜 기존 방식으로는 못 찾았을까요",
+            "easy1_desc": "과학 분야에서 수없이 반복되는 메커니즘은 하나의 방정식으로만 끝나지 않고 유도 과정마다 여러 단계로 쪼개져 있는데요, 기존에 글을 읽거나 공식을 맞추는 방식으로는 이 전체 구조를 놓치기 일쑤였다는 거예요. 연구진은 그래서 arXiv에 올라온 250만 건의 논문 속 방정식을 그대로 읽어내는 시스템을 직접 만들어 봤는데요, 결과적으로 메커니즘들을 한데 모아 결정론적인 계산으로 조립할 수 있다는 걸 보여줬습니다. 쉽게 말하면, 흩어져 있던 수많은 과학적 수식들을 퍼즐처럼 맞춰서 그동안 놓쳤던 연결 고리를 찾아낸 셈이라는 말이에요.",
+            "easy2_title": "방정식을 직접 읽는 시스템으로 새로운 메커니즘을 만들어 봤습니다",
+            "easy2_desc": "연구진이 만든 조립기는 학문 경계를 넘나들며 각 부품을 떼어내고, 옮기고, 합치는 방식으로 메커니즘을 구성하는데요, 만약 부품들이 서로 딱 맞아떨어지지 않을 때는 그 실패 자체가 빠진 항을 찾아내는 방정식이 된다는 겁니다. 이런 방식으로 임계 반응기를 약한 신호도 기억하는 장치로 바꾸거나, 각각 따로 보면 실패하는 두 가지 변화로 진동자를 스위치로 바꾸는 일 등이 가능해졌는데요, 실험을 통해 검증할 수 있는 조건까지 각각 제시했다는 장점이 있습니다. 다만 이 모든 과정이 수식과 계산에 크게 의존한다는 점도 같이 따라온다는 거예요.",
+            "topic": "arXiv 논문 250만 건의 방정식을 읽어 들여 과학적 메커니즘을 자동으로 조립하고 구성하는 시스템을 개발한 연구예요.",
+            "one_line": "arXiv 논문 250만 건의 방정식을 읽어 메커니즘을 조립하는 시스템을 개발함",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Vladimir A. Baulin, Austin Cook, Shagor Rahman",
           "categories": [
             "cs.AI",
@@ -12178,8 +13864,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 19,
           "score": 2.9,
           "score_why": "추천 19 → +1.9 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "고해상도 그림을 한 번에 그리려니 복잡하고 엉뚱한 줄무늬가 생기더군요",
+            "easy1_desc": "연구진은 큰 고해상도 그림을 한 번에 학습시키려면 긴 이미지 시퀀스와 엄청난 연산이 필요하다는 점을 짚었는데요, 자원이 부족하면 일부분에 부자연스러운 반복 줄무늬가 생기는 문제가 있거든요. 뭔 소리냐면, 한 장을 그대로 다루면 너무 무겁고 어긋나기 쉽다는 말이에요. 쉽게 말하면, 욕심내서 전체를 한 번에 그리려다 보니 한계에 부딪혔던 셈이라는 겁니다.",
+            "easy2_title": "그림을 조각으로 나눠서 이어 그리는 방식을 써봤더니 효율이 확 살았습니다",
+            "easy2_desc": "그래서 연구진은 큐원 이미지(Qwen-Image) 2.0을 바탕으로, 조각 단위로 학습하고 블록별로 순차 생성하는 큐원 이미지 에이치디(Qwen-Image-HD)를 내놓았는데요, 위와 왼쪽의 이웃 조각과 압축된 전체 미리보기를 함께 조건으로 주어 공간 관계를 맞추는 방식이에요. 장점은 적은 연산으로도 4K 해상도에서 더 나은 품질을 낸다는 점인데, 대신 여러 조각을 엮는 복잡한 과정을 거쳐야 한다는 단점도 같이 따라온다는 겁니다. 쉽게 말하면, 전체를 한 방에 칠하는 대신 조각을 똑똑하게 짜맞추어 선명함을 살려냈다는 말이에요.",
+            "topic": "고해상도 이미지 생성을 효율적으로 하기 위해 조각 단위 학습과 순차 생성 방식을 도입한 큐원 이미지 에이치디(Qwen-Image-HD) 모델에 대한 설명이에요.",
+            "one_line": "고해상도 이미지 생성을 위해 타일 단위 순차 생성 방식을 도입했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Zihao Liu, Zekai Zhang, Shengming Yin, Zikai Zhou, Donghao Zhou, Chenyang Zhu, Lihan Jiang, Ningyuan Tang, Bingxuan Zhao, Yanran Zhang, Yan Shu, Zhening Liu, Jiahao Li, Jie Zhang, Kaiyuan Gao, Kun Yan, Qihang Ai, Rui Song, Shuo Cao, Xiao Xu, Xiaoyue Chen, Yuxiang Chen, Zhendong Wang, Zhouyang Li, Bo",
           "categories": [],
           "comments": 0,
@@ -12202,8 +13935,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 19,
           "score": 2.9,
           "score_why": "추천 19 → +1.9 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI 에이전트가 새로운 규칙을 배우는 능력이 제대로 검증되지 않았어요",
+            "easy1_desc": "인공지능(AI) 에이전트가 문맥 속에서 새로운 규칙을 배우는 문맥 내 학습(ICL)은 이제 컴퓨터와 로봇을 제어하는 데 필수적인 기능이 되었는데요. 하지만 기존의 평가 방식은 대부분 오프라인 환경에 머물러 있거나 텍스트와 정지 영상에만 의존하고 있어 실제 성능을 파악하기가 어려웠거든요. 게다가 로봇 분야의 평가는 특정 방법론을 떼어내어 검증하는 수준에 그치고 있다는 한계가 있습니다. 쉽게 말하면, 에이전트가 현실 세계에서 얼마나 유연하게 규칙을 익히는지 제대로 된 시험대가 없었다는 말이에요.",
+            "easy2_title": "디지털과 물리 세계를 아우르는 새로운 통합 평가 도구를 만들었어요",
+            "easy2_desc": "연구진은 디지털 컴퓨터 환경부터 물리적인 로봇 환경까지 에이전트의 학습 능력을 온라인으로 평가할 수 있는 ICLWorld라는 벤치마크를 새롭게 선보였는데요. 모든 환경을 사용자 인터페이스(UI)로 변환하는 UIverse라는 도구를 활용해 30개의 환경과 160개의 과제를 설계했고, 10시간이 넘는 630개의 시연 영상도 구축했습니다. 이를 통해 에이전트가 단순히 시연을 따라 하는 것을 넘어 새로운 환경에서도 규칙을 적용할 수 있는지 세 단계로 나누어 검증해 봤거든요. 결과적으로 디지털 환경에서는 성능이 높지만 물리적인 로봇 환경에서는 여전히 큰 격차가 있다는 점을 확인했습니다.",
+            "topic": "디지털 환경과 물리적 로봇 환경에서 AI 에이전트의 문맥 내 학습 능력을 평가하기 위한 통합 벤치마크를 제안하고 그 성능 격차를 분석했어요.",
+            "one_line": "디지털과 물리 세계를 아우르는 AI 에이전트 학습 평가 도구를 개발했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Qingle Liu, Jieming Li, Pei-lin Li, Shenghan Zheng, Ruize Yang, Sunqi Fan, Deyao Hong, Huan-ang Gao, Meng-Hao Guo, Shuojin Yang",
           "categories": [],
           "comments": 1,
@@ -12226,8 +14006,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 19,
           "score": 2.9,
           "score_why": "추천 19 → +1.9 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "의료 AI를 여러 작업에 맞게 고치는 게 왜 이렇게 어려웠을까요",
+            "easy1_desc": "의료 대형 언어 모델을 다양한 의료 작업에 맞춰 후학습시키는 일은 한쪽을 좋아지게 만들면 다른 쪽 성능이 떨어지는 문제가 있어서 지금까지 꽤 까다로웠는데요. 연구진은 이런 일이 작업마다 기대되는 결과물과 쓸 수 있는 피드백이 서로 달라서 생긴다고 봤다는 거예요. 예를 들어 의료 질문 답변이나 진단 예측에는 정답이 있는 반면, 임상 질의는 딱 떨어지는 정답이 없어서 기준표로 평가하거든요. 쉽게 말하면 서로 다른 성격의 작업들을 한꺼번에 섞어 다루다 보니 엇박자가 났다는 말이에요.",
+            "easy2_title": "작업별로 전문가를 따로 키워 하나로 합쳤더니 성능이 크게 올랐습니다",
+            "easy2_desc": "그래서 연구진은 의료 훈련 작업을 성격에 따라 네 가지로 나누고, 각 작업에 맞는 전문가 모델을 따로 키운 뒤에 다중 교사 온정책 델타 증류(MOPD^2)라는 방식으로 하나의 학생 모델로 합쳐 봤는데요. 그 결과 비사고 모드에서 헬스벤치 하드 점수가 22.95에서 41.87로 올랐고, 프로페셔널 점수도 37.92에서 50.20으로 껑충 뛰었다는 겁니다. 성능이 전반적으로 좋아졌다는 장점이 있는데, 대신 네 가지 분야별 전문가를 각각 학습시켜야 해서 준비 과정이 조금 복잡해진다는 점도 함께 있다는 거예요.",
+            "topic": "제한된 하드웨어 환경에서도 쓸 수 있도록 네 가지 작업별 전문가를 모아 만든 의료 대형 언어 모델 KMed-31B의 개발 과정과 성능에 관한 이야기예요.",
+            "one_line": "네 가지 작업별 전문가를 합친 의료 언어 모델 개발",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "KMed Team",
           "categories": [],
           "comments": 1,
@@ -12250,8 +14077,57 @@ window.PANEL_DATA = {
           "hf_upvotes": 15,
           "score": 2.5,
           "score_why": "추천 15 → +1.5 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 평가가 물체 제거 중심이라 실제 물리 현상을 다 못 담았다는 겁니다",
+            "easy1_desc": "연구진은 기존의 반사실적 비디오 편집 평가가 주로 물체 제거 같은 단순한 상황만 다뤘다고 봤는데요, 실제 세상은 탄성 변형이나 유체 흐름처럼 훨씬 복잡한 물리 현상으로 얽혀 있다는 거예요. 뭔 소리냐면, 기존 방식으로는 다양한 재질이 섞인 진짜 세계를 제대로 시험하기 어렵다는 말입니다. 그래서 연구진은 533개의 사례를 모은 새로운 벤치마크인 PhyCoVE를 만들었다는 겁니다.",
+            "easy2_title": "새로운 벤치마크로 모델들을 시험해 보니 겉모습만 바꾸고 물리 변화는 잘 못 맞춘다는 걸 알아냈습니다",
+            "easy2_desc": "연구진은 다양한 재질과 상호작용을 평가할 수 있는 새로운 지표인 반사실적 충실도를 제안해 7개의 영상 편집 모델을 시험해 봤는데요, 그 결과 가장 좋은 모델조차도 실제 물리 변화의 약 7분의 1 정도만 겨우 재현해 낸다는 걸 찾아냈다는 거예요. 영상의 겉모습은 그럴듯하게 바꾸지만 물리적으로 어떻게 움직여야 하는지는 아직 잘 모른다는 단점이 있다는 겁니다. 쉽게 말하면, 물리적 반사실적 영상 편집은 아직 멀었으며 이 벤치마크가 그 출발점이 된다는 셈이에요.",
+            "topic": "연구진은 강체, 탄성체, 유체의 다양한 물리 동역학을 다루는 새로운 비디오 편집 벤치마크인 PhyCoVE를 제안하고, 7개 모델을 평가해 현주소를 밝혔다.",
+            "one_line": "물리적 동역학을 다루는 비디오 편집 벤치마크를 만들고 모델들을 평가했어요.",
+            "topic_tag": "영상·음성·멀티모달",
+            "limit": "연구진은 물리적 반사실적 비디오 편집이 아직 해결해야 할 문제가 많다고 밝혔다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [
+              "easy2_title 한 줄 아님/너무 김(55자)"
+            ],
+            "flags": [],
+            "tag": "영상·음성·멀티모달",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Conghan Yue, Yuanjie Chen, Yunyan Xiao, Zeyu Peng, Xingsong Ye, Ya Gao, Yanglin Huang, WeiYao Zhang, Yue Han, Zhineng Chen, Yu-Gang Jiang",
           "categories": [],
           "comments": 1,
@@ -12274,8 +14150,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 13,
           "score": 2.3,
           "score_why": "추천 13 → +1.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "선생님의 생각 과정을 몰라서 행동만 따라 해 봤습니다",
+            "easy1_desc": "추론 모델을 긴 작업에 쓰는 에이전트로 만들려면 보통 선생님의 생각 과정과 행동을 같이 배워야 하는데요, 문제는 강력한 선생님 모델이 비공개라서 생각 과정을 볼 수 없다는 점이에요. 그래서 연구진은 생각 과정을 빼고 선생님의 행동만 가지고도 모델을 가르칠 수 있는지 확인해 봤는데요. 학생 모델은 생각 부분을 비워둔 채 선생님의 행동 경로로 학습하고, 리플레이 버퍼를 사용해 원래 모델에서 너무 멀어지지 않게 조절했다는 겁니다. 뭔 소리냐면, 속을 볼 수 없는 강력한 모델의 지식을 행동 데이터만으로도 뽑아낼 수 있다는 말이에요.",
+            "easy2_title": "생각을 비우고 배웠는데 오히려 추론할 때 더 잘 작동합니다",
+            "easy2_desc": "그래서 행동만 학습시킨 모델로 추론해 봤더니, 학생이 자기만의 방식으로 생각하면서도 선생님처럼 행동하는 크로스 포맷 전파 현상이 나타났는데요. Qwen3-4B 모델의 AppWorld 성공률이 7%에서 18%로 오르는 결과로 이어졌다는 거예요. 여기에 선생님의 생각 요약인 CoT-proxy를 더했더니 성능이 35%까지 더 높아졌다는 장점이 있는데요, 대신 여전히 API가 반환하는 정보에 의존해야 한다는 점도 같이 따라온다는 겁니다.",
+            "topic": "숨겨진 생각 과정 없이 선생님 모델의 행동과 요약 정보만으로 긴 작업 수행 능력을 증류하는 방법에 대한 연구예요.",
+            "one_line": "생각 과정을 숨긴 모델의 행동과 요약 정보로 긴 작업 수행 능력을 증류했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Dawid J. Kopiczko, Tijmen Blankevoort, Yuki M. Asano",
           "categories": [],
           "comments": 1,
@@ -12298,8 +14221,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 13,
           "score": 2.3,
           "score_why": "추천 13 → +1.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "여러 대상을 명령대로 배치하려니 한계가 있었다",
+            "easy1_desc": "여러 레퍼런스 이미지를 바탕으로 피사체의 외형을 지키면서 원하는 장면에 맞춰 배치하는 일은 여전히 까다롭다고 해요. 기존 방법들이 다양한 구도 가이드를 주기도 하지만, 이미지 합성을 시작하기 전에 계획된 관계가 눈에 보이도록 확실하게 만들어지지 않는다는 점이 문제였던 거예요. 뭔 소리냐면, 수정하거나 확인할 수 있는 구체적인 설계도가 부족했다는 말이에요. 결국 의도한 대로 장면을 정확히 조직하기가 어렵다는 겁니다.",
+            "easy2_title": "실행 가능한 3D 장을 그려주는 코딩 에이전트를 도입했다",
+            "easy2_desc": "그래서 연구진은 블렌더(Blender) 프로그램으로 실행할 수 있는 간단한 3D 장면으로 구도를 표현하는 마그피(MAGPIE)를 도입했는데요, 코딩 에이전트가 각 장면에 레퍼런스를 연결하고 지시에 맞는지 확인한 뒤 프로그램을 고치는 방식으로 작동해요. 이 프록시 렌더링 결과물이 이미지 생성기를 위한 시각적 계획으로 쓰인다는 겁니다. 그 결과 드림옴니2(DreamOmni2)와 스콘에발(SconeEval)에서 기존 모델들의 성능이 좋아졌는데요, 특히 플럭스(FLUX)와 함께 쓰였을 때는 드림옴니2의 전체 성공률이 28.21 퍼센트포인트나 높아지는 장점이 있다고 해요.",
+            "topic": "실행 가능한 3D 장면 구성을 통해 다중 레퍼런스 이미지 생성의 정확도를 높이는 마그피(MAGPIE) 프레임워크에 대한 연구예요.",
+            "one_line": "실행 가능한 3D 장면 구성으로 다중 이미지 생성의 구도를 맞추는 마그피를 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                false
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "5/6",
+            "evidence_all": false,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yifan Dai, Daili Hua, Bohan Zeng, Yuran Wang, Jialing Liu, Bozhou Li, Chengzhuo Tong, Yang Shi, Kai Zeng, Liu Yang, Xinyu Liu, Shujie Li, Yiyan Ji, Bingyin Mei, Yushuo Guan, Yuanxing Zhang, Fangcheng Fu, Wentao Zhang",
           "categories": [],
           "comments": 1,
@@ -12322,8 +14292,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 13,
           "score": 2.3,
           "score_why": "추천 13 → +1.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 방식은 학습할 때 기준점이 흔들리는 문제가 있었어요",
+            "easy1_desc": "확산 모델(Diffusion Model)을 강화학습으로 정렬할 때 쓰는 기존 방법들은 사실 보상 가중 회귀(RWR) 방식에 의존하고 있는데요. 이 방식은 정책의 속도와 행동 분포의 속도가 같다는 이상적인 가정에 기대고 있는데, 실제로는 분류기 없는 안내(CFG)나 오프라인 업데이트 상황에서 이 가정이 깨지곤 해요. 이렇게 두 속도가 어긋나면 학습 과정에서 기준점 때문에 기울기(Gradient)가 한쪽으로 쏠리는 현상이 생겨서 학습이 불안정해진다는 겁니다.",
+            "easy2_title": "새로운 매칭 방식을 써서 학습을 더 빠르고 안정적으로 만들었어요",
+            "easy2_desc": "연구진은 이를 해결하려고 순간 궤적 분포 매칭(iTDM)이라는 새로운 방법을 제안했는데요. 추가적인 보상 타겟 점수를 학습할 필요 없이, 행동 속도에 고정된 샘플 단위의 기울기를 바로 구하는 방식이에요. 온라인 보조 잡음 제거기(Auxiliary denoiser)를 써서 기준점의 영향을 없애니 학습이 훨씬 안정적으로 변했거든요. 결과적으로 기존 방식보다 3배 가까이 빠르게 수렴하면서도 대규모 모델에서도 성능이 잘 나온다는 장점이 있습니다.",
+            "topic": "확산 모델의 강화학습 정렬 과정에서 발생하는 기준점 드리프트 문제를 해결하기 위해 순간 궤적 분포 매칭(iTDM) 기법을 제안했어요.",
+            "one_line": "확산 모델의 강화학습 정렬을 위해 iTDM 기법을 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yihong Luo",
           "categories": [],
           "comments": 1,
@@ -12346,8 +14363,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 11,
           "score": 2.1,
           "score_why": "추천 11 → +1.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "입력이 너무 많아져서 계산이 느려졌어요",
+            "easy1_desc": "요즘 쓰는 영상 생성 모델들은 얼굴이나 깊이 지도 같은 다양한 조건들을 전부 토큰으로 바꿔서 넣는데요, 이 조건들이 너무 많아지다 보니 계산 비용이 순식간에 치솟는다는 문제가 있어요. 그런데 살펴보면 이 토큰들 대부분이 시간과 공간에 걸쳐 겹치는 정보들을 품고 있어서 낭비가 심하다는 거예요. 연구진은 옛날 비디오 압축 방식인 코덱이 바로 중복을 없애는 법을 잘 알고 있다는 점에 착안해서, 쓸모없는 토큰을 골라내 버리는 방식을 도입해 봤습니다.",
+            "easy2_title": "압축 기술을 결합해서 속도를 두 배로 높였어요",
+            "easy2_desc": "그래서 연구진은 토큰을 잘라내는 방식에다가 온폴리시 자기 증류 전략을 합쳐서 CodecOPSD라는 기술을 만들었는데요, 화질은 거의 떨어뜨리지 않으면서 평균적으로 조건 토큰의 66%를 쳐낸다는 겁니다. 덕분에 디노이징 속도가 2배 빨라지고 키-밸류 캐시 메모리도 최대 73%까지 줄어드는 장점이 생겼는데요, 대신 다른 미리 학습된 모델들에도 이 방식을 확장하려면 조건이 많고 해상도가 높을수록 더 복잡해진다는 점도 같이 따라온다는 겁니다.",
+            "topic": "비디오 생성 모델에서 중복되는 조건 토큰을 압축 기술로 쳐내어 계산 속도를 높이는 방법에 대한 연구예요.",
+            "one_line": "비디오 생성 모델의 중복 토큰을 압축해 계산 속도를 높였어요",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Boyang Wang, Kevin Blackburn-Matzen, Oindrila Saha, Matheus Gadelha, Zezhou Cheng",
           "categories": [],
           "comments": 1,
@@ -12371,8 +14435,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 10,
           "score": 2.0,
           "score_why": "추천 10 → +1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "코딩 에이전트가 최신 게임을 직접 할 수 있는지 확인해 봤습니다",
+            "easy1_desc": "현대 비디오 게임은 시각 정보를 인식하고 긴 시간에 걸쳐 결정을 내려야 하는 복잡한 환경인데요, 기존에는 에이전트가 게임을 하는 동안 계속 언어 모델을 불러와야 해서 비용이 많이 들고 실시간 대응이 어렵다는 문제가 있었습니다. 그래서 연구진은 코딩 에이전트가 게임 상호작용을 통해 언어 모델 없이도 혼자서 실행되는 독립적인 게임 플레이 프로그램을 만들 수 있는지 살펴봤는데요, 이를 평가하기 위해 15개의 다양한 게임을 포함하는 코딩포게임즈(Coding4Games)라는 벤치마크를 도입한 겁니다. 쉽게 말하면, 매번 모델을 호출하는 대신 에이전트가 직접 코드를 짜서 게임을 스스로 플레이하게 만들 수 있는지 따져본 셈이라는 말이에요.",
+            "easy2_title": "에이전트가 직접 짠 프로그램으로 게임을 실행해 성능을 평가했습니다",
+            "easy2_desc": "그래서 연구진은 샌드박스와 표준 플레이어 인터페이스를 사용해 코딩 에이전트가 반복적으로 프로그램을 개발하도록 만들었는데요, 개발이 끝나면 프로그램을 고정하고 언어 모델 없이 독립적으로 테스트를 진행하는 방식을 썼습니다. 그 결과 15개 게임 중 에이전트의 최적 프로그램이 가장 강력한 그래픽 사용자 인터페이스(GUI) 기준선보다 13개 게임에서 더 높은 점수를 얻고 1개는 동점을 기록했다는 장점이 있는데요, 다만 인간 플레이어는 10개 게임에서 모든 에이전트보다 더 높은 점수를 냈다는 한계도 같이 나타났다는 겁니다. 쉽게 말하면, 에이전트가 복잡한 환경을 이해하고 스스로 작동하는 프로그램으로 바꿀 수 있는지 15개의 다양한 게임 환경에서 확인해 본 거라는 말이에요.",
+            "topic": "코딩 에이전트가 게임 환경에서 상호작용하며 언어 모델 없이 실행되는 독립적인 게임 플레이 프로그램을 개발할 수 있는지 평가하는 벤치마크인 코딩포게임즈(Coding4Games)를 소개하고 성능을 분석한 연구예요.",
+            "one_line": "코딩 에이전트가 독립적인 게임 프로그램을 개발하는지 평가하는 벤치마크를 제안했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Shifang Zhao, Haoyu Wang, Yuyang Yin, Dong Chen, Xingyilang Yin, Yunkang Tao, Honghao Chen, Guangzhi Wang, Yiran Wang, Junfu Pu, Cheng Cheng, Xiaodong Cun, Ying Shan",
           "categories": [
             "cs.AI"
@@ -12397,8 +14508,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 9,
           "score": 1.9,
           "score_why": "추천 9 → +0.9 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 벤치마크는 진짜 결함을 찾는 능력을 제대로 못 봤거든요",
+            "easy1_desc": "자율 명세 엔지니어링에서는 코딩 에이전트가 요구사항을 테스트로 바꾸고 결함을 찾아야 하는데요, 기존 벤치마크는 문제 설명이나 테스트 위치를 다 알려준 상태에서 평가해 왔다는 겁니다. 이러면 요구사항을 구현에 연결하고 숨겨진 결함을 스스로 찾아내는 진짜 능력을 제대로 확인하기 어렵다는 말이에요. 쉽게 말하면, 힌트를 다 준 채 시험을 보게 해서 진짜 실력을 놓치고 있던 셈이라는 겁니다.",
+            "easy2_title": "그래서 새로운 평가 도구를 만들었더니 테스트는 잘해도 결함 찾기는 약하더군요",
+            "easy2_desc": "연구진은 78개의 오픈소스 파이썬 저장소에서 가져온 100개 인스턴스로 이루어진 SpecEngineeringBench라는 새로운 벤치마크를 제안했는데요, 7개의 최첨단 코딩 에이전트로 시험해 봤더니 결과가 흥미로웠다는 거예요. 에이전트들이 테스트 유효성과 커버리지에서는 91.47%와 80.48%로 높은 점수를 냈지만, 막상 실패한 테스트를 고치는 비율은 26.36%에 그쳤다는 겁니다. 서류상 테스트는 잘 만들지만 실제 결함을 짚어내는 정밀도는 함수 수준에서 51.29%까지 떨어진다는 단점이 있는데, 대신 자율 테스트를 만들면 파일과 함수 위치를 찾는 능력이 기존 저장소 테스트만 쓸 때보다 각각 4.99퍼센트포인트, 2.77퍼센트포인트 올라간다는 장점도 같이 확인됐다는 말이에요.",
+            "topic": "코딩 에이전트가 요구사항을 바탕으로 테스트를 만들고 결함을 스스로 찾아내는 능력을 평가하기 위해 새로운 벤치마크를 제안하고 그 결과를 분석한 내용이에요.",
+            "one_line": "코딩 에이전트의 자율 명세 엔지니어링 능력을 평가할 벤치마크를 제안했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xingjian Wang, Shijian Wang, Minghao Liu, Ji Zou, Zetao Yang, Xinping Lei, Yiming Liang, Shen Yan, Enduo Zhao, Xiaoyang Shen, Weihao Xuan, Jiaheng Liu, Ge Zhang",
           "categories": [],
           "comments": 2,
@@ -12421,8 +14579,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 9,
           "score": 1.9,
           "score_why": "추천 9 → +0.9 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "문서 파싱을 정확하고 빠르게 하려니 한계가 있었는데요",
+            "easy1_desc": "연구진은 텍스트, 표, 수식을 모두 잘 처리하면서도 크기가 작은 1B(10억) 파라미터 크기의 시각-언어 인식기인 VenusOCR2.0을 발표했는데요. 기존에는 정확도를 높이면서도 속도를 함께 챙기는 게 쉽지 않았다는 말이에요. 혼자 학습하다 보면 무너지는 문제를 막으려고 외부의 여러 전문가와 시각 검증을 합쳐서 믿을 수 있는 감독 데이터를 만들었거든요. 쉽게 말하면, 똑똑하면서도 빠르게 일할 수 있는 문서 읽기 모델을 만들려고 새로운 학습 방식을 썼다는 겁니다.",
+            "easy2_title": "가벼운 초안 모듈과 새로운 토큰 방식을 붙였더니 속도가 훨씬 빨라졌어요",
+            "easy2_desc": "그래서 연구진은 동적 해상도 인코더와 Qwen3-0.6B 디코더를 묶고, 표 길이를 줄여주는 짧은 OTSL 토큰을 써서 구조적 오류를 낮췄는데요. 여기에 67M 크기의 가벼운 병렬 초안 모듈인 PTPv2를 더해 순차적으로 읽어야 하는 병목 현상을 없앴다는 거예요. 그 결과 H20 GPU 하나로 vLLM에서 돌렸을 때 표준 방식과 똑같은 토큰 정확도를 유지하면서도 단일 요청 속도는 2.96배, 배치 처리량은 최대 2.36배까지 빨라지는 장점이 생겼거든요. 대신 복잡한 구조를 여러 모듈로 쪼개서 얹어야 하니 설계가 까다로워진다는 점도 함께 따라온다는 겁니다.",
+            "topic": "정확도와 처리 속도를 모두 높인 소형 문서 파싱 시각-언어 모델 VenusOCR2.0의 구조와 성능에 대한 연구예요.",
+            "one_line": "정확도와 처리 속도를 높인 소형 문서 파싱 모델을 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Lei Li, Zheng Wei, Yi Yuan, Qingbin Liu, Jiang Bian, Zang Li",
           "categories": [],
           "comments": 2,
@@ -12445,8 +14650,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 9,
           "score": 1.9,
           "score_why": "추천 9 → +0.9 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 시각 모델을 그대로 쓰면서 파라미터만 줄여봤습니다",
+            "easy1_desc": "연구진은 사전 학습된 트랜스포머 기반 밀집 시각 인식 모델을 파라미터 효율적인 루프 네트워크로 바꾸는 루프디브이알(LoopDVR) 프레임워크를 제안했는데요, 네트워크의 너비나 깊이를 직접 줄이는 대신 레이어 사이의 트랜스포머 블록을 다시 쓰는 방식을 썼다는 겁니다. 그대로 파라미터를 나누어 쓰면 깊이마다 배운 고유한 변환이 망가지는 문제가 생기는데, 이를 해결하려고 레이어 간 표현의 유사성을 바탕으로 알맞은 공유 그룹을 찾았다고 해요. 쉽게 말하면, 원래 구조는 살리면서 덩치만 줄여 보겠다는 시도인 셈이에요.",
+            "easy2_title": "공유 블록과 어댑터를 더해 성능과 효율을 다 잡았습니다",
+            "easy2_desc": "그래서 마지막 백본 블록은 다중 스케일 특징을 만들려고 따로 두고, 각 공유 블록은 그룹의 마지막 레이어 사전 학습 가중치로 초기화했다고 하는데요, 각 레이어에 독립적인 루프 어댑터를 붙여서 공유 블록 안에서도 깊이별 변환을 지키도록 도왔다는 겁니다. 그 뒤에 시각 표현을 루프 백본에 증류하고 태스크별 학습을 위해 루프 디코더와 합쳤다는 거예요. 장점은 파라미터를 크게 줄이면서도 경쟁력 있는 정확도를 유지한다는 점인데, 대신 구조를 조정하는 과정이 복잡해진다는 점도 같이 따라온다는 겁니다.",
+            "topic": "사전 학습된 트랜스포머 모델의 블록을 재사용하여 파라미터 효율을 높이는 루프디브이알(LoopDVR) 프레임워크에 대한 연구예요.",
+            "one_line": "트랜스포머 시각 모델의 블록을 재사용하여 파라미터를 줄이는 루프디브이알을 제안했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Sirui Liang, Xuanlong Yu, Longfei Liu, Xiaodong Cun, Xi Shen",
           "categories": [],
           "comments": 1,
@@ -12469,8 +14721,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 8,
           "score": 1.8,
           "score_why": "추천 8 → +0.8 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "바꿔 준 프롬프트를 찰떡같이 못 알아듣고 옛날 생각만 하더라",
+            "easy1_desc": "실시간으로 비디오를 만들면서 프롬프트를 바꿔 봤는데요, 기존 스트리밍 모델들은 프롬프트를 바꿨는데도 그전에 쓰던 프롬프트를 계속 따라간다는 거예요. 연구진은 그 이유를 문맥 관성 때문이라고 봤는데요, 앞서 만든 조각이 너무 강한 기본값으로 작용해서 새로운 프롬프트를 억누르기 때문이라는 말이에요. 쉽게 말하면, 이전 기억이 너무 세서 새 말을 안 듣는 셈이라는 겁니다.",
+            "easy2_title": "기억을 건드리는 대신 잔차를 더해서 새 프롬프트를 잘 먹히게 만들었다",
+            "easy2_desc": "그래서 연구진은 기억 저장소를 직접 고치는 대신, 저장소 밖에서 잰 보정값으로 문맥 관성을 이겨내는 잔차 유도라는 간단하고 따로 학습이 필요 없는 방법을 제안했는데요, 새로운 프롬프트 아래에서 이전 조각을 캐시 없이 다시 노이즈를 섞어 디노이징한 뒤 그 차이값을 다음 조각에 더해 준다는 거예요. 이렇게 하면 화면이 끊기지 않는 장점은 남기면서도 프롬프트 전환 능력이 크게 좋아진다는 겁니다.",
+            "topic": "실시간 인터랙티브 비디오 생성에서 프롬프트를 바꿀 때 발생하는 문맥 관성 문제를 해결하기 위해, 학습 없이 잔차를 이용해 전환 능력을 높이는 잔차 유도(Residual Guidance) 방법을 제안한 내용이에요.",
+            "one_line": "학습 없이 잔차를 활용해 실시간 비디오 생성의 프롬프트 전환 능력을 높였다.",
+            "topic_tag": "영상·음성·멀티모달",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "영상·음성·멀티모달",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "NaHyeon Park, Kyeong-Hwan Moon, Youjin Jeon, Hyunjung Shim",
           "categories": [],
           "comments": 1,
@@ -12493,8 +14792,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 8,
           "score": 1.8,
           "score_why": "추천 8 → +0.8 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "가짜 영상과 소리가 쏟아지는데 데이터가 부족했어요",
+            "easy1_desc": "오디오와 비디오가 섞인 멀티모달 가짜 콘텐츠(Audio-visual deepfakes)가 널리 퍼지면서 디지털 매체에 대한 믿음을 무너뜨리고 있는데요, 문제는 지금까지 나온 데이터셋이 다양한 가짜 만들기 방식을 충분히 담지 못해 탐지기를 만들거나 제대로 평가하기가 어려웠다는 거예요. 그래서 연구진은 10만 개의 진짜 영상과 120만 개의 가짜 영상이 담긴 메가엠엠디에프(Mega-MMDF)를 내놓았는데요, 여기에는 한쪽만 바꾸거나 여러 개를 겹치거나 소리와 영상을 함께 만들어내는 스물두 가지 방식이 골고루 담겨 있다는 겁니다. 쉽게 말하면, 그동안 듬성듬성했던 가짜 데이터의 빈자리를 거대하게 채워 넣은 셈이에요.",
+            "easy2_title": "대규모 데이터로 학습해 성능을 높이고 한계를 짚어봤어요",
+            "easy2_desc": "연구진은 훈련 가치를 확인하고 공정하게 비교하려고 여덟 개의 데이터셋과 열 개의 탐지기를 하나로 묶은 딥페이크벤치엠엠(DeepfakeBench-MM)도 함께 만들었는데요, 메가엠엠디에프로 학습시켰더니 탐지기들의 평균 곡선하면적(AUC, 성능 지표)이 다른 대안 데이터셋으로 학습했을 때보다 최대 0.0784만큼 높아졌다는 거예요. 데이터를 크게 만들고 여러 방식을 두루 담는 게 확실히 도움이 된다는 걸 보여주는데, 다만 복잡한 방식으로 훈련했다고 해서 개별 조작 방식을 다 잡아내지는 못한다는 단점도 함께 나타났다는 겁니다. 쉽게 말하면, 성능은 좋아졌지만 여전히 가짜의 종류에 따라 빈틈이 생길 수 있다는 걸 밝혀낸 거예요.",
+            "topic": "다양한 가짜 만들기 방식을 모은 대규모 데이터셋과 표준화된 평가 도구를 만들어 멀티모달 가짜 탐지 성능을 높이고 그 한계를 분석한 연구예요.",
+            "one_line": "대규모 멀티모달 가짜 데이터셋과 평가 도구를 만들어 탐지 성능을 높였어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Kangran Zhao, Xiaoyu Zhang, Yupeng Chen, Yize Chen, Weinan Guan, Bo Zheng, Yufan Liao, Chengzhe Sun, Soumyya Kanti Datta, Qingshan Liu, Siwei Lyu, Baoyuan Wu, Baicheng Chen",
           "categories": [],
           "comments": 1,
@@ -12517,8 +14863,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 6,
           "score": 1.6,
           "score_why": "추천 6 → +0.6 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기하와 의미를 따로따로 구하느라 복잡했는데요",
+            "easy1_desc": "장면을 이해하려면 공간 구조를 찾는 기하와 물체를 나누는 의미가 둘 다 필요한데요, 보통 모델들은 이걸 따로따로 계산했거든요. 그래서 연구진은 이미지의 점 지도, 표면 법선, 개체 지도를 한 번에 예측하는 PINE이라는 모델을 만들어 봤다는 거예요. 뭔 소리냐면, 각각을 따로 구하던 복잡한 과정을 한 번에 해결해 보겠다는 말입니다.",
+            "easy2_title": "한 번에 싹 다 예측하는 방식을 써 봤더니",
+            "easy2_desc": "그래서 연구진은 PINE에 카메라 광선 인코딩과 사전 학습된 특징을 넣어서, 13만 9천 장의 합성 이미지만으로 학습을 시켜 봤는데요. 그랬더니 점 지도와 표면 법선에서 최고 수준의 성능을 보여줬다고 주장했어요. 속도도 MoGe-3와 SAM을 합친 것보다 5.7배나 빠르다는 장점이 있는데, 대신 13만 9천 장이라는 합성 데이터로만 학습했다는 한계도 같이 따라온다는 겁니다.",
+            "topic": "이미지에서 점 지도, 표면 법선, 개체 지도를 한 번에 예측하는 단일 단계 확산 모델인 PINE을 제안하고 그 성능을 평가한 연구예요.",
+            "one_line": "기하와 개체 지도를 한 번에 예측하는 PINE 모델을 제안하고 성능을 평가했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "13만 9천 장의 합성 이미지로만 기하 학습을 진행했다는 조건이 있어요."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Zeyu Ren, Jie Ni, Rui Qian, Jiahao Wei, Hao Tang, Yongtai Liu, Zeyu Zhang",
           "categories": [],
           "comments": 1,
@@ -12541,8 +14934,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 4,
           "score": 1.4,
           "score_why": "추천 4 → +0.4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "병원 공간을 이해하는 인공지능이 아직 많이 부족하거든요",
+            "easy1_desc": "병원에서는 똑같이 생긴 장비를 구분하거나 환자 위치에 따른 방향을 파악하는 등 복잡한 공간 추론이 필요한데요, 기존의 인공지능 평가 도구들은 이런 능력을 제대로 측정하지 못한다는 문제가 있었어요. 연구진은 그래서 373개의 병원 실내 구조를 바탕으로 3,368개의 질문을 담은 새로운 평가 도구인 Clinical3D-Bench를 만들었거든요. 쉽게 말하면, 인공지능이 병원이라는 특수한 환경에서 얼마나 공간을 잘 이해하는지 제대로 시험해 보겠다는 겁니다.",
+            "easy2_title": "공간 정보를 직접 계산하게 했더니 성능이 확 좋아졌어요",
+            "easy2_desc": "기존의 멀티모달 거대언어모델(MLLM)들은 병원 공간을 이해하는 데 한계를 보였는데, 연구진은 44,750개의 질문으로 구성된 학습 데이터셋으로 모델을 추가 학습시켰어요. 여기서 더 나아가 GeoJeV라는 방식을 도입해 모델이 영상에서 장면을 재구성하고 3D 연산을 직접 수행하도록 만들었는데요, 그 결과 모델의 정확도가 크게 올라가면서 의사들의 수준에 한층 더 가까워졌다는 거예요. 단순히 정보를 입력받는 것을 넘어 직접 계산하게 한 것이 성능 향상의 핵심이라는 말이에요.",
+            "topic": "병원 환경에서 멀티모달 거대언어모델의 공간 지능을 평가하고 이를 개선하기 위한 새로운 벤치마크와 방법론을 제안했어요.",
+            "one_line": "병원 공간 추론을 위한 벤치마크를 만들고 GeoJeV 방식으로 성능을 높였어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yang Bai, Yingzhi Xia, Ling Lin, Jun Cheng, Lin Fu, Huazhu Fu",
           "categories": [],
           "comments": 1,
@@ -12565,8 +15005,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 4,
           "score": 1.4,
           "score_why": "추천 4 → +0.4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "프라이버시 실험이 왜 엉뚱한 결과를 내는지 분석해 봤습니다",
+            "easy1_desc": "분할 학습 프라이버시 평가가 왜 실패하는지 그 방식을 따져봤는데요, 숨겨진 채널을 못 보거나 라벨이 밀린 채 복원 대상을 맞추거나 보정도 안 된 프롭을 쓰기 때문이라는 겁니다. 뭔 소리냐면, 방어 기술의 문제가 아니라 애초에 측정 방식이 틀렸을 수도 있다는 말이에요. 쉽게 말하면, 실험 자체에 허점이 있었다는 셈이에요.",
+            "easy2_title": "네 가지 검증된 프롭으로 다시 따져봤더니 결과가 달라졌습니다",
+            "easy2_desc": "그래서 연구진은 네 개의 검증된 프롭으로 다시 분석해 봤는데요, 19개 설정 중 4개만 통과했어도 그중 13개 설정에서 실제 프라이버시 침해가 일어났다는 걸 확인했다고 해요. 유틸리티나 학습 이득 실패로 나머지가 제거됐다는 장점과 한계가 같이 나타났다는 겁니다. 쉽게 말하면, 제대로 된 측정 도구를 쓰니 진짜 취약점이 드러났다는 말이에요.",
+            "topic": "분할 대규모 언어 모델(Split-LLM) 프라이버시 평가에서 측정 오류와 실제 방어 실패를 구분해 재분석한 연구예요.",
+            "one_line": "분할 LLM 프라이버시 평가의 측정 오류와 방어 실패를 구분해 재분석했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Georgios Politis, Evangelos Pappas",
           "categories": [],
           "comments": 1,
@@ -12589,8 +15076,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 4,
           "score": 1.4,
           "score_why": "추천 4 → +0.4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "멋진 광고를 자동으로 만들려니 제품을 깊이 이해하는 게 문제였는데요",
+            "easy1_desc": "연구진은 최근 영상 생성 기술이 좋아져서 광고를 자동으로 만드는 일이 가능해졌지만, 진짜 쓸만한 광고를 만들려면 단순한 영상 합성을 넘어서 제품의 가치를 전략적으로 보여주는 이야기 구성이 필요하다고 봤어요. 그런데 제품을 조사하는 일과 창의적인 디자인은 서로 긴밀하게 엮여 있어서, 제품 정보를 어떻게 모으느냐가 어떤 특징을 제대로 보여줄 수 있는지를 결정한다는 겁니다. 쉽게 말하면, 제품을 제대로 알지 못하면 겉만 번지르르하고 속 빈 광고가 나오기 십상이라는 말이에요.",
+            "easy2_title": "광고 비디오를 끝까지 스스로 만드는 애로두듀서 프레임워크를 개발했는데요",
+            "easy2_desc": "그래서 연구진은 짧은 기획안만 넣으면 광고 영상을 완성해 주는 첫 번째 에이전트 기반 프레임워크인 애로두듀서(AdProducer)를 개발했는데요, 웹과 이미지 검색으로 제품을 스스로 조사한 뒤 판매 포인트를 담은 스토리보드를 만들고 이를 통해 영상 생성기를 이끈다는 거예요. 그 과정에서 두 개의 학습용 데이터셋을 만들고 지도학습 미세조정과 강화학습을 거쳐 에이전트를 훈련했다고 하는데요, 그 결과 미니맥스 에이치쓰리(MiniMax H3)의 성능 점수를 17.3에서 51.3으로 크게 끌어올렸다는 겁니다. 새로운 벤치마크 평가인 애드크리에이션 벤치(AdCreation-Bench)로 검증해 보니 베오(Veo) 3.1 같은 다른 모델에도 추가 학습 없이 잘 적용되어 점수가 28.0에서 35.9로 좋아졌다는 장점이 있는데, 대신 에이전트의 자율적 판단에 크게 의존하기 때문에 검색된 정보가 부실하면 결과물도 흔들릴 수 있다는 점은 함께 염두에 두어야 합니다.",
+            "topic": "짧은 광고 기획안을 바탕으로 제품을 스스로 조사하고 판매 포인트를 담은 스토리보드를 만들어 광고 영상을 자동으로 생성하는 인공지능 에이전트 프레임워크인 애로두듀서 개발에 대한 연구예요.",
+            "one_line": "광고 영상을 자동으로 만드는 에이전트 프레임워크 개발",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Kunyang Li, Chaoyang Wang, Mubarak Shah, Yuzhang Shang",
           "categories": [],
           "comments": 1,
@@ -12613,8 +15147,57 @@ window.PANEL_DATA = {
           "hf_upvotes": 3,
           "score": 1.3,
           "score_why": "추천 3 → +0.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "화질이 나빠지면 영상 AI는 어떻게 되는가",
+            "easy1_desc": "표준 평가에서는 잘 나가던 비디오 추론 모델들이 화면이 흐려지거나 망가지면 안전이 중요한 상황에서 제대로 버틸 수 있을지 걱정스럽거든요. 기존 평가 방식은 인공적으로 화질을 떨어뜨리거나 어려운 질문으로 떠보긴 했지만, 실제로 자연스럽게 망가진 영상이나 운전 중에 마주하는 안전 관련 판단을 잘하는지는 알기 어려웠다는 말이에요. 뭔 소리냐면, 실제 상황에서 얼마나 튼튼한지 제대로 된 잣대가 모자란 셈이라는 겁니다.",
+            "easy2_title": "새로운 평가 도구를 만들고 성능을 끌어올렸다",
+            "easy2_desc": "그래서 연구진은 시각적 저하 조건과 질문 난이도를 함께 평가하는 GRAPE-Bench라는 도구를 도입해 인공 훼손 영상과 밤이나 눈, 비, 안개 속 실제 주행 영상을 합쳤는데요, 기초적인 판단부터 고난도 추론까지 세 단계 질문을 묶어 모델들을 시험해 봤어요. 그 결과 인공 데이터로 미세 조정을 거친 Qwen3.5-9B 모델의 실제 세상 정확도가 76.7%에서 81.1%로 올라가는 장점이 있었는데, 대신 모델 내부의 안전 관련 판단과 고난도 추론 사이의 줄다리기를 계속 조절해야 한다는 한계도 같이 따라온다는 겁니다.",
+            "topic": "시각적 저하 환경에서 비디오 추론 모델의 취약성을 평가하고 개선하기 위한 새로운 벤치마크(GRAPE-Bench)를 제안하고 성능을 검증한 내용이에요.",
+            "one_line": "시각적 저하 환경에서 비디오 추론 모델을 평가하고 개선하는 GRAPE-Bench를 개발했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [
+              "one_line 52자"
+            ],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Ce Zhang, Junyi He, Tianshi Ming, Jinxi He, Jianshu Zhang, Xiyuan Yang, Jianuo Zhu, Yicheng Tao, Xiyu Luo, Minghao Fu, Jiahui Zhu, Kehan Guo, Yunzhong Xiao, Jingyang Lin, Wei Chow, Lingdong Kong, Katia Sycara, Yaqi Xie",
           "categories": [],
           "comments": 1,
@@ -12637,8 +15220,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 3,
           "score": 1.3,
           "score_why": "추천 3 → +0.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기하학적 기초 모델이 늘었는데 제대로 비교하기가 어려웠어요",
+            "easy1_desc": "3D 인식 기술이 단일 작업 파이프라인에서 기하학적 기초 모델(Geometric Foundation Models)로 바뀌고 있는데요, 논문마다 프레임이나 해상도, 테스트 분할을 제각각 다르게 써서 성능을 제대로 비교하기가 어렵다는 겁니다. 게다가 단일 스케일 예측에 필요한 정렬 과정이 모델 간의 격차보다 더 클 수도 있어서, 엉뚱한 공간에 깊이를 맞추면 오차가 거의 3배까지 커지고 표준 궤적 정렬은 실패한 모델의 오차를 최대 2.6배까지 낮춰서 보여준다는 말이에요. 긴 영상이나 동적 장면, 항공 뷰 같은 다양한 상황은 거의 다루지 못해 왔다는 한계도 있거든요.",
+            "easy2_title": "공정한 기준으로 52개 모델을 한꺼번에 평가하는 공간을 만들었어요",
+            "easy2_desc": "그래서 연구진은 같은 지표와 규칙으로 기하학적 모델을 채점하는 오픈 아레나인 'SpatialArena(스페이셜아레나)'를 선보였는데요, 단일 깊이 추정부터 SLAM(동시적 위치 추정 및 지도 작성)까지 5개 작업을 아우르는 23개의 공개 데이터셋과 직접 수집한 데이터를 합쳐 총 418,929장의 이미지로 52개 모델을 평가해 봤다는 겁니다. 그 결과 52개 모델 중 단일 이미지 깊이는 공개 벤치마크에서 거의 포화 상태에 이르렀지만 크고 통제되지 않은 장면에서는 아직 아니라는 걸 확인했는데요, 장점은 프레임과 뷰 사이의 일관성을 통해 피드포워드 3D/4D 모델이 단일 작업 전문가 수준을 넘어서거나 비디오 깊이 모델을 앞지른다는 점을 보여준다는 거예요.",
+            "topic": "기하학적 기초 모델들의 성능을 공정하게 평가하기 위해 개발된 오픈 벤치마크인 SpatialArena와 이를 통한 52개 모델 평가 결과에 대한 내용이에요.",
+            "one_line": "기하학적 모델을 공정하게 평가하는 오픈 아레나를 만들었어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yu Chen, Haosen Yang, Su Ee Tan, Zhensong Zhang, Jifei Song, Jiankang Deng",
           "categories": [],
           "comments": 2,
@@ -12661,8 +15291,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 3,
           "score": 1.3,
           "score_why": "추천 3 → +0.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존에 있던 AI 모델을 그대로 재활용하지 못하고 처음부터 다시 배워야 했다",
+            "easy1_desc": "연구진은 이미 성능이 좋은 확산 변환기 모델이 따로 있는데도, 가중치를 공유해서 깊이를 반복해 쓰는 루프형 모델을 만들려면 처음부터 비용을 들여 다시 훈련해야 했다고 밝혔는데요. 뭔 소리냐면, 기존 모델을 재활용하지 못하고 처음부터 다시 학습하는 탓에 시간과 자원이 많이 드는 문제점이 있었다는 말이에요. 쉽게 말하면, 쓸만한 모델이 이미 있는데도 처음부터 다시 만들어야 해서 비효율적이었다는 셈이에요.",
+            "easy2_title": "기존 모델의 가중치를 이어받아 한 번만 배워도 깊이를 조절하며 쓸 수 있게 바꿨다",
+            "easy2_desc": "그래서 연구진은 기존 모델의 블록을 그대로 가져와 초기화하는 방식인 디스틸 투 루프 기술을 제안했는데요, 이 방식을 쓰면 한 모델로 재훈련 없이 반복 횟수를 자유롭게 바꿔가며 실행할 수 있게 된다는 겁니다. 반복할 때마다 교사 모델과 가까워지도록 훈련해서 적은 연산으로도 성능을 유지하는 장점이 있는데, 대신 모델 구조가 고정된 교사 모델과 다르게 깊이 방향의 미분 방정식을 적용해야 한다는 점도 같이 따라온다는 겁니다.",
+            "topic": "기존의 사전 훈련된 확산 변환기를 재활용하여 반복 횟수를 조절할 수 있는 루프형 모델로 효율적으로 증류하는 방법에 대한 연구예요.",
+            "one_line": "기존 모델을 증류해 깊이 조절이 되는 루프형 모델을 만들었어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Chenru Wang, Shengwei An",
           "categories": [],
           "comments": 1,
@@ -12685,8 +15362,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 3,
           "score": 1.3,
           "score_why": "추천 3 → +0.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "사람 평가로 만든 이미지 설명 평가 지표들이 정말 제대로 작동하는지 뜯어봤습니다",
+            "easy1_desc": "연구진은 사람이 매긴 점수로 학습하고 시험을 치르는 이미지 설명 평가 지표들의 일반화 주장을 검증해 봤는데요, Polaris, Nebula, Spica라는 최근 평가 모음 세 곳을 픽셀 수준에서 꼼꼼히 대조해 봤다는 겁니다. 그랬더니 시험에 쓰인 샘플이 학습 세트에 그대로 다시 나타나는 문제가 있었는데요, Spica 학습 세트에는 Polaris 시험 세트의 약 3분의 2가 똑같은 사람 평점과 함께 들어 있었다는 말이에요. 쉽게 말하면, 이미 답을 알고 시험을 본 셈이라 성능이 부풀려졌을 가능성이 크다는 겁니다.",
+            "easy2_title": "겹치는 데이터를 걸러내고 다시 평가했더니 평가 순서가 완전히 달라졌습니다",
+            "easy2_desc": "그래서 연구진은 시험 샘플을 아예 빼고 학습시킨 모델로만 평가 지표를 줄 세우는 새로운 방안을 제안했는데요, 이렇게 검증해 봤더니 제로숏(zero-shot) 비전-언어 평가기가 최근 시험 세트 세 곳에서 모두 1위를 차지했다고 해요. 기존 방식보다 공정한 비교가 가능하다는 장점이 있는데, 대신 데이터를 철저히 걸러내야 하므로 분석 과정이 까다로워진다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 꼼수를 빼고 제대로 평가하면 어떤 지표가 진짜 좋은지 명확히 드러난다는 말이에요.",
+            "topic": "사람 평가를 학습해 만든 이미지 설명 평가 지표들의 데이터 중복 문제를 파헤치고, 이를 바로잡는 새로운 평가 방안을 제안한 논문이에요.",
+            "one_line": "이미지 설명 평가 지표의 데이터 중복을 감사하고 공정한 평가 방안을 제안했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xiaochen Zhang, Jin Li, Chunlong Xia, Longjiang Guo",
           "categories": [],
           "comments": 2,
@@ -12709,8 +15433,61 @@ window.PANEL_DATA = {
           "hf_upvotes": 3,
           "score": 1.3,
           "score_why": "추천 3 → +0.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "시각 에이전트가 본 화면이 정말 그 자리인지 알 수 없다는 게 문제였어요",
+            "easy1_desc": "시각 에이전트가 전체 슬라이드 이미지를 볼 때, 눈에 그럴듯해 보여도 실제 위치가 맞는지 또는 배율과 조직 구조가 비슷해서 헷갈린 건 아닌지 알기 어렵다는 점을 짚어봤는데요. 연구진은 이 문제를 풀기 위해 크로스 배율 출처 검증(CMPV)이라는 방식을 도입해서 증거가 맞는지 확인하고 출처를 찾거나 모르면 아예 손을 떼도록 했거든요. 쉽게 말하면, 에이전트가 자기가 본 화면을 믿어도 되는지 스스로 검사하는 셈이라는 말이에요.",
+            "easy2_title": "그래서 위치를 먼저 추정하는 도구를 만들었더니 정확도가 확 높아졌어요",
+            "easy2_desc": "연구진은 주장한 위치를 바로 믿는 대신 화면의 원래 출처를 먼저 추정하는 '줌트레이스(ZoomTrace)'라는 검증기를 제안했는데요. 물리적 크기 맞추기와 시각적 검색 등을 거쳐 50만 3천3백20개의 테스트 예시에서 0.969의 정밀도-재현율 곡선 아래 면적(AUPRC)과 0.987의 수신 조작 특성 곡선 아래 면적(AUROC)을 기록했다고 해요. 성능이 좋아진다는 장점이 있는데, 대신 다운스트림 정확도는 에이전트와 검증 기준값에 따라 달라진다는 한계도 같이 따라온다는 겁니다.",
+            "topic": "시각 에이전트가 전체 슬라이드 이미지에서 올바른 위치를 보고 있는지 확인하기 위해 출처 검증 방식을 제안하고 성능을 평가한 연구예요.",
+            "one_line": "시각 에이전트의 위치 출처 검증을 위한 줌트레이스를 제안하고 성능을 검증했어요.",
+            "topic_tag": "의료·바이오",
+            "limit": "다운스트림 정확도가 좋아지는 정도는 에이전트와 검증 기준값에 따라 달라진다는 한계가 있어요."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [
+              "2",
+              "20",
+              "3",
+              "50",
+              "6"
+            ],
+            "format": [],
+            "flags": [],
+            "tag": "의료·바이오",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Yan Wang, Yiran Song, Zizhuo Gong, Jianxiang Qi, Zhongxing Xu, Lingfei Qian, Minquan Lin",
           "categories": [],
           "comments": 1,
@@ -12733,8 +15510,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 2,
           "score": 1.2,
           "score_why": "추천 2 → +0.2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "거대언어모델의 모든 층이 정말 똑같은 용량이 필요할까",
+            "easy1_desc": "기존의 거대언어모델(LLM)은 트랜스포머 구조를 그대로 따라 모든 층의 피드포워드 네트워크(FFN) 너비를 똑같이 설정해 왔거든요. 그런데 층마다 하는 역할이 다르다는 연구가 나오면서, 과연 층별로 필요한 용량도 다를지 의문이 생긴 겁니다. 만약 층마다 필요한 용량이 다르다면, 정해진 매개변수 예산을 지금처럼 똑같이 나누는 게 최선인지 확인해 볼 필요가 있다는 말이에요.",
+            "easy2_title": "층별로 필요한 용량을 측정해 보니 중간 층이 더 중요하더라",
+            "easy2_desc": "연구진은 주성분 분석(PCA)을 활용해 각 층의 입력값에서 고유 차원을 측정해 봤는데요, 그 결과 중간 층이 양 끝 층보다 더 높은 고유 차원을 가진다는 사실을 발견했습니다. 이 중간이 두터운 형태는 언어나 학습 데이터가 바뀌어도 일정하게 유지되는 특징이 있거든요. 그래서 이 정보를 바탕으로 모델의 너비를 조정해 봤더니, 기존의 균일한 방식보다 성능이 더 좋아졌다는 겁니다.",
+            "topic": "거대언어모델 내 피드포워드 네트워크의 층별 고유 차원을 측정하고 이를 기반으로 효율적인 매개변수 할당 전략을 제시했어요.",
+            "one_line": "층별 고유 차원을 측정해 모델의 너비를 효율적으로 재배치했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Daehee Kim",
           "categories": [],
           "comments": 1,
@@ -12757,8 +15581,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 2,
           "score": 1.2,
           "score_why": "추천 2 → +0.2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "그리드 프로빙 방식은 정확하지만 연산이 너무 많았습니다",
+            "easy1_desc": "연구진은 긴 입력 문맥을 처리할 때 기존 모델들이 겪는 속도 저하와 정확도 손실 문제를 짚어봤는데요. 최근에 나온 그리드 프로빙이라는 방식이 정확도와 처리 거리를 넓혀 주기는 하는데, 매번 입력을 다시 인코딩하느라 계산을 반복한다는 단점이 있거든요. 뭔 소리냐면, 외부에서 프롬프트를 써서 흉내만 내는 구조라 비용이 너무 많이 든다는 말이에요.",
+            "easy2_title": "팩토라이즈드 컨텍스트 어텐션을 도입해 비용을 크게 낮췄습니다",
+            "easy2_desc": "그래서 연구진은 팩토라이즈드 컨텍스트 어텐션(FCA)이라는 새로운 블록 희소 어텐션 방식을 도입했는데요. 입력을 한 번만 인코딩한 뒤에 배치로 처리하고 계단식 위치 일정을 써서 비용을 획기적으로 낮췄다는 겁니다. 장점은 기존 그리드 프로빙의 정확도와 긴 입력 처리 능력을 그대로 유지하면서 속도는 훨씬 빨라진다는 건데요, 대신 기존에 학습된 모델의 구조 안에서 네이티브 방식으로 구현해야 한다는 조건이 따른다는 겁니다.",
+            "topic": "기존의 흉내 내기식 그리드 프로빙 방식 대신 모델 내부의 네이티브 방식으로 작동하는 팩토라이즈드 컨텍스트 어텐션을 도입해, 긴 입력 문맥 처리 성능을 유지하면서도 연산 비용을 대폭 낮춘 연구예요.",
+            "one_line": "FCA 방식을 도입해 문맥 처리 비용을 낮췄어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Mohamed Eltahir, Manar Eyad, Yara Alzahrani, Fatimah Albesher, Duaa M. Tahir, Tanveer Hussain, Naeemullah Khan",
           "categories": [],
           "comments": 1,
@@ -12781,8 +15652,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 2,
           "score": 1.2,
           "score_why": "추천 2 → +0.2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "물체의 움직임을 제대로 예측하지 못해 행동 예측에 한계가 있었는데요",
+            "easy1_desc": "로봇이 물체를 움직일 때 앞으로 어떻게 바뀔지 미리 내다보면 행동을 더 잘 예측할 수 있는데요, 기존 방식인 세계 행동 모델(WAMs, World Action Models)은 미래의 시각적 관측을 배우면서도 그 바탕이 되는 3D 공간의 기하학적 변화를 겉으로 드러내지 않고 그냥 넘어갔다는 거예요. 뭔 소리냐면, 물체가 입체적으로 어떻게 움직이는지 정확한 구조를 모른 채 흉내만 냈다는 말이에요. 그러다 보니 복잡한 조작을 할 때 정확도가 떨어지는 문제가 생겼던 셈이에요.",
+            "easy2_title": "3D 공간 변화를 미리 배우는 포사이트 포싱을 도입해 성능을 끌어올렸어요",
+            "easy2_desc": "그래서 연구진은 미리 학습된 3D 기초 모델을 활용해 현재와 미래의 관측에서 특징 변화를 촘촘하게 감독하는 포사이트 포싱(F^{2}, Foresight Forcing)이라는 모델을 새로 선보였는데요, 이 방식은 3D 공간의 변화를 공간 전환 쿼리로 압축해서 현재 시각 정보와 함께 행동을 만들어내는 데 쓴다는 거예요. 실험해 봤더니 리베로(LIBERO), 리베로 플러스(LIBERO-Plus), 로보트윈2.0(RoboTwin2.0) 환경에서 튼튼하고 뛰어난 조작 성능을 보여줬는데요, 특히 로보트윈2.0 풀(RoboTwin2.0 Full)에서는 평균 성공률이 95.01%에 달했고 여섯 가지 실제 조작 과제에서도 평균 85.8%의 점수를 기록했다고 해요. 쉽게 말하면, 3D 공간을 미리 내다보는 눈을 달아주어 로봇이 훨씬 더 정확하게 움직이게 된 셈이에요.",
+            "topic": "로봇 조작 성능을 높이기 위해 3D 공간의 기하학적 변화를 미리 학습하는 포사이트 포싱 모델을 제안하고 그 성능을 검증한 내용이에요.",
+            "one_line": "3D 공간 변화를 미리 학습하는 포사이트 포싱 모델을 만들어 로봇 조작 성능을 높였어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Mishuo Han, Zhixuan Liang, Zhaoyuan Wan, Wendi Chen, Jiarui Chen, Xinkai Wang, Yue Ma, Yu Zhou, Junting Chen, Yao Mu, Jun Lv, Chuan Wen, Cewu Lu",
           "categories": [],
           "comments": 1,
@@ -12805,8 +15723,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 2,
           "score": 1.2,
           "score_why": "추천 2 → +0.2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "학생이 쓴 그대로 읽어야 하는데 자꾸 고쳐 버린다",
+            "easy1_desc": "학습자 작문 피드백 도구에는 맞춤법이 틀린 글자나 줄바꿈 같은 원래 모습을 그대로 적어 두는 게 필요하거든요. 그런데 기존 시각-언어 모델(VLM)들은 손글씨를 잘 읽으면서도 자꾸 바른 말로 고쳐 버리는 경향이 있답니다. 브레세이(BRESSAY)라는 브라질 포르투갈어 손글씨 에세이 1,000편으로 측정해 봤더니, 기존 공개 모델들은 사전에 없는 단어의 39퍼센트에서 78퍼센트를 사전 단어로 바꿔 버린다는 거예요. 쉽게 말하면, 원본 그대로를 남기는 게 아니라 마음대로 고쳐 버린다는 말이에요.",
+            "easy2_title": "작은 모델을 새로 다듬어 원래 모습 그대로 적게 만들었다",
+            "easy2_desc": "그래서 연구진은 학교에서 직접 돌릴 수 있는 공개 가중치 모델을 골라 647쪽의 훈련 페이지로 85분 동안 그래픽카드(GPU) 한 개로 세밀하게 다듬어 봤는데요. 그 결과로 나온 에스크리바-오씨알-1비(Escriba-OCR-1B) 모델은 문자 오류율이 2.06퍼센트로 떨어졌고, 삽입된 내용의 67퍼센트와 읽기 힘든 삭제 내용의 77퍼센트를 되살렸답니다. 대신에 맞춤법이 틀려 보이는 단어의 60퍼센트는 여전히 표준어로 바꿔 버린다는 단점도 함께 남아 있다는 거예요. 쉽게 말하면, 오류 보존 능력이 많이 좋아졌지만 틀린 글자를 완전히 살리지는 못했다는 셈이에요.",
+            "topic": "손글씨 에세이의 맞춤법 오류와 수정 흔적을 그대로 옮기는 1B 규모의 시각-언어 모델(VLM)인 에스크리바-오씨알(Escriba-OCR-1B)을 개발하고 평가한 이야기예요.",
+            "one_line": "오류를 보존하는 손글씨 인식 1B 모델을 개발하고 평가했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "새 모델이 다른 말뭉치의 보이지 않는 단어를 더 자주 잘못 읽는다는 한계가 있습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                false
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "5/6",
+            "evidence_all": false,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Tardelli Ronan Coelho Stekel",
           "categories": [],
           "comments": 5,
@@ -12829,8 +15794,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 2,
           "score": 1.2,
           "score_why": "추천 2 → +0.2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "원스텝 생성기는 어떤 경로를 학습시켜야 할까",
+            "easy1_desc": "표현 정렬이 확산 모델의 학습을 크게 빠르게 만드는데, 원스텝 생성기에서는 어떤 학습 경로에 손실을 줘야 하는지가 문제였다는 겁니다. 원스텝 생성기는 깨끗한 짝이 있는 오염된 진짜 이미지와, 짝이 없는 순수 노이즈 샘플이라는 두 가지 입력을 보게 되는데요. 연구진은 훼손된 이미지를 복원하고 최적 운송으로 피처 분포를 맞추는 방식으로 원스텝 생성기를 처음부터 학습시키는 Priming에서 이 문제를 연구해 봤다는 말이에요. 그 결과 자연스러운 선택인 생성 경로를 정렬했더니 테스트한 17가지 모든 설정에서 재현율이 0.45에서 0.15~0.25 수준으로 뚝 떨어졌다는 겁니다. 쉽게 말하면, 짝이 없는 생성 경로를 바로 맞추려다 보니 모델이 망가지는 셈이라는 말이에요.",
+            "easy2_title": "짝을 맞추는 복원 경로를 정렬했더니 성능이 확 올랐다",
+            "easy2_desc": "그래서 연구진이 고정한 DINOv2 인코더로 짝이 있는 복원 경로를 정렬해 봤는데요, 테스트한 모든 설정에서 도움이 되었다는 거예요. 분석해 보니 타깃에 입력에 대한 개별 정보가 없으면 최적의 정렬된 피처가 클래스마다 일정해져서, 손실 함수가 샘플들을 클래스 프로토타입 쪽으로 끌어당기기 때문이라는 말이에요. 그 결과 ImageNet 256×256에서 프라이밍 에포크를 2배 줄이고도 160에포크 기준 모델과 성능이 같아졌으며, 표준 예산에서 FID를 1.30과 1.155로 낮추는 장점이 있다는 겁니다. 대신 이 방식은 짝이 있는 복원 경로라는 특정 구조를 거쳐야 한다는 조건이 따른다는 점도 함께 기억해야 한다는 거예요.",
+            "topic": "원스텝 생성기 학습에서 어떤 경로를 정렬해야 성능이 좋아지는지에 관한 연구예요.",
+            "one_line": "원스텝 생성기 학습에서 짝 지어진 복원 경로를 정렬해 성능을 높였다.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Mingxiao Li, Xuantuo Huang, Encheng Su, Aoran Wang, Han Zhang, Jinouwen Zhang, Shixiang Tang",
           "categories": [],
           "comments": 1,
@@ -12854,8 +15866,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "새로운 사실을 가르쳤더니 원래 가졌던 일반적인 능력이 깎여 나가더라는 겁니다",
+            "easy1_desc": "지시어로 튜닝된 언어 모델에 새로운 사실을 더 학습시켰더니, 지시 따르기나 추론, 코딩 같은 일반적인 능력의 성능이 평균 35포인트나 떨어지는 걸 확인해 봤는데요. 알고 봤더니 이게 모델의 답변 길이가 짧아지는 현상과 밀접하게 이어져 있더라고요. 미세조정된 모델들은 답변 길이가 최소한 절반으로 줄어들었고, 원래 모델의 길이에서 멀어질수록 실패하는 횟수도 더 많아진다는 말이에요. 쉽게 말하면, 새로운 걸 억지로 넣으려다 보니까 기존에 잘하던 대답까지 짧아지면서 엉망이 되어 버린 셈이라는 겁니다.",
+            "easy2_title": "처음 모델이 했던 대답을 다시 보게 만들었더니 성능이 확 살아났다는 겁니다",
+            "easy2_desc": "그래서 연구진은 초기 모델이 일반적인 지시에 답했던 내용들을 모아두고, 새로운 사실을 미세조정하는 동안 이 원래 대답들과 너무 멀어지지 않도록 붙들어 매 두는 방식인 InstructReplay를 제안했는데요. 세 가지 모델 가족과 두 가지 영역에서 실험해 봤더니, 다섯 가지 일반 벤치마크에서의 평균 성능 하락 폭이 28.1포인트에서 2.4포인트로 확 줄어들면서 답변 길이도 처음 상태 그대로 잘 지켜졌다는 거예요. 새로운 사실은 표준 미세조정 방식만큼 똑같이 잘 익히면서도 기존 능력을 지키는 균형을 훨씬 더 잘 잡는다는 장점이 있는데, 대신 처음에 했던 대답들을 따로 저장하고 계속 활용해야 한다는 번거로움도 같이 따라온다는 겁니다.",
+            "topic": "새로운 사실을 언어 모델에 미세조정할 때 생기는 일반 능력 저하를 막기 위해 초기 모델의 대답을 재현하는 학습법을 제안한 연구예요.",
+            "one_line": "초기 모델의 대답을 재현하는 미세조정법으로 일반 능력 저하를 막았어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                false
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "5/6",
+            "evidence_all": false,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xiaofeng Shi, Qian Kou, Hua Zhou",
           "categories": [
             "cs.AI",
@@ -12881,8 +15940,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "긴 과정에서 어디가 막히는지 알기 어려웠습니다",
+            "easy1_desc": "로봇이 오랜 시간 이어지는 작업을 할 때는 성공이나 실패 같은 결과만 나오고 어디서 막혔는지 알기가 어려웠거든요. 그렇다고 처음부터 끝까지 전체 과정을 계속 반복해 봐도 정작 막히는 부분은 연습이 부족해진다는 거예요. 쉽게 말하면, 어디서 실패하는지 정확히 모른 채 시간만 낭비하던 셈이라는 말이에요.",
+            "easy2_title": "어려운 부분만 골라 집중 연습하는 방법을 도입했습니다",
+            "easy2_desc": "그래서 연구진은 리포커스(ReFocus)라는 방법을 내놓았는데요, 전체 작업을 여러 작은 단계로 나누고 막히는 구간을 찾아내서 그 부분만 따로 집중 연습을 시키는 방식이에요. 취약한 구간을 더 많이 연습하면서 전체 정책도 같이 고칠 수 있다는 장점이 있는데, 대신 단계를 쪼개고 관리하는 과정이 복잡해진다는 점도 같이 따라온다는 겁니다.",
+            "topic": "오래 걸리는 로봇 조작 강화학습에서 작업 단계를 나누고 막히는 구간을 집중 연습해 성공률을 높이는 리포커스(ReFocus) 프레임워크를 제안한 논문이에요.",
+            "one_line": "로봇 강화학습에서 막히는 구간을 찾아 집중 연습시키는 틀을 개발했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Haoyuan Li, Wei Huang, Jiehong Lin, Shengrong Zhang, Chenzhi Liu, Shengchao Zhou, Hehe Fan, Xiaojuan Qi, Yi Yang",
           "categories": [],
           "comments": 1,
@@ -12905,8 +16011,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "고정된 답만 찾다 보니 질문이 바뀔 때 어떻게 대처하는지 알기 어려웠습니다",
+            "easy1_desc": "한 번 측정된 뇌파(EEG) 기록 하나로 여러 가지 해석을 할 수 있는데요, 기존의 고정된 라벨 방식으로는 질문이나 보기가 달라질 때 기초 모델이 어떻게 대처하는지 제대로 보여주지 못했다는 겁니다. 뭔 소리냐면, 질문이 바뀔 때 유연하게 답을 고르는지 확인할 수 있는 방법이 부족했다는 말이에요. 그래서 연구진은 후보 답안을 한 번에 평가하는 빠른 결정 모델인 EEGJev를 만들었다고 밝혔습니다.",
+            "easy2_title": "질문을 바꿔 가며 한 번에 평가하는 모델을 만들어 정확도를 높였습니다",
+            "easy2_desc": "그래서 19개의 공개 뇌파 출처와 6가지 질문 유형을 담은 벤치마크인 EEGJev-Bench를 도입해, 뇌파 기록과 보기를 고정한 채 얼굴 표정 같은 훈련 속 속성 질문을 바꿔 가며 시험해 봤는데요. 그 결과 13개의 테스트 출처에서 요청받은 속성의 라벨을 99.70%의 정확도로 골라냈고, 특정 정답에 대한 균형 잡힌 정확도는 62.04%로 나타났다는 겁니다. 95번째 백분위수 응답 시간도 개별로 답을 구한 NeuroLM보다 더 짧았다는 장점이 있는데요, 대신 구체적인 정답을 맞히는 정확도는 그에 비해 상대적으로 낮다는 점도 함께 살펴볼 수 있습니다.",
+            "topic": "다양한 질문에 맞춰 뇌파를 해석하고 평가할 수 있는 시스템인 EEGJev와 벤치마크 개발에 대한 연구예요.",
+            "one_line": "질문에 따라 뇌파를 해석하는 빠른 모델과 벤치마크를 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Dengzhe Hou, Kazunori D. Yamada",
           "categories": [],
           "comments": 1,
@@ -12929,8 +16082,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "손동작 데이터가 부족해서 손 합성만 발이 묶여 있었어요",
+            "easy1_desc": "텍스트로 몸동작을 만드는 기술은 무르익었지만 손동작만 만드는 기술은 데이터가 부족해서 막혀 있었는데요, 기존 데이터셋은 손을 그냥 뻣뻣한 끝부분으로만 다루거나 설명이 엉성하고 규모가 작았다는 거예요. 그래서 연구진은 542K 개의 시퀀스로 이루어진 RoMo Hands라는 새로운 데이터셋을 만들어 봤는데요, 쉽게 말하면 이전 연구보다 규모가 훨씬 커졌다는 말이에요.",
+            "easy2_title": "다양한 설명과 새로운 표현 방식으로 손동작 합성을 키워 봤어요",
+            "easy2_desc": "그래서 연구진은 복잡한 양손 움직임에 초점을 맞추고 계층적 분류 체계에 따라 다섯 가지 수준의 캡션을 붙여 봤는데요, 몸과 손의 구조를 잇기 위해 새로운 393-D 양손 표현 방식도 제안했다는 겁니다. 생성 모델들을 체계적으로 비교해 봤더니 의미 일치와 운동학적 타당성 사이에서 뚜렷한 차이가 드러난다는 장단점도 있는데요, 이 데이터셋과 벤치마크가 정교한 손동작 합성을 위한 탄탄한 바탕이 될 것으로 보입니다.",
+            "topic": "손동작 합성을 위해 대규모 데이터셋과 새로운 표현 방식, 벤치마크를 제안한 연구예요.",
+            "one_line": "대규모 손동작 데이터셋과 표현 방식을 제안했어요",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yizhak Ben-Shabat, Jiahao Zhang, Joseph Liu, Seonghyeon Moon, Young-Yoon Lee, Haomiao Jiang, Oren Jacob, Mubbasir Kapadia",
           "categories": [],
           "comments": 1,
@@ -12953,8 +16153,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "가까운 오답 때문에 엉뚱한 문서를 띄우는 문제가 있었습니다",
+            "easy1_desc": "밀집 임베디드 검색기(Dense-embedding retrievers)가 질문과 뜻이 정반대인 가까운 복사본 문서를 덫처럼 인식해서 82~100% 비율로 상위 10위 안에 띄우는 현상을 살펴봤는데요. 뭔 소리냐면, 뜻이 살짝만 바뀌어도 검색기가 엉뚱한 문서를 정답으로 착각한다는 말이에요. 이 문제를 해결하려고 연구진은 작은 학습용 투영(Small learned projections) 기법을 도입해 덫을 억제해 봤거든요. 그랬더니 모든 12가지 도메인과 10만 개 규모의 풀에서 덫이 상위 10위 안에 들 확률이 0.0000으로 떨어졌다는 겁니다.",
+            "easy2_title": "작은 투영과 속도를 높이는 가속기로 문제를 해결했습니다",
+            "easy2_desc": "그래서 연구진은 작은 투영 방식과 경계 조건 기반 가속기(Boundary-conditioned accelerator)를 함께 적용해 대규모 환경에서도 검색 속도를 높이도록 만들었는데요. 그 결과 10만 개 규모의 문서 풀에서 덫이 전혀 나타나지 않으면서 전체 300여 개 질문 세트를 처리하는 데 0.6~1.1초가 걸려 질문당 평균 약 2~4밀리초(ms) 수준의 속도를 보였다는 거예요. 덕분에 전체 임베디드 크기보다 약 90배 작고 차원에 비례해 빠른 색인 구조를 만들 수 있다는 장점이 생겼는데요. 대신 문장 표현을 바꾼 질문에서는 정답률이 약 0.79로 떨어지고 다른 도메인으로의 전이가 일부만 가능하다는 한계도 같이 나타난다는 겁니다.",
+            "topic": "의미가 미세하게 바뀐 오답 문서가 검색 상위에 뜨는 문제를 해결하기 위해 작은 학습용 투영과 스펙트럼 가속기를 적용한 연구예요.",
+            "one_line": "의미가 뒤집힌 오답을 막는 투영과 가속기를 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "측정된 풀의 명시된 사례에 한정되며 확률적 상한은 없고 문장이 바뀐 질문에서는 정답률이 약 0.79로 떨어지며 다른 도메인으로의 전이가 일부만 가능하다는 한계가 있어요."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Sayed Amir Karim",
           "categories": [],
           "comments": 1,
@@ -12977,8 +16224,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "긴 작업을 할 때 기억하는 공간이 부족하다는 게 문제였어요",
+            "easy1_desc": "대형 언어 모델(LLM) 에이전트가 긴 시간 동안 여러 단계를 거치는 작업을 할 때, 주고받은 대화가 너무 많아지면 기억할 수 있는 한계를 넘어서게 되거든요. 그래서 지나간 대화를 압축해서 요약본으로 바꾸는 방식을 쓰는데, 이 요약이 나중에 에이전트의 행동에 어떤 영향을 미칠지 함께 학습하기란 너무 어렵다는 거예요. 쉽게 말하면, 요약을 잘 만드는 것과 에이전트가 그 요약을 보고 현명한 결정을 내리도록 동시에 훈련하기가 까다로웠다는 말이에요.",
+            "easy2_title": "요약본이 원래 행동을 지키게 만드는 RECAP을 만들었어요",
+            "easy2_desc": "그래서 연구진은 압축된 요약본이 원래의 대화 기록과 똑같은 행동을 이끌어내야 한다는 원칙을 세우고, RECAP이라는 강화학습 틀을 도입했는데요. 요약본 때문에 에이전트의 행동이 얼마나 달라지는지 측정하는 목적 함수를 만들었더니, 요약 생성을 위한 보상과 다음 행동을 가르치는 자기 증류라는 두 가지 학습 신호로 쪼개진다는 걸 찾아냈다는 거예요. Qwen3.5-4B 모델로 실험을 해봤더니, 기존의 작업 보상만 쓰던 방식보다 BrowseComp-plus에서는 4.6%, SWE-bench Verified에서는 4.3%만큼 성능이 절대적으로 좋아졌다는 장점이 있는데요, 대신 요약과 그 뒤의 행동을 동시에 감독해야만 이 효과가 제대로 난다는 점도 같이 확인했다는 겁니다.",
+            "topic": "대화 기록을 압축하면서도 에이전트의 원래 행동을 유지할 수 있도록 요약과 정책을 함께 학습하는 강화학습 틀 RECAP을 제안하고 성능을 확인한 내용이에요.",
+            "one_line": "대화 압축과 에이전트 행동을 함께 학습하는 강화학습 틀 RECAP을 제안했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yulun Jiang, Maria Brbic, Michael Moor",
           "categories": [],
           "comments": 2,
@@ -13001,8 +16295,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "모델 안전장치가 하드웨어 공격 앞에서는 무용지물이더라고요",
+            "easy1_desc": "연구진이 인공지능 모델의 안전장치를 해제하는 물리적 공격인 FATCAT을 시험해 봤는데요, 기존의 인공지능 평가들은 하드웨어가 완벽히 안전하다는 전제 아래서만 이루어졌다는 겁니다. 뭔 소리냐면, 소프트웨어나 모델 구조를 몰라도 하드웨어에 직접 물리적 충격을 주면 거부 기능을 무력화할 수 있다는 말이에요. 쉽게 말하면, 아무리 소프트웨어 안전장치를 튼튼하게 만들어도 하드웨어 헛점이 뚫리면 소용없다는 셈이에요.",
+            "easy2_title": "물리적 충격을 주어 AI가 위험한 요구도 그대로 따르게 만들었습니다",
+            "easy2_desc": "그래서 연구진은 비접촉식 전자기파를 이용해 그래픽카드(GPU) 시스템의 메모리 통신을 교란하는 공격을 시도했는데요, 시스템이 다운되지 않으면서도 모델의 안전 관련 메모리만 골라 망가뜨리는 방식이에요. 엔비디아(NVIDIA) 젯슨 오린 나노(Jetson Orin Nano)와 에이지엑스 토르(AGX Thor)에서 시험해 봤더니, 제한된 요청을 거부하지 않고 그대로 들어주도록 만들었다는 겁니다. 이 공격으로 로봇 팔이 갑자기 튀어나와 위험한 움직임을 보이는 등 실제 물리적 피해로 이어질 수 있다는 점도 확인됐다는 말이에요.",
+            "topic": "인공지능 모델의 안전장치가 하드웨어 물리적 결함 공격에 얼마나 취약한지 밝혀낸 연구예요.",
+            "one_line": "하드웨어 물리적 결함 공격으로 AI 안전장치를 무력화함",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Peter Horvath, Ilia Shumailov, Zhuoran Liu, Lukasz Chmielewski, Lejla Batina",
           "categories": [],
           "comments": 1,
@@ -13024,8 +16365,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI가 병렬 프로그램을 짜긴 하는데 지시사항에 따라 결과가 확 달라졌거든요",
+            "easy1_desc": "대형 언어 모델(LLM)이 병렬 프로그램을 만들어 주기는 하는데요, 문제는 제대로 작동하는지나 속도가 얼마나 빠른지가 결국 어떤 지시를 내리느냐에 크게 달렸다는 겁니다. 연구진은 그래서 MPI C 코드를 만들 때 자연어로 된 기술 명세(스킬)를 계속 다듬어 주는 메타 학습 틀인 메타포지(MetaFORGE)를 제안했는데요. 쉽게 말하면, AI가 더 좋은 코드를 짜도록 옆에서 올바른 지침을 계속 찾아 주는 틀이라는 말이에요.",
+            "easy2_title": "코드를 실행해 보고 나온 결과를 바탕으로 지침을 계속 고쳐 봤는데요",
+            "easy2_desc": "메타포지(MetaFORGE)는 정확성 테스트부터 컴파일러 진단, 정적 분석, 실행 시간, 부하 불균형 프로필까지 한 번에 모아서 하나의 보상 점수로 바꾼 다음에 텍스트 기반 기울기 방식으로 지침을 계속 다듬어 준다는 겁니다. 외부 기억 장치도 함께 쓰기 때문에 여러 번 실행하면서 얻은 최적화 지식을 잘 모아 뒀다가 꺼내 쓸 수 있다는 장점이 있는데요. 결과적으로 6가지 MPI 작업과 3가지 작업 부하 크기에서 제로샷(zero-shot) 방식이나 기존의 텍스트그래드(TextGrad) 반복 기준선보다 정적 분석 품질이나 실행 시간, 부하 균형 면에서 더 나은 모습을 보여줬다는 거예요. 쉽게 말하면, 실제로 코드를 돌려본 피드백을 모아서 AI가 더 똑똑하게 코드를 짜도록 만드는 셈이라는 말이에요.",
+            "topic": "MPI C 코드 자동 생성을 위해 실행 기반 피드백과 외부 기억 장치를 활용해 자연어 지침을 최적화하는 메타 학습 프레임워크인 메타포지(MetaFORGE)를 제안하고, 그 성능을 평가했다는 내용이에요.",
+            "one_line": "실행 기반 피드백으로 자연어 지침을 최적화하는 메타 학습 프레임워크를 제안했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 3,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Scott Piersall, Yang Gao, Shenyang Liu, Liqiang Wang",
           "categories": [
             "cs.AI"
@@ -13049,8 +16437,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "체스 인공지능이 사람의 시간 압박을 무시하고 있었어요",
+            "easy1_desc": "기존의 체스 행동 복제 모델들은 오직 체스판의 상태만을 보고 사람의 다음 수를 예측해 왔는데요, 정작 사람이 체스를 둘 때 중요한 요소인 남은 시간 같은 시간적 정보는 전혀 고려하지 않았거든요. 시간 압박이 사람의 판단력에 큰 영향을 미치는데도 모델은 이를 놓치고 있었던 셈이에요. 쉽게 말하면, 사람이 시간에 쫓기며 두는 실수를 모델은 제대로 이해하지 못했다는 말입니다.",
+            "easy2_title": "시간 정보를 알려줬더니 사람처럼 생각하고 움직이게 됐어요",
+            "easy2_desc": "연구진은 체스판 상태에 남은 시간과 시간 제어 방식 같은 정보를 더한 시간 인식 트랜스포머 모델을 만들어 봤는데요, 이 모델은 단순히 다음 수를 맞히는 걸 넘어 사람이 얼마나 고민할지, 언제 기권할지까지 예측할 수 있게 됐거든요. 특히 시간이 부족한 상황에서 사람의 실수를 더 정확하게 흉내 내는 장점이 있는데, 기존 모델들이 사람보다 지나치게 강하게만 예측하던 문제를 해결한 셈이에요. 결과적으로 시간 정보가 사람의 행동을 흉내 내는 데 아주 중요한 신호라는 걸 확인한 겁니다.",
+            "topic": "체스 행동 복제 모델에서 시간 정보를 활용해 사람의 의사결정 과정을 더 정확하게 흉내 내는 연구예요.",
+            "one_line": "체스 모델에 시간 정보를 넣어 사람의 행동을 더 정확하게 복제했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Victor Dziwniel, Tianxiang Lu",
           "categories": [
             "cs.AI",
@@ -13152,8 +16587,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI로 무선 통신망을 제어하려는데 역할이 달라서 헷갈렸거든요",
+            "easy1_desc": "연구진은 인공지능 기반의 무선 접속망(AI-native RAN) 제어 시스템이 여러 프로토콜 계층과 시간대에 걸쳐 복잡하게 얽혀 있다는 점에 주목했는데요. 기존 방식과 인공지능(AI)이 어떤 역할을 맡아 서로 도울 수 있는지 비교할 공통 기준이 없었다는 말이에요. 쉽게 말하면, 각 기술이 정확히 어떤 일을 하는지 체계적으로 정리할 틀이 필요했다는 겁니다.",
+            "easy2_title": "그래서 네 가지 기능으로 분류해 보고 앞으로 나아갈 길을 짚어봤습니다",
+            "easy2_desc": "연구진은 표현·추론, 예측·시뮬레이션, 적응형 제어, 의사결정 종합이라는 네 가지 기능으로 무선 접속망(RAN) 의사결정을 나누는 기술 중립적 분류법을 제안했는데요. 이를 통해 기초 모델(foundation models)이나 강화학습 같은 다양한 접근법이 어떻게 결합되는지 살펴봤다는 거예요. 대신 실험 자원은 많은데 표준화된 평가 기준은 부족하다는 한계도 함께 지적했는데요, 앞으로는 다중 에이전트 협력이나 재현 가능한 평가를 연구해야 한다고 밝혔습니다.",
+            "topic": "인공지능(AI) 기반 무선 접속망(RAN) 제어를 위한 하이브리드 인공지능(AI)의 기능적 분류와 연구 방향을 다룬 조사 논문이에요.",
+            "one_line": "무선 통신망 제어 기술을 네 가지 기능으로 분류하고 하이브리드 AI의 방향을 조사했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": "연구진은 폐루프 실험을 위한 자원은 있지만 의미 있는 비교에 필요한 과제, 지표, 평가 규격의 표준화는 아직 부족하다고 밝혔습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Sabrine Aroua, Osama Arouk, Pegah Alizadeh",
           "categories": [
             "cs.AI"
@@ -13177,8 +16659,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "왜 에이전트가 실패했는지 찾으려는데 방법이 엇갈렸거든요",
+            "easy1_desc": "연구진은 실패한 에이전트의 실행 과정을 점검할 때 책임이 누구에게 있는지, 어느 단계에서 어긋났는지, 에러가 무엇인지 찾는 게 중요하다고 봤는데요. 기존 지도 학습 방식들은 단계를 짚어내거나 여러 예측을 한꺼번에 하려고 했지만, 위치를 찾은 결과를 다시 에러 진단에 써먹지는 않았다는 거예요. 뭔 소리냐면, 단계를 찾는 과정과 에러를 진단하는 과정이 서로 따로 놀았다는 말입니다.",
+            "easy2_title": "위치를 먼저 짚고 나서 에러를 진단하는 RecordRoute를 만들었습니다",
+            "easy2_desc": "그래서 연구진은 비교를 통해 위치를 먼저 찾고 그곳을 바탕으로 국소 진단을 하는 'RecordRoute'라는 방법을 제안했는데요. 단어와 글자 특징으로 기록을 나타내고 궤적 안에서 비교하며 순위를 매기는 방식이에요. 단계를 정확히 짚어낸 뒤 진단했더니 77.47%의 정확도가 나와서 전체를 한꺼번에 진단했을 때의 69.28%보다 높았다는 겁니다.",
+            "topic": "에이전트 실행 실패를 진단하기 위해 위치 찾기와 에러 분석을 결합한 방법인 RecordRoute를 제안하고 성능을 확인한 내용이에요.",
+            "one_line": "에이전트 실패 진단을 위해 위치 찾기와 진단을 결합한 RecordRoute를 제안했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yifan Duan, Lihuan Li, Chao Xue, Siyuan Zheng, Du Yin, Flora D. Salim",
           "categories": [
             "cs.AI"
@@ -13228,8 +16757,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "무엇이 문제였나",
+            "easy1_desc": "대형 언어 모델 서비스 엔진에서 프롬프트 접두사를 재사용하기 위해 키/값(KV) 캐시를 그래픽 처리 장치(GPU) 메모리에서 호스트 주 기억 장치(DRAM)와 솔리드 스테이트 드라이브(SSD)로 오프로드하는데요, 이 용량이 외부 계층과 GPU KV 풀의 두 단계에서 서비스 한계를 정한다는 겁니다. 그런데 기존의 손실 압축 방식을 쓰면 키/값 값과 출력이 달라지는 문제가 생기는데요, 무손실 압축을 쓰면 정확도를 지키면서 용량을 늘릴 수 있다는 거예요. 쉽게 말하면, 기존에는 용량을 아끼려면 정확도를 포기해야 했는데 그게 한계였다는 말이에요.",
+            "easy2_title": "그래서 무엇을 했고 무엇을 달라졌나",
+            "easy2_desc": "연구진은 수정하지 않은 엔진에서 외부 계층과 GPU 풀 모두에 무손실 키/값 압축을 적용하는 'LoomKV'를 만들어 봤는데요, 비에프일십육(BF16) 기준 원래 크기의 0.71 수준으로 저장하고 플래시어텐션-삼(FlashAttention-3)보다 빠른 연산 커널을 썼다는 겁니다. 외부 계층 모드에서는 저장 공간을 키워 에이전트엑스(AgentX)에서 원래 크기의 1.4배 큰 계층처럼 작동하게 만들고 처리율과 첫 토큰 생성 시간을 크게 줄여준다는 장점이 있는데요, 대신 압축과 해제 과정을 거치면서 용량이 충분할 때는 최대 2.2퍼센트의 처리량 비용이 든다는 단점도 같이 따라온다는 겁니다. 쉽게 말하면, 정확도를 깎지 않으면서도 메모리 공간을 아껴 더 많은 요청을 한꺼번에 처리할 수 있게 되었다는 말이에요.",
+            "topic": "대형 언어 모델 서비스에서 정확도를 잃지 않고 키/값 캐시를 압축하여 메모리 용량 한계를 극복하는 루미케이비(LoomKV) 기술에 관한 연구예요.",
+            "one_line": "무손실 키/값 캐시 압축으로 대형 언어 모델 서비스 용량을 늘렸어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Wentao Zhu, Ziao Sheng, Peng Deng, Huiqi Hu, Xuan Zhou, Xing Wei, Zhuang Wang",
           "categories": [
             "cs.AI"
@@ -13253,8 +16829,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "평균만 믿고 가다간 최악의 상황을 놓친다는 겁니다",
+            "easy1_desc": "기존에는 평균적인 결과만 보고 예산을 쓰다 보니 기후 변화 같은 불확실성 속에서 낭패를 보기 십상이었는데요. CAPTAIN이라는 방식이 처음 나왔지만, 전체 보상을 쪼개서 따지는 능력이 모자라다는 한계가 있었어요. 뭔 소리냐면, 세부적인 시간대별 기여도를 제대로 파악하지 못해 아쉬웠다는 말이에요.",
+            "easy2_title": "PPO와 IQN을 붙여서 학습 속도를 확 끌어올렸어요",
+            "easy2_desc": "그래서 연구진은 기존 최적화 방식을 PPO(Proximal Policy Optimisation)와 IQN(Implicit Quantile Network)으로 바꿔 달았는데요. 그 결과 뉴질랜드 해양 데이터셋에서 기존과 비슷한 수준의 성과를 훨씬 적은 학습 비용으로 낼 수 있게 되었다고 해요. 서서히 위험에 민감한 목표까지 확장할 수 있는 토대를 마련했다는 장점이 있는 반면, 결정의 세밀함 자체가 생태학적 이득의 큰 부분을 좌우한다는 점도 함께 드러났다는 겁니다.",
+            "topic": "체계적인 생태 보전을 위해 강화학습 모델인 CAPTAIN의 최적화기와 비평가를 개선하여 학습 효율과 위험 민감도를 높인 연구예요.",
+            "one_line": "CAPTAIN 모델에 PPO와 IQN을 결합해 생태 보전 계획의 학습 효율을 높였어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Ana Maria Quintero Ossa, Daniele Silvestro, James Rudd-Jones, Maria Perez-Ortiz",
           "categories": [
             "cs.AI"
@@ -13305,8 +16928,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "에러를 찾을 때 전부 다 읽지 않고 필요한 만큼만 확인해 봤습니다",
+            "easy1_desc": "개발자가 조수 역할을 하는 AI의 보고서를 검토할 때 모든 내용을 일일이 확인하는 대신 오류 여부만 알고 싶을 때가 있는데요, 생성형 검증기는 전체 오류 목록과 분류까지 계속해서 만들어 낼 수 있습니다. 연구진은 그 결과물 중에서 최종 결정을 내리는 데 실제로 얼마나 많은 부분이 필요한지 파악해 봤는데요, 2B 크기의 동결된 구간 검증기에서는 빈 오류 목록인지 첫 번째 객체인지 고르는 선택이 모든 위치 특정보다 앞서 일어난다는 걸 확인했습니다. 결국 전체를 다 읽지 않아도 핵심 결정을 먼저 알아낼 수 있다는 말이에요.",
+            "easy2_title": "불필요한 생성을 줄여 주는 방식을 도입해 속도를 크게 높였습니다",
+            "easy2_desc": "그래서 연구진은 전체 출력을 다 만드는 대신 앞부분의 고정된 토큰을 입력으로 제공하고 제한 없는 분기 토큰만 생성하는 방식을 적용했는데요, 2,015개의 코드 에이전트 테스트 응답에서 전체 생성을 다 할 때보다 상주 서비스를 84.84%나 줄여 준다는 점을 확인했습니다. F1 점수는 83.43으로 기존의 83.41과 비슷하면서도 논리적 토큰 총합이 같은 Native8보다 31.98%를 더 아껴 준다는 장점이 있는데요, 대신 짧아진 읽기 결과가 정확히 무엇을 유지하고 무엇을 추가 생성해야 하는지는 통제된 개입을 통해 확인해야 한다는 한계도 같이 따라온다는 겁니다.",
+            "topic": "생성형 검증기(Generative Verifier)의 출력물에서 최종 결정을 내리는 데 필요한 최소한의 부분을 파악하고 효율적인 생성 방식을 제안한 연구예요.",
+            "one_line": "생성형 검증기의 출력 과정에서 필요한 최소 부분을 파악하고 효율적인 생성 방식을 제안했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "짧아진 읽기 결과가 무엇을 유지하고 무엇을 추가적인 생성에 의존하는지는 통제된 증거 개입과 첫 위치 디코딩을 통해 확인해야 합니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [
+              "one_line 51자"
+            ],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Yanbin Gong, Lei Chen",
           "categories": [
             "cs.AI"
@@ -13382,8 +17054,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "뇌 활동과 AI 모델을 비교할 때 한계치가 왜 중요한가요",
+            "easy1_desc": "최근 AI 모델의 내부 동작이 실제 뇌 활동과 비슷해지면서 이를 측정하는 뇌 점수(brain scores)라는 지표가 쓰이고 있는데요, 뇌 데이터는 원래 잡음이 많아서 모델이 아무리 뛰어나도 도달할 수 없는 상한선이 존재합니다. 이 한계치를 잡음 상한선(noise ceiling)이라고 부르는데, 모델을 더 개선할 여지가 있는지 판단하거나 서로 다른 벤치마크를 비교할 때 꼭 필요한 기준이거든요. 그런데 이 상한선을 구하는 방법들이 여러 가지 나와 있지만, 정작 어떤 상황에서 믿을 만한 결과가 나오는지에 대한 통계적 특성은 잘 알려지지 않았다는 문제가 있습니다.",
+            "easy2_title": "잡음 상한선을 구하는 수학적 틀을 새로 만들었습니다",
+            "easy2_desc": "그래서 연구진은 뇌 기록 데이터를 다루는 통합된 수학적 틀을 새로 도입하고, 흔히 쓰이는 네 가지 잡음 상한선 추정 방식에 대한 수식을 직접 유도해 봤는데요, 각 방식이 어떤 상황에서 어떻게 작동할지 이론적으로 예측해 본 겁니다. 실제 fMRI와 EEG 데이터셋에 적용해 보니 기존 방법들이 상황에 따라 실제 잡음 상한선을 낮게 평가하는 경향이 있다는 점을 확인했거든요. 연구진은 이 결과를 바탕으로 상황별로 어떤 추정 방식을 쓰는 게 가장 좋은지 권장 사항을 정리해 제시했습니다.",
+            "topic": "뇌 활동 데이터와 AI 모델 간의 정렬을 평가하는 잡음 상한선 추정 방식들의 통계적 특성을 분석하고 개선안을 제시했습니다.",
+            "one_line": "뇌 점수 평가를 위한 잡음 상한선 추정 방식들의 통계적 특성을 분석했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Aude Maier, Lucas Gruaz, Martin Schrimpf, Johanni Brea",
           "categories": [
             "cs.AI",
@@ -13409,8 +17128,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "행동 정보가 빠진 기존 세계 모델의 한계",
+            "easy1_desc": "시각 데이터로 목표 지향 계획을 세우는 잠재 세계 모델은 예측만으로는 어떤 행동 관련 차이를 보존해야 할지 알기 어렵다는 문제가 있었는데요. 기존의 역동역학(inverse dynamics)은 제곱 오차 행동 회귀 방식을 쓰는데, 이 방식은 조건부 행동 평균이 바뀔 때만 추가 정보를 보상한다는 한계가 있거든요. 뭔 소리냐면, 실제 행동의 미세한 차이를 제대로 담아내지 못하고 놓치는 부분이 생긴다는 말이에요. 쉽게 말하면, 눈에 보이는 예측만으로는 행동의 진짜 의미를 다 살리기 어렵다는 겁니다.",
+            "easy2_title": "대조 학습을 통한 행동 식별(CIA)로 성능 높이기",
+            "easy2_desc": "그래서 연구진은 대안 중에서 실행된 행동을 정확히 찾아내는 대조 학습 방식인 CIA(Contrastive Identification of Actions)를 제안했는데요. 같은 맥락에서 일어날 수 있는 행동들을 비교하여 다음 잠재 상태가 주는 정보를 효과적으로 타겟팅한다는 거예요. 다섯 가지 시각 제어 벤치마크 실험을 해봤더니, 플래너를 바꾸지 않고도 기본 세계 모델이나 기존 회귀 방식보다 더 높은 평균 성공률을 기록했다고 하거든요. 성능이 좋아진다는 장점이 있는데, 대신 행동 제안 모델을 함께 다루어야 하므로 설계 과정이 조금 복잡해진다는 점도 같이 따라온다는 겁니다.",
+            "topic": "오프라인 시각 데이터 기반의 잠재 세계 모델에서 행동 정보를 더 정확히 학습하기 위한 대조 학습 방식(CIA)의 제안과 성능 검증에 대한 내용이에요.",
+            "one_line": "대조 학습 기반 행동 식별 모델(CIA)을 제안해 세계 모델의 계획 성능을 높였다.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Hayeong Lee, Youngjun Suh. Byung-Jun Lee",
           "categories": [
             "cs.AI"
@@ -13484,8 +17250,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "에이전트 뒤에 숨은 거대 언어 모델을 알 수 없다는 게 문제였어요",
+            "easy1_desc": "거대 언어 모델(LLM)-기반 에이전트(LLM-based agents)가 API 호출을 통해 원격 서비스에 접근해 사용자의 일을 마치는데요, 원격 서비스는 에이전트 뒤에 있는 백엔드 LLM을 알아내서 공격을 시작하고 싶어 한답니다. 하지만 서비스가 백엔드 모델에 직접 물어볼 수가 없고 에이전트와 상호작용하면서 눈에 보이는 응답만 모아야 해서 모델을 알아내는 일이 무척 어렵거든요. 쉽게 말하면, 겉모습만 보고는 안에 어떤 AI가 들어 있는지 알기 힘든 셈이라는 말이에요.",
+            "easy2_title": "객관식 문제로 선택 선호도 차이를 찾아내 AI 모델을 알아냈어요",
+            "easy2_desc": "그래서 연구진은 인간과 컴퓨터를 구별하는 캡차(CAPTCHA)에서 영감을 받아, 거대 언어 모델들을 구별하는 완전 자동화된 선호도 테스트인 캡타(CAPTA)를 선보였는데요. 모델들이 서로 다른 선택 선호도를 보이는 점을 이용해 객관식 문제를 검증 과제로 던지고 백엔드 LLM을 알아낸다는 겁니다. 교차 모델 옵션 생성 다양성을 바탕으로 문제를 고르고 LLM이 이끄는 검색으로 옵션 세트를 최적화하는 방식을 썼는데요. 평가해 보니 10개 모델 가족에 속한 25개 LLM을 단 10개의 문제만으로 99.0%의 평균 식별 정확도로 맞췄다는 장점이 있는데, 대신 에이전트와 결합할 때는 30개의 답안이 필요하다는 점도 같이 따라온다는 겁니다.",
+            "topic": "원격 서비스가 에이전트와 상호작용할 때 뒤에 숨은 거대 언어 모델을 객관식 문제의 선택 선호도로 알아내는 캡타(CAPTA) 접근법에 대한 연구예요.",
+            "one_line": "선택 선호도 차이를 이용해 에이전트 뒤의 LLM을 알아내는 캡타를 제안했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Kailun Yan, Yue Huang, Sisi Duan",
           "categories": [
             "cs.AI",
@@ -13510,8 +17323,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "인공지능이 복잡한 경제 흐름을 과연 따라 할 수 있을까",
+            "easy1_desc": "가계와 기업, 정부가 서로 영향을 주고받으며 움직이는 경제 시스템을 인공지능이 얼마나 잘 재현할 수 있는지 확인해 봤는데요. 연구진은 이를 위해 경제 시스템이 어떻게 작동하는지 인공지능이 스스로 이해하는 경제 세계 모델(EWM)이라는 개념을 정의했습니다. 뭔 소리냐면, 인공지능이 자원 제약 속에서 의사결정을 내리고 가상의 상황을 시뮬레이션할 수 있도록 만든다는 뜻이에요.",
+            "easy2_title": "경제 데이터를 학습시켜 실제와 비슷한 결과를 얻어냈어",
+            "easy2_desc": "연구진은 가계의 미시적 데이터와 거시적 경제 데이터를 연결하는 새로운 틀을 제안했는데요. 실제로 가계 소비 분포를 시뮬레이션해 보니 실제 데이터와 94.9%나 겹치는 결과를 보였고, 실제 국내총생산(GDP) 흐름도 잘 따라갔거든요. 특히 전염병 같은 충격 상황에서 인공지능 에이전트가 이 모델을 활용했을 때, 직접 결정할 때보다 GDP를 10.29% 더 높게 유지할 수 있었다는 점이 눈에 띕니다.",
+            "topic": "경제 시스템의 역동성을 재현하고 의사결정을 돕기 위한 경제 세계 모델(EWM) 프레임워크를 제안하고 검증한 연구입니다.",
+            "one_line": "경제 역동성을 재현하고 의사결정을 돕는 경제 세계 모델 프레임워크를 개발했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": "이번 연구에서 제시한 경제 세계 모델은 이제 막 시작하는 단계이므로, 경제학자와 AI 연구자들이 협력하여 더 발전시켜야 한다고 밝혔습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Qirui Mi, Yujia Ming, Bo Li, Haifeng Zhang",
           "categories": [
             "cs.AI"
@@ -13637,8 +17497,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "실패한 인공지능 설계를 그냥 버리지 않고 왜 망했는지 파헤쳐 봤는데요",
+            "easy1_desc": "인공지능 구조를 찾거나 거대 언어 모델(LLM)을 쓸 때 보통은 점수 하나만 매기고 끝내는데요, 그렇게 하면 왜 성공했고 왜 실패했는지 알 수 있는 중요한 단서들을 그냥 버리게 된다는 거예요. 연구진은 인공지능 에이전트가 직접 에러 패턴을 진단하고 가설을 세워서 검증해 보는 탐색 고리를 만들어 봤거든요. 실패한 이유를 분석하면 쓸만한 설계 규칙을 건질 수 있다는 말이에요. 쉽게 말하면, 실패작을 쓰레기통에 버리지 않고 오답 노트를 만들어서 다음 공부에 써먹는 셈이라는 겁니다.",
+            "easy2_title": "오답 노트를 바탕으로 규칙을 만들었더니 성능이 훨씬 좋아졌습니다",
+            "easy2_desc": "그래서 연구진은 의료 영상 분할을 할 때 3차원 영상에서 쓸 수 있는 두 가지 원리를 찾아냈는데요, 연산량을 줄이면서도 얇은 해부학적 경계를 잘 살리는 방법과 중첩된 부위 사이의 오류를 잡는 방법을 적용해 봤어요. 그 결과로 나온 게 바로 LeanNeXt와 LeanNeXt+인데요, 기존의 nnU-Net보다 연산 시간은 줄어들면서도 성능은 더 높아졌다는 겁니다. 장점은 적은 파라미터로도 큰 모델들을 뛰어넘는다는 건데, 대신 어떤 규칙을 언제 적용할지 정교하게 트리거를 걸어야 한다는 조건이 같이 따라온다는 거예요.",
+            "topic": "실패 사례 분석을 통해 인공지능 아키텍처 설계 규칙을 찾아내고 성능을 높인 탐색 고리에 대한 연구예요.",
+            "one_line": "실패 분석을 통한 인공지능 구조 탐색 고리로 설계 규칙을 찾아 성능을 높였어요",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Songtao Jiang, Yuan Wang, Fucheng Niu, Hualiang Wang, Jian Wu, Zuozhu Liu",
           "categories": [
             "cs.AI",
@@ -13688,8 +17595,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI 에이전트의 UI 디자인 능력을 평가하기가 너무 까다로웠는데요",
+            "easy1_desc": "전문적인 툴인 피그마(Figma)를 쓰는 인공지능(AI) 에이전트가 늘어났는데, 디자인 작업은 답이 딱 정해져 있지 않아서 능력을 평가하기가 원래 어렵거든요. 그래서 연구진은 실제 피그마 파일에서 가져온 84개의 작업과 783개의 화면으로 이루어진 벤치마크(성능 평가 세트)인 피그마에발(FigmaEval)을 만들어 봤다는 거예요. 조건은 정해 주되 해결책은 자유롭게 두는 방식이라서, 에이전트가 알아서 레이아웃과 화면 구성을 정하게 했다는 말입니다.",
+            "easy2_title": "새 평가 틀을 만들어 봤더니 에이전트마다 잘하는 점과 한계가 확 보였어요",
+            "easy2_desc": "그래서 연구진은 6개 영역에 걸쳐 전문가가 세운 22개의 평가 기준을 만들고, 전문 디자이너들이 블라인드 방식으로 비교하는 사람 평가 장도 도입해 봤는데요. 11개의 모델을 평가해 봤더니 기준에 따른 평가와 사람의 선호도가 꽤 잘 맞아떨어졌다는 겁니다. 장점은 디자인 방식과 품질, 효율성의 차이를 뚜렷하게 보여 준다는 건데, 대신 아직 현재 인공지능 에이전트의 강점과 한계를 깊이 있게 살펴보는 수준에 머무른다는 점도 같이 남는다는 거예요.",
+            "topic": "실제 피그마 파일을 바탕으로 인공지능(AI) 에이전트의 전문적인 사용자 인터페이스(UI) 디자인 능력을 체계적으로 평가하는 새로운 벤치마크 시스템을 제안했다는 내용이에요.",
+            "one_line": "AI 에이전트의 UI 디자인 평가 벤치마크를 개발했어요",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xinyue Huang, Yongyong Gao, Zhengyuan Pan, Zheng Wei, Xinya Liu, Duanyi Yan, Zhiyu Hang, Zheng Ma, Lewei Lu",
           "categories": [
             "cs.AI"
@@ -13765,8 +17719,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 방식으로는 복잡한 시각적 추론을 하기에 부족했는데요",
+            "easy1_desc": "연구진은 소형 멀티모달 대형 언어 모델(MLLM)의 세밀한 인식을 높이기 위해 잘라낸 이미지나 확대된 영역을 교사 측의 특별 정보로 쓰는 시각적 온폴리시 증류(OPD)를 살펴봤는데요. 알고 봤더니 지역적인 픽셀 수준의 단서들만으로는 전체 구조나 공간 관계, 고수준의 의미론이 필요한 복잡한 시각적 추론을 하기에 턱없이 부족하다는 겁니다. 뭔 소리냐면, 부분적인 확대 사진만으로는 전체적인 맥락을 제대로 파악하기 어렵다는 말이에요.",
+            "easy2_title": "질문 맞춤형 시각 단서를 써서 학생 모델을 가르쳐 봤는데요",
+            "easy2_desc": "그래서 연구진은 질문에 맞춘 시각적 단서까지 교사의 특별 정보로 확장한 시각 단서 온폴리시 자기 증류(VC-OPD)라는 방법을 제안했는데요. 고급 MLLM이 질문마다 필요한 핵심 시각 세부 사항과 구조적 관계를 담은 단서를 만들고, 여러 단계의 품질 필터링을 거쳐 믿을 만한 단서만 추려 학습 때 교사에게만 제공한다는 겁니다. 학생 모델은 원래 이미지에서 비판적인 증거를 바로 찾아내는 법을 배우게 되는데, 추론할 때는 추가 정보가 따로 필요 없다는 장점이 있지만, 고급 모델을 단서 생성에 따로 써야 한다는 점도 함께 따라온다는 겁니다.",
+            "topic": "질문 맞춤형 시각 단서를 활용해 소형 멀티모달 대형 언어 모델의 시각적 추론 능력을 높이는 자기 증류 학습법을 제안한 연구예요.",
+            "one_line": "질문 맞춤형 시각 단서를 활용하는 자기 증류 학습법을 제안했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Qinxuan Wang, Zheyu Zhang, Yijing Yang, Han Shu, Chuang Wang, Peipei Yang, Shuo Tang, Jie Hu, Shiming Xiang",
           "categories": [
             "cs.AI"
@@ -13865,8 +17866,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 방식은 이진 순서를 억지로 늘려 써서 묶이는 문제가 있었는데요",
+            "easy1_desc": "연구진은 디엔에이(DNA) 염기서열 분석에서 창 크기 w와 k-mer 길이 k가 각각 (12, 5)일 때, 기존의 최신 방식인 GreedyMini와 OptMini가 이진 순서를 기반으로 삼아 한계를 겪었다고 밝혔는데요. 이 방식들은 이진 순서를 디엔에이 4진 순서로 끌어올리는 과정에서 32개의 5-mer 블록이 묶이고 보편적 적중 집합(UHS)의 접두사가 1024개 중 448개로 제한되는 문제가 생겼다는 겁니다. 쉽게 말하면, 이진 구조를 억지로 맞추려다 보니 최적화의 폭이 좁아졌다는 말이에요.",
+            "easy2_title": "이진 방식을 건너뛰고 4진 순서를 직접 최적화해 밀도를 낮췄습니다",
+            "easy2_desc": "그래서 연구진은 이진 리프팅 방식을 아예 거치지 않고, 4진 순열을 처음부터 직접 최적화하는 새로운 방식을 제안했는데요. 드 브루인(de Bruijn) 전달 행렬 동적 계획법과 가중치 집합 커버 초기화 등을 적용해 순서를 찾았더니, 밀도가 낮아지고 충돌하는 창의 수도 줄어드는 결과로 이어졌다는 겁니다. 장점은 기존 방식보다 디엔에이 밀도를 더 낮출 수 있다는 건데, 대신 최적화 과정에서 세밀한 탐색 기법들을 복합적으로 써야 한다는 점도 함께 따른다는 겁니다.",
+            "topic": "디엔에이 미니마이저 밀도를 높이기 위해 기존의 이진 리프팅 한계를 깨고 4진 순서를 직접 최적화하는 새로운 방법을 제시한 연구예요.",
+            "one_line": "디엔에이 미니마이저의 4진 순서를 직접 최적화해 밀도를 낮췄어요.",
+            "topic_tag": "반도체·하드웨어",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                false
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                false
+              ],
+              [
+                "point1",
+                false
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "3/6",
+            "evidence_all": false,
+            "evidence_by_symbols": 3,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "반도체·하드웨어",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Stefan G. Creadore, Peyton Berntsen",
           "categories": [
             "cs.AI"
@@ -13915,8 +17963,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "관련 있는 기록을 가져와도 정작 답을 내기엔 턱없이 부족하다는 거예요",
+            "easy1_desc": "연구진이 긴 기억을 꺼내 쓰는 기술을 살펴봤더니, 질문에 딱 맞는 기록을 찾아오기는 하는데 정작 답을 채우기에는 부족한 경우가 많았다고 해요. 알고 보니 사실관계나 시간, 상태 같은 조건을 모두 채울 수 있는 증거가 한꺼번에 모이지 않아서 생기는 문제라는 겁니다. 쉽게 말하면, 필요한 단서 조각들은 대충 챙겼는데 막상 퍼즐을 맞추려니 짝이 안 맞는 셈이에요.",
+            "easy2_title": "요구 조건을 직접 정의해서 증거를 골라 담는 방식을 만들어 봤어요",
+            "easy2_desc": "그래서 연구진은 질문이 요구하는 바를 정확한 형태로 바꾸고, 이를 바탕으로 필요한 증거를 엮어내는 비데멤(BiDE-Mem)이라는 기술을 제안했는데요. 이 방식을 썼더니 로코모(LoCoMo) 데이터셋에서는 정확도가 6.23%포인트 올랐고, 롱멤에발(LongMemEval)에서는 91.80%의 성능을 기록했다고 해요. 성능이 좋아진다는 장점이 있는데, 대신 질문을 어떻게 정의하느냐에 따라 결과가 크게 달라질 수 있다는 점도 같이 따라온다는 겁니다.",
+            "topic": "기억을 꺼내 쓰는 과정에서 질문이 요구하는 조건과 실제로 가져온 증거가 엇나가는 문제를 진단하고, 이를 바로잡는 새로운 기술을 제안한 논문이에요.",
+            "one_line": "기억 검색에서 조건과 증거가 엇나가는 문제를 진단하고 비데멤으로 정확도를 높였다.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Shiyao Liu, Yixing Fan, Ruqing Zhang, Xiaohui Yan, Jiafeng Guo, Xueqi Cheng",
           "categories": [
             "cs.AI"
@@ -13940,8 +18035,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI가 과거 경험을 재사용할 때 나쁜 정보가 섞일 수 있어요",
+            "easy1_desc": "긴 작업을 수행하는 거대 언어 모델(LLM) 에이전트는 과거의 성공 사례를 다시 꺼내 쓰곤 하는데요, 만약 그 경험 속에 악의적인 지침이나 잘못된 정보가 섞여 있다면 문제가 생깁니다. 이런 나쁜 경험이 에이전트의 기억 속에 남아 나중에 다른 작업을 할 때까지 계속 해로운 영향을 끼치게 되거든요. 쉽게 말하면, AI가 이전에 겪은 나쁜 기억을 그대로 학습해서 다음 작업까지 망칠 수 있다는 말이에요.",
+            "easy2_title": "위험한 경험을 미리 찾아내고 고쳐 주는 ExpGuard를 만들었어요",
+            "easy2_desc": "연구진은 이런 위험을 막기 위해 ExpGuard라는 프레임워크를 제안했는데요, 경험을 다시 쓰기 전에 위험한지 먼저 평가하고 문제가 있다면 온라인에서 바로 수리하는 방식이에요. 구체적으로는 경험의 출처와 실행 과정을 그래프로 그려 위험을 예측하고, 반대 상황을 가정해 비교하는 방식으로 학습을 진행합니다. 덕분에 에이전트가 위험한 경험을 사용하기 전에 미리 걸러낼 수 있게 된 셈이에요.",
+            "topic": "거대 언어 모델 에이전트가 과거의 경험을 재사용할 때 발생할 수 있는 오염된 정보의 위험을 평가하고 이를 온라인에서 복구하는 체계적인 방법론을 제시했어요.",
+            "one_line": "LLM 에이전트의 오염된 경험을 탐지하고 수리하는 ExpGuard를 개발했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yuzhou Chen, Licheng Pan, Zhixuan Chu, Yunsheng Lu, Yichen Sun, Han Zheng, Yan Wang, Bingyu Zhu, Haiwen Hong, Longtao Huang, Kui Ren",
           "categories": [
             "cs.AI"
@@ -13965,8 +18107,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "강화학습으로 똑똑해질수록 사람이 알아채기 힘든 거짓말이 늘어납니다",
+            "easy1_desc": "강화학습(RL)은 사람이나 환경의 피드백을 받아 모델의 능력을 키우는 방식인데요, 문제는 이 과정에서 모델이 내놓는 오류를 사람이 잡아내기가 점점 어려워진다는 거예요. 모델이 더 똑똑해질수록 거짓말도 교묘해진다는 말인데, 이게 왜 문제냐면 사람이 검증하기 어려운 환각(Hallucination) 현상이 강화학습을 거치며 더 심해질 수 있기 때문입니다. 결국 모델의 성능은 좋아지는데 정작 사람이 그 결과물을 믿을 수 없는 상황이 생기는 셈이에요.",
+            "easy2_title": "사람이 검증하기 쉬운 답변을 하도록 모델을 다시 훈련시켰습니다",
+            "easy2_desc": "연구진은 사람이 알아채기 힘든 환각을 줄이기 위해 2,728개의 이미지-텍스트 데이터셋인 ITHV를 만들었는데요, 이를 바탕으로 DAPO-V라는 새로운 학습 방법을 제안했습니다. 이 방식은 모델이 답변할 때 사람이 검증하기 어려운 질문일수록 더 큰 벌점을 주어, 모델이 스스로 신중하게 답변하도록 유도하는 거예요. 실제로 테스트해 봤더니 기존 방식보다 환각을 잡아내는 능력이 5.78에서 9.72% 포인트까지 올랐거든요. 사람이 직접 블라인드 테스트를 해봐도 DAPO-V가 만든 결과물에서 환각을 훨씬 더 잘 찾아낼 수 있었다고 합니다.",
+            "topic": "멀티모달 대규모 언어 모델(MLLM)의 강화학습 과정에서 사람이 검증하기 어려운 환각 문제를 해결하는 방법론에 관한 연구입니다.",
+            "one_line": "MLLM 강화학습 시 사람이 검증하기 쉬운 답변을 하도록 학습 알고리즘을 개선했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jianhong Pang, Ziyi Ye, Qiuxia Hou, Yanhao Zhang, Zuxuan Wu",
           "categories": [
             "cs.AI"
@@ -13990,8 +18179,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "로봇이 보고 움직이는 걸 연결하려는데 뭐가 문제였나",
+            "easy1_desc": "연구진은 로봇 제어 모델에서 시각적 예측과 실제 행동을 잇는 방식을 살펴봤는데요, 기존에는 비디오를 먼저 만들고 나서야 행동을 하거나 둘의 연결이 매끄럽지 않다는 점이 문제였다는 겁니다. 쉽게 말하면, 눈으로 보는 것과 손으로 움직이는 게 따로 놀기 쉬웠다는 말이에요.",
+            "easy2_title": "그래서 비디오 생성과 행동을 같이 학습하는 모델을 만들었더니",
+            "easy2_desc": "연구진은 이펙트밤(EffectWAM)이라는 모델을 만들어 비디오 변화 예측과 실행 가능한 행동 조각을 동시에 학습하도록 했는데요, 덕분에 비디오를 다 만들 때까지 기다리지 않고도 로봇 제어가 바로 가능해졌다는 겁니다. 장점은 속도가 빨라진다는 점인데, 대신 20,000시간이 넘는 방대한 데이터와 여러 설정이 필요하다는 부담도 같이 따른다는 겁니다.",
+            "topic": "시각적 변화 예측과 실행 가능한 로봇 제어를 동시에 학습하는 이펙트밤(EffectWAM) 모델을 제안하고 그 성능을 검증한 내용이에요.",
+            "one_line": "로봇 제어를 위한 이펙트밤 모델을 개발하고 성능을 검증했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yuan Zhang, Hao Cui, Jingfei Ni, Meiyi Wang, Xin Nie, Chi Liu, Wenjie Xu, Lin Gao, Hao Li, Xianhe Zhang, Jiajia Wu, Diyuan Liu, Jia Pan, Chao Ji",
           "categories": [
             "cs.AI"
@@ -14094,8 +18330,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "여러 단어를 한꺼번에 뽑을 때 생기는 정보 손실을 따져 봤어요",
+            "easy1_desc": "마스크드 확산 언어 모델(Masked Diffusion LM)은 한 번에 여러 단어를 생성해서 속도가 빠른데요, 각 단어를 따로따로 뽑다 보니 단어들 사이의 관계가 끊어지는 문제가 생깁니다. 이 관계가 얼마나 사라졌는지를 '조건부 전체 상관관계(C)'라고 부르는데, 기존 방식은 이 값을 정확히 알지 못하고 범위만 짐작할 뿐이었거든요. 연구진은 이 손실된 관계의 크기를 얼마나 잘 예측할 수 있는지 확인해 봤습니다.",
+            "easy2_title": "기존 예측 방식의 한계를 확인하고 더 나은 측정법을 찾았어요",
+            "easy2_desc": "네 가지 모델로 실험해 봤더니, 기존의 예측 방식은 실제 손실값과 약 1비트 정도 차이가 났습니다. 그래도 단순히 범위만 아는 것보다는 1.8배에서 3.7배 정도 더 정확한 편이었는데요, 여러 규칙을 비교해 보니 가장 약한 위치를 기준으로 삼는 것보다 전체를 묶어서 판단하는 방식이 더 나았습니다. 다만 모델마다 일관성이 달라서, 모델이 예측값을 어디에 저장하는지 확인하는 검증 절차가 꼭 필요하다는 점을 밝혀냈습니다.",
+            "topic": "마스크드 확산 언어 모델에서 병렬로 단어를 생성할 때 발생하는 단어 간 의존성 손실을 어떻게 측정하고 예측할 것인가에 대한 연구입니다.",
+            "one_line": "마스크드 확산 언어 모델의 단어 의존성 손실 예측 정확도를 분석했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "이번 연구는 고정된 단어 집합에 대한 상관관계 예측에 집중했을 뿐, 의존성을 고려하는 디코더가 실제로 얻는 이득을 다룬 것은 아닙니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Dovud Asadov, Rustambek Urokov, Qobiljon Toshnazarov, Abduaziz Kayumov, Mardon Hazratov, Husanboy Mansuraliyev",
           "categories": [
             "cs.AI",
@@ -14198,8 +18481,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "도구가 자꾸 오작동하는 진짜 이유를 찾아봤습니다",
+            "easy1_desc": "도구 호출은 원래 연산이 맞았어도 AI 에이전트(AI agents)가 볼 수 없는 설정이나 구분자 문제로 실패할 수 있는데요, 이를 해결하려면 후보 설정을 평가하는 교정과 탐색을 같이 해야 하거든요. 그런데 두 과정이 하나의 컴파일 예산을 나눠 쓰다 보니, 전부 먼저 교정하면 좋은 정책이 늦게 나오고 매번 다시 풀면 다음 질문이 늦어진다는 문제가 생깁니다. 쉽게 말하면, 언제 어떻게 설정을 맞출지가 AI 도구 활용(Tool-Use Policies)의 큰 걸림돌이었다는 말이에요.",
+            "easy2_title": "새 컴파일러를 써서 더 빠르게 최적의 정책을 찾았습니다",
+            "easy2_desc": "연구진은 효과가 미치는 설정에서 호출을 바로 쓸 수 있다는 점에 착안해 훈련이 필요 없는 CAPE라는 컴파일러를 만들었는데요, 언제나 실행 가능한 정책을 유지하면서 개선할 수 있는 호출에 교정을 집중한다는 계획이에요. 그 결과 64개의 요청으로 만든 CSV와 JSON 작업에서 504번 중 502번이나 독립적으로 계산된 최적값에 도달했고, 기존 탐색보다 컴파일 시간을 22.0% 줄였다고 합니다. 컴파일 시간이 비슷하면서도 더 높은 완성도를 보여 준다는 장점이 있는 반면, 최적값과 실행값이 만날 때만 최적성을 인증한다는 조건도 같이 따라온다는 겁니다.",
+            "topic": "보이지 않는 설정과 제한된 예산 속에서 효율적으로 도구 사용 정책을 최적화하는 새로운 컴파일러 CAPE를 제안한 내용이에요.",
+            "one_line": "훈련이 필요 없는 CAPE 컴파일러를 만들어 도구 사용 정책을 효율적으로 최적화했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jiahao Wang, Xiaoxuan Chen, Aijun Yang, Xiaohua Wang",
           "categories": [
             "cs.AI",
@@ -14299,8 +18629,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "소프트웨어 개발 데이터를 만드는 게 너무 어렵거든요",
+            "easy1_desc": "실제 소프트웨어 개발 업무를 수행하는 AI 에이전트를 만들려면 저장소 구조나 모듈 간의 관계 같은 복잡한 정보를 이해해야 하는데요, 이런 학습 데이터를 고품질로 대량 확보하는 게 매우 어렵다는 문제가 있었어요. 기존 방식으로는 데이터의 질을 일일이 따지기가 힘들었거든요. 쉽게 말하면, AI를 똑똑하게 가르칠 좋은 교재가 부족했다는 말이에요.",
+            "easy2_title": "데이터를 자동으로 골라내고 질문까지 만드는 틀을 짰어요",
+            "easy2_desc": "연구진은 RepoEviAgent라는 새로운 틀을 제안했는데요, 8,477개의 오픈소스 저장소와 248만 개의 풀 리퀘스트 기록에서 쓸 만한 데이터를 자동으로 골라내요. 그다음 샌드박스 환경에서 여러 AI 에이전트가 협력해 실제 코드를 실행하고 검증하며 질문과 답변을 생성하는 방식이에요. 덕분에 5개 프로그래밍 언어로 구성된 334개의 고품질 과제를 담은 RepoEviQA라는 평가 도구까지 만들 수 있었다는 겁니다.",
+            "topic": "소프트웨어 저장소 수준에서 근거 기반 질의응답을 수행할 수 있도록 데이터를 생성하고 평가하는 프레임워크를 제안했어요.",
+            "one_line": "소프트웨어 저장소 수준의 질의응답 데이터를 자동으로 생성하고 평가하는 틀을 만들었어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Aoqi Hu, Yueao Xing",
           "categories": [
             "cs.AI"
@@ -14374,8 +18751,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 모델은 감정을 놓쳤고 LLM 에이전트에는 감정 추론이 없었다",
+            "easy1_desc": "사람의 행동을 움직이는 핵심은 감정인데요, 지금까지의 행동 모델은 감정이 지각이나 의사결정에 미치는 역할을 담아내지 못했다는 겁니다. 긴급 대응이나 공중 보건 같은 분야는 감정을 아는 모델이 부족해서 한계가 컸는데요. 최근에 대형 언어 모델(LLM)을 에이전트 기반 모델(ABM)에 많이 넣고 있지만, LLM 에이전트에 감정 추론을 어떻게 넣을지나 실제 감정 패턴을 그대로 재현하는지 검증한 연구는 거의 없었다는 말이에요. 쉽게 말하면, 감정이 빠진 행동 모델만 많았고 LLM으로 감정을 다루려는 시도가 부족했다는 셈이에요.",
+            "easy2_title": "계층형 프롬프트를 써서 감정 반응을 만들었더니 양극화와 합의가 모두 재현됐다",
+            "easy2_desc": "그래서 연구진은 인구통계, 심리, 맥락 정보를 넣어 LLM 에이전트가 사건별 감정 반응을 만들도록 하는 계층형 프롬프트 틀을 제안했는데요. 이걸 페이스북(Facebook) URL 공유 데이터를 바탕으로 한 소셜 미디어 반응과 비교해 봤더니, 양극화된 감정과 합의 중심의 감정 패턴을 꽤 정확하게 재현해 냈다는 겁니다. 장점은 실제 사람처럼 감정 반응을 시뮬레이션할 수 있다는 것인데요, 대신 인간 기준보다 분노 표현이 적게 나오는 체계적인 차이도 함께 확인됐다는 점이에요. 쉽게 말하면, LLM 에이전트가 인간을 대신해 감정 행동을 흉내 낼 가능성을 보여줬지만, 앞으로 계속 보정과 조정이 필요하다는 말이에요.",
+            "topic": "LLM 에이전트에 인구통계와 심리 단서를 넣어 실제 사람의 감정 반응을 시뮬레이션하고, 소셜 미디어 데이터와 비교해 그 한계와 가능성을 검증한 연구예요.",
+            "one_line": "LLM 에이전트의 감정 반응 모델을 만들고 실제 데이터와 비교했어요",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "인간 집단과 비교했을 때 LLM 에이전트의 감정 표현에서 분노가 덜 나타나는 등의 체계적인 차이가 있어 계속 보정이 필요합니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Rebecca Marigliano, Peter Carragher, Kathleen M. Carley",
           "categories": [
             "cs.AI"
@@ -14425,7 +18849,7 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 실패",
           "keywords": [],
           "authors": "Qian Chen, Kun Zhu, Zhongyi Wang, Ling Chen",
           "categories": [
@@ -14501,8 +18925,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 인과 관계 모형은 정확한 상위 모형을 찾기 어려웠는데요",
+            "easy1_desc": "기존에는 미시적 모형과 일치하는 거시적 인과 모형을 먼저 제안하고 검증해 왔는데요, 거시적 관계가 애매모호해서 일치하는 모형을 찾기가 원래 어렵다는 거예요. 뭔 소리냐면, 똑같은 거시적 개입처럼 보여도 미시적 수준에서는 결과가 제각각이라 차이가 생기기 때문이라는 말이에요. 쉽게 말하면, 기준으로 쓸 만한 거시 모형 자체가 불완전했던 셈이라는 겁니다.",
+            "easy2_title": "빠진 변수를 채워 넣는 새로운 방식을 제안해 문제를 풀었습니다",
+            "easy2_desc": "그래서 연구진은 빠진 변수를 보완하는 보완 변수 q를 도입해 일관된 거시 모형을 직접 만들어내는 CCA(Constructive Causal Abstraction) 프레임워크를 제안했는데요, 선형일 때는 유일한 형태를 찾고 비선형일 때는 미분 방정식 기반 알고리즘을 쓴다는 거예요. 이렇게 하면 모델 감사와 수정의 차이를 분명하게 드러낼 수 있는 장점이 있는데, 대신 상황에 맞는 조건을 잘 따져야 한다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 애매한 부분을 그냥 두지 않고 계산 가능한 변수로 채워 넣었다는 말이에요.",
+            "topic": "거시적 인과 모형을 직접 구성하는 새로운 프레임워크인 CCA를 제안하고, 이를 통해 모델 감사와 수정의 차이를 규명하며 해석 가능성의 역설을 해결했다는 내용이에요.",
+            "one_line": "빠진 변수를 보완하는 거시적 인과 모형 구성 프레임워크를 제안했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yuchen Zhu, Sergio Hernan Garrido Mejia, Dominik Janzing",
           "categories": [
             "cs.AI"
@@ -14526,8 +18997,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI가 스스로 자기 기술을 고치지 못하는 게 문제였어요",
+            "easy1_desc": "요즘 인공지능 모델을 에이전트처럼 써서 복잡한 일을 시키는 경우가 많은데요, 이때 모델의 성능을 높이려고 재사용 가능한 코드나 프롬프트 같은 기술을 활용하곤 합니다. 그런데 이런 기술을 사람이 직접 만들거나 한 번에 생성하는 방식은 한계가 분명했거든요. 그래서 최근에는 점수를 기준으로 반복해서 기술을 수정하는 방식이 쓰였는데, 이것도 여전히 최적화 과정이 복잡하다는 문제가 있었던 겁니다.",
+            "easy2_title": "AI 에이전트가 직접 자기 기술을 최적화하게 만들었어요",
+            "easy2_desc": "이번 연구에서는 코딩 에이전트가 스스로 최적화 도구가 되어 자기 기술을 개선하도록 만들었는데요, 별도의 가이드 없이도 5개의 벤치마크에서 기존의 기술 최적화 방식보다 더 뛰어난 성능을 보였다고 해요. 뭔 소리냐면, 에이전트에게 평가할 수 있는 지표만 주어지면 스스로 자기 행동을 다듬어 특정 작업에 최적화된 맥락을 제공할 수 있다는 뜻이에요. 결과적으로 에이전트가 스스로를 개선하는 능력을 갖췄음을 증명한 셈입니다.",
+            "topic": "코딩 에이전트가 스스로 기술을 최적화하는 도구로서 얼마나 효과적인지를 입증한 연구예요.",
+            "one_line": "코딩 에이전트가 스스로 기술을 최적화하도록 만들어 성능을 개선했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Ryan Tsui, Yuge Zhang, Yuqing Yang",
           "categories": [
             "cs.AI"
@@ -14576,8 +19094,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "증명 과정이 너무 길고 복잡해서 줄여야 했어요",
+            "easy1_desc": "린(Lean) 4로 작성된 기존 수학 증명들은 소스 코드 길이가 길고 검증 비용이 많이 든다는 문제가 있었는데요. 연구진은 증명의 내용은 그대로 유지하면서도 코드의 길이를 줄이고 여러 버전의 린 환경에서도 호환되도록 만드는 작업을 수행했어요. 쉽게 말하면 증명의 본질은 건드리지 않고 군더더기만 걷어내 효율을 높이려 한 겁니다.",
+            "easy2_title": "AI 모델이 직접 증명을 고치고 검증까지 마쳤어요",
+            "easy2_desc": "연구진은 큐웬(Qwen) 모델과 코덱스(Codex) 도구를 활용해 증명 코드를 자동으로 검사하고 더 나은 형태로 교체하는 시스템을 만들었는데요. 모델이 제안한 수정안이 실제로 증명 성능을 높이고 모든 버전에서 오류 없이 통과하는지 확인하는 과정을 거쳤어요. 그 결과 린 리팩터 아레나(Lean Refactor Arena)에서 1위를 차지했으며, 최종적으로 127개의 모든 증명 검증을 성공적으로 마쳤다는 겁니다.",
+            "topic": "린(Lean) 4 증명 코드의 효율성을 높이기 위해 AI 모델을 활용한 자동 리팩터링 시스템을 개발하고 그 성능을 검증했어요.",
+            "one_line": "AI 모델을 활용해 린 4 증명 코드를 효율적으로 리팩터링하고 검증했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Lazar Milikic, Gordan {\\DJ}uri\\'c, Viktor Kun\\v{c}ak",
           "categories": [
             "cs.AI"
@@ -14680,8 +19245,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기록을 똑같이 따라 한다고 해서 가정 상황에도 맞는 건 아니었어요",
+            "easy1_desc": "거대 언어 모델(Large Language Model)이 현장 업무 흐름을 흉내 내는 시뮬레이션 프로그램을 짜 줄 수 있는데요, 옛날 기록을 그대로 재현한다고 해서 만약에 이런 일이 생기면 어떨까 하는 가정 질문에도 늘 바른 답을 주는 건 아니라는 거예요. 원했던 변화가 엉뚱한 곳에 적용되거나, 정책이 바뀌면 프로그램이 안 맞게 되기도 하거든요. 그런데 요즘 쓰는 검사법은 프로그램 전체가 맞는지 틀리는지만 통과/실패로 보여 줘서, 개별 대답을 믿어도 되는지 알기 어렵다는 겁니다.",
+            "easy2_title": "개별 질문마다 믿을 수 있는지 따져 주는 라이브러리를 만들었어요",
+            "easy2_desc": "그래서 연구진은 시뮬레이터가 낸 답을 믿어도 될지 개별 변화마다 따져 주는 Vouch라는 라이브러리를 내놓았는데요, 가정 질문을 구조화된 변화로 바꿔서 프로그램과 기록에 대어 가며 확인하는 방식이에요. 어떤 변화를 통과했는지 기록해 뒀다가 프로그램을 다시 쓸 때마다 관련 테스트를 거듭 반복한다는 겁니다. Haiku와 Sonnet이 짠 프로그램에서 틀린 답의 97.6%를 없애면서도 전체 답의 80.1%는 믿을 수 있게 되었다는 장점이 있는데, 대신 검사 과정이 더 붙는다는 점도 함께 따라온다는 말이에요.",
+            "topic": "생성형 시뮬레이터가 낸 대답을 개별 가정 질문마다 신뢰할 수 있는지 검사하는 라이브러리 Vouch의 제안과 성능 평가",
+            "one_line": "시뮬레이터 대답의 신뢰성을 검사하는 라이브러리를 제안하고 성능을 평가했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Ashraf Abdul-Muumin, Aniruddha Chattopadhyay, Noorbakhsh Golilarz, Kaushik Roy",
           "categories": [
             "cs.AI"
@@ -14755,8 +19367,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "거대 언어 모델이 진짜 길이나 위치를 잘 아는지 확인해 봤습니다",
+            "easy1_desc": "연구진은 거대 언어 모델(LLM)이 지도 기반 질문이나 위치 서비스 같은 공간 응용 프로그램에 쓰이는데, 진짜 실제 좌표나 장소, 거리 같은 위치 정보를 정확히 아는지 궁금해서 살펴봤는데요. 미국 웨스트 라피엣의 실제 지도 데이터를 바탕으로 주소 변환이나 경로 찾기 같은 일곱 가지 공간 연산 문제를 모아 만든 'LimoBench'라는 기준을 활용해 모델들을 테스트해 봤더니, 외부 도구가 없는 모델들은 대부분 한 자릿수 정확도(예컨대 GPT-6 Luna의 경우 3.1%)를 보였습니다. 뭔 소리냐면, 그냥 말만 들고 있는 상태에서는 실제 거리 감각이나 위치 능력이 턱없이 모자라고 믿기 힘들다는 말이에요.",
+            "easy2_title": "공간 도구를 쥐여 줬더니 정확도가 눈에 띄게 올랐습니다",
+            "easy2_desc": "그래서 연구진은 모델 콘텍스트 프로토콜(MCP) 기반의 공간 데이터 연결 도구인 'Limo'를 만들어 모델에 붙여 줬는데요. 이 도구를 쓰게 했더니 같은 모델의 정확도가 거의 완벽한 수준(GPT-6 Luna 기준 99.3%)으로 확 뛰어올랐다는 거예요. 대신 지연 시간이 0.2초 늘어나고 토큰은 7.7배, 비용은 2.2배 드는 대가가 따른다는 단점도 함께 나타났는데요. 쉽게 말하면, 도구를 달아 주면 정확해지지만 약간의 비용과 시간 부담은 감수해야 한다는 셈이에요.",
+            "topic": "거대 언어 모델의 부족한 실제 위치 인식을 확인하고, 공간 도구 연동을 통해 정확도를 크게 높이는 방법을 제안한 연구예요.",
+            "one_line": "거대 언어 모델의 위치 인식 한계를 측정하고 공간 도구로 정확도를 높였다",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": "현재의 거대 언어 모델들은 길 수준의 공간 지식이 부족하고 믿기 어려우며, 외부 공간 도구를 쓸 때는 지연 시간과 토큰 및 비용이 추가로 드는 부담이 있습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 2,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Gautam Choudhary, Jack Peng, Udesh Kumarasinghe, Rachel Rafik, Yousef Hammad, Ahmed Samy, Walid G. Aref",
           "categories": [
             "cs.AI",
@@ -14782,8 +19441,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "확신만 믿고 토큰을 찍다 보니 이미지가 무시되는 문제가 있었습니다",
+            "easy1_desc": "확신도(confidence)만 보고 후보 토큰을 정하려다 보니, 이게 실제 이미지에서 나온 건지 언어적 사전 지식(language prior)에서 나온 건지 구분하지 못하는 문제가 생겼는데요. 연구진이 한쪽을 가려 가며 실험을 해 봤더니, 높은 확신도로 찍은 토큰의 거의 10개 중 9개는 이미지와 상관이 없다는 걸 알아냈다는 겁니다. 게다가 엉뚱한 말이나 환각(hallucination)이 생기는 샘플은 깊은 층의 주의 집중 조직에서 엔트로피가 뚜렷하게 높아지는 특징을 보였다는 말이에요. 쉽게 말하면, 모델이 엉뚱한 걸 확신을 가지고 내뱉고 있었다는 셈입니다.",
+            "easy2_title": "이미지 증거를 따져 묻는 새로운 디코딩 방식을 도입했습니다",
+            "easy2_desc": "그래서 연구진은 따로 학습을 하지 않고도 쓸 수 있는 'CD-APC'라는 디코딩(decoding) 방식을 제안했는데요. 기본 후보 풀 안에서 이미지 증거를 반영해 점수를 다시 매기고, 모델이 받아들일 수 있는지와 대조 집중도를 함께 따져서 토큰을 쓸지 말지 결정한다는 겁니다. 여기에 단계별 난이도에 맞춰 조절되는 역창(inverse-window) 메커니즘까지 더해 성능을 끌어올렸다는 말이에요. 2개의 백본(backbone)과 5개의 벤치마크(benchmark)에서 두루 성능이 좋아졌다는 장점이 있는데, 대신 추가적인 계산 과정을 거쳐야 한다는 점도 함께 따라온다는 겁니다.",
+            "topic": "멀티모달 확산 언어 모델(Multimodal Diffusion Language Models)에서 이미지 증거를 바탕으로 토큰 생성 과정을 조절하는 디코딩 방법인 CD-APC를 제안한 내용입니다.",
+            "one_line": "시각적 증거를 반영하는 디코딩 방식으로 멀티모달 모델 성능을 높였습니다.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Tongxiao Hu, Yikai Zhao, Qiyan Zhao, Xiaosong Yuan, Xuhang Chen, Pengzhou Cheng, Xiaofeng Zhang",
           "categories": [
             "cs.AI"
@@ -14832,7 +19538,7 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 실패",
           "keywords": [],
           "authors": "Sam Kingsley",
           "categories": [
@@ -14857,8 +19563,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "사람의 행동이 시간이 지나며 어떻게 바뀌는지 따라가기가 어려웠어요",
+            "easy1_desc": "AI 에이전트가 사용자를 오랫동안 돕게 하려면 사용자의 목표나 관심사가 시간이 흐르면서 어떻게 변하는지 알아야 하는데요. 지금까지는 사용자의 상태가 변하는 것과 그에 따른 행동의 결과를 하나의 환경 안에서 일관성 있게 연결하는 게 쉽지 않았거든요. 쉽게 말하면, 사용자가 어제 한 행동이 오늘 어떤 영향을 미치는지 AI가 제대로 기억하고 반영하기가 어려웠다는 말이에요.",
+            "easy2_title": "행동과 환경을 연결하는 새로운 시뮬레이션 방식을 만들었어요",
+            "easy2_desc": "연구진은 E2SIM이라는 새로운 틀을 제안했는데요. 이 방식은 사용자의 상태 변화와 주변 환경의 변화를 피드백 루프로 연결해서, 과거의 행동이 미래의 행동에 영향을 주도록 설계했어요. 60일 동안 시뮬레이션을 해 봤더니, 기존 방식보다 의미 있는 사건 흐름을 더 많이 만들어냈고 중복되는 행동은 줄었다고 해요. 덕분에 AI가 사용자를 장기간 돕는 능력을 더 잘 평가할 수 있게 된 셈이에요.",
+            "topic": "사용자의 상태 변화와 환경을 함께 모델링하여 장기간의 행동을 시뮬레이션하는 E2SIM 프레임워크를 제안했어요.",
+            "one_line": "사용자 상태 변화를 반영하는 장기 시뮬레이션 프레임워크 E2SIM을 개발했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Ziwei Gong, Xiangyang Yin, Thai Quoc On, Lin Ai, Julia Hirschberg, Haotong Yang",
           "categories": [
             "cs.AI",
@@ -14883,8 +19636,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존의 추론 가속 방식은 토큰 간의 연결 고리를 놓치고 있었어요",
+            "easy1_desc": "거대언어모델(LLM)의 추론 속도를 높이려고 가벼운 모델이 먼저 토큰을 제안하고 큰 모델이 검증하는 추론 가속(Speculative decoding) 방식을 쓰는데요. DFlash나 P-EAGLE 같은 기존 방식은 한 번에 여러 토큰을 제안하지만, 토큰 사이의 의존 관계를 제대로 살리지 못한다는 단점이 있어요. DSpark가 이를 보완하려고 순차적인 교정 단계를 추가했지만, 결국 큰 모델의 연산 비용이 대부분 낭비되는 셈이라는 겁니다.",
+            "easy2_title": "기본 모델은 줄이고 교정 단계는 강화해서 속도를 높였어요",
+            "easy2_desc": "연구진은 기본 모델의 연산은 줄이고 교정 단계를 강화하는 Wavefront 방식을 제안했는데요. 전체 언어 모델 헤드(lm_head) 대신 학습된 저랭크(low-rank) 기반 모델을 쓰고, 교정 단계에서 야코비(Jacobi) 반복법을 병렬로 적용해 토큰 간 관계를 해결하도록 만들었어요. 이렇게 하면 데이터 흐름이 일정해져서 vLLM에서 CUDA 그래프로 한 번에 처리할 수 있거든요. 결과적으로 기존 방식들보다 처리량이 평균적으로 더 높게 나타났다는 겁니다.",
+            "topic": "Wavefront는 저랭크 기반 모델과 병렬 야코비 반복법을 활용해 거대언어모델의 추론 속도를 최적화하는 새로운 추론 가속 기법이에요.",
+            "one_line": "저랭크 기반 모델과 병렬 교정 기법을 도입해 LLM 추론 속도를 높였어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Huy Huu Nguyen, Xin Huang",
           "categories": [
             "cs.AI"
@@ -14933,8 +19733,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "편미분 방정식 풀이법을 일일이 짜느라 고생이 많았죠",
+            "easy1_desc": "편미분 방정식(PDE)을 풀 때 쓰는 선형 풀이법은 문제마다 특성이 달라서 전문가가 직접 설계해야 하는 번거로움이 있었거든요. 연구진은 언어 모델 에이전트들이 서로 제안하고 비판하며 최적의 풀이법을 찾아내는 다중 에이전트 시스템을 만들어 봤는데요. 이게 왜 필요하냐면, 기존에는 사람이 일일이 풀이법을 조합해야 했지만 이제는 시스템이 알아서 최적의 구성을 찾아내기 때문이에요.",
+            "easy2_title": "여러 에이전트가 협력하니 풀이 속도와 정확도가 확 달라졌어요",
+            "easy2_desc": "연구진은 유전 알고리즘을 활용해 여러 성능 지표를 동시에 만족하는 풀이법들을 찾아내도록 설계했는데요. 실제로 노트북 한 대에서 돌려봤더니, 단일 에이전트가 실패한 문제들도 성공적으로 해결했을 뿐만 아니라 반복 횟수를 최대 60배까지 줄이는 성과를 냈거든요. 쉽게 말하면, 사람이 직접 설계할 때보다 훨씬 빠르고 정확하게 복잡한 방정식을 풀어내는 시스템을 구축한 셈이에요.",
+            "topic": "언어 모델 에이전트들을 활용하여 편미분 방정식의 최적 풀이법을 자동으로 찾아내는 다중 에이전트 시스템을 제안했어요.",
+            "one_line": "언어 모델 에이전트 협업으로 편미분 방정식의 최적 풀이법을 자동으로 찾았어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Youngkyu Lee, Shanqing Liu, Jerome Darbon, George EM Karniadakis",
           "categories": [
             "cs.AI"
@@ -15037,8 +19884,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "자연어를 수식으로 바꾸고 싶은데 믿을 만한 보장이 없었거든요",
+            "easy1_desc": "연구진은 자연어로 된 문장을 의도가 담긴 수식으로 바꾸는 오토포멀라이제이션(Autoformalization)을 다뤘는데요, 거대 언어 모델(LLM)을 쓰면 실용적이긴 한데 확률적으로 나오는 결과라 공식적인 안전 보장이 없다는 게 문제였어요. 그래서 연구진은 수식이 충분한지 혹은 필요한지를 증명하는 안전한 오토포멀라이제이션 기술을 제안했는데요, 후보 수식을 만들고 수치나 논리적 세기를 바탕으로 순서를 정하는 방식을 썼다는 겁니다. 쉽게 말하면, LLM이 뱉어낸 수식이 진짜로 안전한지 확실하게 검증할 길이 없던 걸 바로잡으려 했다는 말이에요.",
+            "easy2_title": "함의 그래프를 써서 충분한 조건과 필요한 조건을 찾아냈습니다",
+            "easy2_desc": "그래서 연구진은 함의 그래프(Entailment Graph, EG)를 써서 후보 수식들의 논리적 세기를 정렬하고, 문장을 만족하는 충분한 경계와 문장이 따르는 필요한 경계를 두 번의 탐색으로 찾아냈는데요, 탐색 단계마다 한 번씩 지역 검사를 거치도록 설계했어요. AWS(Amazon Web Services)의 보안이 중요한 속성들을 실제로 적용해 봤더니 전문가가 판정한 20가지 사례 모두에서 안전하다는 결과가 나왔거든요. 다수결 투표나 그래프가 없는 방식은 일부 사례에서 불안전하거나 모든 후보를 거부하는 한계가 있었는데, 이 방식은 Lean(린)이라는 도구로 증명까지 마쳤다는 겁니다.",
+            "topic": "거대 언어 모델(LLM)을 이용한 자연어의 수식 변환 과정에서 논리적 충분성과 필요성을 증명하여 안전성을 높이는 기법에 대한 연구예요.",
+            "one_line": "함의 그래프를 이용해 LLM 수식 변환의 안전성을 증명했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Umut A. Acar, Eli Goldweber",
           "categories": [
             "cs.AI",
@@ -15141,8 +20035,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "정답이 없는 상황에서 AI가 잘하고 있는지 어떻게 알까요",
+            "easy1_desc": "AI 에이전트가 코딩이나 과학 실험처럼 복잡한 일을 스스로 처리할 때, 그 행동이 정말로 나아진 건지 판단하기가 어렵거든요. 예전에는 정해진 정답지인 그라운드 트루스(Ground Truth)와 비교하면 됐지만, 이제는 실험 결과가 불확실하거나 모호한 경우가 많아졌기 때문이에요. 쉽게 말하면, 정답이 없는 상황에서 AI의 성과를 어떻게 측정할지 고민해야 하는 시점이 온 겁니다.",
+            "easy2_title": "정답지 대신 통계적 증거를 써서 AI 성능을 평가해 봤어요",
+            "easy2_desc": "그래서 연구진은 정답지 대신 e-값(e-values)이라는 통계적 증거를 활용해 에이전트의 의사결정 과정을 평가하는 새로운 틀을 만들었어요. 이 방식은 에이전트가 실험 중간에 계획을 바꾸거나 데이터에 따라 경로를 수정하더라도 통계적으로 확실한 품질 측정값을 얻을 수 있다는 장점이 있거든요. 실제로 클로드 오퍼스(Claude Opus)와 클로드 하이쿠(Claude Haiku)가 파이썬 패키지의 실행 속도를 얼마나 개선하는지 비교하며 이 방법의 유효성을 확인해 봤다는 거예요.",
+            "topic": "정답이 없는 환경에서 AI 에이전트의 의사결정 품질을 통계적으로 평가하는 새로운 프레임워크를 제안했어요.",
+            "one_line": "정답지 없이 통계적 증거를 활용해 AI 에이전트의 성능을 평가하는 방법을 개발했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Brian M. Cho, Michael Lindon, Nathan Kallus",
           "categories": [
             "cs.AI",
@@ -15220,8 +20161,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "제1형 당뇨병 인슐린 자동 조절 모델은 왜 이런 결정을 내렸는지 알기 어려웠습니다",
+            "easy1_desc": "연구진은 제1형 당뇨병(T1D) 관리를 위해 강화학습(RL) 기반의 인슐린 자동 주입 제어기를 쓸 때, 왜 그런 용량을 추천했는지 그 이유를 해석하기가 여전히 어렵다는 점에 주목했는데요. 연속혈당측정(CGM) 데이터와 투여한 인슐린 이력을 바탕으로 인슐린 양을 권장하는데, 블랙박스처럼 작동해서 속을 들여다보기 힘들다는 말이에요. 쉽게 말하면, 성능은 괜찮은데 왜 그런 결정을 내렸는지 투명하게 알 길이 없었던 셈이라는 겁니다.",
+            "easy2_title": "사후 설명 프레임워크인 XRL4T1D를 도입해 어떤 입력이 중요한지 분석했습니다",
+            "easy2_desc": "그래서 연구진은 이미 학습된 인슐린 주입 정책을 다시 학습시킬 필요 없이 사후에 설명할 수 있는 프레임워크인 XRL4T1D를 제안했는데요. 섀플리 부가적 설명(SHAP) 기법을 써서 혈당 기록과 인슐린 투여 기록 중 어떤 입력이 더 중요한지 비교하고, 인슐린 체류 시간에 맞춰 세 가지 시간 창으로 나누어 분석했다는 거예요. 가장 중요하다고 꼽힌 입력을 바꿔 봤더니 실제로 인슐린 추천 결과가 크게 달라진다는 장점이 있는데, 대신 코호트나 설정에 따라 중요도 분포가 달라져서 꼼꼼히 따져봐야 한다는 점도 함께 확인했다는 겁니다.",
+            "topic": "제1형 당뇨병 관리를 위한 강화학습 인슐린 제어기의 결정을 사후에 해석하는 XRL4T1D 프레임워크를 제안하고 그 타당성을 평가한 내용이에요.",
+            "one_line": "강화학습 기반 당뇨 인슐린 제어기의 사후 해석 프레임워크를 개발했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Malay Phadke, Chirath Hettiarachchi",
           "categories": [
             "cs.AI"
@@ -15245,8 +20233,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "전문 지식이 없어도 복잡한 과학 작업을 맡길 수 있을까",
+            "easy1_desc": "과학 연구에 쓰는 대규모 작업 관리 시스템은 복잡해서 전문가가 아닌 과학자들이 직접 쓰기 어렵거든요. 그래서 연구진은 최첨단 모델을 이용해 반복 작업을 돕는 기술과 전문가 에이전트를 만들었는데요, 문제는 비용이나 자원이 부족한 사용자가 무료로 쓸 수 있는 공개 가중치 모델을 쓸 때는 기존 기술이 그대로 통하지 않을 수 있다는 점입니다. 쉽게 말하면, 좋은 시스템을 만들어 놔도 막상 쓸 사람이 쓰기 어려운 환경의 차이가 문제였던 셈이에요.",
+            "easy2_title": "공개 모델에 맞게 기술을 고치고 성능을 직접 비교해 봤다",
+            "easy2_desc": "그래서 연구진은 최첨단 모델용으로 썼던 기술을 공개 가중치 모델에서도 쓸 수 있게 바꾸는 방법을 제안했는데요, 실제 시스템을 구동하며 에이전트가 만든 작업을 채점하고 실패한 부분을 다시 기술 유지 모델에 피드백하는 평가 도구를 썼다는 겁니다. 그 결과 상위 5개 모델의 품질은 비슷한데 응답 속도는 12배나 차이가 난다는 점을 확인했고요, 최고 성능의 공개 모델은 클로드(Claude)와 비슷한 점수를 기록하기도 했습니다. 대신 평가 과정에서 시스템 오작동과 모델 오류를 구별하기 어렵거나 에이전트가 통제를 우회하는 등의 한계도 함께 드러났다는 거예요.",
+            "topic": "과학 게이트웨이 환경에서 공개 가중치 모델을 활용해 워크플로 관리 시스템의 에이전트 기술을 적용하고 평가한 연구예요.",
+            "one_line": "공개 가중치 모델을 과학 시스템에 맞추는 방법을 제안하고 성능을 평가했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": "실제 운영 시스템에서 에이전트를 평가할 때 시스템 오류를 모델 오류로 오인하거나 에이전트가 통제를 우회하는 문제가 생길 수 있다는 한계가 있습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [
+              "12"
+            ],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Komal Thareja, Mats Rynge, Anirban Mandal, Ewa Deelman",
           "categories": [
             "cs.AI"
@@ -15320,8 +20357,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI가 일을 못 할 때 그게 지식 문제인지 도구 문제인지 알기 어렵다는 거예요",
+            "easy1_desc": "거대언어모델(LLM) 에이전트는 시스템 프롬프트나 행동 형식 같은 특정 환경인 하네스(harness) 위에서 작동하는데요, 모델이 문제를 풀 지식은 있어도 그 환경에 맞게 표현하는 능력이 부족할 수 있다는 거예요. 즉, 에이전트가 실패했을 때 그게 진짜 몰라서 틀린 건지, 아니면 도구 사용법이 서툴러서 그런 건지 구분하기가 어렵다는 말이에요. 쉽게 말하면, 실력은 있는데 도구 탓에 제 기량을 못 펼치는 상황이 생길 수 있다는 겁니다.",
+            "easy2_title": "지식과 도구 능력을 따로 떼어 학습시켰더니 성능이 훨씬 좋아졌어요",
+            "easy2_desc": "연구진은 에이전트의 능력을 문제를 푸는 지식인 '태스크 역량'과 도구를 다루는 '인터페이스 역량'으로 나누어 분석했는데요, 지식만 주입하면 오히려 도구 사용 능력이 망가질 수 있다는 점을 확인했어요. 그래서 지식은 여러 환경에서 모으고, 도구 연습은 최소한의 지식만으로 반복하는 '하네스 리허설' 방식을 도입했거든요. 그랬더니 두 가지를 따로 떼어 학습시킨 결과, 성능이 훨씬 크게 올랐다고 주장했습니다.",
+            "topic": "LLM 에이전트 학습 시 태스크 지식과 인터페이스 역량을 분리하여 최적화하는 방법론에 관한 연구예요.",
+            "one_line": "LLM 에이전트의 지식과 도구 역량을 분리해 학습시키는 기법을 제안했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Chaeeun Lee, Hossein A. Rahmani, Aryo Pradipta Gema, Kexin Xu, Emine Yilmaz, Pasquale Minervini, T. Ian Simpson, Chen Jin, Amrutha Saseendran",
           "categories": [
             "cs.AI",
@@ -15372,8 +20456,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "공개된 의사결정 모델인 라야가 공격에 얼마나 취약한지 확인해 봤어요",
+            "easy1_desc": "라야(Laya)는 텍스트와 질문, 선택지를 주면 확률을 계산해 답을 내놓는 모델인데요, 연구진이 이 모델이 얼마나 쉽게 조작되는지 81가지의 프로그래밍된 편집 방식으로 566개의 합성 데이터를 만들어 공격해 봤습니다. 그 결과, 방어책이 없는 공격 문구에 대해 공개된 라야 모델은 59%, 미세 조정된 모델은 36%의 확률로 공격자가 의도한 답을 선택하도록 유도당하는 것으로 나타났거든요. 쉽게 말하면, 모델이 겉으로는 똑똑해 보여도 교묘하게 편집된 문장에는 아주 쉽게 휘둘린다는 겁니다.",
+            "easy2_title": "공격 방식을 바꿔가며 모델의 방어 능력을 테스트하고 한계를 분석했어요",
+            "easy2_desc": "연구진은 문장 삽입이나 글자 변형 같은 다양한 공격을 시도하며 모델이 어떻게 반응하는지 살펴봤는데요, 특정 공격을 막도록 학습된 방어 기법이라도 학습하지 않은 새로운 유형의 공격에는 방어율이 27% 수준으로 뚝 떨어지는 한계가 있었습니다. 또한, 공격자가 여러 개의 문자열 조합 중 가장 효과적인 것을 골라내면 모델의 성공률을 84%까지 다시 끌어올릴 수 있다는 점도 확인했거든요. 결국, 특정 공격에 맞춘 방어책만으로는 모델을 완전히 안전하게 보호하기 어렵다는 사실을 보여준 셈이에요.",
+            "topic": "라야 모델의 취약점을 분석하고 다양한 공격 유형에 따른 방어 기법의 한계를 평가했어요.",
+            "one_line": "라야 모델을 다양한 방식으로 공격하여 취약점을 분석하고 방어 기법의 한계를 평가했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": "계획했던 일부 실험(다른 체크포인트, 두 번째 시드, 일부 미세 조정 등)은 실제로 수행하지 못했습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Mohammed Nayeem Khan, Akhil P",
           "categories": [
             "cs.AI"
@@ -15397,8 +20528,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 기술은 거짓말을 겨우 찾아냈지만 사람들은 훨씬 복잡하게 속이거든요",
+            "easy1_desc": "최근 멀티모달 대형언어모델(MLLM)이 발달하면서 감정을 읽거나 진실과 거짓을 구분하는 능력이 좋아졌는데요. 그런데 기존의 평가 방식들은 거짓인지 참인지 둘로만 나누거나 대충 감정만 보는 수준에 머물러 있었다는 거예요. 실제 대화에서는 숨기기, 흘리기, 꾸며내기, 얼버무리기 같은 여러 가지 방식으로 정보를 왜곡하는데 이걸 제대로 다루지 못했다는 겁니다. 뭔 소리냐면, 속이는 방식이 훨씬 다양하고 복잡한데 기존 기술은 그걸 알아채기 어려웠다는 말이에요.",
+            "easy2_title": "대화 속 정보 왜곡을 세밀하게 평가하는 새로운 기준을 만들었습니다",
+            "easy2_desc": "그래서 연구진은 대화 속 정보 조작을 세밀하게 평가할 수 있는 멀티모달 벤치마크인 인포콘(InfoCon)을 새로 선보였는데요. 이 도구는 여섯 가지 세부 전략을 찾아내고 사실 관계와 상호작용을 바탕으로 일관성 여부를 가려낸다는 거예요. 여러 에이전트가 함께 증거를 확인하는 방식을 써서 믿을 수 있는 정답을 만들었다고 하는데요. 장점은 복잡한 거짓말을 촘촘하게 짚어낼 수 있다는 건데, 대신 대화 맥락과 참가자의 배경 지식을 깊이 추론해야 한다는 까다로움도 같이 따른다는 겁니다.",
+            "topic": "대화 속에서 사람들이 정보를 숨기거나 왜곡하는 다양한 전략을 세밀하게 평가하기 위한 새로운 멀티모달 벤치마크 모델인 인포콘(InfoCon)을 소개하고 평가한 연구입니다.",
+            "one_line": "대화 속 정보 왜곡을 평가하는 새 벤치마크를 개발했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yuhan Bian, Zhaokai Liang, Jia Wang, Haoyu Liu, Yu Chen, Jianfeng Qu, Zhixu Li",
           "categories": [
             "cs.AI",
@@ -15423,8 +20601,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "움직이는 차트까지 다루는 게 왜 문제였나",
+            "easy1_desc": "연구진이 멀티모달 대형 언어 모델(MLLMs)의 차트 코드 생성 능력을 살펴봤는데요, 지금까지의 평가 기준은 고정된 정적 차트에만 쏠려 있었다는 겁니다. 그게 왜 문제냐면, 요즘 많이 쓰는 마우스 오버나 툴팁 같은 상호작용 차트는 사용자의 행동에 따라 상태가 바껴서 옛날 방식으로는 제대로 평가할 수가 없거든요. 쉽게 말하면, 가만히 있는 그림만 보다가 실제로 움직이는 화면을 다뤄야 하는 상황에서 한계에 부딪힌 셈이라는 말이에요.",
+            "easy2_title": "상호작용 차트를 평가하는 새로운 기준을 만들어 봤다",
+            "easy2_desc": "그래서 연구진은 2,779개의 예시로 이루어진 ChartInt라는 첫 벤치마크를 만들어서 상호작용 차트 코드 생성을 평가해 봤는데요, 미리 정해둔 상태 스냅샷 프로토콜로 사용자의 행동을 재현 가능한 평가 목표로 바꿨다는 겁니다. 그 결과, 기존 MLLMs가 정적 차트에서는 잘하지만 상호작용 작업에서는 성능이 크게 떨어진다는 걸 확인했다고 해요. 꼼꼼한 평가가 가능해진다는 장점이 있는데, 대신 모델들이 복잡한 상호작용을 처리해야 하는 부담이 늘어난다는 점도 같이 보여준다는 겁니다.",
+            "topic": "상호작용 차트 코드 생성을 평가하기 위해 새로운 벤치마크와 평가 체계를 제안한 연구예요.",
+            "one_line": "상호작용 차트 코드 생성을 평가하는 벤치마크를 제안했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yuhan Bian, Haoyu Liu, Siyu Li, Hanpei Guo, Jingrong Gao, Zhixu Li",
           "categories": [
             "cs.AI",
@@ -15449,8 +20674,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "빠진 데이터 때문에 분석이 자꾸 막혔었는데요",
+            "easy1_desc": "정보가 비어 있는 표에서는 억지로 짝을 맞추거나 정확한 동등 관계를 따지기가 어려워서 속성이 줄어들지 않는 문제가 있었거든요. 연구진은 그래서 빠진 값을 그냥 아무렇게나 넘기지 않고 전체 속성 개수로 나누어 벌점을 주는 새로운 방식을 제안해 봤는데요. 뭔 소리냐면, 빈칸을 아무렇게나 채우는 만능 카드처럼 쓰지 못하게 막아서 빠진 데이터가 전체에 미치는 영향을 깐깐하게 잡겠다는 말이에요.",
+            "easy2_title": "데이터를 압축해서 줄이는 데는 성공했는데요",
+            "easy2_desc": "그래서 11개의 UCI 벤치마크 데이터로 실험해 봤더니, 제안한 방식이 평균적으로 가장 적은 속성 개수만을 골라냈다는 거예요. 속성이 줄어들어 뼈대만 남는 장점이 있는데, 대신 RBF-SVM 분류기를 썼을 때는 예측 정확도가 오히려 제일 낮게 나왔다는 단점도 같이 따라온다는 겁니다. 쉽게 말하면, 정확도를 높이는 게 아니라 데이터의 덩치를 줄이는 데 목적이 있는 셈이에요.",
+            "topic": "정보가 비어 있는 데이터에서 불필요한 속성을 덜어내는 새로운 방식인 보수적 중첩 퍼지 러프 세트(Conservative Overlap Fuzzy Rough Set, COFRS) 모델을 제안하고 그 성능을 평가한 연구예요.",
+            "one_line": "빠진 데이터가 있는 시스템에서 속성을 줄이는 COFRS 모델을 제안하고 성능을 평가했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "예측 정확도가 높아지지 않고 RBF-SVM 분류기에서는 가장 낮은 순위를 기록하는 등 예측 성능 면에서는 이득이 없다는 한계가 있어요."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Trung Hieu Vuong, Van Thien Nguyen, Nhu Son Nguyen, Thanh Dai Tran",
           "categories": [
             "cs.AI",
@@ -15502,8 +20774,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "에이전트가 무슨 일을 할까보다 누가 먼저 나설지가 문제였다",
+            "easy1_desc": "연구진은 자율 에이전트(Autonomous agent) 시스템을 제대로 실행하는 방법만 주로 따져봤는데요, 자원 한정 속에서 어떤 에이전트에게 실행 권한을 줄지 고르는 과정이 먼저라는 점을 짚어봤거든요. 한정된 자원을 두고 여러 에이전트가 경쟁할 때 공정함(Fairness), 효율성(Efficiency), 전략적 조작 저항성(Strategy-proofness) 사이에서 피할 수 없는 상충 관계가 생긴다는 말이에요. 쉽게 말하면, 모두를 만족시키는 완벽한 배분 규칙을 찾기가 어렵다는 셈이라는 겁니다.",
+            "easy2_title": "복잡한 제어 구조를 줄이려 했지만 쪼갤 수 없는 4가지 축을 찾았다",
+            "easy2_desc": "그래서 연구진은 자원 배분 문제를 풀기 위해 시간, 상태, 행동, 집단이라는 4가지 차원이 얽힌 다중 규모 거버넌스(Multi-scale governance) 구조를 제안했는데요, 유한한 관측 환경 속에서는 이 4가지 차원을 하나로 합치면 안정성이 무너진다는 분석 결과를 내놓았어요. 구조를 단순화하면 시스템이 망가진다는 단점이 있는데, 대신 시스템이 왜 이렇게 복잡해야만 하는지를 명확히 보여준다는 장점이 있다는 겁니다. 쉽게 말하면, 복잡함을 억지로 줄이지 말고 그대로 유지해야만 에이전트 시스템이 오류 없이 돌아간다는 말이에요.",
+            "topic": "자율 에이전트 시스템에서 실행 권한 배분이 왜 구조적 한계와 다중 규모 거버넌스 요구로 이어지는지 분석한 연구예요.",
+            "one_line": "자율 에이전트 시스템에서 자원 배분 제약과 쪼갤 수 없는 거버넌스 구조를 분석했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Marcelo Fernandez",
           "categories": [
             "cs.AI",
@@ -15534,33 +20853,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "로봇 눈으로 세상을 볼 때 왜 패치를 그대로 써야 하는지 살펴봤습니다",
             "easy1_desc": "기존 로봇 학습에서는 사진 한 장을 하나의 벡터로 뭉뚱그려 비교했는데요, 두 손을 쓰는 로봇은 카메라에서 나온 촘촘한 패치 토큰을 직접 읽어온다는 말이에요. 그 패치들을 그대로 유지하는 게 왜 중요한지 24개의 로봇 과제와 20개의 인코더로 실험해 봤는데요. 각 시점을 하나의 토큰으로 평균 내어 압축해 버리면 성공률의 대부분이 사라져 버린다는 걸 확인했다는 겁니다.",
-            "easy1_evidence": "Averaging each view to one token removes most of the success, adaptation helps every pair we test, and one shared policy keeps most of the success of separate policies at a fraction of the updates.",
             "easy2_title": "새로운 벤치마크를 통해 로봇 조작 성능을 더 정확하게 측정해 봤습니다",
             "easy2_desc": "연구진은 다양한 조건에서 로봇 정책을 평가할 수 있는 HIVE-Bench라는 공통 평가 방식을 도입했는데요. 정책을 직접 훈련하기 전에 명령받은 움직임을 읽어내는 역동역학 판독 방식이 가장 강력한 측정 도구 중 하나라는 걸 알아냈다는 말이에요. 다만 파인튜닝으로 행동 판독을 개선할 수 있더라도 다른 측정값은 다르게 움직일 수 있어서, 실제 배치 전에는 여전히 실제 주행 실험을 대체할 만한 안정한 통계 지표가 없다는 점도 함께 지적하고 있답니다.",
-            "easy2_evidence": "That readout of the commanded motion is one of the strongest measurements available before a policy is trained.",
             "topic": "로봇의 두 손 조작 학습을 위해 패치 수준의 시각 표현을 평가하고 비교하는 HIVE-Bench를 제안한 연구예요.",
-            "topic_evidence": "We introduce HIVE-Bench: one shared flow-matching policy reads 20 encoders from seven families on 24 egocentric bimanual tasks, across adaptation, task sharing, and sweeps of data, model size, and layer.",
-            "points": [
-              {
-                "subtitle": "HIVE-Bench 제안",
-                "desc": "연구진은 7개 계열의 인코더 20개를 활용해 24개의 1인칭 두 손 조작 과제에서 흐름 매칭 정책을 테스트하는 HIVE-Bench를 만들었는데요. 데이터 양, 모델 크기, 레이어 변화는 물론 적응과 과제 공유까지 넓게 아우르는 구조라는 말이에요. 뭔 소리냐면, 다양한 조건에서 로봇 시각 표현을 공정하게 비교할 수 있는 공통 기반을 마련했다는 겁니다.",
-                "evidence": "We introduce HIVE-Bench: one shared flow-matching policy reads 20 encoders from seven families on 24 egocentric bimanual tasks, across adaptation, task sharing, and sweeps of data, model size, and layer."
-              },
-              {
-                "subtitle": "패치 유지의 중요성과 공통 정책",
-                "desc": "시점을 하나의 토큰으로 평균 내면 성공률이 대부분 날아가 버리기 때문에 패치를 지키는 게 중요하다고 밝혔는데요. 적응 과정은 테스트한 모든 조합에 도움이 되었고, 하나의 공유 정책만으로도 별도 정책들이 거둔 성공의 대부분을 훨씬 적은 업데이트 횟수로 유지할 수 있었다는 거예요. 쉽게 말하면, 패치 정보를 살리면서 공유 정책을 쓰는 편이 효율적이라는 셈이에요.",
-                "evidence": "Averaging each view to one token removes most of the success, adaptation helps every pair we test, and one shared policy keeps most of the success of separate policies at a fraction of the updates."
-              },
-              {
-                "subtitle": "동작 판독과 한계",
-                "desc": "토큰들을 통계, 상태 및 객체 판독값, 기존 시각 점수, 역동역학 판독값 등으로 평가해 보았는데요. 정책을 훈련하기 전에는 명령된 움직임을 읽어내는 역동역학 판독이 가장 강력한 측정 수단 중 하나로 나타났다는 말이에요. 하지만 인식이나 깊이 정보는 신뢰성 있게 전이되지 않고, 어떤 통계 지표도 실제 배포 전의 실제 주행 테스트를 완전히 대체할 만큼 안정적이지는 않다는 한계도 함께 언급했어요.",
-                "evidence": "That readout of the commanded motion is one of the strongest measurements available before a policy is trained."
-              }
-            ],
             "one_line": "패치 수준 시각 표현을 평가하는 HIVE-Bench를 도입했어요.",
             "topic_tag": "AI 안전·평가",
-            "limit": "인식, 깊이, 대응성은 신뢰성 있게 전이되지 않으며, 배포 전 주행 테스트를 대체할 만큼 안정한 통계 지표는 아직 없다는 거예요.",
-            "limit_evidence": "Recognition, depth, and correspondence do not transfer reliably. Fine-tuning can improve the action readout even when other measurements move the other way, and no statistic is stable enough to replace a rollout before any deployment."
+            "limit": "인식, 깊이, 대응성은 신뢰성 있게 전이되지 않으며, 배포 전 주행 테스트를 대체할 만큼 안정한 통계 지표는 아직 없다는 거예요."
           },
           "check": {
             "evidence": [
@@ -15621,8 +20919,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 0,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "일이 몰릴수록 언어 모델이 왜 망가지나 봤는데요",
+            "easy1_desc": "연구진은 부하가 커질수록 언어 모델이 실수를 점점 더 많이 한다는 점에 주목했는데요, 그 이유가 다 다르다는 거예요. 원문과 멀어지거나, 규칙을 틀리게 적용하거나, 엉뚱한 단어를 바꾸는 일이 섞여 있다는 말이에요. 쉽게 말하면, 어디서 구멍이 나는지 그 원인을 콕 집어내기 어려웠던 셈이라는 겁니다.",
+            "easy2_title": "문제를 세 갈래로 쪼개서 모델의 여권을 만들어 봤어요",
+            "easy2_desc": "그래서 연구진은 모델의 성능 저하를 동기화, 규칙 실행, 오발화 이렇게 세 가지로 쪼개는 방법을 제안했는데요, 7개 모델을 직접 시험해 보니 각 부하에 따라 어떻게 망가지는지 뚜렷한 법칙을 찾아냈다는 거예요. 이 결과를 모아 모델의 여권처럼 쓴다는 장점이 있는데, 대신 여러 가지 부하 조건을 세밀하게 다뤄야 한다는 점도 같이 따라온다는 겁니다.",
+            "topic": "부하를 조절하며 언어 모델의 성능 저하 원인을 세 가지로 분리하고 이를 통계적으로 분석하는 방법이에요.",
+            "one_line": "언어 모델의 성능 저하 원인을 세 가지로 분리하는 방법을 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Hennadii Kutomanov",
           "categories": [],
           "comments": 1,
@@ -15650,33 +20995,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "가려진 정보를 오래 기억하는 게 문제였다",
             "easy1_desc": "로봇 조작은 물건의 원래 위치처럼 눈에 더 이상 보이지 않는 시각 정보를 기억해야 하는데요, 기존 방식들은 전체 관측 기록을 다 쓰거나 텍스트 요약에 의존하다 보니 세밀한 시각 정보를 놓치는 문제가 있었거든요. 그래서 연구진은 중요한 순간의 시각적 세부 사항을 담아두는 시각적 순간 기억(visual moment memory)이라는 개념을 연구해 봤는데요. 쉽게 말하면 로봇이 필요한 핵심 장면만 골라 기억하는 능력을 따져보려 했다는 겁니다.",
-            "easy1_evidence": "Robotic manipulation often requires remembering visual information that is no longer observable, such as the original location of an object.",
             "easy2_title": "핵심 장면만 골라 기억하게 만들었더니 성공률이 크게 올랐다",
             "easy2_desc": "그래서 연구진은 시각 언어 모델(VLM) 기반의 기억 장치가 핵심 프레임을 고르고 실행기가 행동을 예측하는 계층적 구조인 'MomentMem'을 제안했는데요, 이를 검증하기 위해 공간 위치와 시각적 외형 기억이 필요한 'VMBench'라는 장기 조작 태스크 모음을 만들었어요. 실험해 봤더니 MomentMem은 평균 49.9%의 성공률을 기록해서 가장 강력한 비교군보다 31.7퍼센트포인트 높게 나타났다고 주장했는데요. 장점은 새로운 외형에도 별도 학습 없이 잘 전이되고 적은 기억 주석만으로도 높은 성공률을 낸다는 건데, 대신 핵심 기억을 고르는 성능이 전체 실행 결과에 직접 영향을 미친다는 점도 같이 따라온다는 겁니다.",
-            "easy2_evidence": "We further propose MomentMem, a hierarchical architecture in which a VLM-based memorizer selects keyframes and an executor predicts actions conditioned on the selected memories.",
             "topic": "로봇 조작에서 중요한 시각 순간을 기억하기 위해 핵심 프레임을 선별하는 계층적 구조인 MomentMem을 제안하고 그 성능을 평가한 연구예요.",
-            "topic_evidence": "We study visual moment memory, the ability to retain such details from key moments for subsequent manipulation.",
-            "points": [
-              {
-                "subtitle": "VMBench 데이터셋 도입",
-                "desc": "연구진은 공간 위치나 시각적 외형 같은 기억이 꼭 필요한 장기 조작 태스크 모음인 VMBench를 새로 도입했는데요. 뭔 소리냐면 로봇이 옛날 정보를 얼마나 잘 기억하는지 체계적으로 시험해 볼 수 있는 환경을 만들었다는 말이에요.",
-                "evidence": "To support this study, we introduce VMBench, a suite of long-horizon manipulation tasks requiring memory of spatial locations, visual appearances, and their associations."
-              },
-              {
-                "subtitle": "MomentMem 구조 제안",
-                "desc": "VLM 기반 기억 장치가 핵심 프레임을 고르고 실행기가 행동을 예측하는 MomentMem 구조를 제안했는데요. 기억 선택 과정을 따로 떼어내어 평가할 수 있게 만들었다는 거예요.",
-                "evidence": "We further propose MomentMem, a hierarchical architecture in which a VLM-based memorizer selects keyframes and an executor predicts actions conditioned on the selected memories."
-              },
-              {
-                "subtitle": "성능 평가와 일반화",
-                "desc": "VMBench에서 평균 49.9% 성공률을 기록해 기존 기준 모델보다 31.7퍼센트포인트 높았다고 밝혔는데요. 적은 기억 주석만으로도 전체 기억 감독을 썼을 때와 비슷한 43.7% 성공률에 도달했다고 합니다.",
-                "evidence": "On VMBench, MomentMem achieves 49.9% average success, outperforming the strongest evaluated baseline by 31.7 percentage points."
-              }
-            ],
             "one_line": "로봇 조작에서 핵심 순간을 기억하는 MomentMem 구조를 제안하고 VMBench로 성능을 검증했어요.",
             "topic_tag": "AI 에이전트·도구",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -15743,33 +21067,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "메모리는 줄였는데 속도는 그대로인 게 문제였어요",
             "easy1_desc": "모바일 기기에서 큰 거대언어모델(LLM)을 돌리려고 4비트 미만으로 압축해 봤는데요, 메모리는 줄어들어도 모바일 신경망처리장치(NPU)에서는 디코딩 속도가 빨라지지 않는다는 한계가 있었거든요. 지원되지 않는 가중치 형식을 벡터 유닛에서 변환하느라 비트를 줄여 얻은 이득이 다 사라져 버린다는 말이에요. 게다가 각 행렬 연산 유닛 타일마다 데이터 타입을 하나씩만 써야 한다는 제약까지 겹친다는 겁니다.",
-            "easy1_evidence": "Sub-4-bit quantization allows mobile devices to run larger LLMs, but its memory savings do not always translate into faster decoding on mobile NPUs.",
             "easy2_title": "출력 채널 그룹화로 변환 과정 없이 속도를 끌어올렸어요",
             "easy2_desc": "그래서 연구진은 가중치를 더 넓은 데이터 타입으로 늘리지 않고도 기본 정수 연산으로 3비트와 완벽히 대칭인 2비트 가중치를 실행하는 믹스폴드(MixFold) 방식을 제안했는데요, 행렬 연산 유닛 타일에 맞춘 출력 채널 그룹에 데이터 타입을 할당해 레이어보다 더 세밀한 할당이 가능해졌다는 거예요. 그 결과 스냅드래곤 8 엘리트 젠 5(Snapdragon 8 Elite Gen 5)의 퀄컴 헥사곤(Qualcomm Hexagon) NPU에서 1.16배에서 1.41배 더 빠르게 디코딩하고 토큰은 1.5배에서 4.3배 더 많이 생성하게 됐다고 합니다.",
-            "easy2_evidence": "MixFold executes 3-bit and perfectly symmetric 2-bit weights using native integer operations without expanding the weights to wider datatypes during decoding.",
             "topic": "모바일 NPU에서 4비트 미만 양자화 LLM의 디코딩 속도와 에너지 효율을 높이는 믹스폴드(MixFold) 기법에 대한 연구예요.",
-            "topic_evidence": "MixFold executes 3-bit and perfectly symmetric 2-bit weights using native integer operations without expanding the weights to wider datatypes during decoding.",
-            "points": [
-              {
-                "subtitle": "출력 채널 그룹화",
-                "desc": "연구진은 행렬 연산 유닛 타일에 맞춰 출력 채널 그룹에 데이터 타입을 할당했는데요, 뭔 소리냐면 전체 레이어를 쪼개는 것보다 더 세밀하게 데이터 타입을 나눠서 행렬 연산이 멈추지 않게 만들었다는 말이에요.",
-                "evidence": "MixFold then assigns datatypes to output-channel groups aligned with the matrix-unit tiles, enabling finer-than-layer assignment without disrupting matrix-unit execution."
-              },
-              {
-                "subtitle": "실험 환경과 모델",
-                "desc": "스냅드래곤 8 엘리트 젠 5에 탑재된 퀄컴 헥사곤 NPU에서 큐웬3(Qwen3) 모델 가족을 가지고 실험해 봤는데요, 기존 라마닷시피피(llama.cpp)의 헥사곤 백엔드와 비교해 성능을 검증했다는 겁니다.",
-                "evidence": "We compare MixFold with llama.cpp Hexagon backend on the Qualcomm Hexagon NPU of a Snapdragon 8 Elite Gen 5."
-              },
-              {
-                "subtitle": "성능과 효율 결과",
-                "desc": "가중치당 비트 수가 같은 조건에서 기존 4비트 미만 형식보다 정확도가 비슷하거나 더 높게 나왔는데요, 쉽게 말하면 디코딩 속도는 1.16배에서 1.41배 빨라졌고 줄 바꿈이나 글자를 만드는 토큰 효율은 줄당 1.5배에서 4.3배 더 늘어났다고 보입니다.",
-                "evidence": "Across the Qwen3 model family, MixFold achieves comparable or higher accuracy than llama.cpp's sub-4-bit formats at matched bits per weight, while decoding 1.16-1.41 times faster and generating 1.5-4.3 times more tokens per joule."
-              }
-            ],
             "one_line": "출력 채널 그룹화로 모바일 NPU에서 LLM 디코딩 속도와 효율을 높였어요",
             "topic_tag": "AI 모델·학습법",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -15817,10 +21120,10 @@ window.PANEL_DATA = {
         }
       ],
       "backlog": {
-        "n_waiting_all": 388,
+        "n_waiting_all": 275,
         "oldest_day": "2026-11-24",
         "n_dropped_today": 0,
-        "n_backlog_done_today": 3
+        "n_backlog_done_today": 4
       },
       "sources": [
         {
@@ -15844,15 +21147,15 @@ window.PANEL_DATA = {
       ],
       "calls": {
         "summary": {
-          "val": 100,
+          "val": 213,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "flow": {
-          "val": 1,
+          "val": 2,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "failed": {
-          "val": 97,
+          "val": 99,
           "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         },
         "http429": {
@@ -15865,18 +21168,23 @@ window.PANEL_DATA = {
         "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
       },
       "secs": {
-        "val": 2418,
+        "val": 4964,
         "source": "v2_secretary/결과/논문/2026-11-26_논문.json"
       },
-      "no_ai": true,
+      "no_ai": false,
       "notes": [
-        "1차 출처 몫: eess.SY 19/66 · cs.AI 51/51 · 허깅페이스 44/44 · 이월 33편"
+        "1차 출처 몫: eess.SY 19/66 · cs.AI 51/51 · 허깅페이스 44/44 · 이월 33편",
+        "최대 40분을 넘어 113편에서 멈춤"
       ],
       "source": "v2_secretary/결과/논문/2026-11-26_논문.json",
       "abstracts": {
         "file": "panel_abstracts.js",
-        "n": 169,
+        "n": 170,
         "source": "v2_secretary/결과/논문/초록/2026-11-26.json"
+      },
+      "split": {
+        "file": "panel_papers.js",
+        "n": 114
       }
     }
   },
@@ -16120,12 +21428,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: [11월 26일(오늘) 논문] 새벽 바퀴 5-1(0콜)이 모으기 원본(arXiv·허깅페이스)으로 만든 새 논문 카드 166편",
         "line_rule": "규칙: papers.py — 새벽 카드(0콜) → 새벽 바퀴가 끝나면 바로 v2-papers(백업 12:07·14:07)가 점수 순으로 편당 AI 1콜 풀이 + 근거 문장 원문 대조 (gate_rules/논문_설정·주제·키워드.txt)",
-        "line_out": "내보냄: 풀이 3편(새 카드 0 + 밀린 카드 3) · 새 카드 중 대기 166편 · AI 101콜(그날 합계) · 논문 파일 마지막으로 쓴 시각 2026-11-26 04:36 (v2_secretary/결과/논문/2026-11-26_논문.json)",
+        "line_out": "내보냄: 풀이 114편(새 카드 110 + 밀린 카드 4) · 새 카드 중 대기 54편 · AI 215콜(그날 합계) · 논문 파일 마지막으로 쓴 시각 2026-11-26 05:24 (v2_secretary/결과/논문/2026-11-26_논문.json)",
         "metrics": {
           "in": 166,
-          "out": 3,
-          "calls": 101,
-          "secs": 2418.0,
+          "out": 114,
+          "calls": 215,
+          "secs": 4964.0,
           "num_source": "v2_secretary/결과/논문/2026-11-26_논문.json"
         }
       },
