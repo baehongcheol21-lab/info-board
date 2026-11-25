@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-25",
-  "generated_at": "2026-11-25 04:39:48",
-  "made_iso": "2026-11-25T04:39:48+09:00",
+  "generated_at": "2026-11-25 12:11:15",
+  "made_iso": "2026-11-25T12:11:15+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -11,7 +11,156 @@ window.PANEL_DATA = {
     "pc_locked": "",
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
-  "refresh": {},
+  "refresh": {
+    "tag": "1206",
+    "made_iso": "2026-11-25T12:06:43+09:00",
+    "new": 195,
+    "news_new": 126,
+    "calls": 2,
+    "error": "",
+    "times": [
+      "1206"
+    ],
+    "picks": [
+      {
+        "seat": "뉴스",
+        "title": "엔비디아 젠슨 황 복귀 여파",
+        "easy": "엔비디아의 젠슨 황 최고경영자가 복귀하면서 글로벌 증시가 크게 출렁였습니다. 전날에는 관련 종목들이 급등했지만 하루 만에 다시 하락세로 돌아섰는데요. 뭔 소리냐면 인공지능(AI) 투자 수익성과 금리 우려가 겹치면서 시장에 다시 찬물이 끼얹어졌다는 말이에요.",
+        "score": 0.7,
+        "macro": [],
+        "n": 5,
+        "arts": [
+          {
+            "t": "'금융지원 핵심' 젠슨황 복귀에 AI 신용시장 다시 긴장",
+            "s": "연합뉴스 마켓+",
+            "u": "https://www.yna.co.kr/view/AKR20261125055600009"
+          },
+          {
+            "t": "젠슨황 약발 하루만에...나스닥 다시 급락 [월가월부]",
+            "s": "매일경제 경제",
+            "u": "https://www.mk.co.kr/news/economy/12217655"
+          },
+          {
+            "t": "'젠슨황 랠리' 하루만에 끝?…메모리과잉·관세우려 투심 냉기",
+            "s": "연합뉴스 마켓+",
+            "u": "https://www.yna.co.kr/view/AKR20261125066900008"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한전 고객정보 유출 보상",
+        "easy": "한국전력이 개인정보가 유출된 고객에게 최대 1000만원을 보상하는 금융사기 피해보험을 제공하고, 명의도용 방지 서비스 이용권을 무상으로 준다는 소식인데요. 그게 무슨 소리냐면 유출 통지를 받은 고객들의 2차 피해를 막겠다는 겁니다. 쉽게 말하면 정보 유출로 인한 금전적 불안감을 덜어 주기 위한 조치라는 셈이에요.",
+        "score": 0.45,
+        "macro": [],
+        "n": 2,
+        "arts": [
+          {
+            "t": "한전, 개인정보 유출 고객에 최대 1000만원 피해보상 보험 제공",
+            "s": "매일경제 경제",
+            "u": "https://www.mk.co.kr/news/economy/12217959"
+          },
+          {
+            "t": "한전, 고객정보 유출 통지 고객에 명의도용 방지 이용권 무상 제공",
+            "s": "전기신문",
+            "u": "https://www.electimes.com/news/articleView.html?idxno=375252"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
+        "easy": "",
+        "score": 0.4,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12217831"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "삼기에너지솔루션즈, 과기부 국책과제 UGV용 배터리팩 공급…방산 진출 본격화",
+        "easy": "",
+        "score": 0.4,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "삼기에너지솔루션즈, 과기부 국책과제 UGV용 배터리팩 공급…방산 진출 본격화",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12217792"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "“고점에 못 팔았다” 실수 인정한 투자 고수 … 여전히 반도체에 베팅하는 이유",
+        "easy": "",
+        "score": 0.4,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "“고점에 못 팔았다” 실수 인정한 투자 고수 … 여전히 반도체에 베팅하는 이유",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12217412"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "국내 증시 급락과 사이드카",
+        "easy": "코스피가 장중 5%대 급락세를 기록하며 4800선이 무너졌습니다. 주가 급락에 따라 유가증권시장에 매도 사이드카가 발동되기도 했는데요. 뭔 소리냐면 미국 증시 하락과 금리 및 인공지능(AI) 수익성 우려가 국내 투자 심리에도 큰 충격을 줬다는 말이에요.",
+        "score": 0.15,
+        "macro": [
+          "증시"
+        ],
+        "n": 3,
+        "arts": [
+          {
+            "t": "코스피 장중 5%대 급락세 지속…삼전·닉스 8%대 하락",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261125083800008"
+          },
+          {
+            "t": "금리·AI 수익성 우려에 관세까지 … 여의도 족집게 “반등 시그널 이때 나온다”",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12217833"
+          },
+          {
+            "t": "[속보] 코스피 4%대로 낙폭 확대…매도 사이드카 발동",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12217746"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "애크먼 “연준 금리 올리면 내년 침체올수도”",
+        "easy": "",
+        "score": 0.1,
+        "macro": [
+          "금리",
+          "연준",
+          "침체"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "애크먼 “연준 금리 올리면 내년 침체올수도”",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/business/12217729"
+          }
+        ]
+      }
+    ],
+    "source": "v2_secretary/결과/갱신/2026-11-25_1206.json"
+  },
   "flows": {
     "day": "2026-11-25",
     "same_day": true,
@@ -622,24 +771,24 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-25",
-      "start": "2026-11-25 04:13:39",
+      "start": "2026-11-25 12:06:43",
       "by": "github",
       "where": "GitHub",
-      "mode": "run",
-      "end": "2026-11-25 04:39:48",
-      "secs": 1569,
+      "mode": "refresh",
+      "flows_retry_exit": 0,
+      "indicators_refresh_exit": 0,
+      "end": "2026-11-25 12:11:15",
+      "secs": 272,
       "exit": 0,
-      "result_md": true,
-      "failed_stages": 0,
-      "calls": 133,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
     "papers": {
       "day": "2026-11-25",
       "day_label": "11월 25일(오늘)",
-      "made": "2026-11-25T04:33:07",
-      "calls": 63,
+      "made": "2026-11-25T11:38:09",
+      "calls": 93,
       "same_day": true,
       "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
     }
@@ -11741,22 +11890,22 @@ window.PANEL_DATA = {
       "day_label": "11월 25일(오늘)",
       "day_rel": "오늘",
       "day_note": "11월 25일(오늘) 논문 — 논문 풀이가 끝난 결과예요.",
-      "made": "2026-11-25T04:33:07",
+      "made": "2026-11-25T11:38:09",
       "picks_max": 10,
-      "status": "돎 — 2026-11-25 논문 풀이 11편 / 새 논문 257편",
+      "status": "돎 — 2026-11-25 논문 풀이 40편 / 새 논문 257편",
       "headline": {
-        "text": "오늘 새 논문 257편 · 풀이한 11편 중 전력망·계통 쪽이 3편으로 가장 많아요.",
+        "text": "오늘 새 논문 257편 · 풀이한 40편 중 전력망·계통 쪽이 12편으로 가장 많아요.",
         "text_orig": "",
         "n_new": {
           "val": 257,
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         },
         "n_done": {
-          "val": 11,
+          "val": 40,
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         },
         "n_done_new": {
-          "val": 0,
+          "val": 29,
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         },
         "n_done_backlog": {
@@ -11764,7 +11913,7 @@ window.PANEL_DATA = {
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         },
         "n_waiting": {
-          "val": 257,
+          "val": 228,
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         },
         "n_failed": {
@@ -11773,61 +11922,72 @@ window.PANEL_DATA = {
         },
         "top_tag": "전력망·계통",
         "top_tag_n": {
-          "val": 3,
+          "val": 12,
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         }
       },
       "flow": {
-        "text": "오늘 풀이한 논문들 중에서는 전력망·계통과 AI 모델·학습법 관련 내용이 가장 많이 눈에 띄었는데요, 그 외에도 3차원 구조 없이 뷰를 생성하는 자기회귀 모델 같은 영상·음성·멀티모달 주제도 함께 다뤄졌습니다. 예를 들어 소형 모듈원자로 선박의 부하 추종 성능을 통합 분석하고 배터리의 효과를 확인한 연구가 있는가 하면, 대규모 모델 학습의 잔차 연결 안정성을 높이기 위해 기하학적 수축 기법인 cmHC를 제안한 연구도 찾아볼 수 있거든요. 뭔 소리냐면 전력망을 더 안정적으로 다듬거나 AI의 학습 방식을 개선하려는 시도가 주를 이뤘다는 말이에요. 전체 분야 중에서는 전력망과 AI 모델 쪽이 차지하는 비중이 훨씬 크다고 보입니다.",
+        "text": "오늘 풀이한 논문들 중에서는 전력망·계통과 인공지능 모델·학습법을 다룬 내용이 가장 많았고, 상수도 시스템의 경제성을 분석한 재생에너지 연구도 눈에 띄었습니다. 데이터센터를 포함한 전력망 복구 최적화나 기하학적 수축 기법인 cmHC로 대규모 모델 학습의 잔차 연결 안정성을 높인 연구 등이 올라왔는데요. 뭔 소리냐면 전력망을 안정적으로 유지하고 인공지능 모델의 성능을 끌어올리는 기술들이 집중적으로 다뤄졌다는 말이에요. 전력망 쪽이 인공지능 쪽보다 훨씬 많다고 보입니다.",
         "by": "ai",
-        "flags": [
-          "센 값에 없는 숫자 3"
-        ]
+        "flags": []
       },
       "map": [
         {
           "tag": "전력망·계통",
-          "n": 3,
-          "n_done": 3,
+          "n": 12,
+          "n_done": 12,
           "one_lines": [
+            "데이터센터를 포함한 전력망 복구 최적화 기법을 제안하고 시뮬레이션으로 검증했어요.",
             "SMR 선박의 부하 추종 성능을 통합 분석하고 배터리의 효과를 확인했어요.",
-            "직류 마이크로그리드 전압 제어를 위한 수동성 기반 제어법을 개발했어요.",
-            "베이지안 편향 학습 기반의 확률적 전압 추정법을 제안했어요."
+            "직류 마이크로그리드 전압 제어를 위한 수동성 기반 제어법을 개발했어요."
           ]
         },
         {
           "tag": "AI 모델·학습법",
-          "n": 3,
-          "n_done": 3,
+          "n": 12,
+          "n_done": 12,
           "one_lines": [
             "기하학적 수축 기법인 cmHC를 제안해 대규모 모델 학습의 잔차 연결 안정성을 높였다.",
-            "비디오 월드 모델의 물체 침투를 막는 NoPeWorld를 개발했어요.",
-            "LLM 에이전트의 예지보전 범용성 벤치마크 실험 수행"
-          ]
-        },
-        {
-          "tag": "AI 안전·평가",
-          "n": 2,
-          "n_done": 2,
-          "one_lines": [
-            "신원 일치 판단 능력을 진단하는 PURE 벤치마크를 도입하고 멀티모달 모델들을 평가했어요.",
-            "언어 모델 양자화가 안전성에 주는 영향을 분석해 취약점을 증명했어요."
-          ]
-        },
-        {
-          "tag": "제어·로봇",
-          "n": 1,
-          "n_done": 1,
-          "one_lines": [
-            "가우시안 프로세스로 제어 시스템의 흐름을 학습하는 최적 경로 계획법을 개발했어요."
+            "전자상거래 특화 다중 모달 모델을 개발하고 성능을 검증했어요.",
+            "수정기 기반 위치 찾기 방식으로 코딩 에이전트의 성능을 높였어요."
           ]
         },
         {
           "tag": "AI 에이전트·도구",
+          "n": 6,
+          "n_done": 6,
+          "one_lines": [
+            "거대 모델을 로봇 제어에 활용하는 설계 원리를 분석하고 성능을 높이는 지침을 만들었어요.",
+            "로봇 사용 인터페이스가 에이전트 신뢰성에 미치는 영향을 분석하고 벤치마크를 만들었어요.",
+            "게임 기반 벤치마크를 만들어 실시간 에이전트를 시험하고 학습시켰어요."
+          ]
+        },
+        {
+          "tag": "제어·로봇",
+          "n": 4,
+          "n_done": 4,
+          "one_lines": [
+            "린 4를 이용해 회로 이론 형식화의 첫 단계를 마련했어요.",
+            "메카트로닉스 운동 제어 성능을 높이는 CBF 기반 제어기를 제안했어요.",
+            "1차원 합성곱 신경망과 NMPC를 결합해 슬러그 흐름 제어 모델을 만들었어요."
+          ]
+        },
+        {
+          "tag": "AI 안전·평가",
+          "n": 4,
+          "n_done": 4,
+          "one_lines": [
+            "60개의 로봇 과제로 인공지능의 물리적 수행 능력을 비교하는 벤치마크인 월드리그를 제안했어요.",
+            "장치 제어 평가를 위한 벤치마크를 만들고 성능을 시험했어요.",
+            "신원 일치 판단 능력을 진단하는 PURE 벤치마크를 도입하고 멀티모달 모델들을 평가했어요."
+          ]
+        },
+        {
+          "tag": "발전·재생에너지",
           "n": 1,
           "n_done": 1,
           "one_lines": [
-            "에이전트 도구 사용 제어를 위한 인텐트 계약을 도입하고 성능을 평가했어요."
+            "물탱크를 유압 배터리로 쓰는 상수도 시스템의 경제성을 분석했어요."
           ]
         },
         {
@@ -11846,9 +12006,14 @@ window.PANEL_DATA = {
           "why": "전공(전력·제어) 중 키워드가 많이 걸림: frequency, battery, energy storage, nuclear, reactor"
         },
         {
-          "canon_id": "2611.27193",
+          "canon_id": "2611.31201",
           "badge": "실무 인기",
-          "why": "허깅페이스 추천 85"
+          "why": "허깅페이스 추천 89"
+        },
+        {
+          "canon_id": "2611.30662",
+          "badge": "교차 출현",
+          "why": "여러 곳에 같이 올라옴: cs.AI + 허깅페이스"
         },
         {
           "canon_id": "2611.23417",
@@ -11861,14 +12026,14 @@ window.PANEL_DATA = {
           "why": "전공(전력·제어) 중 키워드가 많이 걸림: microgrid, voltage, frequency, grid-forming"
         },
         {
-          "canon_id": "2611.27963",
+          "canon_id": "2611.27193",
           "badge": "실무 인기",
-          "why": "허깅페이스 추천 54"
+          "why": "허깅페이스 추천 85"
         },
         {
-          "canon_id": "2611.24025",
+          "canon_id": "2611.30019",
           "badge": "의외",
-          "why": "오늘 풀이 중 드문 주제 'AI 에이전트·도구'(1편) — 키워드·추천수와 상관없이 고름"
+          "why": "오늘 풀이 중 드문 주제 '발전·재생에너지'(1편) — 키워드·추천수와 상관없이 고름"
         }
       ],
       "cards": [
@@ -11888,12 +12053,59 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 10.0,
           "score_why": "전공 +3 · 키워드 3개(power system, frequency, battery) → +6 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "power system",
             "frequency",
             "battery"
           ],
+          "ai": {
+            "easy1_title": "정전 때 데이터센터가 다시 전력망에 붙을 때 생기는 문제",
+            "easy1_desc": "정전이 났을 때 계속 돌아가야 하는 데이터센터는 자체 발전기와 배터리로 버티다가 전력망이 살아나면 다시 연결되는데요, 이때 전력 수요가 갑자기 변하면 계통 주파수(전력망의 전기 진동수)에 영향을 줄 수 있다는 거예요. 그래서 데이터센터를 다시 붙일 때 다른 부하들과 어떻게 맞출 것인지가 중요한 문제였다는 말이에요.",
+            "easy2_title": "배터리를 남겨두는 방식으로 안전하게 전력망을 복구합니다",
+            "easy2_desc": "그래서 연구진은 전력망 복구 최적화 문제에 새로운 제약 조건을 넣어봤는데요, 데이터센터에 전력을 공급하면서도 배터리의 전력과 에너지를 일부 남겨두어 수요 변화를 버텨내게 만든 거예요. 이렇게 하면 데이터센터에 안정적으로 전기를 주면서도 운영 한계를 지킬 수 있다는 장점이 있지만, 대신 다른 부하를 끌어오는 양은 조금 줄어든다는 점도 함께 나타난다는 겁니다.",
+            "topic": "데이터센터가 전력망 복구 과정에 안전하게 다시 연결되도록 배터리 제약 조건을 더한 복구 최적화 방법을 제안했어요.",
+            "one_line": "데이터센터를 포함한 전력망 복구 최적화 기법을 제안하고 시뮬레이션으로 검증했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yousef Abudyak, Saleh Sadeghi Gougheri, Mohsen Alizadeh, Wei Sun",
           "categories": [
             "eess.SY",
@@ -11919,8 +12131,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 89,
           "score": 9.9,
           "score_why": "추천 89 → +8.9 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "거대 모델을 로봇 제어에 바로 써 봤는데 왜 잘 되는지 잘 몰랐거든요",
+            "easy1_desc": "최근 멀티모달(시각·언어 등 복합 정보 처리) 모델이 로봇의 행동을 직접 결정하는 정책으로 쓰이면서 뛰어난 성능을 보여주고 있는데요. 그런데 정작 이런 시스템을 어떻게 설계해야 가장 효과적인지, 모델의 어떤 능력이 핵심인지에 대해서는 아직 명확히 밝혀진 게 없었거든요. 쉽게 말하면, 성능은 좋은데 왜 좋은지 속 시원히 설명하기 어려운 상황이었다는 말이에요.",
+            "easy2_title": "로봇 제어의 핵심 요소들을 분석해서 성능을 높이는 방법을 찾았어요",
+            "easy2_desc": "연구진은 Embo-Harness라는 틀을 만들어 로봇이 행동하는 과정을 네 가지 요소로 나누어 체계적으로 분석했는데요. 그 결과로 모델이 가진 시각적 추론과 도구 사용 능력을 최대한 활용하는 실용적인 설계 지침을 마련했습니다. 실제로 이 방식을 적용했더니 RoboLab-120 환경에서 83.3%의 성공률을 기록하며 기존 최고 성능보다 26.2%포인트나 앞섰다는 거예요.",
+            "topic": "거대 모델을 로봇 정책으로 활용할 때 성능을 결정짓는 핵심 설계 원리와 요소들을 분석했어요.",
+            "one_line": "거대 모델을 로봇 제어에 활용하는 설계 원리를 분석하고 성능을 높이는 지침을 만들었어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xiao-Ming Wu, Kang Liao, Yuexiao Ma, Taolin Zhang, Mingqian Zhou, Nuo Chen, Ziming Li, Yihang Luo, Rui Li, Zhonghua Wu, Tianyu Xie, Xiawu Zheng, Zhongang Cai, Zhi Hou, Chen Change Loy",
           "categories": [],
           "comments": 1,
@@ -11953,33 +12212,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "소형 원자로를 배에 실었더니 부하 변화가 문제였어요",
             "easy1_desc": "미래형 전기 추진 선박에 소형 모듈 원자로(SMR)를 동력원으로 쓰려는 시도가 있는데요, 배가 움직일 때 필요한 전력량이 갑자기 바뀌면 이 영향이 전기망을 타고 증기 발생기와 원자로까지 전달되는 문제가 생깁니다. 뭔 소리냐면, 배의 속도를 줄이려고 모터 출력을 낮추면 원자로 쪽에서 만들어내는 에너지와 배가 쓰는 전력 사이에 차이가 생기면서 시스템 전체가 불안정해진다는 말이에요. 쉽게 말하면, 원자로와 전기 추진 시스템이 서로 얽혀 있어서 한쪽의 변화가 전체의 출렁임으로 이어진다는 겁니다.",
-            "easy1_evidence": "In such systems, propulsion-load variations can propagate through the electrical network, turbine-generator set, steam generator, and reactor, producing coupled nuclear, thermal, mechanical, and electrical transients.",
             "easy2_title": "배터리를 달았더니 전력 출렁임이 줄어들었어요",
             "easy2_desc": "연구진은 배터리 에너지 저장 장치(BESS)를 함께 달았을 때 어떤 변화가 생기는지 통합 모델을 만들어 분석해 봤는데요, 배터리가 없는 경우에는 모터 출력이 줄어들 때 주파수가 약 61.1 Hz까지 치솟는 큰 변동이 나타났거든요. 그런데 배터리를 연결했더니 남는 전력을 배터리가 흡수하면서 주파수 피크가 약 60.06 Hz 수준으로 크게 낮아졌습니다. 결과적으로 배터리가 전기적 충격을 완화해 주면서 원자로와 증기 순환 계통까지 훨씬 안정적으로 반응하게 만든 셈이에요.",
-            "easy2_evidence": "With BESS support, the battery absorbs excess electrical power during the transient, reducing the frequency peak from approximately 61.1 Hz to about 60.06 Hz.",
             "topic": "소형 모듈 원자로(SMR) 기반 전기 추진 선박에서 배터리 에너지 저장 장치(BESS)가 부하 추종 성능에 미치는 영향을 통합 동적 분석했어요.",
-            "topic_evidence": "This paper presents an integrated dynamic load-following analysis of an SMR-powered all-electric ship with and without battery energy storage system (BESS) support.",
-            "points": [
-              {
-                "subtitle": "통합 동적 모델 구축",
-                "desc": "연구진은 일체형 가압 경수로와 증기 발생기, 터빈, 발전기, 그리고 배터리까지 포함하는 다중 도메인 통합 모델을 설계했습니다. 이 모델을 통해 원자력과 열, 기계, 전기적 반응이 서로 어떻게 얽혀서 나타나는지를 분석한 겁니다.",
-                "evidence": "The model couples an integral pressurized water reactor, a once-through moving-boundary steam generator, a simplified turbine model, a synchronous generator, an AC shipboard electrical network, an asynchronous propulsion motor, and a grid-connected BESS."
-              },
-              {
-                "subtitle": "부하 변화에 따른 반응 비교",
-                "desc": "모터 토크 명령을 조절해 추진 부하를 갑자기 줄이는 상황을 가정하고 배터리 유무에 따른 차이를 확인해 봤는데요, 배터리가 없으면 기계적 출력과 전기 수요 사이의 불균형으로 인해 주파수 변동과 급격한 증기 순환 조정이 발생한다는 사실을 밝혀냈습니다.",
-                "evidence": "The results show that, without BESS support, the sudden decrease in propulsion motor power creates a temporary surplus between turbine mechanical power and electrical demand, causing a large over-frequency transient and rapid steam-cycle adjustment."
-              },
-              {
-                "subtitle": "배터리 통합의 효과",
-                "desc": "배터리를 추가하면 과도한 전력을 흡수하여 주파수 변동을 억제할 뿐만 아니라, 증기 유량이나 원자로 열 출력 같은 상류 계통의 반응까지 간접적으로 부드럽게 만들어 줍니다. 연구진은 이러한 결과가 원자력 추진 선박을 다중 도메인 시스템으로 모델링하는 것이 중요함을 보여준다고 주장했습니다.",
-                "evidence": "These results demonstrate the importance of modeling nuclear-powered electric ships as coupled multi-domain systems and show that BESS integration can improve short-term load-following performance."
-              }
-            ],
             "one_line": "SMR 선박의 부하 추종 성능을 통합 분석하고 배터리의 효과를 확인했어요.",
             "topic_tag": "전력망·계통",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -12052,33 +12290,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "복잡한 제어 방식 때문에 현장 설치가 너무 힘들었어요",
             "easy1_desc": "직류(DC) 마이크로그리드에서 전압을 안정적으로 유지하려고 기존에는 드룹(droop) 제어 방식을 많이 써 왔는데요, 성능을 높이려고 알고리즘을 복잡하게 만들다 보니 문제가 생겼어요. 제어 변수와 측정해야 할 데이터가 너무 많아져서, 실제 현장에 설치하고 운영하는 부담이 커진 겁니다. 게다가 주변 전력망과 연결했을 때 안정적으로 작동할지 보장하기 어렵다는 단점도 있었거든요.",
-            "easy1_evidence": "Although numerous variants of droop algorithms have been proposed, many rely on increasingly complex control structures with multiple tuning parameters and measurements, thereby increasing the commissioning burden.",
             "easy2_title": "복잡한 설정 없이도 안정적인 전압 제어 방식을 만들었어요",
             "easy2_desc": "그래서 연구진은 수동성(passivity) 제약 조건을 추가한 H-infinity 합성 방법을 개발했는데요, 변환기가 전력망을 형성하는 것처럼 동작하도록 설계한 게 핵심이에요. 이 방식은 성능 지표와 목표값 사이의 오차를 최소화하면서도 시스템의 안정성을 보장하는 수동성을 강제로 유지하게 만들거든요. 실제로 4개의 변환기로 구성된 직류 마이크로그리드에서 실험해 봤더니, 기존 방식보다 더 안정적이고 실용적이라는 점을 확인했다는 겁니다.",
-            "easy2_evidence": "To address these issues, this paper develops a passivity-constrained $\\mathcal{H}_\\infty$ synthesis method for the DC-bus voltage controller.",
             "topic": "직류 마이크로그리드에서 전압 안정성을 높이기 위해 수동성 제약이 포함된 H-infinity 제어 방식을 제안했어요.",
-            "topic_evidence": "To address these issues, this paper develops a passivity-constrained $\\mathcal{H}_\\infty$ synthesis method for the DC-bus voltage controller.",
-            "points": [
-              {
-                "subtitle": "H-infinity 제어 설계",
-                "desc": "변환기의 성능 지표와 목표값 사이의 오차를 최소화하는 H-infinity 제어기를 설계했어요. 이때 시스템이 에너지를 발산하지 않고 안정적으로 유지되도록 수동성 조건을 최적화 과정에 강제로 포함한 겁니다.",
-                "evidence": "The proposed $\\mathcal{H}_\\infty$ controller emulates the desired grid-forming behavior of the converter by minimizing the $\\mathcal{H}_\\infty$ error norm between device-level performance indices and their desired values, while additionally enforcing passivity during the optimization."
-              },
-              {
-                "subtitle": "기존 방식과의 비교",
-                "desc": "연구진은 제안한 제어 방식을 주파수 영역에서 기존의 드룹 제어 및 가상 직류 기기 알고리즘들과 비교 분석했어요. 기존 방식들이 가진 복잡한 구조와 달리, 안정적인 상호작용을 보장한다는 점을 강조한 겁니다.",
-                "evidence": "The novel $\\mathcal{H}_\\infty$ control scheme is benchmarked in the frequency domain against representative droop-based and virtual-DC-machine algorithms from the literature, while experiments on a four-converter DC microgrid corroborate the frequency-domain analysis and validate the practical applicability of the algorithm."
-              },
-              {
-                "subtitle": "실험을 통한 검증",
-                "desc": "4개의 변환기가 연결된 직류 마이크로그리드 환경에서 실제 실험을 진행했어요. 주파수 영역에서의 분석 결과가 실제 환경에서도 잘 들어맞는지 확인해서, 이 알고리즘이 현장에서 충분히 쓰일 수 있다는 점을 입증한 셈이에요.",
-                "evidence": "The novel $\\mathcal{H}_\\infty$ control scheme is benchmarked in the frequency domain against representative droop-based and virtual-DC-machine algorithms from the literature, while experiments on a four-converter DC microgrid corroborate the frequency-domain analysis and validate the practical applicability of the algorithm."
-              }
-            ],
             "one_line": "직류 마이크로그리드 전압 제어를 위한 수동성 기반 제어법을 개발했어요.",
             "topic_tag": "전력망·계통",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -12147,33 +12364,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "기존 초고층 연결망에서 섞이는 방식을 살펴보니 문제가 있었는데요",
             "easy1_desc": "연구진은 잔차 연결을 여러 갈래로 늘린 기존 기법에서 흐름을 어떻게 섞는 게 좋을지 그 한계를 파악해 봤는데요. 덜 섞이면 흐름들이 따로 놀게 되고, 너무 많이 섞이면 흐름끼리 구분이 안 된다는 딜레마가 있다는 겁니다. 쉽게 말하면, 지나치게 한쪽으로 쏠리거나 아예 섞이지 않는 양극화 문제가 생긴다는 셈이에요.",
-            "easy1_evidence": "We reveal a mixing trade-off: when under-mixed residual matrices stay close to the vertices of the Birkhoff polytope, hyper-connections will degenerate into a set of nearly independent streams; when over-mixed residual matrices are concentrated around the uniform barycenter of the polytope, streams will become less distinguishable from each other.",
             "easy2_title": "안쪽으로 모아주는 방식을 새로 제안해 안정성을 높였다는 겁니다",
             "easy2_desc": "그래서 연구진은 버코프 폴리토프라는 공간을 안쪽으로 오므려 주는 새로운 방법인 cmHC를 제안했는데요. 이렇게 하면 파라미터를 늘리지 않고도 덜 섞이는 문제를 막을 수 있다는 장점이 있어요. 대신 얕은 층에서는 지나친 혼합을 막으려고 적당히 조절해 둔다는 건데요. 쉽게 말하면, 아주 큰 규모의 모델을 학습할 때도 그래디언트가 안정적으로 흐르게 만든다는 말이에요.",
-            "easy2_evidence": "Motivated by these findings, we propose Contraction for Manifold-Constrained Hyper-Connections (cmHC), an exact doubly stochastic method which geometrically contracts the Birkhoff polytope toward its interior.",
             "topic": "다중 흐름 잔차 연결망에서 발생하는 혼합 트레이드오프를 해결하기 위해 기하학적 수축 기법인 cmHC를 제안하고, 대규모 모델 학습에서 안정성을 확인한 연구예요.",
-            "topic_evidence": "In this work, we investigate how to effectively mix residual streams within the Birkhoff polytope.",
-            "points": [
-              {
-                "subtitle": "혼합 트레이드오프 분석",
-                "desc": "연구진은 버코프 폴리토프 안에서 행렬이 꼭짓점에 머물면 흐름이 따로 놀고, 가운데에 뭉치면 흐름을 구분하기 어려워진다는 혼합 트레이드오프를 밝혔는데요. 층을 거듭할수록 누적되는 혼합과 차이를 이론적으로 검증해 냈다는 겁니다. 뭔 소리냐면, 무작정 섞기만 하면 모델의 효율이 떨어진다는 말이에요.",
-                "evidence": "We theoretically validate our findings by bounding the cumulative residual mixing, stream difference and gradient difference of mixing coefficients across layers."
-              },
-              {
-                "subtitle": "cmHC 제안과 작동 방식",
-                "desc": "그래서 폴리토프의 안쪽으로 기하학적 수축을 일으키는 cmHC 방법을 설계했는데요. 새로운 파라미터를 추가하지 않고도 행렬이 안쪽 깊숙이 들어가도록 강제해서 덜 섞이는 문제를 해결한다는 거예요. 대신 얕은 층에서는 너무 많이 섞이는 현상을 막으려고 적당히 조절해 둔다는 셈이에요.",
-                "evidence": "This contraction mitigates under-mixing by forcing the residual matrices to explore deeper into the polytope, with a provable stream mixing bound and no new parameterization."
-              },
-              {
-                "subtitle": "실험과 실행 속도 개선",
-                "desc": "다양한 크기의 조밀 모델과 혼합 전문가 모델에서 실험을 해 봤더니, cmHC가 확장성과 효과를 확실히 보여줬다고 밝혔는데요. 어슨드 NPU(Ascend NPUs)용으로 연산자를 합쳐서 구현해 봤더니, 하이퍼 커넥션의 실행 지연 시간을 최대 44.8%까지 줄였다고 합니다. 쉽게 말하면, 성능은 지키면서 속도까지 빨라진다는 거예요.",
-                "evidence": "We also develop fused operators for cmHC on Ascend NPUs, reducing hyper-connection execution latency by up to 44.8%."
-              }
-            ],
             "one_line": "기하학적 수축 기법인 cmHC를 제안해 대규모 모델 학습의 잔차 연결 안정성을 높였다.",
             "topic_tag": "AI 모델·학습법",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -12234,8 +12430,57 @@ window.PANEL_DATA = {
           "hf_upvotes": 70,
           "score": 8.0,
           "score_why": "추천 70 → +7 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "AI가 물리적인 세계에서 실제로 어디까지 해내는지 궁금했습니다",
+            "easy1_desc": "요즘 인공지능(AI) 시스템이 블렌더를 조작하고 비디오 게임 속 지시를 따르며 로봇 팔로 물건을 다루는데요, 과연 물리적인 목표를 어디까지 혼자서 해낼 수 있는지가 문제였다는 겁니다. 이 질문에 답하려면 지각과 기억, 계획과 행동이 다르게 필요한 과제들로 시스템을 시험해 봐야 하거든요. 그래서 연구진은 60개의 시뮬레이션 로봇 과제로 인공지능을 비교하는 기준인 월드리그(WorldLeague)를 도입해 로봇의 궤적으로 물리적 목표에 얼마나 다가갔는지 측정해 봤다는 말이에요.",
+            "easy2_title": "60개의 가상 로봇 과제로 인공지능의 물리적 수행 능력을 비교해 봤습니다",
+            "easy2_desc": "그래서 연구진은 비전-언어 모델(VLMs)과 비전-언어-행동 모델(VLAs), 그리고 월드-행동 모델(WAMs)이 각자의 제어 방식을 쓰도록 하고 6개의 능력 차원에서 목표 달성 진척도와 성공률을 측정해 물리적 에이전시 프로필을 만들어 봤는데요. 13개의 대표적인 인공지능 시스템을 시험해 봤더니, 클로드 페이블 5.2(Claude Fable 5.2)가 60개의 목표 중 13개를 달성하고 가장 높은 평균 대화형 점수를 얻었다고 해요. 시스템들이 정답을 다 맞혀도 물리적 에피소드에서는 점수를 받지 못하는 경우가 생긴다는 단점이 있는데, 장점은 인공지능들이 물리적 목표를 어느 정도까지 스스로 해내는지 공통된 기준으로 비교할 수 있게 되었다는 겁니다.",
+            "topic": "인공지능 시스템이 가상 로봇 과제에서 물리적 목표를 얼마나 스스로 달성하는지 공통된 기준으로 비교하는 벤치마크인 월드리그(WorldLeague)를 소개하는 연구예요.",
+            "one_line": "60개의 로봇 과제로 인공지능의 물리적 수행 능력을 비교하는 벤치마크인 월드리그를 제안했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [
+              "one_line 52자"
+            ],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Xinyang Zhou, Qi Li, Xinchao Wang",
           "categories": [],
           "comments": 1,
@@ -12257,11 +12502,58 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 8.0,
           "score_why": "전공 +3 · 키워드 2개(voltage, grid-forming) → +4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "voltage",
             "grid-forming"
           ],
+          "ai": {
+            "easy1_title": "재생에너지원이 늘어나면서 기존 방식의 보호 계전기가 오동작하는 문제가 있었습니다",
+            "easy1_desc": "인버터 기반 자원, 그러니까 IBR이 늘어나면서 전력 시스템의 거리 계전기 안에서 전력 스윙 차단과 탈락 방식이 제대로 작동하지 않는 문제가 커졌는데요. 기존 방식들은 겉보기 임피던스가 블라인더 사이를 지나갈 때의 속도에 너무 의존한다는 단점이 있거든요. 쉽게 말하면, 변화가 빠르고 모양이 낯선 상황에서는 기존 방법이 제 역할을 못 한다는 말이에요.",
+            "easy2_title": "스윙 센터 전압을 이용하는 새로운 차단 및 탈락 방식을 제안했습니다",
+            "easy2_desc": "그래서 연구진은 스윙 센터 전압인 SCV의 특성을 깊게 분석하고, 전력망 형성 및 추종 인버터들이 전압 추정에 미치는 영향을 살펴봤는데요. 이를 바탕으로 단순한 시스템 변수만으로 조율할 수 있는 새로운 SCV 기반 방식을 제안했다는 겁니다. PSCAD를 이용한 시뮬레이션으로 성능을 검증해 보니 기존 방식의 한계를 넘어선다는 것을 확인했다고 하는데요, 대신 새로운 방식이 실제 복잡한 현장에서도 똑같이 안정적일지는 앞으로 계속 확인해야 한다는 점도 같이 따라온다는 겁니다.",
+            "topic": "인버터 기반 자원이 늘어나는 전력 시스템에서 거리 계전기의 오동작을 막기 위해 스윙 센터 전압을 활용한 새로운 전력 스윙 차단 및 탈락 방식을 제안한 연구예요.",
+            "one_line": "인버터 기반 전력망을 위한 SCV 기반 계전기 제어 방식을 제안했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Henrik Johansson, Qianli Xing, Jaekeun Lee, Ki-Hyun Kim, Nathaniel Taylor, Xiongfei Wang",
           "categories": [
             "eess.SY",
@@ -12286,11 +12578,58 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 8.0,
           "score_why": "전공 +3 · 키워드 2개(battery, energy storage) → +4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "battery",
             "energy storage"
           ],
+          "ai": {
+            "easy1_title": "비싼 배터리 대신 물탱크를 써 봤더니",
+            "easy1_desc": "연구진은 에티오피아의 건조한 아파르 지역에서 대형 배터리 대신 1,900세제곱미터 높이의 물탱크를 유압 배터리로 쓰는 태양광-그리드 하이브리드 상수도 시스템을 분석해 봤는데요, 돈이 많이 드는 전기 화학식 저장 장치를 없애서 초기 투자비를 크게 줄였다는 겁니다. 뭔 소리냐면, 개발도상국이나 소득이 낮은 지역에서 비싼 배터리 대신 높은 곳에 물을 채우는 방식으로 에너지를 저장하는 게 훨씬 경제적이라는 말이에요. 쉽게 말하면, 전기가 부족한 곳에서 물탱크가 배터리 역할을 톡톡히 해낸 셈이라는 겁니다.",
+            "easy2_title": "파이썬과 센디를 써서 비용을 낮추고 효율을 확인했다",
+            "easy2_desc": "그래서 파이썬으로 높은 해상도의 기술 시뮬레이션을 돌리고 센디로 경제적 최적화를 해 봤더니, 태양광 비율은 55.1%이고 내부수익률은 10%를 기록했다고 하는데요, 물탱크를 이용한 하이브리드 시스템이 에너지가 부족한 지역에서 물 공급을 해결할 수 있는 재정적으로 실현 가능하고 믿을 만한 방법임을 확인했다는 겁니다. 이런 방식 덕분에 초기 비용을 아끼는 장점이 있는데, 대신 지형 조건이나 물탱크 설치 여건에 따라 결과가 달라질 수 있다는 점도 염두에 두어야 한다는 거예요.",
+            "topic": "에티오피아 아파르 지역의 상수도 시스템에서 배터리 대신 높은 물탱크를 유압 에너지 저장 장치로 활용하여 경제성과 기술적 타당성을 분석한 연구예요.",
+            "one_line": "물탱크를 유압 배터리로 쓰는 상수도 시스템의 경제성을 분석했어요.",
+            "topic_tag": "발전·재생에너지",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "발전·재생에너지",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Mariamawit Gashahun Arega, Jesse Thornburg",
           "categories": [
             "eess.SY",
@@ -12317,11 +12656,58 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 8.0,
           "score_why": "전공 +3 · 키워드 2개(voltage, battery) → +4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "voltage",
             "battery"
           ],
+          "ai": {
+            "easy1_title": "평소에는 멀쩡해 보여도 전압이 흔들리면 문제가 생겼는데요",
+            "easy1_desc": "연구진은 대규모 데이터센터가 평소에는 전력망 조건을 잘 맞추다가도 전압이 불안정해지면 실제 한계를 넘어서는 문제가 생길 수 있다고 봤는데요. 이게 무슨 말이냐면, 평온할 때는 안전해 보여도 갑자기 전기가 흔들리면 버텨내지 못하는 상황이 벌어진다는 겁니다. 그래서 전압이 요동칠 때 데이터센터가 어떻게 버티는지 미리 확인하고 그에 맞춰 전력을 조절할 필요가 있다는 말이에요.",
+            "easy2_title": "전력 제한 방식을 새로 도입해서 전압이 흔들려도 버티게 만들었습니다",
+            "easy2_desc": "그래서 연구진은 AC 최적 조류 계산과 동적 전압 유지 평가를 합쳐서, 전압이 흔들려도 버텨내는 전력 제한 체계를 새로 제안했는데요. 이 방식을 썼더니 전력 제한이 걸린 기간 동안 전력 수요를 대략 5% 정도 줄이면서도 필요한 전압 유지 요구 조건을 모두 만족할 수 있었다고 해요. 회복하는 과정에서 전력 수요를 일부 줄여야 하는 단점은 있지만, 대신 전압이 흔들리는 상황에서도 시스템이 안전하게 버틴다는 장점이 함께 따라온다는 겁니다.",
+            "topic": "대규모 데이터센터가 전압이 흔들리는 상황에서도 안정적으로 전력을 쓸 수 있도록 전압 유지 능력을 고려한 전력 제한 체계를 제안한 연구예요.",
+            "one_line": "대규모 데이터센터의 전압 유지 능력을 고려한 전력 제한 체계를 제안했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 2,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jie Zhu, Ye Tian, Yinliang",
           "categories": [
             "eess.SY",
@@ -12346,11 +12732,58 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 8.0,
           "score_why": "전공 +3 · 키워드 2개(frequency, battery) → +4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "frequency",
             "battery"
           ],
+          "ai": {
+            "easy1_title": "분산된 에너지 자원을 모았지만 실제로 보낼 수 있는 전력은 달랐는데요",
+            "easy1_desc": "분산된 에너지 자원을 모아서 주파수 조절 서비스를 할 수 있는데요, 원래는 각 장치에 남은 전력만 보고 판단했거든요. 그런데 막상 송전과 배전이 만나는 곳에서 보면 실제로 보낼 수 있는 전력은 그만큼 안 될 수도 있다는 거예요. 쉽게 말하면, 내 지갑에 있는 돈이랑 실제로 쓸 수 있는 돈이 다른 셈이라는 말이에요.",
+            "easy2_title": "양방향 공유 체계를 만들었더니 요청한 전력을 훨씬 더 정확하게 맞췄거든요",
+            "easy2_desc": "연구진은 가상 발전소(VPP)를 위한 양방향 에너지 공유 체계를 제안했는데요, 송전선 손실이나 전압에 따라 달라지는 부하를 계산하고 배터리 용량까지 함께 고려해서 전력을 배분하는 방식이에요. 그 결과 IEEE 8500노드 배전망과 IEEE 14버스 시스템에서 실험해 봤더니 요청한 전력 오차가 2% 이내로 줄어드는 장점이 있는 반면, 기존 방식은 23에서 26%나 더 많이 튀어나오는 문제가 있었다는 겁니다. 쉽게 말하면, 필요한 만큼만 정확히 뽑아 쓰기가 훨씬 좋아졌다는 거예요.",
+            "topic": "송전망과 배전망을 함께 시뮬레이션해서 가상 발전소(VPP)가 주파수 조절 예비력을 정확하게 전달하도록 만든 양방향 전력 공유 체계에 대한 연구예요.",
+            "one_line": "송배전 연계 시뮬레이션 기반 가상 발전소 전력 공유 체계를 제안했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Ahmad Ali, Zhuorong Wang, Youssef Abdelmoneim, Hantao Cui",
           "categories": [
             "eess.SY",
@@ -12375,11 +12808,58 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 8.0,
           "score_why": "전공 +3 · 키워드 2개(voltage, renewable) → +4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "voltage",
             "renewable"
           ],
+          "ai": {
+            "easy1_title": "재생에너지가 늘면서 기존 보호 계전기가 잘 안 먹힌다는 건데요",
+            "easy1_desc": "연구진은 전 세계적으로 재생에너지가 늘어나면서 인버터 기반 자원(IBR)이 많아지고 있다는 점을 짚었는데요, 이 그리드 팤로잉(GFL) 인버터 제어가 요즘 표준 방식이라는 거예요. 문제는 이 GFL 인버터가 옛날 동기식 발전기와는 고장 날 때 보이는 모습이 완전히 다르다는 점인데요. 쉽게 말하면, 기존 보호 알고리즘은 전부 옛날 발전기 기준으로 만들어졌기 때문에 GFL 인버터가 섞이면 성능이 뚝 떨어진다는 말이에요.",
+            "easy2_title": "그래서 전원 임피던스에 상관없는 새로운 리액턴스 방식을 제안했습니다",
+            "easy2_desc": "연구진은 이런 문제를 해결하려고 기존 방식을 발전시킨 고급 리액턴스 방식(Advanced Reactance Method)을 새로 내놨는데요. 핵심 아이디어는 알고리즘이 전원 임피던스에 휘둘리지 않게 만드는 것이라는 거예요. 방법은 역순환 전압을 역순환 전류와 함께 따져보는 건데요. 이렇게 하면 불대칭 고장 때 전류가 죽어도 GFL 인버터의 고장 통과 성질에 구애받지 않게 된다는 셈이에요.",
+            "topic": "그리드 팤로잉 인버터가 늘어난 전력망에서 거리 보호 계전기의 성능 저하를 막기 위해 새로운 고급 리액턴스 방식을 제안한 연구예요.",
+            "one_line": "GFL 인버터 환경에서 거리 보호를 위한 고급 리액턴스 방식을 제안했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Jonathan Loebel, Jannik Polster, Johann Jaeger",
           "categories": [
             "eess.SY",
@@ -12406,8 +12886,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 54,
           "score": 6.4,
           "score_why": "추천 54 → +5.4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "전자상거래에 특화된 똑똑한 인공지능이 필요했어요",
+            "easy1_desc": "위챗(WeChat) 생태계에서 상품을 검색하거나 관리하는 등 전자상거래 업무를 처리하려면 일반적인 인공지능 모델만으로는 부족한 점이 많았거든요. 그래서 연구진은 전자상거래에 특화된 능력을 갖추면서도 일반적인 작업까지 잘 해내는 다중 모달(Multimodal) 거대 언어 모델인 WeMM-Ecom을 개발했습니다. 모델 크기를 0.8B부터 35B까지 다섯 가지로 다양하게 구성해서, 상황에 맞춰 골라 쓸 수 있게 만든 겁니다.",
+            "easy2_title": "학습 방식을 바꿔서 성능을 크게 끌어올렸어요",
+            "easy2_desc": "연구진은 전자상거래 데이터를 점진적으로 늘려가며 학습시키는 2단계 사전 학습 방식을 도입했는데요, 여기에 강화 학습을 결합해 모델이 스스로 생각하거나 바로 답을 내놓는 방식을 선택할 수 있게 만들었습니다. 그 결과, 35B 모델은 기존의 대형 오픈소스 모델들보다 더 뛰어난 성능을 보여줬고, 가벼운 모델들도 경쟁 모델들을 앞섰다는 게 연구진의 주장이에요. 실제로 위챗의 수백 가지 서비스에 적용되어 매일 수십억 건의 요청을 처리하고 있다는 점이 가장 큰 변화입니다.",
+            "topic": "전자상거래 환경에 최적화된 다중 모달 거대 언어 모델인 WeMM-Ecom의 개발과 그 성능을 평가한 연구입니다.",
+            "one_line": "전자상거래 특화 다중 모달 모델을 개발하고 성능을 검증했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Binhui Xie, Jinmin Li, Haomiao Tang, Guangting Wang, Song Jin, Jianwei Zhu, Fengyun Rao, Jing Lyu",
           "categories": [
             "cs.AI",
@@ -12433,8 +12960,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 52,
           "score": 6.2,
           "score_why": "추천 52 → +5.2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "고쳐야 할 파일만 찾으려다 보니 생겼던 문제",
+            "easy1_desc": "코드 수정기(Fixer)가 실제로 읽어야 하는 코드와 레퍼런스 패치가 고치는 코드가 서로 달라서 생기는 한계가 있었는데요, 보통은 패치가 고치는 파일만 맞히도록 코드 위치 찾기 도구(Code localizer)를 훈련했기 때문이라는 겁니다. 뭔 소리냐면, 고치는 데 꼭 필요한 코드와 읽어야 하는 코드가 달라서 비효율이 생겼다는 말이에요. 쉽게 말하면, 엉뚱한 파일을 읽느라 시간을 낭비하던 셈이라는 겁니다.",
+            "easy2_title": "고치기 쉬운 위치를 직접 골라내게 만들었습니다",
+            "easy2_desc": "그래서 연구진은 수정기 기반 위치 찾기(Fixer-Guided Localization, FGL)라는 방식을 제안했는데요, 고치는 사람이 보기에 가장 알맞은 점수를 매기는 방식으로 도구를 가르쳤다는 거예요. 테스트를 직접 돌리거나 강화학습을 쓰지 않고도 가중치를 준 지도 미세조정(Supervised fine-tuning)을 썼다고 하는데요, 이렇게 했더니 필요한 코드를 27.5% 적게 쓰면서도 버그를 더 잘 찾게 된다는 장점이 있다는 겁니다.",
+            "topic": "코드 수정기가 실제로 읽어야 하는 코드를 더 잘 찾도록 돕는 새로운 위치 찾기 훈련 방법인 수정기 기반 위치 찾기(FGL)를 개발하고 그 성능을 검증한 내용이에요.",
+            "one_line": "수정기 기반 위치 찾기 방식으로 코딩 에이전트의 성능을 높였어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "8분이라는 제한 시간 속에서 4B 크기의 에이전트는 시간, 반복 루프, 편집 품질에 한계가 있다는 점을 13번의 평가 분석을 통해 확인했어요."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Khalil Hennara, Muhammad Hreden, Zeina Aldallal, Sara Chrouf, Safwan AlModhayan",
           "categories": [],
           "comments": 3,
@@ -12456,10 +13030,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 6.0,
           "score_why": "전공 +3 · 키워드 1개(voltage) → +2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "voltage"
           ],
+          "ai": {
+            "easy1_title": "그동안 회로 이론을 검증하고 다시 쓰기가 어려웠는데요",
+            "easy1_desc": "회로 이론은 전자 회로를 분석하고 설계하는 수학적 바탕이 되는데요, 전통적인 회로 유도 과정은 뚜렷하게 적히지 않은 가정과 수학적 관계에 기대는 경우가 많거든요. 그러다 보니 실제로 맞는지 검증하거나 다시 쓰기가 까다롭다는 문제가 있습니다. 뭔 소리냐면, 원리가 겉으로 명확하게 드러나지 않아서 사람이 일일이 확인해야 했다는 말이에요. 쉽게 말하면, 기존 방식은 사람이 직접 따져봐야 해서 번거롭고 시간이 걸리는 셈이라는 겁니다.",
+            "easy2_title": "린 4 도구를 써서 회로 이론을 형식화하는 첫걸음을 떼어 봤습니다",
+            "easy2_desc": "그래서 연구진은 린 4(Lean 4) 대화형 정리 증명기를 활용해 회로 이론과 아날로그 전자를 위한 형식화된 틀을 마련하는 첫 단계를 선보였는데요, 이상적인 RC 저역 통과 필터를 직접 형식화해 검증해 냈습니다. 구체적으로 소자 임피던스와 회로 연결에 필요한 재사용 가능한 정의를 세우고, 전압 분배와 전달 함수, 저역 통과 특성에 대한 기계 검증된 정리들을 확립했다는 거예요. 회로 모델과 정의, 검증된 결과들을 확장할 수 있는 도서관을 만들겠다는 더 넓은 비전도 함께 제시했는데요, 장기적으로는 회로 이론을 디지털화하고 표준화해서 다양한 회로 분석에서 지식을 체계적으로 확인하고 공유하도록 만들겠다는 목표라고 밝혔습니다.",
+            "topic": "린 4 정리 증명기를 활용해 아날로그 전자 회로 이론을 형식화하고 검증하는 체계를 마련한 연구예요.",
+            "one_line": "린 4를 이용해 회로 이론 형식화의 첫 단계를 마련했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yaohua Zhang, Zhi Kai Pong",
           "categories": [
             "eess.SY",
@@ -12484,10 +13105,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 6.0,
           "score_why": "전공 +3 · 키워드 1개(renewable) → +2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "renewable"
           ],
+          "ai": {
+            "easy1_title": "제대로 묶지 못한 전력망, 왜 문제가 됐을까",
+            "easy1_desc": "불균형한 다상 배전 시스템에서 전력망을 빠르게 조절하는 것은 전력 품질과 비용 면에서 중요한 과제인데요, 복잡한 제약 조건을 맞추면서도 최적의 운전점을 찾는 일이 그동안 쉽지 않았다는 거예요. 특히 재생에너지가 늘어나는 상황에서 실시간으로 변화하는 조건에 맞춰 발전 계획을 세우는 데는 시간과 계산 비용이 많이 든다는 단점이 있었거든요. 쉽게 말하면, 계산해야 할 조건이 너무 많아 빠르게 대응하기가 어려웠다는 말이에요.",
+            "easy2_title": "데이터를 스스로 익히는 학습법으로 해결했다",
+            "easy2_desc": "그래서 연구진은 정답 레이블 없이도 목적 함수를 직접 최소화하는 자기지도학습(self-supervised learning) 방식을 도입했는데요, 신경망이 분산에너지자원(DER)의 설정값을 예측하면 이를 투영과 미분 가능한 교류 조류 계산을 거쳐 한계를 맞추도록 만들었어요. 그 결과 123-, 240-, 906-버스 시스템에서 기존 IPOPT 방식과 비교해 평균 목적 함수 오차가 0.32%, 0.92%, 0.56% 수준을 보였다는 거예요. 속도 면에서도 58배에서 5272배까지 빨라지는 장점이 있는데, 대신 모델의 예측 정확도와 제약 조건 처리 방식에 성능이 좌우된다는 점도 함께 나타난다는 겁니다.",
+            "topic": "불균형 다상 배전 시스템에서 교류 최적 조류 계산을 빠르게 처리하기 위한 자기지도학습 기반 프레임워크를 제안했어요.",
+            "one_line": "자기지도학습으로 교류 최적 조류 계산 속도를 크게 높였다",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Hoang T. Nguyen, Deepjyoti Deka, Priya L. Donti, Varsha Pendyala, Nurali Virani, Wajid Muneer, Reetam Sen Biswas",
           "categories": [
             "eess.SY",
@@ -12514,10 +13182,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 6.0,
           "score_why": "전공 +3 · 키워드 1개(voltage) → +2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "voltage"
           ],
+          "ai": {
+            "easy1_title": "대형 부하가 늘어나는데 매번 계산하기는 너무 복잡했다",
+            "easy1_desc": "대규모 데이터센터 부하를 전력망에 연결할 때는 여러 발전과 수요 조건 속에서 전압 안정성 여유를 평가해야 하는데요, 기존의 연속 전력 흐름 방식은 비슷한 비선형 거동을 계속 다시 계산하느라 시간이 걸린다는 겁니다. 단순히 이전 작동점을 초기값으로 재사용하는 방법으로는 그 뒤의 전압 응답을 잡아내지 못하거든요. 쉽게 말하면, 매번 처음부터 다시 셈을 하느라 비효율적이었다는 말이에요.",
+            "easy2_title": "과거 궤적을 가져다 붙여서 계산을 줄였다",
+            "easy2_desc": "그래서 연구진은 과거 전력 흐름 궤적의 유한한 구간들을 현재 상태와 연속 방향에 맞춰 가져다 쓰는 새로운 연속법을 제안했는데요, 이 방법은 기존 접선 예측기에 이전에 계산해 둔 비선형 곡선 모양을 함께 더해 준다는 겁니다. 단기 뉴턴 테스트로 현재 방정식을 확인하고 어텐션 기반 선택기가 네트워크 조건이나 부하 패턴을 조합해서 수치 보정과 접힌 점 정교화로 최종 한계를 찾아내는데요, 결과적으로 수정된 IEEE 14 및 118버스 시스템에서 적응형 연속법보다 온라인 계산이 줄고 복구율이 높아졌다는 장점이 있다는 거예요.",
+            "topic": "대규모 데이터센터 부하 연결에 따른 전압 안정성 평가를 위해 과거 전력 흐름 궤적을 재사용하는 새로운 연속법을 제안하고 그 성능을 확인한 내용이에요.",
+            "one_line": "과거 전력 흐름 궤적을 재사용하는 새로운 전력망 연속법을 제안하고 성능을 평가했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 1,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yihan Huang, Yang Weng",
           "categories": [
             "eess.SY",
@@ -12542,10 +13257,57 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 6.0,
           "score_why": "전공 +3 · 키워드 1개(power system) → +2 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [
             "power system"
           ],
+          "ai": {
+            "easy1_title": "기존 방식대로 하면 전력망의 복잡한 숨은 변수를 놓치게 된다",
+            "easy1_desc": "전력망(전력 공급 시스템)의 동적 상태 추정을 위한 기존의 관측 가능성 분석은 상미분방정식(ODE) 모델을 바탕으로 발전해 왔는데요, 실제 전력망은 미분대수방정식(DAE)으로 이루어져 있다는 겁니다. 그래서 이 방식들을 쓰려면 보통 크론 축약(Kron reduction) 같은 변환을 거쳐야 하는데, 이 과정에서 대수적 변수들과 네트워크 제약 조건의 역할이 가려져 버린다는 말이에요. 쉽게 말하면, 원래 구조를 뭉개버리니까 중요한 정보가 누락될 수밖에 없었던 셈이라는 겁니다.",
+            "easy2_title": "방정식을 바꾸지 않고 바로 다루는 새로운 분석 틀을 만들었다",
+            "easy2_desc": "그래서 연구진은 미분대수방정식 형태를 그대로 유지하면서 바로 적용할 수 있는 대수적 관측 가능성(algebraic observability) 틀을 제안했는데요, 고정자(stator) 관계식만 미분하는 축소 연장을 써서 계산 규모가 커져도 숨은 미지수의 개수가 일정하게 유지되도록 만들었다는 겁니다. 이렇게 하면 계산이 훨씬 효율적으로 빨라진다는 장점이 있는데, 대신 모델의 미분 관계식과 연속 도함수에서 유도되는 자코비안 랭크 테스트(Jacobian rank test)를 거쳐야 한다는 조건이 붙는다는 거예요. 쉽게 말하면, 복잡한 전력망 방정식을 변형하지 않고도 대규모 시스템을 빠르게 검증할 수 있게 되었다는 말입니다.",
+            "topic": "미분대수방정식 형태의 전력망 모델을 변형하지 않고 그대로 다루는 새로운 대수적 관측 가능성 분석 프레임워크에 대한 내용이에요.",
+            "one_line": "전력망 방정식을 그대로 유지하는 대수적 관측 가능성 분석 틀을 제안하고 검증함",
+            "topic_tag": "전력망·계통",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Akhila Kandivalasa, Marcos Netto",
           "categories": [
             "eess.SY",
@@ -12576,33 +13338,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "기존 비디오 모델이 장애물을 통과해 버리는 문제를 살펴봤습니다",
             "easy1_desc": "연구진은 상호작용하는 비디오 월드 모델에서 물체가 장애물을 그대로 뚫고 지나가는 침투 문제를 막는 새로운 연구를 시작했는데요, 기존 모델들이 물리적 장애물에 어떻게 대응하는지 평가하기 위해 NoPeBench라는 벤치마크를 도입해 조사해 봤습니다. 그랬더니 놀랍게도 현재 공개된 모델들은 이러한 물리적 실패를 믿을 만하게 막아내지 못하는 것으로 나타났다는 겁니다. 뭔 소리냐면, 모델들이 침투를 막지는 못하면서도 그에 필요한 정보는 이미 내부 표현 속에 품고 있다는 말이에요.",
-            "easy1_evidence": "To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles.",
             "easy2_title": "숨겨진 상태를 읽어내어 안전한 행동으로 바꿔주는 틀을 만들었습니다",
             "easy2_desc": "그래서 연구진은 확산 트랜스포머의 숨겨진 상태를 활용해 행동의 안전성을 미리 읽어내는 NoPeWorld라는 가벼운 프레임워크를 개발했는데요, 위험한 행동이 감지되면 원래의 의도를 가장 잘 살리면서도 안전한 행동으로 곧바로 대체하도록 만들었어요. 그 결과 물리적 위반 비율이 74%에서 16%로 크게 줄어드는 장점이 있는데, 대신 모델의 기본 구조나 추가 데이터 학습 방식에 따라 성능이 제한될 수도 있다는 점도 함께 고려해야 한다는 겁니다. 쉽게 말하면, 기존 모델을 그대로 둔 채 작은 예측 헤드 하나만 얹어서 충돌을 막아낸 셈이에요.",
-            "easy2_evidence": "Building on this, we introduce NoPeWorld, a lightweight framework that detects and prevents penetration.",
             "topic": "비디오 월드 모델에서 물체 침투 문제를 해결하기 위해 숨겨진 상태를 활용하는 NoPeWorld 프레임워크를 제안하고 평가한 내용이에요.",
-            "topic_evidence": "We study a new problem of preventing object penetration in interactive video world models.",
-            "points": [
-              {
-                "subtitle": "NoPeBench 벤치마크 도입",
-                "desc": "연구진은 비디오 월드 모델이 물리적 장애물에 대응하는 방식을 평가하기 위해 NoPeBench라는 새로운 벤치마크를 도입했는데요, 이를 통해 기존 모델들이 물체 침투 실패를 안정적으로 막지 못한다는 사실을 확인했습니다. 뭔 소리냐면, 모델이 성능을 갖춘 것처럼 보여도 실제 장애물 반응 테스트에서는 한계가 드러난다는 말이에요.",
-                "evidence": "To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles."
-              },
-              {
-                "subtitle": "숨겨진 상태 기반 예측",
-                "desc": "기존 확산 트랜스포머의 숨겨진 상태를 조사해 봤더니, 후보 행동이 장애물을 뚫고 지나갈지 미리 예측할 수 있는 정보가 이미 들어 있다는 점을 발견했는데요, 이를 바탕으로 안전 여부를 읽어내는 작은 예측 헤드를 학습시켰습니다. 쉽게 말하면, 모델 안에 이미 있던 단서를 끄집어내어 위험을 감지하는 통로로 쓴다는 겁니다.",
-                "evidence": "We find that the hidden states of diffusion transformers (DiTs) can predict whether a candidate action will penetrate an obstacle."
-              },
-              {
-                "subtitle": "NoPeWorld 프레임워크 결과",
-                "desc": "그래서 위험한 행동을 원래 의도를 살린 안전한 행동으로 바꾸는 NoPeWorld를 적용해 봤더니, 6개 비디오 월드 모델에서 평균을 냈을 때 물리적 위반 비율이 74%에서 16%로 뚝 떨어졌다는 거예요. 게다가 제로샷 일반화 능력을 보여주어 오픈 도메인 이미지나 움직이는 장애물에도 곧바로 적용할 수 있다는 장점이 있습니다.",
-                "evidence": "Despite its simplicity, NoPeWorld substantially reduces the physical violation rate, averaged over six video world models, from 74% to 16%."
-              }
-            ],
             "one_line": "비디오 월드 모델의 물체 침투를 막는 NoPeWorld를 개발했어요.",
             "topic_tag": "AI 모델·학습법",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -12669,33 +13410,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "분산에너지의 불확실성을 몰라 생기는 오차를 잡아봤습니다",
             "easy1_desc": "배전계통 상태 추정에서는 분산에너지(DER)가 늘어나면서 입력 통계를 잘 모르게 되는 문제가 있는데요, 기존 방식들은 모든 입력이 정규분포를 따른다고 가정해서 오차가 커지거나 데이터 기반 방식은 과적합에 빠진다는 거예요. 뭔 소리냐면, 데이터가 낯선 상황으로 바뀌면 기존 방법들이 제대로 작동하지 못한다는 말이에요. 결국 불확실한 통계 때문에 정확한 전압 추정이 어려워진다는 셈이에요.",
-            "easy1_evidence": "One key challenge in distribution system state es- timation is unknown input statistics from the growing inte- gration of distributed energy resources (DERs), which may largely deviate from Gaussian uncertainty.",
             "easy2_title": "베이지안 편향 학습으로 확률적 전압을 정확히 추정해 냈습니다",
             "easy2_desc": "그래서 연구진은 베이지안 편향 학습(BBL)을 활용해서 모르는 불확실성 속에서도 전압을 확률적으로 추정하는 새로운 방식을 제안했는데요, 과거 데이터를 바탕으로 분산에너지의 가우스 혼합 표현을 배우는 확률적 불확실성 추론 단계와 전압을 효율적으로 추정하는 단계를 거친다는 거예요. 계산 효율성이 높아지는 장점이 있는데, 대신 물리적 제약 조건을 만족하는 정교한 모델링 과정이 필요하다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 알 수 없는 오차를 학습으로 보완해서 더 정확하게 전압을 파악하게 됐다는 말이에요.",
-            "easy2_evidence": "This paper proposes a Bayesian bias learning (BBL)-enabled probabilistic voltage estimation method in distribution systems with unknown DER generation statistics.",
             "topic": "분산에너지의 불확실한 통계 문제를 해결하기 위해 베이지안 편향 학습 기반의 확률적 전압 추정 방식을 제안한 연구예요.",
-            "topic_evidence": "This paper proposes a Bayesian bias learning (BBL)-enabled probabilistic voltage estimation method in distribution systems with unknown DER generation statistics.",
-            "points": [
-              {
-                "subtitle": "확률적 불확실성 추론",
-                "desc": "먼저 물리적 제약을 고려한 확률 밀도 추론 네트워크를 만들어 역사적 데이터로부터 분산에너지 발전의 가우스 혼합 표현을 학습하도록 했는데요, 이렇게 얻은 확률적 표현들을 가상 측정값으로 취급한다는 거예요. 뭔 소리냐면, 모르는 데이터 분포를 모델이 직접 학습할 수 있는 형태로 바꾼다는 말이에요.",
-                "evidence": "First, a physics-constrained probabilistic density inference network is developed to learn Gaussian mixture representations of DER generation from historical data."
-              },
-              {
-                "subtitle": "BBL 기반 전압 추정기",
-                "desc": "그렇게 나온 확률적 표현을 분해 및 병렬화 메커니즘을 통해 BBL 기반 전압 추정기에 통합시켰는데요, 선형 해석적 해를 사용하여 선형화로 인한 편향을 효율적으로 잡아내고 정확한 확률적 추정을 달성한다는 거예요. 장점은 계산이 빠르다는 것인데, 병렬 구조 안에서 불확실성을 다뤄야 한다는 조건이 붙는다는 셈이에요.",
-                "evidence": "Then, the resulting probabilistic representations, treated as pseudo-measurements, are integrated into a BBL-enabled voltage estimator via a decomposition- and-parallelization mechanism."
-              },
-              {
-                "subtitle": "불균형 IEEE 배전망 사례 연구",
-                "desc": "두 개의 불균형한 IEEE 배전망에서 사례 연구를 진행해본 결과, 제안된 추정기가 알 수 없는 불확실성 아래에서도 훨씬 더 높은 정확도와 계산 효율성을 보여줬다고 연구진은 밝혔는데요, 기존의 데이터 기반 및 모델 기반 방법들보다 뛰어난 성능을 냈다는 거예요. 쉽게 말하면, 복잡한 실제 계통 환경에서도 더 믿을 만한 결과를 낸다는 말이에요.",
-                "evidence": "Case studies on two unbalanced IEEE distribution networks show that the proposed estimator achieves significantly higher accuracy and computational efficiency under unknown uncertainty, outperforming recent data-driven and model-based methods."
-              }
-            ],
             "one_line": "베이지안 편향 학습 기반의 확률적 전압 추정법을 제안했어요.",
             "topic_tag": "전력망·계통",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -12759,8 +13479,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 38,
           "score": 4.8,
           "score_why": "추천 38 → +3.8 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "영상이 그럴싸해도 논리적 단계는 자주 틀리더라",
+            "easy1_desc": "요즘 영상 생성 모델들은 아주 생생한 영상을 만들어내는데요, 정작 여러 단계를 거쳐 생각하거나 계획을 세우는 상황에서는 물리적이고 논리적인 법칙을 자주 어긴다는 거예요. 대규모 추론 데이터나 기존의 확산 강화학습(diffusion RL) 방법으로 훈련을 거쳐도 이런 문제가 계속 나타났는데요, 알고 보니 영상을 고정된 길이의 한 조각으로만 다루는 기존의 훈련 방식 때문이라는 말이에요. 쉽게 말하면, 전체 과정을 일련의 결정 과정으로 보지 않고 한 번에 뚝딱 만들려고 해서 생긴 문제인 셈이라는 겁니다.",
+            "easy2_title": "영상을 결정의 연속으로 보고 단계별로 계획하게 바꿨다",
+            "easy2_desc": "그래서 연구진은 비디사이드(ViDecide)라는 새로운 방식을 내놓았는데요, 비디오 확산 모델(video diffusion models)이 상태가 어떻게 바뀌는지 인과관계에 따라 예측하고 언제 멈춰야 할지도 스스로 결정하도록 훈련하는 방식이에요. 여기에 잘못된 결정을 스스로 고치는 교정 미세조정(CFT, Corrective Fine-tuning) 기술까지 더해서, 정책 기울기 최적화(policy-gradient optimization) 없이도 안정적인 성능 향상을 이뤄냈다는 거예요. 추상적인 게임이나 계획 세우기 작업, 그리고 새로운 로봇 계획 벤치마크 실험에서 83.8%라는 엄격한 성공률을 기록해서, 표준 미세조정 방식의 23.3%나 기존 최고 방법의 67.8%보다 훨씬 뛰어난 성능을 보였다고 합니다. 장점은 더 큰 퍼즐이나 보지 못한 배치에도 잘 들어맞는다는 건데요, 대신 복잡한 결정 단계를 거쳐야 하므로 설계 과정이 까다로워진다는 점도 함께 기억해야 한다는 겁니다.",
+            "topic": "비디오 확산 모델이 논리적인 추론과 계획을 단계별로 수행할 수 있도록 결정 중심의 훈련 방식과 교정 미세조정을 제안한 연구예요.",
+            "one_line": "비디오 확산 모델의 단계별 추론과 계획 능력을 높이는 결정 중심 프레임워크를 개발했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Kaiwen Zhang, Yiming Gao, Zeqi Xiao, Xintao Wang, Pengfei Wan, Kun Gai, Xingang Pan",
           "categories": [],
           "comments": 2,
@@ -12992,8 +13759,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "사람 차와 자율주행차가 섞인 도로에서 멈칫거리는 문제를 어떻게 잡을 것인가",
+            "easy1_desc": "연구진은 사람이 모는 차(HV)와 연결된 자율주행차(CAV)가 섞여 달릴 때 생기는 교통 체증과 멈칫거리는 흔들림을 안정시키는 방법을 다뤄 봤는데요. 비율에 따라 달라지는 기본 도로 모형을 만들고, 이를 ARZ 모델에 집어넣어 제어기를 설계했다는 겁니다. 이렇게 하면 제어기가 전체 상태와 출력 피드백을 어떻게 다룰지 잡힌다는 말이에요. 쉽게 말하면, 섞인 도로의 흔들림을 줄이는 수학적 틀을 세운 셈이라는 겁니다.",
+            "easy2_title": "자율주행차 비율을 높여 가며 시뮬레이션을 돌려 보니 어떤 점이 달라지나",
+            "easy2_desc": "그래서 자율주행차 비율을 0에서 1까지 바꿔 가며 시뮬레이션을 해 봤더니, 비율이 높아질수록 평형 속도와 교통 흐름은 빨라지고 수렴하는 시간은 줄어드는 것으로 나타났는데요. 상태 피드백과 출력 피드백 제어기 모두에서 이런 효과가 나타났다는 겁니다. 대신 센서 노이즈나 입력 제한 같은 현실적인 조건도 함께 따져 보았다는 장단점이 있는데요. 쉽게 말하면, 자율주행차가 많아질수록 도로가 더 빨리 안정된다는 걸 수치로 확인한 셈이에요.",
+            "topic": "사람 차와 자율주행차가 섞인 도로에서 생기는 흔들림을 안정시키기 위해 제어기를 설계하고 시뮬레이션으로 성능을 확인한 논문이에요.",
+            "one_line": "혼잡 도로의 자율주행 제어 모형을 만들고 시뮬레이션으로 검증했어요.",
+            "topic_tag": "전력망·계통",
+            "limit": "연구진은 이번 결과가 교통 성능의 변화를 수치로 보여주면서 동시에 제안한 방법의 한계도 함께 확인해 준다고 밝혔어요."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "전력망·계통",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Yihuai Zhang, Ziming Wang, Lu Liu",
           "categories": [
             "eess.SY",
@@ -13493,8 +14307,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 제어기를 살펴봤더니 입력과 출력을 제한해 성능을 높였는데요",
+            "easy1_desc": "산업 현장의 고정밀 운동 시스템에서 투영 기반 제어기(PBC)가 성능을 높이는 데 큰 성공을 거둬 왔는데요, 문제는 제어 신호는 연속이지만 그 벡터장이 불연속이라서 장치 안에서 원하지 않는 고차 동역학을 자극할 수도 있다는 점이에요. 쉽게 말하면, 성능은 좋아지지만 진동 같은 불필요한 떨림이 생길 위험을 안고 있었다는 말입니다.",
+            "easy2_title": "제어 장벽 함수를 써서 떨림을 줄이고 성능을 더 끌어올렸습니다",
+            "easy2_desc": "연구진은 최근 주목받는 제어 장벽 함수(CBF)에서 영감을 얻어, 기존 제어기의 성능을 그대로 내면서도 연속적인 동역학으로 매끄러운 제어 신호를 만드는 새로운 CBF 기반 운동 제어기를 제안했는데요, 이를 적분기 동역학에 맞춰 적용한 CBF-HIGS를 선보였어요. 시뮬레이션과 실험 결과를 확인해 봤더니, 강건성을 해치지 않으면서도 방해 신호 억제력이 좋아지고 고차 조화파의 자극이 줄어드는 장점이 있는 것으로 나타났습니다.",
+            "topic": "운동 제어 시스템에서 성능을 높이고 신호를 매끄럽게 만들기 위해 제어 장벽 함수(CBF)를 활용하는 새로운 제어기 설계 방식을 제안하고 그 효과를 분석한 내용이에요.",
+            "one_line": "메카트로닉스 운동 제어 성능을 높이는 CBF 기반 제어기를 제안했어요.",
+            "topic_tag": "제어·로봇",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Stijn Hanegraaf (Maurice), Giannis Delimpaltadakis (Maurice), Hoang Chu (Maurice), W. P. M. H. (Maurice), Heemels",
           "categories": [
             "eess.SY",
@@ -13519,8 +14380,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 4.0,
           "score_why": "전공 +3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "파이프라인 안에서 일어나는 심각한 슬러그 흐름이 문제였어요",
+            "easy1_desc": "파이프라인과 라이저 시스템에서 발생하는 심각한 슬러그 흐름(Severe slugging)은 생산 효율을 떨어뜨리고 장비의 안전을 위협하는데요, 그래서 정확하면서도 현장에 바로 쓸 수 있는 제어 모델이 필요하다는 말이에요. 연구진은 먼저 기존에 쓰이던 저차원 기계론적 모델을 다시 뜯어보면서, 라이저 꼭대기의 고갈 기간 동안 배출이 완전히 0이 되는 경계 조건을 명확히 하고 액체 부피 분율의 표현을 다듬어 물리적 타당성과 수치적 강건성을 높였어요. 쉽게 말하면, 옛날 모델의 헛점을 바로잡아 시뮬레이션 데이터를 안정적으로 뽑아낼 수 있게 고쳤다는 셈이에요.",
+            "easy2_title": "가벼운 인공신경망과 모델 예측 제어를 묶어 효과적으로 다스렸어요",
+            "easy2_desc": "그래서 연구진은 1차원 합성곱 신경망(1D CNN)을 비선형 모델 예측 제어(NMPC)와 결합한 가벼운 데이터 기반 모델링 및 제어 틀을 선보였는데요, 이를 통해 슬러그 흐름의 특징적인 진동과 상태 변화를 잡아내고 적은 계산 비용으로도 효과적인 제어를 해냈다는 거예요. 델타 t가 0.1초인 닫힌 고리 시뮬레이션에서 제어기는 약 15초에서 18초 안에 출력을 일정한 목표값으로 맞추면서도 입력은 부드럽고 매끄럽게 유지했어요. 학습은 재현성을 위해 오프라인으로 진행했다는 한계가 있지만, 앞으로 온라인 학습으로 넓혀갈 수 있는 실용적인 길을 열었다고 연구진은 밝혔답니다.",
+            "topic": "파이프라인 슬러그 흐름을 잡기 위해 1차원 합성곱 신경망과 비선형 모델 예측 제어를 결합한 가벼운 제어 프레임워크를 개발했어요.",
+            "one_line": "1차원 합성곱 신경망과 NMPC를 결합해 슬러그 흐름 제어 모델을 만들었어요.",
+            "topic_tag": "제어·로봇",
+            "limit": "재현성을 위해 모델 학습은 오프라인에서 진행되었다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "제어·로봇",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Asli Karacelik, Christian Holden",
           "categories": [
             "eess.SY",
@@ -13546,8 +14454,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 25,
           "score": 3.5,
           "score_why": "추천 25 → +2.5 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "장치 제어를 평가하려니 환경과 과제가 부족했는데요",
+            "easy1_desc": "연구진은 장치 제어 평가를 키우려면 상호작용하는 세상과 과제를 함께 키워야 하는데 그동안 이게 쉽지 않았다는 거예요. 그래서 연구진은 월드 디스틸레이션(세상 지식을 실행 가능한 모듈로 바꾸는 기술)이라는 방법으로 환경과 장치 제어 벤치마크를 새로 만들어 봤는데요. 홈, 카, 폰 환경을 바탕으로 114개의 장치 클래스와 1,166개의 함수, 95개의 이벤트를 넣어서 다섯 가지 과제 계열과 32개의 하위 유형을 지원하도록 만들었다고 해요. 쉽게 말하면, AI 에이전트가 여러 장치를 다루는 능력을 제대로 시험할 수 있는 가상의 판을 아주 크게 깔아 둔 셈이라는 말이에요.",
+            "easy2_title": "가상 세계를 키우는 기술로 에이전트 성능을 시험해 봤습니다",
+            "easy2_desc": "그래서 연구진은 이 새로운 벤치마크로 22개의 모델을 2,560개의 테스트 과제로 평가해 봤는데요. 가장 성능이 좋은 모델이 88.8%의 평균 Pass@1을 기록했다고 해요. 과제를 만드는 과정에서 토큰 효율이 좋고 과제 범위도 넓어진다는 장점이 있는데, 대신 복잡한 환경을 정교하게 지식으로 바꾸는 과정에 의존하게 된다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 더 넓고 복잡한 가상 세계를 만들어 AI의 실력 검증을 확실히 해내겠다는 계획이에요.",
+            "topic": "가상 세계 지식을 모듈로 바꿔 장치 제어 에이전트를 시험하는 벤치마크 신스디씨비(SynthDCB)를 만들고 성능을 평가했어요.",
+            "one_line": "장치 제어 평가를 위한 벤치마크를 만들고 성능을 시험했어요.",
+            "topic_tag": "AI 안전·평가",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 안전·평가",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Zichen Zhu, Dingye Liu, Nan Jiang, Danyang Zhang, Hang Zheng, Shijie Zheng, Situo Zhang, Kunyao Lan, Yingzi Ma, Sheng Jiang, Lu Chen, Kai Yu",
           "categories": [],
           "comments": 2,
@@ -13570,8 +14525,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 23,
           "score": 3.3,
           "score_why": "추천 23 → +2.3 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 방식은 처음부터 다 배워야 해서 한계가 있었다",
+            "easy1_desc": "사람의 일상 영상이나 로봇 녹화 같은 큰 영상 데이터는 움직임 정보가 많지만 행동 값이 없거나 제각각이라 다루기 까다로웠는데요, 잠재 행동 모델(LAM)이 이걸 해결하려 했지만 처음부터 모델을 학습해야 해서 화질과 정확도 사이에서 균형을 잡기 힘들었다는 거예요. 뭔 소리냐면, 데이터는 넘쳐나는데 제대로 써먹기가 쉽지 않았다는 말이지요. 미리 학습된 비디오 세계 모델은 정밀한 움직임을 잘 만들어내지만 여러 층에 얽혀 있어서 그대로 쓰기엔 복잡하다는 단점도 있는데요, 연구진은 이 세계 모델을 그대로 활용하면 최소한의 수정만으로도 역동적인 움직임 정보를 뽑아낼 수 있음을 보여줬다는 겁니다.",
+            "easy2_title": "세계 모델을 행동 모델로 바꿔서 성능을 끌어올렸다",
+            "easy2_desc": "그래서 연구진은 미리 학습된 비디오 확산 변환기 하나를 역방향과 정방향 동역학 모델로 동시에 쓰면서, 학습 가능한 동역학 레지스터를 다리 삼아 비디오의 움직임을 압축된 잠재 행동으로 뽑아내는 네이티브 램(Native LAM) 방식을 제안했는데요, 이 모델을 바탕으로 비전-언어-행동(VLA) 정책을 위한 사전 학습 방식인 파울리시(PAWlicy)를 만들었다는 거예요. 직접 비디오를 만들지 않고 대규모 영상에서 동역학 교사 역할을 맡겼더니, LARY 벤치마크에서 기존 람(LAM)들보다 행동 분류와 제어 회귀 모두에서 더 뛰어난 성능을 보였다는 겁니다. 쉽게 말하면, 기존 방식보다 훨씬 효율적이면서도 로봇이나 사람의 손 사이에서 움직임을 그대로 재현해 낸 셈이라는 말이에요.",
+            "topic": "미리 학습된 비디오 세계 모델을 잠재 행동 모델로 활용해 로봇 제어와 비전-언어-행동 정책의 성능을 높인 방식에 대한 연구예요.",
+            "one_line": "비디오 세계 모델을 잠재 행동 모델로 활용해 로봇 제어 성능을 높였어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Qinyue Li, Weijie Qiao, Qingyi Tao, Zerui Gong, Zhe Yang, Quanzhou Li, Taolin Zhang, Jinglin He, Zhonghua Wu, Chen Change Loy",
           "categories": [],
           "comments": 1,
@@ -13594,8 +14596,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 21,
           "score": 3.1,
           "score_why": "추천 21 → +2.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "로봇을 움직이게 만드는 연결 고리가 빠져 있었어요",
+            "easy1_desc": "기반 모델이 복잡한 물리적 일을 생각할 줄은 아는데, 이걸 진짜 로봇 움직임으로 바꾸는 건 여전히 어렵다는 건데요. 연구진은 그 이유가 바로 에이전트가 행동을 표현하고 실행하는 방식을 정하는 로봇 사용 인터페이스(RUI)를 자주 놓쳤기 때문이라고 봤다는 거예요. 뭔 소리냐면, 머리로 아는 것과 실제로 로봇이 손발을 굴리는 것 사이의 다리가 부실했다는 말이에요.",
+            "easy2_title": "인터페이스 하나만 바꿨더니 성공률이 훅 뛰었어요",
+            "easy2_desc": "그래서 연구진은 5개 모음에 걸친 30가지 조작 과제로 이루어진 RUIBench라는 걸 만들고, 6가지 행동 추상화와 2가지 상호작용 형태를 엮은 통합 프레임워크인 RUIKit을 개발했는데요. 시뮬레이션에서 인터페이스만 바꿨더니 최첨단 에이전트의 성공률이 45%에서 81%로 뛰었고, 미세 조정된 4B 모델은 13%에서 47%로 올랐다는 거예요. 쉽게 말하면, 똑똑한 머리를 가져도 인터페이스가 좋으면 성능이 훨씬 잘 나온다는 셈이에요.",
+            "topic": "로봇 사용 인터페이스(RUI)가 체화된 에이전트의 신뢰성과 성능에 어떤 영향을 미치는지 체계적으로 살펴본 연구예요.",
+            "one_line": "로봇 사용 인터페이스가 에이전트 신뢰성에 미치는 영향을 분석하고 벤치마크를 만들었어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": "개별 행동을 넘어 과제 수준 전체를 검증하는 기술이 꼭 필요하다는 한계를 드러냈어요."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Yanzhe Chen, Zhijun Cao, Zechen Bai, Wenzheng Zeng, Kevin Yuchen Ma, Yiqi Lin, Guoqiang Liang, Xiaokang Liu, Ke Sun, Kevin Qinghong Lin, Mike Zheng Shou",
           "categories": [],
           "comments": 2,
@@ -13618,8 +14667,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 21,
           "score": 3.1,
           "score_why": "추천 21 → +2.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "새로운 전문가가 계속 늘어날 때마다 모델을 매번 합치는 게 문제였어요",
+            "easy1_desc": "강화학습 뒤에 추가 학습을 하면 영역별 전문가 모델들이 생기는데요, 새로운 전문가가 들어올 때마다 모델 전체를 다시 합치다 보면 기존 능력이 깎여 나간다는 문제가 있거든요. 연구진은 그래서 기존 모델 몸체는 그대로 두고, 전문가마다 따로 학습한 부드러운 프롬프트를 이어 붙이는 방식을 제안해 봤습니다. 뭔 소리냐면, 매번 처음부터 다시 훈련할 필요 없이 프롬프트만 조립해서 쓰겠다는 말이에요. 쉽게 말하면, 복잡한 재훈련 과정을 확 줄이면서도 성능을 지키겠다는 셈입니다.",
+            "easy2_title": "프롬프트를 따로 학습해 합쳤더니 성능과 속도가 모두 좋아졌어요",
+            "easy2_desc": "새로운 방식을 써봤더니 23개의 수학, 코드, 에이전트 환경 중 22곳에서 원래 강화학습 교사 모델 성능의 90% 이상을 거뒀다고 하는데요, 여러 전문가를 합칠수록 평균 성능도 같이 올라가는 모습을 보였다는 겁니다. 장점은 처리 속도가 아주 빠르다는 건데, 기반 모델과 비교해 처리량 차이가 1.5% 안팎에 머물렀고 rank-4 LoRA보다는 2.40배에 달하는 속도를 냈거든요. 대신 입력 공간을 맞추는 적응 과정이 들어간다는 점도 함께 기억해 둘 필요가 있습니다.",
+            "topic": "강화학습 뒤에 이어지는 추가 학습 과정에서 모델을 다시 합치지 않고 부드러운 프롬프트를 조합해 성능을 유지하는 방법인 조합형 소프트 프롬프트 증류(CSPD) 기법에 대한 내용이에요.",
+            "one_line": "프롬프트를 따로 학습해 조합하는 연속 추가 학습법을 제안하고 성능을 검증했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Zhen Zhang, Changyi Yang, Xuehai He, Chengzhi Liu, Yutong Yin, Ziyue Liu, Zhuoran Yin, Yangmin Li, Zhihan Liu, Jisen Li, Mingyu Jin, Chuhan Li, Zhaotian Weng, Ruoyu He, Wenyao Gao, Jiaxin Deng, Chenwei Wu, Hui Shen, Wenhao Chai, Chenyang Zhao, Zhuofan Ying, Kieran Liu, Andrew Chen, Pony Ma, Zhaoran ",
           "categories": [],
           "comments": 1,
@@ -13670,33 +14766,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "제어 시스템의 흐름을 배우려면 어떤 데이터를 뽑아야 할까",
             "easy1_desc": "실제 제어 시스템을 능동적으로 학습하려면 시스템의 상태를 가장 잘 보여주는 데이터를 골라내는 과정이 필요한데요. 연구진은 가우시안 프로세스(Gaussian process)로 모델링한 제어 시스템의 흐름에서 불확실성을 가장 크게 줄여줄 수 있는 경로를 찾는 지역 최적화 알고리즘을 제안했어요. 쉽게 말하면, 시스템이 어떻게 움직이는지 더 정확히 알기 위해 어떤 경로로 데이터를 수집하는 게 효율적인지 계산하는 방법이라는 겁니다.",
-            "easy1_evidence": "In this paper, we present a local optimization algorithm that finds the trajectory that most reduces uncertainty about the flow of a control system modeled by a Gaussian process.",
             "easy2_title": "시간 대신 오차 범위를 기준으로 경로를 짜 봤어",
             "easy2_desc": "기존에는 정해진 시간 동안만 경로를 계획했다면, 이번에는 허용된 오차 범위 안에서 가장 정보량이 많은 제어 경로를 찾는 방식을 도입했는데요. 흐름을 모르는 상태에서는 계획한 경로와 실제 경로가 달라질 수 있는데, 이때 시간 축을 다시 조정하는 방식을 써서 문제를 해결했어요. 이렇게 하면 고정된 시간 내에서 최적의 제어를 찾는 문제와 수학적으로 똑같아진다는 점이 핵심이에요.",
-            "easy2_evidence": "We propose a trajectory planner that searches for the most informative control within a maximal allowed deviation horizon instead of a fixed time horizon.",
             "topic": "가우시안 프로세스를 활용한 제어 시스템의 흐름 학습과 최적 경로 계획에 관한 연구예요.",
-            "topic_evidence": "In this paper, we present a local optimization algorithm that finds the trajectory that most reduces uncertainty about the flow of a control system modeled by a Gaussian process.",
-            "points": [
-              {
-                "subtitle": "사후 커널 근사 기법",
-                "desc": "연속적인 시간 경로 전체에서 관측된 데이터를 바탕으로 가우시안 프로세스의 사후 커널을 근사하는 기법을 유도했는데요. 이를 통해 최적화 문제에서 필요한 폰트랴긴(Pontryagin) 형태의 필요조건을 정립했어요.",
-                "evidence": "Therefore, we derive an approximation scheme for the posterior kernel of the Gaussian process after observing it on an entire continuous-time trajectory and establish a Pontryagin-type necessary condition for the optimizer."
-              },
-              {
-                "subtitle": "경로 기반 시간 재조정",
-                "desc": "실제 시스템의 흐름이 알려지지 않아 발생하는 경로 이탈 문제를 해결하기 위해 시간 재조정 기법을 사용했어요. 이 방식을 쓰면 원래의 복잡한 최적 제어 문제를 고정된 종료 시간을 가진 문제로 변환할 수 있다는 게 연구진의 설명이에요.",
-                "evidence": "We show by trajectory-wise time rescaling that the underlying optimal control problem is equivalent to a fixed end time optimal control problem."
-              },
-              {
-                "subtitle": "수치 예제 비교",
-                "desc": "고정 시간 방식과 최대 오차 범위 기반의 경로 계획 방식을 수치 예제를 통해 각각 살펴봤는데요. 기존의 벤치마크 모델들과 비교하여 제안한 방법의 성능을 확인했어요.",
-                "evidence": "Finally, we study both the fixed end time planner and the fixed maximum deviation planner in a numerical example and compare them with benchmarks."
-              }
-            ],
             "one_line": "가우시안 프로세스로 제어 시스템의 흐름을 학습하는 최적 경로 계획법을 개발했어요.",
             "topic_tag": "제어·로봇",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -14001,8 +15076,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 7,
           "score": 1.7,
           "score_why": "추천 7 → +0.7 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "실시간으로 움직이는 게임 속 에이전트를 시험할 곳이 마땅치 않았어요",
+            "easy1_desc": "연구진은 상호작용하는 지능을 연구하려면 통제된 조건에서 다양하고 어려운 과제가 필요하다고 봤는데요, 기존에는 그런 환경이 부족했던 거예요. 그래서 20개 게임에서 120개의 보스 전투를 모아 제어할 수 있는 게임플레이 벤치마크인 GameDojo를 만들었다는 말이에요. 코딩 에이전트들이 환경을 다시 만들고 게임플레이 스크립트를 짜서, 600시간 분량의 게임플레이 궤적이 담긴 GameDojo-Data를 뽑아냈거든요. 쉽게 말하면, 최신 모델들의 실시간 상호작용 능력을 시험하려고 거대한 게임 데이터 세트를 직접 구축한 셈이라는 겁니다.",
+            "easy2_title": "GameDojo로 학습시켰더니 최신 모델 수준의 실시간 성능이 나왔어요",
+            "easy2_desc": "연구진은 GameDojo-Data로 모델을 학습시켰더니, GameDojo-4B 모델이 최신 모델 수준의 성능을 냈고 특히 실시간 성능이 가장 강력해졌다고 밝혔는데요, 여러 작업을 함께 학습시키면 개별 작업도 좋아지고 배운 정책이 다른 보스에게도 옮겨간다는 점을 확인했다는 거예요. 복잡한 환경에서 에이전트의 성능이 확 좋아진다는 장점이 있는데, 대신 실시간 상호작용에서는 최신 모델들도 여전히 큰 어려움을 겪는다는 한계도 같이 드러났다는 겁니다. 쉽게 말하면, 게임 데이터로 함께 학습하면 실력이 확 늘지만 여전히 실시간 대응은 까다롭다는 말이에요.",
+            "topic": "다양한 게임 환경에서 실시간 상호작용 에이전트와 학습 알고리즘을 평가하기 위해 GameDojo 벤치마크를 만들고 실험한 이야기예요.",
+            "one_line": "게임 기반 벤치마크를 만들어 실시간 에이전트를 시험하고 학습시켰어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Kuan Zhang, Zhihao Yang, Yukun Chen, Xingyilang Yin, Mingyu Ouyang, Yue Su, Xiangnan Wu, Jiaming Li, Longze Chen, Run Luo, Zirong Chen, Lu Wang, Yiming Li",
           "categories": [
             "cs.AI"
@@ -14220,8 +15342,57 @@ window.PANEL_DATA = {
           "hf_upvotes": 4,
           "score": 1.4,
           "score_why": "추천 4 → +0.4 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 인공지능 에이전트는 잠깐 일하고 끝나는데 실제 물리 환경에서는 계속 살아서 버텨야 하는데요",
+            "easy1_desc": "보통의 인공지능 에이전트 구조는 일을 마치면 바로 꺼지도록 만들어져 있는데요. 하지만 집이나 연구실, 공장 같은 실제 물리 공간에서는 몇 달 동안 켜져 있으면서 스스로 버그를 이겨내고 센서 옆에 있는 하드웨어에서 계속 돌아야 하거든요. 그래서 연구진은 와크토르즈(Wactorz)라는 오픈소스 런타임을 개발했는데요. 뭔 소리냐면 인공지능이 만든 에이전트가 한 번 생기고 끝나는 게 아니라 오랫동안 살아남는 구조라는 말이에요.",
+            "easy2_title": "에이전트가 스스로 코드를 고치고 다른 기기로 옮겨 다니게 만들었는데요",
+            "easy2_desc": "그래서 연구진은 채팅 요청을 파이썬 코드로 바꿔서 실행하고, 에이전트가 죽어도 상태를 유지한 채 감독관이 다시 살려내는 시스템을 만들었는데요. 모든 조율은 MQTT(엠큐티티, 사물인터넷 통신 규약)를 통해 이루어지기 때문에 라즈베리 파이(Raspberry Pi, 소형 컴퓨터) 같은 기기 사이를 자유롭게 옮겨 다닐 수 있다는 겁니다. 시연에서는 4분도 안 걸리는 시간과 0.13달러의 비용으로 에이전트가 스스로 코드를 고치고 새로운 기기로 이동하는 모습을 보여줬는데요. 장점은 에이전트가 멈추지 않고 스스로 살아난다는 건데, 대신 복잡한 통신 구조와 보안 모델을 다뤄야 한다는 점도 같이 따라온다는 겁니다.",
+            "topic": "오랫동안 살아남아 스스로 코드를 고치고 기기 사이를 옮겨 다니는 인공지능 에이전트 실행 환경인 와크토르즈를 개발한 것에 대한 이야기예요.",
+            "one_line": "오랫동안 살아남아 스스로 코드를 고치는 인공지능 에이전트 실행 환경을 개발했어요.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": "확장된 버전에서는 시스템의 한계에 대해서도 다룬다고 연구진은 밝혔습니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [
+              "easy1_title 한 줄 아님/너무 김(53자)"
+            ],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Panagiotis Kasnesis, Lazaros Toumanidis, Amalia Contiero Syropoulou, Christos Chatzigeorgiou",
           "categories": [
             "cs.AI"
@@ -14583,8 +15754,55 @@ window.PANEL_DATA = {
           "hf_upvotes": 1,
           "score": 1.1,
           "score_why": "추천 1 → +0.1 · 오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "기존 멀티모달 기억 기술은 지나간 경험에서 배우지 못했습니다",
+            "easy1_desc": "인공지능(AI) 에이전트가 대화와 이미지를 오래 쌓아가며 쓰는데요, 문제는 이미 끝난 일에서 제대로 배우지 못해 비슷한 질문을 받을 때마다 같은 실수를 반복한다는 겁니다. 뭔 소리냐면, 단순히 기록을 저장하고 꺼내 쓰는 데만 집중했지 경험을 하나로 모아 자기 것으로 만들지 못했다는 말이에요. 쉽게 말하면, 기억은 잔뜩 쌓아두는데 정작 써먹지를 못하는 셈이라는 겁니다.",
+            "easy2_title": "기억을 모아 스스로 똑똑해지는 MMMem을 만들었습니다",
+            "easy2_desc": "그래서 연구진은 끝난 작업에서 경험을 뽑아내 합치는 MMMem이라는 틀을 제안했는데요, 네 가지 전략으로 텍스트와 이미지를 엮고 기억을 다듬어 모델의 실력을 높인다는 계획이에요. 세 가지 기억 벤치마크에서 기존 방법들을 모두 뛰어넘는 성능을 보여줬는데, Qwen3.5-9B 모델을 썼을 때 LoCoMo, Mem-Gallery, LooGLE v2에서 가장 잘하던 기존 방식보다 각각 36.9%, 17.6%, 15.2%나 나아진 결과를 냈다는 겁니다. 성능이 좋아진다는 장점이 있는데, 대신 여러 단계를 거쳐 기억을 갈무리해야 하므로 처리 과정이 복잡해진다는 점도 같이 따라온다는 말이에요.",
+            "topic": "끝난 작업의 경험을 모아 스스로 성능을 끌어올리는 멀티모달 기억 틀인 MMMem에 대한 연구예요.",
+            "one_line": "작업 경험을 모아 성능을 높이는 기억 틀 MMMem을 제안하고 성능을 검증했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Yuxuan Chen, Changwei Lv, Yunfei Li, Zhongjing Du, Kehui Tan, Zijun Liao, Ruochong Zheng, Hao Chen, Can Deng, Zheni Zeng, Chang Liu, Jie Chen",
           "categories": [
             "cs.AI"
@@ -15527,8 +16745,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "양자화된 키-값 캐시를 고쳐 쓸 때 뭐가 문제였나",
+            "easy1_desc": "연구진은 4비트 HQQ 축 제로 설정에서 16주기 동안 반복 행과 원본 선택 방식을 써봤는데요, 인코딩 횟수가 같아도 레이아웃에 따른 드리프트가 그대로 남는다는 점을 확인했어요. Qwen3-1.7B 모델에서는 중앙값 쌍별 상대 L2 오차가 7.22퍼센트포인트 늘어났고, SmolLM3-3B 모델에서는 11.59퍼센트포인트 늘어났거든요. 쉽게 말하면, 기존 검사 방식만으로는 고정된 양자화 키-값 캐시가 제대로 유지되는지 보장하기 어렵다는 말이에요.",
+            "easy2_title": "그래서 어떻게 확인하고 무엇을 제안했나",
+            "easy2_desc": "그래서 연구진은 16개의 공유 질문을 바탕으로 매칭된 인코딩 상태를 측정하고 접두사 뷰 확장 같은 설정을 점검해 봤는데요, 지연된 조회 클라이언트를 쓰면 네이티브 자가 회귀에서 막혔던 129토큰 경로를 허용하게 된다는 점을 밝혔어요. 동기화를 거치면 테스트된 제자리 계약이 복원되고 네이티브 연산도 그대로 유지된다는 장점이 있지만, 실패한 작업 손해 확장 때문에 전체 실패율이나 일반적인 답변 저하를 주장하기는 어렵다는 한계도 함께 나타난다는 겁니다.",
+            "topic": "고정된 양자화 키-값 캐시 구현에서 기존 검사가 유지 계약을 실패하는 조건을 측정하고 검증한 연구예요.",
+            "one_line": "양자화된 키-값 캐시의 유지 계약 실패 조건을 측정했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": "실패한 작업 손해 확장 때문에 전체 실패율이나 일반적인 답변 저하를 주장하는 것은 불가능합니다."
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": true,
+            "show_limit": true
+          },
           "authors": "Ziyang Huang, Songwei Wu",
           "categories": [
             "cs.AI"
@@ -15577,8 +16842,59 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "덩치를 키우는 모델과 가벼운 모델로 나뉘어 싸워 왔습니다",
+            "easy1_desc": "에너지와 금융 같은 분야에서는 장기 예측을 계속해야 하는데요, 최근 연구는 수억 개의 매개변수를 쓰는 거대 모델 쪽과 단 몇 개만 쓰는 가벼운 모델 쪽으로 갈렸다는 겁니다. 문제는 기존 조사는 뼈대 위주로만 보고 효율성은 대충 다뤄서 작은 모델이 왜 잘 작동하는지 잘 몰랐다는 말이에요. 쉽게 말하면, 작은 모델이 실제로 얼마나 가볍고 효율적인지 제대로 뜯어본 적이 없었던 셈이라는 겁니다.",
+            "easy2_title": "가벼운 모델 35개를 분류하고 코드까지 싹 뜯어봤습니다",
+            "easy2_desc": "그래서 연구진은 가벼운 장기 예측 모델을 중심으로 약 35개 모델을 6개 갈래로 분류하고, 16개 공식 코드 저장소를 직접 감사해 봤는데요, 그 결과 발표된 매개변수 개수에서 최대 289배까지 차이 나는 보고 누락을 찾아냈다는 거예요. 방법은 공통 표기법과 아키텍처를 정리하고 8개의 벤치마크로 테스트를 거친 건데요, 모델 고르는 법과 남은 과제까지 실용적인 지침으로 정리해 준다는 장점이 있습니다. 대신 다양한 코드 저장소의 숨겨진 보고 누락을 일일이 검증해야 한다는 번거로움도 같이 따라온다는 겁니다.",
+            "topic": "가벼운 장기 시계열 예측 모델들의 구조를 분류하고 코드 수준에서 매개변수 보고 실태를 감사한 연구예요.",
+            "one_line": "가벼운 장기 예측 모델 35개를 분류하고 코드를 감사했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [
+              "35"
+            ],
+            "format": [],
+            "flags": [
+              "예측 의심: 마지막으로 모델을 고르고 보고할 때 쓸 수 있는 실용적인 가이드를 주면서, 앞으로 해결해야 할 문제들도 함께"
+            ],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Issam Ait Yahia, Abdelkader El Mahdaouy, Ismail Berrada",
           "categories": [
             "cs.AI"
@@ -16818,8 +18134,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "왜 기존 모델은 실제 뇌의 리플레이를 그대로 설명하지 못했을까",
+            "easy1_desc": "생물학적 신경망에서 나타나는 리플레이 현상을 기존에는 시끄러운 순환 신경망(RNN)을 통한 랑주랭 샘플링으로 설명해 왔는데요, 이 이론만으로는 실제 생물학적 리플레이에서 보이는 환경 탐색이나 시간 압축 현상을 제대로 담아내지 못했다는 겁니다. 뭔 소리냐면, 기존 방식은 샘플링을 정적 분포에 대한 몬테카를로 추론으로 정의했기 때문이라는 말이에요. 그래서 연구진은 이 문제를 풀기 위해 자발적인 RNN 활동을 시계열 분포로부터 한 번에 하나씩 타임스텝으로 진행되는 랑주랭 샘플링으로 다시 바라봤다는 겁니다.",
+            "easy2_title": "두 가지 동역학을 더해 실제 뇌와 닮은 탐색과 압축을 만들어냈다",
+            "easy2_desc": "그래서 연구진은 스파이크 주파수 적응과 수지상 돌기 입력 미분이라는 두 가지 요소를 넣은 규범적 이차 랑주랭 샘플링 프레임워크를 제시했는데요, 적응 과정은 속도를 조금 희생하는 대신 공간 탐색을 이끌고 모멘텀은 시간 압축을 만들어낸다는 겁니다. 시뮬레이션을 통해 확인해 보니 이 두 가지를 동시에 쓰면 리플레이의 탐색과 속도가 모두 커진다는 장점이 있다고 해요. 대신 이 방식을 통해 생물학적으로 가능한 수준의 시간 압축을 설명하는 초기 사례를 마련했다는 점도 같이 따라온다는 겁니다.",
+            "topic": "노이즈가 있는 순환 신경망(RNN)에서 이차 동역학을 이용해 생물학적 리플레이의 공간 탐색과 시간 압축을 설명하는 프레임워크를 제시한 연구예요.",
+            "one_line": "순환 신경망의 이차 동역학으로 뇌의 리플레이를 구현했어요.",
+            "topic_tag": "AI 모델·학습법",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 0,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 모델·학습법",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Josue Casco-Rodriguez, Nanda H. Krishna, Richard G. Baraniuk",
           "categories": [
             "cs.AI",
@@ -18848,8 +20211,55 @@ window.PANEL_DATA = {
           "hf_upvotes": null,
           "score": 1.0,
           "score_why": "오늘 +1",
-          "state": "풀이 대기",
+          "state": "풀이 끝",
           "keywords": [],
+          "ai": {
+            "easy1_title": "자동 연구 에이전트의 구성 요소가 성능에 어떤 영향을 주는지 살펴봤습니다",
+            "easy1_desc": "연구진은 스스로 실험을 설계하고 개선하는 자동 연구 에이전트(Autoresearch agents)의 성능을 체계적으로 뜯어봤는데요, 기존에는 여러 장치가 섞여 있어서 어떤 부품이 진짜로 도움이 되는지 알기 어려웠다는 거예요. 그래서 문맥 관리와 기술 관리라는 두 가지 축을 기준으로 각각의 영향력을 따로 떼어내서 확인해 봤다는 말이에요. 쉽게 말하면, 에이전트가 과거의 경험을 어떻게 기억하고 써먹어야 성능이 좋은지 정확히 찾아내 보려는 시도인 셈입니다.",
+            "easy2_title": "경험을 정리하는 방식을 바꿨더니 성능이 훨씬 좋아졌습니다",
+            "easy2_desc": "연구진은 과거의 시도 기록을 개별적으로 잘 보존하고 안 쓰는 교훈은 과감하게 지우는 방식을 합쳐서 MLEvolver라는 시스템을 만들어 봤는데요, 그 결과 MLE-Bench Lite에서 72.7%의 메달 획득률을 기록하고 KernelBench Level 3에서 94%의 fast_1 점수를 냈다는 겁니다. 기존의 AIDE나 OpenEvolve 같은 방식과 비교해 보면 성능이 크게 좋아졌다는 장점이 있는데, 대신 똑같은 추론 예산을 쓸 때 각 부품의 설계를 꼼꼼히 맞춰야 한다는 조건이 붙는다는 점도 같이 따라온다는 겁니다. 결국 에이전트가 쌓인 경험을 지속적인 발전으로 이어지게 만드는 설계 기준을 마련했다고 볼 수 있어요.",
+            "topic": "자동 연구 에이전트의 성능을 높이기 위해 문맥과 기술 관리 설계를 체계적으로 분석하고 새로운 조합을 제안한 연구예요.",
+            "one_line": "자동 연구 에이전트의 문맥과 기술 관리 설계를 체계적으로 분석하고 성능을 높였다.",
+            "topic_tag": "AI 에이전트·도구",
+            "limit": ""
+          },
+          "check": {
+            "evidence": [
+              [
+                "easy1",
+                true
+              ],
+              [
+                "easy2",
+                true
+              ],
+              [
+                "topic",
+                true
+              ],
+              [
+                "point1",
+                true
+              ],
+              [
+                "point2",
+                true
+              ],
+              [
+                "point3",
+                true
+              ]
+            ],
+            "evidence_ok": "6/6",
+            "evidence_all": true,
+            "evidence_by_symbols": 2,
+            "bad_numbers": [],
+            "format": [],
+            "flags": [],
+            "tag": "AI 에이전트·도구",
+            "limit_ok": null,
+            "show_limit": false
+          },
           "authors": "Kelvin Kiu-Wai Tam, Newt Hue-Nam K. Nguyen, Tianshi Zheng, Yunxiang Mo, Weihan Li, Zhongwei Xie, Chiu Yeung Tang, Jui-Yu Ho, Yangqiu Song, Ginny Y. Wong, Simon See",
           "categories": [
             "cs.AI"
@@ -19032,33 +20442,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "기존 방식으로는 AI가 어디서 틀렸는지 알 수 없었는데요",
             "easy1_desc": "연구진은 두 기록이 같은 대상인지 확인하는 신원 일치(Identity matching) 문제에서 목표 수준(Granularity)에 따라 결과가 달라진다는 점을 짚어봤는데요. 기본 수준에서는 맞지만 색상이나 크기 같은 세부 변형 수준에서는 어긋나는 경우가 생기는데, 지금까지는 전체 정확도만으로는 모델이 어떤 능력이 부족한지 따로 짚어내지 못했다는 겁니다. 뭔 소리냐면, 맞았는지 틀렸는지만 알지 정확히 어느 부분에서 헷갈렸는지는 감추어져 있었다는 말이에요. 쉽게 말하면, 종합 점수만으로는 AI의 진짜 약점을 찾기 어려웠던 셈이에요.",
-            "easy1_evidence": "Final matching accuracy does not separately characterize the capabilities involved.",
             "easy2_title": "그래서 전자상거래 데이터를 활용한 새로운 진단 벤치마크 PURE를 만들었는데요",
             "easy2_desc": "연구진은 이 문제를 파악하려고 전자상거래(E-commerce) 분야를 실제 세계의 까다로운 환경으로 삼아 지각, 이해, 추론, 근거 기반 판단이라는 네 가지 능력 차원을 아우르는 다중 수준 멀티모달 신원 일치 진단 벤치마크인 PURE를 도입했어요. 최근 10개의 멀티모달 대형 언어 모델(MLLM)을 실험해 봤더니 전체 점수는 47.1%에서 86.0% 사이에 분포한다는 결과가 나왔는데요. 이해 능력이 가장 높은 평균 점수를 기록한 반면 판단 능력이 가장 낮았고, 시각적 차이 포착과 변형 수준 규칙 판단에서 약점을 보였다는 겁니다. 서류나 평가 항목이 명확해져서 모델의 강약점을 낱낱이 볼 수 있는 장점이 있는데, 대신 1,457개의 객관식 문제와 14가지 과제로 이루어진 복잡한 검증 과정을 거쳐야 한다는 점도 같이 따라온다는 겁니다.",
-            "easy2_evidence": "We introduce PURE, a diagnostic benchmark for multi-granularity multimodal identity matching covering four capability dimensions: Perception, Understanding, Reasoning, and Evidence-grounded Judgment.",
             "topic": "멀티모달 모델들의 신원 일치 판단 능력을 세밀하게 진단하기 위해 PURE 벤치마크를 제안하고 그 성능을 분석한 연구예요.",
-            "topic_evidence": "PURE therefore reveals what aggregate matching accuracy hides: not only whether models judge a pair correctly, but where they struggle to interpret evidence and apply matching criteria.",
-            "points": [
-              {
-                "subtitle": "PURE 벤치마크 구성",
-                "desc": "연구진은 실제 세계의 매칭 쌍에서 유도하고 두 명의 도메인 전문가가 검증한 14개의 과제 속 1,457개의 객관식 문제로 PURE를 구성했어요. 뭔 소리냐면, 전자상거래 데이터를 바탕으로 모델의 능력을 쪼개어 볼 수 있는 시험대를 마련했다는 말이에요.",
-                "evidence": "The benchmark comprises 1,457 multiple-choice questions across 14 tasks, derived from real-world matching pairs and verified by two domain experts."
-              },
-              {
-                "subtitle": "모델 성능 분석 결과",
-                "desc": "10개의 최신 멀티모달 대형 언어 모델(MLLM)을 시험해 봤더니 전체 점수는 47.1%에서 86.0% 사이에 분포하는 것으로 나타났어요. 이해(Understanding) 부문이 가장 높은 평균 점수를 기록한 반면 판단(Judgment) 부문은 가장 낮았고, 시각적 차이를 찾아내거나 변형 수준의 규칙을 따지는 데 약점을 보였다는 겁니다.",
-                "evidence": "Across ten recent MLLMs, overall scores range from 47.1% to 86.0%."
-              },
-              {
-                "subtitle": "모달리티 제거 실험과 직접 매칭",
-                "desc": "모달리티 제거 실험에서는 모델들이 멀티모달 증거 덕을 보면서도 매칭 기록 간의 충돌을 잘못 알아차릴 수 있다는 점이 드러났어요. 직접 매칭에서는 대부분의 모델이 기본 수준에서는 일치하지 않는 쌍보다 일치하는 쌍을 더 믿을만하게 알아챘지만, 변형 수준에서는 그 정반대의 현상이 나타났다는 겁니다.",
-                "evidence": "In direct matching, most models recognize matching pairs more reliably than non-matching pairs at the base level, whereas the reverse holds at the variant level."
-              }
-            ],
             "one_line": "신원 일치 판단 능력을 진단하는 PURE 벤치마크를 도입하고 멀티모달 모델들을 평가했어요.",
             "topic_tag": "AI 안전·평가",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -19124,33 +20513,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "만능 모델 대신 모델 만드는 AI가 답일까",
             "easy1_desc": "연구진은 대형 언어 모델(LLM) 기반의 코딩 에이전트가 여러 일반 솔루션을 만드는 가운데, 범용성이 모델이 아니라 새 과제를 해결하는 에이전트에 있어야 하는지 살펴봤는데요. 미지의 장비를 다뤄야 하는 예지보전(PHM) 분야에서 24개 공개 데이터셋과 58개 폴드로 구성된 벤치마크 넥스트유닛벤치(NextUnit-Bench)를 통해 검증해 봤습니다. 에이전트마다 실행 가능한 예측기를 만들고 숨겨진 장비에서 돌릴 수 있도록 두 시간의 제한 시간을 줬다는 거예요. 쉽게 말하면, 범용성의 위치가 어디에 있어야 하는지 실험해 본 셈이라는 말이에요.",
-            "easy1_evidence": "Should generality instead reside in the agent that builds a model for each new task?",
             "easy2_title": "데이터에서 배우는 에이전트가 성능을 가른다",
             "easy2_desc": "그래서 연구진이 에이전트들을 시험해 봤더니, 최신 에이전트들이 오토엠엘(AutoML)이나 기존 방법들을 뛰어넘는 결과를 보여줬는데요. 장치마다 맞춤형으로 짠 몇백 단어 분량의 텍스트 계획서가 성능 격차의 대부분을 메우는 핵심이라는 겁니다. 다만 최강 에이전트의 계획서를 주더라도 로컬 오픈웨이트 모델은 절반밖에 실행하지 못하고 점수도 오르지 않는다는 단점도 있는데요, 장점은 데이터에서 얼마나 많이 학습하느냐가 진짜 실력을 만든다는 점이에요. 쉽게 말하면, 범용성은 사라지는 게 아니라 모델에서 모델러로 이동하고 있다는 겁니다.",
-            "easy2_evidence": "Generality, we argue, is not disappearing but moving, from the model to the modeler.",
             "topic": "대형 언어 모델 기반 에이전트가 예지보전 분야에서 범용성의 중심을 모델에서 모델러로 옮기고 있다는 것을 24개 데이터셋의 벤치마크로 밝혀낸 연구예요.",
-            "topic_evidence": "We examine this question in prognostics and health management (PHM), where every model must work on unseen equipment.",
-            "points": [
-              {
-                "subtitle": "넥스트유닛벤치(NextUnit-Bench) 벤치마크 도입",
-                "desc": "연구진은 보지 못한 장비와 운전 조건에서 작동해야 하는 예지보전(PHM) 분야를 위해 24개 공공 데이터셋과 58개 폴드로 이뤄진 넥스트유닛벤치라는 벤치마크를 만들었는데요. 각 에이전트는 두 시간 안에 실행 가능한 예측기를 만들어 숨겨진 장비에 적용해야 했습니다. 뭔 소리냐면, 실제 배포 환경과 비슷한 조건에서 에이전트의 성능을 엄격하게 평가해 봤다는 말이에요.",
-                "evidence": "Our deployment-style benchmark, NextUnit-Bench, covers 24 public datasets split into 58 folds that hold out units or operating conditions; each agent has two hours to deliver an executable predictor, then run on the hidden units."
-              },
-              {
-                "subtitle": "에이전트 성능의 원동력",
-                "desc": "실험을 해 봤더니 최신 에이전트들이 오토엠엘이나 기존 연구 방법들을 압도하는 성적을 냈는데요. 장비 데이터에 맞춰 짠 몇백 단어의 텍스트 계획서가 성능 차이를 만들어내는 핵심 요소라는 겁니다. 뭔 소리냐면, 도메인 툴킷보다 데이터에서 얼마나 스스로 학습하느냐가 가장 중요하게 작용했다는 말이에요.",
-                "evidence": "Second, the agents' advantage is a design made on each machine's data; once made, a plain-text plan of a few hundred words carries most of the gap between two frontier agents, and given a weaker agent's plan, the strongest agent falls to that agent's level, often to identical predictions."
-              },
-              {
-                "subtitle": "실행 모델의 한계와 범용성의 이동",
-                "desc": "최강 에이전트의 설계안을 줘도 로컬에서 돌릴 수 있는 오픈웨이트 모델은 절반만 실행할 수 있었고 점수도 오르지 않는 한계가 있었는데요. 연구진은 이를 통해 범용성이 모델 자체에 머무는 게 아니라 그것을 만드는 에이전트 쪽으로 이동하고 있다고 주장했습니다. 쉽게 말하면, 좋은 설계안이 있어도 실행하는 모델의 능력에 따라 결과가 갈린다는 셈이에요.",
-                "evidence": "Third, such designs reach only implementers that can execute them: given the strongest agent's designs, a locally deployable open-weight model delivers half as often, even when they are lightened, and scores no higher than without them."
-              }
-            ],
             "one_line": "LLM 에이전트의 예지보전 범용성 벤치마크 실험 수행",
             "topic_tag": "AI 모델·학습법",
-            "limit": "최강 에이전트의 설계안을 주더라도 로컬 오픈웨이트 모델은 절반만 실행 가능하고 점수가 더 높아지지 않는 한계가 있습니다.",
-            "limit_evidence": "given the strongest agent's designs, a locally deployable open-weight model delivers half as often, even when they are lightened, and scores no higher than without them."
+            "limit": "최강 에이전트의 설계안을 주더라도 로컬 오픈웨이트 모델은 절반만 실행 가능하고 점수가 더 높아지지 않는 한계가 있습니다."
           },
           "check": {
             "evidence": [
@@ -19216,33 +20584,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "도구를 직접 쥐지 못하게 막고 계약서만 쓰게 해 봤습니다",
             "easy1_desc": "연구진은 대형 언어 모델 에이전트(LLM agents)가 도구를 직접 쓰지 못하게 하고, 대신 목표와 사용자의 말, 범위가 담긴 계약서를 제출하도록 하는 인텐트 계약(Intent contracts)이라는 방식을 도입해 봤는데요. 계획 모델은 도구를 쥐지 않고, 작은 신뢰 모델이 계약서를 검토해 직접 도구를 호출하도록 만든 구조예요. 쉽게 말하면, 행동하는 놈과 계약서를 쓰는 놈을 따로 떼어놓은 셈이라는 말이에요.",
-            "easy1_evidence": "Intent contracts are an authorization interface for tool-using LLM agents in which the planning model holds no tools.",
             "easy2_title": "불필요한 일은 잘 걸러내지만 모호한 지시는 여전히 헷갈려합니다",
             "easy2_desc": "그 결과, 계획 모델이 사용자가 요구하지 않은 일을 덧붙였을 때 인텐트 계약은 30번 중 27번 작업을 끝내 16번인 검토자 방식보다 나은 모습을 보였는데요. 장점은 전체를 거부하는 대신 세부적인 일을 처리할 수 있다는 점인데, 대신 환경을 볼 수 없는 신뢰 모델의 한계 때문에 모호한 지시에서는 40~49%의 비율로 잘못된 목표를 건드린다는 단점도 함께 나타난다는 겁니다.",
-            "easy2_evidence": "When the planner adds work the user never asked for, contracts complete the user's task in 27/30 runs and the intent-visible reviewer in 16/30, because a reviewer can only refuse a whole command.",
             "topic": "대형 언어 모델 에이전트의 도구 사용 권한을 제어하기 위해 인텐트 계약(Intent contracts) 방식을 도입하고 그 성능과 한계를 평가한 연구예요.",
-            "topic_evidence": "We compare contracts with two reviewers of planner-written commands: one sees only the user's words and the command, the information boundary of a reasoning-blind permission classifier, and one also sees the planner's goal and a checked quotation.",
-            "points": [
-              {
-                "subtitle": "인텐트 계약의 구조",
-                "desc": "계획 모델이 각 단계마다 목표와 사용자의 인용문, 범위가 적힌 계약서를 로그로 남기면, 코드가 이를 검증하고 작은 신뢰 모델이 사용자의 말과 비교해 도구를 호출하도록 설계했는데요. 뭔 소리냐면, 계획 모델의 영향력을 사전에 기록된 계약서 안으로 가두어 둔다는 말이에요.",
-                "evidence": "For each step it submits a short logged contract: a goal, a verbatim quotation of the user, and scope fields."
-              },
-              {
-                "subtitle": "실험과 비교 결과",
-                "desc": "gpt-6.1-terra를 계획 모델로, GLM-5.3-Flash를 신뢰 모델로 써서 세 가지 AmPermBench 작업군에서 비교해 봤더니, 인텐트 계약은 사용자가 시키지 않은 일을 더했을 때 30번 중 27번 작업을 완수했다고 해요. 검토자 방식이 16번 그친 것에 비하면 작업 완수 측면에서는 확실히 낫다는 겁니다.",
-                "evidence": "With gpt-6.1-terra as planner and GLM-5.3-Flash as the trusted model on three AmPermBench task families, every object changed under contracts is named in the goal of the contract that produced the change; under review the planner names objects in its commands and rarely in its goals."
-              },
-              {
-                "subtitle": "드러난 한계와 오류",
-                "desc": "그렇지만 인텐트 계약이 권한 밖의 행동을 줄여주지는 못했는데, 환경을 볼 수 없는 신뢰 모델의 한계 때문에 모호한 참조가 들어오면 상태를 바꾸는 모든 조건이 40에서 49%에 이르는 비율로 엉뚱한 대상을 겨냥한다는 점이 확인됐어요. 쉽게 말하면, 신뢰 모델이 실제 환경을 눈으로 볼 수 없어서 생기는 문제라는 말이에요.",
-                "evidence": "Contracts do not reduce unauthorized actions."
-              }
-            ],
             "one_line": "에이전트 도구 사용 제어를 위한 인텐트 계약을 도입하고 성능을 평가했어요.",
             "topic_tag": "AI 에이전트·도구",
-            "limit": "이번 평가는 적대적인 계획 모델이 아니라 양성적인 초과 도달(benign over-reach) 상황만을 다루었다는 한계가 있어요.",
-            "limit_evidence": "We evaluate benign over-reach with one pair of models, not adversarial planners."
+            "limit": "이번 평가는 적대적인 계획 모델이 아니라 양성적인 초과 도달(benign over-reach) 상황만을 다루었다는 한계가 있어요."
           },
           "check": {
             "evidence": [
@@ -19307,33 +20654,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "모델을 가볍게 줄여 봤더니 안전성이 어디론가 새고 있더라",
             "easy1_desc": "연구진은 언어 모델을 압축해 효율적으로 쓰는 양자화(Quantization) 기술이 능력과 안전 영역에 어떤 영향을 주는지 감사(Audit)해 봤는데요. 여러 벤치마크로 살펴봤더니, 모델을 가볍게 줄이는 과정에서 안전장치나 편향 같은 부분은 깎여 나가는데 진실성 같은 다른 능력은 비교적 안정적으로 유지된다는 걸 찾아냈다는 거예요. 이처럼 모델 능력이 고르게 옮겨가지 않는 현상을 연구진은 뾰족한 강건성(Jagged Robustness)이라고 이름 붙였는데요. 쉽게 말하면, 성능이 좋아졌다고 해서 안전성까지 똑같이 좋아지는 게 아니라는 말이에요.",
-            "easy1_evidence": "Through benchmarks, we find that model safeguards and bias can degrade under quantization, while other capabilities such as truthfulness remain more stable in Qwen3-4B.",
             "easy2_title": "안전장치를 뚫는 공격에 더 취약해진다는 사실을 밝혀냈다",
             "easy2_desc": "그래서 연구진은 작업 복잡도나 평가 방식 같은 요인들이 이런 뾰족한 강건성을 만든다는 걸 확인했는데요. 실제로 양자화된 모델에서는 위험한 요청에 더 잘 응답하게 되면서 안전장치가 망가진다는 걸 살펴봤다는 겁니다. 원래 모델에서는 아무 해도 끼치지 않던 보편적 적대적 접미사(Universal adversarial suffix) 공격이 양자화된 모델에서는 탈옥(Jailbreak)을 일으키기도 한다는 점을 증명했는데요. 성능과 안전성이 전체 모델에서 양자화된 모델로 고스란히 이어진다고 믿는 건 위험하다는 걸 보여준 셈이에요.",
-            "easy2_evidence": "Moreover, we verify the degradation of model safeguards by observing increased compliance with unsafe requests under quantization, and demonstrate universal adversarial suffix attacks that are benign for the full model but jailbreak quantized models.",
             "topic": "언어 모델 양자화가 능력과 안전성에 미치는 영향을 분석해 고르게 전달되지 않는 특성을 밝힌 연구예요.",
-            "topic_evidence": "This work audits the impact of quantization on capability and safety domains including model safeguards, instruction-following, ethics and bias.",
-            "points": [
-              {
-                "subtitle": "양자화 영향 감사",
-                "desc": "연구진은 모델 파라미터를 압축하는 양자화가 모델의 안전장치나 지시 따르기, 윤리 및 편향 같은 영역에 어떤 영향을 미치는지 벤치마크로 검사해 봤는데요. Qwen3-4B 모델을 살펴봤더니 진실성 같은 일부 능력은 안정적인 반면 안전장치나 편향은 떨어진다는 걸 확인했다는 겁니다.",
-                "evidence": "This work audits the impact of quantization on capability and safety domains including model safeguards, instruction-following, ethics and bias."
-              },
-              {
-                "subtitle": "뾰족한 강건성 정의",
-                "desc": "이처럼 양자화 과정에서 모델의 능력들이 고르게 옮겨가지 않는 현상을 연구진은 뾰족한 강건성(Jagged Robustness)이라고 정의했는데요. 작업의 복잡도나 평가 방식, 생성 일관성 같은 여러 요인이 이런 현상을 이끌어낸다는 걸 찾아냈다는 말이에요.",
-                "evidence": "We define this uneven transfer of LLM capabilities under quantization as Jagged Robustness."
-              },
-              {
-                "subtitle": "보안 취약점 증명",
-                "desc": "실제로 양자화된 모델은 위험한 요청을 받아주는 일이 늘어나면서 안전장치가 망가졌는데요. 전체 모델에서는 아무런 문제가 없던 적대적 공격이 양자화된 모델에서는 탈옥을 일으키는 공격으로 이어진다는 점을 증명했다는 겁니다.",
-                "evidence": "Moreover, we verify the degradation of model safeguards by observing increased compliance with unsafe requests under quantization, and demonstrate universal adversarial suffix attacks that are benign for the full model but jailbreak quantized models."
-              }
-            ],
             "one_line": "언어 모델 양자화가 안전성에 주는 영향을 분석해 취약점을 증명했어요.",
             "topic_tag": "AI 안전·평가",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -19401,33 +20727,12 @@ window.PANEL_DATA = {
           "ai": {
             "easy1_title": "3차원을 따로 안 만들고 화면만 이어 붙였다",
             "easy1_desc": "연구진은 명시적인 3차원 구조를 만들지 않고 뷰(view)를 줄줄이 만들어 내는 자기회귀 뷰 모델(Autoregressive View Model)을 제안했는데요, 입력으로 들어온 이미지나 비디오를 바탕으로 원하는 카메라 경로를 따라 짧은 클립을 만들어 낸다는 겁니다. 비주얼 컨텍스트로 기존 화면을 복원하고 채우는 한편, 학습된 사전 분포(learned prior)를 써서 안 보였던 영역까지 확장해 준다고 해요. 쉽게 말하면, 따로 3차원 지도를 짜지 않고 화면 그 자체를 연속으로 이어 그리는 셈이에요.",
-            "easy1_evidence": "We present the Autoregressive View Model (AVM), which generates a scene as a stream of views without constructing an explicit 3D representation.",
             "easy2_title": "학습 과정을 다듬어 화질을 높이고 오차를 줄였다",
             "easy2_desc": "그래서 연구진은 미리 학습된 양방향 비디오 확산 트랜스포머(bidirectional video diffusion transformer)를 플로 매칭(flow matching)과 함께 N-in-1-out 방식으로 미세 조정했다고 하는데요, 그 뒤에 인과 모델(causal model)을 자체 롤아웃(rollout)으로 추가 튜닝해서 사실감을 높이고 디노이징 단계를 줄였다는 겁니다. 장기 주행에 따른 오차(long-horizon drift)를 줄인다는 장점이 있는데, 대신 대규모 데이터를 써야 한다는 무거움도 같이 따라온다는 거예요. 쉽게 말하면, 약 8백만 개의 장면과 영상 클립으로 학습 규모를 키워 다양한 설정에 맞췄다는 말입니다.",
-            "easy2_evidence": "We then tune a causal model on its own rollouts to improve photorealism, reduce denoising steps, and limit long-horizon drift.",
             "topic": "3차원 구조를 직접 만들지 않고 카메라 경로에 따라 장면을 생성하는 자기회귀 뷰 모델(AVM)의 구조와 성능 평가에 대한 연구예요.",
-            "topic_evidence": "We evaluate generation capacity and scene persistence across benchmarks for camera control, text control, visual quality, dynamics, sparse and 4D reconstruction, and long-horizon consistency.",
-            "points": [
-              {
-                "subtitle": "모델 구조와 컨텍스트 관리",
-                "desc": "통합 인컨텍스트 인터페이스를 써서 이미지나 비디오를 조건으로 받아 카메라 경로에 맞춘 짧은 클립을 만들어 냅니다. 입력과 생성된 기록에서 관련 뷰를 가져와 제한된 활성 컨텍스트(active context)를 이룬다는 거예요. 뭔 소리냐면, 필요한 화면 조각들을 골라 모아서 맥락을 유지한다는 말입니다.",
-                "evidence": "AVM retrieves relevant views from inputs and generated history to form a bounded active context."
-              },
-              {
-                "subtitle": "학습과 미세 조정 과정",
-                "desc": "사전 학습된 양방향 비디오 확산 트랜스포머를 N-in-1-out 구조로 미세 조정하고, 약 8백만 개의 장면과 영상 클립으로 학습을 키웠습니다. 인과 모델을 자체 롤아웃으로 다시 튜닝해 화질을 높이고 노이즈 제거 단계를 줄였다고 해요.",
-                "evidence": "We scale training to approximately 8M scenes and video clips."
-              },
-              {
-                "subtitle": "다양한 벤치마크 평가 결과",
-                "desc": "카메라 제어, 텍스트 제어, 시각적 품질, 동역학, 4D 복원 등 여러 벤치마크에서 생성 능력과 장면 유지력을 평가했는데요, 그 결과 AVM이 하나의 인터페이스로 다양한 입력과 출력 환경에 잘 맞춘다는 점을 보여 줬다고 밝혔습니다.",
-                "evidence": "The results demonstrate that AVM adapts to diverse input and output settings through one in-context interface."
-              }
-            ],
             "one_line": "3차원 구조 없이 뷰를 생성하는 자기회귀 모델을 개발하고 평가했어요.",
             "topic_tag": "영상·음성·멀티모달",
-            "limit": "",
-            "limit_evidence": ""
+            "limit": ""
           },
           "check": {
             "evidence": [
@@ -19473,7 +20778,7 @@ window.PANEL_DATA = {
         }
       ],
       "backlog": {
-        "n_waiting_all": 321,
+        "n_waiting_all": 292,
         "oldest_day": "2026-11-24",
         "n_dropped_today": 0,
         "n_backlog_done_today": 11
@@ -19500,11 +20805,11 @@ window.PANEL_DATA = {
       ],
       "calls": {
         "summary": {
-          "val": 62,
+          "val": 91,
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         },
         "flow": {
-          "val": 1,
+          "val": 2,
           "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         },
         "failed": {
@@ -19517,22 +20822,26 @@ window.PANEL_DATA = {
         }
       },
       "cap": {
-        "val": 150,
+        "val": 40,
         "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
       },
       "secs": {
-        "val": 2434,
+        "val": 2593,
         "source": "v2_secretary/결과/논문/2026-11-25_논문.json"
       },
-      "no_ai": true,
+      "no_ai": false,
       "notes": [
-        "1차 출처 몫: eess.SY 39/62 · cs.AI 48/48 · 허깅페이스 41/41 · 이월 11편"
+        "1차 출처 몫: eess.SY 13/13 · cs.AI 8/10 · 허깅페이스 8/8"
       ],
       "source": "v2_secretary/결과/논문/2026-11-25_논문.json",
       "abstracts": {
         "file": "panel_abstracts.js",
         "n": 268,
         "source": "v2_secretary/결과/논문/초록/2026-11-25.json"
+      },
+      "split": {
+        "file": "panel_papers.js",
+        "n": 40
       }
     }
   },
@@ -19776,12 +21085,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: [11월 25일(오늘) 논문] 새벽 바퀴 5-1(0콜)이 모으기 원본(arXiv·허깅페이스)으로 만든 새 논문 카드 257편",
         "line_rule": "규칙: papers.py — 새벽 카드(0콜) → 새벽 바퀴가 끝나면 바로 v2-papers(백업 12:07·14:07)가 점수 순으로 편당 AI 1콜 풀이 + 근거 문장 원문 대조 (gate_rules/논문_설정·주제·키워드.txt)",
-        "line_out": "내보냄: 풀이 11편(새 카드 0 + 밀린 카드 11) · 새 카드 중 대기 257편 · AI 63콜(그날 합계) · 논문 파일 마지막으로 쓴 시각 2026-11-25 04:33 (v2_secretary/결과/논문/2026-11-25_논문.json)",
+        "line_out": "내보냄: 풀이 40편(새 카드 29 + 밀린 카드 11) · 새 카드 중 대기 228편 · AI 93콜(그날 합계) · 논문 파일 마지막으로 쓴 시각 2026-11-25 11:38 (v2_secretary/결과/논문/2026-11-25_논문.json)",
         "metrics": {
           "in": 257,
-          "out": 11,
-          "calls": 63,
-          "secs": 2434.0,
+          "out": 40,
+          "calls": 93,
+          "secs": 2593.0,
           "num_source": "v2_secretary/결과/논문/2026-11-25_논문.json"
         }
       },
@@ -20156,12 +21465,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 31건 (최근: 2026-11-25 ok)",
+        "line_out": "내보냄: 실행 기록 32건 (최근: 2026-11-25 ok)",
         "metrics": {
           "in": 1,
-          "out": 31,
-          "calls": 133,
-          "secs": 1569.0,
+          "out": 32,
+          "calls": 2,
+          "secs": 272.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
