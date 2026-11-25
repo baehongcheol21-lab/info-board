@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-25",
-  "generated_at": "2026-11-25 16:07:46",
-  "made_iso": "2026-11-25T16:07:46+09:00",
+  "generated_at": "2026-11-25 21:10:43",
+  "made_iso": "2026-11-25T21:10:43+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -12,170 +12,191 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1606",
-    "made_iso": "2026-11-25T16:06:14+09:00",
-    "new": 502,
-    "news_new": 345,
+    "tag": "2108",
+    "made_iso": "2026-11-25T21:08:49+09:00",
+    "new": 525,
+    "news_new": 371,
     "calls": 2,
     "error": "",
     "times": [
       "1206",
-      "1606"
+      "1606",
+      "2108"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "젠슨 황 승계 계획 입장",
-        "easy": "젠슨 황 엔비디아 최고경영자가 별도의 승계 계획이 필요 없다고 밝혔습니다. 임직원들 앞에서 1인 체제를 유지하겠다는 뜻을 거듭 강조했는데요. 뭔 소리냐면 당분간 후계자를 지정하거나 경영 구도를 바꿀 계획이 없다는 말이에요. 쉽게 말하면 엔비디아의 현 체제를 그대로 이어가겠다는 의지를 드러낸 셈입니다.",
-        "score": 0.7,
+        "title": "젠슨 황 엔비디아 CEO 복귀 후폭풍",
+        "easy": "젠슨 황 엔비디아 최고경영자가 복귀하면서 주가가 급등락을 반복하고 있습니다. 트럼프 대통령이 젠슨 황의 사면 가능성을 언급하며 엔비디아 지분 확보를 시사하자 정치권과 공화당 내에서 강력한 반발이 나오는 등 논란이 커지고 있습니다.",
+        "score": 0.8,
         "macro": [],
-        "n": 3,
+        "n": 10,
         "arts": [
           {
-            "t": "젠슨 황, \"별도 승계계획 필요없어\"...엔비디아 경영체제 유지 시사",
-            "s": "KBC광주방송",
-            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBSMWhVSWRzNmFrQ0FLampqWVFucEpqblhWcXZiem1uQnhHWDc2ODFQTmZkT2dwdy1fVnZhMldZc3NndkVpdXlqb202OUhHd2RXc1Rkdmhuc0xSRS1IRGVuNA?oc=5"
+            "t": "'젠슨 황 복귀' 트럼프 개입 후폭풍…공화당도 강력 반발",
+            "s": "연합뉴스 한민족센터",
+            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBrQVVqWVRXdFNoSXJ4SU1fblJzX2VtTDJDVXpvUjVKOUhNQWtCSzc1ZkdNNDZjb043VVJOMVVaUDZNU1pHQzUxZW4wSl94X05SSWs4N1dqUHZEM04tZHY5aElhNDVOWGxoR24yeXZ3OFZSbXRj?oc=5"
           },
           {
-            "t": "젠슨 황 “엔비디아, 별도 승계 계획 필요 없어”···‘1인 체제’ 유지 의지",
-            "s": "경향신문",
-            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5mVFhsR1lWdG1OcjlLWDRDTEtNTmJ5c1VSRHhBZ2dOOFltbDl5b2NMNDBqNXhWSmdlNjZfOVkxLXg3NldGY3ZiS2Z4YWtFX3dPSnhHM1lIemREZ9IBX0FVX3lxTFBpT2dHZXFvVEJzbUNfcWwteEcxNWFObVFxMDVNaHEtQTRSQ3hFbUluazR0a2Z1VXBldi13REVmS2FRcGR1VXlRQ3JlUHg1c0tZX0Qtei1qZE5hZ3oyRWln?oc=5"
+            "t": "美민주당 상원 원내대표 \"젠슨 황, 미국 수출통제법 위반\" 직격…정치권 반발 확대",
+            "s": "더구루",
+            "u": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5leW9laHZtNks5eUVVanVuOGItV1Vwbi01Vy1MS0gxMjVMMmFOVmlEN3dYMmdnTFpzN3N2VE54U1h1MDhTXzAwbDJUcjJqOEFtUnNZYkFCNV8wdDk4UkE?oc=5"
           },
           {
-            "t": "젠슨 황 \"엔비디아엔 승계 계획 필요 없다\"…임직원 앞에서 밝힌 이유",
-            "s": "디지털투데이",
-            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9XZzF4ckZRNmFTX3h6bkM1aE51VHNHU2Y1SnFxS1ppcEpta2NRZE1nUjVpSi1za2VTSDBZUElzWTdzYTZJeWNVZG9pSFBMeFNlU3VqN0l4X05QVV84TlpCcDFOZXl1STFzSzZOYjlBMVZiYjg?oc=5"
+            "t": "젠슨 황 엔비디아 복귀…사내 행동강령 위반 발언 논란 : 기업",
+            "s": "재경일보",
+            "u": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE82WjJySXBpVldpUWpOamx5bDd5V1RJNjgxRFVXM3M5YUxFV2FjQjdiVU1EWTRvaWFWNjhFbm12M1Roc0tIclN5Z05NWQ?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "한전 개인정보 유출 보상보험",
-        "easy": "한국전력이 개인정보 유출 피해를 막기 위해 정보가 유출된 고객에게 최대 1000만원을 보상하는 금융사기 피해보험을 제공한다고 밝혔는데요. 이게 무슨 소리냐면 2차 피해를 막기 위해 신용보호 서비스와 함께 최대 1000만원의 보상보험을 지원한다는 겁니다. 쉽게 말하면 한전이 정보유출 고객 보호를 위해 최대 1000만원 보상에 나선 셈이에요.",
+        "title": "코스피 6%대 급락 및 반도체주 폭락",
+        "easy": "미국 기술주 조정과 외국인 투자자의 대규모 순매도로 인해 25일 코스피가 6% 넘게 급락하며 4600대로 밀려났습니다. 특히 삼성전자와 SK하이닉스 등 반도체 대장주가 장중 10%대까지 하락하며 시가총액이 크게 줄어드는 등 시장 전체가 큰 충격을 받은 모습입니다.",
         "score": 0.6,
-        "macro": [],
-        "n": 6,
+        "macro": [
+          "코스피"
+        ],
+        "n": 10,
         "arts": [
           {
-            "t": "한전, 정보유출 고객에 무료 보험 제공…최대 1천만원 보상",
-            "s": "연합뉴스TV",
-            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBqM0ZzQUdGY2d2NXpHeFU1UmNGV0RXTzV2bGJYR2JQU193WE44ZUYtXzlSTEFkSjEtcjJjOXI2RXdXTmRnOHc5eTdnbXVibWczTTdkTlp1VFgtWTVUeWFlR1I3b182VTg?oc=5"
+            "t": "[속보] 삼전 시총 1000조 깨지고 하이닉스 11% 급락…코스피, 하루 만에 5000서 4600대로",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12218153"
           },
           {
-            "t": "한전, 고객정보 유출 2차 피해 막는다…‘3단계 선제적 보호대책’ 가동",
-            "s": "이코노미톡뉴스",
-            "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE55YzFYWWJsdWpMZXhoR3JaZUt6SEM2NXZDQzBLN0FTYXFBTXpEZUVkd1JCMDZvN0lIZVZCZnh1R1RqX3FnR1EzdzEwczZsbF9qVUE2dWVuUXRIRldYMUtndjZlcnE0QzA3dW9yRGZR?oc=5"
+            "t": "코스피, 6%대 급락 4,697…전날 급등분 모두 반납(종합)",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261125133251008"
           },
           {
-            "t": "한전, 정보유출 2차 피해 방지…최대 1천만원 보상보험 제공 |",
-            "s": "연합인포맥스",
-            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTE03b0stSk1uUWpXamF4UFBMb3EzRkFRMjY0Q1JNMGFzMUFBRGQwTkktUGZwam1kc3A4dmw3dnhoUXlEN2dRUjdZTGtoRVNXUXpQREMtZmpwbVFuU3VuZXloTnB5b2NVaDhRWjFzaWkteHZfdlB3?oc=5"
+            "t": "삼전닉스 9∼11% 급락…삼전, 시총 1천조원 하회(종합)",
+            "s": "연합뉴스 마켓+",
+            "u": "https://www.yna.co.kr/view/AKR20261125043951008"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "강원도 전력계통 해소 방안",
-        "easy": "강원특별자치도가 전력 생산량은 풍부하지만 전력망이 부족해 기업 유치에 발목이 잡힌 현실을 토로했습니다. 송전망과 변전소를 확충하기 위해 제12차 전력수급기본계획 반영을 건의하며 간담회를 개최했는데요. 뭔 소리냐면 전기는 많이 만들어도 보낼 길이 없어 기업들이 망설인다는 말이에요. 쉽게 말하면 전력망 부족 문제를 해결하려 팔을 걷어붙인 셈입니다.",
+        "title": "강원지역 전력계통 해소방안 간담회",
+        "easy": "강원도가 전력망 부족으로 기업 유치에 어려움을 겪자 전력계통 해소방안 간담회를 열고 현안을 논의했습니다. 재생에너지의 안정적 공급과 전력망 확충을 제12차 전력수급기본계획에 반영하겠다는 목표입니다.",
         "score": 0.6,
         "macro": [],
-        "n": 6,
+        "n": 7,
         "arts": [
+          {
+            "t": "강원도, '강원지역 전력계통 해소방안 간담회' 열어 현안 논의",
+            "s": "매일일보",
+            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4tdXlEdHFaUGc5Y04yMEZBUC1Bb0lLVGZ1eW05U3lrdTI5WlN1N3Q0RlcydFFxTnI4NVVXSGJnczhoZEV6X1RGdUpwenFocHVodHY1bnIyYlFod0FUX1JrY1hrRXQ?oc=5"
+          },
           {
             "t": "'전기 풍부한 강원의 역설'…전력망 부족에 기업 유치 발목",
             "s": "매일경제 마켓",
             "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1QUEJhUnpGaUwtMVBJZkN0NFdEV0dLODNILUtXSVVXZ0VYUUdDV2k1dW9ZR21pelk4U0o3dmw5ZFFVaVppNHRfbGpIRUYxLWdrb2c?oc=5"
           },
           {
-            "t": "강원특별자치도, 전력계통 해소방안 모색 간담회 개최",
-            "s": "산경일보",
-            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ncXFUVzAwclA5Z0tZay1vRS1fUGpkUVhseTV5cWJ2WXRrZnBINm1DNHBKWFdRdEVXTzhneC1UMGo4Sl9uUmxVUWZfMUh6OC1vcjFlcmlZSFlDUV9tWjdJWVpQN1U3RHZVQnVkLVFZLU4?oc=5"
-          },
-          {
-            "t": "강원도, 송전망·변전소 확충 추진…제12차 전력수급기본계획 반영 건의",
-            "s": "신아일보",
-            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9qWUxNcjFGR3FOR01MSWlfN1lsaWlsSmVhc0swTUFLUEdWQ0NZelNPY3lXY0pDZVR4LTNNYTByQVJ4Smc4a0ExZ0Q3T19pejVoVHVhNWsyYzRWaTFkYThOdTk5ZG9aV1JyblhOLXNZNU4?oc=5"
+            "t": "강원도, '전력계통 해소 방안 간담회' 개최…'재생에너지 안정적 공급' 과제",
+            "s": "뉴스핌",
+            "u": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBGLWlGQkd0WHZVNS1GMnlsT1NrellWSDl2OGhyQ0h4WERYNjhqWERPZ3JQT1laNVRMdmlCRmcwN25ibFpFdjVIQnNqVnN6cjZrSC1CLXhNbjhTTmhW?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "구글, HBM '2위 큰손' 부상… 엔비디아 중심 시장 재편에 삼성·SK 시험대",
+        "title": "삼성전자 반도체 노동자 사망 및 산재 촉구",
+        "easy": "삼성전자 반도체 공장에서 일하던 노동자가 혈액암으로 사망하는 사건이 발생했습니다. 유족과 시민단체는 반복되는 사망 사고에 대해 진상 규명과 산재 인정을 강력히 촉구하고 있습니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 6,
+        "arts": [
+          {
+            "t": "삼성 반도체 공장서 15년 일하다 혈액암 사망…유족·시민단체 산재 인정 촉구",
+            "s": "KBS 뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA1NjJVSGptR1VnVzgyWEtmSW9lQnppUi1YMy0xQjBzODI0d3RLbE9DWUNHTTFIb0RLem1nYzI2STZscmFsMUtVVlJ2VmU4NTkxOGJVN2ducVBrY28?oc=5"
+          },
+          {
+            "t": "삼성전자 반도체 하청노동자 사망... 반올림 \"혈액암 사망 반복, 진상규명해야\"",
+            "s": "한국일보",
+            "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnZ01sMnlFWm10dERjdDgwS21jUEdxQ0JRWWxfTmotZnFiQXhfSTNDWW5hc3JsWXNBV2c1V3pIQ2tieU9UV3poT3k2Mm5taDBodG5FYXVXa3RZN0QyR3hnajUwMjREQmh6aHBuVEhn?oc=5"
+          },
+          {
+            "t": "삼성전자 반도체 공장서 일하다 ‘혈액암 진단’, 37일 만에 사망했다···“화성사업장서만 12명 발병”",
+            "s": "경향신문",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1uYk9DRkpzeVhndDN4VGQ2ekdILVRJRGVyM0JKX0hNZ3kwSFNjcFdtUXhBTGNrdV9GVk15YjFoY0xZY3p1TU54WVFJcWlORExzZ2F2dGVlYVBvd9IBX0FVX3lxTE5BTDl1MG9kbHVYY2o1eXl0Qm83c3V2VV85ZWVzaUdwZjlkSU9XTjFtMnd4eFlOdDlIRkNHNTN6dGdSNS1Ea1I4NVBnTmJZZWk4RmpKMmtkcC1FcW9mWFhJ?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "일본, 전력가격 급등에 LNG 현물 구매 확대 전망…아시아 수급 불안 가중",
         "easy": "",
         "score": 0.6,
         "macro": [],
         "n": 1,
         "arts": [
           {
-            "t": "구글, HBM '2위 큰손' 부상… 엔비디아 중심 시장 재편에 삼성·SK 시험대",
-            "s": "더퍼블릭",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5XRW8tXzNqdGd0SlJ3Q2VGVkUxSFpPYUtKMHV2cGhoMkRQOV9abXBlWDdPLXRrNkM4NWZZYXJQVGpqMFMzNHJNdlhtOGQtM25nVW1HbkhscFpxQjQ3NV9nZ0FSd0xJUUU0cXUw0gFvQVVfeXFMUHlsZTJxTVo1TXl5azhJWXpfNGVlODJXTEVSSWNHVmpnbmFlS05UMlNNMzRTSVdQLVpheTY1U053SDBZQ183OXRhTXpqRVRHTDFpVFR4YXVDREczal9paGdxN0VyRE12NVNhUW93aVA0?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "하루 만에 314조 원 증발…엔비디아 시총 이틀간 ‘롤러코스터’",
-        "easy": "",
-        "score": 0.6,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "하루 만에 314조 원 증발…엔비디아 시총 이틀간 ‘롤러코스터’",
-            "s": "JTBC",
-            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5KalBVd0MyV2Q2LXZ3Nkd5UjV0cVJGNzY1YUdmdjdJQmFvaGIyemRIUUE3MzAtR3lkVkg3UTh3UjlHNXF2ZFRJWURmYXM4TjZxQk8zLQ?oc=5"
+            "t": "일본, 전력가격 급등에 LNG 현물 구매 확대 전망…아시아 수급 불안 가중",
+            "s": "에너지데일리",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9sbEZ6Wm9hMElJQllRLVhQYXNheVg3SjNlRXBTTktHNkd5RHFlMUVBVk5obW1ST1oxSHVmMVpHWWdpM3U0YlUxdm5ZTWZtcjRJM0E3eXdIcHpUUXlTQ1pnQnZjVmg0TXVUOW1DYWFvVnZEZw?oc=5"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "코스피 6퍼센트대 급락",
-        "easy": "코스피가 미국 반도체주 급락 여파로 6% 넘게 급락해 전날 상승분을 모두 반납했습니다. 주가가 4600대로 밀려나면서 매도 사이드카가 발동되기도 했는데요. 외국인이 유가증권시장에서 2조원 넘게 순매도 물량을 던졌다는 말이에요. 쉽게 말하면 하루 만에 지수가 6% 이상 빠지며 벼락 맞은 격이 됐다고 보입니다.",
-        "score": 0.55,
+        "title": "국고채 금리 하락",
+        "easy": "한국은행 금융통화위원회의 기준금리 결정을 하루 앞두고 국고채 금리가 일제히 하락했습니다. 코스피 급락에 따른 안전자산 선호 심리가 채권시장으로 이어진 것으로 풀이됩니다.",
+        "score": 0.25,
         "macro": [
-          "코스피"
+          "금리"
         ],
-        "n": 7,
+        "n": 5,
         "arts": [
           {
-            "t": "코스피, 4%대 하락해 장 초반 4700선으로 밀려…삼전닉스 6%대 급락",
-            "s": "한국경제 증권",
-            "u": "https://www.hankyung.com/article/2026112584786"
+            "t": "'금통위 D-1' 국고채 금리 일제히 하락…3년물 연 3.583%(종합)",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9rQmMtay02Si1JQnpvZ19ELXlhcURZRHROR2NSMk0yazN3SURyRnVsQTh0eFNxMVRvUmI0Ml9NVHJ4RDRSYTAwY1JEUzdNTzk0T1p0Y3JqdkFKWFhWQll3WQ?oc=5"
           },
           {
-            "t": "[속보] 코스피, 낙폭 4%대로 확대…매도 사이드카 발동",
-            "s": "한국경제 증권",
-            "u": "https://www.hankyung.com/article/2026112585406"
+            "t": "국고채 금리 일제히 하락…3년물 연 3.583%",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261125149100008"
           },
           {
-            "t": "[속보] 코스피, 3%대 하락 출발…하루 만에 '5천피' 반납",
-            "s": "한국경제 증권",
-            "u": "https://www.hankyung.com/article/2026112585096"
+            "t": "'금통위 D-1' 국고채 금리 일제히 하락…3년물 연 3.583%(종합)",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261125149151008"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "내일 금통위, 기준금리 3.25%로 오를까… 반도체 호황이 부른 금리 인상, 과거 25번은 '왜 올리느냐'가 갈랐다",
-        "easy": "",
-        "score": 0.4,
+        "title": "가계대출 금리 5% 돌파",
+        "easy": "은행권 가계대출 금리가 6개월 연속 상승하며 14년 7개월 만에 최고치를 기록했습니다. 주택담보대출 금리도 연 5%를 돌파하면서 대출을 받은 가계의 이자 부담이 크게 늘어난 상황입니다.",
+        "score": 0.15,
         "macro": [
-          "금리",
-          "금통위",
-          "기준금리"
+          "금리"
         ],
-        "n": 1,
+        "n": 3,
         "arts": [
           {
-            "t": "내일 금통위, 기준금리 3.25%로 오를까… 반도체 호황이 부른 금리 인상, 과거 25번은 '왜 올리느냐'가 갈랐다",
-            "s": "네이버 프리미엄콘텐츠",
-            "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPNUl6MGIwT1lrUTA0Q3hkbUd0dzhzQzQxRnVVTGhUaThaLW1YS2x5YTdaTzFINVdwbTliYTBLY2RXQzd4NDd3cUxyenl2WndidWFqOG9CZFBhcEMwaEtmUERFWEl0QldWcTFuRTdTMGV1Q0gzdG9PTldNOHhhSmpkZ0xXY0tYNHE2YUF3bWZiellXYU93?oc=5"
+            "t": "영끌족 다시 비명 지른다…가계대출 5% 돌파, 주담대 14년7개월래 최고",
+            "s": "매일경제 경제",
+            "u": "https://www.mk.co.kr/news/economy/12218043"
+          },
+          {
+            "t": "10월 가계대출 금리 연 5% 돌파 주담대는 14년7개월 만에 최고",
+            "s": "한국경제 경제",
+            "u": "https://www.hankyung.com/article/2026112502471"
+          },
+          {
+            "t": "5% 대출금리 시대 열렸다 … 주담대 15년만에 최고",
+            "s": "매일경제 경제",
+            "u": "https://www.mk.co.kr/news/economy/12218389"
           }
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-25_1606.json"
+    "source": "v2_secretary/결과/갱신/2026-11-25_2108.json"
   },
   "flows": {
     "day": "2026-11-25",
@@ -787,16 +808,16 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-25",
-      "start": "2026-11-25 16:06:14",
+      "start": "2026-11-25 21:08:48",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
       "flows_retry_exit": 0,
       "indicators_refresh_exit": 0,
-      "end": "2026-11-25 16:07:46",
-      "secs": 92,
+      "end": "2026-11-25 21:10:43",
+      "secs": 114,
       "exit": 0,
-      "calls": 2,
+      "calls": 4,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -21481,12 +21502,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 33건 (최근: 2026-11-25 ok)",
+        "line_out": "내보냄: 실행 기록 34건 (최근: 2026-11-25 ok)",
         "metrics": {
           "in": 1,
-          "out": 33,
-          "calls": 2,
-          "secs": 92.0,
+          "out": 34,
+          "calls": 4,
+          "secs": 114.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
