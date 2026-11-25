@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-25",
-  "generated_at": "2026-11-25 12:11:15",
-  "made_iso": "2026-11-25T12:11:15+09:00",
+  "generated_at": "2026-11-25 16:07:46",
+  "made_iso": "2026-11-25T16:07:46+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -12,154 +12,170 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1206",
-    "made_iso": "2026-11-25T12:06:43+09:00",
-    "new": 195,
-    "news_new": 126,
+    "tag": "1606",
+    "made_iso": "2026-11-25T16:06:14+09:00",
+    "new": 502,
+    "news_new": 345,
     "calls": 2,
     "error": "",
     "times": [
-      "1206"
+      "1206",
+      "1606"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "엔비디아 젠슨 황 복귀 여파",
-        "easy": "엔비디아의 젠슨 황 최고경영자가 복귀하면서 글로벌 증시가 크게 출렁였습니다. 전날에는 관련 종목들이 급등했지만 하루 만에 다시 하락세로 돌아섰는데요. 뭔 소리냐면 인공지능(AI) 투자 수익성과 금리 우려가 겹치면서 시장에 다시 찬물이 끼얹어졌다는 말이에요.",
+        "title": "젠슨 황 승계 계획 입장",
+        "easy": "젠슨 황 엔비디아 최고경영자가 별도의 승계 계획이 필요 없다고 밝혔습니다. 임직원들 앞에서 1인 체제를 유지하겠다는 뜻을 거듭 강조했는데요. 뭔 소리냐면 당분간 후계자를 지정하거나 경영 구도를 바꿀 계획이 없다는 말이에요. 쉽게 말하면 엔비디아의 현 체제를 그대로 이어가겠다는 의지를 드러낸 셈입니다.",
         "score": 0.7,
         "macro": [],
-        "n": 5,
-        "arts": [
-          {
-            "t": "'금융지원 핵심' 젠슨황 복귀에 AI 신용시장 다시 긴장",
-            "s": "연합뉴스 마켓+",
-            "u": "https://www.yna.co.kr/view/AKR20261125055600009"
-          },
-          {
-            "t": "젠슨황 약발 하루만에...나스닥 다시 급락 [월가월부]",
-            "s": "매일경제 경제",
-            "u": "https://www.mk.co.kr/news/economy/12217655"
-          },
-          {
-            "t": "'젠슨황 랠리' 하루만에 끝?…메모리과잉·관세우려 투심 냉기",
-            "s": "연합뉴스 마켓+",
-            "u": "https://www.yna.co.kr/view/AKR20261125066900008"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "한전 고객정보 유출 보상",
-        "easy": "한국전력이 개인정보가 유출된 고객에게 최대 1000만원을 보상하는 금융사기 피해보험을 제공하고, 명의도용 방지 서비스 이용권을 무상으로 준다는 소식인데요. 그게 무슨 소리냐면 유출 통지를 받은 고객들의 2차 피해를 막겠다는 겁니다. 쉽게 말하면 정보 유출로 인한 금전적 불안감을 덜어 주기 위한 조치라는 셈이에요.",
-        "score": 0.45,
-        "macro": [],
-        "n": 2,
-        "arts": [
-          {
-            "t": "한전, 개인정보 유출 고객에 최대 1000만원 피해보상 보험 제공",
-            "s": "매일경제 경제",
-            "u": "https://www.mk.co.kr/news/economy/12217959"
-          },
-          {
-            "t": "한전, 고객정보 유출 통지 고객에 명의도용 방지 이용권 무상 제공",
-            "s": "전기신문",
-            "u": "https://www.electimes.com/news/articleView.html?idxno=375252"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
-        "easy": "",
-        "score": 0.4,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "7%대 하락한 삼성전자·SK하이닉스 담은 초고수들…셀트리온은 순매도 1위 [주식 초고수는 지금]",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12217831"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "삼기에너지솔루션즈, 과기부 국책과제 UGV용 배터리팩 공급…방산 진출 본격화",
-        "easy": "",
-        "score": 0.4,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "삼기에너지솔루션즈, 과기부 국책과제 UGV용 배터리팩 공급…방산 진출 본격화",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12217792"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "“고점에 못 팔았다” 실수 인정한 투자 고수 … 여전히 반도체에 베팅하는 이유",
-        "easy": "",
-        "score": 0.4,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "“고점에 못 팔았다” 실수 인정한 투자 고수 … 여전히 반도체에 베팅하는 이유",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12217412"
-          }
-        ]
-      },
-      {
-        "seat": "거시",
-        "title": "국내 증시 급락과 사이드카",
-        "easy": "코스피가 장중 5%대 급락세를 기록하며 4800선이 무너졌습니다. 주가 급락에 따라 유가증권시장에 매도 사이드카가 발동되기도 했는데요. 뭔 소리냐면 미국 증시 하락과 금리 및 인공지능(AI) 수익성 우려가 국내 투자 심리에도 큰 충격을 줬다는 말이에요.",
-        "score": 0.15,
-        "macro": [
-          "증시"
-        ],
         "n": 3,
         "arts": [
           {
-            "t": "코스피 장중 5%대 급락세 지속…삼전·닉스 8%대 하락",
-            "s": "연합뉴스 경제",
-            "u": "https://www.yna.co.kr/view/AKR20261125083800008"
+            "t": "젠슨 황, \"별도 승계계획 필요없어\"...엔비디아 경영체제 유지 시사",
+            "s": "KBC광주방송",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBSMWhVSWRzNmFrQ0FLampqWVFucEpqblhWcXZiem1uQnhHWDc2ODFQTmZkT2dwdy1fVnZhMldZc3NndkVpdXlqb202OUhHd2RXc1Rkdmhuc0xSRS1IRGVuNA?oc=5"
           },
           {
-            "t": "금리·AI 수익성 우려에 관세까지 … 여의도 족집게 “반등 시그널 이때 나온다”",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12217833"
+            "t": "젠슨 황 “엔비디아, 별도 승계 계획 필요 없어”···‘1인 체제’ 유지 의지",
+            "s": "경향신문",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5mVFhsR1lWdG1OcjlLWDRDTEtNTmJ5c1VSRHhBZ2dOOFltbDl5b2NMNDBqNXhWSmdlNjZfOVkxLXg3NldGY3ZiS2Z4YWtFX3dPSnhHM1lIemREZ9IBX0FVX3lxTFBpT2dHZXFvVEJzbUNfcWwteEcxNWFObVFxMDVNaHEtQTRSQ3hFbUluazR0a2Z1VXBldi13REVmS2FRcGR1VXlRQ3JlUHg1c0tZX0Qtei1qZE5hZ3oyRWln?oc=5"
           },
           {
-            "t": "[속보] 코스피 4%대로 낙폭 확대…매도 사이드카 발동",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12217746"
+            "t": "젠슨 황 \"엔비디아엔 승계 계획 필요 없다\"…임직원 앞에서 밝힌 이유",
+            "s": "디지털투데이",
+            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9XZzF4ckZRNmFTX3h6bkM1aE51VHNHU2Y1SnFxS1ppcEpta2NRZE1nUjVpSi1za2VTSDBZUElzWTdzYTZJeWNVZG9pSFBMeFNlU3VqN0l4X05QVV84TlpCcDFOZXl1STFzSzZOYjlBMVZiYjg?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한전 개인정보 유출 보상보험",
+        "easy": "한국전력이 개인정보 유출 피해를 막기 위해 정보가 유출된 고객에게 최대 1000만원을 보상하는 금융사기 피해보험을 제공한다고 밝혔는데요. 이게 무슨 소리냐면 2차 피해를 막기 위해 신용보호 서비스와 함께 최대 1000만원의 보상보험을 지원한다는 겁니다. 쉽게 말하면 한전이 정보유출 고객 보호를 위해 최대 1000만원 보상에 나선 셈이에요.",
+        "score": 0.6,
+        "macro": [],
+        "n": 6,
+        "arts": [
+          {
+            "t": "한전, 정보유출 고객에 무료 보험 제공…최대 1천만원 보상",
+            "s": "연합뉴스TV",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBqM0ZzQUdGY2d2NXpHeFU1UmNGV0RXTzV2bGJYR2JQU193WE44ZUYtXzlSTEFkSjEtcjJjOXI2RXdXTmRnOHc5eTdnbXVibWczTTdkTlp1VFgtWTVUeWFlR1I3b182VTg?oc=5"
+          },
+          {
+            "t": "한전, 고객정보 유출 2차 피해 막는다…‘3단계 선제적 보호대책’ 가동",
+            "s": "이코노미톡뉴스",
+            "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE55YzFYWWJsdWpMZXhoR3JaZUt6SEM2NXZDQzBLN0FTYXFBTXpEZUVkd1JCMDZvN0lIZVZCZnh1R1RqX3FnR1EzdzEwczZsbF9qVUE2dWVuUXRIRldYMUtndjZlcnE0QzA3dW9yRGZR?oc=5"
+          },
+          {
+            "t": "한전, 정보유출 2차 피해 방지…최대 1천만원 보상보험 제공 |",
+            "s": "연합인포맥스",
+            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTE03b0stSk1uUWpXamF4UFBMb3EzRkFRMjY0Q1JNMGFzMUFBRGQwTkktUGZwam1kc3A4dmw3dnhoUXlEN2dRUjdZTGtoRVNXUXpQREMtZmpwbVFuU3VuZXloTnB5b2NVaDhRWjFzaWkteHZfdlB3?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "강원도 전력계통 해소 방안",
+        "easy": "강원특별자치도가 전력 생산량은 풍부하지만 전력망이 부족해 기업 유치에 발목이 잡힌 현실을 토로했습니다. 송전망과 변전소를 확충하기 위해 제12차 전력수급기본계획 반영을 건의하며 간담회를 개최했는데요. 뭔 소리냐면 전기는 많이 만들어도 보낼 길이 없어 기업들이 망설인다는 말이에요. 쉽게 말하면 전력망 부족 문제를 해결하려 팔을 걷어붙인 셈입니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 6,
+        "arts": [
+          {
+            "t": "'전기 풍부한 강원의 역설'…전력망 부족에 기업 유치 발목",
+            "s": "매일경제 마켓",
+            "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1QUEJhUnpGaUwtMVBJZkN0NFdEV0dLODNILUtXSVVXZ0VYUUdDV2k1dW9ZR21pelk4U0o3dmw5ZFFVaVppNHRfbGpIRUYxLWdrb2c?oc=5"
+          },
+          {
+            "t": "강원특별자치도, 전력계통 해소방안 모색 간담회 개최",
+            "s": "산경일보",
+            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ncXFUVzAwclA5Z0tZay1vRS1fUGpkUVhseTV5cWJ2WXRrZnBINm1DNHBKWFdRdEVXTzhneC1UMGo4Sl9uUmxVUWZfMUh6OC1vcjFlcmlZSFlDUV9tWjdJWVpQN1U3RHZVQnVkLVFZLU4?oc=5"
+          },
+          {
+            "t": "강원도, 송전망·변전소 확충 추진…제12차 전력수급기본계획 반영 건의",
+            "s": "신아일보",
+            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9qWUxNcjFGR3FOR01MSWlfN1lsaWlsSmVhc0swTUFLUEdWQ0NZelNPY3lXY0pDZVR4LTNNYTByQVJ4Smc4a0ExZ0Q3T19pejVoVHVhNWsyYzRWaTFkYThOdTk5ZG9aV1JyblhOLXNZNU4?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "구글, HBM '2위 큰손' 부상… 엔비디아 중심 시장 재편에 삼성·SK 시험대",
+        "easy": "",
+        "score": 0.6,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "구글, HBM '2위 큰손' 부상… 엔비디아 중심 시장 재편에 삼성·SK 시험대",
+            "s": "더퍼블릭",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5XRW8tXzNqdGd0SlJ3Q2VGVkUxSFpPYUtKMHV2cGhoMkRQOV9abXBlWDdPLXRrNkM4NWZZYXJQVGpqMFMzNHJNdlhtOGQtM25nVW1HbkhscFpxQjQ3NV9nZ0FSd0xJUUU0cXUw0gFvQVVfeXFMUHlsZTJxTVo1TXl5azhJWXpfNGVlODJXTEVSSWNHVmpnbmFlS05UMlNNMzRTSVdQLVpheTY1U053SDBZQ183OXRhTXpqRVRHTDFpVFR4YXVDREczal9paGdxN0VyRE12NVNhUW93aVA0?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "하루 만에 314조 원 증발…엔비디아 시총 이틀간 ‘롤러코스터’",
+        "easy": "",
+        "score": 0.6,
+        "macro": [],
+        "n": 1,
+        "arts": [
+          {
+            "t": "하루 만에 314조 원 증발…엔비디아 시총 이틀간 ‘롤러코스터’",
+            "s": "JTBC",
+            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5KalBVd0MyV2Q2LXZ3Nkd5UjV0cVJGNzY1YUdmdjdJQmFvaGIyemRIUUE3MzAtR3lkVkg3UTh3UjlHNXF2ZFRJWURmYXM4TjZxQk8zLQ?oc=5"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "애크먼 “연준 금리 올리면 내년 침체올수도”",
+        "title": "코스피 6퍼센트대 급락",
+        "easy": "코스피가 미국 반도체주 급락 여파로 6% 넘게 급락해 전날 상승분을 모두 반납했습니다. 주가가 4600대로 밀려나면서 매도 사이드카가 발동되기도 했는데요. 외국인이 유가증권시장에서 2조원 넘게 순매도 물량을 던졌다는 말이에요. 쉽게 말하면 하루 만에 지수가 6% 이상 빠지며 벼락 맞은 격이 됐다고 보입니다.",
+        "score": 0.55,
+        "macro": [
+          "코스피"
+        ],
+        "n": 7,
+        "arts": [
+          {
+            "t": "코스피, 4%대 하락해 장 초반 4700선으로 밀려…삼전닉스 6%대 급락",
+            "s": "한국경제 증권",
+            "u": "https://www.hankyung.com/article/2026112584786"
+          },
+          {
+            "t": "[속보] 코스피, 낙폭 4%대로 확대…매도 사이드카 발동",
+            "s": "한국경제 증권",
+            "u": "https://www.hankyung.com/article/2026112585406"
+          },
+          {
+            "t": "[속보] 코스피, 3%대 하락 출발…하루 만에 '5천피' 반납",
+            "s": "한국경제 증권",
+            "u": "https://www.hankyung.com/article/2026112585096"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "내일 금통위, 기준금리 3.25%로 오를까… 반도체 호황이 부른 금리 인상, 과거 25번은 '왜 올리느냐'가 갈랐다",
         "easy": "",
-        "score": 0.1,
+        "score": 0.4,
         "macro": [
           "금리",
-          "연준",
-          "침체"
+          "금통위",
+          "기준금리"
         ],
         "n": 1,
         "arts": [
           {
-            "t": "애크먼 “연준 금리 올리면 내년 침체올수도”",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/business/12217729"
+            "t": "내일 금통위, 기준금리 3.25%로 오를까… 반도체 호황이 부른 금리 인상, 과거 25번은 '왜 올리느냐'가 갈랐다",
+            "s": "네이버 프리미엄콘텐츠",
+            "u": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPNUl6MGIwT1lrUTA0Q3hkbUd0dzhzQzQxRnVVTGhUaThaLW1YS2x5YTdaTzFINVdwbTliYTBLY2RXQzd4NDd3cUxyenl2WndidWFqOG9CZFBhcEMwaEtmUERFWEl0QldWcTFuRTdTMGV1Q0gzdG9PTldNOHhhSmpkZ0xXY0tYNHE2YUF3bWZiellXYU93?oc=5"
           }
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-25_1206.json"
+    "source": "v2_secretary/결과/갱신/2026-11-25_1606.json"
   },
   "flows": {
     "day": "2026-11-25",
@@ -771,14 +787,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-25",
-      "start": "2026-11-25 12:06:43",
+      "start": "2026-11-25 16:06:14",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
       "flows_retry_exit": 0,
       "indicators_refresh_exit": 0,
-      "end": "2026-11-25 12:11:15",
-      "secs": 272,
+      "end": "2026-11-25 16:07:46",
+      "secs": 92,
       "exit": 0,
       "calls": 2,
       "result": "ok"
@@ -21465,12 +21481,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 32건 (최근: 2026-11-25 ok)",
+        "line_out": "내보냄: 실행 기록 33건 (최근: 2026-11-25 ok)",
         "metrics": {
           "in": 1,
-          "out": 32,
+          "out": 33,
           "calls": 2,
-          "secs": 272.0,
+          "secs": 92.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
