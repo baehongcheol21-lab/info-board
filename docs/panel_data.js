@@ -2,17 +2,199 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-26",
-  "generated_at": "2026-11-26 05:24:08",
-  "made_iso": "2026-11-26T05:24:08+09:00",
+  "generated_at": "2026-11-26 12:08:11",
+  "made_iso": "2026-11-26T12:08:11+09:00",
   "freshness": {
     "lines": [
-      "AI 사용량 초과(429) 1번",
+      "AI 사용량 초과(429) 2번",
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
     ],
     "pc_locked": "",
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
-  "refresh": {},
+  "refresh": {
+    "tag": "1206",
+    "made_iso": "2026-11-26T12:06:42+09:00",
+    "new": 386,
+    "news_new": 290,
+    "calls": 2,
+    "error": "",
+    "times": [
+      "1206"
+    ],
+    "picks": [
+      {
+        "seat": "뉴스",
+        "title": "미국의 관세 압박과 반도체·철강",
+        "easy": "미국이 제조업 과잉생산을 문제 삼으며 한국의 반도체와 철강 부문에 최대 25%의 관세 인상 가능성을 시사했습니다. 보조금과 육성책을 불공정 무역 근거로 삼았다는 분석인데요, 쉽게 말하면 대미 수출 기업들이 관세 장벽이라는 큰 부담을 마주할 수 있다는 겁니다.",
+        "score": 0.7,
+        "macro": [
+          "관세"
+        ],
+        "n": 9,
+        "arts": [
+          {
+            "t": "'호남반도체' 콕 집은 미국의 경고...관세 최대 25%까지 늘어날 수도",
+            "s": "펜앤마이크",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5FREdPdnl4bU53akQwNUhtNDNNSWNNLW9tMUw1ZF80TEowdEhCeXhBOHJvMl9rNDZYal9LN3ZkbDBtemttRXQ5QjVTalhRQ2FqRkc2RVpXTmRaU3AwWFpXUUpXZ0lUcFV1Y2w00gFvQVVfeXFMTXN1dlpyNXJ3SG9PbVNWNXp6YnNUU0RhXy1rVlA5NGVrN1VJWkhMSHVzTk5mYkdLUzZ2OHk5bDMwYnd6WUdYQlo5OFVaR1JCWFVTRlZEc0hBUFJrYlRJM2hvWmVVdG1BTlJ0NnRPR3ZJ?oc=5"
+          },
+          {
+            "t": "‘과잉생산 관세’ 예고한 미국, 반도체·AI 육성책도 불공정 무역 근거로···최대 25% 인상 여지 으름장",
+            "s": "경향신문",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1haWZlZGZPUUI4QXVCbHRwWXJJaENNZGg5NUg1Y1RoQWl3cEJFTnY1M2QwSWk5MjlCQUFUNTVyRjdqXzRhTS1DRWtEcDNCN0M2S1ZBMWNHVTJkQdIBX0FVX3lxTFBxaHlpZjY0NmtEcER2dDFOU0V4dGJUdm81QmI1VzBFVTNHZDZXSklVV3hKOGd2UVVFTWpWaGdRTFdaY09fdF9HWGhUMmc1MnJYVjlhQlpNUmZ0YVlqeTNJ?oc=5"
+          },
+          {
+            "t": "美 새 관세, 자동차·반도체 예외 추진…품목별 부담 달라진다",
+            "s": "글로벌이코노믹",
+            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPR1pmY0I4VERERTdHa0NhTFF4X3FEQ1l3YUY0OGkwdFBFaFAycVJtLXF5OGtfWXdQazJGWnJaeW02ZEdqWTdfUzJUUG5zTGpmTzJhdkFWcmFtUC1GdEZEX3BMdUJuRlFsSlBWTUhSSjQzQVYxOXFacHA5UTRDQ0RzUXF1VF9GM1Zj?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한국은행 기준금리 인상",
+        "easy": "한국은행이 기준금리를 3.00%에서 3.25%로 0.25%포인트 인상했습니다. 물가 상승 압력과 반도체 수출 호조에 따른 성장률 상향 조정이 배경인데요, 쉽게 말하면 경기가 살아나면서 금리를 올려 긴축에 나선 셈이에요.",
+        "score": 0.6,
+        "macro": [
+          "기준금리",
+          "한국은행"
+        ],
+        "n": 10,
+        "arts": [
+          {
+            "t": "[속보] 한은, 올해 성장률 전망 3.3→3.9% 상향…내년은 2.9→4.1%로 올려",
+            "s": "매일경제 경제",
+            "u": "https://www.mk.co.kr/news/economy/12219048"
+          },
+          {
+            "t": "반도체 호황의 역설…성장률 뛰자 기준금리 또 올렸다",
+            "s": "매일경제 경제",
+            "u": "https://www.mk.co.kr/news/economy/12219053"
+          },
+          {
+            "t": "한은, 기준금리 0.25%p 인상…2년 만에 연 3.25%",
+            "s": "한겨레",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9kaWJkTjM5bmJlYUh1RFVHbWdhSTdLOVRLY2oxTDZhNFE0QTJMTzlLV0VoSGVpRmg3NVZoYUR2dWVra0VIdnEtakJTUFR1N0IwbzBETlBNNXRMMTlRYUlmUFcyb2xsVGJXMWhjbWVDM09tZw?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "엔비디아 젠슨 황 복귀와 신용등급 우려",
+        "easy": "엔비디아의 젠슨 황 CEO 복귀를 두고 미국 정치권의 압박과 함께 신용등급 강등 검토 우려가 제기됐습니다. 규제 리스크와 지배구조 문제로 보일 수 있다는 지적인데요, 쉽게 말하면 기업의 수장 변화가 외부 규제와 맞물려 불확실성을 키운다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 9,
+        "arts": [
+          {
+            "t": "트럼프 행정부, 냉전 시대 법률로 Nvidia CEO 황젠슨 복귀 압박 검토",
+            "s": "인베스팅 주식",
+            "u": "https://kr.investing.com/news/stock-market-news/article-2191077"
+          },
+          {
+            "t": "‘젠슨 황 복귀’ 엔비디아 신용 등급 평가 엇갈려",
+            "s": "KBS 뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE41RGRqaUhXdi03MlRhVF9DbEhDNjBZODM4MjVRU0lCdDduSkg4NXpVVFdsVFpyUGxSWG9hNEJTTUZXbXRFaHl1Qk05VTlXWkNHdkZBdEF4M0NuT3pZZzlhWFZfVXRnQQ?oc=5"
+          },
+          {
+            "t": "美민주당 상원 원내대표 \"젠슨 황, 미국 수출통제법 위반\" 직격…정치권 반발 확대",
+            "s": "더구루",
+            "u": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1IZUo2eC1PSExtYTZqcEFMbWNUWXVzVVduVjMwcHBKajZock10RTZCelJFTWVOd0hDV3c2TmMtNmFyNEVwRU43RWwzUkctOHRfNHRiazRiRV92bThYemROclpsQQ?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한전 송전선로 활용 전력망 구축",
+        "easy": "한국전력이 기존 송전선로를 활용하는 전력망 통합 구축 방식으로 신규 철탑을 줄이는 혁신 성과를 거둬 인사혁신처장상을 수상했습니다. 전력망 확충의 패러다임을 바꿨다는 평가인데요, 쉽게 말하면 비용을 아끼고 갈등을 줄이는 장점이 있다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 8,
+        "arts": [
+          {
+            "t": "한전, 기존 송전선로 활용한 전력망 구축 혁신…‘적극행정’ 우수상 수상",
+            "s": "워크투데이",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1HYlFfeDNTdm9Pdjd2LVd6OUFCQ1d6T3poWlRfZzkyMXVWZ01RUzRnX0tYS2JJTi1BRmF3WU92QTBtVWhfT2VsdmhmSks5ZzNPQW8tT19fcWhJOWNOZDZWcEwyWEdaZ3dFUkhHSQ?oc=5"
+          },
+          {
+            "t": "한전, 기존 송전선로 활용 전력망 구축…적극행정 성과",
+            "s": "뉴시스",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1wa3FqdUo0ZW5wWlNVaGl5N2pmd2I1NTR1OENlU3hfNWx0QkVaY012cTFJY0syRmUtVFhGSFlvc3JwWllxaVI4eWRCdHBuM2FlRkF0dk9RZG1yUmxIaHM3NNIBeEFVX3lxTE81WGM3azBnVmhiQTlPcUp2NUdhdTJyMnU3c3VPcnNOUGFWeVRSU1dhWDBYQ0tBT00zdVlxZU82eXgtbWYxNG9HWkR1Q2EzWmFrT1VhQTZON1UwR0s2X3QxMnN1MDJvN0ZGZ0VMOW5Od2t6d0JlWlAzTQ?oc=5"
+          },
+          {
+            "t": "한전, 기존 송전선로 활용 ‘전력망 통합 구축’…인사혁신처장상 수상",
+            "s": "인사이트코리아",
+            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBtTDBtbmIyelFtS3plcDV3aTJibHpmTFZ5TEpnRFd6SzlyRWk4SWhMOUt6ekVJYUV4eWJpNV9NUV90cE1MU2xFa08xX2l5MDd3Q0hzMk5venFnUWkwQmhtU2Q3enZVUTN0X1hkcXZ5VWdsTHPSAXdBVV95cUxQLWdmajN2UnNFcC1NeTVwcWkxRDJrNERodEhISG8zRlhYV2d1eU1nQkFyVTV1bTVJWnM0aFEybm5DTE9FWEhiUTZuMi1FUWpaejUzZG9keUpTQm9hWlZDYWZ3Qm1uaUVfYmZNN21Tc0lZQkpyZXFobw?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "코스피, 장초반 4750선 회복…삼성전자·SK하이닉스 동반 반등",
+        "easy": "",
+        "score": 0.6,
+        "macro": [
+          "코스피"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "코스피, 장초반 4750선 회복…삼성전자·SK하이닉스 동반 반등",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12218953"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "한은 경제성장률 및 물가 전망",
+        "easy": "한국은행이 올해와 내년 경제성장률 전망치를 각각 상향 조정하고 물가 상승률 전망을 함께 발표했습니다. 반도체 수출 호조가 주된 요인으로 꼽혔는데요, 쉽게 말하면 예상보다 경기가 더 나아지고 있다는 분석이에요.",
+        "score": 0.5,
+        "macro": [
+          "물가",
+          "한은"
+        ],
+        "n": 6,
+        "arts": [
+          {
+            "t": "한은 총재 \"물가상승률, 2028년 목표 수준에 수렴…선제 대응\"",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261126092200002"
+          },
+          {
+            "t": "한은 총재 \"올해 명목GDP 3천조원 상회…반도체 영업익 700조원\"",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261126098400002"
+          },
+          {
+            "t": "[속보] 한은, 내년 경제성장률 2.9%→4.1% 대폭 상향",
+            "s": "한국경제 경제",
+            "u": "https://www.hankyung.com/article/202611261473i"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "한은 총재 \"증시 침체로 민간소비 주춤…내년은 2.4%↑\"",
+        "easy": "",
+        "score": 0.3,
+        "macro": [
+          "증시",
+          "침체",
+          "한은"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "한은 총재 \"증시 침체로 민간소비 주춤…내년은 2.4%↑\"",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261126094200002"
+          }
+        ]
+      }
+    ],
+    "source": "v2_secretary/결과/갱신/2026-11-26_1206.json"
+  },
   "flows": {
     "day": "2026-11-26",
     "same_day": true,
@@ -757,16 +939,16 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-26",
-      "start": "2026-11-26 04:13:39",
+      "start": "2026-11-26 12:06:42",
       "by": "github",
       "where": "GitHub",
-      "mode": "run",
-      "end": "2026-11-26 04:40:45",
-      "secs": 1627,
+      "mode": "refresh",
+      "flows_retry_exit": 0,
+      "indicators_refresh_exit": 0,
+      "end": "2026-11-26 12:08:11",
+      "secs": 89,
       "exit": 0,
-      "result_md": true,
-      "failed_stages": 0,
-      "calls": 141,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -21808,12 +21990,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 35건 (최근: 2026-11-26 ok)",
+        "line_out": "내보냄: 실행 기록 37건 (최근: 2026-11-26 ok)",
         "metrics": {
           "in": 1,
-          "out": 35,
-          "calls": 141,
-          "secs": 1627.0,
+          "out": 37,
+          "calls": 2,
+          "secs": 89.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
