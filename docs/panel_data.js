@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-26",
-  "generated_at": "2026-11-26 14:54:51",
-  "made_iso": "2026-11-26T14:54:51+09:00",
+  "generated_at": "2026-11-26 15:15:09",
+  "made_iso": "2026-11-26T15:15:09+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 2번",
@@ -939,12 +939,12 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-26",
-      "start": "2026-11-26 14:54:39",
+      "start": "2026-11-26 15:14:55",
       "by": "github",
       "where": "GitHub",
       "mode": "indicators",
-      "end": "2026-11-26 14:54:50",
-      "secs": 12,
+      "end": "2026-11-26 15:15:09",
+      "secs": 14,
       "indicators_refresh_exit": 0,
       "calls": 0,
       "result": "ok"
@@ -21988,12 +21988,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 40건 (최근: 2026-11-26 ok)",
+        "line_out": "내보냄: 실행 기록 41건 (최근: 2026-11-26 ok)",
         "metrics": {
           "in": 1,
-          "out": 40,
+          "out": 41,
           "calls": 0,
-          "secs": 12.0,
+          "secs": 14.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
