@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-26",
-  "generated_at": "2026-11-26 21:22:04",
-  "made_iso": "2026-11-26T21:22:04+09:00",
+  "generated_at": "2026-11-27 00:26:24",
+  "made_iso": "2026-11-27T00:26:24+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 2번",
