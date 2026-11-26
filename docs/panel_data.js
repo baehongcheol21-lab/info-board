@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-26",
-  "generated_at": "2026-11-26 15:15:09",
-  "made_iso": "2026-11-26T15:15:09+09:00",
+  "generated_at": "2026-11-26 16:07:50",
+  "made_iso": "2026-11-26T16:07:50+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 2번",
@@ -13,53 +13,181 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1206",
-    "made_iso": "2026-11-26T12:06:42+09:00",
-    "new": 386,
-    "news_new": 290,
+    "tag": "1606",
+    "made_iso": "2026-11-26T16:06:17+09:00",
+    "new": 539,
+    "news_new": 327,
     "calls": 2,
     "error": "",
     "times": [
-      "1206"
+      "1206",
+      "1606"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "미국의 관세 압박과 반도체·철강",
-        "easy": "미국이 제조업 과잉생산을 문제 삼으며 한국의 반도체와 철강 부문에 최대 25%의 관세 인상 가능성을 시사했습니다. 보조금과 육성책을 불공정 무역 근거로 삼았다는 분석인데요, 쉽게 말하면 대미 수출 기업들이 관세 장벽이라는 큰 부담을 마주할 수 있다는 겁니다.",
+        "title": "삼성전자 반도체 조직개편",
+        "easy": "삼성전자가 반도체 개발 체제를 사업부장 직속으로 일원화하고 미주법인장에 윤하룡 부사장을 내정하는 조직개편을 단행했습니다. 북미 반도체 조직을 재정비하고 메모리 마케팅과 개발 역량을 강화하기 위한 조치인데요. 쉽게 말하면 반도체 사업의 체질을 바꾸고 경쟁력을 높이려는 겁니다.",
+        "score": 0.7,
+        "macro": [],
+        "n": 7,
+        "arts": [
+          {
+            "t": "삼성전자, 메모리 개발체제 일원화…반도체 미국법인 수장, 메모리 마케팅 전문가 배치",
+            "s": "뉴스웍스",
+            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE12VmlEanlleGFBM1otWm9fUFpXZFE4ejdleXhIQlREbXBPV1BJZUYyZDEzYXowUFZmaUI2OTJERUROZm1xS0RmN196OG5RdHc4R3ppa2pwek5ybEIxREZZRl9VNGVUSkY5ZjYzOWJnSdIBc0FVX3lxTE1neEdLZkFUMnRBd1FTUzNxdzBKREF3TjVPbFNWeEdodnA5R2lrX08tOXVkSWliQTBCRWstM2NGRjFFaGl1T2c1NFNiRXJuekRKeG8zUEkzekYtLU5WbDVtb0ZRTXotOFROYU9aN1V5a1dGY3c?oc=5"
+          },
+          {
+            "t": "삼성전자 반도체, 신임 미주총괄에 윤하룡 부사장…오스틴법인장도 교체",
+            "s": "헤럴드경제",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE96dnJZeWpNMU14c0ludXJfNVZLa0RZZDZKZWNUZExqVHlKdlNDSUNzd0JYdXNsc08yZVdtUFpXb2pFemM4aTNGYUZjSXBaWFg1R1NyZ0Nn?oc=5"
+          },
+          {
+            "t": "삼성전자, 메모리사업부장 직속 개발체제로…미주법인장 윤하룡",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9ITkZKRE94NHRMRFByazZoLVNXTG1nMVVELW0tSkJlT3BqSkFVVGpnbXJkQ3YyUklXb2xLNm01UGUzNERldk9nc3RnUEdwaC1rSXh4TFRVWDhnSjDSAWBBVV95cUxQY1c2WW00V1R6TFUtMmRDbmJmZFNmRmpheHlfU0VQb1NGNjY2S09QNVpwQ2tJZDlVVjFEVGJ4ZnMtcEVEbFJvSEI5WTdCY25sbHd6MTdWZjBMVkl0WExqbTk?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "미국 과잉생산 관세 압박",
+        "easy": "미국 무역대표부가 과잉생산 관세를 예고하며 한국의 반도체와 자동차 등 주요 산업을 겨냥해 최대 25%의 관세 인상 여지를 내비쳤습니다. 호남 반도체 메가 프로젝트 등을 불공정 무역의 근거로 삼는 모습인데요. 국내 기업들의 설비 투자와 수출 전략에 변수가 될 수 있다는 전망이 나옵니다.",
         "score": 0.7,
         "macro": [
           "관세"
         ],
-        "n": 9,
+        "n": 6,
         "arts": [
-          {
-            "t": "'호남반도체' 콕 집은 미국의 경고...관세 최대 25%까지 늘어날 수도",
-            "s": "펜앤마이크",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5FREdPdnl4bU53akQwNUhtNDNNSWNNLW9tMUw1ZF80TEowdEhCeXhBOHJvMl9rNDZYal9LN3ZkbDBtemttRXQ5QjVTalhRQ2FqRkc2RVpXTmRaU3AwWFpXUUpXZ0lUcFV1Y2w00gFvQVVfeXFMTXN1dlpyNXJ3SG9PbVNWNXp6YnNUU0RhXy1rVlA5NGVrN1VJWkhMSHVzTk5mYkdLUzZ2OHk5bDMwYnd6WUdYQlo5OFVaR1JCWFVTRlZEc0hBUFJrYlRJM2hvWmVVdG1BTlJ0NnRPR3ZJ?oc=5"
-          },
           {
             "t": "‘과잉생산 관세’ 예고한 미국, 반도체·AI 육성책도 불공정 무역 근거로···최대 25% 인상 여지 으름장",
             "s": "경향신문",
             "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1haWZlZGZPUUI4QXVCbHRwWXJJaENNZGg5NUg1Y1RoQWl3cEJFTnY1M2QwSWk5MjlCQUFUNTVyRjdqXzRhTS1DRWtEcDNCN0M2S1ZBMWNHVTJkQdIBX0FVX3lxTFBxaHlpZjY0NmtEcER2dDFOU0V4dGJUdm81QmI1VzBFVTNHZDZXSklVV3hKOGd2UVVFTWpWaGdRTFdaY09fdF9HWGhUMmc1MnJYVjlhQlpNUmZ0YVlqeTNJ?oc=5"
           },
           {
-            "t": "美 새 관세, 자동차·반도체 예외 추진…품목별 부담 달라진다",
-            "s": "글로벌이코노믹",
-            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPR1pmY0I4VERERTdHa0NhTFF4X3FEQ1l3YUY0OGkwdFBFaFAycVJtLXF5OGtfWXdQazJGWnJaeW02ZEdqWTdfUzJUUG5zTGpmTzJhdkFWcmFtUC1GdEZEX3BMdUJuRlFsSlBWTUhSSjQzQVYxOXFacHA5UTRDQ0RzUXF1VF9GM1Zj?oc=5"
+            "t": "美, '韓과잉생산' 반도체·車 조준…'관세 25% 인상여지' 으름장",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1LaDBtd0VJSlVlemQ3VFprUXpkdkMxRkdrMy1CZU90ZUFJaWt6alVQU3BUY3kwWFJGa1JNLXFOb0dXTXMwSE5vQU5yN3JUa1p6VmZHenBPU045RE3SAWBBVV95cUxNRXJnendZbzNWMWZxSWpjTER2Rnlja2g3ZUowNUwwTWNHeElxdzNwYmdySVRvYjBmM2VReEM5RmxjdTBDanppQWlXanhCbndJU2w5UDhfSFpEVlJXZ0dGWHo?oc=5"
+          },
+          {
+            "t": "미국, '한국 과잉생산' 반도체·자동차 조준",
+            "s": "연합뉴스 한민족센터",
+            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTE12dlk4Y2k3Zk9sdU50ckdXOVRyRlhzSEt4TFFBSHkyLUR1WTliM3NnZW13dktmdWZIVThOdkl6UWVidi1oZl9CTWxCQkNPX1NtejRweWtDTHVTYTVZQmpwRF9XYTRNUE5MeWtWQ0IzNDFJeFdI?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "한국은행 기준금리 인상",
-        "easy": "한국은행이 기준금리를 3.00%에서 3.25%로 0.25%포인트 인상했습니다. 물가 상승 압력과 반도체 수출 호조에 따른 성장률 상향 조정이 배경인데요, 쉽게 말하면 경기가 살아나면서 금리를 올려 긴축에 나선 셈이에요.",
+        "title": "화웨이 차세대 HBM 개발 도전",
+        "easy": "중국 화웨이가 삼성전자와 SK하이닉스 제품에 도전할 새로운 고대역폭 메모리 칩 개발을 추진하고 있습니다. 첨단 메모리 시장에서 추격을 서두르는 모양새인데요. 다만 업계에서는 양사의 기술 격차가 여전히 크다고 보고 있습니다.",
+        "score": 0.7,
+        "macro": [],
+        "n": 5,
+        "arts": [
+          {
+            "t": "中 화웨이, 차세대 HBM 기술 공개 추진… 삼성·SK하이닉스에 도전장",
+            "s": "Chosunbiz",
+            "u": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOOUxSbEtqb1BtVE56YzNaYlcyYmFtem1RdHR0anVoMURWRl9nYTMzdGtTTDFmaHV1eGJ3N05XWW9IT1hBSHdJVGNRcnNLeXJ2WlV0THVfeDFOc2ZvZnJQekdFUzc5ekM1VnV0S0ZHemxtYUFxaGpiLUNVV3hoZFlsMW130gGWAUFVX3lxTE4wVDJJSUMxRkJQVnRsaFFfU1J0WXBtSExPc1Q3Wi1kdmNxd2pLRW9DZUdkbmhtRDNTc0RrM2dhcGdfY0RFRjRPMmM3R3V3dVhyZWR5N3k4ZVdjZ0FhSGJqdGZKVDlzS3RzODlramxxS1BCQUF4RUNSY01KellsTkVFZUZoZVZ"
+          },
+          {
+            "t": "중국 화웨이, 삼성·하이닉스 따라잡을 새 HBM 공개 준비",
+            "s": "연합뉴스 마켓+",
+            "u": "https://www.yna.co.kr/view/AKR20261126127200009"
+          },
+          {
+            "t": "중국 화웨이, 삼성·하이닉스 따라잡을 새 HBM 공개 준비",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1nUnh4Wk1VNThjVGQ4SlRsZmlYX1YyeWZTcG5JYW1CUmxZdlM2RXA0N25DWlN3WU52X0dFanRSYXR4TXpVUERxSzBUS3hiY25zWHhMWEJRS3Y4ZTA?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한전 전력망 통합구축 수상",
+        "easy": "한국전력이 기존 송전선로를 활용한 전력망 통합구축 공로를 인정받아 인사혁신처장상을 받았습니다. 기존 송전선로를 효율화하면 연간 최대 6,000억 원의 비용을 절감할 수 있다는 설명인데요. 신규 철탑 건설을 줄이면서도 전력망을 효율적으로 확충하는 장점이 있습니다.",
         "score": 0.6,
+        "macro": [],
+        "n": 7,
+        "arts": [
+          {
+            "t": "한전, 기존 송전선로 활용 전력망 통합으로 인사혁신처장상 수상",
+            "s": "웹이코노미",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE5qTWhXMlU5Q3NORWUwV3pkb2pzU1FKTGdSTGV5UHo2bk1fNFdzUHVnYnE3blhRVnd6cFRhTGxDSDNfQkVwcWFaa1pIdW1QOGdjMmg5b0pfNi1aRXNoU3ZGNTl1SmxYWGNJQTJadldVNGZLQQ?oc=5"
+          },
+          {
+            "t": "한전, 기존 송전선로 활용해 전력망 확충 패러다임 바꾼다",
+            "s": "에너지데일리",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE8zTTQ4OVR2REktTHRaWHFZLWY4c1RaNHh1TmNqc3NMalNEVGZ4Nk04bEFKajNZY2dQZmI4RlNGMFl1Tl9GUmZUMnJfekk3ZGNma3d5UmlZTlY0VjAwRmlkUXlfNWZ6LTQ1NnBLVVZfUnNNdw?oc=5"
+          },
+          {
+            "t": "“전력망, 기존 송전선로 효율화시 연간 최대 6,000억원 절감”",
+            "s": "인사이트에너지뉴스",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBJYXF2cWtOQXk3SmoxLUUtaU12Nl9LSXBpTGZkaTJYMkE2LVJDcVYyN2NTR1ByYUhsN3NjUk50ZURhNUQ0bVY5aXBCaDlSNXh2SEk3V2Z1ZVlLUEJ5ckFOOVJIYnlKT213OEc00gFrQVVfeXFMUElhcXZxa05BeTdKajEtRS1pTXY2X0tJcGlMZmRpMlgyQTYtUkNxVjI3Y1NHUHJhSGw3c2NSTnRlRGE1RDRtVjlpcEJoOVI1eHZISTdXZnVlWUtQQnlyQU45UkhieUpPbXc4RzQ?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "제주 탐라는 전기예보 시행",
+        "easy": "한국전력이 제주에서 낮 시간에 재생에너지가 남을 때 전기요금을 50% 할인해 주는 '탐라는 전기예보'를 시행합니다. 전력 수급 조절과 친환경 에너지 활용을 유도하기 위한 건데요. 쉽게 말하면 낮 시간대 전력 사용 요금을 절반으로 깎아준다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 6,
+        "arts": [
+          {
+            "t": "제주서 낮 시간 전력 사용 시 요금 50% 깎아주는 ‘탐라는 전기예보’ 시행",
+            "s": "국토매일",
+            "u": "https://news.google.com/rss/articles/CBMiREFVX3lxTE92RlZDYVdnLVpiRmxsVjQ5T1FVQ0xEYU1lNFl4U3lwcDhLYXlPdEk4R3EtOGs1c3d2TkF6U283Vl9QRm05?oc=5"
+          },
+          {
+            "t": "한국전력 '탐라는 전기예보' 시행···제주서 재생에너지 남는 날 '전기 반값'",
+            "s": "팍스경제TV",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5QTDBBR3VIZHZhWFJ2c1pLTUtzY21QTGJoanJuODJ5a2hJTHM2YTdNWGxhY2FwcjMwVzNtcFJyRHQ5dllub3BVM1VEU2c5Y241VTVZX0JFd3VTRHFrYUtReWQwZU9PMlk?oc=5"
+          },
+          {
+            "t": "한전, 재생e 남는 시간대 전기요금 50% 할인… 제주서 ‘탐라는 전기예보’ 시행",
+            "s": "에너지데일리",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9YaDFqTnhfVmtDel9fUVd1XzBtNE54MVZNSzZOaXZDYXpYRG9iN1FhajQ5V2pfVWstUmJqZmFzVWNjRDZQM2lXTTlIQkhsQVBSWWJPODF6ekVRd2ZSS0YtMGdsdjhLSF81ZE5iZnA3SHprZw?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "한은 기준금리 3.25% 인상",
+        "easy": "한국은행이 금융통화위원회 회의에서 기준금리를 연 3.00%에서 3.25%로 0.25%포인트 인상했습니다. 하반기에만 세 차례 금리를 올린 셈인데요. 물가 상승 압력과 가계대출 증가세에 대응하기 위한 조치로 보입니다.",
+        "score": 0.3,
         "macro": [
           "기준금리",
-          "한국은행"
+          "한은"
         ],
         "n": 10,
+        "arts": [
+          {
+            "t": "한은 기준금리 연 3%→3.25% 인상…다시 긴축 박차 가한다",
+            "s": "중앙일보",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBYdnFnalE1WGVnc3llMlp1X282clpWS19jWmJmQjdEeC1sZzRoUjdSRXh3cWNvd3kwWmxjS293MWlTNTdQU0V0N0Q5NGZLV2F6NTNLS2RR?oc=5"
+          },
+          {
+            "t": "숨 고르기 끝낸 한은, 기준금리 3.25%로···긴축의 상단이 높아졌다",
+            "s": "시사저널e",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE1US0NBY2t1UTZndWtWSWQ2aW1aeTZyYWItSUljejlmZTU5dXNSY0IxUExKQ1kxb2o1N3Y0RGpNV1loMGZFakp5TF80cmpmclNOSWJILXBwZ1dBSldSTDd6T0szSlVub2M2N2FxaXBHaGU3d9IBdkFVX3lxTFBrZ2I0R0xMQ3Y1UzFYNzR2NVZhaGVIOGlPT3Y2NGFwS0VkME9GVkhsOTR5STY5QlVkeEhuRVdQU2xlSVZpRUtmdjIxQ0RwLTVHWTBwc1ZualhFdzhYbUxIY05UUDVYc0Z4OHdYdDV1dENjUTdXVWc?oc=5"
+          },
+          {
+            "t": "한은, 기준금리 연 3.25%로 올려…내년 성장률 4.1% 전망",
+            "s": "KBS 뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1wT08zREVoVS0zRFdOb1BXZ3NaakNsemRGd3JkdEg1c1lic2lEd0lQeGlMZVRlODhTMFV3WXcybjN5RU1fazJRRkxVOE0wcnY5bTFPUzhQZjlNbUk?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "한은 경제성장률 전망 상향",
+        "easy": "한국은행이 반도체 수출 호조에 힘입어 올해와 내년 경제성장률 전망치를 대폭 상향 조정했습니다. 올해 성장률은 기존 3.3%에서 3.9%로, 내년은 2.9%에서 4.1%로 높였는데요. 쉽게 말하면 반도체 경기 확장세가 성장을 이끌고 있다는 말이에요.",
+        "score": 0.2,
+        "macro": [
+          "한은"
+        ],
+        "n": 3,
         "arts": [
           {
             "t": "[속보] 한은, 올해 성장률 전망 3.3→3.9% 상향…내년은 2.9→4.1%로 올려",
@@ -67,133 +195,19 @@ window.PANEL_DATA = {
             "u": "https://www.mk.co.kr/news/economy/12219048"
           },
           {
-            "t": "반도체 호황의 역설…성장률 뛰자 기준금리 또 올렸다",
-            "s": "매일경제 경제",
-            "u": "https://www.mk.co.kr/news/economy/12219053"
-          },
-          {
-            "t": "한은, 기준금리 0.25%p 인상…2년 만에 연 3.25%",
-            "s": "한겨레",
-            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9kaWJkTjM5bmJlYUh1RFVHbWdhSTdLOVRLY2oxTDZhNFE0QTJMTzlLV0VoSGVpRmg3NVZoYUR2dWVra0VIdnEtakJTUFR1N0IwbzBETlBNNXRMMTlRYUlmUFcyb2xsVGJXMWhjbWVDM09tZw?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "엔비디아 젠슨 황 복귀와 신용등급 우려",
-        "easy": "엔비디아의 젠슨 황 CEO 복귀를 두고 미국 정치권의 압박과 함께 신용등급 강등 검토 우려가 제기됐습니다. 규제 리스크와 지배구조 문제로 보일 수 있다는 지적인데요, 쉽게 말하면 기업의 수장 변화가 외부 규제와 맞물려 불확실성을 키운다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 9,
-        "arts": [
-          {
-            "t": "트럼프 행정부, 냉전 시대 법률로 Nvidia CEO 황젠슨 복귀 압박 검토",
-            "s": "인베스팅 주식",
-            "u": "https://kr.investing.com/news/stock-market-news/article-2191077"
-          },
-          {
-            "t": "‘젠슨 황 복귀’ 엔비디아 신용 등급 평가 엇갈려",
-            "s": "KBS 뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE41RGRqaUhXdi03MlRhVF9DbEhDNjBZODM4MjVRU0lCdDduSkg4NXpVVFdsVFpyUGxSWG9hNEJTTUZXbXRFaHl1Qk05VTlXWkNHdkZBdEF4M0NuT3pZZzlhWFZfVXRnQQ?oc=5"
-          },
-          {
-            "t": "美민주당 상원 원내대표 \"젠슨 황, 미국 수출통제법 위반\" 직격…정치권 반발 확대",
-            "s": "더구루",
-            "u": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1IZUo2eC1PSExtYTZqcEFMbWNUWXVzVVduVjMwcHBKajZock10RTZCelJFTWVOd0hDV3c2TmMtNmFyNEVwRU43RWwzUkctOHRfNHRiazRiRV92bThYemROclpsQQ?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "한전 송전선로 활용 전력망 구축",
-        "easy": "한국전력이 기존 송전선로를 활용하는 전력망 통합 구축 방식으로 신규 철탑을 줄이는 혁신 성과를 거둬 인사혁신처장상을 수상했습니다. 전력망 확충의 패러다임을 바꿨다는 평가인데요, 쉽게 말하면 비용을 아끼고 갈등을 줄이는 장점이 있다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 8,
-        "arts": [
-          {
-            "t": "한전, 기존 송전선로 활용한 전력망 구축 혁신…‘적극행정’ 우수상 수상",
-            "s": "워크투데이",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1HYlFfeDNTdm9Pdjd2LVd6OUFCQ1d6T3poWlRfZzkyMXVWZ01RUzRnX0tYS2JJTi1BRmF3WU92QTBtVWhfT2VsdmhmSks5ZzNPQW8tT19fcWhJOWNOZDZWcEwyWEdaZ3dFUkhHSQ?oc=5"
-          },
-          {
-            "t": "한전, 기존 송전선로 활용 전력망 구축…적극행정 성과",
-            "s": "뉴시스",
-            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1wa3FqdUo0ZW5wWlNVaGl5N2pmd2I1NTR1OENlU3hfNWx0QkVaY012cTFJY0syRmUtVFhGSFlvc3JwWllxaVI4eWRCdHBuM2FlRkF0dk9RZG1yUmxIaHM3NNIBeEFVX3lxTE81WGM3azBnVmhiQTlPcUp2NUdhdTJyMnU3c3VPcnNOUGFWeVRSU1dhWDBYQ0tBT00zdVlxZU82eXgtbWYxNG9HWkR1Q2EzWmFrT1VhQTZON1UwR0s2X3QxMnN1MDJvN0ZGZ0VMOW5Od2t6d0JlWlAzTQ?oc=5"
-          },
-          {
-            "t": "한전, 기존 송전선로 활용 ‘전력망 통합 구축’…인사혁신처장상 수상",
-            "s": "인사이트코리아",
-            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBtTDBtbmIyelFtS3plcDV3aTJibHpmTFZ5TEpnRFd6SzlyRWk4SWhMOUt6ekVJYUV4eWJpNV9NUV90cE1MU2xFa08xX2l5MDd3Q0hzMk5venFnUWkwQmhtU2Q3enZVUTN0X1hkcXZ5VWdsTHPSAXdBVV95cUxQLWdmajN2UnNFcC1NeTVwcWkxRDJrNERodEhISG8zRlhYV2d1eU1nQkFyVTV1bTVJWnM0aFEybm5DTE9FWEhiUTZuMi1FUWpaejUzZG9keUpTQm9hWlZDYWZ3Qm1uaUVfYmZNN21Tc0lZQkpyZXFobw?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "코스피, 장초반 4750선 회복…삼성전자·SK하이닉스 동반 반등",
-        "easy": "",
-        "score": 0.6,
-        "macro": [
-          "코스피"
-        ],
-        "n": 1,
-        "arts": [
-          {
-            "t": "코스피, 장초반 4750선 회복…삼성전자·SK하이닉스 동반 반등",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12218953"
-          }
-        ]
-      },
-      {
-        "seat": "거시",
-        "title": "한은 경제성장률 및 물가 전망",
-        "easy": "한국은행이 올해와 내년 경제성장률 전망치를 각각 상향 조정하고 물가 상승률 전망을 함께 발표했습니다. 반도체 수출 호조가 주된 요인으로 꼽혔는데요, 쉽게 말하면 예상보다 경기가 더 나아지고 있다는 분석이에요.",
-        "score": 0.5,
-        "macro": [
-          "물가",
-          "한은"
-        ],
-        "n": 6,
-        "arts": [
-          {
-            "t": "한은 총재 \"물가상승률, 2028년 목표 수준에 수렴…선제 대응\"",
+            "t": "내년 4%대 성장전망 뒤엔 IT 비중 확대…한은 \"착시 아냐\"",
             "s": "연합뉴스 경제",
-            "u": "https://www.yna.co.kr/view/AKR20261126092200002"
+            "u": "https://www.yna.co.kr/view/AKR20261126139300002"
           },
           {
-            "t": "한은 총재 \"올해 명목GDP 3천조원 상회…반도체 영업익 700조원\"",
-            "s": "연합뉴스 경제",
-            "u": "https://www.yna.co.kr/view/AKR20261126098400002"
-          },
-          {
-            "t": "[속보] 한은, 내년 경제성장률 2.9%→4.1% 대폭 상향",
-            "s": "한국경제 경제",
-            "u": "https://www.hankyung.com/article/202611261473i"
-          }
-        ]
-      },
-      {
-        "seat": "거시",
-        "title": "한은 총재 \"증시 침체로 민간소비 주춤…내년은 2.4%↑\"",
-        "easy": "",
-        "score": 0.3,
-        "macro": [
-          "증시",
-          "침체",
-          "한은"
-        ],
-        "n": 1,
-        "arts": [
-          {
-            "t": "한은 총재 \"증시 침체로 민간소비 주춤…내년은 2.4%↑\"",
-            "s": "연합뉴스 경제",
-            "u": "https://www.yna.co.kr/view/AKR20261126094200002"
+            "t": "한은 금통위, 기준금리 3.25%로 인상…성장률 전망 크게 올려",
+            "s": "조선일보",
+            "u": "https://news.google.com/rss/articles/CBMijgFBVV95cUxObWt5aUFEV1RlNTY0dWxuSnFlQ01Xdl96QkZKSnd6eXdDSlRYSDVMeFZNem16MjBiSERxa0YwMVFtYms3NWd4cmdsa2oza2JKSU9RaGxUaTVRNlN3bktKZEYtdXNvVy1TNHlMYk81eTZKTXFlOC1sUUJfVGlSdFpMaVk1SnEyV3BnZkJSeGN3?oc=5"
           }
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-26_1206.json"
+    "source": "v2_secretary/결과/갱신/2026-11-26_1606.json"
   },
   "flows": {
     "day": "2026-11-26",
@@ -939,14 +953,16 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-26",
-      "start": "2026-11-26 15:14:55",
+      "start": "2026-11-26 16:06:16",
       "by": "github",
       "where": "GitHub",
-      "mode": "indicators",
-      "end": "2026-11-26 15:15:09",
-      "secs": 14,
+      "mode": "refresh",
+      "flows_retry_exit": 0,
       "indicators_refresh_exit": 0,
-      "calls": 0,
+      "end": "2026-11-26 16:07:50",
+      "secs": 94,
+      "exit": 0,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -21988,12 +22004,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 41건 (최근: 2026-11-26 ok)",
+        "line_out": "내보냄: 실행 기록 42건 (최근: 2026-11-26 ok)",
         "metrics": {
           "in": 1,
-          "out": 41,
-          "calls": 0,
-          "secs": 14.0,
+          "out": 42,
+          "calls": 2,
+          "secs": 94.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
