@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="ko" data-theme="atelier">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>버전2 제어판 (화면-2 · 출력-4)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Sofia+Sans:wght@400;700&family=Black+Han+Sans&family=Gothic+A1:wght@400;700&family=Gabarito:wght@700;800&family=Manrope:wght@500;700&family=Jua&family=Noto+Sans+KR:wght@400;500;700&family=League+Gothic&family=Do+Hyeon&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Noto+Serif+KR:wght@400;600;700&family=Hanken+Grotesk:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Schibsted+Grotesk:wght@700&family=Instrument+Sans:wght@400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* 5대 홀마크 옷 (버전2_다섯가지옷.html 규격 그대로: 42 Sticker · 41 Squeeze · 31 Paste-up · 3 Atelier · 13 Dose) */
+:root {
+  --up: #d9384a;
+  --down: #2563eb;
+  --ok: #15803d;
+  --warn: #b45309;
+  --ease: cubic-bezier(.2,.9,.2,1);
+}
+/* 세션 가-5: 신선도 띠 (어느 옷이든 같은 색 — 놓치면 안 되는 경고) */
+.fresh-bar { margin: 8px 0; padding: 10px 14px; border-radius: 10px; background: #fff4e5; color: #7a3e00;
+  border: 2px solid var(--warn); font-weight: 700; line-height: 1.45; overflow-wrap: anywhere; }
+.fresh-note { margin: 4px 0 8px; padding: 6px 12px; border-radius: 8px; background: rgba(180,83,9,.10); color: inherit;
+  font-size: .9em; line-height: 1.45; overflow-wrap: anywhere; }
+.fresh-bar[hidden], .fresh-note[hidden] { display: none; }
+/* 11-22 (원장 114번): 가벼운 갱신 — 아침 이후 새로 들어온 뉴스 띠. 아침 내용은 그대로, 이 띠만 낮·저녁에 바뀜 */
+.rf-band { margin: 8px 0 12px; padding: 12px; border-radius: 12px; background: var(--card, #fff); color: var(--ink, inherit);
+  border: 1px solid var(--rule, #ccc); border-left: 4px solid var(--accent, #2563eb); line-height: 1.5; overflow-wrap: anywhere; }
+.rf-band[hidden] { display: none; }
+.rf-band h3 { margin: 0 0 4px; font-size: 1em; }
+.rf-band .rf-sub { color: var(--muted, inherit); font-size: .85em; margin-bottom: 6px; }
+.rf-band ol { margin: 0; padding-left: 1.3em; }
+.rf-band li { margin: 4px 0; }
+.rf-band .rf-chip { display: inline-block; font-size: .78em; padding: 0 6px; border-radius: 6px; border: 1px solid var(--rule, #ccc); margin-right: 4px; }
+.rf-band .rf-arts { font-size: .85em; color: var(--muted, inherit); }
+.rf-band .rf-arts a { color: inherit; }
+/* 세션 라 (11-18): 카드마다 '쓸모 있다/없다' + 아래 '표시 보내기 (n)' — 엄지 크기 44px 이상 */
+.mk-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 4px; }
+.mk-btn { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 10px 12px; border-radius: 10px; font: inherit; font-size: 14px;
+  border: 1px solid var(--rule); background: transparent; color: var(--ink); cursor: pointer; touch-action: manipulation; }
+.mk-btn[aria-pressed="true"].g { background: var(--ok); border-color: var(--ok); color: #fff; font-weight: 700; }
+.mk-btn[aria-pressed="true"].b { background: var(--warn); border-color: var(--warn); color: #fff; font-weight: 700; }
+.mk-st { flex: 1 0 100%; font-size: 12px; color: var(--muted); }
+.mk-st:empty { display: none; }
+.mk-note { margin: 4px 0 8px; padding: 6px 12px; border-radius: 8px; background: rgba(21,128,61,.10); font-size: .9em;
+  line-height: 1.45; overflow-wrap: anywhere; }
+.mk-note[hidden], .mk-send[hidden] { display: none; }
+.container::after { content: ""; display: block; height: 76px; }   /* 떠 있는 '표시 보내기'가 맨 아래 카드 버튼을 가리지 않게 */
+.mk-send { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 50;
+  min-height: 48px; max-width: calc(100vw - 32px); padding: 12px 18px; border-radius: 24px; border: 0; font: inherit;
+  font-weight: 700; font-size: 15px; background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.25); cursor: pointer; }
+
+/* 42 Sticker — 스티커 */
+[data-theme="sticker"] {
+  --bg: oklch(95.7% 0.013 82);
+  --bg2: oklch(90% 0.021 79);
+  --card: oklch(99.4% 0.007 89);
+  --sub-surface: oklch(94.5% 0.014 82);
+  --ink: oklch(21% 0.011 81);
+  --ink2: oklch(28% 0.013 78);
+  --muted: oklch(44% 0.017 64);
+  --rule: oklch(82% 0.02 80);
+  --accent: oklch(50% 0.19 258);
+  --accent-soft: oklch(93% 0.04 258);
+  --f-head: "Black Han Sans", "Bowlby One SC", sans-serif;
+  --f-body: "Gothic A1", "Sofia Sans", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 14px;
+  --shadow: 3px 4px 0 oklch(21% 0.011 81 / 0.16);
+}
+
+/* 41 Squeeze — 초록 과일 */
+[data-theme="squeeze"] {
+  --bg: oklch(34% 0.085 155);
+  --bg2: oklch(29% 0.075 156);
+  --card: oklch(98% 0.008 88);
+  --sub-surface: oklch(93.2% 0.018 148);
+  --ink: oklch(20% 0.045 160);
+  --ink2: oklch(27% 0.040 160);
+  --muted: oklch(40% 0.035 160);
+  --rule: oklch(82% 0.025 150);
+  --accent: oklch(38% 0.13 154);
+  --accent-soft: oklch(91% 0.045 154);
+  --f-head: "Jua", "Gabarito", sans-serif;
+  --f-body: "Noto Sans KR", "Manrope", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 16px;
+  --shadow: 0 8px 20px oklch(18% 0.05 160 / 0.32);
+}
+
+/* 31 Paste-up — 마분지에 오려 붙이기 */
+[data-theme="pasteup"] {
+  --bg: oklch(82% 0.048 72);
+  --bg2: oklch(75% 0.055 70);
+  --card: oklch(97.8% 0.008 90);
+  --sub-surface: oklch(93% 0.018 82);
+  --ink: oklch(18% 0.012 60);
+  --ink2: oklch(26% 0.015 60);
+  --muted: oklch(41% 0.022 62);
+  --rule: oklch(76% 0.03 70);
+  --accent: oklch(38% 0.14 260);
+  --accent-soft: oklch(92% 0.06 105);
+  --f-head: "Do Hyeon", "League Gothic", sans-serif;
+  --f-body: "Noto Serif KR", "Newsreader", serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 4px;
+  --shadow: 4px 4px 0 oklch(18% 0.01 60 / 0.22);
+}
+
+/* 3 Atelier — 회벽 종이 */
+[data-theme="atelier"] {
+  --bg: oklch(94.8% 0.010 76);
+  --bg2: oklch(91.5% 0.013 74);
+  --card: oklch(98.4% 0.006 82);
+  --sub-surface: oklch(93.8% 0.011 76);
+  --ink: oklch(19% 0.024 52);
+  --ink2: oklch(28% 0.018 54);
+  --muted: oklch(43% 0.014 60);
+  --rule: oklch(82% 0.012 70);
+  --accent: oklch(41% 0.095 248);
+  --accent-soft: oklch(92% 0.025 248);
+  --f-head: "Noto Serif KR", Georgia, serif;
+  --f-body: "IBM Plex Sans KR", "Hanken Grotesk", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 10px;
+  --shadow: 0 2px 8px oklch(30% 0.03 55 / 0.07);
+}
+
+/* 13 Dose — 아침 햇빛과 반투명 플라스틱 */
+[data-theme="dose"] {
+  --bg: oklch(97.2% 0.011 88);
+  --bg2: oklch(92% 0.028 205);
+  --card: oklch(99.6% 0.004 88);
+  --sub-surface: oklch(94.2% 0.018 195);
+  --ink: oklch(21% 0.025 170);
+  --ink2: oklch(29% 0.020 170);
+  --muted: oklch(44% 0.024 165);
+  --rule: oklch(85% 0.022 150);
+  --accent: oklch(45% 0.16 258);
+  --accent-soft: oklch(92% 0.04 210);
+  --f-head: "Gothic A1", "Schibsted Grotesk", sans-serif;
+  --f-body: "IBM Plex Sans KR", "Instrument Sans", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --radius: 12px;
+  --shadow: 0 4px 14px oklch(30% 0.03 165 / 0.09);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: clip; width: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .25s, color .25s;
+}
+.num { font-variant-numeric: tabular-nums; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 20px 72px;
+}
+@media (max-width: 480px) {
+  .container { padding: 14px 12px 56px; }
+}
+
+/* 상단 헤더 */
+.topbar {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand-block h1 {
+  font-family: var(--f-head);
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.brand-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.top-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* 앞 겹(오늘) / 뒷 겹(기계) 전환 스위치 */
+.layer-switch {
+  display: inline-flex;
+  background: var(--sub-surface);
+  border: 1px solid var(--rule);
+  border-radius: 99px;
+  padding: 3px;
+  gap: 4px;
+}
+.layer-btn {
+  border: 0;
+  background: transparent;
+  color: var(--ink2);
+  font-family: var(--f-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: background .18s, color .18s, transform .15s;
+}
+.layer-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* 옷 갈아입기 셀렉터 */
+.theme-picker {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+.theme-btn {
+  border: 1px solid var(--rule);
+  background: var(--card);
+  color: var(--ink2);
+  font-family: var(--f-body);
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.theme-btn.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* 주소 배지 — 누르면 뒷 겹 기계 지도의 해당 구간으로 점프 */
+.addr-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .15s, background .15s;
+}
+.addr-tag:hover {
+  transform: translateY(-1px);
+  background: var(--accent);
+  color: #fff;
+}
+
+/* 출처 경로 표시 (밝은 카드 위에서 높은 명도 대비 유지) */
+.src-path {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--ink2);
+  background: var(--sub-surface);
+  border: 1px solid var(--rule);
+  padding: 2px 7px;
+  border-radius: 5px;
+  word-break: break-all;
+}
+
+/* 오늘 한눈에 요약 스트립 */
+.overview-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+@media (max-width: 960px) {
+  .overview-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .overview-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.stat-box {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  position: relative;
+}
+.stat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+  gap: 4px;
+}
+.stat-val {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 4px;
+  line-height: 1.15;
+}
+.stat-sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* 챕터 네비게이션 탭 (앞 겹 오늘) */
+.chapter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.ch-tab {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-family: var(--f-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow);
+  transition: transform .15s, border-color .15s;
+}
+.ch-tab:hover { transform: translateY(-2px); }
+.ch-tab.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.chapter-section {
+  margin-top: 18px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+@media (max-width: 480px) {
+  .chapter-section { padding: 14px 12px; }
+}
+.ch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.ch-header h2 {
+  font-family: var(--f-head);
+  font-size: 19px;
+  color: var(--ink);
+}
+.ch-status {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* 아직 없음 안내 박스 */
+.empty-notice {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1.5px dashed var(--rule);
+  border-radius: 10px;
+  background: var(--sub-surface);
+  font-size: 13.5px;
+  color: var(--ink2);
+}
+
+/* 카드 그리드 */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width: 820px) {
+  .cards-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.item-card {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 14px;
+  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform .15s, border-color .15s;
+}
+.item-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.38;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-easy {
+  font-size: 13.8px;
+  color: var(--ink2);
+  background: var(--sub-surface);
+  padding: 9px 11px;
+  border-radius: 8px;
+  line-height: 1.55;
+}
+.card-quote {
+  font-size: 12.5px;
+  color: var(--muted);
+  border-left: 3px solid var(--accent);
+  padding-left: 9px;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: auto;
+  padding-top: 6px;
+}
+details.more-box {
+  font-size: 13px;
+  color: var(--ink2);
+  border-top: 1px dashed var(--rule);
+  padding-top: 6px;
+}
+details.more-box summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* 챕터 5 논문 — 주제 막대 (가장 많은 주제 = 100%) */
+.topic-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--accent);
+  min-width: 3px;
+}
+
+/* 반응형 표 */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 12px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+table.data-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 540px;
+}
+table.data-tbl th, table.data-tbl td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+table.data-tbl th {
+  background: var(--sub-surface);
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* ── 뒷 겹 '기계' (구간 지도) ── */
+.layer-view { display: none; }
+.layer-view.active { display: block; }
+
+/* 마우스 호버 / 선택 구간 상세 설명 고정판 (3~5줄 설명) */
+.inspector-bar {
+  position: sticky;
+  top: 10px;
+  z-index: 30;
+  margin-top: 14px;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 18px;
+}
+.inspector-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.inspector-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.inspector-lines {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  font-size: 13px;
+}
+@media (max-width: 820px) {
+  .inspector-lines { grid-template-columns: minmax(0, 1fr); }
+}
+.ins-step {
+  background: var(--sub-surface);
+  padding: 8px 10px;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+.inspector-foot {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--muted);
+  align-items: center;
+}
+
+/* 흐르는 파이프라인 SVG 배선판 */
+.flow-svg-box {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 14px;
+  overflow-x: auto;
+}
+.flow-line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-dasharray: 7 5;
+  animation: pipeFlow 1.4s linear infinite;
+}
+.flow-line.inactive {
+  stroke: var(--muted);
+  stroke-dasharray: 4 4;
+  animation: none;
+  opacity: 0.45;
+}
+@keyframes pipeFlow {
+  to { stroke-dashoffset: -24; }
+}
+
+/* 구간 지도 6대 그룹 그리드 */
+.map-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+@media (max-width: 1024px) {
+  .map-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .map-groups { grid-template-columns: minmax(0, 1fr); }
+}
+.map-group-col {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+.map-group-title {
+  font-family: var(--f-head);
+  font-size: 16px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-node {
+  padding: 11px 12px;
+  border-radius: 10px;
+  margin-bottom: 9px;
+  background: var(--card);
+  cursor: pointer;
+  transition: transform .16s var(--ease), box-shadow .16s var(--ease), border-color .16s;
+  position: relative;
+}
+.sec-node:hover, .sec-node:focus-visible, .sec-node.picked {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px oklch(20% 0.02 250 / 0.14);
+  border-color: var(--accent) !important;
+  outline: none;
+}
+/* 돎 = 실선, 없음 = 점선, 따로 = 흐린 색 (사용자 결정) */
+.sec-node.kind-run {
+  border: 2px solid var(--ink2);
+}
+.sec-node.kind-none {
+  border: 2px dashed var(--muted);
+  opacity: 0.78;
+}
+.sec-node.kind-separate {
+  border: 1.5px solid var(--rule);
+  background: var(--sub-surface);
+  opacity: 0.88;
+}
+.sec-node.flash {
+  box-shadow: 0 0 0 3px var(--accent);
+}
+.sec-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+.sec-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--ink);
+}
+.sec-badge {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.kind-run .sec-badge { background: rgba(21,128,61,.14); color: var(--ok); }
+.kind-none .sec-badge { background: rgba(180,83,9,.14); color: var(--warn); }
+.kind-separate .sec-badge { background: var(--sub-surface); color: var(--ink2); border: 1px solid var(--rule); }
+.sec-status-line {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.sec-mini-nums {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  font-family: var(--f-mono);
+  color: var(--ink2);
+  margin-top: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* 11-23(원장 134): 챕터 6 흐름 엮기·채점 카드 */
+.fl-card { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--card); padding: 14px; margin-top: 12px; overflow-wrap: anywhere; }
+.fl-card h3 { margin: 0 0 8px; font-size: 16px; color: var(--ink); }
+.fl-steps { margin: 0; padding-left: 0; list-style: none; }
+.fl-steps li { padding: 7px 0 7px 10px; border-left: 3px solid var(--rule); margin: 4px 0; line-height: 1.55; color: var(--ink2); }
+.fl-steps li.fact { border-left-color: var(--accent); }
+.fl-chip { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 999px; margin-right: 6px;
+  background: var(--sub-surface); color: var(--muted); border: 1px solid var(--rule); }
+.fl-steps li.fact .fl-chip { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.fl-refs { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.fl-claim { margin-top: 8px; padding: 8px 10px; border: 1px dashed var(--rule); border-radius: 10px; font-size: 13px; color: var(--ink2); background: var(--sub-surface); }
+.fl-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.fl-score { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-top: 10px; }
+.fl-score div { border: 1px solid var(--rule); border-radius: 10px; padding: 8px 10px; background: var(--card); }
+.fl-score b { display: block; font-size: 20px; color: var(--ink); }
+.fl-score span { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- 세션 가-5 (11-16): 화면 신선도 경고 — made_iso가 30시간 넘으면 띠, 실패 단계·429·시작 지연은 한 줄 -->
+  <div class="fresh-bar" id="freshBar" role="alert" hidden></div>
+  <div class="fresh-note" id="freshNote" hidden></div>
+  <!-- 세션 라 (11-18): 아이폰 표시 받음 / 기억 못 씀 안내 -->
+  <div class="mk-note" id="mkNote" role="status" hidden></div>
+  <button type="button" class="mk-send" id="mkSend" hidden>표시 보내기 (0)</button>
+  <!-- 상단 바 -->
+  <header class="topbar">
+    <div class="brand-block">
+      <h1>
+        <span>버전2 제어판</span>
+        <span class="addr-tag" onclick="jumpToSection('화면-2')" title="클릭하면 뒷 겹 기계 지도의 화면-2로 이동합니다">화면-2</span>
+        <span class="addr-tag" onclick="jumpToSection('출력-4')" title="클릭하면 뒷 겹 기계 지도의 출력-4로 이동합니다">출력-4</span>
+      </h1>
+      <div class="brand-sub" id="headerSub">데이터 읽는 중...</div>
+    </div>
+
+    <div class="top-controls">
+      <div class="layer-switch" role="tablist" aria-label="앞뒤 겹 전환">
+        <button type="button" class="layer-btn active" id="btnLayerToday" onclick="switchLayer('today')">앞 겹 · 오늘 (5챕터)</button>
+        <button type="button" class="layer-btn" id="btnLayerMachine" onclick="switchLayer('machine')">뒷 겹 · 기계 (구간 지도 <span id="secCountBadge">30</span>)</button>
+      </div>
+      <div class="theme-picker" id="themePicker" aria-label="다섯 가지 옷 선택"></div>
+    </div>
+  </header>
+
+  <!-- 11-22 (원장 114번): 가벼운 갱신 — 아침 이후 새로 들어온 뉴스 띠 -->
+  <section class="rf-band" id="refreshBand" aria-live="polite" hidden></section>
+
+  <!-- 오늘 한눈에 숫자 6칸 -->
+  <section class="overview-strip" id="overviewStrip"></section>
+
+  <!-- ==================== 앞 겹: 오늘 (5챕터) ==================== -->
+  <main id="layerToday" class="layer-view active">
+    <nav class="chapter-nav" aria-label="오늘의 5챕터 바로가기">
+      <button type="button" class="ch-tab active" onclick="scrollToChapter('ch1')">1. 오늘의 순위 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('출력-1')">출력-1</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch2')">2. 숫자 (거푸집1) <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-1')">처리-1</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch3')">3. 쉽게 읽기 (거푸집2·연준) <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-2')">처리-2</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch4')">4. 뉴스 사건 <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-3')">처리-3</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch5')"><span id="tabCh5Label">5. 논문</span> <span class="addr-tag" onclick="event.stopPropagation();jumpToSection('처리-4')">처리-4</span></button>
+      <button type="button" class="ch-tab" onclick="scrollToChapter('ch6')">6. 흐름·채점 카드</button>
+    </nav>
+
+    <!-- 챕터 1: 오늘의 순위 (출력-1) -->
+    <section class="chapter-section" id="ch1">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 1 · 오늘의 순위</h2>
+          <div class="ch-status" id="ch1Status"></div>
+        </div>
+        <span class="addr-tag" onclick="jumpToSection('출력-1')">출력-1 (기계 지도로 이동 →)</span>
+      </div>
+      <div class="empty-notice" id="ch1Notice"></div>
+      <div class="cards-grid" id="ch1Cards"></div>
+    </section>
+
+    <!-- 챕터 2: 숫자 (처리-1) -->
+    <section class="chapter-section" id="ch2">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 2 · 숫자 (거푸집1 — DART · 미국 FRED · 한국은행 ECOS)</h2>
+          <div class="ch-status" id="ch2Status"></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="addr-tag" onclick="jumpToSection('처리-1')">처리-1</span>
+          <span class="addr-tag" onclick="jumpToSection('인풋-5')">인풋-5</span>
+        </div>
+      </div>
+      <div id="ch2Content"></div>
+    </section>
+
+    <!-- 챕터 3: 쉽게 읽기 (처리-2 · 처리-6) -->
+    <section class="chapter-section" id="ch3">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 3 · 쉽게 읽기 (거푸집2 보도자료·리포트 + 연준 연설)</h2>
+          <div class="ch-status" id="ch3Status"></div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="addr-tag" onclick="jumpToSection('처리-2')">처리-2</span>
+          <span class="addr-tag" onclick="jumpToSection('처리-6')">처리-6</span>
+          <span class="addr-tag" onclick="jumpToSection('처리-8')">처리-8</span>
+        </div>
+      </div>
+      <div id="ch3FedBox" style="margin-top:12px"></div>
+      <div class="cards-grid" id="ch3Cards"></div>
+    </section>
+
+    <!-- 챕터 4: 뉴스 사건 묶기 (처리-3) -->
+    <section class="chapter-section" id="ch4">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 4 · 뉴스 사건 묶기</h2>
+          <div class="ch-status" id="ch4Status"></div>
+        </div>
+        <span class="addr-tag" onclick="jumpToSection('처리-3')">처리-3 (기계 지도로 이동 →)</span>
+      </div>
+      <div class="cards-grid" id="ch4Cards"></div>
+      <div id="ch4SinglesBox" style="margin-top:14px"></div>
+    </section>
+
+    <!-- 챕터 5: 논문 (처리-4) -->
+    <section class="chapter-section" id="ch5">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 5 · 논문</h2>
+          <div class="ch-status" id="ch5Status"></div>
+        </div>
+        <span class="addr-tag" onclick="jumpToSection('처리-4')">처리-4 (기계 지도로 이동 →)</span>
+      </div>
+      <div id="ch5Flow"></div>
+      <div id="ch5Map"></div>
+      <div id="ch5Picks"></div>
+      <div id="ch5Filter"></div>
+      <div id="ch5List"></div>
+    </section>
+    <!-- 챕터 6: 흐름 엮기 + 채점 카드 (11-23 원장 134 — 바퀴 5-D, 구간 주소는 아직 없음) -->
+    <section class="chapter-section" id="ch6">
+      <div class="ch-header">
+        <div>
+          <h2>챕터 6 · 흐름 엮기 + 채점 카드</h2>
+          <div class="ch-status" id="ch6Status"></div>
+        </div>
+      </div>
+      <div id="ch6Ledger"></div>
+      <div id="ch6Flows"></div>
+    </section>
+  </main>
+
+  <!-- ==================== 뒷 겹: 기계 (구간 지도) ==================== -->
+  <section id="layerMachine" class="layer-view">
+    <!-- 마우스 호버 / 선택 구간 3~5줄 설명 패널 -->
+    <div class="inspector-bar" id="inspectorBar">
+      <div class="inspector-head">
+        <div class="inspector-title" id="insTitle">구간에 마우스를 올리거나 눌러 보세요 (3~5줄 상세 설명)</div>
+        <span class="src-path" id="insSource">출처: 구간_주소표.md</span>
+      </div>
+      <div class="inspector-lines">
+        <div class="ins-step" id="insIn">1. 무엇을 받나: —</div>
+        <div class="ins-step" id="insRule">2. 어떤 규칙·코드로: —</div>
+        <div class="ins-step" id="insOut">3. 무엇을 내보내나: —</div>
+      </div>
+      <div class="inspector-foot" id="insFoot"></div>
+    </div>
+
+    <!-- 구간 사이로 글이 흐르는 SVG 배선도 -->
+    <div class="flow-svg-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:8px;font-size:12.5px;color:var(--muted)">
+        <span><strong>오늘 하루 바퀴 흐름도</strong> (실선 애니메이션 = 오늘 돌아간 길 · 점선 = 아직 안 만든 길 · 노드를 누르면 아래 구간 카드로 이동)</span>
+        <span>범례: <strong>실선 테두리</strong>=돎 · <strong>점선 테두리</strong>=없음 · <strong>흐린 칸</strong>=따로/기타</span>
+      </div>
+      <svg viewBox="0 0 1120 170" width="100%" height="170" aria-label="하루 바퀴 구간 흐름도">
+        <!-- 연결 선 -->
+        <path class="flow-line" d="M 140 50 L 235 50" />
+        <path class="flow-line" d="M 355 50 L 445 50" />
+        <path class="flow-line" d="M 565 35 L 660 25" />
+        <path class="flow-line" d="M 565 50 L 660 65" />
+        <path class="flow-line" d="M 565 65 L 660 105" />
+        <path class="flow-line inactive" id="svgLineP4" d="M 295 74 L 660 145" />
+        <path class="flow-line" d="M 790 25 L 885 50" />
+        <path class="flow-line" d="M 790 65 L 885 55" />
+        <path class="flow-line" d="M 790 105 L 885 65" />
+        <path class="flow-line" d="M 1000 55 L 1045 55" />
+        <!-- 노드 박스들 -->
+        <g style="cursor:pointer" onclick="focusSectionNode('인풋-1')">
+          <rect x="15" y="26" width="125" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="77" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">인풋-1 · 출처 38곳</text>
+          <text x="77" y="64" text-anchor="middle" font-size="10.5" fill="var(--muted)" id="svgIn1">daily.py</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('인풋-2')">
+          <rect x="235" y="26" width="120" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="295" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">인풋-2 · 모으기</text>
+          <text x="295" y="64" text-anchor="middle" font-size="10.5" fill="var(--muted)" id="svgIn2">987건 수집</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('인풋-3')">
+          <rect x="445" y="26" width="120" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="505" y="47" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">인풋-3 · 문 앞</text>
+          <text x="505" y="64" text-anchor="middle" font-size="10.5" fill="var(--muted)" id="svgIn3">6길 분류 (0콜)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-1')">
+          <rect x="660" y="8" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="725" y="28" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" id="svgP1">처리-1 · 거푸집1 (170)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-2')">
+          <rect x="660" y="48" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="725" y="68" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" id="svgP2">처리-2 · 거푸집2 (52)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-3')">
+          <rect x="660" y="88" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="725" y="108" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--ink)" id="svgP3">처리-3 · 뉴스 묶기 (175)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('처리-4')">
+          <rect id="svgRectP4" x="660" y="128" width="130" height="32" rx="6" fill="var(--card)" stroke="var(--muted)" stroke-width="1.8" stroke-dasharray="5 3"/>
+          <text x="725" y="148" text-anchor="middle" font-size="11.5" fill="var(--muted)" id="svgP4">처리-4 · 논문 (보관 75)</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('출력-2')">
+          <rect x="885" y="31" width="115" height="48" rx="8" fill="var(--card)" stroke="var(--ink)" stroke-width="2"/>
+          <text x="942" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">출력-2 · 결과지</text>
+          <text x="942" y="68" text-anchor="middle" font-size="10.5" fill="var(--muted)">출력-4 panel.json</text>
+        </g>
+        <g style="cursor:pointer" onclick="focusSectionNode('화면-2')">
+          <rect x="1030" y="31" width="80" height="48" rx="8" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="2"/>
+          <text x="1070" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--accent)">화면-2</text>
+          <text x="1070" y="68" text-anchor="middle" font-size="10.5" fill="var(--ink2)">제어판</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- 6개 대분류(인풋·처리·출력·화면·되먹임·운영) 전체 구간 카드 -->
+    <div class="map-groups" id="mapGroups"></div>
+  </section>
+</div>
+
+<script src="panel_data.js"></script>
+<script>
+(function(){
+  const REDUCED_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+  // ── 세션 라 (11-18, 되먹임-3): 카드 표시 → 폰 기억(v2marks) → '표시 보내기 (n)' → 미리 채운 깃허브 이슈 작성 창 ──
+  // 화면에 열쇠·토큰은 없다. 보내기는 이슈 작성 창을 열 뿐이고 '제출'은 사용자가 누른다.
+  // 기억 모양: {번호: {m: "g"|"b", day, sent: 0|1}}. 기억을 못 쓰는 창(개인정보 보호 등)이면 이 창 안에서만 기억.
+  const MK_KEY = 'v2marks', MK_MAX = 6000;
+  let MK_MEM = {}, MK_OK = true, MK_PANEL = {}, MK_CLEARED = 0;
+  function mkLoad() {
+    try {
+      const raw = window.localStorage.getItem(MK_KEY);
+      const o = raw ? JSON.parse(raw) : {};
+      return (o && typeof o === 'object') ? o : {};
+    } catch (e) { MK_OK = false; return MK_MEM; }
+  }
+  function mkSave(o) {
+    MK_MEM = o;
+    try { window.localStorage.setItem(MK_KEY, JSON.stringify(o)); } catch (e) { MK_OK = false; }
+  }
+  function mkToday() {
+    const d = new Date(), z = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${z(d.getMonth() + 1)}-${z(d.getDate())}`;
+  }
+  function mkBar(id) {
+    if (!id) return '';
+    const o = mkLoad()[id];
+    const m = o ? o.m : '';
+    const st = !o ? '' : (o.sent ? '보냄 — 깃허브가 받으면 다음 화면에서 사라져요' : '표시함 — 아래 \'표시 보내기\'로 보내요');
+    return `<div class="mk-bar" data-mk="${esc(id)}">
+        <button type="button" class="mk-btn g" data-id="${esc(id)}" data-m="g" aria-pressed="${m === 'g'}">쓸모 있다</button>
+        <button type="button" class="mk-btn b" data-id="${esc(id)}" data-m="b" aria-pressed="${m === 'b'}">쓸모 없다</button>
+        <span class="mk-st">${esc(st)}</span>
+      </div>`;
+  }
+  function mkRefresh(id) {
+    document.querySelectorAll('.mk-bar').forEach(el => {
+      if (el.getAttribute('data-mk') === id) el.outerHTML = mkBar(id);
+    });
+  }
+  function mkUpdate() {
+    const o = mkLoad(), ids = Object.keys(o);
+    const unsent = ids.filter(i => !o[i].sent).length, waiting = ids.length - unsent;
+    const btn = $('mkSend');
+    if (btn) {
+      btn.hidden = !ids.length;
+      btn.textContent = unsent ? `표시 보내기 (${unsent})` : `다시 보내기 (${waiting})`;
+    }
+    const note = $('mkNote');
+    if (!note) return;
+    const parts = [];
+    if (MK_CLEARED) parts.push(`보낸 표시 ${MK_CLEARED}개 받음 — 폰 기억에서 지웠어요`);
+    if (MK_PANEL.n_got) parts.push(`깃허브 장부의 아이폰 표시 최근 ${MK_PANEL.n_got}개` + (MK_PANEL.last_issue ? ` (마지막 이슈 #${MK_PANEL.last_issue})` : ''));
+    if (!MK_OK) parts.push('이 창은 기억을 못 써서, 표시가 창을 닫으면 사라져요(개인정보 보호 창이면 일반 창에서 해 주세요)');
+    note.textContent = parts.join(' · ');
+    note.hidden = !parts.length;
+  }
+  function mkReceive(mk) {   // 화면 데이터의 '받음'과 같은 번호·같은 표시면 폰 기억에서 지움
+    MK_PANEL = mk || {};
+    const got = {};
+    (MK_PANEL.got || []).forEach(g => { got[g.id] = g.m; });
+    const o = mkLoad();
+    let n = 0;
+    Object.keys(o).forEach(i => { if (got[i] && got[i] === o[i].m) { delete o[i]; n++; } });
+    if (n) mkSave(o);
+    MK_CLEARED = n;
+    mkUpdate();
+  }
+  function mkSend() {
+    const repo = MK_PANEL.repo;
+    const note = $('mkNote');
+    if (!repo || !/^[A-Za-z0-9._-]+\/[A-Za-z0-9._-]+$/.test(repo)) {
+      if (note) { note.textContent = '보낼 저장소 이름이 화면 데이터에 없어요 — 보내기를 못 해요'; note.hidden = false; }
+      return;
+    }
+    const o = mkLoad(), ids = Object.keys(o);
+    const pick = ids.filter(i => !o[i].sent);
+    const todo = pick.length ? pick : ids;          // 안 보낸 것이 없으면 '다시 보내기' = 보냈는데 아직 안 받은 것
+    let body = '# 버전2 아이폰 표시 — 아래 줄은 고치지 말고 그대로 제출(Submit)해 주세요. g=쓸모 있다, b=쓸모 없다\n';
+    const sent = [];
+    for (const i of todo) {
+      const line = `${i},${o[i].m}\n`;
+      if (body.length + line.length > MK_MAX) break;
+      body += line; sent.push(i);
+    }
+    if (!sent.length) return;
+    const url = `https://github.com/${repo}/issues/new?title=${encodeURIComponent('marks ' + mkToday())}&body=${encodeURIComponent(body)}`;
+    sent.forEach(i => { o[i].sent = 1; });
+    mkSave(o);
+    sent.forEach(mkRefresh);
+    mkUpdate();
+    const left = todo.length - sent.length;
+    if (left > 0 && note) {
+      note.textContent = `본문이 ${MK_MAX.toLocaleString('ko-KR')}자를 넘어 ${sent.length}개만 실었어요. 제출한 뒤 '표시 보내기'를 한 번 더 눌러 남은 ${left}개를 보내 주세요`;
+      note.hidden = false;
+    }
+    const w = window.open(url, '_blank');
+    if (w) { try { w.opener = null; } catch (e) {} } else { window.location.href = url; }
+  }
+  document.addEventListener('click', ev => {
+    const b = ev.target.closest && ev.target.closest('.mk-btn');
+    if (b) {
+      ev.preventDefault();
+      const id = b.getAttribute('data-id'), m = b.getAttribute('data-m');
+      const o = mkLoad();
+      if (o[id] && o[id].m === m) delete o[id];       // 같은 버튼을 한 번 더 누르면 표시 지움
+      else o[id] = { m, day: (PANEL && PANEL.day) || mkToday(), sent: 0 };
+      mkSave(o);
+      MK_CLEARED = 0;
+      mkRefresh(id);
+      mkUpdate();
+      return;
+    }
+    if (ev.target.closest && ev.target.closest('#mkSend')) { ev.preventDefault(); mkSend(); }
+  });
+
+  function countUp(el, targetVal) {
+    const n = Number(targetVal);
+    if (!el || isNaN(n)) { if (el) el.textContent = targetVal; return; }
+    if (REDUCED_MOTION || n === 0) {
+      el.textContent = n.toLocaleString('ko-KR');
+      return;
+    }
+    const dur = 550;
+    const t0 = performance.now();
+    function tick(now) {
+      const p = Math.min(1, (now - t0) / dur);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(n * ease).toLocaleString('ko-KR');
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  let PANEL = window.PANEL_DATA || null;
+
+  function setTheme(themeId) {
+    document.documentElement.setAttribute('data-theme', themeId);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-t') === themeId);
+    });
+  }
+
+  window.switchLayer = function(which) {
+    const isToday = which === 'today';
+    $('layerToday').classList.toggle('active', isToday);
+    $('layerMachine').classList.toggle('active', !isToday);
+    $('btnLayerToday').classList.toggle('active', isToday);
+    $('btnLayerMachine').classList.toggle('active', !isToday);
+  };
+
+  window.scrollToChapter = function(chId) {
+    window.switchLayer('today');
+    const el = $(chId);
+    if (el) el.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'start' });
+  };
+
+  window.jumpToSection = function(addr) {
+    window.switchLayer('machine');
+    focusSectionNode(addr);
+  };
+
+  window.focusSectionNode = function(addr) {
+    if (!PANEL || !PANEL.machine_map) return;
+    const sec = PANEL.machine_map.sections.find(s => s.addr === addr);
+    if (sec) showInspector(sec);
+    document.querySelectorAll('.sec-node').forEach(n => {
+      const match = n.getAttribute('data-addr') === addr;
+      n.classList.toggle('picked', match);
+      n.classList.toggle('flash', match);
+      if (match) {
+        n.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'center' });
+      }
+    });
+  };
+
+  function showInspector(sec) {
+    $('insTitle').innerHTML = `<span class="addr-tag">${esc(sec.addr)}</span> ${esc(sec.name)} <span style="font-size:13px;font-weight:500;color:var(--muted)">(${esc(sec.status)})</span>`;
+    $('insSource').textContent = `출처: ${sec.metrics && sec.metrics.num_source ? sec.metrics.num_source : sec.source}`;
+    $('insIn').textContent = `1. ${sec.line_in || ''}`;
+    $('insRule').textContent = `2. ${sec.line_rule || ''}`;
+    $('insOut').textContent = `3. ${sec.line_out || ''}`;
+    const m = sec.metrics || {};
+    $('insFoot').innerHTML =
+      `<span>오늘 들어온 수: <strong class="num">${Number(m.in || 0).toLocaleString('ko-KR')}</strong></span>` +
+      `<span>오늘 나온 수: <strong class="num">${Number(m.out || 0).toLocaleString('ko-KR')}</strong></span>` +
+      `<span>AI 콜: <strong class="num">${Number(m.calls || 0)}</strong></span>` +
+      `<span>걸린 시간: <strong class="num">${Number(m.secs || 0)}초</strong></span>` +
+      `<span>관련 파일: <code>${esc(sec.files)}</code></span>` +
+      `<span>내가 고치는 곳: <code>${esc(sec.editable)}</code></span>`;
+  }
+
+  // ── 챕터 5 · 논문 (처리-4) — 지시서 9-2. 있는 부품만 씀, 새 CSS는 .topic-bar 하나 ──
+  const P5 = { ch: null, tag: '', src: 'all', waitOnly: false, abs: false, more: {} };
+  const P5_WAIT = '풀이 대기 (주제 아직 없음)';
+  const P5_SRC = [['all', '전부'], ['eess.SY', '전공(전력·제어)'], ['cs.AI', '인공지능'], ['허깅페이스', '허깅페이스']];
+  const p5Tag = c => (c.ai && ((c.check && c.check.tag) || c.ai.topic_tag)) || P5_WAIT;
+  const p5Field = f => f === 'eess.SY' ? '전공(eess.SY)' : (f === 'cs.AI' ? '인공지능(cs.AI)' : (f || ''));
+  const p5Detail = c => {   // panel_papers.js로 떼어 낸 날(파일이 클 때)은 다시 합쳐서 씀
+    const ex = (window.PANEL_PAPERS || {})[c.canon_id];
+    return ex ? Object.assign({}, c.ai, ex) : (c.ai || {});
+  };
+  const p5Btn = (attr, label, on) =>
+    `<button type="button" class="ch-tab${on ? ' active' : ''}" ${attr} style="padding:6px 11px;font-size:12.5px">${esc(label)}</button>`;
+
+  function p5Load(src, done) {   // 따로 떼어 둔 파일(초록·세부)은 필요할 때만 불러옴
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = done;
+    s.onerror = () => { const n = $('ch5List'); if (n) n.insertAdjacentHTML('afterbegin', `<div class="empty-notice">${esc(src)} 파일을 못 불러왔어요.</div>`); };
+    document.body.appendChild(s);
+  }
+
+  function p5Links(c) {
+    const L = c.links || {};
+    return [L.arxiv ? `<a href="${esc(L.arxiv)}" target="_blank" rel="noopener">arXiv 원문</a>` : '',
+            L.hf ? `<a href="${esc(L.hf)}" target="_blank" rel="noopener">허깅페이스 페이지</a>` : ''].filter(Boolean).join(' · ');
+  }
+
+  function p5Abs(c) {
+    if (!P5.abs) return '';
+    if (!window.PANEL_ABSTRACTS) return '<div style="margin-top:8px;font-size:12px;color:var(--muted)">초록 불러오는 중…</div>';
+    const t = window.PANEL_ABSTRACTS[c.canon_id];
+    return t
+      ? `<div style="margin-top:8px"><strong>영어 초록 (원문 그대로)</strong><div style="font-size:12px;color:var(--muted);line-height:1.5;margin-top:2px">${esc(t)}</div></div>`
+      : '<div style="margin-top:8px;font-size:12px;color:var(--muted)">초록 파일에 이 논문이 없어요.</div>';
+  }
+
+  function p5Body(c) {   // 줄을 펼쳤을 때 — 미리 끝난 풀이
+    const why = `<div style="margin-top:6px;font-size:12px"><strong>왜 이 순서인지:</strong> ${esc(c.score_why || '-')} (점수 ${esc(c.score)})</div>`;
+    const links = `<div style="margin-top:6px;font-size:12px">${p5Links(c)}</div>`;
+    if (!c.ai) {
+      return `<div style="margin-top:6px">아직 풀이 전이에요 (오늘 풀이 상한 밖이라 대기 줄에 있어요). 영어 제목: ${esc(c.title)}</div>${why}${links}${p5Abs(c)}`;
+    }
+    const a = p5Detail(c), k = c.check || {};
+    const pts = (a.points || []).map(p => `<li><strong>${esc(p.subtitle)}</strong> — ${esc(p.desc)}</li>`).join('');
+    const ev = [a.easy1_evidence, a.easy2_evidence, a.topic_evidence].concat((a.points || []).map(p => p.evidence)).filter(Boolean);
+    const warn = [].concat(k.flags || [], k.format || []);
+    const bad = k.bad_numbers || [];
+    return `
+      <div style="margin-top:6px"><strong>"${esc(a.easy1_title)}"</strong><br>${esc(a.easy1_desc)}</div>
+      <div style="margin-top:6px"><strong>"${esc(a.easy2_title)}"</strong><br>${esc(a.easy2_desc)}</div>
+      <div style="margin-top:6px"><strong>주제:</strong> ${esc(a.topic)}</div>
+      ${pts ? `<div style="margin-top:6px"><strong>주요 내용</strong><ul style="padding-left:18px;margin-top:4px">${pts}</ul></div>` : ''}
+      ${k.show_limit && a.limit ? `<div style="margin-top:6px"><strong>저자가 밝힌 한계:</strong> ${esc(a.limit)}</div>` : ''}
+      ${ev.length ? `<div style="margin-top:6px;font-size:11.5px;color:var(--muted);overflow-wrap:anywhere"><strong>근거 문장 (초록 그대로)</strong>${ev.map(s => `<div style="margin-top:2px">"${esc(s)}"</div>`).join('')}</div>` : ''}
+      <div style="margin-top:6px;font-size:12px">검사: 근거 일치 ${esc(k.evidence_ok || '-')} · 초록에 없는 숫자 ${bad.length ? `<span style="color:var(--warn)">${esc(bad.join(', '))}</span>` : '0'}${warn.length ? ` · <span style="color:var(--warn)">⚠ ${esc(warn.join(' · '))}</span>` : ''}</div>
+      ${why}${links}${p5Abs(c)}`;
+  }
+
+  function p5Picks() {
+    const ch = P5.ch;
+    const byId = {};
+    (ch.cards || []).forEach(c => { byId[c.canon_id] = c; });
+    const cards = (ch.picks || []).map(p => {
+      const c = byId[p.canon_id];
+      if (!c || !c.ai) return '';
+      const a = c.ai;
+      return `
+        <article class="item-card" data-id="${esc(c.canon_id)}">
+          <div class="card-top">
+            <div class="card-title">${esc(a.one_line || c.title)}</div>
+            <span class="addr-tag" style="cursor:default">${esc(p.badge)}</span>
+          </div>
+          <div class="card-easy">
+            <div>① ${esc(a.easy1_title)}</div>
+            <div style="margin-top:4px">② ${esc(a.easy2_title)}</div>
+          </div>
+          <details class="more-box">
+            <summary>자세하게 보기</summary>
+            ${p5Body(c)}
+          </details>
+          ${mkBar(c.canon_id)}
+          <div class="card-meta">
+            <span>왜 골랐나: ${esc(p.why)}</span>
+            <a href="#paper-${esc(c.canon_id)}" data-jump="${esc(c.canon_id)}">목록에서 보기</a>
+          </div>
+        </article>`;
+    }).filter(Boolean);
+    $('ch5Picks').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-top:16px">강조 ${cards.length}편 (${ch.picks_max ? `최대 ${ch.picks_max}편 · ` : ''}관점마다 문턱을 넘은 것만, 못 넘은 자리는 비움)</div>
+      ${cards.length ? `<div class="cards-grid">${cards.join('')}</div>`
+                     : '<div class="empty-notice">오늘은 눈에 띄는 논문이 없어요(문턱을 넘은 것 없음).</div>'}`;
+  }
+
+  function p5Map() {
+    const map = P5.ch.map || [];
+    if (!map.length) { $('ch5Map').innerHTML = ''; return; }
+    const max = Math.max(1, ...map.map(m => m.n || 0));
+    $('ch5Map').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-top:16px">주제별 편수 <span style="font-size:12px;font-weight:500;color:var(--muted)">(풀이한 논문 기준 · 누르면 아래 목록이 그 주제만, 다시 누르면 풀림)</span></div>
+      <div style="margin-top:6px">${map.map(m => `
+        <div data-tag="${esc(m.tag)}" role="button" tabindex="0" title="${esc((m.one_lines || []).join(' / '))}"
+             style="display:grid;grid-template-columns:minmax(0,9.5em) 3.4em minmax(0,1fr);gap:8px;align-items:center;padding:5px 6px;border-radius:6px;cursor:pointer;${P5.tag === m.tag ? 'background:var(--accent-soft);' : ''}">
+          <span style="font-size:13px;color:var(--ink2);overflow-wrap:anywhere">${esc(m.tag)}</span>
+          <span class="num" style="font-size:12.5px;text-align:right">${m.n}편</span>
+          <div class="topic-bar" style="width:${Math.round((m.n || 0) / max * 100)}%"></div>
+        </div>`).join('')}
+      </div>`;
+  }
+
+  function p5Filter() {
+    $('ch5Filter').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-top:16px">전체 목록 ${P5.tag ? `<span style="font-size:12.5px;font-weight:500;color:var(--accent)">— 주제 '${esc(P5.tag)}'만 보는 중</span>` : ''}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px">
+        ${P5_SRC.map(([k, label]) => p5Btn(`data-src="${esc(k)}"`, label, P5.src === k)).join('')}
+        ${p5Btn('data-wait="1"', '풀이 대기만', P5.waitOnly)}
+        ${p5Btn('data-abs="1"', '초록도 같이 보기', P5.abs)}
+      </div>`;
+  }
+
+  function p5List() {
+    const ch = P5.ch;
+    const box = $('ch5List');
+    const opened = Array.from(box.querySelectorAll('details[open]')).map(x => x.id).filter(Boolean);
+    const cs = (ch.cards || []).filter(c =>
+      (P5.src === 'all' || c.field === P5.src || (c.sources || []).includes(P5.src)) &&
+      (!P5.waitOnly || !c.ai) &&
+      (!P5.tag || p5Tag(c) === P5.tag));
+    const order = (ch.map || []).map(m => m.tag);
+    const groups = {};
+    cs.forEach(c => { const t = p5Tag(c); (groups[t] = groups[t] || []).push(c); });
+    const tags = Object.keys(groups).sort((x, y) => {
+      const rx = x === P5_WAIT ? 999 : (order.indexOf(x) < 0 ? 500 : order.indexOf(x));
+      const ry = y === P5_WAIT ? 999 : (order.indexOf(y) < 0 ? 500 : order.indexOf(y));
+      return rx - ry;
+    });
+    if (!cs.length) { box.innerHTML = '<div class="empty-notice">조건에 맞는 논문이 없어요.</div>'; return; }
+    box.innerHTML = tags.map(t => {
+      const list = groups[t].slice().sort((a, b) => (b.score || 0) - (a.score || 0));
+      const shown = P5.more[t] ? list : list.slice(0, 10);
+      const rows = shown.map(c => {
+        const up = c.hf_upvotes != null ? ` · 추천 ${esc(c.hf_upvotes)}` : '';
+        const head = c.ai ? esc(c.ai.one_line || c.title)
+                          : `${esc(c.title)} <span class="addr-tag" style="cursor:default">풀이 대기</span>`;
+        return `
+          <details class="more-box" id="paper-${esc(c.canon_id)}">
+            <summary style="color:var(--ink);font-weight:500;overflow-wrap:anywhere">${head}
+              <span style="font-size:11.5px;color:var(--muted)">· ${esc(p5Field(c.field))}${up}</span></summary>
+            ${p5Body(c)}
+            ${mkBar(c.canon_id)}
+          </details>`;
+      }).join('');
+      const rest = list.length - shown.length;
+      return `
+        <div style="margin-top:14px">
+          <div style="font-size:13.5px;font-weight:700;color:var(--ink)">${esc(t)} <span style="font-weight:500;color:var(--muted)">${list.length}편</span></div>
+          ${rows}
+          ${rest > 0 ? `<button type="button" class="ch-tab" data-more="${esc(t)}" style="padding:5px 10px;font-size:12.5px;margin-top:6px">더 보기 (남은 ${rest}편)</button>` : ''}
+        </div>`;
+    }).join('');
+    opened.forEach(id => { const el = document.getElementById(id); if (el) el.open = true; });
+  }
+
+  function p5Jump(id) {   // 강조 카드·스토리 화면에서 '#paper-<id>'로 들어올 때
+    const c = (P5.ch.cards || []).find(x => x.canon_id === id);
+    if (!c) return;
+    let el = document.getElementById('paper-' + id);
+    if (!el) {   // 거르기·'더 보기'에 가려져 있으면 풀고 다시 그림
+      P5.tag = ''; P5.src = 'all'; P5.waitOnly = false; P5.more[p5Tag(c)] = true;
+      p5Map(); p5Filter(); p5List();
+      el = document.getElementById('paper-' + id);
+    }
+    if (el) { el.open = true; el.scrollIntoView({ block: 'start' }); }
+  }
+
+  function renderPapers(ch) {
+    P5.ch = ch;
+    const st = $('ch5Status');
+    if (!ch || ch.kind !== 'papers') {   // 옛 모양: 논문 풀이 json이 없는 날 — 문 앞 제목 표
+      ['ch5Flow', 'ch5Map', 'ch5Picks', 'ch5Filter'].forEach(id => { $(id).innerHTML = ''; });
+      if (!ch) { st.textContent = '논문 자료 없음'; $('ch5List').innerHTML = ''; return; }
+      st.innerHTML = `상태: <strong>${esc(ch.status)}</strong> · 오늘 보관 <strong>${ch.count ? ch.count.val : 0}</strong>편 (<span class="src-path">${esc(ch.count ? ch.count.source : '')}</span>)`;
+      const rows = (ch.papers || []).map((p, idx) => `
+        <tr>
+          <td class="num">${idx + 1}</td>
+          <td>${esc(p.source_name)}</td>
+          <td><strong>${esc(p.title)}</strong></td>
+          <td class="num" style="font-size:12px">${esc(p.published)}</td>
+        </tr>`).join('');
+      $('ch5List').innerHTML = `
+        <div class="empty-notice">${esc(ch.note || '')}</div>
+        <div class="table-wrap">
+          <table class="data-tbl">
+            <thead><tr><th>#</th><th>출처</th><th>논문 제목 (원본)</th><th>발행 시각</th></tr></thead>
+            <tbody>${rows || '<tr><td colspan="4">오늘 보관된 논문 없음</td></tr>'}</tbody>
+          </table>
+        </div>`;
+      return;
+    }
+    const h = ch.headline || {}, cl = ch.calls || {};
+    const n = x => (x && x.val != null) ? x.val : 0;
+    st.innerHTML =
+      (ch.day_note ? `<div class="empty-notice" style="margin:4px 0 8px;font-size:13px">${esc(ch.day_note)}</div>` : '') +
+      `<div style="font-size:14px;color:var(--ink);font-weight:700;margin-bottom:3px">${esc(h.text || '')}</div>` +
+      `논문 날짜 <strong>${esc(ch.day)}</strong> · 새 논문 <strong>${n(h.n_new)}</strong>편 · 풀이 끝 <strong>${n(h.n_done)}</strong>` +
+      (h.n_done_backlog && n(h.n_done_backlog) ? ` (새 ${n(h.n_done_new)} + 밀린 ${n(h.n_done_backlog)})` : '') +
+      ` · 새 논문 중 대기 <strong>${n(h.n_waiting)}</strong>` +
+      (ch.backlog && ch.backlog.n_waiting_all != null ? ` · 밀린 줄 전체 ${esc(ch.backlog.n_waiting_all)}` : '') +
+      `${n(h.n_failed) ? ` · 실패 <strong>${n(h.n_failed)}</strong>` : ''} · AI <strong>${n(cl.summary) + n(cl.flow)}</strong>콜` +
+      `${n(cl.http429) ? ` · <span style="color:var(--warn)">사용량 초과 ${n(cl.http429)}번</span>` : ''} · ${ch.day_rel && ch.day_rel !== '오늘' ? '그날' : '오늘'} 상한 ${n(ch.cap)} ` +
+      `(<span class="src-path">${esc(ch.source)}</span>)` +
+      `${(ch.notes || []).length ? `<div style="margin-top:3px">알림: ${esc(ch.notes.join(' · '))}</div>` : ''}`;
+    if (!(ch.cards || []).length) {   // 새 카드 0편인 날은 대표 한 줄만
+      ['ch5Flow', 'ch5Map', 'ch5Picks', 'ch5Filter', 'ch5List'].forEach(id => { $(id).innerHTML = ''; });
+      return;
+    }
+    const fl = ch.flow || {};
+    $('ch5Flow').innerHTML = fl.text ? `
+      <div class="card-easy" style="margin-top:12px">${esc(fl.text)}
+        ${fl.by === '틀' ? '<div style="font-size:11.5px;color:var(--muted);margin-top:4px">(AI 글 없음 — 센 값으로 쓴 문장)</div>' : ''}
+        ${(fl.flags || []).length ? `<div style="font-size:11.5px;color:var(--warn);margin-top:4px">⚠ ${esc(fl.flags.join(' · '))}</div>` : ''}
+      </div>` : '';
+    p5Map(); p5Picks(); p5Filter(); p5List();
+    const hashJump = () => {   // 스토리 화면·다른 곳에서 '#paper-<id>'로 들어오면 그 줄을 펼침
+      const m = /^#paper-(.+)$/.exec(decodeURIComponent(location.hash || ''));
+      if (m) p5Jump(m[1]);
+    };
+    if (ch.split) p5Load(ch.split.file, () => { p5Picks(); p5List(); hashJump(); });
+    else setTimeout(hashJump, 0);
+
+    const sec = $('ch5');
+    if (!sec.dataset.p5) {   // 누름 처리는 한 번만 붙임
+      sec.dataset.p5 = '1';
+      sec.addEventListener('click', e => {
+        const t = e.target.closest('[data-tag],[data-src],[data-wait],[data-abs],[data-more],[data-jump]');
+        if (!t) return;
+        if (t.dataset.jump) { e.preventDefault(); p5Jump(t.dataset.jump); return; }
+        if (t.dataset.tag != null) P5.tag = P5.tag === t.dataset.tag ? '' : t.dataset.tag;
+        else if (t.dataset.src) P5.src = t.dataset.src;
+        else if (t.dataset.wait) P5.waitOnly = !P5.waitOnly;
+        else if (t.dataset.more) P5.more[t.dataset.more] = true;
+        else if (t.dataset.abs) {
+          P5.abs = !P5.abs;
+          if (P5.abs && !window.PANEL_ABSTRACTS) p5Load((P5.ch.abstracts && P5.ch.abstracts.file) || 'panel_abstracts.js', () => { p5Picks(); p5List(); });
+          p5Picks();
+        }
+        p5Map(); p5Filter(); p5List();
+      });
+      sec.addEventListener('keydown', e => {
+        const t = e.target.closest('[data-tag]');
+        if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); t.click(); }
+      });
+    }
+  }
+
+
+  // 11-23(원장 134): 챕터 6 — 흐름 엮기(팩트/추정 구분) + 채점 카드 장부(기저율과 나란히)
+  function renderFlows(F) {
+    const st = $('ch6Status'), lg = $('ch6Ledger'), fl = $('ch6Flows');
+    if (!st) return;
+    if (!F || (!F.flows && !F.ledger)) { st.textContent = '흐름 자료 없음 — 새벽 바퀴 5-D 단계가 아직 안 돎'; lg.innerHTML = ''; fl.innerHTML = ''; return; }
+    const L = F.ledger || {};
+    st.innerHTML = F.flows
+      ? `흐름 날짜 <strong>${esc(F.day)}</strong>${F.same_day ? '' : ' (오늘 것 아님 — 가장 최근)'} · 카드 ${F.n_cards}장 · 모델 ${esc(F.model)} · 검사 문제 <strong>${(F.problems || []).length}</strong>건 · <span class="src-path">${esc(F.source)}</span>`
+      : '오늘 흐름 파일 없음';
+    const pct = x => (x == null ? '-' : Math.round(x * 100) + '%');
+    const hitLine = L.n_graded
+      ? `맞음 <b>${L.n_hit}</b><span>채점 ${L.n_graded}장 중</span>`
+      : `<b>-</b><span>아직 채점된 카드 없음${L.next_due ? ' · 첫 만기 ' + esc(L.next_due) : ''}</span>`;
+    const expLine = L.expected_hit != null
+      ? `<b>${L.expected_hit}</b><span>기저율로 기대되는 맞음 수(실력 0일 때)</span>`
+      : `<b>-</b><span>기저율 기대값 — 채점 뒤에 생김</span>`;
+    const pend = (L.pending || []).map(r => `<tr><td class="num">${esc((r.due || '').slice(5))}</td><td>${esc(r.measure)}${r.baseline && r.baseline !== '없음' ? ' <span class="fl-refs">vs ' + esc(r.baseline) + '</span>' : ''}</td><td>${esc(r.win_if)}</td><td class="num">${r.status === '채점 불가' ? '채점 불가' : pct(r.base_rate)}</td></tr>`).join('');
+    const done = (L.graded || []).map(g => `<tr><td class="num">${esc((g.due || '').slice(5))}</td><td>${esc(g.measure)}</td><td><strong>${esc(g.status)}</strong>${g.result != null ? ' ' + (g.result > 0 ? '+' : '') + Number(g.result).toFixed(1) + esc(g.unit || '') : ''}${g.reason ? ' <span class="fl-refs">' + esc(g.reason) + '</span>' : ''}</td><td class="num">${pct(g.base_rate)}</td></tr>`).join('');
+    lg.innerHTML = `
+      <div class="fl-score">
+        <div>${hitLine}</div>
+        <div>${expLine}</div>
+        <div><b>${L.n_pending || 0}</b><span>기다리는 카드(만기 전)</span></div>
+      </div>
+      <div class="fl-sub">맞음 수는 아래 '기저율'과 같이 봐야 해요. 기저율 = 같은 조건을 지난 2년 아무 날에나 시작했을 때 맞은 비율. 맞음이 기대값보다 많아야 실력이에요. <span class="src-path">${esc(L.source || '')}</span></div>
+      ${done ? `<div class="table-wrap"><table class="data-tbl"><thead><tr><th>만기</th><th>잰 것</th><th>결과</th><th>기저율</th></tr></thead><tbody>${done}</tbody></table></div>` : ''}
+      ${pend ? `<details style="margin-top:8px"><summary>기다리는 카드 ${L.n_pending}장 보기</summary><div class="table-wrap"><table class="data-tbl"><thead><tr><th>만기</th><th>잰 것</th><th>맞음 기준</th><th>기저율</th></tr></thead><tbody>${pend}</tbody></table></div></details>` : ''}`;
+    fl.innerHTML = (F.flows || []).map((f, i) => `
+      <div class="fl-card">
+        <h3>${i + 1}. ${esc(f.title)}</h3>
+        <ol class="fl-steps">${(f.steps || []).map(s => `<li class="${s.kind === '팩트' ? 'fact' : ''}"><span class="fl-chip">${esc(s.kind)}</span>${esc(s.text)}
+          ${(s.refs || []).length ? `<div class="fl-refs">근거: ${(s.refs || []).map(r => esc((r.day || '').slice(5) + ' ' + r.kind + (r.grade ? '·' + r.grade : ''))).join(' / ')}</div>` : ''}</li>`).join('')}</ol>
+        ${(f.same_dart || []).length ? `<div class="fl-sub">같은 주제 공시(파이썬 자동 연결): ${(f.same_dart || []).map(esc).join(' / ')}</div>` : ''}
+        ${f.counter ? `<div class="fl-sub">반대 신호: ${esc(f.counter)}</div>` : ''}
+        ${(f.claims || []).map(c => `<div class="fl-claim"><span class="fl-chip">채점 카드 [추정]</span>${esc(c.claim)}<div class="fl-refs">${c.after_days}일 뒤 · 잴 것 ${esc(c.measure)} · 비교 ${esc(c.baseline)} · 맞음 ${esc(c.win_if)}${c.reader === '채점 불가' ? ' · 채점기가 못 읽음' : ''}</div></div>`).join('')}
+      </div>`).join('') +
+      (F.flows ? `<div class="fl-sub">'팩트'는 카드 원문에 있는 것만(검사기가 낱말 수준으로 봄), '추정'은 AI가 이어 생각한 것이에요. 근거의 등급: 공식 / 복수 보도 / 한 매체 보도 / 기관 의견.</div>` : '');
+  }
+  function renderAll(d) {
+    PANEL = d;
+    // 1. 옷 5벌 버튼
+    const wardrobes = d.wardrobes || [];
+    const tp = $('themePicker');
+    tp.innerHTML = wardrobes.map(w =>
+      `<button type="button" class="theme-btn" data-t="${esc(w.id)}" title="${esc(w.name)}">${esc(w.name.split('·')[0].trim())}</button>`
+    ).join('');
+    tp.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.addEventListener('click', () => setTheme(btn.getAttribute('data-t')));
+    });
+    setTheme(d.default_wardrobe || 'atelier');
+
+    // 2. 상단 메타
+    const ov = d.overview || {};
+    const auto = ov.last_auto_run || {};
+    const pp = ov.papers || {};
+    $('headerSub').innerHTML =
+      `뉴스 기준 날짜: <strong>${esc(d.day)}</strong>` +
+      (pp.day ? ` · 논문: <strong>${esc(pp.day_label || pp.day)}</strong>${pp.same_day ? '' : ' (오늘 논문은 논문 풀이 뒤)'}` : '') +
+      ` · 생성: <span class="num">${esc(d.generated_at)}</span> · ` +
+      `최근 끝난 새벽 바퀴(<span class="src-path">${esc(ov.last_auto_run_source || '')}</span>): ` +
+      `<strong>${esc(auto.day || '-')} (${esc(auto.result || '-')})</strong>` +
+      (pp.made ? ` · 논문 파일 마지막 갱신: <strong>${esc(String(pp.made).replace('T', ' ').slice(0, 16))}</strong>` : '');
+    const tab5 = $('tabCh5Label');
+    if (tab5) tab5.textContent = pp.day_label ? `5. 논문 · ${pp.day_label}` : '5. 논문';
+
+    // 세션 가-5: 신선도 — 화면 데이터를 만든 시각(made_iso)이 지금보다 30시간 넘게 지났으면 맨 위 띠
+    const fb = $('freshBar'), fn = $('freshNote');
+    const madeMs = Date.parse(d.made_iso || '');
+    if (fb) {
+      const hrs = isNaN(madeMs) ? null : (Date.now() - madeMs) / 3600000;
+      if (hrs !== null && hrs > 30) {
+        fb.textContent = `이 화면은 ${Math.floor(hrs)}시간 전 것입니다 — 바퀴가 안 돌았을 수 있어요`;
+        fb.hidden = false;
+      } else {
+        fb.hidden = true;
+      }
+    }
+    const fl = ((d.freshness || {}).lines) || [];
+    if (fn) {
+      fn.textContent = fl.length ? '⚠ ' + fl.join(' · ') : '';
+      fn.hidden = !fl.length;
+    }
+    // 11-22 (원장 114번): 아침 이후 새로 들어온 것 — refresh.py 가장 최근 1회. 없으면 띠 숨김
+    const rb = $('refreshBand'), rf = d.refresh || {};
+    if (rb) {
+      if (rf.tag) {
+        const hm = `${rf.tag.slice(0, 2)}:${rf.tag.slice(2)}`;
+        const items = (rf.picks || []).map(p => `<li><span class="rf-chip">${esc(p.seat === '거시' ? '거시' : '뉴스')}</span><b>${esc(p.title)}</b>`
+          + ` <span class="rf-arts">· 기사 ${p.n || 1}개 · 점수 ${p.score}</span>`
+          + (p.easy ? `<div>${esc(p.easy)}</div>` : '')
+          + `<div class="rf-arts">${(p.arts || []).map(a => `<a href="${esc(a.u || '#')}" target="_blank" rel="noopener">${esc(a.s)}: ${esc(a.t)}</a>`).join('<br>')}</div></li>`).join('');
+        rb.innerHTML = `<h3>아침 이후 새로 들어온 것 · ${esc(hm)} 갱신</h3>`
+          + `<div class="rf-sub">아침 바퀴 뒤 새 글 ${rf.new || 0}개(뉴스 ${rf.news_new || 0}개)를 같은 점수식으로 골랐어요. 아침 내용은 그대로예요.`
+          + ` 오늘 갱신: ${(rf.times || []).map(t => t.slice(0, 2) + ':' + t.slice(2)).join(', ')} · AI ${rf.calls || 0}콜${rf.error ? ' · ' + esc(rf.error) : ''}</div>`
+          + (items ? `<ol>${items}</ol>` : '<div>문턱을 넘은 새 사건 없음 — 조용한 시간이었어요</div>');
+        rb.hidden = false;
+      } else {
+        rb.hidden = true;
+      }
+    }
+    mkReceive(d.marks);   // 세션 라: 깃허브가 받은 표시는 폰 기억에서 지움 + '표시 보내기 (n)'
+
+    $('secCountBadge').textContent = (d.machine_map && d.machine_map.total_sections) || 30;
+
+    // 3. 한눈에 숫자 6칸
+    const lanes = ov.lanes || {};
+    const stripItems = [
+      { label: '오늘 들어온 글', addr: '인풋-2', val: ov.in_total && ov.in_total.val, sub: `새 글 ${(ov.new_total && ov.new_total.val) || 0} + 옛 글 ${(ov.old_seen && ov.old_seen.val) || 0}`, src: ov.in_total && ov.in_total.source },
+      { label: '거푸집1 (숫자·공시)', addr: '처리-1', val: lanes['거푸집1'] && lanes['거푸집1'].val, sub: 'AI 0콜 · 정규식+API', src: lanes['거푸집1'] && lanes['거푸집1'].source },
+      { label: '거푸집2 (쉬운 요약)', addr: '처리-2', val: lanes['거푸집2'] && lanes['거푸집2'].val, sub: '글당 AI 1콜 + 원문검사', src: lanes['거푸집2'] && lanes['거푸집2'].source },
+      { label: '뉴스 사건 묶기', addr: '처리-3', val: lanes['뉴스'] && lanes['뉴스'].val, sub: `사건 ${(d.chapters.ch4_news.counts.events_out.val)}개로 묶음`, src: lanes['뉴스'] && lanes['뉴스'].source },
+      { label: '제외 보관함', addr: '인풋-4', val: (lanes['제외 보관함'] && lanes['제외 보관함'].val) || 0, sub: `모름 ${(lanes['모름'] && lanes['모름'].val) || 0}건 · 오늘 문 앞에 들어온 논문 제목 ${(lanes['논문T'] && lanes['논문T'].val) || 0}편(챕터 5 편수와 다른 것 — 챕터 5는 논문 카드)`, src: lanes['제외 보관함'] && lanes['제외 보관함'].source },
+      { label: '오늘 AI 콜', addr: '운영-1', val: ((ov.ai_calls_day && ov.ai_calls_day.val) || 0) + (pp.same_day ? (pp.calls || 0) : 0),
+        sub: `새벽 바퀴 ${(ov.ai_calls_day && ov.ai_calls_day.val) || 0}콜(실패 ${(ov.ai_fails_day && ov.ai_fails_day.val) || 0} · ${(ov.run_secs && ov.run_secs.val) || 0}초) + 논문 풀이 ` +
+             (pp.same_day ? `${pp.calls || 0}콜` : '아직(새벽 바퀴 바로 뒤에 돎)'),
+        src: ov.ai_calls_day && ov.ai_calls_day.source }
+    ];
+    $('overviewStrip').innerHTML = stripItems.map((it, i) => `
+      <div class="stat-box">
+        <div class="stat-head">
+          <span>${esc(it.label)}</span>
+          <span class="addr-tag" onclick="jumpToSection('${esc(it.addr)}')">${esc(it.addr)}</span>
+        </div>
+        <div class="stat-val num" id="ovVal_${i}">0</div>
+        <div class="stat-sub">${esc(it.sub)}</div>
+        <div style="margin-top:4px"><span class="src-path">${esc(it.src || '')}</span></div>
+      </div>
+    `).join('');
+    stripItems.forEach((it, i) => countUp($('ovVal_' + i), it.val || 0));
+
+    // SVG 텍스트 업데이트
+    if ($('svgIn2')) $('svgIn2').textContent = `${(ov.in_total && ov.in_total.val) || 0}건 수집`;
+    if ($('svgP1')) $('svgP1').textContent = `처리-1 · 거푸집1 (${(lanes['거푸집1'] && lanes['거푸집1'].val) || 0})`;
+    if ($('svgP2')) $('svgP2').textContent = `처리-2 · 거푸집2 (${(lanes['거푸집2'] && lanes['거푸집2'].val) || 0})`;
+    if ($('svgP3')) $('svgP3').textContent = `처리-3 · 뉴스 (${(lanes['뉴스'] && lanes['뉴스'].val) || 0})`;
+    const ch5k = d.chapters && d.chapters.ch5_papers;
+    const p4on = !!(ch5k && ch5k.kind === 'papers');
+    if ($('svgP4')) $('svgP4').textContent = p4on
+      ? `처리-4 · 논문 ${ch5k.day.slice(5).replace('-', '/')} 풀이 ${(ch5k.headline.n_done && ch5k.headline.n_done.val) || 0}`
+      : `처리-4 · 논문 (${(lanes['논문T'] && lanes['논문T'].val) || 0})`;
+    if (p4on) {   // 11-14 점검: 논문 풀이가 돌면 흐름도에서도 실선(도는 길)으로 — 원래 HTML에 점선으로 박혀 있었음
+      if ($('svgLineP4')) $('svgLineP4').classList.remove('inactive');
+      if ($('svgRectP4')) { $('svgRectP4').setAttribute('stroke', 'var(--ink)'); $('svgRectP4').setAttribute('stroke-width', '2'); $('svgRectP4').removeAttribute('stroke-dasharray'); }
+      if ($('svgP4')) { $('svgP4').setAttribute('fill', 'var(--ink)'); $('svgP4').setAttribute('font-weight', '700'); }
+    }
+
+    // 4. 챕터 1 (오늘의 순위 — 출력-1)
+    const ch1 = d.chapters.ch1_ranking;
+    $('ch1Status').innerHTML = `상태: <strong>${esc(ch1.status)}</strong> · 출처: <span class="src-path">${esc(ch1.source)}</span>`;
+    $('ch1Notice').innerHTML = `<strong>[출력-1 아직 없음]</strong> ${esc(ch1.note)}`;
+    $('ch1Cards').innerHTML = (ch1.top_by_article_count || []).map(ev => `
+      <article class="item-card">
+        <div class="card-top">
+          <div class="card-title">#${ev.rank_by_count} (기사 <span class="num">${ev.member_count}</span>건) · ${esc(ev.name)}</div>
+          <span class="addr-tag" onclick="jumpToSection('${esc(ev.addr)}')">${esc(ev.addr)}</span>
+        </div>
+        <div class="card-easy">${esc(ev.easy)}</div>
+        ${ev.quote ? `<div class="card-quote">"${esc(ev.quote)}"</div>` : ''}
+        <div class="card-meta">
+          <span class="src-path">${esc(ev.source)}</span>
+          ${ev.flags && ev.flags.length ? `<span style="color:var(--warn)">⚠ ${esc(ev.flags.join(', '))}</span>` : '<span>검사 통과</span>'}
+        </div>
+      </article>
+    `).join('');
+
+    // 5. 챕터 2 (숫자 — 처리-1)
+    const ch2 = d.chapters.ch2_numbers;
+    const c2 = ch2.counts;
+    $('ch2Status').innerHTML =
+      `문 앞 거푸집1 <strong>${c2.gate_in.val}</strong>건 (<span class="src-path">${esc(c2.gate_in.source)}</span>) → ` +
+      `오늘 DART 공시 <strong>${c2.dart_day_total.val}</strong>건 (공급계약 <strong>${c2.dart_contracts.val}</strong> · 그 밖 <strong>${c2.dart_others.val}</strong>, <span class="src-path">${esc(c2.dart_day_total.source)}</span>) · ` +
+      `미국 FRED <strong>${c2.fred_series.val}</strong>종 (<span class="src-path">${esc(c2.fred_series.source)}</span>)`;
+
+    const dartContractRows = (ch2.dart_contracts || []).map(r => `
+      <tr>
+        <td><strong>${esc(r.company)}</strong> <span style="color:var(--muted);font-size:11.5px">(${esc(r.market)})</span></td>
+        <td>${esc(r.what)}</td>
+        <td class="num"><strong>${esc(r.amount_won)}</strong></td>
+        <td class="num">${esc(r.pct_of_sales)}% <span style="font-size:11px;color:var(--muted)">(${esc(r.pct_check)})</span></td>
+        <td>${esc(r.counterparty)} · ${esc(r.region)}</td>
+        <td class="num" style="font-size:12px">${esc(r.period)}</td>
+        <td><span class="addr-tag" onclick="jumpToSection('처리-1')">처리-1</span></td>
+      </tr>
+    `).join('');
+
+    const fredRows = (ch2.fred_table || []).map(r => `
+      <tr>
+        <td><strong>${esc(r.name)}</strong> <span style="font-family:var(--f-mono);font-size:11px;color:var(--muted)">(${esc(r.series)})</span></td>
+        <td class="num">${esc(r.date)}</td>
+        <td class="num"><strong>${esc(r.value)}</strong> ${esc(r.unit)}</td>
+        <td class="num">${esc(r.prev_value)} (${esc(r.prev_date)})</td>
+        <td class="num">${esc(r.change)}</td>
+        <td><span class="addr-tag" onclick="jumpToSection('인풋-5')">인풋-5</span></td>
+      </tr>
+    `).join('');
+
+    const dartOtherRows = (ch2.dart_others || []).slice(0, 20).map(r => `
+      <tr>
+        <td><strong>${esc(r.company)}</strong> (${esc(r.market)})</td>
+        <td>${esc(r.kind)}</td>
+        <td style="font-size:12px">${esc(r.changes || '-')}</td>
+        <td style="font-size:12px">${esc(r.numbers || '-')}</td>
+        <td>${esc(r.body_from)}</td>
+      </tr>
+    `).join('');
+
+    $('ch2Content').innerHTML = `
+      <h3 style="margin-top:14px;font-size:15px">① DART 단일판매·공급계약 (${c2.dart_contracts.val}건) <span class="src-path">${esc(c2.dart_contracts.source)}</span></h3>
+      <div class="table-wrap">
+        <table class="data-tbl">
+          <thead><tr><th>회사</th><th>계약 내용</th><th>계약금액</th><th>매출액 대비</th><th>상대방·지역</th><th>기간</th><th>구간</th></tr></thead>
+          <tbody>${dartContractRows || '<tr><td colspan="7">오늘 공급계약 공시 없음</td></tr>'}</tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:18px;font-size:15px">② 미국 FRED 공식 지표 (${c2.fred_series.val}종) <span class="src-path">${esc(c2.fred_series.source)}</span></h3>
+      <div class="table-wrap">
+        <table class="data-tbl">
+          <thead><tr><th>지표명</th><th>기준일</th><th>이번 값</th><th>직전 값</th><th>변화</th><th>구간</th></tr></thead>
+          <tbody>${fredRows}</tbody>
+        </table>
+      </div>
+
+      <details class="more-box" style="margin-top:14px">
+        <summary>③ DART 그 밖 주요 공시 상위 20건 펼쳐 보기 (전체 ${c2.dart_others.val}건 · <span class="src-path">${esc(c2.dart_others.source)}</span>)</summary>
+        <div class="table-wrap">
+          <table class="data-tbl">
+            <thead><tr><th>회사</th><th>공시 종류</th><th>바뀐 것(정정)</th><th>공식 API 숫자</th><th>본문 출처</th></tr></thead>
+            <tbody>${dartOtherRows}</tbody>
+          </table>
+        </div>
+      </details>
+    `;
+
+    // 6. 챕터 3 (쉽게 읽기 — 처리-2 · 처리-6)
+    const ch3 = d.chapters.ch3_easy_read;
+    const c3 = ch3.counts;
+    $('ch3Status').innerHTML =
+      `문 앞 거푸집2 <strong>${c3.gate_in.val}</strong>건 → 오늘 요약 <strong>${c3.summarized_today.val}</strong>건 (<span class="src-path">${esc(c3.summarized_today.source)}</span>) · ` +
+      `원문에 없는 숫자 <strong>${c3.bad_numbers_today.val}</strong>건 · 연준 연설 누적 <strong>${c3.fed_speeches_total.val}</strong>편`;
+
+    const fedCards = (ch3.fed_speeches || []).slice().reverse().slice(0, 4).map(sp => `
+      <article class="item-card">
+        <div class="card-top">
+          <div class="card-title" title="${esc(sp.title)}">[연준 연설] ${esc(sp.title)}</div>
+          <span class="addr-tag" onclick="jumpToSection('처리-6')">처리-6</span>
+        </div>
+        <div class="card-easy">${(sp.summary_lines || []).map(l => `<div>${esc(l)}</div>`).join('')}</div>
+        <div class="card-meta"><span class="src-path">${esc(sp.source)}</span></div>
+      </article>
+    `).join('');
+    $('ch3FedBox').innerHTML = `
+      <div style="font-size:14px;font-weight:700;margin-bottom:6px">연준 안전시스템 최근 연설 브리핑 (처리-6)</div>
+      <div class="cards-grid">${fedCards}</div>
+      <hr style="border:0;border-top:1px solid var(--rule);margin:18px 0 6px">
+      <div style="font-size:14px;font-weight:700">오늘의 거푸집2 쉬운 요약 (${c3.summarized_today.val}건 · 처리-2)</div>
+    `;
+
+    $('ch3Cards').innerHTML = (ch3.items || []).slice(0, 24).map(it => `
+      <article class="item-card" data-id="${esc(it.id || '')}">
+        <div class="card-top">
+          <div class="card-title" title="[${esc(it.source_name)}] ${esc(it.title)}">[${esc(it.source_name)}] ${esc(it.title)}</div>
+          <span class="addr-tag" onclick="jumpToSection('처리-2')">처리-2</span>
+        </div>
+        <div class="card-easy">
+          <strong>"${esc(it.easy1_title)}"</strong><br>${esc(it.easy1_desc)}
+          ${it.easy2_title ? `<br><br><strong>"${esc(it.easy2_title)}"</strong><br>${esc(it.easy2_desc)}` : ''}
+        </div>
+        <details class="more-box">
+          <summary>자세하게 보기 (주제·핵심 3줄·검사 결과)</summary>
+          <div style="margin-top:6px">
+            <div><strong>주제:</strong> ${esc(it.topic)}</div>
+            <ul style="padding-left:18px;margin-top:4px">
+              ${(it.points || []).map(p => `<li>${esc(p)}</li>`).join('')}
+            </ul>
+          </div>
+        </details>
+        ${mkBar(it.id)}
+        <div class="card-meta">
+          <span>근거일치 ${esc(it.evidence_ok)} · 본문 ${esc(it.body_chars)}자</span>
+          <span class="src-path">${esc(it.source)}</span>
+        </div>
+      </article>
+    `).join('');
+
+    // 7. 챕터 4 (뉴스 사건 묶기 — 처리-3)
+    const ch4 = d.chapters.ch4_news;
+    const c4 = ch4.counts;
+    const singleCount = (c4.single_out && c4.single_out.val) || (ch4.single_articles || []).length || 0;
+    $('ch4Status').innerHTML =
+      `뉴스 <strong>${c4.news_in.val}</strong>건 → 여러 기사로 묶인 사건 <strong>${c4.events_out.val}</strong>개 + 한 줄짜리 단건 기사 <strong>${singleCount}</strong>건 (<span class="src-path">${esc(c4.events_out.source)}</span>) · ` +
+      `AI 콜 <strong>${c4.calls.val}</strong>회 · 원문에 없는 숫자 <strong>${c4.bad_numbers.val}</strong>건`;
+
+    $('ch4Cards').innerHTML = (ch4.events || []).map(ev => `
+      <article class="item-card" data-id="${esc(ev.id || '')}">
+        <div class="card-top">
+          <div class="card-title" title="${esc(ev.name)} (기사 ${ev.member_count}건)">${esc(ev.name)} <span style="font-size:12.5px;color:var(--accent)">(기사 ${ev.member_count}건)</span></div>
+          <span class="addr-tag" onclick="jumpToSection('처리-3')">처리-3</span>
+        </div>
+        <div class="card-easy">${esc(ev.easy)}</div>
+        ${ev.quote ? `<div class="card-quote">원문 인용: "${esc(ev.quote)}"</div>` : ''}
+        ${ev.sample_articles && ev.sample_articles.length ? `
+          <details class="more-box">
+            <summary>묶인 기사 제목 보기 (${ev.member_count}건 중 ${ev.sample_articles.length}건)</summary>
+            <ul style="padding-left:18px;margin-top:4px">
+              ${ev.sample_articles.map(a => `<li>[${esc(a.source_name)}] ${esc(a.title)}</li>`).join('')}
+            </ul>
+          </details>
+        ` : ''}
+        ${mkBar(ev.id)}
+        <div class="card-meta">
+          <span class="src-path">${esc(ev.source)}</span>
+          ${ev.flags && ev.flags.length ? `<span style="color:var(--warn)">⚠ ${esc(ev.flags.join(' · '))}</span>` : '<span>검사 통과</span>'}
+        </div>
+      </article>
+    `).join('');
+
+    const singleRows = (ch4.single_articles || []).map((sa, idx) => {
+      const art0 = (sa.sample_articles && sa.sample_articles[0]) || {};
+      return `
+        <tr>
+          <td class="num">${idx + 1}</td>
+          <td>${esc(art0.source_name || '뉴스')}</td>
+          <td><strong>${esc(sa.name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(sa.easy)}</div></td>
+          <td><span class="src-path">${esc(sa.source)}</span></td>
+        </tr>
+      `;
+    }).join('');
+    $('ch4SinglesBox').innerHTML = singleRows ? `
+      <details class="more-box">
+        <summary>한 줄짜리 단건 기사 ${singleCount}건 펼쳐 보기 (묶이지 않은 개별 기사 · 30자 잘림 복원 완료)</summary>
+        <div class="table-wrap">
+          <table class="data-tbl">
+            <thead><tr><th>#</th><th>언론사</th><th>기사 원문 제목 · 한 줄 요약</th><th>원본 출처</th></tr></thead>
+            <tbody>${singleRows}</tbody>
+          </table>
+        </div>
+      </details>
+    ` : '';
+
+    // 8. 챕터 5 (논문 — 처리-4)
+    renderPapers(d.chapters.ch5_papers);
+    renderFlows(d.flows);
+
+    // 9. 뒷 겹 기계 지도 (6대 그룹: 인풋·처리·출력·화면·되먹임·운영)
+    const sections = (d.machine_map && d.machine_map.sections) || [];
+    const groupOrder = ['인풋', '처리', '출력', '화면', '되먹임', '운영'];
+    $('mapGroups').innerHTML = groupOrder.map(gName => {
+      const list = sections.filter(s => s.group === gName);
+      const cardsHtml = list.map(s => {
+        const m = s.metrics || {};
+        const badgeLabel = s.status_kind === 'run' ? '돎' : (s.status_kind === 'none' ? '없음' : '따로/기타');
+        return `
+          <div class="sec-node kind-${esc(s.status_kind)}" tabindex="0" data-addr="${esc(s.addr)}">
+            <div class="sec-top">
+              <span class="sec-name"><span style="font-family:var(--f-mono);color:var(--accent)">${esc(s.addr)}</span> · ${esc(s.name)}</span>
+              <span class="sec-badge">${esc(badgeLabel)}</span>
+            </div>
+            <div class="sec-status-line">${esc(s.status)}</div>
+            <div class="sec-mini-nums">
+              <span>입력 <strong class="num">${Number(m.in || 0).toLocaleString('ko-KR')}</strong></span>
+              <span>→ 출력 <strong class="num">${Number(m.out || 0).toLocaleString('ko-KR')}</strong></span>
+              ${m.calls ? `<span>· AI ${m.calls}콜</span>` : ''}
+              ${m.secs ? `<span>· ${m.secs}초</span>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+      return `
+        <div class="map-group-col">
+          <div class="map-group-title">
+            <span>${esc(gName)} 구간</span>
+            <span style="font-size:12px;color:var(--muted)">${list.length}개</span>
+          </div>
+          ${cardsHtml}
+        </div>
+      `;
+    }).join('');
+
+    document.querySelectorAll('.sec-node').forEach(node => {
+      const addr = node.getAttribute('data-addr');
+      const sec = sections.find(s => s.addr === addr);
+      if (!sec) return;
+      node.addEventListener('mouseenter', () => showInspector(sec));
+      node.addEventListener('focus', () => showInspector(sec));
+      node.addEventListener('click', () => {
+        document.querySelectorAll('.sec-node').forEach(n => n.classList.remove('picked'));
+        node.classList.add('picked');
+        showInspector(sec);
+      });
+    });
+
+    if (sections.length) showInspector(sections[2] || sections[0]); // 기본: 인풋-3 문 앞 교통정리 표시
+  }
+
+  if (PANEL) {
+    renderAll(PANEL);
+  } else {
+    fetch('../결과/화면/panel.json')
+      .then(r => r.json())
+      .then(renderAll)
+      .catch(err => {
+        $('headerSub').textContent = 'panel.json 로드 실패: export_panel.py를 먼저 실행해 주세요. (' + err + ')';
+      });
+  }
+})();
+</script>
+</body>
+</html>

@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-27",
-  "generated_at": "2026-11-27 16:07:39",
-  "made_iso": "2026-11-27T16:07:39+09:00",
+  "generated_at": "2026-11-27 18:21:17",
+  "made_iso": "2026-11-27T18:21:17+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -1098,16 +1098,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-27",
-      "start": "2026-11-27 16:06:12",
+      "start": "2026-11-27 18:21:04",
       "by": "github",
       "where": "GitHub",
-      "mode": "refresh",
-      "flows_retry_exit": 0,
+      "mode": "indicators",
+      "end": "2026-11-27 18:21:17",
+      "secs": 13,
       "indicators_refresh_exit": 0,
-      "end": "2026-11-27 16:07:39",
-      "secs": 87,
-      "exit": 0,
-      "calls": 2,
+      "calls": 0,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -26257,15 +26255,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "`gate_rules/거시_일정.txt`",
         "source": "구간_주소표.md",
-        "line_in": "받음: 주요 경제지표·실적 발표 일정 (예정)",
-        "line_rule": "규칙: 아직 코드 없음 (설계 대기)",
-        "line_out": "내보냄: 없음",
+        "line_in": "받음: 연준 FOMC·한은 금통위 공식 일정표 + gate_rules 손 일정",
+        "line_rule": "규칙: calendar 단계(하루 바퀴 2-2, 0콜) — 지난 7일·앞 60일만 화면으로",
+        "line_out": "내보냄: 일정 24개 · 60일 안 2개 (결과/일정/2026-11-27_거시일정.json)",
         "metrics": {
-          "in": 0,
-          "out": 0,
+          "in": 24,
+          "out": 2,
           "calls": 0,
-          "secs": 0.0,
-          "num_source": "구간_주소표.md"
+          "secs": 1.4,
+          "num_source": "v2_secretary/결과/일정/2026-11-27_거시일정.json"
         }
       },
       {
@@ -26277,15 +26275,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: `indicators.py` → 장부 `data/indicators.jsonl`(덧붙이기만, 같은 날·같은 지표 다시 안 씀) · 받기 기록 `data/indicators_runs.jsonl`",
-        "line_rule": "상태: 돎 (11-18 세션 나, 0콜. 버전1 data.db 옛 값 7,949줄 옮김. 시장 12개는 야후 — 안 끝난 오늘 장은 뺌. 전력 6개는 깃허브 비밀값 `DATA_GO_KR_KEY`가 없으면 '열쇠 없음'으로 건너뜀. 복사본 시험 통과, 깃허브 미반영)",
-        "line_out": "고치는 곳: —",
+        "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
+        "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
+        "line_out": "내보냄: 오늘 받기 7번 · 장부 새 줄 11개 · 새벽: 지표 21/21 받음 · 새 줄 5개 · 19.1초",
         "metrics": {
-          "in": 0,
-          "out": 0,
+          "in": 7,
+          "out": 11,
           "calls": 0,
-          "secs": 0.0,
-          "num_source": "구간_주소표.md"
+          "secs": 128.8,
+          "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
       {
@@ -26297,15 +26295,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: `article_body.py` → 본문 `data/body/<글번호>.txt` · `결과/본문/<날짜>_핵심기사.json`·`.md`",
-        "line_rule": "상태: 돎 (11-23 결함 확인 세션, 하루 바퀴 5-B2 단계, 0콜. 그날 고른 뉴스·거시 사건마다 기사 3개까지 — 구글뉴스 주소 풀기 + 본문·기사 날짜, 기사 날짜가 7일 넘게 앞이면 '옛 내용 의심' 표시(감점은 12-07에 다시 판단). 11-24 깃허브 올림 a7a5dce. 원장 138·139)",
-        "line_out": "고치는 곳: —",
+        "line_in": "받음: 그날 고른 뉴스·거시 사건의 기사 주소(사건마다 3개까지)",
+        "line_rule": "규칙: article_body.py (0콜) — 구글뉴스 주소 풀기 + 본문 추출 + 옛 내용 의심 검사",
+        "line_out": "내보냄: 핵심 기사 9개 · 본문 8 · 옛 내용 의심 0 (결과/본문/2026-11-27_핵심기사.json)",
         "metrics": {
-          "in": 0,
-          "out": 0,
+          "in": 9,
+          "out": 8,
           "calls": 0,
-          "secs": 0.0,
-          "num_source": "구간_주소표.md"
+          "secs": 20.1,
+          "num_source": "v2_secretary/결과/본문/2026-11-27_핵심기사.json"
         }
       },
       {
@@ -26397,15 +26395,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: 버전1 지표 18개 시계열 (dashboard/data.db history, 2026-11-05까지)",
-        "line_rule": "규칙: 설계 확정(급증도·변화시점·칼만추세·시차상관 등 Claude 추천안), 정식 모듈 코드 0 (견본만 scratch/build_way_board.py)",
-        "line_out": "내보냄: 견본 해석모델_결정판.html (하루 바퀴 미연결)",
+        "line_in": "받음: 지표 장부(data/indicators.jsonl) — 시장·전력 지표 값",
+        "line_rule": "규칙: interp.py (0콜) — 60일 기준 '보통 날 폭의 몇 배'(z) · 동시에 튄 수 · 헛경보 평균",
+        "line_out": "내보냄: 지표 20/20개 해석 · 공통 기준일 2026-11-25 (결과/해석/2026-11-27_해석.json)",
         "metrics": {
-          "in": 18,
-          "out": 0,
+          "in": 20,
+          "out": 20,
           "calls": 0,
-          "secs": 0.0,
-          "num_source": "scratch/way_board_data.json"
+          "secs": 0.8,
+          "num_source": "v2_secretary/결과/해석/2026-11-27_해석.json"
         }
       },
       {
@@ -26477,15 +26475,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: `flows.py`(사실 카드 → 흐름 5개 → 채점 카드) · `fact_check.py`(귀속·인과·숫자 검사) · `claim_grade.py`(14·30일 뒤 실제 시세로 채점, 기저율) → `data/flows/<날짜>.json` · `data/claims.jsonl` · `data/claims_graded.jsonl` · `결과/흐름/<날짜>_흐름.md`",
-        "line_rule": "상태: 돎 (11-23 결함 확인 세션, 하루 바퀴 5-D 단계, 하루 3~11콜. 실패하면 `data/flows/대기.jsonl` → 낮 갱신이 다시. 11-24 12:05 첫 실전 성공(흐름 5개·채점 카드 5장). 아이폰 챕터 6. 본질 인계 `문서/버전2_계획/본질_인계_흐름엮기_2026-11-24.md`. 원장 123~145)",
-        "line_out": "고치는 곳: —",
+        "line_in": "받음: 그날 사실 카드(거푸집2·뉴스·연준·공시에서 뽑은 문장)",
+        "line_rule": "규칙: flows.py — 사실 카드 → 묶음 후보기 → 흐름 5개 → 검사(fact_check) → 채점 카드",
+        "line_out": "내보냄: 흐름 5개 · 카드 377장 · 검사 문제 1 · AI 11콜(실패 5) (data/flows/2026-11-27.json)",
         "metrics": {
-          "in": 0,
-          "out": 0,
-          "calls": 0,
-          "secs": 0.0,
-          "num_source": "구간_주소표.md"
+          "in": 377,
+          "out": 5,
+          "calls": 11,
+          "secs": 447.8,
+          "num_source": "v2_secretary/data/flows/2026-11-27.json"
         }
       },
       {
@@ -26497,15 +26495,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: 오늘 처리된 카드들",
-        "line_rule": "규칙: 사용자 보류 결정 — 중요도 점수를 매기지 않고 기사 수 순서대로만 정렬",
-        "line_out": "내보냄: 뉴스 사건 기사 수 순 정렬",
+        "line_in": "받음: 그날 후보(뉴스 사건·숫자·보도·논문·공시)",
+        "line_rule": "규칙: rank.py 수식 점수(관심·여러 곳·급증·숫자·새로움) → AI 판정(judge.py) → 자리 수만큼 (gate_rules/중요도_설정.txt)",
+        "line_out": "내보냄: 후보 515개 중 14개 고름 · AI 2콜",
         "metrics": {
-          "in": 14,
+          "in": 515,
           "out": 14,
-          "calls": 0,
-          "secs": 0.0,
-          "num_source": "구간_주소표.md"
+          "calls": 2,
+          "secs": 49.4,
+          "num_source": "v2_secretary/data/picks.jsonl"
         }
       },
       {
@@ -26577,15 +26575,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: `v2_secretary/picks.py` → 후보 전부 `data/picks/<날짜>_후보.jsonl` · 고른 것 `data/picks.jsonl`(`shown:\"안 보임\"`·`how:\"수식\"`·`rule_ver`, 성분별 재료 = 글 번호·지표 id·낱말)",
-        "line_rule": "상태: 돎(조용히) (11-18 세션 다가 채움. 같은 날 두 번 불러도 줄 안 늚, 덧붙이기만. 깃허브 쪽: `cloud_sync.py` STATE에 넣음, `.gitignore`에서 안 빠짐, `v2-daily.yml`이 `git add -A v2_secretary`로 저장. 깃허브 미반영)",
-        "line_out": "고치는 곳: —",
+        "line_in": "받음: 고르기(출력-1)의 후보 전부와 고른 것",
+        "line_rule": "규칙: picks.py — 덧붙이기만, 같은 날 두 번 불러도 줄 안 늚",
+        "line_out": "내보냄: 후보 515줄(data/picks/2026-11-27_후보.jsonl) · 고른 것 14줄(data/picks.jsonl)",
         "metrics": {
-          "in": 0,
-          "out": 0,
+          "in": 515,
+          "out": 14,
           "calls": 0,
           "secs": 0.0,
-          "num_source": "구간_주소표.md"
+          "num_source": "v2_secretary/data/picks.jsonl"
         }
       },
       {
@@ -26757,15 +26755,15 @@ window.PANEL_DATA = {
         "status_kind": "separate",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
-        "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 52건 (최근: 2026-11-27 ok)",
+        "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
+        "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 1285초 · AI 69콜 · ok · 그 뒤 낮 갱신·지표만 8번",
         "metrics": {
-          "in": 1,
-          "out": 52,
-          "calls": 2,
-          "secs": 87.0,
-          "num_source": "v2_secretary/data/auto/runs.jsonl"
+          "in": 9,
+          "out": 1,
+          "calls": 69,
+          "secs": 1285.0,
+          "num_source": "v2_secretary/data/auto/runs.jsonl (그날 mode=run 줄)"
         }
       },
       {
