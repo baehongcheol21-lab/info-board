@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-27",
-  "generated_at": "2026-11-27 18:21:17",
-  "made_iso": "2026-11-27T18:21:17+09:00",
+  "generated_at": "2026-11-27 21:10:39",
+  "made_iso": "2026-11-27T21:10:39+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -12,29 +12,55 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1606",
-    "made_iso": "2026-11-27T16:06:12+09:00",
-    "new": 400,
-    "news_new": 327,
+    "tag": "2108",
+    "made_iso": "2026-11-27T21:08:53+09:00",
+    "new": 451,
+    "news_new": 371,
     "calls": 2,
     "error": "",
     "times": [
       "1206",
-      "1606"
+      "1606",
+      "2108"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "한국가스공사 영업이익 증가",
-        "easy": "한국가스공사가 연결영업익이 51% 껑충 뛰었다고 밝혔는데요. LNG 가격 상승으로 해외사업 이익이 늘어난 반면 미수금 부담도 커졌다는 말이에요. 쉽게 말하면 해외 LNG 사업으로 이익은 늘었지만 미수금이라는 짐도 함께 안게 된 셈이에요.",
+        "title": "SK하이닉스 자사주 매입",
+        "easy": "SK하이닉스가 최근 주가 하락에 대응해 자사주 매입 속도를 두 배로 높이기로 했습니다. 하루에 사들이는 주식 주문량을 두 배로 늘려 주주가치를 높이겠다는 건데요. 장점은 주가 방어에 도움이 된다는 거지만, 단기적인 시장 우려를 완전히 지우기엔 아직 지켜봐야 한다는 목소리도 나왔다는 겁니다.",
         "score": 0.6,
         "macro": [],
-        "n": 6,
+        "n": 5,
         "arts": [
           {
-            "t": "비수기 뚫고 영업익 51% 껑충…\"한국가스공사, 상승 여력 있다\"",
-            "s": "한국경제 증권",
-            "u": "https://www.hankyung.com/article/202611274975i"
+            "t": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
+            "s": "연합뉴스 마켓+",
+            "u": "https://www.yna.co.kr/view/AKR20261127165200003"
+          },
+          {
+            "t": "SK하이닉스, 자사주 일일 매수량 2배…주주가치 제고",
+            "s": "아시아경제",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9DOW82UFJpOS1jc3BTbW5CZno4bnpYVXZuOXJHQ1VIcmtVQjdkc2dYXzZnN0swcmZIQWhURlpaQ0JtRVVlQVBfWU9EdjNINlJyV21PeFJjUHJVcEZpLWlHVg?oc=5"
+          },
+          {
+            "t": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE00SG5MbVVoeUVXU3YwRnJWdGdHUm4xTm1oOW5MU0hYVU1VMG83WE5wM2lxdGhUOFpkWmFxd0ZWeVYxcWlxYXRPYVRMSkV0b0x2dWQ3QUh0QktZYWfSAWBBVV95cUxQMURjWllvS1l6dXpwbzBRVHFnUDlyZlotcGFwSzhFbnR5SW5tQ1N6Y3ItX283cl92N1ROMEIwS3RBU2E1Z2U1MF9TdWJtLUVmUTFLSmwtMGppUDdMWUFhaDA?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한국가스공사 실적 호조",
+        "easy": "한국가스공사가 LNG 가격 상승에 힘입어 해외사업 이익이 급증했습니다. 증권가에서는 목표주가를 올려 잡았는데요. 장점은 연결 영업이익이 크게 늘었다는 거지만, 동시에 미수금 부담도 여전히 크다는 단점이 있다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 5,
+        "arts": [
+          {
+            "t": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담",
+            "s": "파이낸셜뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIRnJ0dXNwcEZPWFVrNF9rY2x2bGIxQ2toTWJPS1YtRGs2U3IwU3A4NFR3U0FNekgyQnk4Ry12b0JSODBYM3AtalFEYlJyWDlaY1ZuYjBmQU5JQQ?oc=5"
           },
           {
             "t": "'홍의락 사장'의 리더십···한국가스공사 연결영업익 급증에 현대차증권, 목표주가 올려",
@@ -42,137 +68,103 @@ window.PANEL_DATA = {
             "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBxTnZ3eC1fS1hOM2JvUkRKMUphTUJKX3dnUVY5WXlORVVTQld2Z1pOQVhjMmtrSHpmSGhSbV83OUNTWGlCT1p1Zk9OTVpua2FMVG9ERmFnYmxhaGhCZGNVa3VrQV9FRVk?oc=5"
           },
           {
-            "t": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담",
-            "s": "파이낸셜뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIRnJ0dXNwcEZPWFVrNF9rY2x2bGIxQ2toTWJPS1YtRGs2U3IwU3A4NFR3U0FNekgyQnk4Ry12b0JSODBYM3AtalFEYlJyWDlaY1ZuYjBmQU5JQQ?oc=5"
+            "t": "\"한국가스공사, 해외 LNG로 이익·미수금 동반 급증…목표가↑\"-현대차",
+            "s": "한국경제",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hZnozOWJkbmNDZzZOWlhFanU3bm5LMkJ0YVIwS1lZZXlzcHZYQjRScXAtb25VNjNFUkc1dHlIWG9CaldBejBxc3MxaXpqeTFLR2I4WWtHMGVvZw?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "제3차 ESS 중앙계약시장 선정",
-        "easy": "제3차 ESS 중앙계약시장 입찰에서 삼성SDI가 63%, SK온이 37%를 수주했습니다. 총 1194MW 규모로 진행된 이번 입찰에서 두 기업이 물량을 나눠 가졌다는 말이에요. 쉽게 말하면 삼성SDI와 SK온이 이번 ESS 입찰의 최대 수혜를 입은 셈입니다.",
+        "title": "동서발전 ESS 672MW 확보",
+        "easy": "동서발전이 ESS 3차 중앙계약시장 입찰에서 672MW 규모의 물량을 확보했습니다. 이로써 누적 용량 기준 국내 1위 자리에 올랐는데요. 호남권 전력계통 안정화와 재생에너지 확대 기반을 다지는 계기가 되었다는 겁니다.",
         "score": 0.6,
         "macro": [],
-        "n": 6,
+        "n": 5,
         "arts": [
           {
-            "t": "역대 최대 3차 ESS 정부 입찰서 삼성SDI 63%·SK온 37% 수주",
-            "s": "연합뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAyUDktdHpMdnRYcmNLRUtzMTdDSXZNTU9tN0ROLVJ6ay1FUDU3NFRaWTZzVDFaalVuUzF6Y3F1SFlmbFhEOEROSjlQSFlUQjdyejVNYnFfREVIWFpLRS1CQtIBYEFVX3lxTFAyUDktdHpMdnRYcmNLRUtzMTdDSXZNTU9tN0ROLVJ6ay1FUDU3NFRaWTZzVDFaalVuUzF6Y3F1SFlmbFhEOEROSjlQSFlUQjdyejVNYnFfREVIWFpLRS1CQg?oc=5"
+            "t": "동서발전, ESS 중앙계약시장 672MW 확보...누적 용량 국내 1위",
+            "s": "산경e뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5NbGNoRUNkdnUzR3BOOXRxUHdGdUsyVHdKVmFkZ3ZFM3l2Szl4M2k1SWNjaTN3UmxWMU01eS0tSGJyN3ZkZ3NHSnFfeVFLdk9VNFJ3RTZ6MEZsUkhpZVI2QmlmRmF4S2c?oc=5"
           },
           {
-            "t": "삼성SDI·SK온, 3차 ESS 물량 각각 63%·37% 확보",
-            "s": "매일일보",
-            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE11RDhuQkxDZDVrcVh6RkF6aWhVZERkRXNpdzNDMUMtNUFNalB4VDFlOUVSeTRkSUQ0Uk1YLW1aUE9FMkxaY0tLNFp6QVp3N0dMS0F5azRQQ2NEVkJpQnZyRlVBX3U?oc=5"
+            "t": "동서발전, ESS 입찰 672MW 확보···누적 용량 국내 1위",
+            "s": "인사이트에너지뉴스",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBrZ1U4MWNxYU56QXBLVTlKZ2dHdU9hUVhzdHRrY2g4UENVdVc2RWNNbHV1UzA5ZzQwc3hVakZMNGNvWDF2bThEWmFrRnFpcWVmQmVCclRxVHlFcmdPdkZDcXFILXVOR2tRM2lj0gFrQVVfeXFMUGtnVTgxY3FhTnpBcEtVOUpnZ0d1T2FRWHN0dGtjaDhQQ1V1VzZFY01sdXVTMDlnNDBzeFVqRkw0Y29YMXZtOERaYWtGcWlxZWZCZUJyVHFUeUVyZ092RkNxcUgtdU5Ha1EzaWM?oc=5"
           },
           {
-            "t": "[단독] 3차 ESS 중앙계약시장, 삼성SDI가 웃었다",
-            "s": "전기신문",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBjdmVrTWN2NnYtWkM2YW0xQ0g5QzZNMUFxSjNzWnp1dlhDcXRudm5aZm5aSENwWm5VclJYa2N2SjlDekg1V1B6bHl5T240d0Z1aklNZXZzc0NJTFQzekw4NjdacURlalFqZmY3ZNIBcEFVX3lxTE9NRFZyNFZ0RkxDVmpvX2lSQ000UW1PakxtN3RHSy1fUHRrbTJxMVhaWG5QT2xzd3lrMXVUdmQ5VWlnRVFGX1BHbkJndTZpc2dLVk5xMGxlVTJ1eWpvZ3E4M2FhazRNZnQ4V0ZyNVdPU2g?oc=5"
+            "t": "동서발전, ESS 중앙계약 시장 서 672MW 규모 물량 확보…재생에너지 확대 기반 구축",
+            "s": "에너지플랫폼뉴스",
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE02VEZIT09Jc1ZzdE9YNW1QdTZDdmlmY292eERhWERPaEdSVDAweS1ZMk1FaGZsVTJuRlI1TXVubEMyTWczR1A5eEJpVzRRTnJBVjFGSFdkQlZZT3dxX3lFWE9oZUY4Z3JHT3hDd9IBcEFVX3lxTE8zU25sTnhzSVZ5MGN2elo5bFV0UzRURWJsSk8zNHA2UHZRclh4UGRsenY4ZFpudkUwZGg3YVVfT1JwTjRxRzJ0VWs0OEpFTk5reE9GbjAyczFHRzU0a2dwSEZQSmVRZ0VQRGFlbFhKRnI?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "휴머노이드 로봇 상용화 기대감",
-        "easy": "샤오펑이 휴머노이드 로봇 '아이언'을 내년에 전기차 수준의 가격으로 출시할 계획이라고 밝혔습니다. 로봇 수요 확대 기대감에 관련 테마주가 함께 올랐는데요. 쉽게 말하면 로봇이 대중화되는 시기가 성큼 다가왔다는 겁니다.",
+        "title": "트럼프의 젠슨 황 옹호",
+        "easy": "도널드 트럼프 미국 대통령이 젠슨 황 엔비디아 최고경영자에 대해 아무런 문제가 없다고 밝혔습니다. 사퇴와 복귀 과정에서 제기된 안보 우려와 논란을 일축했는데요. 젠슨 황의 복귀를 두고 미국 정치권 내에서는 찬반 공방이 이어지고 있다는 겁니다.",
+        "score": 0.6,
+        "macro": [],
+        "n": 5,
+        "arts": [
+          {
+            "t": "밴스 \"법무장관에게서 '젠슨 황 수사 대상 아니다' 확답받아\"",
+            "s": "뉴스1",
+            "u": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAwSXBuYkpuOUtkZ3FvbXlUbmN2R25PYXlYQ05qS0FlcFBaWmlqcmVrR1hCSjhpc3c3R2JvLV9ydTdEaFJmaGhrNUxJc0pITFdPWW80WnFCVnA?oc=5"
+          },
+          {
+            "t": "트럼프 “젠슨 황 아무런 문제없고…난 세계 위해 훌륭한 일 했다”",
+            "s": "데일리안",
+            "u": "https://news.google.com/rss/articles/CBMilwJBVV95cUxObEJ1MlNrMTJDZTZ5V0NCakVEY3R4NWlXTFR5WEY5NGNocXlWaVBTazZXYnRDVFpqOFJUYmtTY0tiQUtpRGZYeHcwX05kaXM5VVQ5TG9OSXYybG9LQ1ZRbUdJQW93T1MxUndWbWdnUkJVSXF6QXZpWGcxSC1TUm9YSGtkUHVqR1RHWXhEZTNXLVRqOHg2TEdaZjFhRzJkSU1GVzkyTnp5TnFpSEY5eFZRRm1KdjBwVERkVmotdEdCLVlmcElUNHhYREYtWFNINGdWM2l0el83X3Y0RHhzVUxTRHZCc3NkODg3cW56bERMejQwXzlNTWpRbUtlN0J6NkdnUjFkODZ5Vjc5MkQ"
+          },
+          {
+            "t": "\"젠슨황 복귀, 내가 큰일했다\" 트럼프 자랑…안보위협 '일축'",
+            "s": "머니투데이",
+            "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5pNHJEc2dyZEs2TkFhQUNJejdTX2JZaDNmWWh3ZFk4QThxSXpkcjFUb1JNMl95dGlERmVIM0duUUIzUnVzR0FyOHVWVWlNUjcwQzNOdGhaTHpZZnZFVDVDOWg1V2lLZUdkck84N3JR0gFuQVVfeXFMTmk0ckRzZ3JkSzZOQWFBQ0l6N1NfYlloM2ZZaHdkWThBOHFJemRyMVRvUk0yX3l0aURGZUgzR25RQjNSdXNHQXI4dVZVaU1SNzBDM050aFpMellmdkVUNUM5aDVXaUtlR2RyTzg3clE?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "희토류 공급망 우려",
+        "easy": "미국이 중국을 향해 고율 관세를 꺼내 들면서 희토류 보복 가능성이 제기됐습니다. 일본도 비축분을 풀며 버텨왔지만, 16년 동안 정제와 자석 공급망은 여전히 중국 중심이라는 분석이 나왔거든요. 쉽게 말하면 관세 압박 속에서도 핵심 광물 공급망은 중국 의존도가 여전히 높다는 겁니다.",
         "score": 0.55,
         "macro": [],
         "n": 4,
         "arts": [
           {
-            "t": "\"전기차 한 대 값”…샤오펑 휴머노이드 로봇 ‘아이언’ 내년 출격",
-            "s": "지디넷코리아",
-            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9hcVlRcHEtLXhjc1ZuWEkxRzhaWnhVek1VWlZVM2hPNW5TRUlubFNsTmlVaHFqdWY3YTJtRTg2ZEU4T1BsNDhyR0dWc3dvNmQ1cWxla0xB?oc=5"
+            "t": "희토류 비축분 풀어 버티는 日···16년 노력에도 정제·자석 공급망은 중국 천하",
+            "s": "여성경제신문",
+            "u": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBoZXRfTXZUMGpNcXFNMFUtWE9CVEN2NV9XczJ5cExmS2xLOXhkeTI4d0pxb21RN0tVV3JOQXc3WWFWZTRpdllqd0NUT0Rxb2ZPOEMwc05ZTTRlWkR1ZUQ2c3pZRjVGemtHd3Nlc1hBcHVzcWtvdFBB0gF3QVVfeXFMUGhldF9NdlQwak1xcU0wVS1YT0JUQ3Y1X1dzMnlwTGZLbEs5eGR5Mjh3SnFvbVE3S1VXck5BdzdZYVZlNGl2WWp3Q1RPRHFvZk84QzBzTllNNGVaRHVlRDZzellGNUZ6a0d3c2VzWEFwdXNxa290UEE?oc=5"
           },
           {
-            "t": "中샤오펑 \"휴머노이드 로봇 출시 가격, 전기차 수준으로 책정 계획\"",
-            "s": "더구루",
-            "u": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5ubFJFeVQyOG9CRlFrRTRFTHE5c0dmZGxwemRvbW13dGtCVk45bkhCaXdldVNzMVNXVkRZckp1N2V3NF9ybVBKeWY2WFQ1WXM3UzBOc21SbDVWWDR1eGR6T0xsQQ?oc=5"
+            "t": "동맹엔 15%·중국엔 최대 40% 관세 내건 트럼프, 고율 관세로 희토류 빗장 풀까",
+            "s": "The Economy Korea",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9naGotMHhfVjFxVm1GRTdpZzFZNGdnVHl5Q0dLaVY4VHFLY25OcXBseWJyLXVKcXFrOC1lbGtpX1pxRms0N1JZVFVqU2xEWHpkbkhoempIMzktTEk?oc=5"
           },
           {
-            "t": "특징주, 현대오토에버-피지컬 AI/휴머노이드 로봇 테마 상승세에 6.3% ↑",
-            "s": "매일경제 마켓",
-            "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE05eEJ4dERxa3U1VFBKb1R5TzRVaWJ6X3BRQzU1X003b2lkb0hfTEZWaHk1MXlyYjczRTJXdVN2UGdoRDN1bEo5bXFOU1phbG9nN0E?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "삼성전자·SK하이닉스 주가 급등",
-        "easy": "코스피가 외국인 매수세에 힘입어 4900선을 회복했습니다. 삼성전자와 SK하이닉스가 4~5%대 급등세를 보였는데요. 쉽게 말하면 대형 반도체 주식들이 증시 상승을 강하게 이끌었다는 겁니다.",
-        "score": 0.5,
-        "macro": [],
-        "n": 4,
-        "arts": [
-          {
-            "t": "코스피, 장중 상승폭 커져 4900 시도…삼전닉스 4%대 급등",
-            "s": "한국경제 증권",
-            "u": "https://www.hankyung.com/article/2026112746746"
-          },
-          {
-            "t": "증시 ‘들었다 놨다’ 외국인 “하루 만에 1조 넘게 샀다”…코스피 4900선 회복",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12220228"
-          },
-          {
-            "t": "[특징주] 삼성전자 4.6%·SK하이닉스 5.4% 급등 마감(종합)",
-            "s": "연합뉴스 경제",
-            "u": "https://www.yna.co.kr/view/AKR20261127032851008"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "한국전력 동반성장 대통령표창",
-        "easy": "한국전력이 중소기업 동반성장 성과를 인정받아 대통령표창을 수상했습니다. 중소 협력기업의 경영 부담을 덜어주고 상생 거래를 이어온 공로를 인정받았다는 건데요. 쉽게 말하면 한전이 중소기업과의 상생 경영에서 좋은 성과를 낸 겁니다.",
-        "score": 0.5,
-        "macro": [],
-        "n": 3,
-        "arts": [
-          {
-            "t": "[어워드 Pick] 한전KDN·한국전력, AI 품질혁신과 K-전력기기 동반성장 성과",
-            "s": "라이센스뉴스",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5ELWQ0bVFIeUdJSnZNNDJ5MmxUVEtBNnRLTzUzekV2c2o5eE1nVzU4VXJGWHA3b19NSjJQUFNzTjlfdldMR2g4RGZ4dGR2QjBvQ29wUWFEekpiejdfNTBiME9zdUE2V0pVU0tF?oc=5"
-          },
-          {
-            "t": "한국전력, 동반성장 대통령표창 수상···창업기업 816곳 육성 성과",
-            "s": "팍스경제TV",
-            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE10a3JrZmI4YVBWYWdpY2w0cEJlekZCY0tscUtIajI3SWMxRVlCdG9tVGhVX0xXbUE1V2tKak9DS0NjMWs3d2xMdEx3WGlhdkNUSU9lV1c2VUVKU2V1cUNBUDBDVjV3RkE?oc=5"
-          },
-          {
-            "t": "한국전력, '2026년 올해의 상생기업대상' 대통령표창 수상",
-            "s": "머니투데이",
-            "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9EVUE5WTMxMndpRTl2RXFnOHNpdHdFREFWRDZ3QmR5WXVZZU56bkhOZVhPejBsdUhnd0lYbjg3U09uTEVJdFJWQWJvcmZIWEJQUWhCS3BKc25zQjVVd1dhWDNLcFYyc3VOVWfSAW9BVV95cUxQbDVaUDN0MGFyX3R4amRWcXAyclJQQUNTSmNMY3M0Z0swVGpPTmx5YzBITHlrVG9ubFUzOXhiREZMcy1HMUxKdnlQRl9OWmNRSWk1LVVGOWtyb3EydWJfSGJIYmxtSUcyZXlEdkJzYjA?oc=5"
+            "t": "'과잉생산 관세' 美, 中 '희토류 보복' 의식했다 [블룸버그]",
+            "s": "SBS Biz",
+            "u": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1OalU5YURraWdtX3c5bzNfZGlYdzR3cFNjcDhQR00tOHNqWXBMQnk4RmFyTVFpbDY1NHpoY1k3VFNOVXFxZXVIcWVtbk41MVJLVm9V0gFYQVVfeXFMTjZSemhuMzFVcHVtMk95Mm5ra183bjk3czdDTHVQRnNUdENjVkNOc3B2ZUowQzRsM0JHZ05QeVFUY0NUbjFxMjRuSHlGeHlJQVpicXB4M2cxRQ?oc=5"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "한은 기준금리 0.25%p 인상",
-        "easy": "한국은행이 기준금리를 연 3.25%로 0.25%포인트 올렸습니다. 금리가 오르면서 가계와 기업의 대출 이자 부담이 커질 수 있다는 우려가 나오는데요. 쉽게 말하면 대출 금리가 더 오를 수 있어 서민들의 한숨이 깊어지는 상황입니다.",
-        "score": 0.3,
+        "title": "연준 금리 인상 전망에 유로화 1.0950 부근으로 하락…데 코스, 차기 ECB 총재 유력",
+        "easy": "",
+        "score": 0.1,
         "macro": [
-          "기준금리",
-          "한은"
+          "ecb",
+          "금리",
+          "연준"
         ],
-        "n": 7,
+        "n": 1,
         "arts": [
           {
-            "t": "한은 기준금리 올린 날 무슨 일이?…국고채 만기별로 희비 엇갈린 이유",
-            "s": "매일경제 마켓",
-            "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82Ql9PM0NfS0FwdzU3WW5zWGtGTzFLbVc0aXRqUkpmbm9nam5DSHVtQjFyMEdxbWFVUHZDaDNGOWhYVWJwQ2NfUDMyZU9GckxHbFE?oc=5"
-          },
-          {
-            "t": "해외기관, 한은 기준금리 전망 엇갈려",
-            "s": "스트레이트뉴스",
-            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5jcXdfZHY5bldBakhQMjREd2ZSTVlKcG1hOUEzMVFLMjRkRkQ1S1ZVczhnV1J4T25VTG9MY2NOUHpZczgtMTZzWlB0Z0R1ZHZpWHJrdmtrNk5NN2g0aWZSS1pmdDZLSWhnWlJNLUxkR3lwWG_SAXdBVV95cUxPZkZpaUlnTjItbF80T09qWkl2bzBiQzNiUjZ3QTN5ZkRIeHNUOEFaQ1Y0YkRSbTRlVFlwaTFxdjZzTlIzc1FDVlJKR2pZN1JYV2xHSGI5NlI0ckcwbGRLMUtKOW05OFkySTFjTklCOEZMOVhzNWVCNA?oc=5"
-          },
-          {
-            "t": "한은, 기준금리 연 3.25%로 0.25%p 인상…올해·내년 성장률 3.9%·4.1%로 대폭 상향",
-            "s": "전자신문",
-            "u": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFB2RWFsd29FbnhYRDU4TkJqZG96Vko0TVp6SkREby1vbVRQUGlZVkw5VHNTZG9Jb3dSXzBRQmtLQ1p0TnVRVDNxM1cyU3hXdw?oc=5"
+            "t": "연준 금리 인상 전망에 유로화 1.0950 부근으로 하락…데 코스, 차기 ECB 총재 유력",
+            "s": "www.tmgm.com",
+            "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdVBna2R0cG1iODdSM2hqSlFzeUkwc3lERktYWWZsS3BYYk9LV3RvNFNORGlHekF6WHduZGxXR2hsUVZOdTBuUEx0Nk9oV0t6NlVvN29seEE3UVZIRzU4YXFxaFBISmQyYUFnZ196b3RTRTBWcm1RVnlucmtrRnB4elEyMGhGcEdEY2Fycmk4QzBYZ3FYeWk1bTJJOTgxTi05MDZPZGpuQnlsaF9SNlF4VXBTaWo5ODZ6Q1pvcFlZQTRLSEpQdzV0QkFVUWk1N3JyN25xVQ?oc=5"
           }
         ]
       },
@@ -196,7 +188,7 @@ window.PANEL_DATA = {
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-27_1606.json"
+    "source": "v2_secretary/결과/갱신/2026-11-27_2108.json"
   },
   "flows": {
     "day": "2026-11-27",
@@ -1098,14 +1090,16 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-27",
-      "start": "2026-11-27 18:21:04",
+      "start": "2026-11-27 21:08:53",
       "by": "github",
       "where": "GitHub",
-      "mode": "indicators",
-      "end": "2026-11-27 18:21:17",
-      "secs": 13,
+      "mode": "refresh",
+      "flows_retry_exit": 0,
       "indicators_refresh_exit": 0,
-      "calls": 0,
+      "end": "2026-11-27 21:10:39",
+      "secs": 106,
+      "exit": 0,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -26277,12 +26271,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
         "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
-        "line_out": "내보냄: 오늘 받기 7번 · 장부 새 줄 11개 · 새벽: 지표 21/21 받음 · 새 줄 5개 · 19.1초",
+        "line_out": "내보냄: 오늘 받기 8번 · 장부 새 줄 12개 · 새벽: 지표 21/21 받음 · 새 줄 5개 · 19.1초",
         "metrics": {
-          "in": 7,
-          "out": 11,
+          "in": 8,
+          "out": 12,
           "calls": 0,
-          "secs": 128.8,
+          "secs": 141.0,
           "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
@@ -26757,9 +26751,9 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
         "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
-        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 1285초 · AI 69콜 · ok · 그 뒤 낮 갱신·지표만 8번",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 1285초 · AI 69콜 · ok · 그 뒤 낮 갱신·지표만 9번",
         "metrics": {
-          "in": 9,
+          "in": 10,
           "out": 1,
           "calls": 69,
           "secs": 1285.0,
