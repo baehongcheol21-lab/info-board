@@ -1,9 +1,9 @@
 // 자동 생성 파일 (v2_secretary/export_panel.py) — 직접 수정하지 마세요.
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
-  "day": "2026-11-27",
-  "generated_at": "2026-11-27 21:34:04",
-  "made_iso": "2026-11-27T21:34:04+09:00",
+  "day": "2026-11-28",
+  "generated_at": "2026-11-28 04:25:50",
+  "made_iso": "2026-11-28T04:25:50+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -11,210 +11,42 @@ window.PANEL_DATA = {
     "pc_locked": "",
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
-  "refresh": {
-    "tag": "2108",
-    "made_iso": "2026-11-27T21:08:53+09:00",
-    "new": 451,
-    "news_new": 371,
-    "calls": 2,
-    "error": "",
-    "times": [
-      "1206",
-      "1606",
-      "2108"
-    ],
-    "picks": [
-      {
-        "seat": "뉴스",
-        "title": "SK하이닉스 자사주 매입",
-        "easy": "SK하이닉스가 최근 주가 하락에 대응해 자사주 매입 속도를 두 배로 높이기로 했습니다. 하루에 사들이는 주식 주문량을 두 배로 늘려 주주가치를 높이겠다는 건데요. 장점은 주가 방어에 도움이 된다는 거지만, 단기적인 시장 우려를 완전히 지우기엔 아직 지켜봐야 한다는 목소리도 나왔다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 5,
-        "arts": [
-          {
-            "t": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
-            "s": "연합뉴스 마켓+",
-            "u": "https://www.yna.co.kr/view/AKR20261127165200003"
-          },
-          {
-            "t": "SK하이닉스, 자사주 일일 매수량 2배…주주가치 제고",
-            "s": "아시아경제",
-            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9DOW82UFJpOS1jc3BTbW5CZno4bnpYVXZuOXJHQ1VIcmtVQjdkc2dYXzZnN0swcmZIQWhURlpaQ0JtRVVlQVBfWU9EdjNINlJyV21PeFJjUHJVcEZpLWlHVg?oc=5"
-          },
-          {
-            "t": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
-            "s": "연합뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE00SG5MbVVoeUVXU3YwRnJWdGdHUm4xTm1oOW5MU0hYVU1VMG83WE5wM2lxdGhUOFpkWmFxd0ZWeVYxcWlxYXRPYVRMSkV0b0x2dWQ3QUh0QktZYWfSAWBBVV95cUxQMURjWllvS1l6dXpwbzBRVHFnUDlyZlotcGFwSzhFbnR5SW5tQ1N6Y3ItX283cl92N1ROMEIwS3RBU2E1Z2U1MF9TdWJtLUVmUTFLSmwtMGppUDdMWUFhaDA?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "한국가스공사 실적 호조",
-        "easy": "한국가스공사가 LNG 가격 상승에 힘입어 해외사업 이익이 급증했습니다. 증권가에서는 목표주가를 올려 잡았는데요. 장점은 연결 영업이익이 크게 늘었다는 거지만, 동시에 미수금 부담도 여전히 크다는 단점이 있다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 5,
-        "arts": [
-          {
-            "t": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담",
-            "s": "파이낸셜뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIRnJ0dXNwcEZPWFVrNF9rY2x2bGIxQ2toTWJPS1YtRGs2U3IwU3A4NFR3U0FNekgyQnk4Ry12b0JSODBYM3AtalFEYlJyWDlaY1ZuYjBmQU5JQQ?oc=5"
-          },
-          {
-            "t": "'홍의락 사장'의 리더십···한국가스공사 연결영업익 급증에 현대차증권, 목표주가 올려",
-            "s": "팍스경제TV",
-            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBxTnZ3eC1fS1hOM2JvUkRKMUphTUJKX3dnUVY5WXlORVVTQld2Z1pOQVhjMmtrSHpmSGhSbV83OUNTWGlCT1p1Zk9OTVpua2FMVG9ERmFnYmxhaGhCZGNVa3VrQV9FRVk?oc=5"
-          },
-          {
-            "t": "\"한국가스공사, 해외 LNG로 이익·미수금 동반 급증…목표가↑\"-현대차",
-            "s": "한국경제",
-            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hZnozOWJkbmNDZzZOWlhFanU3bm5LMkJ0YVIwS1lZZXlzcHZYQjRScXAtb25VNjNFUkc1dHlIWG9CaldBejBxc3MxaXpqeTFLR2I4WWtHMGVvZw?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "동서발전 ESS 672MW 확보",
-        "easy": "동서발전이 ESS 3차 중앙계약시장 입찰에서 672MW 규모의 물량을 확보했습니다. 이로써 누적 용량 기준 국내 1위 자리에 올랐는데요. 호남권 전력계통 안정화와 재생에너지 확대 기반을 다지는 계기가 되었다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 5,
-        "arts": [
-          {
-            "t": "동서발전, ESS 중앙계약시장 672MW 확보...누적 용량 국내 1위",
-            "s": "산경e뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5NbGNoRUNkdnUzR3BOOXRxUHdGdUsyVHdKVmFkZ3ZFM3l2Szl4M2k1SWNjaTN3UmxWMU01eS0tSGJyN3ZkZ3NHSnFfeVFLdk9VNFJ3RTZ6MEZsUkhpZVI2QmlmRmF4S2c?oc=5"
-          },
-          {
-            "t": "동서발전, ESS 입찰 672MW 확보···누적 용량 국내 1위",
-            "s": "인사이트에너지뉴스",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBrZ1U4MWNxYU56QXBLVTlKZ2dHdU9hUVhzdHRrY2g4UENVdVc2RWNNbHV1UzA5ZzQwc3hVakZMNGNvWDF2bThEWmFrRnFpcWVmQmVCclRxVHlFcmdPdkZDcXFILXVOR2tRM2lj0gFrQVVfeXFMUGtnVTgxY3FhTnpBcEtVOUpnZ0d1T2FRWHN0dGtjaDhQQ1V1VzZFY01sdXVTMDlnNDBzeFVqRkw0Y29YMXZtOERaYWtGcWlxZWZCZUJyVHFUeUVyZ092RkNxcUgtdU5Ha1EzaWM?oc=5"
-          },
-          {
-            "t": "동서발전, ESS 중앙계약 시장 서 672MW 규모 물량 확보…재생에너지 확대 기반 구축",
-            "s": "에너지플랫폼뉴스",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE02VEZIT09Jc1ZzdE9YNW1QdTZDdmlmY292eERhWERPaEdSVDAweS1ZMk1FaGZsVTJuRlI1TXVubEMyTWczR1A5eEJpVzRRTnJBVjFGSFdkQlZZT3dxX3lFWE9oZUY4Z3JHT3hDd9IBcEFVX3lxTE8zU25sTnhzSVZ5MGN2elo5bFV0UzRURWJsSk8zNHA2UHZRclh4UGRsenY4ZFpudkUwZGg3YVVfT1JwTjRxRzJ0VWs0OEpFTk5reE9GbjAyczFHRzU0a2dwSEZQSmVRZ0VQRGFlbFhKRnI?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "트럼프의 젠슨 황 옹호",
-        "easy": "도널드 트럼프 미국 대통령이 젠슨 황 엔비디아 최고경영자에 대해 아무런 문제가 없다고 밝혔습니다. 사퇴와 복귀 과정에서 제기된 안보 우려와 논란을 일축했는데요. 젠슨 황의 복귀를 두고 미국 정치권 내에서는 찬반 공방이 이어지고 있다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 5,
-        "arts": [
-          {
-            "t": "밴스 \"법무장관에게서 '젠슨 황 수사 대상 아니다' 확답받아\"",
-            "s": "뉴스1",
-            "u": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAwSXBuYkpuOUtkZ3FvbXlUbmN2R25PYXlYQ05qS0FlcFBaWmlqcmVrR1hCSjhpc3c3R2JvLV9ydTdEaFJmaGhrNUxJc0pITFdPWW80WnFCVnA?oc=5"
-          },
-          {
-            "t": "트럼프 “젠슨 황 아무런 문제없고…난 세계 위해 훌륭한 일 했다”",
-            "s": "데일리안",
-            "u": "https://news.google.com/rss/articles/CBMilwJBVV95cUxObEJ1MlNrMTJDZTZ5V0NCakVEY3R4NWlXTFR5WEY5NGNocXlWaVBTazZXYnRDVFpqOFJUYmtTY0tiQUtpRGZYeHcwX05kaXM5VVQ5TG9OSXYybG9LQ1ZRbUdJQW93T1MxUndWbWdnUkJVSXF6QXZpWGcxSC1TUm9YSGtkUHVqR1RHWXhEZTNXLVRqOHg2TEdaZjFhRzJkSU1GVzkyTnp5TnFpSEY5eFZRRm1KdjBwVERkVmotdEdCLVlmcElUNHhYREYtWFNINGdWM2l0el83X3Y0RHhzVUxTRHZCc3NkODg3cW56bERMejQwXzlNTWpRbUtlN0J6NkdnUjFkODZ5Vjc5MkQ"
-          },
-          {
-            "t": "\"젠슨황 복귀, 내가 큰일했다\" 트럼프 자랑…안보위협 '일축'",
-            "s": "머니투데이",
-            "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5pNHJEc2dyZEs2TkFhQUNJejdTX2JZaDNmWWh3ZFk4QThxSXpkcjFUb1JNMl95dGlERmVIM0duUUIzUnVzR0FyOHVWVWlNUjcwQzNOdGhaTHpZZnZFVDVDOWg1V2lLZUdkck84N3JR0gFuQVVfeXFMTmk0ckRzZ3JkSzZOQWFBQ0l6N1NfYlloM2ZZaHdkWThBOHFJemRyMVRvUk0yX3l0aURGZUgzR25RQjNSdXNHQXI4dVZVaU1SNzBDM050aFpMellmdkVUNUM5aDVXaUtlR2RyTzg3clE?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "희토류 공급망 우려",
-        "easy": "미국이 중국을 향해 고율 관세를 꺼내 들면서 희토류 보복 가능성이 제기됐습니다. 일본도 비축분을 풀며 버텨왔지만, 16년 동안 정제와 자석 공급망은 여전히 중국 중심이라는 분석이 나왔거든요. 쉽게 말하면 관세 압박 속에서도 핵심 광물 공급망은 중국 의존도가 여전히 높다는 겁니다.",
-        "score": 0.55,
-        "macro": [],
-        "n": 4,
-        "arts": [
-          {
-            "t": "희토류 비축분 풀어 버티는 日···16년 노력에도 정제·자석 공급망은 중국 천하",
-            "s": "여성경제신문",
-            "u": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBoZXRfTXZUMGpNcXFNMFUtWE9CVEN2NV9XczJ5cExmS2xLOXhkeTI4d0pxb21RN0tVV3JOQXc3WWFWZTRpdllqd0NUT0Rxb2ZPOEMwc05ZTTRlWkR1ZUQ2c3pZRjVGemtHd3Nlc1hBcHVzcWtvdFBB0gF3QVVfeXFMUGhldF9NdlQwak1xcU0wVS1YT0JUQ3Y1X1dzMnlwTGZLbEs5eGR5Mjh3SnFvbVE3S1VXck5BdzdZYVZlNGl2WWp3Q1RPRHFvZk84QzBzTllNNGVaRHVlRDZzellGNUZ6a0d3c2VzWEFwdXNxa290UEE?oc=5"
-          },
-          {
-            "t": "동맹엔 15%·중국엔 최대 40% 관세 내건 트럼프, 고율 관세로 희토류 빗장 풀까",
-            "s": "The Economy Korea",
-            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9naGotMHhfVjFxVm1GRTdpZzFZNGdnVHl5Q0dLaVY4VHFLY25OcXBseWJyLXVKcXFrOC1lbGtpX1pxRms0N1JZVFVqU2xEWHpkbkhoempIMzktTEk?oc=5"
-          },
-          {
-            "t": "'과잉생산 관세' 美, 中 '희토류 보복' 의식했다 [블룸버그]",
-            "s": "SBS Biz",
-            "u": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1OalU5YURraWdtX3c5bzNfZGlYdzR3cFNjcDhQR00tOHNqWXBMQnk4RmFyTVFpbDY1NHpoY1k3VFNOVXFxZXVIcWVtbk41MVJLVm9V0gFYQVVfeXFMTjZSemhuMzFVcHVtMk95Mm5ra183bjk3czdDTHVQRnNUdENjVkNOc3B2ZUowQzRsM0JHZ05QeVFUY0NUbjFxMjRuSHlGeHlJQVpicXB4M2cxRQ?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "거시",
-        "title": "연준 금리 인상 전망에 유로화 1.0950 부근으로 하락…데 코스, 차기 ECB 총재 유력",
-        "easy": "",
-        "score": 0.1,
-        "macro": [
-          "ecb",
-          "금리",
-          "연준"
-        ],
-        "n": 1,
-        "arts": [
-          {
-            "t": "연준 금리 인상 전망에 유로화 1.0950 부근으로 하락…데 코스, 차기 ECB 총재 유력",
-            "s": "www.tmgm.com",
-            "u": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOdVBna2R0cG1iODdSM2hqSlFzeUkwc3lERktYWWZsS3BYYk9LV3RvNFNORGlHekF6WHduZGxXR2hsUVZOdTBuUEx0Nk9oV0t6NlVvN29seEE3UVZIRzU4YXFxaFBISmQyYUFnZ196b3RTRTBWcm1RVnlucmtrRnB4elEyMGhGcEdEY2Fycmk4QzBYZ3FYeWk1bTJJOTgxTi05MDZPZGpuQnlsaF9SNlF4VXBTaWo5ODZ6Q1pvcFlZQTRLSEpQdzV0QkFVUWk1N3JyN25xVQ?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "거시",
-        "title": "美 연준, 기술주 급락에도 12월 금리인상 전망…물가 압력 경계",
-        "easy": "",
-        "score": 0.1,
-        "macro": [
-          "금리",
-          "물가",
-          "연준"
-        ],
-        "n": 1,
-        "arts": [
-          {
-            "t": "美 연준, 기술주 급락에도 12월 금리인상 전망…물가 압력 경계",
-            "s": "뉴시스",
-            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8tb21vWkhkTGtDVTZxV0hIbjBwdHJyaENCWlpralpGa2tiUmdwQjdITlVka3piSmMwSDNVUGtMbzRiTzl4TDcybVlWQUQ4VGRfVzEtRUg0UTRPYVlzTTNBVtIBeEFVX3lxTE9GdzRnZEU5Wk1QQlJZYTFRZkotNGhmTDBNOUNNRHhUZGlBd3B3VkUyM2IyUlBGM3lhT2xjVC1FQ3lJOUF4M3R0VGJndWwxb2lUazJuN0R2Wk03RzdpejZ5US1tSkU1VUNHaDZWVWgxR0dFMERqMG5Fag?oc=5"
-          }
-        ]
-      }
-    ],
-    "source": "v2_secretary/결과/갱신/2026-11-27_2108.json"
-  },
+  "refresh": {},
   "flows": {
-    "day": "2026-11-27",
+    "day": "2026-11-28",
     "same_day": true,
-    "model": "gemini-3.6-flash",
-    "secs": 404.0,
-    "problems": [
-      "흐름1 팩트 검사: 인과 '여파': 근거에 없는 인과(지어냄) — 11월 27일 한 매체 보도에 따르면 기준금리 인상과 매파적 점도표 여파"
-    ],
-    "n_cards": 377,
+    "model": "gemini-3.8-flash",
+    "secs": 89.1,
+    "problems": [],
+    "n_cards": 401,
     "flows": [
       {
-        "title": "금리·물가 압력 지속과 한은 기준금리 인상에 따른 시중금리 상방 흐름",
+        "title": "한·미 긴축 기조 재점화와 국고채 금리 상승 압력",
         "steps": [
           {
             "kind": "팩트",
-            "text": "11월 27일 금융통화위원회는 기준금리를 3.00%에서 3.25%로 0.25%포인트 인상했다.",
+            "text": "미국 10월 PCE 물가가 3.8% 상승했다.",
             "refs": [
               {
-                "day": "2026-11-27",
+                "day": "2026-11-25",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "미국 10월 PCE 물가가 3.8% 상승했다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "금융통화위원회는 기준금리를 3.00%에서 3.25%로 0.25%포인트 올리기로 결정했다.",
+            "refs": [
+              {
+                "day": "2026-11-26",
                 "kind": "보도자료",
                 "grade": "공식",
                 "fact": "금융통화위원회는 기준금리를 3.00%에서 3.25%로 0.25%포인트 올리기로 했다."
               },
               {
-                "day": "2026-11-27",
+                "day": "2026-11-26",
                 "kind": "뉴스 사건",
                 "grade": "복수 보도",
                 "fact": "한국은행이 기준금리를 0.25%p 인상하여 2년 만에 연 3.25%가 되었다는 소식이다."
@@ -223,10 +55,10 @@ window.PANEL_DATA = {
           },
           {
             "kind": "팩트",
-            "text": "한국은행 보도자료에 따르면 한국은행은 국내 경제가 올해 3.9%, 내년 4.1% 성장하고 소비자물가는 올해 2.7%, 내년 2.4% 오를 것으로 전망했다.",
+            "text": "한국은행은 국내 경제 성장률을 올해 3.9%, 내년 4.1%로, 소비자물가 상승률은 올해 2.7%, 내년 2.4%로 오를 것으로 전망했다.",
             "refs": [
               {
-                "day": "2026-11-27",
+                "day": "2026-11-26",
                 "kind": "보도자료",
                 "grade": "공식",
                 "fact": "한국은행은 국내 경제가 올해 3.9%, 내년 4.1% 성장하고 소비자물가는 올해 2.7%, 내년 2.4% 오르며 경상수지 흑자는 올해 5,000억 달러, 내년 5,400억 달러를 기록할 것으로 전망했다."
@@ -235,54 +67,72 @@ window.PANEL_DATA = {
           },
           {
             "kind": "팩트",
-            "text": "11월 26일 복수 보도에 따르면 미국의 10월 PCE 물가는 3.8% 상승했다.",
+            "text": "연합뉴스 경제 보도에 따르면 기준금리 인상과 매파적 점도표에 국고채 금리가 상승했다.",
             "refs": [
               {
                 "day": "2026-11-26",
                 "kind": "뉴스 사건",
-                "grade": "복수 보도",
-                "fact": "미국 10월 PCE 물가가 3.8% 상승했다."
+                "grade": "한 매체 보도",
+                "fact": "기준금리 인상과 매파적 점도표에 국고채 금리가 상승했다."
               }
             ]
           },
           {
             "kind": "팩트",
-            "text": "11월 27일 한 매체 보도에 따르면 기준금리 인상과 매파적 점도표 여파로 국고채 금리가 상승했다.",
+            "text": "복수 보도에 따르면 12월 미 금리 인상 예고에 긴축 도미노가 이어지며 글로벌 채권 랠리가 주춤해졌다.",
             "refs": [
               {
                 "day": "2026-11-27",
                 "kind": "뉴스 사건",
-                "grade": "한 매체 보도",
-                "fact": "기준금리 인상과 매파적 점도표에 국고채 금리가 상승했다."
+                "grade": "복수 보도",
+                "fact": "12월 미 금리 인상 예고에 긴축 도미노가 이어지며 글로벌 채권 랠리가 주춤하다는 소식이다."
               }
             ]
           },
           {
             "kind": "추정·연결",
-            "text": "미국의 PCE 물가 상승과 한국은행의 기준금리 인상 및 긴축 기조 재확인은 시중 국고채 금리의 추가적인 상방 압력으로 작동하고 있다.",
+            "text": "미국의 물가 지표 상승과 12월 연준 금리 인상 경계감에 더해 한국은행의 0.25%p 기준금리 인상이 맞물리면서 국내외 채권 시장의 긴축 기조가 강화되고 채권 금리에 추가 상승 압력으로 작용하고 있다.",
             "refs": [
               {
-                "day": "2026-11-27",
-                "kind": "보도자료",
-                "grade": "공식",
-                "fact": "금융통화위원회는 기준금리를 3.00%에서 3.25%로 0.25%포인트 올리기로 했다."
-              },
-              {
-                "day": "2026-11-26",
+                "day": "2026-11-25",
                 "kind": "뉴스 사건",
                 "grade": "복수 보도",
                 "fact": "미국 10월 PCE 물가가 3.8% 상승했다."
               },
               {
-                "day": "2026-11-27",
+                "day": "2026-11-26",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "한국은행이 기준금리를 0.25%p 인상하여 2년 만에 연 3.25%가 되었다는 소식이다."
+              },
+              {
+                "day": "2026-11-26",
                 "kind": "뉴스 사건",
                 "grade": "한 매체 보도",
                 "fact": "기준금리 인상과 매파적 점도표에 국고채 금리가 상승했다."
+              },
+              {
+                "day": "2026-11-26",
+                "kind": "보도자료",
+                "grade": "공식",
+                "fact": "한국은행은 국내 경제가 올해 3.9%, 내년 4.1% 성장하고 소비자물가는 올해 2.7%, 내년 2.4% 오르며 경상수지 흑자는 올해 5,000억 달러, 내년 5,400억 달러를 기록할 것으로 전망했다."
+              },
+              {
+                "day": "2026-11-26",
+                "kind": "보도자료",
+                "grade": "공식",
+                "fact": "금융통화위원회는 기준금리를 3.00%에서 3.25%로 0.25%포인트 올리기로 했다."
+              },
+              {
+                "day": "2026-11-27",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "12월 미 금리 인상 예고에 긴축 도미노가 이어지며 글로벌 채권 랠리가 주춤하다는 소식이다."
               }
             ]
           }
         ],
-        "counter": "11월 25일 한 매체 보도에 따르면 엔비디아발 위험선호 회복 영향으로 원/달러 환율은 3.5원 내린 1,342.4원을 기록했다.",
+        "counter": "하나증권 리포트에 따르면 AI 관련 주가 급락 국면에서도 금리 하락과 비과세 배당에 따른 고배당 매력이 부각되는 측면이 상존한다.",
         "same_dart": [
           "기가비스 단일판매ㆍ공급계약체결: 반도체 기판 수리장비 외 한국 반도체 기판 제조회사 (매출 대비 74%)",
           "네오셈 단일판매ㆍ공급계약체결: 반도체 검사장비(GEN6 SSD TESTER 외) NEOSEM TECHNOLOGY INC. (매출 대비 22.2%)",
@@ -292,52 +142,34 @@ window.PANEL_DATA = {
         ],
         "claims": [
           {
-            "claim": "한은 기준금리 인상 발표 후 국고채 3년 금리의 상승 흐름 유지 여부",
+            "claim": "한미 중앙은행의 매파적 긴축 신호와 한은의 기준금리 인상 여파로 국내 국고채 금리가 단기적으로 추가 상승세를 이어갈 것이다.",
             "measure": "국고채 3년 금리",
             "baseline": "없음",
-            "win_if": "+0.05%p 이상 상승",
+            "win_if": "+0.10%p 이상 상승",
             "after_days": 14,
             "reader": "읽음"
           }
         ]
       },
       {
-        "title": "SK하이닉스 용인 Y1 발주 가속화와 메모리 검사·수리 장비 공급계약 잇따라",
+        "title": "HBM 단가 상승과 차세대 SSD·CXL 검사장비 공급망 수혜",
         "steps": [
           {
             "kind": "팩트",
-            "text": "한화투자증권은 SK하이닉스 용인 Y1의 첫 클린룸 개방 시점이 2027년 2월로 3개월 앞당겨졌다고 밝혔다.",
-            "refs": [
-              {
-                "day": "2026-11-26",
-                "kind": "리포트",
-                "grade": "기관 의견",
-                "fact": "한화투자증권은 SK하이닉스 용인 Y1의 첫 클린룸 개방 시점이 2027년 2월로 3개월 앞당겨졌다고 밝혔다."
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "11월 26일 한 매체 보도에 따르면 SK하이닉스 Y1 발주가 시작되었다.",
-            "refs": [
-              {
-                "day": "2026-11-26",
-                "kind": "뉴스 사건",
-                "grade": "한 매체 보도",
-                "fact": "SK하이닉스 Y1 발주가 시작됐다."
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "유니테스트는 2026년 11월 24일 SK하이닉스와 매출 대비 5.2% 규모의 반도체 검사장비 공급계약을 공시한 데 이어 11월 26일 마이크론과 매출 대비 11.17% 규모의 검사장비 공급계약을 공시했다.",
+            "text": "네오셈은 11월 24일 NEOSEM TECHNOLOGY INC.와 매출 대비 22.2% 규모의 반도체 검사장비(GEN6 SSD TESTER 외) 공급계약을 체결했다고 공시했다.",
             "refs": [
               {
                 "day": "2026-11-24",
                 "kind": "공시",
                 "grade": "공식",
-                "fact": "유니테스트 단일판매ㆍ공급계약체결(자율공시): 반도체 검사장비 (GEN6 SSD TESTER) SK하이닉스 (매출 대비 5.2%)"
-              },
+                "fact": "네오셈 단일판매ㆍ공급계약체결: 반도체 검사장비(GEN6 SSD TESTER 외) NEOSEM TECHNOLOGY INC. (매출 대비 22.2%)"
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "유니테스트는 11월 26일 Micron Semiconductor Technology와 매출 대비 11.17% 규모의 반도체 검사장비(GEN6 SSD TESTER) 공급계약을 체결했다고 공시했다.",
+            "refs": [
               {
                 "day": "2026-11-26",
                 "kind": "공시",
@@ -348,7 +180,7 @@ window.PANEL_DATA = {
           },
           {
             "kind": "팩트",
-            "text": "네오셈과 엑시콘은 삼성전자에 각각 매출 대비 10.1%, 12.2% 규모의 CLT 인터페이스 보드 공급계약을 공시했다.",
+            "text": "네오셈은 11월 25일 삼성전자와 매출 대비 10.1% 규모의 CLT INTERFACE BOARD 공급계약을, 엑시콘은 11월 26일 삼성전자와 매출 대비 12.2% 규모의 CLT Interface Board 공급계약을 체결했다고 공시했다.",
             "refs": [
               {
                 "day": "2026-11-25",
@@ -366,43 +198,37 @@ window.PANEL_DATA = {
           },
           {
             "kind": "팩트",
-            "text": "기가비스는 2026년 11월 23일 한국 반도체 기판 제조회사와 매출 대비 74% 규모의 반도체 기판 수리장비 공급계약을 공시했다.",
+            "text": "조선일보 보도에 따르면 내년 HBM 값이 2배로 오르고 고객이 다변화되면서 HBM 시장에 지각변동이 일어나고 있다.",
             "refs": [
               {
-                "day": "2026-11-23",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "기가비스 단일판매ㆍ공급계약체결: 반도체 기판 수리장비 외 한국 반도체 기판 제조회사 (매출 대비 74%)"
+                "day": "2026-11-26",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "내년 HBM 값이 2배로 오르고 고객이 다변화되면서 HBM 시장에 지각변동이 일어나고 있다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "한화투자증권에 따르면 SK하이닉스 용인 Y1의 첫 클린룸 개방 시점이 2027년 2월로 3개월 앞당겨졌다.",
+            "refs": [
+              {
+                "day": "2026-11-26",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "한화투자증권은 SK하이닉스 용인 Y1의 첫 클린룸 개방 시점이 2027년 2월로 3개월 앞당겨졌다고 밝혔다."
               }
             ]
           },
           {
             "kind": "추정·연결",
-            "text": "주요 메모리 반도체 제조사의 신규 팹 투자가 앞당겨지면서 검사 및 수리 장비 생산업체들의 매출 직결 수주 공시가 집중되고 있다.",
+            "text": "HBM의 판가 상승 및 SK하이닉스의 차세대 팹 개방 일정 단축과 더불어, 마이크론 및 삼성전자향 차세대 SSD(GEN6)와 CXL(CLT) 테스트 인터페이스 보드 계약이 동시다발적으로 체결되며 후공정 검사장비 밸류체인으로 실질적인 계약 수주가 확산되고 있다.",
             "refs": [
-              {
-                "day": "2026-11-26",
-                "kind": "리포트",
-                "grade": "기관 의견",
-                "fact": "한화투자증권은 SK하이닉스 용인 Y1의 첫 클린룸 개방 시점이 2027년 2월로 3개월 앞당겨졌다고 밝혔다."
-              },
-              {
-                "day": "2026-11-26",
-                "kind": "뉴스 사건",
-                "grade": "한 매체 보도",
-                "fact": "SK하이닉스 Y1 발주가 시작됐다."
-              },
               {
                 "day": "2026-11-24",
                 "kind": "공시",
                 "grade": "공식",
-                "fact": "유니테스트 단일판매ㆍ공급계약체결(자율공시): 반도체 검사장비 (GEN6 SSD TESTER) SK하이닉스 (매출 대비 5.2%)"
-              },
-              {
-                "day": "2026-11-26",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "유니테스트 단일판매ㆍ공급계약체결: 반도체 검사장비 (GEN6 SSD TESTER) Micron Semiconductor Technology (매출 대비 11.17%)"
+                "fact": "네오셈 단일판매ㆍ공급계약체결: 반도체 검사장비(GEN6 SSD TESTER 외) NEOSEM TECHNOLOGY INC. (매출 대비 22.2%)"
               },
               {
                 "day": "2026-11-25",
@@ -417,24 +243,38 @@ window.PANEL_DATA = {
                 "fact": "엑시콘 단일판매ㆍ공급계약체결: CLT Interface Board 삼성전자 (매출 대비 12.2%)"
               },
               {
-                "day": "2026-11-23",
+                "day": "2026-11-26",
                 "kind": "공시",
                 "grade": "공식",
-                "fact": "기가비스 단일판매ㆍ공급계약체결: 반도체 기판 수리장비 외 한국 반도체 기판 제조회사 (매출 대비 74%)"
+                "fact": "유니테스트 단일판매ㆍ공급계약체결: 반도체 검사장비 (GEN6 SSD TESTER) Micron Semiconductor Technology (매출 대비 11.17%)"
+              },
+              {
+                "day": "2026-11-26",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "내년 HBM 값이 2배로 오르고 고객이 다변화되면서 HBM 시장에 지각변동이 일어나고 있다."
+              },
+              {
+                "day": "2026-11-26",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "한화투자증권은 SK하이닉스 용인 Y1의 첫 클린룸 개방 시점이 2027년 2월로 3개월 앞당겨졌다고 밝혔다."
               }
             ]
           }
         ],
-        "counter": "11월 27일 한 매체 보도에 따르면 미국 마이크론 주가가 이틀 새 15% 폭락했다.",
+        "counter": "비즈니스포스트 보도에 따르면 메모리반도체 가격이 2027년 중반부터 하락할 것이라는 전망이 제기되었으며, 데일리25 보도에 따르면 미국 마이크론 주가가 이틀 새 15% 폭락했다.",
         "same_dart": [
-          "네오셈 단일판매ㆍ공급계약체결: 반도체 검사장비(GEN6 SSD TESTER 외) NEOSEM TECHNOLOGY INC. (매출 대비 22.2%)",
-          "대성하이텍 단일판매ㆍ공급계약체결: 반도체 후공정 테스트용 부품 제작 장비 공급 계약 JIANGSU HANCHUANG MACHINERY CO., (매출 대비 23.63%)"
+          "기가비스 단일판매ㆍ공급계약체결: 반도체 기판 수리장비 외 한국 반도체 기판 제조회사 (매출 대비 74%)",
+          "유니테스트 단일판매ㆍ공급계약체결(자율공시): 반도체 검사장비 (GEN6 SSD TESTER) SK하이닉스 (매출 대비 5.2%)",
+          "대성하이텍 단일판매ㆍ공급계약체결: 반도체 후공정 테스트용 부품 제작 장비 공급 계약 JIANGSU HANCHUANG MACHINERY CO., (매출 대비 23.63%)",
+          "그린생명과학 단일판매ㆍ공급계약체결: AI반도체 소재 공급계약 그린케미칼(주) (매출 대비 41.52%)"
         ],
         "claims": [
           {
-            "claim": "메모리 반도체 검사장비 계약을 공시한 유니테스트와 네오셈의 코스닥 대비 초과 수익률",
-            "measure": "유니테스트, 네오셈",
-            "baseline": "코스닥",
+            "claim": "차세대 GEN6 SSD 테스터 및 CXL 보드 수주 공시를 확보한 반도체 검사장비 기업들의 주가가 반도체 업종 지수 대비 초과 수익을 기록할 것이다.",
+            "measure": "네오셈, 엑시콘, 유니테스트",
+            "baseline": "필라델피아 반도체지수",
             "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
             "after_days": 30,
             "reader": "읽음"
@@ -442,84 +282,78 @@ window.PANEL_DATA = {
         ]
       },
       {
-        "title": "데이터센터 전력 수요 급증과 비상발전·SOFC 연료전지 공시 본격화",
+        "title": "AI 데이터센터 급증에 따른 비상발전 및 전력 인프라 기자재 공급 확대",
         "steps": [
           {
             "kind": "팩트",
-            "text": "11월 27일 한 매체 보도에 따르면 골드만삭스는 미국의 데이터센터 붐이 2028년까지 지속되며 전력과 천연가스 수요가 증가할 것이라고 밝혔다.",
-            "refs": [
-              {
-                "day": "2026-11-27",
-                "kind": "뉴스 사건",
-                "grade": "한 매체 보도",
-                "fact": "골드만삭스는 미국의 데이터센터 붐이 2028년까지 지속되며 전력과 천연가스 수요가 증가할 것이라고 밝혔다."
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "DS투자증권은 국내 데이터센터 시장이 2029년 11.1조원 규모로 커질 것으로 전망했다.",
-            "refs": [
-              {
-                "day": "2026-11-27",
-                "kind": "리포트",
-                "grade": "기관 의견",
-                "fact": "국내 데이터센터 시장은 2029년 11.1조원 규모로 커질 전망이다."
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "지엔씨에너지는 2026년 11월 25일 DL E&C와 김포데이터센터 가스터빈 비상발전기 공급계약을 체결했다고 공시했다(매출 대비 15%).",
+            "text": "지엔씨에너지는 11월 25일 디엘이엔씨와 매출 대비 15% 규모의 김포데이터센터 가스터빈 비상발전기 외 공급계약을 체결하고, 11월 27일 씨제이대한통운과 매출 대비 12.8% 규모의 안산 AIDC 가스터빈 발전기 공급계약을 체결했다고 공시했다.",
             "refs": [
               {
                 "day": "2026-11-25",
                 "kind": "공시",
                 "grade": "공식",
                 "fact": "지엔씨에너지 단일판매ㆍ공급계약체결: 김포데이터센터 가스터빈 비상발전기외 디엘이엔씨(주) (매출 대비 15%)"
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "서진시스템은 2026년 11월 25일 Bloom Energy와 고체산화물 연료전지(SOFC) 모듈 및 부품 생산 공급계약을 체결했다고 공시했다(매출 대비 15.53%).",
-            "refs": [
+              },
               {
-                "day": "2026-11-25",
+                "day": "2026-11-27",
                 "kind": "공시",
                 "grade": "공식",
-                "fact": "서진시스템 단일판매ㆍ공급계약체결: 고체산화물 연료전지(SOFC) 모듈 및 부품 생산 Bloom Energy Corporation (매출 대비 15.53%)"
+                "fact": "지엔씨에너지 단일판매ㆍ공급계약체결: 안산 AIDC 가스터빈 발전기 씨제이대한통운(주) (매출 대비 12.8%)"
               }
             ]
           },
           {
             "kind": "팩트",
-            "text": "11월 27일 한 매체 보도에 따르면 현대차 울산공장 전력망 보강을 위해 154kV 송전선로 신설이 승인되었다.",
+            "text": "비나텍은 11월 27일 SANMINA CORPORATION과 매출 대비 15.95% 규모의 데이터센터용 슈퍼커패시터 공급계약을 체결했다고 공시했다.",
             "refs": [
               {
                 "day": "2026-11-27",
-                "kind": "뉴스 사건",
-                "grade": "한 매체 보도",
-                "fact": "현대차 울산공장 전력망 보강을 위해 154㎸ 송전선로 신설이 승인되었다."
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "비나텍 [기재정정]단일판매ㆍ공급계약체결: 데이터센터용 슈퍼커패시터 공급계약 SANMINA CORPORATION (매출 대비 15.95%)"
               }
             ]
           },
           {
-            "kind": "추정·연결",
-            "text": "글로벌 및 국내 데이터센터 시장 확대로 인한 전력 부족 우려 속에서 비상발전기와 SOFC 연료전지 등 인프라 부품 제조사의 수주가 구체화되고 있다.",
+            "kind": "팩트",
+            "text": "논문에 따르면 인공지능 워크로드의 급격한 성장에 따른 데이터 센터 전력 수요 증가와 전자기 과도 현상 예측을 위한 디지털 트윈 연구가 진행되고 있다.",
+            "refs": [
+              {
+                "day": "2026-11-26",
+                "kind": "논문",
+                "grade": "기관 의견",
+                "fact": "인공지능 워크로드의 급격한 성장에 따른 데이터 센터 전력 수요 증가와 전자기 과도 현상 예측을 위한 디지털 휜 연구를 다룬다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "유진투자증권에 따르면 한화에어로스페이스는 경남 창원사업장 인근 1만3,000평 부지에 1단계 투자금 10조원으로 180MW 규모의 국방 AI 데이터센터를 구축할 계획이라고 밝혔다.",
+            "refs": [
+              {
+                "day": "2026-11-26",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "한화에어로스페이스는 경남 창원사업장 인근 1만3,000평 부지에 1단계 투자금 10조원으로 180MW 규모의 국방 AI 데이터센터를 구축할 계획이라고 밝혔습니다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "핀포인트뉴스 보도에 따르면 하나증권은 AI 데이터센터 전력 규제 완화에 따라 LS ELECTRIC과 효성중공업의 적극 매수를 제시했다.",
             "refs": [
               {
                 "day": "2026-11-27",
                 "kind": "뉴스 사건",
                 "grade": "한 매체 보도",
-                "fact": "골드만삭스는 미국의 데이터센터 붐이 2028년까지 지속되며 전력과 천연가스 수요가 증가할 것이라고 밝혔다."
-              },
-              {
-                "day": "2026-11-27",
-                "kind": "리포트",
-                "grade": "기관 의견",
-                "fact": "국내 데이터센터 시장은 2029년 11.1조원 규모로 커질 전망이다."
-              },
+                "fact": "하나증권이 AI 데이터센터 전력 규제 완화에 따라 LS ELECTRIC과 효성중공업의 적극 매수를 제시했다."
+              }
+            ]
+          },
+          {
+            "kind": "추정·논문접점",
+            "text": "논문에서 입증된 AI 워크로드 급증에 따른 전력망 과도 현상 및 대규모 전력 소비 문제는 실제 국내외 AI 데이터센터 확장과 비상발전 설비(가스터빈 발전기) 및 전력 보조 장치(슈퍼커패시터) 공시 수주 증가로 직접 연결되고 있다.",
+            "refs": [
               {
                 "day": "2026-11-25",
                 "kind": "공시",
@@ -527,26 +361,44 @@ window.PANEL_DATA = {
                 "fact": "지엔씨에너지 단일판매ㆍ공급계약체결: 김포데이터센터 가스터빈 비상발전기외 디엘이엔씨(주) (매출 대비 15%)"
               },
               {
-                "day": "2026-11-25",
+                "day": "2026-11-26",
+                "kind": "논문",
+                "grade": "기관 의견",
+                "fact": "인공지능 워크로드의 급격한 성장에 따른 데이터 센터 전력 수요 증가와 전자기 과도 현상 예측을 위한 디지털 휜 연구를 다룬다."
+              },
+              {
+                "day": "2026-11-26",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "한화에어로스페이스는 경남 창원사업장 인근 1만3,000평 부지에 1단계 투자금 10조원으로 180MW 규모의 국방 AI 데이터센터를 구축할 계획이라고 밝혔습니다."
+              },
+              {
+                "day": "2026-11-27",
                 "kind": "공시",
                 "grade": "공식",
-                "fact": "서진시스템 단일판매ㆍ공급계약체결: 고체산화물 연료전지(SOFC) 모듈 및 부품 생산 Bloom Energy Corporation (매출 대비 15.53%)"
+                "fact": "비나텍 [기재정정]단일판매ㆍ공급계약체결: 데이터센터용 슈퍼커패시터 공급계약 SANMINA CORPORATION (매출 대비 15.95%)"
+              },
+              {
+                "day": "2026-11-27",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "지엔씨에너지 단일판매ㆍ공급계약체결: 안산 AIDC 가스터빈 발전기 씨제이대한통운(주) (매출 대비 12.8%)"
               },
               {
                 "day": "2026-11-27",
                 "kind": "뉴스 사건",
                 "grade": "한 매체 보도",
-                "fact": "현대차 울산공장 전력망 보강을 위해 154㎸ 송전선로 신설이 승인되었다."
+                "fact": "하나증권이 AI 데이터센터 전력 규제 완화에 따라 LS ELECTRIC과 효성중공업의 적극 매수를 제시했다."
               }
             ]
           }
         ],
-        "counter": "11월 25일 한 매체 보도에 따르면 부천 데이터센터와 인천 특고압선 설치를 둘러싸고 전력 인프라 부담 갈등이 발생했다.",
+        "counter": "이투뉴스 보도에 따르면 전기료 인상에 따라 AI 데이터센터 건립에 대한 지역 반대가 확산되면서 기업 인수전 등에 차질이 빚어지고 있다.",
         "same_dart": [],
         "claims": [
           {
-            "claim": "데이터센터 전력 인프라 공급계약을 공시한 지엔씨에너지와 서진시스템의 초과 수익률",
-            "measure": "지엔씨에너지, 서진시스템",
+            "claim": "AI 데이터센터 비상발전기 및 데이터센터 전력 부품 수주 계약을 공시한 기업들의 주가가 코스닥 지수 대비 초과 상승할 것이다.",
+            "measure": "지엔씨에너지, 비나텍",
             "baseline": "코스닥",
             "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
             "after_days": 30,
@@ -555,11 +407,53 @@ window.PANEL_DATA = {
         ]
       },
       {
-        "title": "북미·글로벌 ESS 수요 폭발과 양극재 전구체·믹싱 장비 수주 확산",
+        "title": "국내 3차 중앙계약시장 개화와 글로벌 ESS 대형 수주 드라이브",
         "steps": [
           {
             "kind": "팩트",
-            "text": "신한투자증권은 3분기 누적 기준 전 세계 ESS 셀 출하량이 779.9GWh로 전년 대비 73% 늘었고 북미도 122.3GWh로 71% 증가했다고 발표했다.",
+            "text": "티에스아이는 11월 26일 해외 이차전지기업과 매출 대비 12.6% 규모의 2차전지 믹싱시스템 공급계약을 체결했다고 공시했다.",
+            "refs": [
+              {
+                "day": "2026-11-26",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "티에스아이 [기재정정]단일판매ㆍ공급계약체결: 2차전지 믹싱시스템 해외 이차전지기업 (매출 대비 12.6%)"
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "복수 보도에 따르면 ESS 3차 중앙계약시장에서 1194MW가 낙찰되어 2차 대비 두 배 규모로 늘어났다.",
+            "refs": [
+              {
+                "day": "2026-11-26",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "에스에스에스 3차 중앙계약시장이 1194MW 낙찰되어 2차 대비 두 배 늘었다는 소식이다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "복수 보도에 따르면 동서발전이 ESS 중앙계약시장을 확보하고 전국 14곳에 1194MW 규모의 ESS를 구축하기로 했으며, 삼성SDI가 63%, SK온이 37%로 총 2조원 규모의 물량을 양분했다.",
+            "refs": [
+              {
+                "day": "2026-11-27",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "동서발전이 ESS 중앙계약시장을 확보하고 전국 14곳에 1194MW 규모 ESS를 구축한다."
+              },
+              {
+                "day": "2026-11-27",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "2조원 ESS 물량을 양분하여 삼성SDI 63%, SK온 37%를 확보했다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "신한투자증권에 따르면 3분기 누적 전 세계 ESS 셀 출하량은 779.9GWh로 73% 늘었고 북미 출하량도 122.3GWh로 71% 증가했다.",
             "refs": [
               {
                 "day": "2026-11-26",
@@ -571,56 +465,32 @@ window.PANEL_DATA = {
           },
           {
             "kind": "팩트",
-            "text": "신한투자증권에 따르면 삼성SDI는 3분기 실적발표 당시 ESS 수주를 60GWh 이상 확보했고 연말까지 120GWh 이상을 목표로 제시했다.",
+            "text": "신한투자증권에 따르면 삼성SDI는 3분기 실적발표 당시 ESS 수주를 60GWh 이상 확보했고 연말까지 120GWh 이상 확보하겠다는 목표를 제시했다.",
             "refs": [
               {
                 "day": "2026-11-26",
                 "kind": "리포트",
                 "grade": "기관 의견",
                 "fact": "삼성SDI는 3분기 실적발표 당시 ESS 수주를 60GWh 이상 확보했고 연말까지 120GWh 이상을 확보하겠다는 목표를 제시했습니다."
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "키움증권 리포트에 따르면 배터리 3사의 2027년 미국 ESS 사업 영업이익은 2.7조원에 달할 것으로 추정된다.",
-            "refs": [
-              {
-                "day": "2026-11-25",
-                "kind": "리포트",
-                "grade": "기관 의견",
-                "fact": "증권사는 배터리 3사의 2027년 미국 ESS 사업 영업이익이 2.7조원에 달할 것으로 추정했습니다."
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "에코앤드림은 2026년 11월 26일 Umicore SA와 매출 대비 17.16% 규모의 하이니켈 NCM 전구체 공급계약을 공시했다.",
-            "refs": [
-              {
-                "day": "2026-11-26",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "에코앤드림 단일판매ㆍ공급계약체결: 하이니켈 NCM 전구체 공급 PO Umicore SA (매출 대비 17.16%)"
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "티에스아이는 2026년 11월 26일 해외 이차전지기업과 매출 대비 12.6% 규모의 2차전지 믹싱시스템 공급계약을 공시했다.",
-            "refs": [
-              {
-                "day": "2026-11-26",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "티에스아이 [기재정정]단일판매ㆍ공급계약체결: 2차전지 믹싱시스템 해외 이차전지기업 (매출 대비 12.6%)"
               }
             ]
           },
           {
             "kind": "추정·연결",
-            "text": "미국 및 전 세계 ESS 출하량의 급증에 힘입어 국내 배터리 셀 업체뿐만 아니라 양극재 전구체 및 믹싱 장비 공급계약 공시로 온기가 확산되고 있다.",
+            "text": "국내 3차 ESS 중앙계약시장의 규모 확대와 2조원 규모 물량 배정에 더해 북미 중심의 글로벌 셀 출하량 급증이 겹치면서 배터리 셀 제조사 및 장비사의 가시적인 실적 모멘텀이 강화되고 있다.",
             "refs": [
+              {
+                "day": "2026-11-26",
+                "kind": "공시",
+                "grade": "공식",
+                "fact": "티에스아이 [기재정정]단일판매ㆍ공급계약체결: 2차전지 믹싱시스템 해외 이차전지기업 (매출 대비 12.6%)"
+              },
+              {
+                "day": "2026-11-26",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "에스에스에스 3차 중앙계약시장이 1194MW 낙찰되어 2차 대비 두 배 늘었다는 소식이다."
+              },
               {
                 "day": "2026-11-26",
                 "kind": "리포트",
@@ -634,36 +504,33 @@ window.PANEL_DATA = {
                 "fact": "삼성SDI는 3분기 실적발표 당시 ESS 수주를 60GWh 이상 확보했고 연말까지 120GWh 이상을 확보하겠다는 목표를 제시했습니다."
               },
               {
-                "day": "2026-11-25",
-                "kind": "리포트",
-                "grade": "기관 의견",
-                "fact": "증권사는 배터리 3사의 2027년 미국 ESS 사업 영업이익이 2.7조원에 달할 것으로 추정했습니다."
+                "day": "2026-11-27",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "동서발전이 ESS 중앙계약시장을 확보하고 전국 14곳에 1194MW 규모 ESS를 구축한다."
               },
               {
-                "day": "2026-11-26",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "에코앤드림 단일판매ㆍ공급계약체결: 하이니켈 NCM 전구체 공급 PO Umicore SA (매출 대비 17.16%)"
-              },
-              {
-                "day": "2026-11-26",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "티에스아이 [기재정정]단일판매ㆍ공급계약체결: 2차전지 믹싱시스템 해외 이차전지기업 (매출 대비 12.6%)"
+                "day": "2026-11-27",
+                "kind": "뉴스 사건",
+                "grade": "복수 보도",
+                "fact": "2조원 ESS 물량을 양분하여 삼성SDI 63%, SK온 37%를 확보했다."
               }
             ]
           }
         ],
-        "counter": "11월 27일 한 매체 보도에 따르면 미국 데이터센터에 이어 ESS도 입지 갈등을 겪으며 K배터리 사업의 변수가 되고 있다.",
+        "counter": "시사저널e 보도에 따르면 미국 데이터센터에 이어 현지 ESS 역시 입지 갈등을 겪으면서 한국 배터리 기업들의 사업 변수로 부각되고 있다.",
         "same_dart": [
           "지엔씨에너지 단일판매ㆍ공급계약체결: 김포데이터센터 가스터빈 비상발전기외 디엘이엔씨(주) (매출 대비 15%)",
-          "아인스팩씨엔에스 단일판매ㆍ공급계약체결: 2차전지 제어 컨트롤러 국내 제작 및 설계작업 주식회사 와이에이치티 (매출 대비 30.16%)"
+          "비나텍 [기재정정]단일판매ㆍ공급계약체결: 데이터센터용 슈퍼커패시터 공급계약 SANMINA CORPORATION (매출 대비 15.95%)",
+          "지엔씨에너지 단일판매ㆍ공급계약체결: 안산 AIDC 가스터빈 발전기 씨제이대한통운(주) (매출 대비 12.8%)",
+          "아인스팩씨엔에스 단일판매ㆍ공급계약체결: 2차전지 제어 컨트롤러 국내 제작 및 설계작업 주식회사 와이에이치티 (매출 대비 30.16%)",
+          "이노메트리 [기재정정]단일판매ㆍ공급계약체결: 2차전지 제조장비 (주)탑머티리얼 (매출 대비 10.69%)"
         ],
         "claims": [
           {
-            "claim": "ESS 및 2차전지 공정 공급계약을 공시한 에코앤드림과 티에스아이의 코스닥 대비 초과 수익률",
-            "measure": "에코앤드림, 티에스아이",
-            "baseline": "코스닥",
+            "claim": "국내 3차 중앙계약시장 수주를 대거 확보한 삼성SDI가 코스피 지수 대비 상대적 강세를 기록할 것이다.",
+            "measure": "삼성SDI",
+            "baseline": "코스피",
             "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
             "after_days": 30,
             "reader": "읽음"
@@ -671,112 +538,118 @@ window.PANEL_DATA = {
         ]
       },
       {
-        "title": "해외 SMR 인허가 진행 및 원전 재도입 움직임 속 정비·부품 기술 승인 구체화",
+        "title": "반도체 제조 무인화 로봇 도입 가속과 휴머노이드 생태계 확장",
         "steps": [
           {
             "kind": "팩트",
-            "text": "미국 원자력규제위원회 보도자료에 따르면 미국 원자력규제위원회는 미시간주 소형모듈원전(SMR) 건설 허가 신청서 2단계를 접수하고 공개했다.",
+            "text": "전자신문 보도에 따르면 삼성전자가 반도체 공장 무인화를 위해 로봇팀을 신설했다.",
             "refs": [
               {
-                "day": "2026-11-25",
-                "kind": "보도자료",
-                "grade": "공식",
-                "fact": "미국 원자력규제위원회는 미시간주 소형모듈원전 건설 허가 신청서 2단계를 접수하고 공개했습니다."
+                "day": "2026-11-26",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "삼성전자가 반도체 공장 무인화를 위해 로봇팀을 꾸렸다."
               }
             ]
           },
           {
             "kind": "팩트",
-            "text": "11월 27일 한 매체 보도에 따르면 리투아니아는 2028년 원전 재도입안 의회 제출을 추진하고 SMR 건설을 검토하고 있다.",
+            "text": "엠에스투데이 보도에 따르면 삼성은 반도체 공장 무인화에 시동을 걸며 2030년 로봇 1만대를 도입할 것으로 전망했다.",
             "refs": [
               {
                 "day": "2026-11-27",
                 "kind": "뉴스 사건",
                 "grade": "한 매체 보도",
-                "fact": "리투아니아는 2028년 원전 재도입안 의회 제출을 추진하고 SMR 건설을 검토하고 있다."
+                "fact": "삼성은 반도체 공장 무인화에 시동을 걸며 2030년 로봇 1만대를 전망했다."
               }
             ]
           },
           {
             "kind": "팩트",
-            "text": "11월 26일 복수 보도에 따르면 효성굿스프링스가 원전 공급용 펌프에 대한 미국 기계학회(ASME) 인증을 획득했다.",
+            "text": "프라임경제 보도에 따르면 삼성그룹의 로봇 파트너사인 제우스가 삼성전자 반도체 100% 무인화 추진에 따른 라인 확대 기대감을 받고 있다.",
+            "refs": [
+              {
+                "day": "2026-11-27",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "삼성그룹 로봇 파트너 제우스가 삼성전자 반도체 100% 무인화에 라인 확대 기대감이 증폭됐다."
+              }
+            ]
+          },
+          {
+            "kind": "팩트",
+            "text": "유안타증권에 따르면 레인보우로보틱스는 2026년에 여러 상장사와 인공지능 및 로봇 기술 협력을 위한 양해각서(MOU)를 체결했다.",
             "refs": [
               {
                 "day": "2026-11-26",
-                "kind": "뉴스 사건",
-                "grade": "복수 보도",
-                "fact": "효성굿스프링스가 원전 공급용 펌프에 대한 미국 기계 학회 ASME 인증을 획득했다."
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "유안타증권은 레인보우로보틱스가 2026년에 여러 상장사와 인공지능 및 로봇 기술 협력을 위한 양해각서를 체결했다고 밝혔다."
               }
             ]
           },
           {
             "kind": "팩트",
-            "text": "수산인더스트리는 2026년 11월 24일 한국수력원자력 고리원자력본부 관련 22.57% 매출 규모의 기존 공급계약 변경을 공시했다.",
+            "text": "DS투자증권에 따르면 두산로보틱스의 3분기 연결 매출은 162억 원을 기록해 전년 동기 대비 59% 증가했다.",
             "refs": [
               {
-                "day": "2026-11-24",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "수산인더스트리 [기재정정]단일판매ㆍ공급계약체결: 기존 계약 정정(계약 시작 2024-08-01) · 한국수력원자력 고리원자력본부 · 2. 계약내역(계약금액( (매출 대비 22.57%)"
-              }
-            ]
-          },
-          {
-            "kind": "팩트",
-            "text": "11월 25일 한 매체 보도에 따르면 현대건설은 영업이익이 114% 증가하고 수주잔고 99.5조원을 기록하며 미국 SMR 및 유럽 원전 설계 사업에 참여한다.",
-            "refs": [
-              {
-                "day": "2026-11-25",
-                "kind": "뉴스 사건",
-                "grade": "한 매체 보도",
-                "fact": "현대건설은 영업이익이 114% 증가하고 수주잔고 99.5조원을 기록하며 미국 SMR 및 유럽 원전 설계 사업에 참여한다."
+                "day": "2026-11-28",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "두산로보틱스의 3분기 연결 매출은 162억 원을 기록해 전년 동기 대비 59% 늘었다."
               }
             ]
           },
           {
             "kind": "추정·연결",
-            "text": "북미와 유럽에서 SMR 인허가 및 원전 추진 논의가 속도를 내면서 국내 정비 및 원전 부품사들의 기술 인증 및 실적 수주 기반이 다져지고 있다.",
+            "text": "삼성전자의 팹 무인화 및 전용 로봇팀 구성은 제우스와 레인보우로보틱스 등 협력 로봇 생태계 전반으로 자동화 수요를 확산시키고 있으며 두산로보틱스의 매출 증가세와 맞물려 산업용 로봇 업황의 실질적 수혜로 이어지고 있다.",
             "refs": [
               {
-                "day": "2026-11-25",
-                "kind": "보도자료",
-                "grade": "공식",
-                "fact": "미국 원자력규제위원회는 미시간주 소형모듈원전 건설 허가 신청서 2단계를 접수하고 공개했습니다."
+                "day": "2026-11-26",
+                "kind": "뉴스 사건",
+                "grade": "한 매체 보도",
+                "fact": "삼성전자가 반도체 공장 무인화를 위해 로봇팀을 꾸렸다."
+              },
+              {
+                "day": "2026-11-26",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "유안타증권은 레인보우로보틱스가 2026년에 여러 상장사와 인공지능 및 로봇 기술 협력을 위한 양해각서를 체결했다고 밝혔다."
               },
               {
                 "day": "2026-11-27",
                 "kind": "뉴스 사건",
                 "grade": "한 매체 보도",
-                "fact": "리투아니아는 2028년 원전 재도입안 의회 제출을 추진하고 SMR 건설을 검토하고 있다."
+                "fact": "삼성은 반도체 공장 무인화에 시동을 걸며 2030년 로봇 1만대를 전망했다."
               },
               {
-                "day": "2026-11-26",
-                "kind": "뉴스 사건",
-                "grade": "복수 보도",
-                "fact": "효성굿스프링스가 원전 공급용 펌프에 대한 미국 기계 학회 ASME 인증을 획득했다."
-              },
-              {
-                "day": "2026-11-24",
-                "kind": "공시",
-                "grade": "공식",
-                "fact": "수산인더스트리 [기재정정]단일판매ㆍ공급계약체결: 기존 계약 정정(계약 시작 2024-08-01) · 한국수력원자력 고리원자력본부 · 2. 계약내역(계약금액( (매출 대비 22.57%)"
-              },
-              {
-                "day": "2026-11-25",
+                "day": "2026-11-27",
                 "kind": "뉴스 사건",
                 "grade": "한 매체 보도",
-                "fact": "현대건설은 영업이익이 114% 증가하고 수주잔고 99.5조원을 기록하며 미국 SMR 및 유럽 원전 설계 사업에 참여한다."
+                "fact": "삼성그룹 로봇 파트너 제우스가 삼성전자 반도체 100% 무인화에 라인 확대 기대감이 증폭됐다."
+              },
+              {
+                "day": "2026-11-28",
+                "kind": "리포트",
+                "grade": "기관 의견",
+                "fact": "두산로보틱스의 3분기 연결 매출은 162억 원을 기록해 전년 동기 대비 59% 늘었다."
               }
             ]
           }
         ],
-        "counter": "11월 27일 노던 스테이트 파워 컴퍼니 보도자료에 따르면 고연소도 핵연료 저장 연구 프로젝트 일정 변화로 평가 보고서 제출 기한 연장을 요청했다.",
-        "same_dart": [],
+        "counter": "유진투자증권 리포트에 따르면 올해 로봇 기업들의 주가 수익률 중앙값은 시가총액 1조~5조 원 구간이 -11%, 3천억 원 미만 구간은 -52%로 전반적인 조정 국면을 겪었다.",
+        "same_dart": [
+          "기가비스 단일판매ㆍ공급계약체결: 반도체 기판 수리장비 외 한국 반도체 기판 제조회사 (매출 대비 74%)",
+          "네오셈 단일판매ㆍ공급계약체결: 반도체 검사장비(GEN6 SSD TESTER 외) NEOSEM TECHNOLOGY INC. (매출 대비 22.2%)",
+          "유니테스트 단일판매ㆍ공급계약체결(자율공시): 반도체 검사장비 (GEN6 SSD TESTER) SK하이닉스 (매출 대비 5.2%)",
+          "대성하이텍 단일판매ㆍ공급계약체결: 반도체 후공정 테스트용 부품 제작 장비 공급 계약 JIANGSU HANCHUANG MACHINERY CO., (매출 대비 23.63%)",
+          "유니테스트 단일판매ㆍ공급계약체결: 반도체 검사장비 (GEN6 SSD TESTER) Micron Semiconductor Technology (매출 대비 11.17%)"
+        ],
         "claims": [
           {
-            "claim": "원전 정비 공시 및 설계 사업에 참여한 수산인더스트리와 현대건설의 코스피 대비 초과 수익률",
-            "measure": "수산인더스트리, 현대건설",
-            "baseline": "코스피",
+            "claim": "삼성전자 반도체 무인화 파트너십 및 대기업 협력 모멘텀을 보유한 로봇 기업들의 평균 수익률이 코스닥 지수 대비 초과 상승할 것이다.",
+            "measure": "제우스, 레인보우로보틱스, 두산로보틱스",
+            "baseline": "코스닥",
             "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
             "after_days": 30,
             "reader": "읽음"
@@ -784,7 +657,7 @@ window.PANEL_DATA = {
         ]
       }
     ],
-    "source": "v2_secretary/data/flows/2026-11-27.json",
+    "source": "v2_secretary/data/flows/2026-11-28.json",
     "ledger": {
       "pending": [
         {
@@ -804,6 +677,16 @@ window.PANEL_DATA = {
           "baseline": "없음",
           "win_if": "+0.05%p 이상 상승",
           "base_rate": 0.372,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-28",
+          "due": "2026-12-12",
+          "measure": "국고채 3년 금리",
+          "baseline": "없음",
+          "win_if": "+0.10%p 이상 상승",
+          "base_rate": 0.233,
           "status": "대기",
           "reason": ""
         },
@@ -986,9 +869,49 @@ window.PANEL_DATA = {
           "base_rate": 0.514,
           "status": "대기",
           "reason": ""
+        },
+        {
+          "made": "2026-11-28",
+          "due": "2026-12-28",
+          "measure": "네오셈, 엑시콘, 유니테스트",
+          "baseline": "필라델피아 반도체지수",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.386,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-28",
+          "due": "2026-12-28",
+          "measure": "삼성SDI",
+          "baseline": "코스피",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.335,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-28",
+          "due": "2026-12-28",
+          "measure": "제우스, 레인보우로보틱스, 두산로보틱스",
+          "baseline": "코스닥",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.386,
+          "status": "대기",
+          "reason": ""
+        },
+        {
+          "made": "2026-11-28",
+          "due": "2026-12-28",
+          "measure": "지엔씨에너지, 비나텍",
+          "baseline": "코스닥",
+          "win_if": "measure 평균 수익률이 baseline보다 +3%p 이상",
+          "base_rate": 0.64,
+          "status": "대기",
+          "reason": ""
         }
       ],
-      "n_pending": 20,
+      "n_pending": 25,
       "graded": [],
       "n_graded": 0,
       "n_hit": 0,
@@ -1025,7 +948,7 @@ window.PANEL_DATA = {
       "name": "13 Dose · 아침 햇빛"
     }
   ],
-  "default_wardrobe": "pasteup",
+  "default_wardrobe": "atelier",
   "marks": {
     "repo": "",
     "got": [],
@@ -1035,78 +958,80 @@ window.PANEL_DATA = {
   },
   "overview": {
     "in_total": {
-      "val": 1681,
-      "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+      "val": 2602,
+      "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
     },
     "new_total": {
-      "val": 1509,
-      "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+      "val": 2388,
+      "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
     },
     "old_seen": {
-      "val": 172,
-      "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+      "val": 214,
+      "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
     },
     "seen_ledger_lines": {
-      "val": 16635,
+      "val": 19023,
       "source": "v2_secretary/data/seen.jsonl"
     },
     "ai_calls_day": {
-      "val": 69,
-      "source": "v2_secretary/결과/2026-11-27_하루_전체.md"
+      "val": 59,
+      "source": "v2_secretary/결과/2026-11-28_하루_전체.md"
     },
     "ai_fails_day": {
-      "val": 8,
-      "source": "v2_secretary/결과/2026-11-27_하루_전체.md"
+      "val": 0,
+      "source": "v2_secretary/결과/2026-11-28_하루_전체.md"
     },
     "run_secs": {
-      "val": 1285,
-      "source": "v2_secretary/결과/2026-11-27_하루_전체.md"
+      "val": 738,
+      "source": "v2_secretary/결과/2026-11-28_하루_전체.md"
     },
     "lanes": {
       "거푸집1": {
-        "val": 129,
-        "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+        "val": 153,
+        "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
       },
       "거푸집2": {
-        "val": 61,
-        "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+        "val": 53,
+        "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
       },
       "뉴스": {
-        "val": 371,
-        "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+        "val": 370,
+        "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
       },
       "제외 보관함": {
-        "val": 783,
-        "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+        "val": 1703,
+        "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
       },
       "논문T": {
-        "val": 75,
-        "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+        "val": 24,
+        "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
       },
       "모름": {
-        "val": 90,
-        "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+        "val": 85,
+        "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
       }
     },
     "last_auto_run": {
-      "day": "2026-11-27",
-      "start": "2026-11-27 21:33:46",
+      "day": "2026-11-28",
+      "start": "2026-11-28 04:13:32",
       "by": "github",
       "where": "GitHub",
-      "mode": "indicators",
-      "end": "2026-11-27 21:34:03",
-      "secs": 17,
-      "indicators_refresh_exit": 0,
-      "calls": 0,
+      "mode": "run",
+      "end": "2026-11-28 04:25:50",
+      "secs": 738,
+      "exit": 0,
+      "result_md": true,
+      "failed_stages": 0,
+      "calls": 59,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
     "papers": {
       "day": "2026-11-27",
-      "day_label": "11월 27일(오늘)",
+      "day_label": "11월 27일(어제)",
       "made": "2026-11-27T04:26:22",
       "calls": 151,
-      "same_day": true,
+      "same_day": false,
       "source": "v2_secretary/결과/논문/2026-11-27_논문.json"
     }
   },
@@ -1119,528 +1044,415 @@ window.PANEL_DATA = {
       "source": "구간_주소표.md",
       "top_by_article_count": [
         {
-          "id": "e261127-01",
+          "id": "e261128-01",
           "rank_by_count": 1,
-          "name": "한은 기준금리 인상",
-          "easy": "한국은행이 기준금리를 0.25%포인트 인상해 연 3.25%로 끌어올렸습니다. 뭔 소리냐면 올해 하반기에만 세 차례 금리를 올리며 물가 안정을 위해 다시 긴축의 고삐를 바짝 죄고 있다는 겁니다.",
-          "quote": "한은, 기준금리 0.25% 인상…2년 만에 연 3.25% / 한은, 기준금리 0.25% 인상…2년 만에 연 3.25% 한겨레",
-          "member_count": 9,
-          "sample_articles": [
-            {
-              "n": 165,
-              "title": "한은, 기준금리 0.25%p 인상…2년 만에 연 3.25% - 한겨레",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9kaWJkTjM5bmJlYUh1RFVHbWdhSTdLOVRLY2oxTDZhNFE0QTJMTzlLV0VoSGVpRmg3NVZoYUR2dWVra0VIdnEtakJTUFR1N0IwbzBETlBNNXRMMTlRYUlmUFcyb2xsVGJXMWhjbWVDM09tZw?oc=5"
-            },
-            {
-              "n": 169,
-              "title": "한국은행, 기준금리 0.25%P 올려 3.25% - 국제신문",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNY3ZLRlBXQVZNN1RnNF9uZlFURFRjZTl5SHJrcW8tLTBpMlZBUnhkRFd1VE5Oek1pbU9pYjQ2dnpFZS1XeGVlQnNHUGFLRXBEUVFtaFQyMkc1SzVDMVNheFZCU3Q0Wnc0UU9VU19HMkk1QUF0T1ZMemhnNVZheTNxMXVFS1VZalhLZXZpRjN3?oc=5"
-            },
-            {
-              "n": 167,
-              "title": "한국은행 기준금리 3.25%로 인상…하반기에만 세번째 - 경상일보",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBFVlFSOXFRWUFWa0c4Y25ScndCYW1rMkJWRmNWR3B6WHE4V182d0tPQk14WWdmNXpnYWpDTzNSNUQwcnZSTlhOTmx3U29oU0lpbmFOX24waW1CY3RRV1dLN0s1Q2NRc2h6T0hGNA?oc=5"
-            },
-            {
-              "n": 170,
-              "title": "[더나은미래 경제브리핑] 한국은행 기준금리 0.25%포인트 인상, 올해 들어 세 번째...홈플러스 재개장 석 달 만에 ‘셧다운’, 27일부터 영업 중단 - 더나은미래",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1LZFNWWW14NTJobXpONFVCaThRck5qY3dKQzV3d19iNU1wRHdoYnh5R2lBOTJpanJ6S1FyU2FyWlFuVzZ3ZENuUFpXdVdaRFFrV1E?oc=5"
-            },
-            {
-              "n": 166,
-              "title": "한은 기준금리 연 3%→3.25% 인상…다시 긴축 박차 가한다 - 중앙일보",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBYdnFnalE1WGVnc3llMlp1X282clpWS19jWmJmQjdEeC1sZzRoUjdSRXh3cWNvd3kwWmxjS293MWlTNTdQU0V0N0Q5NGZLV2F6NTNLS2RR?oc=5"
-            },
-            {
-              "n": 162,
-              "title": "한은 금통위, 기준금리 3.25%로 인상…성장률 전망 크게 올려 - 조선일보",
-              "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxObWt5aUFEV1RlNTY0dWxuSnFlQ01Xdl96QkZKSnd6eXdDSlRYSDVMeFZNem16MjBiSERxa0YwMVFtYms3NWd4cmdsa2oza2JKSU9RaGxUaTVRNlN3bktKZEYtdXNvVy1TNHlMYk81eTZKTXFlOC1sUUJfVGlSdFpMaVk1SnEyV3BnZkJSeGN3?oc=5"
-            },
-            {
-              "n": 160,
-              "title": "대출금리 5% 시대에 금리 인상… 한은이 보낸 ‘무거운 청구서’ - 더스쿠프",
-              "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBrZm9xYUN6MThYbWVtZHdscHU3MUFzMWJPUWVyNVZ2WURxOFgxYTdmOWpuSEtucjk1SVRWeURfc1A3LTZRSFBUOVVPWTRrakxEamM1Z0VkQ2l6TUROWlpHb1RzMEV2eG1OUlgxQjZB?oc=5"
-            },
-            {
-              "n": 168,
-              "title": "한은 기준금리 인상, 성장률 전망 대폭 상향‥\"물가 안정 중점\" - MBC 뉴스",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9sa0FmYTlGNGtYdVppaVdXTG16cC1SaEdudnoxVnVFaDB5Q0NTeGg1bWlDa3R1eXFUc29VMUpvOXJTWWx2ZEgtZy1zeE4xQmVXQlI1RXo4UUJCWm9ucWZrTFdzWEV5Y1NnWWVkN2JBUEo3QjQ3ZVlDMNIBeEFVX3lxTE1TU0J3WGdZbFpIdWxTYVVFeFdieFJoUm03QThGZkRJMHA1YllpdTFEMU9sLWZ2YndSeEF5TE81eEVKZmd0QkRtaldwVURFV1o5VXhQQWxFakg1cmc3d1lXOVB4VWt5M2JhdWw2THdiNC1xX3Y4enZYYQ?oc=5"
-            },
-            {
-              "n": 171,
-              "title": "기준금리 3.25%로 올린 한은, 이번엔 왜 인상을 택했을까? - 네이버페이 머니스토리",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5ZWUV5SkJHSUhQUk5qVUUtQ1NlbVAyTXA1ZFJUdW5HbjQyNkRveTBvNVNYMWl2X3h5eVFzYlVxd2xoT2dxS0E5b3h3MFhhWHpTTXc?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-02",
-          "rank_by_count": 2,
-          "name": "한전 전력망 통합구축 수상",
-          "easy": "한국전력이 기존 송전선로를 활용하는 전력망 통합구축 성과로 인사혁신처장상을 받았습니다. 뭔 소리냐면 송전선로 효율화를 통해 연간 최대 6000억 원을 절감하고 신규 철탑을 40% 감축하는 적극행정을 인정받았다는 말이에요.",
-          "quote": "한전, 기존 송전선로 활용 전력망 통합 구축 성과 인정 / 한전, 기존 송전선로 활용 전력망 통합 구축 성과 인정 투데이에너지",
-          "member_count": 8,
-          "sample_articles": [
-            {
-              "n": 65,
-              "title": "한전, 기존 송전선로 활용 전력망 통합 구축 성과 인정 - 투데이에너지",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1CYXpEQmR4dXZUZkxiRDhuS2pwZ0dWMmRtV1VCLWIyYWtiYzJyeUtqa3I1WFNhRUlIYVFqb3FQMEJYMnZGSFZyRjk0bUhTU0hLdi01b3h6M1U1Z1lycTdrV2RPa0JxcHB5REVHX1Nn?oc=5"
-            },
-            {
-              "n": 64,
-              "title": "한전, 기존 송전선로 활용해 전력망 확충 패러다임 바꾼다 - 에너지데일리",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE8zTTQ4OVR2REktTHRaWHFZLWY4c1RaNHh1TmNqc3NMalNEVGZ4Nk04bEFKajNZY2dQZmI4RlNGMFl1Tl9GUmZUMnJfekk3ZGNma3d5UmlZTlY0VjAwRmlkUXlfNWZ6LTQ1NnBLVVZfUnNNdw?oc=5"
-            },
-            {
-              "n": 69,
-              "title": "“전력망, 기존 송전선로 효율화시 연간 최대 6,000억원 절감” - 인사이트에너지뉴스",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBJYXF2cWtOQXk3SmoxLUUtaU12Nl9LSXBpTGZkaTJYMkE2LVJDcVYyN2NTR1ByYUhsN3NjUk50ZURhNUQ0bVY5aXBCaDlSNXh2SEk3V2Z1ZVlLUEJ5ckFOOVJIYnlKT213OEc00gFrQVVfeXFMUElhcXZxa05BeTdKajEtRS1pTXY2X0tJcGlMZmRpMlgyQTYtUkNxVjI3Y1NHUHJhSGw3c2NSTnRlRGE1RDRtVjlpcEJoOVI1eHZISTdXZnVlWUtQQnlyQU45UkhieUpPbXc4RzQ?oc=5"
-            },
-            {
-              "n": 71,
-              "title": "한전, 기존 송전선로 활용한 전력망 통합구축으로 적극행정 인사혁신처장상 수상 > 뉴스 - 더코리아",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBzLWNNY1dXRC1JN01MRWc5UGc0ZVh1ZU5GMUg1Z2g4QkJUd1czUTVPRWhPQjQ3cmlPd2ZzTFR6TnBsR2ZyWnNuNTM2SQ?oc=5"
-            },
-            {
-              "n": 68,
-              "title": "한전, 기존 송전선로 활용해 신규 철탑 40% 감축 추진 - 에너지안전신문",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBuZE9vOXJmY2VJaXpOVDRoczdWbGdnTmJyd3pjbnlqeXJlY2FpbVNjR2xuRFJwWlhpZElOY0xFdHZmQU5IUjJWYkxXakkxaG1Ea2tuM0tJeVZVR1ZfbTVTWFRGVUs?oc=5"
-            },
-            {
-              "n": 70,
-              "title": "한전, 기존 송전선로 활용 ‘전력망 통합구축’으로 인사혁신처장상 - 에너지코리아뉴스",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB4MXp0ZHBRZjY4ZC0zeFFGUVFZUHFRMEh2ZXYwRnotZ19lUUNBcUozR3pxSXF6UjRtRjNvb05TdVVzZE1nREU0bnRvYW05dDlDQjJVVG9yb3FNam1ZanY4Vzh6UlRfLVgxZ1h0a0xSbTE?oc=5"
-            },
-            {
-              "n": 59,
-              "title": "한국전력공사, 전력망 통합구축으로 인사혁신처장상 수상 - 글로벌뉴스통신GNA",
-              "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1Qdmd5VXpoQTdudGRxaC1Wa1BXajE5SU1reDM4Q0JiandqTjE3NWk1SnR5VDRGWlVNNUphVkduallYUG5tRHFSMkpfbWw3a0FEQW9kYjJ6b2g2cWZEZFg2LU1ya2Y0X1lqX1dqM3duWENnUXpE?oc=5"
-            },
-            {
-              "n": 67,
-              "title": "한전, ‘기존 송전선로 활용 전력망 통합구축’공로 인정…인사혁신처장상 영예 - 에너지플랫폼뉴스",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE91WElJTkkyOWZodU9zSlhDdWlaWVZQVkRLVFBtUXg2UGRVbFNKOGtTSTEwWHpKbFFyVXhvUEk1cWRCVHpGUm5NWkU2Ykt3aVZNSlE3ck9vWUpDZVotRmpadWFpZjNIeS1zdzdYZNIBcEFVX3lxTE9iY2htblZ5UTJqU3FSdGY1OG1uQ1pIdlFfUkQ4ZDM2SHlUcGk4cXNmZm5fYl9zeTkwWUpGSkVXOS1RMTZkTkFUdnh0QWV6X2dITnRlWGJJU1dnejFBTi1yc3dQcjYyZjM2R256SUljX0I?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-03",
-          "rank_by_count": 3,
-          "name": "중국 반도체 HBM 추격",
-          "easy": "중국의 화웨이와 창신 등 반도체 업계가 삼성전자와 SK하이닉스를 추격하기 위해 차세대 HBM 기술 공개와 개발에 박차를 가하고 있습니다. 뭔 소리냐면 첨단 메모리 분야에서 중국의 도전이 거세지자 국내 기업들도 격차 벌리기에 총력을 기울이고 있다는 겁니다.",
-          "quote": "HBM·D램까지 넘보는 중국…삼전·하닉, 격차 더 벌린다 / HBM·D램까지 넘보는 중국…삼전·하닉, 격차 더 벌린다 뉴스토마토",
-          "member_count": 8,
-          "sample_articles": [
-            {
-              "n": 84,
-              "title": "HBM·D램까지 넘보는 중국…삼전·하닉, 격차 더 벌린다 - 뉴스토마토",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5wR0hNeFkzSGlyY1FrMTNjcVdDR0lkYmVaMnpNMnRSeXBHeS1uNDUtWFpvalBYdVpDZjVGZnBwcW5oazg1a2ctbFhTWmtWR1lTUU4wOTVvZHBLcEl5VUJsSw?oc=5"
-            },
-            {
-              "n": 79,
-              "title": "중국 인공지능 반도체 점유율 증가 전망에도 한계 부각, UBS \"HBM 제조 능력 부족이 제약\" - 비즈니스포스트",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0tNFhGRFBIa1ZSZldGaWtJTFZDOWFFN0hnQ3FHbjhBS052V0JkUjZqRHRZVjM2SG5TWmpEdDNqS19vRmxUYnBBT2xqcFg1anVzSDV5ZVozYjREZHYwa18wRTRsbHpobU9JYUo4OUcyRlNGWVk?oc=5"
-            },
-            {
-              "n": 81,
-              "title": "화웨이, 차세대 HBM 개발 추진...삼성전자·SK하이닉스에 도전장 - M이코노미뉴스",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5idHFxM1NicVFjeEhEckU1cXk5SGRHdHQwdDVvM2h5d2FKWEJLTW9kbjl2UXdlUktkY1k3RDBELS1ncWRleDBTa0dJMHhlY2lwTXhTQ3A3VHB0NmV1N1RiMGZPME9SQ0U?oc=5"
-            },
-            {
-              "n": 92,
-              "title": "中 화웨이·창신, 첨단 메모리 개발 급피치...삼성·SK하이닉스에 도전장 - 뉴스핌",
-              "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43aW9wa3NaWFl0ZjBOSTNKZm1LbWpZd2FuUS1nVHNLZTE1QXBwR2lSa3REM0NJSVJ5azNZZjhzNXloVmFCQnhRZVl4TGNXMFRaNEwtR1poVFB0WGlY?oc=5"
-            },
-            {
-              "n": 80,
-              "title": "中 반도체업계, 삼전·하닉 추격에 고삐…HBM·낸드 기술 진전 - 파이낸셜뉴스",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9YalRwUnFZS3lYbGNDVTZLMFVBcjBvMjhCWXN4b2pfdUdjR0pncWVrX2lQakNtN25NWW9lMjJuOWlxNE9SSkU5eUlyS3NNWm1lVVd0R3ZkTFI5QQ?oc=5"
-            },
-            {
-              "n": 82,
-              "title": "中 화웨이, 차세대 HBM 기술 공개 추진… 삼성·SK하이닉스에 도전장 - Chosunbiz",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOOUxSbEtqb1BtVE56YzNaYlcyYmFtem1RdHR0anVoMURWRl9nYTMzdGtTTDFmaHV1eGJ3N05XWW9IT1hBSHdJVGNRcnNLeXJ2WlV0THVfeDFOc2ZvZnJQekdFUzc5ekM1VnV0S0ZHemxtYUFxaGpiLUNVV3hoZFlsMW130gGWAUFVX3lxTE4wVDJJSUMxRkJQVnRsaFFfU1J0WXBtSExPc1Q3Wi1kdmNxd2pLRW9DZUdkbmhtRDNTc0RrM2dhcGdfY0RFRjRPMmM3R3V3dVhyZWR5N3k4ZVdjZ0FhSGJqdGZKVDlzS3RzODlramxxS1BCQUF4RUNSY01KellsTkVFZUZoZVZ"
-            },
-            {
-              "n": 78,
-              "title": "고단층 HBM ‘내장형 냉각’ 본격화···삼전·하닉 ‘발열 잡기’ 총력 - 시사저널e",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9xYmtHdXdlRGItUnh4Z1FwcWlPVWI2cHhsTE5mRWlSc3VZN3ZBS3BPVUNPVTc1MWVPSHlORkh3TG5OSGljR3JER3plVkRqQU1uS25zTU5kWXdudm5tNHg3Smw4VlJiYXNyVU1MSWhmd3Nibkc3anfSAXZBVV95cUxPcWJrR3V3ZURiLVJ4eGdRcHFpT1ViNnB4bExOZkVpUnN1WTd2QUtwT1VDT1U3NTFlT0h5TkZId0xuTkhpY0dyREd6ZVZEakFNbktuc01OZFl3bnZubTR4N0psOFZSYmFzclVNTEloZndzYm5HN2p3?oc=5"
-            },
-            {
-              "n": 77,
-              "title": "중국 화웨이, 삼성·하이닉스 따라잡을 새 HBM 공개 준비 - 연합뉴스",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1nUnh4Wk1VNThjVGQ4SlRsZmlYX1YyeWZTcG5JYW1CUmxZdlM2RXA0N25DWlN3WU52X0dFanRSYXR4TXpVUERxSzBUS3hiY25zWHhMWEJRS3Y4ZTDSAWBBVV95cUxOcXQ1cTFQM25ielY0ZlV3TnZhbzY2YkwzT0ZnMGx4cTAtWU5TWFVNYVZtcDdCdEFpVUp2WGdhV2x5S3QtRWNjZHdldnQ5Zl9PYmZKNU5fc3F5ZFVFclI3WkQ?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름",
-            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-04",
-          "rank_by_count": 4,
-          "name": "자본시장 개혁기구 출범",
-          "easy": "정부가 자본시장 개혁 전담 기구의 수장으로 김용범 메리츠금융지주 부회장을 낙점하고 민간에 전권을 부여했습니다. 뭔 소리냐면 금융당국이 주도하던 기존 정책에서 벗어나 시장 전문가들에게 제도 개혁의 주도권을 넘겨 주겠다는 겁니다.",
-          "quote": "자본시장개혁기구 수장에 메리츠 김용범…민간에 전권 부여 / (서울=연합뉴스) 강수련 기자 = 정부가 이재명 대통령이 주문한 자본시장 개혁기구의 수장을 김용범 메리츠지주 부회장에 맡기고 개혁작업의 전권을",
+          "name": "동서발전 ESS 중앙계약시장 확보",
+          "easy": "동서발전이 에너지저장장치 중앙계약시장 입찰에서 672MW 규모의 물량을 확보했습니다. 그게 뭔 소리냐면 호남권 등의 전력계통을 안정화하고 재생에너지 확대를 위한 기반을 다진다는 말이에요. 누적 용량 기준으로 국내 1위에 올랐다고 보입니다.",
+          "quote": "동서발전, ESS 확대로 호남권 전력계통 안정화 추진",
           "member_count": 6,
           "sample_articles": [
             {
-              "n": 1576,
-              "title": "자본시장개혁기구 수장에 메리츠 김용범…민간에 전권 부여",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126171600002"
+              "n": 121,
+              "title": "동서발전, ESS 확대로 호남권 전력계통 안정화 추진 - 국토일보",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9MMG9aR0RKRlI5SW9XZGNneTJfWDlIYmJYbmRNVktzSEQ0V0ZPUG9pNW1QSlVSUGZJMTAzMTYxeVkwSGg3Y0JHVVdzNlgxczRsZUVxWmxEYm1PVjBaSTJFTm9BNnU?oc=5"
             },
             {
-              "n": 1503,
-              "title": "자본시장 개혁 민간委 뜬다",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219710"
+              "n": 122,
+              "title": "전력망 안정 위해 전국 14곳에 1,194MW 규모 ESS 구축 - ebiznews",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE42djRQUGxMU01OdTNqTmNjakhXYXUtU0IwenRvMWJlU0RlcVRLbWlnRlA1dXZKOHNCMTJreWNGV0hsSF84c0Vsd3JObXRWc2kybFhibktxVTZkZE5sU3lwVEdqVjY0UnZaQ3hj?oc=5"
             },
             {
-              "n": 32,
-              "title": "\"1주의 가치는 같다\"…김용범 메리츠 부회장, 자본시장 개혁 사령탑",
-              "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191353"
+              "n": 118,
+              "title": "동서발전, '에너지저장장치 입찰 672MW' 확보 - 발전산업신문",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1iNUN1Y08yX3M2QUdZbnVOVDlGM1Y3ZHVZUzRRWWV1WVFmZTBXR3RIXy13ck1VcjdseS1SaXJ3amlYOGw1bndOX2tHWm1QdzNTR2pCalZFT05RNk1rMUpwY1dIdHFJSjJt?oc=5"
             },
             {
-              "n": 1560,
-              "title": "자본시장개혁기구 수장에 메리츠 김용범…민간에 전권 부여(종합)",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126171651002"
+              "n": 120,
+              "title": "동서발전, ESS 중앙계약시장 672MW 확보...누적 용량 국내 1위 - 산경e뉴스",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5NbGNoRUNkdnUzR3BOOXRxUHdGdUsyVHdKVmFkZ3ZFM3l2Szl4M2k1SWNjaTN3UmxWMU01eS0tSGJyN3ZkZ3NHSnFfeVFLdk9VNFJ3RTZ6MEZsUkhpZVI2QmlmRmF4S2c?oc=5"
             },
             {
-              "n": 1475,
-              "title": "'대통령 직보' 자본시장 개혁기구 출범…위원장에 김용범 메리츠 부회장",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262896i"
+              "n": 124,
+              "title": "동서발전, ESS 3차 중앙계약시장 입찰 672MW 확보했다 - 에너지데일리",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9Ddko3eERGQzVkV3EtSFBVTlhuU1dkM3RTOFF6dTJCSUVNTWhnTXlJWjA0T05MQ1RpZzExdTg1NHJCTEFTWW40QTM5ZjliMFNCSDhVLXNTRlNFNVZjbmR6c2IwSGZWRGJBVmVDSlRBX0NNUQ?oc=5"
             },
             {
-              "n": 1523,
-              "title": "민간 자본시장 개혁기구 출범…위원장에 메리츠 김용범 부회장",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/stock/12219562"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-05",
-          "rank_by_count": 5,
-          "name": "종부세 대상자 증가",
-          "easy": "수도권을 중심으로 집값이 오른 영향으로 올해 주택분 종합부동산세 고지 대상자가 지난해보다 19만명 늘어난 73만명을 기록했습니다. 뭔 소리냐면 1가구 1주택자 고지 인원과 평균 세액이 크게 늘어나면서 세부담이 가중됐다는 말이에요.",
-          "quote": "“공시가격 상승 영향”…강남·마용성 아파트 보유세 40% 안팎 증가 / 전용 84㎡ 기준 원베일리 2800만원↑ 잠실주공5단지 43.2%·도곡렉슬 43.1% 각각 늘어 “거주용 1주택 세부담은 완화될 수 있어”서울",
-          "member_count": 6,
-          "sample_articles": [
-            {
-              "n": 1525,
-              "title": "“공시가격 상승 영향”…강남·마용성 아파트 보유세 40% 안팎 증가",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219528"
-            },
-            {
-              "n": 1516,
-              "title": "종부세 대상 1주택자 8만명 늘어…여당에서도 \"증세 속도 늦추자\"",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219628"
-            },
-            {
-              "n": 1567,
-              "title": "[연합뉴스 이 시각 헤드라인] - 18:00",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126171000011"
-            },
-            {
-              "n": 1506,
-              "title": "종부세 고지서 ‘82만명’에 날아갔다…1년새 19만명 늘어",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219702"
-            },
-            {
-              "n": 1504,
-              "title": "종부세 82만명 고지 … 1년새 19만명 급증",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219709"
-            },
-            {
-              "n": 1524,
-              "title": "“집값 올랐다고 좋아할게 아녔어”…종부세 대상·세액 4년 만에 최대",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/realestate/12219536"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름",
-            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-06",
-          "rank_by_count": 6,
-          "name": "뉴럴링크 임상 승인",
-          "easy": "뇌와 컴퓨터를 연결하는 기술을 개발하는 뉴럴링크가 미국 FDA로부터 첫 확증 임상시험 승인을 받았습니다. 뭔 소리냐면 루게릭병 치유 등을 위한 뇌-컴퓨터 인터페이스 상용화 작업이 한 걸음 더 속도를 내게 됐다는 겁니다.",
-          "quote": "루게릭병 치유 나선 뉴럴링크...BCI 기술 어디까지 왔나 / 루게릭병 치유 나선 뉴럴링크...BCI 기술 어디까지 왔나 이코리아",
-          "member_count": 5,
-          "sample_articles": [
-            {
-              "n": 1656,
-              "title": "루게릭병 치유 나선 뉴럴링크...BCI 기술 어디까지 왔나 - 이코리아",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5FT2d4ZVU5THoyQTdxdnI5d0ZrNjR5cUxvY0toa3NTcjFVYmRfNjV5QTZzcHFEQTFJVmVwMlFnYW54UU1Kb3B5UnZOTUc1OE1MSUlLTkkzNDI5em1IMWVHSFdjMkNPcmJ4dHNDN1FTYw?oc=5"
-            },
-            {
-              "n": 1657,
-              "title": "뉴럴링크, FDA서 첫 확증 임상시험 승인받아…뇌-컴퓨터 인터페이스 상용화에 한 걸음 - 디멘시아뉴스",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1lYXZLS1JBVWdNNGV1NmRFRVlGYy14VWY0N1pkSnYtanVCSXJEaDRoWXo1YlJhVms2SmZ1M2RyYmwtbDlacGFvekYweTFGU2pIT3hQWjM3bllyUDB6bmhaY0JMR0Nub1V6R1AzNFMwai13Zw?oc=5"
-            },
-            {
-              "n": 1658,
-              "title": "뉴럴링크 BCI 기술, '피보탈 임상' 美FDA 승인 획득…상용화 속도 - 더구루",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBZDlVRnNWUkdOOExJQWNiRFM1alFiTjVJWERtNlRJdDJMdlVRVDZwckhxc2tMdlJCY3VCSVFZRmg4MExCM2xIeGZoSGlaTGpxU285MldOMTVROWlaN1RYWGJhRQ?oc=5"
-            },
-            {
-              "n": 1661,
-              "title": "뉴럴링크, '뇌 이식 칩' 핵심 임상 美FDA 승인…상용화 시험대 - 뉴시스",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1jUlN0ZkZ4V2JHcUY3V2hVa3hPV2JwR0o3NmphU3JaTGExdVg2aWtJbmxKNHhCNXMzbEFqTlJPRTJpdHhtYXBvdVZ6SHRIaXlSQWZqSlc1RjJrWUpsU3lyZdIBeEFVX3lxTE5tWGFvSXVjbE1qWEJ3eXdhUEtQZHRHRkxIaHJVYlRRRmxpNEpDV3dFSGc5MUw1aVlzbXNRbkhNam1pa2Q3MGRwUF9oYjltZmpNNUcyM29MMXRyckhMakh1Z0hvUGFVZThvcDRIZG1oaWJrU1MzNzF2cw?oc=5"
-            },
-            {
-              "n": 1660,
-              "title": "AI 커닝 막기도 벅찬데…머스크 ‘뇌 이식 칩’ 상용화 성큼 [핫이슈] - 서울신문",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GTl9WMHNYQ3dtMnc4Sk81R0ZTR3hkakFvXy1iOENYT1lmdDF6dWVQVV9VVlhiWUlzU1NSRmFBczZmcWt4c0FoNE1IUkRPb2NsQ1VjX1BTQ1BrUQ?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-07",
-          "rank_by_count": 7,
-          "name": "삼성전자 반도체 조직 개편",
-          "easy": "삼성전자가 메모리 개발체제를 일원화하고 첨단 패키징 조직을 되살리는 대대적인 조직 개편을 단행했습니다. 뭔 소리냐면 반도체 경쟁력을 높이기 위해 후공정에 힘을 싣고 개발 속도를 끌어올리겠다는 겁니다.",
-          "quote": "삼성전자, 대대적 조직 개편…",
-          "member_count": 5,
-          "sample_articles": [
-            {
-              "n": 98,
-              "title": "삼성전자, 대대적 조직 개편…\"메모리 개발체제 일원화\" - 한국경제",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtdWxPSmlEN1ZXd0tIcExRcmNXT3VqQTdDbm51N2tuOFZmY2VESzR1WEFoSXpiZDFjZWNoeEhycnJZcENrdG1GU3JPMjhuY1A1TmtmQXJMZTlDQQ?oc=5"
-            },
-            {
-              "n": 1448,
-              "title": "삼성전자, 대대적 조직 개편…\"메모리 개발체제 일원화\"",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630891"
-            },
-            {
-              "n": 97,
-              "title": "삼성전자, ‘첨단 패키징’ 조직 되살려…반도체 승부처 후공정에 힘 - 한겨레",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9URTg0OV9ZMTlzeWhWT2ktbEk3ejJlLXhTUGU1cThWSzFNYVhpOXd0NmdwcFRIYU04ckRHakhYYkJGWW9xbUltMC12bnhaTXozRFdGM0loTVhHTEMwSGY4SDRNRVU2NFhrR2c?oc=5"
-            },
-            {
-              "n": 99,
-              "title": "삼성전자, 반도체 경쟁력 높이고 미래 먹거리 키운다…조직개편 단행 - CEO스코어데일리",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA2SjVBMDdManFZMGRQQjdZNWpGbDh3dFFnMURkaEU1VTh3elA0STBrQms2MTdfMGNuWURmRUVTWEwxU1VfTF9ZdVFhOEwza1RPbjltaVZzTld4Q2tEOGtsTVVlRFo0aF9z?oc=5"
-            },
-            {
-              "n": 100,
-              "title": "삼성전자, 반도체 조직 개편…메모리 '개발 속도'·시스템LSI '영업력 강화' - 디지털투데이",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84UFFucmlseHNEWlR1czlOMWhJLUVlM1EyUk5yLXNFdThYS1VUb3F1dXhDeUtxUnhUTjlZcmNHR3JvRlBnUVhqMlVaY0NsdXVURDZOLVhvWDlpWVlSUFh5QjBFSndiWTQ3cXMxcnBxancxMFk?oc=5"
+              "n": 117,
+              "title": "동서발전, ESS 중앙계약 시장 서 672MW 규모 물량 확보…재생에너지 확대 기반 구축 - 에너지플랫폼뉴스",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE02VEZIT09Jc1ZzdE9YNW1QdTZDdmlmY292eERhWERPaEdSVDAweS1ZMk1FaGZsVTJuRlI1TXVubEMyTWczR1A5eEJpVzRRTnJBVjFGSFdkQlZZT3dxX3lFWE9oZUY4Z3JHT3hDd9IBcEFVX3lxTE8zU25sTnhzSVZ5MGN2elo5bFV0UzRURWJsSk8zNHA2UHZRclh4UGRsenY4ZFpudkUwZGg3YVVfT1JwTjRxRzJ0VWs0OEpFTk5reE9GbjAyczFHRzU0a2dwSEZQSmVRZ0VQRGFlbFhKRnI?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": false,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-08",
+          "id": "e261128-02",
+          "rank_by_count": 2,
+          "name": "SK하이닉스 자사주 매입 확대",
+          "easy": "SK하이닉스가 최근 주가 하락에 대응해 하루 70만 주 규모의 자사주 매수 주문량을 기존보다 2배로 확대한다고 밝혔습니다. 주주가치를 높이기 위한 조치인데요, 쉽게 말하면 매수 속도를 두 배로 높여 주가 방어에 나선 셈이에요.",
+          "quote": "SK하이닉스, 자사주 매수 주문량 2배 확대…하루 70만 주",
+          "member_count": 5,
+          "sample_articles": [
+            {
+              "n": 92,
+              "title": "SK하이닉스, 자사주 매수 주문량 2배 확대…하루 70만 주 - 글로벌이코노믹",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOQmpxelFEVjhEbGVGdTAzVHVFREw4aXJ2Rm1VTWd5ZFR3SWV6d05OVlBxZURuZXhZZXRDWUV4aVMxMXNNQlE1S2RFU2RiZjVUR01GdFBHY3Flak9ibjE0ZEdlTmt2cmh2Z2J3R3EycnVHWFFCTTQzR0RpcXVROGNxZmJGYXR3Zw?oc=5"
+            },
+            {
+              "n": 85,
+              "title": "SK하이닉스, 자사주 일일 매수 주문량 두 배로…\"주주가치 제고 차원\" - Chosunbiz",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcXBOMUdDbnB4X3NIalhnVk82ZlhOc1dUakdRMVQ1Zm5HWnh1cm56LTlWNWJ0SThGQTgxX1ZWd25QbVNSZThXRmFWWVFiX2VjT1g0SWpvZ0tlUks1dE9VS2kzT3h0RkpTR1htTzd2VFVRRk9KN1NubjduZWU5YUl6aXl2anZNNEtF?oc=5"
+            },
+            {
+              "n": 91,
+              "title": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고 - KBS 뉴스",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5wOUVMRk9BcGFjODBkUktaWkJDN0plc2JUMXdOaWJITElSZEVUZ1ZYR1dOTTIzZlZfN0RGb0N5MnVGdElaajdDUkk1MjdCVk9HWWtLcC11XzVQVkk?oc=5"
+            },
+            {
+              "n": 86,
+              "title": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고 - 연합뉴스",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE00SG5MbVVoeUVXU3YwRnJWdGdHUm4xTm1oOW5MU0hYVU1VMG83WE5wM2lxdGhUOFpkWmFxd0ZWeVYxcWlxYXRPYVRMSkV0b0x2dWQ3QUh0QktZYWfSAWBBVV95cUxQMURjWllvS1l6dXpwbzBRVHFnUDlyZlotcGFwSzhFbnR5SW5tQ1N6Y3ItX283cl92N1ROMEIwS3RBU2E1Z2U1MF9TdWJtLUVmUTFLSmwtMGppUDdMWUFhaDA?oc=5"
+            },
+            {
+              "n": 89,
+              "title": "SK하이닉스, 자사주 매입 속도 2배로…하루 70만주 주문 - 뉴스핌",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9paEZNUnFTYXNrX1UySjhia0h4UVNKN2pydVIzWlhMREdJTnVqX28zbEJmRlZUTnhTem9xZ1k5MjVveEx1bjFEN1dTaWVFN3Y1Y1lDVmhFNUZwejRE?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-03",
+          "rank_by_count": 3,
+          "name": "미래대응기금 강행 논란",
+          "easy": "정부와 여당이 야당의 강력한 반발 속에서도 162조원 규모의 미래대응기금 지출액을 국회 동의 없이 30% 범위에서 증액할 수 있도록 하는 방안을 강행하기로 했습니다. 학계와 야당에서는 빚을 내 재정저수지를 만들면 안 된다며 상시 추경 논란이 이어지고 있거든요.",
+          "quote": "국회 예비심사없이 훑은 162조 미래기금…결국 비공개 소소위서 담판 전망",
+          "member_count": 5,
+          "sample_articles": [
+            {
+              "n": 2419,
+              "title": "국회 예비심사없이 훑은 162조 미래기금…결국 비공개 소소위서 담판 전망",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220447"
+            },
+            {
+              "n": 2416,
+              "title": "박홍근 “미래대응기금, 연기금투자풀에 여유자금 위탁 검토”",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220465"
+            },
+            {
+              "n": 2426,
+              "title": "\"국회 동의없이 30% 지출 증액\" 野반발속 당정 미래기금 강행",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220429"
+            },
+            {
+              "n": 2420,
+              "title": "[단독] 국회 동의 없이 13조 더 쓴다…162조 미래기금 강행 ‘상시 추경’ 논란",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220443"
+            },
+            {
+              "n": 2415,
+              "title": "학계 \"104조 빚내 재정저수지 만들면 안돼\"",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220471"
+            }
+          ],
+          "flags": [
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
+          ],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-04",
+          "rank_by_count": 4,
+          "name": "한국은행 기준금리 인상",
+          "easy": "한국은행이 기준금리를 연 3.25%로 올리며 올해 세 번째 인상을 단행했습니다. 신현송 총재가 통화정책을 펼 때 환율과 물가를 우선시한다는 관측이 나오는데요, 국고채 금리와 채권 시장에도 만기별로 희비가 엇갈렸습니다.",
+          "quote": "환율, 물가가 먼저…한은 총재 통화정책에 ‘주가’는 후순위였다 [BOK WATCHER]",
+          "member_count": 5,
+          "sample_articles": [
+            {
+              "n": 2418,
+              "title": "환율, 물가가 먼저…한은 총재 통화정책에 ‘주가’는 후순위였다 [BOK WATCHER]",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220459"
+            },
+            {
+              "n": 172,
+              "title": "한은, 기준금리 3.25%로 올려…올해 세 번째 인상 - 경북일보",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9IZEVsalhmNDFZREpaQUdrcVc4YjBmTGVIS3hGaVJpS2E1TUhoYUxkWWU1R0RJeUEweDlSNjBRaEJIY0dwRmlXSzFoLWg3UEx5VHFJN2ZsUTR5alZQXzB5cmxWdXhGV3ZSWFh5eXhVaw?oc=5"
+            },
+            {
+              "n": 171,
+              "title": "한은 \"내년 韓경제, 4.1% 성장 전망\"…기준금리 연 3.25%로 올렸다 - 머니투데이 - 머니투데이",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8zYW5hQlJlaFJRRGVzVk5oSXVtanl6YjNONWg0X1Q3M1AyZERvYlpCU2d1dVMxTHJSQzZKYWhOWktYVkhFaTgtSHBjME9SRXpRU0xuaENRNWgtS01SbkVvMTJFYXRLT0Fxa25N0gFwQVVfeXFMUEJtZkFDWVZMdkx2WW5ndlhOV0VPU01DckU1WmpxY2huUXFEb2haQjMxbGF1UHI4bE1lcnlXWjlWR2x2eG9lNmFRLVc4WncyRFZyTlRjVlg5a1RUZ3lNd2tOZURGdXZoLWs5MkVTR0E0Zw?oc=5"
+            },
+            {
+              "n": 167,
+              "title": "한은 기준금리 올린 날 무슨 일이?…국고채 만기별로 희비 엇갈린 이유 - 매일경제 마켓",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82Ql9PM0NfS0FwdzU3WW5zWGtGTzFLbVc0aXRqUkpmbm9nam5DSHVtQjFyMEdxbWFVUHZDaDNGOWhYVWJwQ2NfUDMyZU9GckxHbFE?oc=5"
+            },
+            {
+              "n": 168,
+              "title": "김민석 “한국은행 기준 금리 인상에 서민 부담…당력 동원해 민생 정치 올인” - KBS 뉴스",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8xVFdKQTRLUTJaUXI3aWRtUUpSbTNrWDBTV0RDODBzZDFQMnlpMlBmUjJ3V3lGVDBYMW56S25yUHRRNkxMSlQ1SXh1RGUwWE04bHFlNW9qbUo5U1k?oc=5"
+            }
+          ],
+          "flags": [
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
+          ],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-05",
+          "rank_by_count": 5,
+          "name": "트럼프 관세 및 호남 반도체 압박",
+          "easy": "미국이 관세를 앞세워 반도체 공장 유치에 나선 가운데 호남 반도체 메가 프로젝트를 거론하며 압박을 가하고 있습니다. 약속을 어기면 25%의 관세를 부과할 수 있다는 건데요, 정부는 반도체는 미국 수요에 대응하고 석화는 공급과잉을 해소하는 전략을 주목하고 있습니다.",
+          "quote": "미, 관세 근거로 ‘호남 반도체’ 들었다…‘약속 어기면 25%’ 압박",
+          "member_count": 4,
+          "sample_articles": [
+            {
+              "n": 150,
+              "title": "정부, 미국 관세 대응 전략 주목...\"반도체는 美 수요 대응, 석화는 공급과잉 해소\" - 시사뉴스",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9GVHpscE1EbjNWUEV6UmpEazh0MmZhTVQ5RFpYd2ZOTDRvVFdfcnJvTGVGWnFiaWpLUFVnQ1l3S09sdy0tSEdOMG0zb1FXSG1jQjIzanZiQlFRa3hfazJ1LVhIaw?oc=5"
+            },
+            {
+              "n": 152,
+              "title": "美, 관세 근거로 ‘호남 반도체’ 들었다…“약속 어기면 25%” 압박 - 중앙일보",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBUM1FiTHhWVTVRTUktNk5Ob2cxS0s2bk5RS2hPNGdCcTQ0Zkc4MklsT1gwWG5hc3JIWEVkNjdaRkdaUGVsdHBIQzdBQllHY25zalduM0xn?oc=5"
+            },
+            {
+              "n": 153,
+              "title": "다시 관세 버튼 누른 트럼프...'호남 반도체'도 트집 [뉴스UP] - YTN",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE54VVEwbGN1Ry1MUnRaWkw5U3gzU0I0VEdLaXFXVHFUUHBscXhCTDI5dXZFcllfb0F2bnJPemI1Q3FpMGxJcl9BVUhRX1JVZi03QkxVSk1xT0xRUzIzWEE?oc=5"
+            },
+            {
+              "n": 156,
+              "title": "美 ‘과잉생산 관세’ 근거 된 호남 반도체 메가 프로젝트 - 조선일보",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPZjljek5IalE3My13a0xoZDBYM2lMNG5GZjdYX2d1WVYydzlrTDlGUllFQkpmR0RsQ3dKSzZUWnBXbVJiRUdCRlVYekU5SkVueFJCZ3BleU5hdnBRMGh2RW5IR3JGeHJELUs3ZzNWR3QzcTkwd3hWTk05UDVvOFZDbnVIZGRTUkdhR211WkpPMkhkWFloYWRlWnhqUWswQQ?oc=5"
+            }
+          ],
+          "flags": [
+            "대표 제목 인용이 원문과 다름",
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
+          ],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-06",
+          "rank_by_count": 6,
+          "name": "무신사 3분기 실적 호조",
+          "easy": "무신사의 올 3분기까지 누적 수출액이 646억원을 기록하며 1년 전보다 4배 이상 급증했습니다. K패션을 앞세운 해외 역직구 거래액이 크게 늘었기 때문인데요, 매출과 영업이익 모두 역대 최대를 기록했다고 보입니다.",
+          "quote": "'K패션 성지' 무신사 실적 날았다",
+          "member_count": 4,
+          "sample_articles": [
+            {
+              "n": 2366,
+              "title": "'K패션 성지' 무신사 실적 날았다",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753631"
+            },
+            {
+              "n": 2483,
+              "title": "무신사, 3분기 누적 수출액 작년比 4.9배로 급증…역대 최대",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127145100030"
+            },
+            {
+              "n": 2450,
+              "title": "'외국인 쇼핑' 효과 본 무신사 … 매출 34% 증가하며 실적 잔치",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12220354"
+            },
+            {
+              "n": 2460,
+              "title": "무신사, 3분기 누적 매출 역대 최대…영업익 67% 급증",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/business/12219980"
+            }
+          ],
+          "flags": [
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
+          ],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-07",
+          "rank_by_count": 7,
+          "name": "한국가스공사 실적 및 미수금 증가",
+          "easy": "한국가스공사가 해외 LNG 사업 호조로 이익이 늘었지만 미수금 부담도 동시에 커지고 있습니다. 현대차증권 등에서는 LNG 가격 상승이 양날의 검으로 작용한다고 분석했는데요, 목표가가 상향 조정되기도 했습니다.",
+          "quote": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담",
+          "member_count": 4,
+          "sample_articles": [
+            {
+              "n": 147,
+              "title": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담 - 파이낸셜뉴스",
+              "source_name": "'LNG 가격'",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIRnJ0dXNwcEZPWFVrNF9rY2x2bGIxQ2toTWJPS1YtRGs2U3IwU3A4NFR3U0FNekgyQnk4Ry12b0JSODBYM3AtalFEYlJyWDlaY1ZuYjBmQU5JQQ?oc=5"
+            },
+            {
+              "n": 145,
+              "title": "\"한국가스공사, 해외 LNG로 이익·미수금 동반 급증…목표가↑\"-현대차 - 한국경제",
+              "source_name": "'LNG 가격'",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hZnozOWJkbmNDZzZOWlhFanU3bm5LMkJ0YVIwS1lZZXlzcHZYQjRScXAtb25VNjNFUkc1dHlIWG9CaldBejBxc3MxaXpqeTFLR2I4WWtHMGVvZw?oc=5"
+            },
+            {
+              "n": 2406,
+              "title": "비수기 뚫고 영업익 51% 껑충…\"한국가스공사, 상승 여력 있다\"",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274975i"
+            },
+            {
+              "n": 141,
+              "title": "[리포트 브리핑]한국가스공사, '양날의 LNG 가격 상승' 목표가 49,000원 - 현대차증권 - 뉴스핌",
+              "source_name": "'LNG 가격'",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9DdldDQk9JRkV5T2tKUHhidGRuX3U1c3VmOHY2d25QSXI1d2hZcktTdVRsWWM1QWpXUFRuazJqVXR0dmtCX2F1VzNaQjBFelBGamVlOHhoRWZoWFNR?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-08",
           "rank_by_count": 8,
-          "name": "한전 제주 전기예보 시행",
-          "easy": "한국전력이 제주에서 재생에너지가 남는 시간대에 전기요금을 50% 할인하는 탐라는 전기예보를 시행합니다. 뭔 소리냐면 전력이 남는 낮 시간대에 요금을 깎아 주어 소비를 유도하고 전력 계통의 부담을 줄여 보겠다는 거예요.",
-          "quote": "한전, 재생e 남는 시간대 전기요금 50% 할인… 제주서 ‘탐라는 전기예보’ 시행 / 한전, 재생e 남는 시간대 전기요금 50% 할인… 제주서 ‘탐라는 전기예보’ 시행 에너지데일리",
-          "member_count": 4,
+          "name": "한전 제주 전기요금 50% 할인",
+          "easy": "한국전력이 제주 지역에서 재생에너지가 넘칠 때 전기를 쓰면 요금을 50% 할인해주는 탐라는 전기예보 제도를 시행해 눈길을 끕니다. 그게 뭔 소리냐면 전력 공급이 과잉될 때 소비를 유도해 계통 안정을 꾀한다는 말이에요. 장점은 요금 부담을 낮추고 친환경 에너지 활용도를 높인다는 건데, 쉽게 말하면 할인 폭이 50%에 이른다고 보입니다.",
+          "quote": "한전, 개인정보 유출 피해 예방 총력…제주선 전기요금 50% 할인",
+          "member_count": 3,
           "sample_articles": [
             {
-              "n": 126,
-              "title": "한전, 재생e 남는 시간대 전기요금 50% 할인… 제주서 ‘탐라는 전기예보’ 시행 - 에너지데일리",
+              "n": 130,
+              "title": "한전, 개인정보 유출 피해 예방 총력…제주선 전기요금 50% 할인 - 쿠키뉴스",
               "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9YaDFqTnhfVmtDel9fUVd1XzBtNE54MVZNSzZOaXZDYXpYRG9iN1FhajQ5V2pfVWstUmJqZmFzVWNjRDZQM2lXTTlIQkhsQVBSWWJPODF6ekVRd2ZSS0YtMGdsdjhLSF81ZE5iZnA3SHprZw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBFR21xT1Q1YWtPQV9XcmhUZ0w4TktNWWVsaThQQ2I0T0dxeUtpWVozWWpyYzg5QVlrbkplUHA2c2lXMThsd3FJaVNyZEVLOTFRWEI3NlFGZ0VBclpyZGpmbXQzVQ?oc=5"
             },
             {
-              "n": 62,
-              "title": "한국전력 '탐라는 전기예보' 시행···제주서 재생에너지 남는 날 '전기 반값' - 팍스경제TV",
-              "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5QTDBBR3VIZHZhWFJ2c1pLTUtzY21QTGJoanJuODJ5a2hJTHM2YTdNWGxhY2FwcjMwVzNtcFJyRHQ5dllub3BVM1VEU2c5Y241VTVZX0JFd3VTRHFrYUtReWQwZU9PMlk?oc=5"
+              "n": 131,
+              "title": "재생에너지 넘칠 때 전기 쓰면 50% 할인…한전 제주서 시행 - 에너지타임즈",
+              "source_name": "'전기요금'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBJTURvQTRSdUtwU3M3YXNXNmFVQUd1YkdSMUxOempUb040UTd5ZXo0dzdiQUQtY1ZjanpLUWJNa2hyV3lZMTRaNkg1YzJtbi1zUmlISWJNLUpiZ3lmSFYzbjJMQTlDTFc0Z2w5SQ?oc=5"
             },
             {
-              "n": 128,
-              "title": "한전, 제주서 낮 시간대 전기요금 50% 할인 - 뉴스락",
+              "n": 127,
+              "title": "\"낮에 전기 쓰면 요금 반값\"…한전, 제주서 '탐라는 전기예보' 시행 - 파인드비",
               "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9FYVZVUUtuOHlFdWxBanNfQm9zaHBKVU9HWFZNSnM5TTFiSGxWMFZIMkNfcTluUVlfeThfNmU5SHNZSk1aMUZDMHdjcjlYdG1MMjBITFg1Sm16T1pmalVyYUd3VTgxWHo0ZUJyUGxR?oc=5"
-            },
-            {
-              "n": 125,
-              "title": "한전, 제주 ‘탐라는 전기예보’…낮 전기요금 50% 할인 - 에너지안전신문",
-              "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5GeEtNQVBPaGx2VTJnWHV3d1VDM2E3cTRobDRfWThjYjBJa1FKRktkU1YzOXVxTmEwTm1ZajI2VFByWlNQTjMwbmtzQVVYUEdERXZ5a0IyaWVWQ1lBbnlYdjlTaHk?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9jd1Rra1RFb0tuRFJTbnFraVZiUF94NjQ2NE1sVDRNX2xvREFMTUdkeTF4YVlHcGJydnNSWExiVlBFTzNLU2VFNEpVY0hqd3pCc01yM0xDMmFueVdGMW9jZG5ST2VzZw?oc=5"
             }
           ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
+          "flags": [],
           "unlumped_from": "",
           "is_single": false,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-09",
+          "id": "e261128-09",
           "rank_by_count": 9,
-          "name": "이브이첨단소재 프롤로지움 배터리 공개",
-          "easy": "이브이첨단소재의 투자사인 프롤로지움이 미국항공우주국 워크숍에서 차세대 우주 배터리를 공개했습니다. 뭔 소리냐면 4세대 리튬 세라믹 배터리 기술을 선보이면서 우주항공 시장 공략에 나서고 있다는 말이에요.",
-          "quote": "이브이첨단소재 투자사 ‘프롤로지움’, NASA 워크숍서 차세대 우주 배터리 공개… 투자자산 가치 재부각 / 이브이첨단소재 투자사 ‘프롤로지움’, NASA 워크숍서 차세대 우주 배터리 공개… 투자자산 가치 재부각 NBN미디어",
-          "member_count": 4,
+          "name": "국민연금 3분기 실적 발표",
+          "easy": "올해 3분기 국민연금기금 적립금은 1664조원으로 석 달 만에 202조원이 줄어든 것으로 나타났습니다. 기금운용 수익률은 13.28%를 기록했는데요, 국내주식 하락률이 가장 컸다는 분석이에요.",
+          "quote": "국민연금 적립금 석달만에 202조원↓…3분기 수익률 13%",
+          "member_count": 3,
           "sample_articles": [
             {
-              "n": 188,
-              "title": "이브이첨단소재 투자사 ‘프롤로지움’, NASA 워크숍서 차세대 우주 배터리 공개… 투자자산 가치 재부각 - NBN미디어",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9yb0ZxVmxDRW9vM01QWEo5TVJOWWlQZUlMV2RsUTZNYkFjd2p2bERVaDlkbVI2TTJUSDhPTE53aEE0SU5QcXdtSWdBMzF0bDlYVEx6bmRNdmRwMENKLVZJNzZBeU45QdIBakFVX3lxTE1oUHE0RWNDS3dLSVZpZW9kd1NSLUVmRGZTYm5SNm9qak8xY0NqZ2UzNHRUUnpvUl9Sd0hrSk54Sy1yT2ZtQ2dMQ3RVYVBKNFptdk1oY2Z5WVJsdzRtSjJHMy1FcVNCaHhoSWc?oc=5"
+              "n": 2481,
+              "title": "국민연금 적립금 석달만에 202조원↓…3분기 수익률 13%",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127153400530"
             },
             {
-              "n": 187,
-              "title": "이브이첨단소재 \"프롤로지움, NASA 워크숍서 차세대 배터리 공개\" - 뉴시스",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB3b3owQmpwUTZDc0k5ZXNCajBjMno4QTVrUk9OSWJ5aEI0dm9WYlRQMU9qRDlWQVZZYXFhdkota3VhOWF6bk5NMjdsdkc5TVJJenFtWnRfd1JyeDgyV1VTR9IBeEFVX3lxTE5pNjJFcnV2RHk4Q3kxbTJqcThmNlRKUnB5VHNsbWZVdkZrMVFPRGFqU1QteVc5QVRzSkpUY2xyMHFxelFCS29SbjNybmdoWkJLY05lOE5PN015WW1CQWxJVkhKZDV6Q0NxeE8zZnNHcEo1aGtjaFhTdA?oc=5"
+              "n": 2414,
+              "title": "3개월만에 202조원 사라진 국민연금 적립금…국내주식 하락률 가장 컸다",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220533"
             },
             {
-              "n": 190,
-              "title": "이브이첨단소재 투자사 프롤로지움, NASA서 차세대 배터리 공개…우주항공 시장 공략 - 아주경제",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9rUXNPMk1TYUhJYU9EUkF1SWcyTEVEV2xxNVBCeGNSVXZvZWhjbVpYWEtVN3hmZFpBSmw0VXpEQjRhMnZMNVhraUd4VVhBNU14Wk01ZW5zSExuUdIBWEFVX3lxTFBJb2lGRkE5RDJfX0pURGFfY1BNS1RYN0hwbVdQVWZpcGhvdEFpSU4tWndwZTlmVXpIV1VJeE1XYVdfNFR3T280V0haVjZWdFZqUjFuRnk5WXo?oc=5"
-            },
-            {
-              "n": 184,
-              "title": "이브이첨단소재 \"프롤로지움, NASA서 4세대 리튬 세라믹 배터리 공개\" - 뉴스핌",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBTNEgwUnRhVUQ3Qmkwa1pKbGIwMXgwZnd5dlp5U0JTa3JlS25rNlV2MlY3Z1dzYzRUckxHRDNwa3R4aElHeG1EVjZ4dTh5TkF3RnlfSlZJcE1ORnVj?oc=5"
+              "n": 2445,
+              "title": "[속보] 국민연금 9월말 기준수익률 연초대비 13%",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12220415"
             }
           ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
+          "flags": [],
           "unlumped_from": "",
           "is_single": false,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-10",
+          "id": "e261128-10",
           "rank_by_count": 10,
-          "name": "휴머노이드 로봇 ETF 인기",
-          "easy": "미래에셋자산운용의 TIGER 코리아휴머노이드로봇산업 ETF가 올해 개인 순매수 5000억 원을 돌파했습니다. 뭔 소리냐면 제조현장용 로봇과 휴머노이드 관련 산업에 대한 개인 투자자들의 관심이 그만큼 뜨겁다는 말이에요.",
-          "quote": "'TIGER 코리아휴머노이드로봇산업 ETF' 올해 개인 순매수 5000억 돌파 / 'TIGER 코리아휴머노이드로봇산업 ETF' 올해 개인 순매수 5000억 돌파 CNews",
-          "member_count": 4,
+          "name": "로봇주 수요 확대 기대감 급등",
+          "easy": "향후 휴머노이드 수요 확대에 대한 기대가 커지면서 로봇 관련 주가가 급등 마감했습니다. 삼성전자의 로봇 역량 제고 계획과 맞물려 관련 종목들이 상한가를 기록하기도 했는데요, 쉽게 말하면 로봇 산업에 대한 시장의 관심이 크게 쏠린 겁니다.",
+          "quote": "[특징주] 로봇주, 수요 확대 기대감에 급등…일부 상한가(종합)",
+          "member_count": 3,
           "sample_articles": [
             {
-              "n": 180,
-              "title": "'TIGER 코리아휴머노이드로봇산업 ETF' 올해 개인 순매수 5000억 돌파 - CNews",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Qci1jQ2VzMzYyN3ZRY0V6cmI3Q3RuZGp0V1RNQnVPQzNpY2Fpd2dvaUkwWDFsbVV1WENQa2EySG9ZMDY2T2dQQjhJalYwYy13VEhpNll5R3hlb0ZMc2F2N1czVWtPR1ExSU4yRFhQZEpnaXNVSXBJ?oc=5"
-            },
-            {
-              "n": 183,
-              "title": "‘TIGER 코리아휴머노이드로봇산업 ETF’, 올해 개인 순매수 5000억 원 돌파 - 포춘코리아",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5RZE5YSm5tNnktbU5qWG1WM2tVMUhmMDlMZWx0dW1CRjZqdUltc1BEQzVvT2t6NFoxSlozZm85U0dfcVc5UWlTYXZmWm1sT1pwdkRiM0tRTjlScXI3eHVLcDZqd0E1eGt0V0pueC00NmZpUdIBdkFVX3lxTE5zc01pN2o2dy1IZ3pKV2xfakhUNWt1VzB4VHV4OWlGTGQ5UXl1TU5mWVdRYmV0c0ZTQmxORnhjZ0JzZmFNWDg3SFZSZHAzeFA4dk1GSnR1SjhNU2Y5LVk1ZGpWNXJHS3VaMFZfX2RWY1ZCX2Z0R0E?oc=5"
+              "n": 2523,
+              "title": "[특징주] 로봇주, 수요 확대 기대감에 급등…일부 상한가(종합)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127040751008"
             },
             {
               "n": 181,
-              "title": "미래에셋자산운용 ‘TIGER 코리아휴머노이드로봇산업 ETF’ 개인 순매수 5천억 넘겨 - CNB뉴스",
+              "title": "[특징주] 로봇주, 수요 확대 기대감에 급등…일부 상한가(종합) - 연합뉴스",
               "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBxck9UVnBMbzJwZzRPNGRUbU80cXUzUDhVRlF0N3JwYlJKekhLblhjV0QtVEM1ZDZ3UmdLaXRLOENudXlTYmltTktlRE8zSGdfUFlEa3VXbjZiQU0zTTM4dFdmTWN0REZ5NUI0?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4xck1pVnpmMy1iX1NLcXV0ekthbmxDYk5VQVMtNURtRncyWFFXWkRXUE5MdnJELWU3ZklycERGc0d0SFR1endZeUhoTFR1Mlp1N1o2ZTZEZm4wckpQVHUycNIBYEFVX3lxTE4xck1pVnpmMy1iX1NLcXV0ekthbmxDYk5VQVMtNURtRncyWFFXWkRXUE5MdnJELWU3ZklycERGc0d0SFR1endZeUhoTFR1Mlp1N1o2ZTZEZm4wckpQVHUycA?oc=5"
             },
             {
-              "n": 179,
-              "title": "TIGER 코리아휴머노이드로봇 ETF, 개인 순매수 5000억 원 돌파 - 글로벌이코노믹",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQemFyWDFFY3B2YTZkc1dMeTgtdnNaSGczR3F3NTlXTUdNTFdBeWZPX0QwbjVpbG9uT1JQTFFHaUstbzdWOXU1MVkxaERfNUhUb2x4MDZtajZSYXZETFBGbTJWeU9sR2dpTFdnVlZCb2Y5Z0k5b3I2clFieHN2SjJpeHFYMkNQTk15?oc=5"
+              "n": 2462,
+              "title": "삼성전자 로봇에 힘주자 관련주 줄줄이 급등…제닉스로보틱스 상한가",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219958"
             }
           ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
+          "flags": [],
           "unlumped_from": "",
           "is_single": false,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         }
       ]
     },
@@ -1650,23 +1462,23 @@ window.PANEL_DATA = {
       "status": "돎 (AI 0콜 · 정규식 추출 + 공식 API 대조)",
       "counts": {
         "gate_in": {
-          "val": 129,
-          "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+          "val": 153,
+          "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
         },
         "dart_day_total": {
-          "val": 125,
+          "val": 150,
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         "dart_contracts": {
-          "val": 21,
+          "val": 32,
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         "dart_others": {
-          "val": 104,
+          "val": 118,
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         "fred_series": {
-          "val": 30,
+          "val": 32,
           "source": "v2_secretary/결과/거푸집1/FRED_지표표.csv"
         },
         "bok_rows_total": {
@@ -1680,32 +1492,47 @@ window.PANEL_DATA = {
       },
       "dart_contracts": [
         {
-          "company": "넥사다이내믹스",
-          "market": "코스닥",
-          "what": "고성능 AI 서버 제품",
-          "amount_won": "75,500,000,000",
-          "pct_of_sales": "580.19",
+          "company": "SK디스커버리",
+          "market": "유가",
+          "what": "정정신고(보고)",
+          "amount_won": "92,489,761,150",
+          "pct_of_sales": "53.38",
           "pct_check": "맞음",
-          "counterparty": "대한민국",
-          "region": "대한민국",
-          "period": "2026-11-26~2027-03-31",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900755",
+          "counterparty": "",
+          "region": "인도네시아",
+          "period": "2024-12-09~2027-12-28",
+          "changes": "6. 주요 계약조건: 인보이스 수령 후 15영업일 이내 지급 → 선적일 5일 전까지 선지급 ; 9. 기타 투자판단과 관련한 중요사항: - 상기 '2. 계약내역'의 '계약금액(원)'은 본 계약 상 명시된 2025년 ~ 2027년에 대한 연간 공급예정물량, 공급예정단가 기준으로 산 → - 상기 '2. 계약내역'의 '계약금액(원)'은 본 계약 상 명시된 2025년 ~ 2027년에 대한 연간 공급예정물량, 공급예정단가 기준으로 산",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127801155",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "넥사다이내믹스",
+          "company": "스트라드비젼",
           "market": "코스닥",
-          "what": "1.대상종목",
-          "amount_won": "",
-          "pct_of_sales": "",
-          "pct_check": "",
-          "counterparty": "",
-          "region": "",
-          "period": "~",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900759",
+          "what": "전방카메라를 통한 인식 솔루션 납품",
+          "amount_won": "3,752,541,237",
+          "pct_of_sales": "20.7",
+          "pct_check": "맞음",
+          "counterparty": "ASUX(Aptiv Adv. Safety & User Experience) Components India Pvt Ltd",
+          "region": "인도",
+          "period": "2026-08-19~2027-06-16",
+          "changes": "3. 계약상대방: ASUX(Aptiv Adv. Safety & User Experience) Components India Pvt Ltd → APTIV INDIA PRIVATE LIMITED",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901102",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "에스와이스틸텍",
+          "market": "코스닥",
+          "what": "더현대광주 신축공사",
+          "amount_won": "12,964,000,000",
+          "pct_of_sales": "13.31",
+          "pct_check": "맞음",
+          "counterparty": "현대건설(주)",
+          "region": "광주광역시 북구 임동 100-91 일대",
+          "period": "2026-11-16~2029-05-21",
+          "changes": "3. 계약상대방: 주식회사 더현대광주 → 현대건설(주) ; - 최근 매출액(원): - → 31,062,912,000,000원 ; - 주요사업: 도매 및 소매업 → 토목, 건축, 플랜트 공사업 등 ; - 회사와의 관계: - → 해당사항 없음 ; - 회사와 최근 3년간 동종계약 이행여부: 미해당 → 해당 ; 5. 계약기간(시작일): 2026-06-30 → 2026-11-16 ; 10. 기타 투자판단에 참고할 사항: 1. 본 도급계약은 '광주광역시 지 역건설산업활성화 촉진 조례' 취 지에 맞추어 추후 당사가 100% 출자하는 광주 현지 신규 법인을 설립한 후 → 1. 계약금액 (12,964,000,000원) 은 부가가치세가 제외된 공급가액 기준입니다. 2. 본 계약은 2026년 7월 1일 최초 공시 시 ",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901068",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
@@ -1713,14 +1540,29 @@ window.PANEL_DATA = {
           "company": "코오롱",
           "market": "유가",
           "what": "정정신고(보고)",
-          "amount_won": "481,056,400,000",
-          "pct_of_sales": "13.17",
+          "amount_won": "278,991,547,000",
+          "pct_of_sales": "10.72",
           "pct_check": "맞음",
           "counterparty": "",
-          "region": "서울특별시 종로구 예지동 85번지 일대",
-          "period": "2019-01-15~-",
-          "changes": "5. 계약기간 中 종료일: 2026-11-26 → - ; 9. 기타 투자판단과 관련한 중요사항: - 공사기간은 착공일로부터 약 70개월이며, 착공예정일은 26년 11월 26일 입니다. → - 현재 발주처와 공사기간에 관한 사항을 협의 중이며, 추후 확정시 재공시할 예정입니다.",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800741",
+          "region": "대전 유성구 구룡동 557",
+          "period": "2024-03-18~-",
+          "changes": "5. 계약기간 中 종료일: 2026-11-28 → - ; 9. 기타 투자판단과 관련한 중요사항: [사업개요] 본 사업은 대전 유성구 구룡동 557 일대에 생산동(지하 1층~4층) 외 6개동을 건설하는 공사입니다. - 상기 2. 계약금액은 부 → [사업개요] 본 사업은 대전 유성구 구룡동 557 일대에 생산동(지하 1층~4층) 외 6개동을 건설하는 공사입니다. - 상기 2. 계약금액은 부",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127801086",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "금호건설",
+          "market": "유가",
+          "what": "단일판매ㆍ공급계약 체결",
+          "amount_won": "223,493,730,000",
+          "pct_of_sales": "11.07",
+          "pct_check": "맞음",
+          "counterparty": "",
+          "region": "평택고덕국제화계획 택지개발지구 내 A72BL 및 A73BL",
+          "period": "2026-11-27~2030-06-30",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127801069",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
@@ -1728,568 +1570,642 @@ window.PANEL_DATA = {
           "company": "코오롱글로벌",
           "market": "유가",
           "what": "정정신고(보고)",
-          "amount_won": "481,056,400,000",
-          "pct_of_sales": "13.17",
+          "amount_won": "278,991,547,000",
+          "pct_of_sales": "10.72",
           "pct_check": "맞음",
           "counterparty": "",
-          "region": "서울특별시 종로구 예지동 85번지 일대",
-          "period": "2019-01-15~-",
-          "changes": "5. 계약기간 中 종료일: 2026-11-26 → - ; 9. 기타 투자판단과 관련한 중요사항: - 공사기간은 착공일로부터 약 70개월이며, 착공예정일은 26년 11월 26일 입니다. → - 현재 발주처와 공사기간에 관한 사항을 협의 중이며, 추후 확정시 재공시할 예정입니다.",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800718",
+          "region": "대전 유성구 구룡동 557",
+          "period": "2024-03-18~-",
+          "changes": "5. 계약기간 中 종료일: 2026-11-28 → - ; 9. 기타 투자판단과 관련한 중요사항: [사업개요] 본 사업은 대전 유성구 구룡동 557 일대에 생산동(지하 1층~4층) 외 6개동을 건설하는 공사입니다. - 상기 2. 계약금액은 부 → [사업개요] 본 사업은 대전 유성구 구룡동 557 일대에 생산동(지하 1층~4층) 외 6개동을 건설하는 공사입니다. - 상기 2. 계약금액은 부",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127801057",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "동아지질",
+          "company": "DL",
+          "market": "유가",
+          "what": "단일판매ㆍ공급계약 체결",
+          "amount_won": "201,367,700,000",
+          "pct_of_sales": "2.72",
+          "pct_check": "맞음",
+          "counterparty": "",
+          "region": "서울특별시 영등포구 당산동4가 91번지",
+          "period": "2024-11-28~2028-02-29",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127801047",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "DL이앤씨",
+          "market": "유가",
+          "what": "단일판매ㆍ공급계약 체결",
+          "amount_won": "201,367,700,000",
+          "pct_of_sales": "2.72",
+          "pct_check": "맞음",
+          "counterparty": "",
+          "region": "서울특별시 영등포구 당산동4가 91번지",
+          "period": "2024-11-28~2028-02-29",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800965",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "삼성물산",
           "market": "유가",
           "what": "정정신고(보고)",
-          "amount_won": "27,201,733,633",
-          "pct_of_sales": "8.42",
+          "amount_won": "1,119,481,598,312",
+          "pct_of_sales": "2.67",
           "pct_check": "맞음",
           "counterparty": "",
-          "region": "부산광역시 사상구 학장동 일원",
-          "period": "2017-05-19~2027-06-30",
-          "changes": "5. 계약기간(종료일): 2026-11-30 → 2027-06-30",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800722",
+          "region": "대만",
+          "period": "2023-06-19~2027-07-23",
+          "changes": "2. 계약내역 - 계약금액(원): 1,115,054,450,932 → 1,119,481,598,312 ; 2. 계약내역 - 매출액대비(%): 2.66 → 2.67 ; 5. 계약기간 - 종료일: 2027-05-04 → 2027-07-23 ; 9. 기타 투자판단과 관련한 중요사항: ※ 직전 변경 계약금액은 11,136억원임. - 상기 2항의 계약금액은 기존 계약금액이 포함된 금액이며, 총도급액 NTD 33,052,361,0 → ※ 직전 변경 계약금액은 11,151억원임. - 상기 2항의 계약금액은 기존 계약금액이 포함된 금액이며, 총도급액 NTD 33,183,590,1",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127801001",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "이노스페이스",
-          "market": "코스닥",
-          "what": "재사용 기술 시연체 유공압 엄빌리컬 위탁 개발 계약",
-          "amount_won": "480,200,000",
-          "pct_of_sales": "3,264.9",
-          "pct_check": "맞음",
-          "counterparty": "한화에어로스페이스(주)",
-          "region": "대한민국",
-          "period": "2025-12-04~2027-10-31",
-          "changes": "2. 계약내역: - 확정 계약금액 : 474,200,000 - 계약금액 총액(원) : 474,200,000 - 매출액 대비(%) : 3,224.1 → - 확정 계약금액 : 480,200,000 - 계약금액 총액(원) : 480,200,000 - 매출액 대비(%) : 3,264.9 ; 6. 주요 계약 조건 - 대금지급조건 등: - 중도금 1차 (40%) : FM1 납품 후 30일 이내 - 중도금 2차 (40%) : FM2 납품 후 30일 이내 - 잔금 (20%) : 계 → - 중도금 1차 (39.50%) : FM1 납품 후 30일 이내 - 중도금 2차 (40.75%) : FM2 납품 후 30일 이내 - 잔금 (19",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900655",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "남광토건",
+          "company": "한화에어로스페이스",
           "market": "유가",
-          "what": "단일판매ㆍ공급계약 체결",
-          "amount_won": "55,877,209,500",
-          "pct_of_sales": "15.63",
-          "pct_check": "맞음",
-          "counterparty": "",
-          "region": "경기도 평택시 평택고덕국제화계획 택지개발지구",
-          "period": "2026-11-26~2030-09-30",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800630",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "야스",
-          "market": "코스닥",
-          "what": "디스플레이 양산용 증발원",
-          "amount_won": "12,423,672,000",
-          "pct_of_sales": "35.74",
-          "pct_check": "맞음",
-          "counterparty": "Guangzhou China Star Optoelectronics Printing Display Technology Co., Ltd",
-          "region": "중국",
-          "period": "2026-06-12~2026-12-31",
-          "changes": "5.계약기간 종료일: 2026-11-30 → 2026-12-31",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900499",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "티에스아이",
-          "market": "코스닥",
-          "what": "2차전지 믹싱시스템",
-          "amount_won": "32,823,776,290",
-          "pct_of_sales": "12.6",
-          "pct_check": "맞음",
-          "counterparty": "해외 이차전지기업",
-          "region": "-",
-          "period": "2025-02-07~2027-06-30",
-          "changes": "5. 계약기간 종료일: 2026-11-30 → 2027-06-30 ; 9. 공시유보 관련내용 유보기한: 2026-11-30 → 2027-06-30",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900443",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "씨이랩",
-          "market": "코스닥",
-          "what": "AI 인프라 시스템 공급",
-          "amount_won": "5,400,000,000",
-          "pct_of_sales": "52.57",
-          "pct_check": "맞음",
-          "counterparty": "-",
-          "region": "대한민국",
-          "period": "2026-11-26~2027-02-05",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900384",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "에코앤드림",
-          "market": "코스닥",
-          "what": "하이니켈 NCM 전구체 공급 PO",
-          "amount_won": "24,364,907,000",
-          "pct_of_sales": "17.16",
-          "pct_check": "맞음",
-          "counterparty": "Umicore SA",
-          "region": "고객사 국내 및 해외공장 등 지정하는 장소",
-          "period": "2026-11-26~2027-03-06",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900319",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "큐라티스",
-          "market": "코스닥",
-          "what": "임상 의약품 공급계약",
-          "amount_won": "533,480,000",
-          "pct_of_sales": "21.71",
-          "pct_check": "맞음",
-          "counterparty": "University of North Carolina",
-          "region": "계약 상대방이 지정하는 장소",
-          "period": "2026-11-16~2027-05-31",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900312",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "에이치브이엠",
-          "market": "코스닥",
-          "what": "슈퍼 알로이(Super Alloy) 공급 계약",
-          "amount_won": "10,988,234,088",
-          "pct_of_sales": "16.52",
-          "pct_check": "맞음",
-          "counterparty": "우주항공 금속 유통회사",
-          "region": "해외",
-          "period": "2026-11-25~2027-12-31",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900293",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "파두",
-          "market": "코스닥",
-          "what": "기업용 SSD 컨트롤러 공급",
-          "amount_won": "20,422,720,000",
-          "pct_of_sales": "22.10",
-          "pct_check": "맞음",
-          "counterparty": "해외 Nand Flash Memory 제조사",
-          "region": "해외",
-          "period": "2026-11-25~2027-05-25",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900276",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "엑시콘",
-          "market": "코스닥",
-          "what": "CLT Interface Board",
-          "amount_won": "8,037,400,000",
-          "pct_of_sales": "12.2",
-          "pct_check": "맞음",
-          "counterparty": "삼성전자",
-          "region": "대한민국",
-          "period": "2026-11-25~2027-02-28",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900227",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "HJ중공업",
-          "market": "유가",
-          "what": "단일판매ㆍ공급계약 체결",
-          "amount_won": "51,812,866,780",
-          "pct_of_sales": "2.60",
-          "pct_check": "맞음",
-          "counterparty": "",
-          "region": "경기도 부천시 원종동",
-          "period": "2022-06-09~-",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800200",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "유바이오로직스",
-          "market": "코스닥",
-          "what": "경구용 콜레라 백신(유비콜-에스) 납품",
-          "amount_won": "10,102,165,989",
-          "pct_of_sales": "6.77",
-          "pct_check": "맞음",
-          "counterparty": "UNICEF",
-          "region": "UNICEF(콩고민주공화국)",
-          "period": "2026-07-13~2027-04-30",
-          "changes": "1-3. 계약기간 -종료일: 2026-12-31 → 2027-04-30",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900194",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "SGC E&C",
-          "market": "코스닥",
-          "what": "[PSK] 용인 CAMPUS 조성 공사",
-          "amount_won": "117,200,000,000",
-          "pct_of_sales": "8.73",
-          "pct_check": "맞음",
-          "counterparty": "피에스케이㈜",
-          "region": "발주처 지정장소",
-          "period": "2026-11-25~2028-05-25",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900187",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "우원개발",
-          "market": "코스닥",
-          "what": "수도권광역급행철도C노선중『토공 및 구조물공1구간』",
-          "amount_won": "152,780,000,003",
-          "pct_of_sales": "40.59",
-          "pct_check": "맞음",
-          "counterparty": "(주)한화",
-          "region": "경기도 양주시 덕정역~청량리~삼성~수원역",
-          "period": "2026-11-26~2031-09-14",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900163",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "유니테스트",
-          "market": "코스닥",
-          "what": "반도체 검사장비 (GEN6 SSD TESTER)",
-          "amount_won": "12,307,107,208",
-          "pct_of_sales": "11.17",
-          "pct_check": "맞음",
-          "counterparty": "Micron Semiconductor Technology",
-          "region": "인도",
-          "period": "2026-11-25~2027-03-20",
-          "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900132",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "성도이엔지",
-          "market": "코스닥",
-          "what": "단일판매ㆍ공급계약 해지(자율공시)",
-          "amount_won": "",
-          "pct_of_sales": "8.02",
+          "what": "정정신고(보고)",
+          "amount_won": "-",
+          "pct_of_sales": "-",
           "pct_check": "",
-          "counterparty": "주식회사 왕궁로지스",
+          "counterparty": "",
+          "region": "스페인",
+          "period": "2026-08-28~-",
+          "changes": "8. 공시유보 관련내용-유보기한: 2026-11-28 → 2027-02-28",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800994",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "엔시스",
+          "market": "코스닥",
+          "what": "믹서 및 충전설비 계약",
+          "amount_won": "7,290,000,000",
+          "pct_of_sales": "11.59",
+          "pct_check": "맞음",
+          "counterparty": "LIG넥스원(주)",
+          "region": "대한민국",
+          "period": "2026-03-11~2027-01-29",
+          "changes": "5. 계약기간(종료일): 2026-11-30 → 2027-01-29",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900951",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "금양그린파워",
+          "market": "코스닥",
+          "what": "108.83MW 해오름에너지 태양광발전소 구축공사",
+          "amount_won": "81,334,500,000",
+          "pct_of_sales": "34.05",
+          "pct_check": "맞음",
+          "counterparty": "해오름에너지 주식회사",
+          "region": "제주특별자치도 서귀포시",
+          "period": "2024-07-22~2026-12-31",
+          "changes": "5. 계약기간 - 종료일: 2026-11-28 → 2026-12-31 ; 10. 기타 투자판에 참고할 사항: - 본건은 해오름에너지 태양광발전소 사업 프로젝트금융에 따른 계약변경의 건입니다. - 상기 2. 최근 매출액은 2023년 연결매출액을 기준으로  → - 상기 5. 계약종료일(12월 31일)은 임의 기재된 일자로 향후 진행 상황에 따라 변동될 수 있습니다. 현재 발주처와 협의 중이며, 협의 결",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900944",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "금호건설",
+          "market": "유가",
+          "what": "정정신고(보고)",
+          "amount_won": "202,521,049,906",
+          "pct_of_sales": "9.89",
+          "pct_check": "맞음",
+          "counterparty": "",
+          "region": "충청남도 공주시 이인면 남공주일반산업단지 내",
+          "period": "2024-05-01~2027-04-30",
+          "changes": "2. 계약내역: - → - ; 계약금액(원): 202,521,049,906 → 206,552,133,576 ; 매출액대비(%): 9.89 → 10.08 ; 9. 기타 투자판단과 관련한 중요사항: 2) 본 건의 총 계약금액은 2,893억원(VAT포함)이며, 상기2의 계약금액은 당사 시공지분 70%에 해당하는 금액임 → 2) 본 건의 총 계약금액은 2,951억원(VAT포함)이며, 상기2의 계약금액은 당사 시공지분 70%에 해당하는 금액임",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800653",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "바이오에프디엔씨",
+          "market": "코스닥",
+          "what": "단일판매ㆍ공급계약해지",
+          "amount_won": "",
+          "pct_of_sales": "10.00",
+          "pct_check": "",
+          "counterparty": "(주)에스테랩",
           "region": "",
-          "period": "2021-03-31~2026-11-30",
+          "period": "2024-12-03~2026-12-02",
           "changes": "",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900002",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900664",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "비나텍",
+          "market": "코스닥",
+          "what": "데이터센터용 슈퍼커패시터 공급계약",
+          "amount_won": "13,112,996,702",
+          "pct_of_sales": "15.95",
+          "pct_check": "맞음",
+          "counterparty": "SANMINA CORPORATION",
+          "region": "인도",
+          "period": "2026-07-03~2027-01-30",
+          "changes": "5.계약기간 - 종료일: 2026-11-27 → 2027-01-30",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900584",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "이노메트리",
+          "market": "코스닥",
+          "what": "2차전지 제조장비",
+          "amount_won": "2,216,000,000",
+          "pct_of_sales": "10.69",
+          "pct_check": "맞음",
+          "counterparty": "(주)탑머티리얼",
+          "region": "-",
+          "period": "2022-01-13~2026-11-30",
+          "changes": "확정 계약금액/계약금액 총액: 2,770,000,000 → 2,216,000,000 ; 매출액 대비: 13.37 → 10.69 ; 기타 투자판단에 참고할 사항: 1) 계약내역의 최근 매출액은 2020년 연결재무제표 기준입니다. 2) 계약기간 시작일은 계약체결일이고, 종료일은 잔금입금 예정일입니다. - 계 → 1) 계약내역의 최근 매출액은 2020년 연결재무제표 기준입니다. 2) 계약기간 시작일은 계약체결일이고, 종료일은 직전 공시상의 잔금입금 예정일",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900659",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "세보엠이씨",
+          "market": "코스닥",
+          "what": "아산 기계설비공사",
+          "amount_won": "72,384,000,000",
+          "pct_of_sales": "10.11",
+          "pct_check": "맞음",
+          "counterparty": "삼성물산 주식회사",
+          "region": "대한민국",
+          "period": "2026-11-30~2028-01-31",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900504",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "닷밀",
+          "market": "코스닥",
+          "what": "칼라스퀘어 미디어아트 테마파크 조성",
+          "amount_won": "3,954,545,455",
+          "pct_of_sales": "16.74",
+          "pct_check": "맞음",
+          "counterparty": "(재)수성문화재단 문화도시본부",
+          "region": "대구광역시 수성구",
+          "period": "2025-12-24~2027-01-30",
+          "changes": "2. 계약내역 확정계약금액: 3,636,363,636 → 3,954,545,455 ; 2. 계약내역 계약금액 총액(원): 3,636,363,636 → 3,954,545,455 ; 2. 계약내역 매출액 대비(%): 15.39 → 16.74 ; 5. 계약기간 종료일: 2026-11-30 → 2027-01-30 ; 10. 기타 투자판단에 참고할 사항: - 상기 2.계약금액(원)은 총 계약금액(부가가치세 포함) 4,000,000,000원 중 부가가치세 363,636,364원을 제외한 후 기재하였 → - 상기 2.계약금액(원)은 총 계약금액(부가가치세 포함) 4,350,000,000원 중 부가가치세 395,454,545원을 제외한 후 기재하였",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900465",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "그린생명과학",
+          "market": "코스닥",
+          "what": "AI반도체 소재 공급계약",
+          "amount_won": "16,750,000,000",
+          "pct_of_sales": "41.52",
+          "pct_check": "맞음",
+          "counterparty": "그린케미칼(주)",
+          "region": "국내",
+          "period": "2026-11-27~2027-04-30",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900448",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "한신공영",
+          "market": "유가",
+          "what": "단일판매ㆍ공급계약 체결",
+          "amount_won": "76,720,134,000",
+          "pct_of_sales": "6.7",
+          "pct_check": "맞음",
+          "counterparty": "",
+          "region": "서울특별시 금천구 시흥동",
+          "period": "-~-",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800433",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "케이앤에스아이앤씨",
+          "market": "코스닥",
+          "what": "어업관리단 전용위성망 이중화 서비스용 인프라 구축",
+          "amount_won": "1,489,080,000",
+          "pct_of_sales": "8.37",
+          "pct_check": "맞음",
+          "counterparty": "(주)케이엑스넥스지",
+          "region": "대한민국",
+          "period": "2026-11-27~2030-12-31",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900395",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "중앙백신",
+          "market": "코스닥",
+          "what": "계약명 : 정부조달물자 공급계약체결",
+          "amount_won": "5,590,829,364",
+          "pct_of_sales": "11.39",
+          "pct_check": "맞음",
+          "counterparty": "조달청",
+          "region": "농림축산식품부 수요기관 지정장소",
+          "period": "2026-07-08~2026-12-07",
+          "changes": "2. 계약내역 중 계약금액: 5,813,183,636 → 5,590,829,364 ; 2. 계약내역 중 매출액 대비(%): 11.85 → 11.39",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900346",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "프로티나",
+          "market": "코스닥",
+          "what": "임상검체 분석 서비스 공급 계약",
+          "amount_won": "1,147,165,821",
+          "pct_of_sales": "38.9",
+          "pct_check": "맞음",
+          "counterparty": "유럽 다국적 제약사 E사",
+          "region": "유럽",
+          "period": "2026-11-26~2027-04-17",
+          "changes": "3. 계약 상대방: 유럽 다국적 제약사E E사 → 유럽 다국적 제약사 E사",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900341",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "삼부토건",
+          "market": "유가",
+          "what": "정정신고(보고)",
+          "amount_won": "105,220,262,776",
+          "pct_of_sales": "18.30",
+          "pct_check": "맞음",
+          "counterparty": "",
+          "region": "강원도 화천군 간동면 간척리~양구군 양구읍 월명리 일원",
+          "period": "2024-06-19~2029-03-19",
+          "changes": "2. 계약내역: -계약금액(원) : 99,697,366,376 -매출액대비(%) : 17.34 → -계약금액(원) : 105,220,262,776 -매출액대비(%) : 18.30 ; 9. 기타 투자판단과 관련한 중요사항: - 상기 '2.계약내역'의 '계약금액(원)'은 부가가치세를 포함한 금액이며, 총공사금액 249,243,415,941원중 당사지분(40%)를 계산 → - 상기 '2.계약내역'의 '계약금액(원)'은 부가가치세를 포함한 금액이며, 총공사금액 263,050,656,941원중 당사지분(40%)를 계산",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800336",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "프로티나",
+          "market": "코스닥",
+          "what": "임상검체 분석 서비스 공급 계약",
+          "amount_won": "1,147,165,821",
+          "pct_of_sales": "38.9",
+          "pct_check": "맞음",
+          "counterparty": "유럽 다국적 제약사E E사",
+          "region": "유럽",
+          "period": "2026-11-26~2027-04-17",
+          "changes": "",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900299",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         }
       ],
       "dart_others": [
         {
-          "company": "동원모빌리티",
-          "market": "유가",
-          "kind": "[기재정정]타인에대한채무보증결정",
-          "changes": "채무보증기간 시작일: - → 2026-11-04 ; 채무보증기간 종료일: - → 2036-11-04 ; 주석 7.: 채무보증기간은 보증계약 체결일로부터 주채무 상환 완료시까지이며, 주채무의 여신기간은 대출실행일로부터 10년입니다. 추후 보증계약 체결 시 채무보 → 상기 채무보증기간은 대출 실행에 따라 확정된 기간이며, 주채무의 여신기간은 대출실행일로부터 10년입니다. ; 채무자별 채무보증 잔액- DONGWON AUTOPART TECHNOLOGY GEORGIA, Emanuel L: 보증계약 체결일 ~ 주채무 상환 완료시까지 → 2026-11-04 ~ 2036-11-04",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800950",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "큐리언트",
-          "market": "코스닥",
-          "kind": "유상증자또는주식관련사채등의청약결과(자율공시)",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900973",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "솔루믹스",
+          "company": "오건에코텍",
           "market": "코넥스",
-          "kind": "주권매매거래정지해제 (상장폐지에 따른 정리매매 개시)",
+          "kind": "주권매매거래정지",
           "changes": "",
           "numbers": "",
           "body_from": "공시 화면",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126600907",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127601174",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "오건에코텍",
-          "market": "코넥스",
-          "kind": "주권매매거래정지해제 (상장폐지에 따른 정리매매 개시)",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126600855",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "골프존홀딩스",
+          "company": "육일씨엔에쓰",
           "market": "코스닥",
-          "kind": "주요사항보고서(타법인주식및출자증권양도결정)",
-          "changes": "",
+          "kind": "[기재정정]최대주주변경",
+          "changes": "1.변경내용(변경후): 최대주주등 : - 소유주식수 : - 소유비율(%): - → 최대주주등 :허정혜 외2 소유주식수 :5,521,401 소유비율(%):31.25 ; 2.변경사유: 최대주주 부고에 따른 변경 → 상속에 따른 지분승계 ; 3.지분인수목적: - → 상속에 따른 지분승계 ; 4.변경일자: - → 2026-11-27 ; 5.변경확인일자: - → 2026-11-27 ; 6.기타 투자판단에 참고할 사항: - 최대주주의 별세로 인하여 최대주주가 변경될 예정이며,향후 최대주주의 상속지분에 대한 상속절차 완료 후 재공시 예정입니다. → 가. 본 공시는 2026년 11월 19일 공시한 「최대주주 변경」에 대한 정정공시로서, 명의개서 완료에 따라 변경 후 최대주주에 관한 사항을 확",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000961",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901144",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "오건에코텍",
-          "market": "코넥스",
-          "kind": "주요사항보고서(유상증자결정)",
-          "changes": "",
-          "numbers": "종류 유상증자 · 목적: 채무상환(원) 1,700,000,250 · 신주 보통주(주) 2,615,385 · 1주당 액면가(원) 500 · 증자 전 보통주(주) 14,603,347 · 증자 방식 제3자배정증자",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000956",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "오늘이엔엠",
+          "company": "큐리옥스바이오시스템즈",
           "market": "코스닥",
-          "kind": "주요사항보고서(소송등의제기)",
+          "kind": "주요사항보고서(전환사채권발행결정)",
           "changes": "",
-          "numbers": "",
+          "numbers": "종류 전환사채 · 사채 권면총액(원) 22,900,000,000 · 표면이자율(%) 0.0 · 만기이자율(%) 2.0 · 사채 만기일 2031년 12월 11일 · 전환가액(원) 49,904 · 전환 주식 종류 큐리옥스바이오시스템즈 주식회사 보통주 · 전환 주식 수 458,881 · 주식총수 대비(%) 2.59 · 전환청구 시작 2027년 12월 11일 · 전환청구 끝 2031년 11월 11일 · 목적: 운영(원) 22,900,000,000",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000919",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127002012",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "오늘이엔엠",
+          "company": "서희건설",
           "market": "코스닥",
-          "kind": "소송등의판결ㆍ결정 (신주상장금지 등)",
+          "kind": "타인에대한채무보증결정",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900727",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901126",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "GRT",
-          "market": "코스닥",
-          "kind": "증권발행결과(자율공시) (제3자배정-현물출자)",
+          "company": "삼성증권",
+          "market": "유가",
+          "kind": "단기차입금증가결정",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900737",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127801132",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "에코글로우",
-          "market": "코스닥",
-          "kind": "전환사채(해외전환사채포함)발행후만기전사채취득 (제11회차)",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900743",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "에이치앤에이치",
+          "company": "다원메닥스",
           "market": "기타",
-          "kind": "특수관계인에대한자금대여",
+          "kind": "[기재정정]주요사항보고서(전환사채권발행결정)",
+          "changes": "19. 제출을 면제받은 경우 그 사유: 사채권을 발행한 후 지체 없이 한국예탁결제원에 보호예수하고, 보호예수일부터 1년간 이를 인출 및 매각 불가 → 본건 사채는 사모의 방법으로 발행하며, 모집으로 간주되지 아니하도록 「증권의 발행 및 공시 등에 관한 규정」 제2-2조 제2항 제1호에 따라 전 ; 23. 기타 투자판단에 참고할 사항: [주1] → [주2]",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127002003",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "엔켐",
+          "market": "코스닥",
+          "kind": "[기재정정]최대주주변경을수반하는주식담보제공계약체결",
+          "changes": "1. 공시일 현재 소유 주식 수(주) 지분율(%): 678,405 3.10 → 484,628 2.21 ; 2. 채무(차입)금액 총액(원): 16,500,000,000 → 5,000,000,000 ; 3. 담보설정금액 총액(원): 16,500,000,000 → 5,000,000,000 ; 4. 담보제공 내역 中 누적 담보제공 주식 총수(주): 678,405 → 218,405 ; 5. 담보권 설정계약 체결일(당해 건): 2026-11-23 → 2026-11-27 ; 6. 기타 투자판단에 참고할 사항: 1) 상기 3. 담보설정금액 총액(원)은 순번 2의 상환금액인 16,500,000,000원을 기재하였습니다. 2) 상기 5. 담보권 설정계약 체 → 1) 상기 3. 담보설정금액 총액(원)은 순번 1의 상환금액인 5,000,000,000원을 기재하였습니다. 2) 상기 5. 담보권 설정계약 체결 ; [개별 담보제공 계약의 담보권 실행 조건]: - 순번 : 2 → - 순번 : 1 ; [개별 담보제공 계약의 담보권 실행 조건] 中 담보설정금액(원): 16,500,000,000 → 5,000,000,000 ; [개별 담보제공 계약의 담보권 실행 조건] 中 담보제공주식수(주): 678,405 → 218,405 ; 담보제공기간 시작일 종료일: 2026-04-08 2027-08-31 → 2026-11-27 2027-02-27 ; 계약체결일: 2026-09-21 → 2027-11-27 ; [개별 담보제공 계약의 담보권 실행 조건]: - 순번 : 2 기한의 도래 또는 기한이익 상실시 → - 순번 : 1 기한의 도래",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901072",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "서울전자통신",
+          "market": "코스닥",
+          "kind": "[기재정정]경영권변경등에관한계약체결",
+          "changes": "-양수도 대금의 지급일정 및 지급조건 등에 관한 사항: 1) 유상증자 납입 - 납입일 : 2026년 11월 27일 → 1) 유상증자 납입 - 납입일 : 2026년 12월 21일",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901015",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "서울전자통신",
+          "market": "코스닥",
+          "kind": "[기재정정]주요사항보고서(유상증자결정)",
+          "changes": "1. 신주의 종류와 수: 보통주식: 1,950,584 → 보통주식: 2,025,137 ; 4. 자금조달의 목적: 운영자금(원) : 899,998,192채무상환자금(원) : 600,000,000타법인 증권취득자금(원): 1,500,000,000 → 운영자금(원) : 699,996,184채무상환자금(원) : 2,200,000,000 ; 6. 신주 발행가액: 1,538원 → 1,432원 ; 7. 기준주가: 1,710원 → 1,592원 ; 9. 납입일: 2026년 11월 27일 → 2026년 12월 14일 ; 12. 신주의 상장예정일: 2026년 12월 21일 → 2027년 01월 22일 ; 20. 기타 투자판단에 참고할 사항: 1) 정정 전 → 1) 정정 후 ; 신주 발행가액 산정방법: 2) 정정 전 → 2) 정정 후 ; 【제3자배정 조달자금의 구체적 사용목적】: 3) 정정 전 → 3) 정정 후 ; 【제3자배정 대상자별 선정경위, 거래내역, 배정내역 등】: 4) 정정 전 → 4) 정정 후",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001964",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "미투온",
+          "market": "코스닥",
+          "kind": "최대주주변경",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000933",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901075",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "씨씨에스",
+          "market": "코스닥",
+          "kind": "소송등의제기ㆍ신청(경영권분쟁소송) (의결권행사금지 가처분)",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901087",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "한컴",
+          "market": "코스닥",
+          "kind": "영업정지(종속회사의주요경영사항)",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901106",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "농업협동조합자산관리회사",
+          "market": "기타",
+          "kind": "[기재정정]특수관계인으로부터자금차입",
+          "changes": "마. 이자율: 4% 중~후반 (MOR(3월) + 가산 1.32%) → 4.71 (MOR(3월) + 가산 1.32%) ; 7. 기타: 2026.11.28 이후 금리 확정 → -",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001985",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "크로넥스",
+          "market": "코넥스",
+          "kind": "[기재정정]주요사항보고서(전환사채권발행결정)",
+          "changes": "2. 사채의 권면(전자등록)총액 (원): 977,000,000 → 510,000,000 ; 3. 자금조달의    목적    시설자금(원): 977,000,000 → 510,000,000 ; 5. 사채만기일: 2026년 11월 29일 → 2027년 11월 29일 ; 7. 원금상환방법: 만기일까지 보유하고 있는 본 사채의 전자등 록금액에 대하여는 만기일인2026년11월29일 에 발행금액의142.5307%에 해당하는 금액을 일시에 → 만기일까지 보유하고 있는 본 사채의 전자등록금액에 대하여는 만기일인2027년11월29일에 발행금액의112.0000%에 해당하는 금액을 일시에 상 ; 8. 사채발행방법    전환에 따라     발행할 주식: 주식수 : 886,569주식총수 대비 비율(%) : 15.50 → 주식수 : 462,794주식총수 대비 비율(%) : 5.96 ; 8. 사채발행방법    전환청구기간: 시작일 : 2024년 11월 30일종료일 : 2026년 10월 29일 → 시작일 : 2024년 11월 30일종료일 : 2027년 10월 29일 ; 20. 본 건 전환사채의 취득이 금지되는 공매도 거래 기간: - → 해당여부 : 아니오시작일 : -종료일 : - ; 23. 기타 투자판단에 참고할 사항: 2027-10-31 → 111.0873% ; 구분: 조기상환일 → 조기상환율 ; : FROM → TO ; 1: 2024-11-30 → 112.5508 ; 2: 2025-02-28 → 115.9274",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001962",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "HPSP",
+          "market": "코스닥",
+          "kind": "최대주주변경을수반하는주식담보제공계약체결",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901080",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
           "company": "에이전트AI",
           "market": "코스닥",
-          "kind": "[기재정정]주요사항보고서(유상증자결정)",
-          "changes": "9. 납입일: 2026년 11월 26일 → 2026년 12월 16일 ; 12. 신주의 상장 예정일: 2026년 12월 17일 → 2027년 01월 08일",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000908",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "프로이데아홀딩스",
-          "market": "기타",
-          "kind": "특수관계인으로부터자금차입",
+          "kind": "전환사채(해외전환사채포함)발행후만기전사채취득 (제33회차)",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000931",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901073",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "애드바이오텍",
+          "company": "큐로셀",
           "market": "코스닥",
-          "kind": "[기재정정]주요사항보고서(타법인주식및출자증권양수결정)",
-          "changes": "5. 양수예정일자: 2026.11.26 → 2026.12.01 ; 7. 거래대금지급: 1) 대금지급 형태 : 현금 지급2) 대금지급 시기 : 2026년 11월 26일3) 자금조달 방법 : 차입금 → 1) 대금지급 형태 : 현금 지급2) 대금지급 시기 : 2026년 12월 1일3) 자금조달 방법 : 자기자금 (제11회 전환사채권 발행을 통한  ; 15. 기타 투자판단과 관련한 중요사항: ① 대금지급- 지급일 : 2026.11.26- 지급방법 : 현금지급- 지급액 : 8,000,000,000원 → ① 대금지급- 지급일 : 2026.12.01- 지급방법 : 현금지급- 지급액 : 8,000,000,000원 ; 【차입금에 관한 사항】: (주1) → 삭제",
+          "kind": "전환가액의조정 (제4회차)",
+          "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000875",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901010",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "드림인사이트",
+          "company": "엑시콘",
           "market": "코스닥",
-          "kind": "[기재정정]최대주주변경을수반하는주식양수도계약체결",
-          "changes": "2. 계약 내역 - 양수도 대금의 지급일정 및 지급조건 등에 관한 사항: 1. 양도인 : 김기철 외 3인 - 회사와의 관계 : 변경 전 최대주주 및 그 특수관계인 - 양도인별 내역 가. 양도인1 : 김기철 - 양도주식 → 1. 양도인 : 김기철 외 3인 - 회사와의 관계 : 변경 전 최대주주 및 그 특수관계인 - 양도인별 내역 가. 양도인1 : 김기철 - 양도주식 ; 3. 변경예정 최대주주 -변경 예정일자: 2026-11-26 → 2026-12-01 ; 5. 기타 투자판단에 참고할 사항: 1. 변경예정 최대주주의 변경 예정일자는 잔금 지급완료 및 주식양수도가 완료되는 날입니다. 2. 변경예정 최대주주의 예정 소유주식수는 잔금 지급 → 1. 변경예정 최대주주의 변경 예정일자는 주식회사 애드바이오텍에 대한 잔금 지급 및 주식양도가 완료되는 날입니다. 2. 변경예정 최대주주의 예정",
+          "kind": "주요사항보고서(타법인주식및출자증권양도결정)",
+          "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900725",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001923",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "남광토건",
+          "company": "대동",
           "market": "유가",
-          "kind": "소송등의판결ㆍ결정(일정금액이상의청구)",
+          "kind": "주요사항보고서(유상증자결정)",
           "changes": "",
-          "numbers": "",
+          "numbers": "종류 유상증자 · 목적: 시설(원) 5,000,000,000 · 목적: 운영(원) 5,167,500,000 · 목적: 채무상환(원) 45,000,000,000 · 목적: 기타(원) 1,100,000,000 · 신주 보통주(주) 15,850,000 · 1주당 액면가(원) 1,000 · 증자 전 보통주(주) 28,826,865 · 증자 방식 주주배정후 실권주 일반공모",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800716",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "애드바이오텍",
-          "market": "코스닥",
-          "kind": "[기재정정]주요사항보고서(전환사채권발행결정)",
-          "changes": "9. 전환에 관한 사항: (주1) → (주2) ; 9-1. 옵션에 관한 사항: 가. 조기상환청구권(Put Option)에 관한 사항 : 본 사채의 사채권자는 본 사채의 발행일로부터 1년이 되는 2027년 11월 30일 및  → 가. 조기상환청구권(Put Option)에 관한 사항 : 본 사채의 사채권자는 본 사채의 발행일로부터 1년이 되는 2027년 11월 30일 및  ; 23. 기타 투자판단에 참고할 사항: (주3) → (주4)",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000870",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "롯데렌탈",
-          "market": "유가",
-          "kind": "공개매수에관한의견표명서",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000897",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "KS인더스트리",
-          "market": "코스닥",
-          "kind": "[기재정정]주요사항보고서(유상증자결정)",
-          "changes": "9. 납입일: 2026년 11월 26일 → 2027년 01월 15일 ; 10. 신주의 배당기산일: 2026년 01월 01일 → 2027년 01월 01일 ; 12. 신주의 상장 예정일: 2026년 12월 11일 → 2027년 02월 01일 ; 20. 기타 투자판단에 참고할 사항  2) 신주의 청약에 관한 사항: 2026년 11월 26일 → 2027년 01월 15일 ; 【제3자배정으로서 주요사항보고서가 5회 이상 정정되는 경우】: - → 정정사유 : 납입 일정 변경향후계획 : 당사는 향후 배정대상자와의 긴밀한 협의를 통해 일정에 따라 진행될 수 있도록 최선을 다해 노력하겠습니다",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000859",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "에스피청주일반사모부동산투자회사",
-          "market": "기타",
-          "kind": "비유동자산취득결정",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000889",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001941",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
           "company": "라메디텍",
           "market": "코스닥",
-          "kind": "주요사항보고서(유상증자결정)",
-          "changes": "",
-          "numbers": "종류 유상증자 · 목적: 운영(원) 1,499,999,988 · 신주 보통주(주) 1,002,004 · 1주당 액면가(원) 500 · 증자 전 보통주(주) 8,802,965 · 증자 방식 일반공모증자",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000839",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "코오롱오토옥션",
-          "market": "기타",
-          "kind": "회사합병결정",
+          "kind": "유상증자최종발행가액확정",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000884",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901046",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "SGC E&C",
+          "company": "육일씨엔에쓰",
           "market": "코스닥",
-          "kind": "[기재정정]타인에대한채무보증결정",
-          "changes": "4. 채무보증내역 채무보증기간 종료일: 2026-11-30 → 2026-11-26 ; 7. 기타 투자판단에 참고할 사항: 1. 상기 사항은 당사가 기 공시한 [2022-10-12, 2023 03-08, 2024-02-23 타인에 대한 채무보증 결정]의 만 기연장에  → 1. 상기 사항은 당사가 기 공시한 [2022-10-12, 2023 03-08, 2024-02-23, 2026-05-29 타인에 대한 채무보증 ",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900720",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "하고하우스",
-          "market": "기타",
-          "kind": "회사합병결정",
+          "kind": "주요사항보고서(전환사채권발행결정)",
           "changes": "",
-          "numbers": "",
+          "numbers": "종류 전환사채 · 사채 권면총액(원) 15,000,000,000 · 표면이자율(%) 3.0 · 만기이자율(%) 0.0 · 사채 만기일 2029년 12월 22일 · 전환가액(원) 2,474 · 전환 주식 종류 주식회사 육일씨엔에쓰 기명식 보통주식 · 전환 주식 수 6,063,055 · 주식총수 대비(%) 25.55 · 전환청구 시작 2027년 12월 23일 · 전환청구 끝 2029년 11월 22일 · 목적: 타법인 증권 취득(원) 15,000,000,000",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000851",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001910",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "휴맥스",
+          "company": "아톤",
           "market": "코스닥",
-          "kind": "기타경영사항(자율공시) (소규모합병 승인 이사회 결의(주주총회 갈음) 결과 보고)",
+          "kind": "자기주식처분결과보고서",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900656",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001933",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "사조씨푸드",
+          "company": "덴티스",
+          "market": "코스닥",
+          "kind": "[기재정정]최대주주변경을수반하는주식담보제공계약체결",
+          "changes": "1.공시일 현재 소유 주식수: 4,345,711 → 4,369,874 ; 1.공시일 현재 지분율: 27.48 → 27.64 ; 1.담보권 전부 실행시 소유주식수: 1,432,463 → 1,466,204 ; 1.담보권 전부 실행시 지분율: 9.05 → 9.27 ; 2.채무금액 총액: 5,551,267,300 → 5,500,267,300 ; 3.담보설정금액 총액: 7,601,310,410 → 7,514,610,410 ; 4.누적 담보제공 주식총수: 2,913,248 → 2,903,670 ; 5.담보권 설정계약 체결일(당해건): 2026-09-16 → 2026-11-27 ; 순번3-담보설정금액: 2,871,890,410 → 2,785,190,410 ; 순번3-담보제공주식수: 317,248 → 307,670",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900992",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "인피니트헬스케어",
+          "market": "코스닥",
+          "kind": "소송등의판결ㆍ결정 ((경영권분쟁소송)이사해임의 소-취하)",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127901005",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "코오롱티슈진",
+          "market": "코스닥",
+          "kind": "전환가액의조정 (제3회차,제4회차)",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900993",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "그린플러스",
+          "market": "코스닥",
+          "kind": "[기재정정]주요사항보고서(유상증자결정)",
+          "changes": "상환에 관한 사항 - 상환기간: 2024년 12월 23일 ~2026년 12월 22일 → 2024년 12월 23일 ~2027년 12월 22일 ; 전환에 관한 사항 - 전환청구기간(종료일): 2026년 12월 23일 → 2027년 12월 23일 ; 20. 기타 투자판단에 참고할 사항(4) 전환권에 관한 사항 - 2) 존속기간: 주1) → 주1)",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001873",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "GST",
+          "market": "코스닥",
+          "kind": "주식소각결정",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900963",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "에스텍",
+          "market": "코스닥",
+          "kind": "공개매수에관한의견표명서",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001869",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "KISCO홀딩스",
           "market": "유가",
-          "kind": "합병등종료보고서(자산양수도)",
+          "kind": "자기주식취득결정(자회사의 주요경영사항)",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000845",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800956",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "팬스타엔터프라이즈",
-          "market": "코스닥",
-          "kind": "전환사채(해외전환사채포함)발행후만기전사채취득",
+          "company": "엘앤에프",
+          "market": "유가",
+          "kind": "유상증자또는주식관련사채등의발행결과(자율공시)",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900685",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800945",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "HLB",
+          "market": "코스닥",
+          "kind": "증권신고서(합병)",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001848",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
@@ -2300,139 +2216,95 @@ window.PANEL_DATA = {
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800641",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800863",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "신원",
+          "company": "HL홀딩스",
           "market": "유가",
-          "kind": "자기주식취득결과보고서",
-          "changes": "",
+          "kind": "[기재정정]타인에대한채무보증결정(자회사의 주요경영사항)",
+          "changes": "4. 채무보증내역: 채무보증기간 시작일 : 2025-08-29 종료일 : 2027-02-26 → 채무보증기간 시작일 : 2025-08-29 종료일 : 2027-05-26 ; 5. 채무보증 총 잔액(원): 596,919,133,347 → 1,852,764,839,537 ; 7. 기타 투자판단과 관련한 주요사항: - 본건 채무보증은 당사가 시공하는 \"울산 우정동 지역주택조합 공동주택\" 시행자의 기존대출금 상환, 공사비 등 사업비 지급을 위한 PF대출 연대 → - 본건 채무보증은 당사가 시공하는 \"울산 우정동 지역주택조합 공동주택\" 시행자의 기존대출금 상환, 공사비 등 사업비 지급을 위한 PF대출 연대",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000830",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800856",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "솔브레인홀딩스",
+          "company": "블루엠텍",
           "market": "코스닥",
-          "kind": "주요사항보고서(자기주식처분결정)(자회사의 주요경영사항)",
+          "kind": "최대주주변경",
           "changes": "",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900666",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900816",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "한국자산신탁",
+          "company": "지노믹트리",
+          "market": "코스닥",
+          "kind": "자기주식처분결과보고서",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001821",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "미투온",
+          "market": "코스닥",
+          "kind": "증권발행결과(자율공시)",
+          "changes": "",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900882",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "라메디텍",
+          "market": "코스닥",
+          "kind": "[기재정정]주요사항보고서(유상증자결정)",
+          "changes": "1. 신주의 종류와 수: 기타주식 (주) → - ; : 보통주식 (주) → 1,002,004 ; : 기타주식 (주) → - ; : 보통주식 (주) → 982,961 ; : 기타주식 (주) → - ; 4. 자금조달의 목적- 운영자금(원): 1,499,999,988 → 1,499,998,486 ; 주1): 상기 1. 신주의 종류와 수 및 4. 자금조달의 목적 금액은 확정발행가액이 아닌 예정발행가액으로 산정된 수 및 금액으로, 확정발행가액은 추후 정 → 상기 1. 신주의 종류와 수 및 4. 자금조달의 목적 금액은 확정발행가액 기준으로 산정되었습니다. ; 6. 신주 발행가액: 1,497 → 1,526 ; 주2): 상기 6. 신주 발행가액은 확정발행가액이 아닌 예정발행가액으로 산정된 수 및 금액으로, 확정발행가액에 관한 자세한 사항은 20. 기타 투자판단에 → 상기 6. 신주 발행가액은 확정발행가액입니다. ; 20. 기타 투자판단에 참고할 사항- 라. 청약증거금의 대체 및 반환 등에 관한 사항 2): 「자본시장과 금융투자업에 관한 법률 시행령」 제137조제1항제3호의2에 따라 SK증권㈜와 청약증거금의 예치, 보관 및 투자자에 대한 반환 등에  → 「자본시장과 금융투자업에 관한 법률 시행령」 제137조제1항제3호의2에 따라 SK증권㈜와 청약증거금의 예치, 보관 및 투자자에 대한 반환 등에 ",
+          "numbers": "",
+          "body_from": "공식 API",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001660",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "한울앤제주",
+          "market": "코스닥",
+          "kind": "[첨부정정]주요사항보고서(전환사채권발행결정)",
+          "changes": "전환가액산정표: 2026년 05월 06일자 2026년 07월 06일자 2026년 09월 01일자 2026년 09월 04일자 2026년 10월 27일자 2026년 → 2026년 11월 27일자 전환가액산정표",
+          "numbers": "",
+          "body_from": "공시 화면",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127001796",
+          "addr": "처리-1",
+          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
+        },
+        {
+          "company": "CJ",
           "market": "유가",
-          "kind": "[기재정정]소송등의제기ㆍ신청(일정금액이상의청구)",
-          "changes": "2. 원고·신청인: 노○○ 외 446명 → 노○○ 외 442명 ; 4. 청구금액: 178,715,561,000 → 176,991,211,000 ; 4. 자기자본대비(%): 16.50 → 16.34 ; 7. 제기ㆍ신청일자: 2026-11-19 → 2026-11-23 ; 8. 확인일자: 2026-11-23 → 2026-11-26 ; 9. 기타 투자판단에 참고할 사항: 2. 최초 소송 제기 당시('24.07.17) 소가(94억원)는 공시해당금원에 미치지 아니하였으나, 청구취지 변경(원고 465명, 소가:192, → 2. 최초 소송 제기 당시('24.07.17) 소가(94억원)는 공시해당금원에 미치지 아니하였으나, 청구취지 변경(원고 465명, 소가:192,",
+          "kind": "[기재정정]타인에대한담보제공결정(자회사의 주요경영사항)",
+          "changes": "4. 담보제공 내역-담보제공기간: 종료일 : 2035-12-30 → 종료일 : 2026-12-30 ; 7. 기타 투자판단과 관련한 중요사항: - → 6) 씨제이올리브네트웍스(주)는 미상환 상환우선주 전액을 2026년 12월 30일 조기상환할 예정이며, 이에 따라 관련 담보가 해제될 예정임. ; 채무자별 담보제공 잔액: 씨제이올리브네트웍스(주) 담보제공기간 2025.12.30~ 2035.12.30 → 씨제이올리브네트웍스(주) 담보제공기간 2025.12.30~ 2026.12.30",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800642",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127800853",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         },
         {
-          "company": "솔브레인",
+          "company": "큐리언트",
           "market": "코스닥",
-          "kind": "주요사항보고서(자기주식처분결정)",
-          "changes": "",
+          "kind": "[기재정정]유상증자또는주식관련사채등의청약결과(자율공시)",
+          "changes": "6. 단수주 및 실권주 처리방법: 구주주 청약 이후 발생한 단수주(3,477주)는 '증권 인수업무 등에 관한 규정' 제9조 제2항 7호에 의거하여 공동대표주관회사가 자기계산으로  → 구주주 청약 이후 발생한 단수주(2,448주)는 '증권 인수업무 등에 관한 규정' 제9조 제2항 7호에 의거하여 공동대표주관회사가 자기계산으로  ; 7. 기타 투자판단에 참고할 사항: (전략) - 단수 주식수: 3,477주 (초과청약 배정에 따라 발생한 단수주) (후략) → (전략) - 단수 주식수: 2,448주 (초과청약 배정에 따라 발생한 단수주) (후략)",
           "numbers": "",
           "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000770",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "큐로셀",
-          "market": "코스닥",
-          "kind": "전환가액의조정 (제3회차)",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900654",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "셀레믹스",
-          "market": "코스닥",
-          "kind": "[기재정정]최대주주변경을수반하는주식담보제공계약체결",
-          "changes": "6. 기타 투자판단에 참고할 사항: 1. 본 공시는 최대주주 박종갑이 차용인 주식회사 지앤엠의 금전소비대차계약에 담보제공자 및 연대보증인으로서 보유주식의 일부를 담보로 제공한 것으 → 아래 「정정 후 본문」의 6. 기타 투자판단에 참고할 사항 참조 ; [개별 담보제공 계약에 관한 사항] 담보권 종류: 양도담보 → 질권",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126900606",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "솔브레인홀딩스",
-          "market": "코스닥",
-          "kind": "주요사항보고서(자기주식처분결정)",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000757",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "드림인사이트",
-          "market": "코스닥",
-          "kind": "주요사항보고서(유상증자결정)",
-          "changes": "",
-          "numbers": "종류 유상증자 · 목적: 운영(원) 2,999,998,080 · 신주 보통주(주) 2,398,080 · 1주당 액면가(원) 100 · 증자 전 보통주(주) 16,800,574 · 증자 방식 제3자배정증자",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000784",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "HL D&I",
-          "market": "유가",
-          "kind": "타인에대한채무보증결정",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126800639",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "엘앤에프",
-          "market": "유가",
-          "kind": "주요사항보고서(전환사채권발행결정)",
-          "changes": "",
-          "numbers": "종류 전환사채 · 사채 권면총액(원) 4,000,000,000 · 표면이자율(%) 0.0 · 만기이자율(%) 3.0 · 사채 만기일 2056년 12월 14일 · 전환가액(원) 72,496 · 전환 주식 종류 주식회사 엘앤에프 기명식 보통주식 · 전환 주식 수 55,175 · 주식총수 대비(%) 0.14 · 전환청구 시작 2027년 12월 14일 · 전환청구 끝 2056년 11월 14일 · 목적: 운영(원) 4,000,000,000",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000731",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "에이피알",
-          "market": "유가",
-          "kind": "주요사항보고서(타법인주식및출자증권양수결정)",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000734",
-          "addr": "처리-1",
-          "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
-        },
-        {
-          "company": "비트컴퓨터",
-          "market": "코스닥",
-          "kind": "주요사항보고서(자기주식취득결정)",
-          "changes": "",
-          "numbers": "",
-          "body_from": "공식 API",
-          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261126000742",
+          "link": "https://dart.fss.or.kr/api/link.jsp?rcpNo=20261127900871",
           "addr": "처리-1",
           "source": "v2_secretary/결과/거푸집1/DART_공시표.csv"
         }
@@ -2691,6 +2563,30 @@ window.PANEL_DATA = {
           "source": "v2_secretary/결과/거푸집1/FRED_지표표.csv"
         },
         {
+          "series": "VIXCLS",
+          "name": "미국 변동성 지수 VIX(흔히 '공포지수')",
+          "date": "2026-11-24",
+          "value": "26.36",
+          "unit": "점",
+          "prev_date": "2026-11-23",
+          "prev_value": "26.62",
+          "change": "-0.26",
+          "addr": "인풋-5",
+          "source": "v2_secretary/결과/거푸집1/FRED_지표표.csv"
+        },
+        {
+          "series": "BAMLH0A0HYM2",
+          "name": "미국 하이일드 채권 가산금리",
+          "date": "2026-11-24",
+          "value": "3.72",
+          "unit": "%p",
+          "prev_date": "2026-11-23",
+          "prev_value": "3.63",
+          "change": "+0.09",
+          "addr": "인풋-5",
+          "source": "v2_secretary/결과/거푸집1/FRED_지표표.csv"
+        },
+        {
           "series": "FEDFUNDS",
           "name": "미국 실효 기준금리(월평균)",
           "date": "2026-10-01",
@@ -2765,12 +2661,12 @@ window.PANEL_DATA = {
         {
           "series": "VIXCLS",
           "name": "미국 변동성 지수 VIX(흔히 '공포지수')",
-          "date": "2026-11-24",
-          "value": "26.36",
+          "date": "2026-11-26",
+          "value": "26.8",
           "unit": "점",
-          "prev_date": "2026-11-23",
-          "prev_value": "26.62",
-          "change": "-0.26",
+          "prev_date": "2026-11-25",
+          "prev_value": "28.29",
+          "change": "-1.49",
           "addr": "인풋-5",
           "source": "v2_secretary/결과/거푸집1/FRED_지표표.csv"
         },
@@ -2789,12 +2685,12 @@ window.PANEL_DATA = {
         {
           "series": "BAMLH0A0HYM2",
           "name": "미국 하이일드 채권 가산금리",
-          "date": "2026-11-24",
-          "value": "3.72",
+          "date": "2026-11-26",
+          "value": "3.77",
           "unit": "%p",
-          "prev_date": "2026-11-23",
-          "prev_value": "3.63",
-          "change": "+0.09",
+          "prev_date": "2026-11-25",
+          "prev_value": "3.77",
+          "change": "+0",
           "addr": "인풋-5",
           "source": "v2_secretary/결과/거푸집1/FRED_지표표.csv"
         }
@@ -3003,15 +2899,15 @@ window.PANEL_DATA = {
       "status": "돎 (글당 AI 1콜 + 파이썬 원문·숫자 대조)",
       "counts": {
         "gate_in": {
-          "val": 61,
-          "source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+          "val": 53,
+          "source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
         },
         "summarized_today": {
-          "val": 50,
+          "val": 47,
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         "bad_numbers_today": {
-          "val": 0,
+          "val": 2,
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         "fed_speeches_total": {
@@ -3021,1202 +2917,1130 @@ window.PANEL_DATA = {
       },
       "items": [
         {
-          "id": "i80dd2f6ecd",
+          "id": "i947064026d",
           "source_name": "한국은행 보도자료 RSS",
           "kind": "한국은행 보도자료",
           "writer": "한국은행",
-          "title": "경제전망(2026년 11월)",
-          "easy1_title": "반도체 덕분에 올해와 내년 성장세가 높을 겁니다",
-          "easy1_desc": "한국은행이 2026년 11월 경제전망을 발표했는데요, 국내 경제가 반도체 경기 호조와 그 파급 효과에 힘입어 올해 3.9%와 내년 4.1%의 높은 성장세를 나타낼 전망이라고 밝혔습니다. 뭔 소리냐면, 중동 상황이나 관세 같은 불확실성이 있는데도 반도체가 잘 나가서 전체 경제를 끌어올린다는 말이에요. 수출과 투자가 계속 좋아진다는 장점이 있는데, 반도체 경기가 흔들리면 타격을 입을 수도 있다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 반도체 덕을 톡톡히 보지만 그만큼 변동성도 크다는 셈이에요.",
-          "easy2_title": "소비자물가는 높은 오름세를 이어갈 전망입니다",
-          "easy2_desc": "한국은행은 소비자물가가 누적된 비용 압력의 전이와 수요측 압력 확대로 금년 2.7%, 내년 2.4% 상승할 전망이라고 전했는데요, 근원물가 중심로 상당 기간 높은 오름세를 이어간다는 겁니다. 물가가 안정되는 쪽으로 가기보다 비용 부담이 계속 이어진다는 말이에요. 오름세가 다소 낮아진다는 장점이 있지만 여전히 부담이라는 단점도 있다는 거고요. 쉽게 말하면, 물가 압력이 쉽게 가라앉지 않는다고 봤다는 거예요.",
-          "topic": "한국은행이 발표한 2026년 11월 경제전망으로, 국내외 경제 성장률과 물가 및 경상수지 흐름을 짚어본 내용이에요.",
+          "title": "2026년 3/4분기중 거주자의 카드 해외 사용실적",
+          "easy1_title": "해외로 떠난 사람들이 늘어나며 카드 쓴 돈도 불어났다",
+          "easy1_desc": "2026년 3/4분기 동안 우리나라 사람들이 해외에서 카드(신용+체크)로 쓴 금액이 66.3억달러로 집계됐는데요, 이걸 바로 전 분기인 58.5억달러와 견주어 봤더니 13.3%나 불어났다는 말이에요. 그 이유를 찾아봤더니 온라인쇼핑의 해외 직접구매는 조금 줄었지만, 밖으로 나간 내국인 출국자 수가 늘어난 점이 여행 관련 지출을 키웠기 때문이라는 겁니다. 쉽게 말하면, 해외 여행객들이 많아지면서 자연스럽게 카드 씀씀이도 커진 셈이에요.",
+          "easy2_title": "신용과 체크 모두 쓰임새가 커졌지만 국내 사용은 주춤했다",
+          "easy2_desc": "카드 종류별로 세세히 뜯어봤더니 신용카드는 10.9%, 체크카드는 18.9% 늘어나면서 둘 다 사용 금액이 눈에 띄게 불어났다는 거예요. 반면에 외국인이 국내에서 카드로 쓴 돈은 47.1억달러로 전 분기의 48.6억달러보다 3.1% 줄어들었다고 해요. 우리 국민의 해외 카드 결제는 활발해진 반면 외국인의 국내 카드 결제는 약간 가라앉았다는 차이가 있다는 겁니다.",
+          "topic": "2026년 3/4분기 동안 우리나라 거주자의 해외 카드 사용 실적과 외국인의 국내 카드 사용 변화를 살펴본 내용이에요.",
           "points": [
-            "국내 경제 성장 전망: 한국은행은 국내 경제가 올해 3.9%, 내년 4.1%의 높은 성장세를 기록할 것으로 내다봤는데요, 반도체 수출 호조와 그 파급 효과가 주요 원인이라고 밝혔습니다. 뭔 소리냐면, 다른 대내외 리스크가 있어도 반도체 중심의 수출과 투자가 경제 성장을 강하게 밀어준다는 말이에요.",
-            "물가 및 경상수지 흐름: 소비자물가는 올해 2.7%, 내년 2.4% 오르고 경상수지 흑자는 올해 5,000억 달러, 내년 5,400억 달러로 높은 수준을 이어갈 것이라고 설명했는데요, 비용 압력 전이로 근원물가 오름세가 지속된다는 겁니다. 상품수지가 크게 늘어나면서 흑자 규모가 커진다는 셈이에요.",
-            "전망의 리스크와 시나리오: 한국은행은 반도체 경기와 중동 상황 등이 주요 리스크 요인이라고 분석하면서, AI 투자 여건에 따라 성장과 물가가 달라지는 낙관 및 비관 시나리오를 점검했다고 밝혔는데요, 기본 전망 외에도 여러 변동성에 대비하겠다는 계획입니다. 쉽게 말하면, 반도체 향방에 따라 경제 흐름이 크게 바뀔 수 있다는 겁니다."
+            "거주자의 해외 카드 사용 증가: 2026년 3/4분기 거주자의 카드 해외 사용금액은 66.3억달러를 기록해 전 분기인 58.5억달러보다 13.3% 증가했다고 해요. 뭔 소리냐면, 전년 같은 기간의 59.3억달러와 비교해 봐도 11.8% 늘어난 수준이라는 말이에요.",
+            "카드 종류별 사용 성향: 신용카드와 체크카드 두 종류 모두 사용액이 늘어난 흐름을 보였는데요, 세부적으로 보면 신용카드는 2026년 2/4분기보다 10.9% 늘었고 체크카드는 18.9% 불어났다는 겁니다.",
+            "비거주자의 국내 카드 사용 감소: 우리 국민의 해외 씀씀이가 커진 것과 달리 비거주자의 카드 국내 사용금액은 47.1억달러로 집계됐는데요, 전 분기의 48.6억달러에 비해 3.1% 줄어들었다고 밝혔습니다."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "12949",
-          "link": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11067101&menuNo=200690",
+          "body_chars": "6164",
+          "link": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11067139&menuNo=200690",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "iac87914295",
-          "source_name": "한국은행 보도자료 RSS",
-          "kind": "한국은행 보도자료",
-          "writer": "한국은행",
-          "title": "통화정책방향(2026.11.26)",
-          "easy1_title": "기준금리를 3.25퍼센트로 올리기로 했습니다",
-          "easy1_desc": "금융통화위원회가 기준금리를 3.00퍼센트에서 3.25퍼센트로 0.25퍼센트포인트 높여서 통화정책을 운용하기로 했는데요. 국내 경제의 성장세가 탄탄해진 반면 물가 상승률이 목표치를 웃돌고 금융안정 위험도 남아 있기 때문이라는 겁니다. 쉽게 말하면, 경기가 좋아진 속도에 맞춰 금리를 더 얹어 둔 셈이라는 말이에요.",
-          "easy2_title": "올해와 내년 성장률 전망치를 높여 잡았습니다",
-          "easy2_desc": "반도체 경기 호조 덕분에 수출과 투자가 잘 나가면서 올해와 내년 성장률이 지난 8월에 내놓았던 전망치보다 높게 나타날 것으로 보인다고 밝혔는데요. 다만 중동 사태나 반도체 내수 파급 같은 불확실성이 남아 있다는 점도 같이 언급했다는 겁니다. 성장이 커진다는 장점이 있지만 불안 요인이 완전히 사라진 것은 아니라는 거예요.",
-          "topic": "한국은행 금융통화위원회가 물가와 성장 흐름을 고려해 기준금리를 올리고 앞으로의 정책 방향을 정했다는 내용이에요.",
-          "points": [
-            "기준금리 인상: 금융통화위원회가 기준금리를 3.00퍼센트에서 3.25퍼센트로 0.25퍼센트포인트 올리기로 했다고 밝혔는데요. 물가 상승률이 목표 수준을 웃돌고 금융안정 리스크가 이어지고 있어서 이런 결정을 내렸다는 겁니다. 금리가 오르면 이자 부담이 커진다는 단점이 있지만, 물가를 잡는 데는 도움이 된다는 거예요.",
-            "성장률 전망 상향: 국내 경제는 수출과 투자 호조에 힘입어 높은 성장세를 이어가고 있다고 분석했는데요. 올해 성장률은 3.9퍼센트, 내년 성장률은 4.1퍼센트로 지난 8월 전망치보다 각각 3.3퍼센트와 2.9퍼센트에서 높아질 것으로 보인다는 말이에요. 뭔 소리냐면, 반도체 경기가 좋아지면서 경제 전반의 파이 키우기가 더 잘 되고 있다는 뜻입니다.",
-            "물가와 금융안정: 10월 소비자물가와 근원물가(식료품 및 에너지 제외 지수)는 모두 2퍼센트대 후반인 2.8퍼센트 오름세를 이어갔다고 보도했는데요. 앞으로도 비용 압력이 이어지고 수요가 커지면서 물가가 목표 수준을 웃돌 것으로 보인다는 겁니다. 쉽게 말하면, 물가 안정을 위해 앞으로도 금리와 경제 상황을 꼼꼼히 살피겠다는 말이에요."
-          ],
-          "evidence_ok": "5/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 올해 성장률은 3.9퍼센트, 내년 성장률은 4.1퍼센트로 지난 8월 전망치보다 각각 3.3퍼센트와 2.9퍼센; 예측 의심: 앞으로도 비용 압력이 이어지고 수요가 커지면서 물가가 목표 수준을 웃돌 것으로 보인다는 겁니다.; topic 근거 원문에 없음",
-          "body_chars": "3264",
-          "link": "https://www.bok.or.kr/portal/bbs/P0000559/view.do?nttId=11067084&menuNo=200690",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "if52427204f",
+          "id": "i5135ef88e5",
           "source_name": "국회 보도자료 RSS",
           "kind": "국회 보도자료",
           "writer": "국회",
-          "title": "산자중기위, 산업통상부·중소벤처기업부·지식재산처 소관 법률안 63건 의결",
-          "easy1_title": "제조산업에 인공지능을 더하고 기술 유출을 막는 법안들을 통과시켰습니다",
-          "easy1_desc": "국회 산업통상자원중소벤처기업위원회가 11월 26일 전체 회의를 열어서 63건의 법률안을 심의하고 의결했다고 밝혔습니다. 세부적으로 살펴보면 산업통상자원부 소관 법률안 25건, 중소벤처기업부 소관 법률안 22건, 지식재산처 소관 법률안 16건이 포함되어 있다는 건데요. 쉽게 말하면 제조산업 인공지능 전환과 기술 보호, 소상공인과 중소기업 지원을 위한 제도들을 손봤다는 셈입니다.",
-          "easy2_title": "한중 FTA 후속협상 결과를 보고받고 여러 가지 대책을 당부했습니다",
-          "easy2_desc": "법안 심사를 모두 끝낸 다음에 산업통상부로부터 한-중 FTA 서비스·투자 후속협상에 대한 결과를 보고받았다고 전했습니다. 이 자리에서 위원들은 문화예술산업이 중국 시장에서 차별받지 않도록 실무협상을 강화하고, 공연 분야 비차별적 대우와 전기차 제조기업 경쟁력 강화 등을 당부했다는 건데요. 협상 결과를 바탕으로 국내 산업을 보호하기 위한 보완책을 마련하겠다는 취지로 보입니다.",
-          "topic": "국회 산업통상자원중소벤처기업위원회가 11월 26일 전체 회의를 열어 소관 법률안 63건을 의결하고 한-중 FTA 후속협상 결과를 보고받았다는 내용의 보도자료입니다.",
+          "title": "법사위, 인사청문회 경과보고서 채택 및 고유·타위법안 의결 등",
+          "easy1_title": "법무부장관 후보자 청문보고서 채택하고 법안도 처리했다",
+          "easy1_desc": "국회 법제사법위원회가 11월 27일에 전체회의를 열어서 법무부장관 후보자 인사청문회 경과보고서를 채택했다고 밝혔습니다. 그뿐만 아니라 법안심사제1소위원회를 통과한 19건을 비롯해 타위원회 소관 법안 4건까지 총 23건을 심의하고 의결했다고 하는데요. 쉽게 말하면, 여러 민생 법안과 인사 관련 안건들을 한꺼번에 처리한 셈이라는 말이에요.",
+          "easy2_title": "아이 보호 장치부터 SOC 예타 기준까지 고쳤다",
+          "easy2_desc": "이번 회의에서 통과된 법안들을 뜯어봤더니, 치료감호시설에 수용된 부모의 자녀를 돕는 규정을 준용하게 만들거나 가사소송법을 전부 고치는 내용 등이 담겨 있다고 해요. 도로와 항만 같은 사회간접자본(SOC) 건설사업의 예비타당성조사 대상 기준 금액을 올리는 국가재정법 개정안도 함께 처리했다고 보입니다. 서류 절차나 지원 제도가 현실에 맞게 바뀐다는 장점이 있는데, 대신 새로운 기준에 맞춰 전체 사업 계획을 다시 점검해야 한다는 점도 같이 따라온다는 겁니다.",
+          "topic": "국회 법제사법위원회가 11월 27일 전체회의를 열어 법무부장관 후보자 인사청문회 경과보고서를 채택하고, 법사위 소관 법안 및 타위원회 소관 법안 등 총 23건의 법률안을 심의·의결했다는 내용이에요.",
           "points": [
-            "산업통상부 소관 법률안: 산업통상부 소관으로는 「산업 디지털 전환 및 인공지능 활용 촉진법 전부개정법률안」을 비롯해 기술 유출 처벌을 강화하는 법안 등 총 25건이 의결되었다고 밝혔습니다. 뭔 소리냐면, 제조인공지능전환 얼라이언스와 암묵지데이터 지원사업 법적 근거를 만들고 피터팬 증후군을 예방하는 내용까지 포함되었다는 말이에요.",
-            "중소벤처기업부 및 지식재산처 소관 법률안: 중소벤처기업부 소관으로는 정책자금 융자 부당개입행위를 제재하고 소상공인 보험료 지원 근거를 마련하는 등 총 22건이 처리되었다고 설명했습니다. 이어 지식재산처 소관으로는 상표법과 특허법, 부정경쟁방지법 개정안 등 총 16건을 심의·의결했다는 겁니다.",
-            "한-중 FTA 후속협상 결과 보고: 법안 심사를 마친 뒤에 위원들은 산업통상부로부터 한-중 FTA 서비스·투자 후속협상 결과를 보고받았다고 전했습니다. 한국 문화예술산업이 중국 시장에서 차별받지 않도록 실무협상을 강화하고 전기차 제조기업 경쟁력 강화 방안 등을 당부했다는 겁니다."
+            "아동 및 가족 보호 강화: 치료감호시설에 수용된 부모의 아동을 지원하기 위해 형의 집행 및 수용자의 처우에 관한 법률의 수용자자녀 지원 규정을 준용하도록 했다고 해요. 피의자가 체포되거나 구속될 때 보호대상아동이 있는지 확인하고 지자체장에게 보호조치를 의뢰하게 만들었다는 말입니다. 미성년자를 위한 절차보조인 제도를 도입하고 양육비 미지급자에 대한 감치명령 요건을 완화하는 가사소송법 전부개정법률안도 함께 처리했다고 밝혔습니다.",
+            "공급망 안정화 및 예타 기준 상향: 경제안보품목의 비축과 관리를 체계화하기 위해 공급망안정화기금과 금융·투자·보증지원을 활용할 수 있는 법적 근거를 마련했다고 해요. 1999년과 2006년에 도입된 예비타당성조사의 대상기준 금액을 현실에 맞추려고 도로와 항만 등 SOC 건설사업에 대해 총사업비 1,000억원 이상, 국가 재정지원 규모 500억원 이상으로 상향했다고 보입니다. 쉽게 말하면, 물가 상승과 재정 규모 확대에 발맞춰 대형 사업의 기준선을 높인 셈이라는 말이에요.",
+            "국유재산 특례 및 철도 유휴부지 활용: 2028 울산국제정원박람회조직위원회에 대한 국유재산 사용료 감면 등 특례를 신설하고 기존 특례들의 존속기한을 연장하거나 폐지했다고 해요. 철도 선로 하부 부지나 폐철도부지 같은 철도 유휴부지를 주민친화적 공간으로 쓰려고 지자체 사업에 수의계약이나 사용료 감면, 20년 분할납부를 허용했다고 보입니다. 지역경제 활성화에 도움이 된다는 장점이 있는데, 대신 국유재산을 다루는 특례가 복잡하게 얽혀서 관리해야 할 대상이 늘어난다는 점도 함께 고려해야 한다는 겁니다."
           ],
           "evidence_ok": "6/6",
-          "bad_numbers": "",
+          "bad_numbers": "23",
           "check_flags": "",
-          "body_chars": "1934",
-          "link": "https://www.assembly.go.kr/portal/bbs/B0000051/view.do?menuNo=600091&pageIndex=1&pageUnit=20&nttId=5337212",
+          "body_chars": "2098",
+          "link": "https://www.assembly.go.kr/portal/bbs/B0000051/view.do?menuNo=600091&pageIndex=1&pageUnit=20&nttId=5337269",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ibef2d3cee0",
+          "id": "ib3ecb49af4",
           "source_name": "국회 보도자료 RSS",
           "kind": "국회 보도자료",
           "writer": "국회",
-          "title": "국회 외교통일위원회, 대한민국과 에콰도르공화국 간의 전략적경제협력협정(SECA) 비준동의안 등 의결",
-          "easy1_title": "에콰도르와의 경제협력 협정을 통과시켰습니다",
-          "easy1_desc": "국회 외교통일위원회가 에콰도르와의 전략적경제협력협정 비준동의안을 포함해 30건의 안건을 심사하고 의결했는데요. 에콰도르와 중국 사이의 자유무역협정이 이미 발효된 점을 고려해서 조속히 발효할 필요가 있다고 봤다는 겁니다. 대신 협정이 발효되면 국내 화훼농가 같은 곳에 피해가 생길 수 있으니 보완 대책을 마련하라는 부대의견을 달았다는 말이에요. 쉽게 말하면, 교역을 늘리되 피해를 입는 농가도 챙기겠다는 셈입니다.",
-          "easy2_title": "재외국민 보호와 북한이탈주민 지원도 강화하겠습니다",
-          "easy2_desc": "범죄 목적의 인터넷 정보에 대해 외교부 장관이 삭제나 접속 차단을 요청할 수 있게 하고, 북한이탈주민의 생산품 우선구매 지원 대상을 넓히는 법안들도 함께 의결했는데요. 보호 및 정착지원 기본계획의 수립 주기를 3년에서 5년으로 바꾸고 국민연금 가입 지원 근거도 마련했다는 거예요. 지원이 늘어나는 장점이 있지만, 그만큼 관련 제도가 복잡해진다는 점도 함께 따라온다는 겁니다. 쉽게 말하면, 해외에 있는 국민과 탈북민을 더 두텁게 보호하겠다는 계획이에요.",
-          "topic": "국회 외교통일위원회가 에콰도르와의 전략적경제협력협정 비준동의안을 비롯해 재외국민 보호와 북한이탈주민 지원을 위한 법률안 등 30건을 심사하고 의결했다는 내용이에요.",
+          "title": "[보도자료] 조정식 의장, 세입예산안 부수_법률안 49건 지정·통보",
+          "easy1_title": "내년도 예산 관련 법안 49개를 따로 골라냈습니다",
+          "easy1_desc": "조정식 국회의장이 소득세법과 법인세법 등 정부 제출 안건과 의원 발의 안건을 합쳐 총 49건을 세입예산안 부수 법률안으로 지정했다고 밝혔는데요, 세입 증감이나 예산안 반영 여부뿐만 아니라 민생경제 회복과 경제활성화 필요성까지 종합해서 골라낸 거라는 말이에요. 쉽게 말하면, 예산안 처리를 뒷받침하기 위해 꼭 필요한 법안들을 미리 선별해 둔 셈이라는 말이에요.",
+          "easy2_title": "12월 2일 기한 내에 여야가 합의해서 끝내달라고 당부했습니다",
+          "easy2_desc": "그래서 남은 기간 동안 소관 위원회를 중심으로 여야가 적극적으로 협의해 달라고 요청했는데요, 헌법이 정한 기한인 12월 2일 안에 본회의에서 의결되도록 최선을 다해달라는 계획이에요. 기한까지 심사를 마치지 못하면 자동으로 본회의에 올라간다는 규정이 있지만, 그전에 여야가 머리를 맞대고 마무리를 지어야 한다는 뜻이 담겨 있다는 겁니다.",
+          "topic": "조정식 국회의장이 2027년도 세입예산안 부수 법률안 49건을 지정하고 상임위에 통보하며 정해진 기한 내에 처리를 당부했다는 내용이에요.",
           "points": [
-            "에콰도르와의 협정 의결: 에콰도르공화국과의 전략적경제협력협정 비준동의안을 통과시켜서 자유무역지대를 만들고 상품 교역과 서비스 시장을 넓히기로 했는데요. 중국과 에콰도르의 자유무역협정이 이미 발효된 점을 감안해 빨리 진행하되 화훼농가 등의 피해를 보완할 대책도 함께 달았다는 말이에요. 쉽게 말하면, 교역 확대라는 장점과 국내 농가 피해라는 단점이 같이 있다는 겁니다.",
-            "재외국민 보호 강화: 재외국민을 노리는 범죄 목적의 인터넷 정보에 대해 외교부 장관이 삭제나 접속 차단을 요청하도록 법안을 바꿨는데요. 자력으로 이동하기 어려운 재외국민에게 이동수단을 투입할 근거를 만들고 비용 선지급 대상도 늘렸다는 거예요. 뭔 소리냐면, 해외 위험 상황에서 국가가 직접 나설 수 있는 권한을 더 확실하게 쥐여줬다는 말입니다.",
-            "북한이탈주민 지원 개편: 북한이탈주민이 운영하는 기업 등의 생산품 우선구매 지원 대상을 넓히고, 보호 및 정착지원 기본계획의 수립 주기를 3년에서 5년으로 바꿨는데요. 하나원 교육에 사이버범죄 예방 교육을 더하고 국민연금 가입 및 보험료 지원 근거도 마련했다는 거예요. 쉽게 말하면, 일회성 지원에 그치지 않고 자립과 안전을 길게 보겠다는 셈입니다."
-          ],
-          "evidence_ok": "4/6",
-          "bad_numbers": "",
-          "check_flags": "point1 근거 원문에 없음; point3 근거 원문에 없음",
-          "body_chars": "1652",
-          "link": "https://www.assembly.go.kr/portal/bbs/B0000051/view.do?menuNo=600091&pageIndex=1&pageUnit=20&nttId=5337208",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "iba7372f64a",
-          "source_name": "산업부 보도 RSS(POST)",
-          "kind": "산업통상부 보도자료",
-          "writer": "산업통상부",
-          "title": "(설명자료)업계는 자율적으로 나프타분해시설 감축을 추진하고 있으며, 샤힌 설비의 에틸렌 생산량은 이미 설비감축 목표 산정시 반영되어 있음",
-          "easy1_title": "정부가 정한 게 아니라 업계가 스스로 줄이는 중입니다",
-          "easy1_desc": "연합뉴스 기사를 살펴보면 정부와 업계가 나프타분해시설(NCC) 생산능력을 연간 270만에서 370만t 줄이는 구조개편을 추진한다고 보도했는데요. 산업통상부는 정부가 감축 규모를 정해 추진하는 게 아니라 지난해 8월 석유화학업계가 사업재편 자율협약식을 열어 자율컨설팅 결과를 반영해 발표한 것이라고 밝혔어요. 쉽게 말하면, 정부가 시킨 게 아니라 기업들이 스스로 뼈를 깎는 노력을 하고 있다는 말이에요.",
-          "easy2_title": "새로 늘어나는 설비 물량은 이미 감축 목표에 다 들어가 있습니다",
-          "easy2_desc": "현재 대산과 여수에서 합의된 감축량이 249만t인데 샤힌 프로젝트 증설분 180만t을 빼면 순감소가 69만t뿐이라는 주장이 나왔거든요. 산업통상부는 감축 목표를 짤 때 이미 기존 생산능력에 샤힌 프로젝트의 180만t 물량까지 모두 더한 상태에서 270만에서 370만t 감축을 발표했다고 설명했어요. 그러니까 이미 반영된 증설 물량을 또 빼서 69만t이라고 계산하는 건 맞지 않다는 겁니다.",
-          "topic": "석유화학업계의 나프타분해시설 감축과 샤힌 프로젝트 증설 물량을 두고 나온 보도에 대해 산업통상부가 사실관계를 바로잡은 내용이에요.",
-          "points": [
-            "자발적인 구조개편 추진: 중국발 공급과잉에 대응하기 위해 연간 270만에서 370만t의 나프타분해시설 감축을 추진한다는 보도가 있었는데요. 산업통상부는 지난해 8월 석유화학업계가 자율협약식을 열고 산업계 자율컨설팅 결과를 반영해 이 감축안을 발표했다고 밝혔어요. 뭔 소리냐면, 정부가 일방적으로 규모를 정한 게 아니라 업계가 스스로 사업재편을 추진하고 있다는 말이에요.",
-            "정부의 지원 역할: 정부가 직접 감축 규모를 정해 끌고 간다는 보도 내용은 사실과 다르다고 선을 그었는데요. 산업통상부는 기업들이 세운 사업재편계획을 검토하고 금융이나 세제, 연구개발(R&D), 규제완화 같은 지원패키지를 마련해 뒤에서 받쳐주고 있다고 설명했어요. 서류 검토와 지원을 아끼지 않는 장점이 있는 반면, 감축 주체는 어디까지나 기업 자신이라는 한계가 분명하다는 겁니다.",
-            "샤힌 프로젝트 물량 반영: 현재 합의된 감축량 249만t에서 샤힌 프로젝트 증설분 180만t을 빼면 순감소가 69만t에 그친다는 지적이 있었거든요. 산업통상부는 감축 목표를 처음 만들 때부터 증설되는 샤힌 프로젝트의 180만t 물량을 이미 포함해 계산했다고 반박했어요. 쉽게 말하면, 이미 계산에 넣은 물량을 뒤에서 또 빼버려서 순감소 규모를 줄여 잡는 건 적절하지 않다는 말이에요."
+            "세입부수법안 49건 지정: 조정식 국회의장이 소득세법과 법인세법 등 정부가 제출한 18건과 의원발의안 31건을 합쳐 총 49건을 세입예산안 부수 법률안으로 지정했는데요, 국회예산정책처의 의견을 듣고 민생경제 회복과 경제활성화 입법 필요성을 종합해서 결정했다는 겁니다. 뭔 소리냐면, 정부 예산이 원활하게 작동하도록 뒷받침할 핵심 법안들을 골라 6개 소관 상임위와 법제사법위에 넘겼다는 말이에요.",
+            "법정 처리 기한 준수 당부: 조정식 국회의장은 남은 기간 동안 소관 위원회를 중심으로 여야가 적극적으로 협의해 줄 것을 요청했는데요, 헌법이 정한 기한인 12월 2일 안으로 세입부수법안과 예산안이 본회의에서 의결되도록 최선을 다해달라고 강조했다는 겁니다. 쉽게 말하면, 정해진 시간 안에 예산과 관련 법안 처리를 매듭지어야 한다는 뜻이에요.",
+            "국회법에 따른 자동부의 절차: 국회법 제85조의3에 따르면 소관 위원회는 세입부수법안과 예산안 심사를 11월 30일까지 마쳐야 하는데요, 이 기한을 넘기면 12월 1일 본회의에 곧바로 부의된 것으로 본다는 규정이 있다는 겁니다. 뭔 소리냐면, 상임위에서 심사가 제때 끝나지 않더라도 법에 따라 본회의로 넘어가는 절차가 마련되어 있다는 말이에요."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "939",
-          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172461/view",
+          "body_chars": "3703",
+          "link": "https://www.assembly.go.kr/portal/bbs/B0000051/view.do?menuNo=600091&pageIndex=1&pageUnit=20&nttId=5337235",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "i5e09fc0c76",
-          "source_name": "산업부 보도 RSS(POST)",
-          "kind": "산업통상부 보도자료",
-          "writer": "산업통상부",
-          "title": "한-일 정부와 민간, 반도체·AI 등 미래성장 협력 논의",
-          "easy1_title": "일본 홋카이도와 반도체부터 인공지능까지 협력 범위를 넓혔다",
-          "easy1_desc": "산업통상부가 일본 경제산업성 홋카이도경제산업국과 함께 11월 26일에 삿포로에서 한·일 미래성장산업 포럼 2026을 열었습니다. 지난 9월에 서울에서 열렸던 반도체 산업협력 교류회에 이어서, 이번에는 인공지능과 지역 특화산업까지 협력 분야를 넓혀서 새로운 지역산업 협력채널을 구축했다는 겁니다. 뭔 소리냐면, 정부와 기업들이 만나서 반도체 공급망뿐만 아니라 인공지능 인프라와 서비스까지 함께 머리를 맞대고 논의했다는 말이에요. 쉽게 말하면, 양국이 첨단산업 전반에서 손을 잡고 본격적으로 판을 키우기 시작한 셈이라는 겁니다.",
-          "easy2_title": "앞으로는 우리 기업들의 현지 진출과 파트너 발굴을 계속 지원하겠다",
-          "easy2_desc": "산업통상부는 이번 포럼에서 확인된 협력 수요를 바탕으로 일본 관계 부처나 기관, 경제단체들과 후속 협의를 이어가겠다고 밝혔는데요. 방법은 반도체와 인공지능 같은 미래산업 분야에서 우리 기업들이 현지 파트너를 찾고 사업에 참여할 수 있도록 꾸준히 뒷받침하겠다는 계획이에요. 기업들에게 새로운 사업 기회가 열린다는 장점이 있는데, 대신 현지 시장 상황에 맞춰 발 빠르게 움직여야 한다는 점도 함께 따라온다는 겁니다. 쉽게 말하면, 정부가 다리를 놓아줄 테니 우리 기업들이 적극적으로 뛰어들 차례라는 말이에요.",
-          "topic": "산업통상부가 일본 홋카이도와 반도체·인공지능 등 미래성장산업 분야의 협력을 확대하고 우리 기업의 진출을 지원하겠다는 내용이에요.",
+          "id": "i519c522fb3",
+          "source_name": "국회 보도자료 RSS",
+          "kind": "국회 보도자료",
+          "writer": "국회",
+          "title": "[보도자료] 조정식 국회의장, 호주 하원의장과 경제협력 강화 및 인적교류 확대 논의",
+          "easy1_title": "호주와 에너지 및 핵심광물 협력을 넓히기로 했다",
+          "easy1_desc": "조정식 국회의장이 26일에 밀튼 딕 호주 하원의장과 회담을 열고 양국 간의 경제협력을 다졌다고 해요. 앞으로 핵심광물이나 청정에너지 분야에서 협력을 더 넓히기를 바란다고 밝혔는데요. 다만 호주에서 논의되는 가스유보제도 때문에 한국 기업이 액화천연가스(LNG)를 들여오는 데 차질이 생기지 않도록 입장을 잘 고려해 달라고 요청했다는 겁니다. 쉽게 말하면, 자원 협력은 더 단단히 하되 우리 기업이 타격을 입지 않게 살펴 달라는 말이에요.",
+          "easy2_title": "17만 명 동포가 있는 호주와 인적교류를 키워간다",
+          "easy2_desc": "호주에 사는 17만 명의 우리 동포와 한 해 60만 명이 오가는 교류를 바탕으로 미래세대의 만남을 더 넓히겠다는 계획이에요. 특히 호주가 우리가 최초로 워킹홀리데이 협정을 맺은 나라인 만큼 청년들의 교류가 활발해지길 기대한다고 했는데요. 아울러 호주에서 한국어가 우선 언어로 계속 유지될 수 있도록 관심과 지원을 부탁했다고 합니다. 언어가 교류의 중요한 다리 역할을 한다는 점을 강조한 셈이에요.",
+          "topic": "조정식 국회의장이 호주 하원의장을 만나 에너지 및 핵심광물 분야의 경제협력을 다지고 미래세대 교류 확대 방안을 논의했다는 내용이에요.",
           "points": [
-            "한·일 미래성장산업 포럼 개최: 산업통상부가 11월 26일에 일본 삿포로에서 일본 경제산업성 홋카이도경제산업국과 함께 한·일 미래성장산업 포럼 2026을 개최했습니다. 양국 정부와 지자체, 기업 및 연구기관 관계자 등 90여 명이 참석해서 반도체 공급망부터 인공지능까지 첨단산업 전반의 협력 가능성을 집중적으로 논의했다는 겁니다. 뭔 소리냐면, 서울에서 열렸던 반도체 교류회에 이어 협력의 판을 지역과 인공지능 분야까지 키웠다는 말이에요.",
-            "홋카이도 첨단산업 클러스터: 일본 정부가 홋카이도를 반도체와 우주, 해상풍력 같은 전략산업 클러스터 육성지역으로 선정하고 기업 투자 지원과 인프라 확충을 추진하고 있다고 밝혔는데요. 홋카이도에는 라피더스의 첨단 반도체 생산시설과 대규모 인공지능 데이터센터 구축이 추진되고 있거든요. 쉽게 말하면, 우리 기업들이 반도체 공급망과 인공지능 인프라 분야에서 사업에 진출할 가능성이 그만큼 크다는 겁니다.",
-            "지역경제 활성화 공통 과제 대응: 참석자들이 농업 등 지역산업에 첨단기술을 활용하는 방안을 논의하고 이주와 교류 정책 경험도 서로 공유했습니다. 이를 통해 고령화와 인구감소, 지역 간 불균형 같은 공통 과제에 대응하기 위한 지역경제 활성화 방안을 모색했다는 거예요. 뭔 소리냐면, 첨단산업 협력뿐만 아니라 지방 소멸이라는 공통의 골치 아픈 문제까지 함께 풀려고 머리를 맞댔다는 말이에요."
+            "수교 65주년과 자원 협력: 올해 수교 65주년을 맞아 양국이 민주주의와 시장경제 가치를 나누는 동반자라는 점을 짚어 봤는데요. 앞으로 핵심광물과 청정에너지, 첨단산업 분야로 협력을 더 넓히기를 바란다고 밝혔다는 겁니다. 뭔 소리냐면, 전통적인 우방 관계를 바탕으로 산업 자원 분야의 손을 더 단단히 잡겠다는 말이에요.",
+            "가스유보제도와 LNG 수급: 호주에서 논의 중인 가스유보제도와 관련해 한국 기업의 액화천연가스(LNG) 도입에 차질이 없도록 해 달라고 요청했다고 해요. 이에 딕 하원의장은 신뢰할 만한 에너지 공급망 확보가 중요하다는 점과 한국의 투자 규모를 잘 알고 있다고 답했는데요. 한국 투자자들에게 확실성과 신뢰가 필요하다는 점을 충분히 이해하고 있다고 강조했다는 겁니다.",
+            "한국어 우선 언어 유지: 호주에 거주하는 17만 명의 동포와 워킹홀리데이를 찾는 청년들을 언급하며 인적·문화교류를 키우자고 제안했는데요. 특히 호주에서 한국어가 우선 언어로 계속 유지될 수 있도록 지원해 달라고 부탁했다는 겁니다. 딕 하원의장은 학생들의 학습 상황을 잘 알고 있으며 연방정부가 권고안을 만들 때 이런 점을 충분히 고려할 것이라고 설명했어요."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "2309",
-          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172458/view",
+          "body_chars": "2255",
+          "link": "https://www.assembly.go.kr/portal/bbs/B0000051/view.do?menuNo=600091&pageIndex=1&pageUnit=20&nttId=5337229",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "i05520d722b",
-          "source_name": "산업부 보도 RSS(POST)",
-          "kind": "산업통상부 보도자료",
-          "writer": "산업통상부",
-          "title": "인공지능(AI), 기술 진화에서 산업 대전환까지 표준이 함께 한다",
-          "easy1_title": "차세대 인공지능 표준화 방향을 함께 논의하겠다",
-          "easy1_desc": "산업통상부 국가기술표준원이 11월 26일 서울에서 2026년 산업 인공지능 표준화 포럼 총회를 개최해 에이전틱 AI와 피지컬 AI 같은 차세대 인공지능 기술 표준화 전략을 논의했다고 해요. 최근 기술이 스스로 판단하고 수행하거나 현실 세계에서 직접 행동하는 쪽으로 진화하면서 표준의 필요성이 커졌기 때문이라는 겁니다. 뭔 소리냐면, 현장의 변화에 맞춰 인공지능이 나아갈 길을 민관이 함께 찾겠다는 말이에요.",
-          "easy2_title": "산업 현장의 인공지능 전환을 적극 지원하겠다는 계획이다",
-          "easy2_desc": "김규성 국가기술표준원장이 이번 포럼은 현장의 표준화 수요를 발굴하고 활용을 촉진하는 양방향 소통 플랫폼이라고 밝혔는데요. 차세대 인공지능 표준화에 선제적으로 대응해서 표준이 산업 현장의 인공지능 전환을 뒷받침할 수 있도록 지원하겠다는 계획이에요. 서류나 절차가 줄어드는 장점도 있는데, 대신 현장의 표준 적용 여부가 기업의 품질 관리에 큰 영향을 미치게 된다는 점도 함께 따라온다는 겁니다.",
-          "topic": "국가기술표준원이 개최한 2026년 산업 인공지능 표준화 포럼 총회에서 차세대 인공지능 표준화 전략과 산업 활용 방안을 논의했다는 내용이에요.",
+          "id": "i7524bb8565",
+          "source_name": "국회 보도자료 RSS",
+          "kind": "국회 보도자료",
+          "writer": "국회",
+          "title": "국회 재정경제기획위원회, 청원 의결 및 안덕수 국세청장 후보자 인사청문회 실시",
+          "easy1_title": "국회 재정경제기획위원회에서 청원 심사와 인사청문회를 열었더라",
+          "easy1_desc": "국회 재정경제기획위원회(위원장 조승래)가 11월 26일(목) 오전 10시에 전체회의를 열어 청원 8건을 심사하고 안덕수 국세청장 후보자 인사청문회를 실시했다고 해요. 심사 결과 대주주 양도소득세 하향 반대 청원 등 2건은 본회의에 부의하지 않기로 했고, 탄소세 특별법 도입 청원 등 6건은 조세소위원회에 회부하기로 했다는 겁니다. 쉽게 말하면, 접수된 청원의 처리 방향을 정하고 청장 후보자의 자질을 검증한 셈이라는 말이에요.",
+          "easy2_title": "세정운영 방향과 각종 국세행정 현안을 따져 물었더군요",
+          "easy2_desc": "이날 청문회에서는 납세자 권익보호와 AI 세정 서비스 도입 같은 향후 세정운영 방향을 들었는데요, 세무조사권 남용 우려나 가상자산 과세 준비 같은 주요 국세행정 현안에 대한 질의도 함께 이어졌다는 거스름이 없어요. 후보자의 아파트 장기 보유와 비거주기간 등에 대한 지적도 나왔다는 겁니다. 위원회는 추후 위원장과 간사 간 협의를 통해 인사청문회 경과보고서 채택 일정을 정하기로 했다고 봤다는 거예요.",
+          "topic": "국회 재정경제기획위원회가 8건의 청원을 심사하고 안덕수 국세청장 후보자 인사청문회를 실시했다는 내용이에요.",
           "points": [
-            "차세대 인공지능 표준화 논의: 인공지능 기술이 스스로 판단하는 에이전틱 인공지능과 현실 세계에서 행동하는 피지컬 인공지능으로 진화하면서 이번 포럼에서 다중 에이전트 간 협력 확장과 물류 및 자동화 현장 적용에 따른 표준의 필요성을 모색했다고 해요. 뭔 소리냐면, 기술이 복잡해질수록 현장에서 지켜야 할 공통의 기준이 중요해진다는 말이에요.",
-            "기업의 국제표준 활용 사례: 산업계에서는 기업이 인공지능 시스템의 영향을 평가하는 국제표준을 개발 플랫폼에 적용해 투명성과 공정성을 분석한 사례와 품질평가 지침 국제표준으로 품질 목표를 설정하고 관리하는 사례가 공유됐다는 겁니다. 쉽게 말하면, 실제 기업들이 국제 기준을 바탕으로 인공지능 시스템의 품질을 체계적으로 평가하고 있다는 거고요.",
-            "포럼 분과 확대 운영: 국내 산업 현장 중심의 인공지능 표준화 과제를 발굴하기 위해 기존 기반표준분과, 융합표준분과, 인증표준분과에 사실상표준분과를 신설해 4개 분과로 확대 운영한다고 해요. 체계적인 연구를 지원하는 장점이 있는데, 분과가 늘어난만큼 각 분야별로 세밀한 조율이 필요하다는 점도 함께 나타난다는 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "3411",
-          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172456/view",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i03ab7aa93a",
-          "source_name": "산업부 보도 RSS(POST)",
-          "kind": "산업통상부 보도자료",
-          "writer": "산업통상부",
-          "title": "한-사우디, 원유 수급부터 비축까지 중동전쟁 위기 대응 공조 강화",
-          "easy1_title": "사우디와 손잡고 원유 수급부터 비축까지 위기 대응을 단단히 하겠다",
-          "easy1_desc": "산업통상부가 사우디아라비아 에너지부 석유·가스 담당 차관과 만나서 중동전쟁에 대응할 에너지자원 협력 방안을 논의해 봤습니다. 이야기를 나눠봤더니, 한국이 아시아 석유제품 공급의 허브 역할을 하는 만큼 원유 비축시설 활용을 늘리고 증설하는 방안이 논의되었다고 해요. 뭔 소리냐면, 사우디는 수요처 인근에 안정적인 공급 거점을 확보하고 한국은 위기 때 쓸 수 있는 원유를 챙기는 윈-윈 협력이 된다는 말이에요. 쉽게 말하면, 양국이 힘을 합쳐 에너지 안보를 지키겠다는 겁니다.",
-          "easy2_title": "국제공동비축 물량을 늘리고 고위급 소통 채널을 바로 가동하겠다",
-          "easy2_desc": "그뿐만 아니라 한국석유공사와 사우디 아람코 사이의 국제공동비축 물량을 확대하고 비축시설을 증설하는 방안을 구체화하기로 했는데요, 방법은 위기 상황에서 신속하게 정보를 공유하고 공조하도록 고위급 소통 채널을 즉시 가동하겠다는 계획이에요. 소통을 넓히면 빠르게 대처할 수 있다는 장점이 있는데, 대신 양국 간 긴밀한 공조가 계속 이어져야 한다는 조건이 따른다는 겁니다. 쉽게 말하면, 비상 상황에 대비해 핫라인을 바짝 조이겠다는 셈이에요.",
-          "topic": "중동전쟁에 대응해 한국과 사우디아라비아가 원유 수급과 비축시설 협력을 강화하기로 한 회담 내용이에요.",
-          "points": [
-            "한-사우디 차관 면담: 샤힌 프로젝트 준공식을 계기로 방한한 사우디아라비아 에너지부 석유·가스 담당 차관과 산업통상부 박동일 차관이 만났습니다. 지난 6월에 체결한 한-사우디 원유·가스 분야 협력 MOU의 후속 논의를 이어간 셈이에요. 뭔 소리냐면, 양국이 공급망 안정을 위해 공식적인 만남을 갖고 실질적인 협력에 들어갔다는 말입니다.",
-            "원유 공급 우선 지원 감사: 한국의 원유 도입 1위국인 사우디가 대외 불확실성 속에서도 한국에 원유와 나프타를 우선 공급해 준 것에 감사를 전했습니다. 2026년 1월부터 9월까지 비중이 29.4%에 달한다는 건데요. 앞으로도 안정적인 원유 공급을 이어가 달라고 특별히 요청했다는 겁니다.",
-            "비축 협력과 실무 협의: 공급 안정화를 위해 원유 비축시설 활용을 늘리고 증설하는 방안을 집중적으로 논의했습니다. 한국석유공사와 사우디 아람코 사이의 국제공동비축 물량을 확대하기로 했는데요. 쉽게 말하면, 위기 대응 역량을 높이기 위해 구체적인 실무 협의를 계속 이어가겠다는 계획이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "1575",
-          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172454/view",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i923f648c16",
-          "source_name": "산업부 보도 RSS(POST)",
-          "kind": "산업통상부 보도자료",
-          "writer": "산업통상부",
-          "title": "(참고자료)美 무역대표부, 과잉생산 301조 조사결과 발표, 한미 관세합의 수준 15% 기본 제안",
-          "easy1_title": "미국이 한국에 관세 15%를 기본으로 제안했어요",
-          "easy1_desc": "미국 무역대표부(USTR)가 한국을 포함한 16개 경제권을 대상으로 진행한 제조업 부문 구조적 과잉생산 무역법 제301조 조사 결과를 발표했는데요, 한국에는 15%의 관세 부과 방안을 제안했다고 해요. 이게 뭔 소리냐면, 일본과 유럽연합(EU) 등과 동일한 수준으로 기본 세율을 제시받았다는 말이에요. 쉽게 말하면, 최종 관세 발표시까지 미측과 긴밀히 협의하겠다는 계획이라는 겁니다.",
-          "easy2_title": "앞으로 의견을 나누고 최종 관세율을 확정할 계획이에요",
-          "easy2_desc": "금일 발표된 세율은 실제 적용세율이 아닌 의견수렴을 위해 제시한 제안세율인데요, 최종 세율 및 관세 부과는 2027년 1월 5일까지 서면의견 접수와 2027년 1월 25일 공청회 개최 등을 거쳐 확정될 것으로 예상된다고 해요. 산업통상부는 이번 발표된 보고서를 면밀히 분석해서 관계부처 및 업계와 함께 서면의견서 제출 등 미국의 후속 절차에 적극 대응하겠다고 밝혔는데요, 최종적으로 한미 관세합의에 따른 이익균형이 유지될 수 있도록 노력해 나갈 계획이라는 겁니다.",
-          "topic": "미국 무역대표부(USTR)의 과잉생산 301조 조사 결과 발표에 따른 한국의 대응 방침에 대한 산업통상부의 설명이에요.",
-          "points": [
-            "과잉생산 301조 조사: 미국 무역대표부(USTR)는 11월 25일 한국을 포함한 16개 경제권을 대상으로 제조업 부문 구조적 과잉생산 관련 무역법 제301조 조사 결과를 발표했는데요, 정부는 공청회 등을 통해 한국 제조업이 미국 공급망과 긴밀히 연계되어 있다는 점을 설명했다고 해요. 뭔 소리냐면, 우리나라는 구조적 과잉생산에 해당하지 않는다는 점을 일관되게 설명해 왔다는 말이에요.",
-            "제안세율 및 상향 가능성: 보고서에서 한국에 15%의 관세, 일본 15%, EU 15%, 중국 20% 등의 부과방안을 제안했다고 하는데요, 향후 협의 결과나 약속이 만족스러지 않을 경우 한국 25%, 일본 20%, EU 20%, 중국 40%, 대만 25% 등 관세율 상향 가능성도 명시했다고 해요. 쉽게 말하면, 기본 제안 이후에도 상황에 따라 세율이 달라질 수 있다는 겁니다.",
-            "한미 관세합의 존중: 미측은 금번 발표의 주요 내용을 우리측에 공유하는 한편, 금번 발표된 관세율이 최종 관세율이 아닌 제안세율로서 최종 관세율 결정시 한미 관세합의 결과를 존중하겠다는 의사를 재차 확인했다고 해요. 산업통상부는 미측과 긴밀히 소통하며 최종적으로 한미 관세합의에 따른 이익균형이 유지되도록 노력하겠다고 밝혔다는 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "1872",
-          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172453/view",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i9479033c65",
-          "source_name": "미국 연방관보(무역·에너지·원자력 기관)",
-          "kind": "미국 연방관보 공고",
-          "writer": "미국 연방관보",
-          "title": "Extending Deadlines for Submissions by Importers of Automobiles Qualifying for Preferential Tariff Treatment Under the USMCA To Determine U.S. Content",
-          "easy1_title": "자동차 미국산 부품 비율 서류 제출 기간을 늘려 주겠다",
-          "easy1_desc": "미국 상무부 국제무역청에서 2026년 11월 27일자로 자동차 미국산 부품 비율 증명 서류 제출 마감 기한을 연장하겠다고 밝혔는데요, 그 이유는 접수된 신청 건수가 많고 담당 직원 자원과 다른 업무를 고려할 때 충분히 검토하고 처리할 시간이 필요하다고 판단했기 때문이라는 거예요. 쉽게 말하면, 밀린 서류를 꼼꼼히 처리하려고 기간을 더 준 셈이라는 말이에요.",
-          "easy2_title": "기존 승인은 내년 3월까지 유지하고 앞으로는 날짜를 맞춰 새로 신청해라",
-          "easy2_desc": "그래서 기존에 이미 승인받은 미국산 부품(U.S. content) 적격 판정은 모델 연도와 상관없이 2027년 3월 1일 전에 수입되는 자동차까지는 계속 유효하다고 했는데요, 대신 2027년 3월 1일 이후에 수입되는 모델을 원한다면 2026년 12월 30일까지 새 서류를 내야 한다는 계획이에요. 서류를 제때 내면 처리가 빨라진다는 장점이 있는데, 만약 부품 조달이나 생산이 바뀌어서 미국산 비율이 줄어들면 곧바로 상무부에 알리고 새 판정을 요청해야 한다는 점도 같이 따라온다는 겁니다.",
-          "topic": "미국 상무부 국제무역청이 USMCA(미국·멕시코·캐나다 협정) 우대 관세를 받는 자동차의 미국산 부품 비율 확인 서류 제출 기한을 연장하고 관련 심사 절차를 안내한 공고예요.",
-          "points": [
-            "기한 연장의 배경: 상무부 장관이 2025년 3월 26일 포고령 10908호에 따라 자동차 부품에 25% 관세를 매기면서 미국산 부품 비율(U.S. content)을 따져 비미국산 가치에만 추가 관세를 적용하도록 한 제도를 손보고 있는데요, 신청 건수와 직원 자원 문제를 고려해 기존 자동차 미국산 부품 판정의 만료일을 2027년 3월 1일까지 연장하기로 했다고 밝혔어요. 뭔 소리냐면, 업무량이 많아서 기존 승인 건들의 처리 기간을 넉넉히 늘려 줬다는 말이에요.",
-            "시기별 서류 제출 일정: 그래서 2027년 3월 1일 이후 수입되는 모델은 2026년 12월 30일까지 새 서류를 내야 하고 그때 받은 판정은 2028년 3월 1일 전까지 수입되는 자동차에 적용된다고 했는데요, 2028년 3월 1일 이후 수입분에 대해서는 2027년 11월 30일까지 서류를 제출해야 한다는 거예요. 새 모델은 언제든 신청할 수 있고 제출일 이후부터 다음 해 3월 1일 전까지 수입되는 자동차에 적용된다는 셈이에요.",
-            "조달 및 생산 변경 시 의무: 수입업자는 부품 조달이나 생산이 바뀌어서 미국산 비율이 줄어들면 곧바로 상무부에 알리고 새 판정을 요청해야 한다고 강조했는데요, 반대로 미국산 비율이 늘어나는 변화가 생기면 새 서류를 내서 다시 판정을 요청할 수 있다는 거예요. 쉽게 말하면, 조건이 바뀔 때마다 정확한 비율을 다시 신고해야 한다는 말이에요."
+            "청원 심사 결과: 대주주 양도소득세 하향 반대에 관한 청원 등 2건의 청원은 본회의에 부의하지 않기로 했고, 탄소세 특별법 도입에 관한 청원 등 6건은 조세소위원회에서 심사 중임을 고려해 조세소위원회에 회부하기로 했다는 겁니다. 뭔 소리냐면, 관련 법률안이 이미 조세소위원회에서 다뤄지고 있어서 그쪽으로 넘겨서 같이 검토하겠다는 말이에요.",
+            "세정운영 방향 질의: 납세자 권익보호 필요성과 AI 세정 서비스 도입, 소상공인·지방기업·청년에 대한 포용적 세정지원 강화, 성실납세자 인센티브 강화 방안 등에 대해 후보자의 입장을 청취했다고 해요. 세정 운영의 방향성을 꼼꼼히 따져 물었다는 겁니다.",
+            "향후 일정: 재정경제기획위원회는 추후 위원장과 간사 간 협의를 통해 인사청문회 경과보고서 채택에 관한 일정을 정하기로 했다고 밝혔어요. 청문회가 끝난 뒤의 절차를 밟아나가겠다는 계획이라는 겁니다."
           ],
           "evidence_ok": "5/6",
           "bad_numbers": "",
-          "check_flags": "point1 근거 원문에 없음",
-          "body_chars": "7724",
-          "link": "https://www.federalregister.gov/documents/2026/11/27/2026-24076/extending-deadlines-for-submissions-by-importers-of-automobiles-qualifying-for-preferential-tariff",
+          "check_flags": "point2 근거 원문에 없음",
+          "body_chars": "1024",
+          "link": "https://www.assembly.go.kr/portal/bbs/B0000051/view.do?menuNo=600091&pageIndex=1&pageUnit=20&nttId=5337220",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ie4e4148416",
-          "source_name": "미국 연방관보(무역·에너지·원자력 기관)",
-          "kind": "미국 연방관보 공고",
-          "writer": "미국 연방관보",
-          "title": "Northern States Power Company; Prairie Island Independent Spent Fuel Storage Installation; License Amendment Application",
-          "easy1_title": "핵연료 저장 시설의 평가 보고서 제출 기한을 미루려고 합니다",
-          "easy1_desc": "미네소타주에 있는 노던 스테이트 파워 컴퍼니가 핵연료 저장 시설의 면허 조건을 바꾸겠다고 신청했는데요. 원래는 2028년 4월 4일까지 평가 보고서를 내야 했는데, 관련 연구 프로젝트의 일정이 늦어지면서 기한을 조정하려는 겁니다. 쉽게 말하면, 연구 결과가 나오는 시점에 맞춰 보고서 제출 마감일을 2033년 4월 4일로 늦추겠다는 말이에요.",
-          "easy2_title": "이 결정에 의견이 있는 분들은 60일 안에 신청하세요",
-          "easy2_desc": "원자력규제위원회는 이번 면허 변경 신청을 검토하기 시작했는데요. 이 결정으로 영향을 받을 수 있는 사람이나 단체는 60일 안에 청문회를 열어달라고 요청하거나 참여 신청을 할 수 있다는 겁니다. 신청 절차는 위원회의 전자 제출 시스템을 이용해야 하는데, 기한을 넘기면 받아들여지지 않으니 주의해야 한다는 말이에요.",
-          "topic": "노던 스테이트 파워 컴퍼니가 신청한 핵연료 저장 시설 면허 조건 변경과 그에 따른 청문회 참여 절차에 관한 공고입니다.",
+          "id": "idf8f5b38d5",
+          "source_name": "산업부 보도 RSS(POST)",
+          "kind": "산업통상부 보도자료",
+          "writer": "산업통상부",
+          "title": "청년의 날카로운 분석으로 그린 무역구제의 미래",
+          "easy1_title": "대학생들이 쓴 무역구제 논문 75편을 모아 시상했습니다",
+          "easy1_desc": "산업통상부 무역위원회가 11월 27일에 트레이드타워에서 2026 무역구제제도 대학(원)생 논문발표대회를 개최하고 우수 논문 5편을 선정해 시상했는데요, 올해는 전년 19편 대비 약 4배에 달하는 총 75편의 논문이 접수됐다고 해요. 뭔 소리냐면, 그만큼 대학생들의 관심이 크게 늘었다는 말이에요. 서면심사와 현장심사를 거쳐 최우수상 3편과 우수상 2편이 뽑혔다는 겁니다.",
+          "easy2_title": "생성형 AI로 통계를 분석해 연구의 질을 높였다고 봤습니다",
+          "easy2_desc": "심사위원들은 출품작들이 생성형 AI를 적극 활용해서 방대한 수출입통계와 자료를 체계적으로 분석한 점에 주목했는데요, 앞으로도 AI를 쓰면서 비판적 검토와 통찰력을 키워달라고 당부했다고 해요. AI를 쓰면 분석이 빨라지는 장점이 있는데, 대신 사람이 직접 꼼꼼히 따져보는 과정이 빠지면 안 된다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 기술을 쓰되 생각하는 힘도 함께 키우자는 말이에요.",
+          "topic": "산업통상부 무역위원회가 대학생들의 무역구제제도 논문발표대회를 열고 우수작을 시상한 일에 대한 내용이에요.",
           "points": [
-            "면허 조건 변경 신청: 노던 스테이트 파워 컴퍼니가 고연소도 핵연료 저장 연구 프로젝트(HDRP)의 일정 변화에 따라 평가 보고서 제출 기한을 연장해 달라고 요청했습니다. 원래 기한인 2028년 4월 4일보다 늦춰진 2033년 4월 4일이나 연구 보고서 발간 후 6개월 이내 중 빠른 날짜로 바꾸겠다는 계획이에요.",
-            "청문회 및 참여 신청: 이번 공고가 나간 뒤 60일 안에는 누구나 청문회 개최나 참여를 신청할 수 있습니다. 지방 정부나 원주민 부족 같은 단체도 참여할 수 있는데, 정해진 기한을 넘기면 특별한 사유가 없는 한 받아들여지지 않는다는 점을 명시했습니다.",
-            "전자 제출 시스템 이용: 모든 서류는 원자력규제위원회의 전자 제출 시스템을 통해 제출해야 하는데요. 이를 위해서는 디지털 인증서를 미리 받아야 하고, 제출 마감일 10일 전까지는 사무국에 연락해 절차를 밟아야 합니다. 전자 제출이 어려운 경우 예외를 신청할 수 있지만, 원칙적으로는 온라인 시스템을 이용해야 한다는 말이에요."
+            "논문대회 개최 목적: 무역구제제도에 대한 대학과 대학원생들의 관심을 높이고 글로벌 통상환경 속에서 발전 방향을 찾기 위해 2000년부터 매년 열리고 있는데요, 올해는 초국경 보조금과 우회덤핑, 표준특허 침해사건이 지정주제로 다뤄졌다고 해요. 뭔 소리냐면, 학생들이 직접 최신 무역 현안을 파헤쳐 보는 자리라는 말이에요.",
+            "수상작 선정 과정: 전년도 19편이었던 접수 건수가 올해는 약 4배에 달하는 75편으로 늘어났는데요, 2단계에 걸친 예선 서면심사와 본선 현장심사를 거쳐 최우수상 3편과 우수상 2편이 뽑혔다는 겁니다. 상금은 최우수상 각 200만 원, 우수상 각 100만 원으로 주어졌다고 해요.",
+            "참가자 격려와 당부: 전응길 무역조사실장은 학생들이 무역구제 현안을 깊이 있게 분석하고 대안을 담기 위해 노력한 점을 높이 평가했는데요, 이번 경험이 앞으로 무역구제 전문가로 성장하는 값진 밑거름이 되길 바란다고 격려했다고 해요. 쉽게 말하면, 학생들이 낸 아이디어가 앞으로 실제 무역 정책을 볼 때 좋은 거름이 된다는 셈이에요."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "12853",
-          "link": "https://www.federalregister.gov/documents/2026/11/27/2026-24075/northern-states-power-company-prairie-island-independent-spent-fuel-storage-installation-license",
+          "body_chars": "2076",
+          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172465/view",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "i53fb553d90",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "DS투자증권",
-          "title": "[DS투자증권] 삼영 박막 커패시터 필름 모멘텀 숙성중",
-          "easy1_title": "주가 많이 내려갔지만 박막 인증 기대해 볼 만해요",
-          "easy1_desc": "DS투자증권은 삼영에 대해 투자의견 매수, 목표주가 4,100원으로 커버리지를 개시했는데요, 현재 주가는 2027F PER 8.8배, PBR 1.1배로 5월 고점 대비 76% 하락해 필름 업황 둔화를 상당 부분 반영했다고 판단했거든요. 쉽게 말하면, 주가가 많이 낮아진 상태에서 전기차용 박막 필름의 고객사 인증 통과와 PPC 출하 회복이 주가 반등의 조건이라는 말이에요.",
-          "easy2_title": "올해 실적은 주춤해도 하반기에는 좋아질 걸로 봅니다",
-          "easy2_desc": "삼영의 3Q26 연결 매출액은 412억원, 영업이익은 25억원을 기록하며 부진했는데, 상반기 중동 전쟁에 따른 PP 원료 수급 우려로 발생한 고객사 가수요가 반작용으로 돌아왔기 때문이거든요. 그렇지만 하반기부터는 국내 차량 OEM 업체 향 3.5um 이하 EV용 박막 필름 양산 기대감을 반영해 회복을 예상한다는 겁니다. 쉽게 말하면, 일시적인 부진 뒤에 고단가 제품 중심의 믹스 개선 효과가 기대된다는 셈이에요.",
-          "topic": "DS투자증권은 삼영에 대해 투자의견 매수와 목표주가 4,100원을 제시하며 커버리지를 개시했다고 밝혔다.",
+          "id": "i5d3d991b8e",
+          "source_name": "산업부 보도 RSS(POST)",
+          "kind": "산업통상부 보도자료",
+          "writer": "산업통상부",
+          "title": "K-바이오 혁신을 이끄는 산업인 한 자리에",
+          "easy1_title": "어려운 여건 속에서 수출과 생산 최대치를 찍었습니다",
+          "easy1_desc": "산업통상부가 한국바이오협회 등과 함께 11월 27일에 서울 웨스틴조선 호텔에서 2026년 바이오산업의 날 행사를 열었는데요, 중동 전쟁이나 의약품 관세 같은 힘든 여건 속에서도 기업인들이 노력해 준 덕분에 우리 바이오 산업이 수출과 생산 최대치를 경신했다고 평가했어요. 뭔 소리냐면, 바깥 상황이 안 좋은데도 성과를 내며 달렸다는 말이에요. 쉽게 말하면, 그 주역들을 격려하려고 총 34점의 장관 표창을 수여했다는 겁니다.",
+          "easy2_title": "앞으로는 단순한 생산기지를 넘어 상용화 강국으로 키우겠습니다",
+          "easy2_desc": "그래서 산업통상부는 우리 바이오 산업이 단순한 생산기지에 머무르지 않고 상용화 강국으로 도약할 수 있도록 집중 지원하겠다는 계획인데요, 그 과정에서 기업들이 성과를 더 내게 된다는 장점이 있는 반면, 대내외 여건이 흔들릴 때 부담이 커질 수도 있다는 점도 같이 따라온다는 겁니다. 서포트를 확실히 받아서 한 단계 더 올라간다는 말이에요.",
+          "topic": "2026년 바이오산업의 날 행사를 열고 유공자 표창을 수여하며 K-바이오의 도약을 지원하겠다는 산업통상부의 입장이에요.",
           "points": [
-            "목표주가 산출: 목표주가는 2027F EPS 369원에 Target PER 11.2배를 적용해 산출했는데요, Target PER은 글로벌 필름 및 필름커패시터 Peer 평균 17.1배를 약 35% 할인한 수준이거든요. 뭔 소리냐면, 낮은 유동성과 분기 이익 변동성, 높은 자회사 이익 비중을 반영했다는 말이에요.",
-            "3분기 실적 부진: 3Q26 연결 매출액은 412억원으로 -10.2% YoY, 영업이익은 25억원으로 -55.1% YoY를 기록했는데요, 원화 강세와 중국 업체의 저가 견적으로 원가 상승분도 판가에 전가하지 못했기 때문이거든요. 필름 사업 영업이익은 -4억원으로 적자 전환했으나, 자회사 영업이익은 29억원으로 견조했다는 셈이에요.",
-            "하반기 박막 인증 기대: 필름 사업의 분기 고정비는 약 53억원의 수준인데, 전기차용 박막은 kg당 단가가 중막의 2배를 크게 상회하거든요. 박막 생산 시 중량 기준 출하량은 줄지만 ASP가 큰 폭으로 상승해 믹스 개선 효과가 기대된다는 거예요. 쉽게 말하면, 뉴인텍과 성문전자 등에 샘플을 공급하며 하반기 회복을 예상한다는 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "9369",
-          "link": "https://m.stock.naver.com/research/company/98510",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i474bcbe01a",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "DS투자증권",
-          "title": "[DS투자증권] HD한국조선해양 견조한 이익 체력과 해외 거점 확장 모멘텀 유효",
-          "easy1_title": "해외로 판 넓히고 이익도 탄탄하게 잘 챙기고 있거든요",
-          "easy1_desc": "DS투자증권은 HD한국조선해양의 3분기 실적이 매출액 8.3조원과 영업이익 1.4조원을 기록해 시장 기대치를 살짝 밑돌았다고 봤는데요, 휴가철이라 조업일수가 줄고 환율이 안 좋았던 탓이라는 겁니다. 그렇지만 HD현대삼호는 영업이익률 20.2%로 업종 안에서 가장 눈에 띄는 수익성을 지키고 있거든요. 쉽게 말하면, 잠깐 쉬어가는 김에 해외 투자를 늘리면서 내실을 단단하게 다지고 있는 셈이에요.",
-          "easy2_title": "미국이랑 필리핀에 야드 세우면서 군함 수주 노리는 겁니다",
-          "easy2_desc": "그래서 증권사는 회사가 미국 키윗과 합작법인을 세우고 필리핀이나 인도 야드에도 투자하면서 글로벌 생산 거점을 넓히고 있다고 밝혔는데요, 현지에서 직접 건조하는 비중이 커질수록 인건비가 낮아져 이익을 내기 좋다는 계획이에요. 해외 거점을 잘 잡아두면 미 해군 함정 같은 굵직한 수주를 따낼 때 훨씬 유리해진다는 장점이 있는데, 대신 구체적인 투자 규모나 지분 비율이 아직 완전히 확정되지는 않았다는 점도 함께 봐야 한다는 겁니다.",
-          "topic": "DS투자증권은 HD한국조선해양이 탄탄한 이익 체력을 바탕으로 해외 거점을 넓히며 중장기 성장을 이어갈 것으로 봤어요.",
-          "points": [
-            "실적 일시 둔화와 자회사 강세: 조업일수가 줄고 원/달러 환율이 안 좋아서 실적이 살짝 낮아졌다고 하는데요, 그 와중에도 HD현대삼호는 영업이익률 20.2%를 내며 엄청난 수익성을 보여주고 있다는 거예요. 뭔 소리냐면, 전체 실적은 쉬어갔지만 알짜배기 자회사가 중심을 잘 잡고 있다는 말이에요.",
-            "해외 생산 거점 확장: 미국 키윗과의 합작법인을 세우고 필리핀이나 인도 야드에도 투자하면서 현지 건조 물량을 늘리겠다는 계획인데요, 현지에서 직접 배를 만들면 인건비가 싸서 이익을 키우기 좋다는 겁니다. 쉽게 말하면, 글로벌 영토를 넓혀서 더 많은 수익을 끌어오겠다는 전략이에요.",
-            "목표주가 하향과 투자의견 유지: 조선 업종 전체의 밸류에이션이 낮아진 점을 반영해 목표주가를 410,000원으로 낮췄다고 하는데요, 그렇지만 탄탄한 이익과 AI 데이터센터 관련 수혜 덕분에 매수 의견은 그대로 유지한다는 거예요. 앞으로 해외 거점을 바탕으로 군함 본계약을 따내면 주가가 한 번 더 레벨업될 수 있다고 봤다는 겁니다."
-          ],
-          "evidence_ok": "4/6",
-          "bad_numbers": "",
-          "check_flags": "topic 근거 원문에 없음; point1 근거 원문에 없음",
-          "body_chars": "8867",
-          "link": "https://m.stock.naver.com/research/company/98509",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "ifbc6686f76",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "DS투자증권",
-          "title": "[DS투자증권] 에이피알 지금은 매수 기회",
-          "easy1_title": "환율 때문에 실적이 주춤했어도 지금은 살 때라고 봐요",
-          "easy1_desc": "에이피알이 3분기 매출액 7,731억원을 기록해서 분기 최대치를 또 갈아치웠는데요, 다만 영업이익은 기대에 못 미쳤다는 거예요. 알고 보니 해외 매출 비중이 94%까지 커진 상태에서 원화가 급격하게 강세를 보이면서 환산 매출이 줄고 관련 손실까지 겹쳤기 때문이라는 말이에요. 쉽게 말하면, 장사는 잘됐는데 돈 바꿀 때 환율 때문에 잠시 손해를 본 셈이라는 말이에요.",
-          "easy2_title": "블랙프라이데이 반응이 좋아서 4분기에는 최대 실적이 기대돼요",
-          "easy2_desc": "그래서 증권사는 4분기 실적이 가장 좋을 거라고 전망했는데요, 실제로 블랙프라이데이 초반 순위를 확인해 봤더니 메디큐브가 미국 아마존에서 12개 제품을 상위 100위 안에 올리면서 브랜드별 1위를 차지하고 있다는 거예요. 후속 제품까지 빠르게 베스트셀러로 자리 잡으면서 성장이 이어질 거라는 장점이 있는데, 대신 일시적인 환율 부담이나 외부 변수에 계속 신경을 써야 한다는 점도 함께 기억해야 한다는 겁니다. 쉽게 말하면, 물건이 잘 팔리고 있어서 앞으로의 실적 레벨업이 기대된다는 겁니다.",
-          "topic": "에이피알의 3분기 실적 부진을 일시적 현상으로 보고 4분기와 2027년의 고성장을 근거로 매수를 추천한 증권사의 분석이에요.",
-          "points": [
-            "환율 타격과 일시적 부진: 3분기 매출액은 7,731억원으로 최대치를 경신했지만 해외 비중이 94%에 달하는 상황에서 원화 강세가 겹쳐 영업이익이 컨센서스를 밑돌았다는 거예요. 뭔 소리냐면, 브랜드 수요가 약해진 게 아니라 환율이라는 바깥 요인 때문에 수익성이 잠깐 주저앉았다는 말이에요.",
-            "아마존과 틱톡샵의 성과: 아마존과 틱톡샵 중심의 온라인 판매에 타겟이나 월마트 같은 오프라인 유통망까지 더해지면서 채널이 넓어지고 있다는 거예요. 주요 프로모션이 없던 분기에도 최대 매출을 낸 것을 보면 일시적 둔화로 해석하기는 무리가 있다는 분석이에요.",
-            "4분기와 2027년 전망: 블랙프라이데이 초반 순위가 매우 긍정적이고 3분기에 발목을 잡았던 환율의 부정적 영향도 4분기에는 줄어들 것으로 전망했어요. 그래서 4Q26F 매출액은 9,559억원, 영업이익은 2,356억원으로 2027년에도 고성장세가 이어질 것으로 기대한다는 거예요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "8777",
-          "link": "https://m.stock.naver.com/research/company/98508",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i4a0b015dc7",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "DS투자증권",
-          "title": "[DS투자증권] 전진건설로봇 일시적 부진, 4분기부터 정상화 기대",
-          "easy1_title": "차량이 늦게 공급돼서 잠시 주춤했습니다",
-          "easy1_desc": "3분기 연결 매출액과 영업이익이 각각 355억원과 56억원을 기록해 시장 예상치를 밑돌았는데요, 국내에서 차량 공급이 지연되면서 콘크리트 펌프카 출고에 차질이 생겼기 때문이에요. 북미 관세와 글로벌 건설경기 둔화도 겹쳤지만, 다행히 영업이익률은 전년 동기 대비 4.8%p 개선되며 수익성은 회복세를 보였다는 겁니다. 쉽게 말하면, 물량은 줄었지만 남는 장사를 했다는 셈이에요.",
-          "easy2_title": "4분기부터는 차량 공급이 풀리면서 나아질 겁니다",
-          "easy2_desc": "최근 차량 수급 상황이 나아지고 있어서 2분기부터 미뤄졌던 물량이 차례대로 매출에 반영될 것으로 보이는데요, 4분기부터는 차량 공급이 정상화되면서 점진적인 외형 회복을 기대하고 있다는 겁니다. 재건 프로젝트 수혜와 생산 능력 확대라는 장점도 있는데, 대신 전방 시장의 상황에 따라 속도가 달라질 수 있다는 점도 같이 염두에 두어야 한다는 거예요. 쉽게 말하면, 일시적 부진을 털고 다시 성장세를 탈 차례라는 말이에요.",
-          "topic": "전진건설로봇의 3분기 일시적 실적 부진 원인과 4분기 이후 정상화 및 성장 전망에 대한 DS투자증권의 분석이에요.",
-          "points": [
-            "3분기 실적 부진 배경: 3분기 연결 매출액은 355억원으로 전년 동기 대비 21.0% 감소했고 영업이익은 56억원으로 13.1% 늘었는데요, 차량 공급 지연으로 콘크리트 펌프카 출고에 차질이 생겼기 때문이에요. 여기에 북미 관세와 글로벌 건설경기 둔화까지 겹치면서 매출액이 예상치를 밑돌았다는 겁니다. 쉽게 말하면, 만들고 싶어도 차량 수급이 꼬여서 팔지 못한 셈이에요.",
-            "수익성 개선과 4분기 정상화 전망: 매출이 줄었는데도 영업이익률은 전년 동기 대비 4.8%p 개선되며 수익성이 좋아졌는데요, 최근 차량 수급 상황이 나아지고 있어서 4분기부터는 공급이 정상화될 것으로 보인다는 거예요. 이연된 물량이 순차적으로 매출에 반영되면서 점진적인 외형 회복이 가능할 것으로 전망했어요. 쉽게 말하면, 골칫거리였던 공급 문제가 풀리면서 다시 실적이 제자리를 찾을 거라는 말이에요.",
-            "생산 능력 확대와 재건 수혜: 튀르키예와 우크라이나 등 글로벌 재건 프로젝트가 다시 움직이고 있어서 현지 합작법인(JV) 설립을 검토 중인데요, 자동화 설비 도입과 노후 설비 교체를 통해 매년 10% 수준의 생산 능력 확대도 꾸준히 진행하고 있다는 겁니다. 수도권 3기 신도시 착공과 평택 반도체 증설 등 국내 건설 시장 회복도 기대 요소예요. 쉽게 말하면, 공장 체도 키우고 일감도 늘어나서 앞으로 나아질 일만 남았다는 셈이에요."
-          ],
-          "evidence_ok": "5/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 최근 차량 수급 상황이 나아지고 있어서 2분기부터 미뤄졌던 물량이 차례대로 매출에 반영될 것으로 보이는데요,; 예측 의심: 매출이 줄었는데도 영업이익률은 전년 동기 대비 4.8%p 개선되며 수익성이 좋아졌는데요, 최근 차량 수급 상; topic 근거 원문에 없음",
-          "body_chars": "8322",
-          "link": "https://m.stock.naver.com/research/company/98507",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i005e2f8299",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "DS투자증권",
-          "title": "[DS투자증권] 쏘카 아직 혁신이 필요한 영역은 풍부하다",
-          "easy1_title": "중장기 렌터카 시장 진출로 성장 동력 확보하겠다",
-          "easy1_desc": "쏘카가 10월에 쏘픽이라는 이름으로 중장기 차량 렌터카 시장에 뛰어들었다고 해요. 이 시장 규모가 약 10조원 수준으로 파악되어서 앞으로 쏘카의 든든한 성장 동력이 되어줄 것으로 보인다는 겁니다. 서비스 초기인데도 수요가 차량 공급을 웃돌고 있는 상황인데요, 27년에는 이 쏘픽을 통해 500억원 이상의 매출액이 발생할 것으로 기대된다는 말이에요. 쉽게 말하면, 새로운 시장에서 벌어들일 돈이 꽤 쏠쏠할 거라는 셈이에요.",
-          "easy2_title": "자율주행 데이터 판매와 카셰어링으로 이익을 키우겠다",
-          "easy2_desc": "자율주행 부문에서는 크래프톤과의 합작법인인 APX모빌리티에 데이터 사용권을 제공하는 약 100억원 규모의 계약을 맺었다고 하는데요. 여기서 수집되는 새로운 데이터는 앞으로 완성차 및 피지컬 AI 개발사에 팔 계획이라는 거예요. 데이터 판매로 수익을 낼 뿐만 아니라 3분기 카셰어링 부문에서도 매출 1,000억원을 넘기며 본격적인 레버리지 구간에 진입했다고 해요. 매출이 늘어날수록 이익 증가폭도 더 커진다는 장점이 있는데, 대신 시장 상황에 따라 비용 부담이 변할 수도 있다는 점도 함께 살펴야 한다는 겁니다.",
-          "topic": "DS투자증권은 쏘카가 3분기 흑자 기조를 이어간 가운데 중장기 렌터카와 자율주행 데이터 판매로 추가 성장 여력을 갖췄다고 봤어요.",
-          "points": [
-            "중장기 렌터카 진출: 쏘카가 10월에 쏘픽을 내놓고 약 10조원 규모인 중장기 차량 이용 시장에 새로 발을 들였거든요. 서비스 초기인데 수요가 공급보다 많은 상태라서 27년에는 쏘픽 매출이 500억원을 넘길 것으로 기대된다는 말이에요. 뭔 소리냐면, 기존 카셰어링을 넘어 새로운 먹거리를 확실히 챙기겠다는 뜻이라는 겁니다.",
-            "자율주행 데이터 사업: 자율주행 분야에서는 데이터 판매를 가장 먼저 사업화하겠다고 밝혔는데요. 이미 크래프톤 합작법인인 APX모빌리티에 데이터 사용권을 주는 약 100억원 계약을 맺었거든요. 여기서 모인 신규 데이터는 앞으로 완성차와 피지컬 AI 개발사에 팔아치울 예정이라는 겁니다.",
-            "카셰어링 실적 개선: 3분기 매출액은 1,352억원으로 20.9% 늘었고 영업이익은 98억원으로 43.5% 증가했다고 해요. 가동률과 대당 수익성이 좋아진 결과인데, 매출이 늘어날수록 이익이 더 크게 불어나는 레버리지 구간에 들어섰다는 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 이 시장 규모가 약 10조원 수준으로 파악되어서 앞으로 쏘카의 든든한 성장 동력이 되어줄 것으로 보인다는 겁; 예측 의심: 서비스 초기인데도 수요가 차량 공급을 웃돌고 있는 상황인데요, 27년에는 이 쏘픽을 통해 500억원 이상의 ; 예측 의심: 서비스 초기인데 수요가 공급보다 많은 상태라서 27년에는 쏘픽 매출이 500억원을 넘길 것으로 기대된다는 말",
-          "body_chars": "8242",
-          "link": "https://m.stock.naver.com/research/company/98506",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i723106a4d6",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "한화투자증권",
-          "title": "[한화투자증권] JYP Ent. out of the blue",
-          "easy1_title": "대형 가수들의 공백이 겹치면서 신인 성과가 중요해졌습니다",
-          "easy1_desc": "한화투자증권은 그간 실적을 이끌었던 트와이스(TWICE)와 스트레이 키즈(Stray Kids)의 활동이 둔화될 수밖에 없다고 봤는데요. 완전체 활동이 어렵거나 군입대 일정이 겹치면서 내년에는 두 대형 지식재산권(IP)의 공백이 생긴다는 말이에요. 쉽게 말하면, 기존 주력 그룹들이 쉬어가는 타이밍이라 새로운 주역의 등장이 절실하다는 셈이에요.",
-          "easy2_title": "눈높이를 낮춰 잡으면서 목표주가도 6만 원으로 내렸습니다",
-          "easy2_desc": "주요 아티스트의 공백을 반영해서 내년 실적 추정치를 낮춰 잡았다고 밝혔는데요. 그 결과로 한화투자증권은 목표주가를 기존보다 낮춘 60,000원으로 조정했다는 겁니다. 주가를 받쳐주던 서프라이즈성 실적이 줄어든다는 단점이 있는데, 대신 새로 데뷔하는 신인의 성과에 따라 반등할 여지도 있다는 점을 함께 봐야 한다는 겁니다.",
-          "topic": "한화투자증권은 제이와이피엔터테인먼트(JYP Ent.)의 주요 아티스트 공백과 신인 그룹의 중요성을 반영해 목표주가를 하향 조정했다고 밝혔습니다.",
-          "points": [
-            "주력 아티스트의 활동 둔화: 올해까지 실적 대부분을 책임졌던 트와이스와 스트레이 키즈의 활동이 내년부터 다소 둔화될 가능성이 높다고 분석했는데요. 트와이스는 멤버별 재계약이 진행 중이라 완전체 활동이 어렵고, 스트레이 키즈는 리노의 입대가 1분기 예정되어 있기 때문이라는 겁니다. 쉽게 말하면, 두 핵심 그룹의 공백 때문에 당장 올해보다 유의미한 실적 성장을 기대하기는 어렵다는 말이에요.",
-            "신인 오브더블루의 중요성: 엔믹스(NMIXX) 이후 피어 그룹(비슷한 기업 군) 대비 뚜렷한 성과를 내는 저연차 팀이 없었다는 점이 늘 밸류에이션(기업 가치 평가)의 할인 요인으로 작용했다고 하는데요. 그동안은 트와이스나 스트레이 키즈가 주가 하단을 지지해 줬지만 지금은 그럴 수 없다는 거예요. 그래서 지난 11월 11일 선공개곡을 발표한 신인 오브더블루(oftheblue)가 뜻밖의 발견처럼 의미 있는 초기 성과를 보여줘야 한다는 말입니다.",
-            "실적 추정치 및 목표주가 하향: 대형 지식재산권의 공백을 실적 추정치에 고스란히 반영했다고 하는데요. 한화투자증권은 이에 따라 내년 실적 추정치를 낮추면서 목표주가를 60,000원으로 조정했다고 밝혔습니다. 현재 주가인 46,550원 대비 상승여력은 28.9%로 제시된 셈이에요."
-          ],
-          "evidence_ok": "5/6",
-          "bad_numbers": "",
-          "check_flags": "easy1 근거 원문에 없음",
-          "body_chars": "8994",
-          "link": "https://m.stock.naver.com/research/company/98505",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i72ea71e24b",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "유안타증권",
-          "title": "[유안타증권] 원익QnC 부족한 CAPA, PER 6배",
-          "easy1_title": "4분기에는 성과급 때문에 잠시 주춤하지만 본사 쿼츠는 잘 나간다",
-          "easy1_desc": "유안타증권은 4분기 연결 기준 예상 매출액을 2,883억원, 영업이익을 332억원으로 추정했는데요, 그 이유는 본사 쿼츠가 북미 L사향 물량 증가로 계속 성장하지만, MT Holding의 예상 영업이익이 90억원으로 줄어들고 연말 성과급 지급이 겹치기 때문이에요. 잠시 주춤한다는 단점은 있지만 쿼츠 부문 자체의 성장은 이어지고 있다는 겁니다. 쉽게 말하면, 일시적인 비용 때문에 4분기 실적이 잠깐 쉬어가는 셈이에요.",
-          "easy2_title": "내년과 후년에는 국내와 대만이 이끄는 쿼츠 성장이 확실해 보인다",
-          "easy2_desc": "그래서 유안타증권은 2027년과 2028년 연결 기준 예상 영업이익을 각각 1,678억원과 1,906억원으로 내다봤는데요, 삼성전자와 SK하이닉스 같은 국내 고객사의 신규 팹 투자와 북미 L사 물량 증가에 더해 대만 법인까지 공장 증설에 나서기 때문이에요. 해외 성장이 가파라진다는 장점이 있는 반면 투자가 늘어나는 부담도 함께 따른다는 겁니다. 쉽게 말하면, 쿼츠 매출이 2026년 4,597억원에서 2027년 5,220억원, 2028년 5,810억원으로 계속 늘어날 전망이라는 말이에요.",
-          "topic": "유안타증권은 원익QnC에 대해 쿼츠 부문의 성장 가시성이 높아지고 있다고 보며 투자의견 BUY와 목표주가 40,000원으로 커버리지를 재개시했다.",
-          "points": [
-            "4분기 실적 일시 둔화: 유안타증권은 4분기 예상 영업이익을 332억원으로 제시하며 전분기 대비 25.2% 감소할 것으로 추정했는데요, 뭔 소리냐면 본사 쿼츠는 성장하지만 MT Holding의 영업이익이 소재사업 리드타임 영향으로 90억원으로 줄고 연말 성과급이 반영되기 때문이라는 말이에요. 실적이 잠시 쉬어간다는 단점이 있지만 본업의 방향성은 유지된다고 봤습니다.",
-            "2027년 및 2028년 쿼츠 성장: 그래서 2027년과 2028년 연결 영업이익을 각각 1,678억원과 1,906억원으로 추정했는데요, 국내 메모리 고객사의 신규 팹 투자와 북미 L사 물량이 2026년에 이어 2027년에도 20% 이상 늘어날 것으로 기대되기 때문이에요. 여기에 대만 파운드리 고객 물량 대응을 위한 현지 공장 증설까지 더해져 성장이 가팔라질 전망이라는 겁니다.",
-            "목표주가 산정 및 밸류에이션: 유안타증권은 목표주가를 40,000원으로 제시하며 투자의견 BUY로 커버리지를 재개시했는데요, 파츠 사업의 2027~2028년 평균 예상 지배순이익 1,059억원에 Target PER 10배를 적용하여 SOTP 방식으로 산정했다는 거예요. 쉽게 말하면, MT Holding 가치를 0으로 보수적으로 가정해도 현재 시가총액은 반도체 파츠사업 기준 PER 6배 수준에 불과하다고 봤습니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "13064",
-          "link": "https://m.stock.naver.com/research/company/98504",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i2e6d1ba773",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "유안타증권",
-          "title": "[유안타증권] 디어유 하방은 닫히고, 옵션은 열렸다",
-          "easy1_title": "구독수 바닥을 찍고 해외 확장으로 돌아섭니다",
-          "easy1_desc": "2026년 3분기 실적을 뜯어봤더니, 국내 버블 구독수가 전분기 수준을 유지하면서 작년 4분기부터 이어진 감소세가 멈췄다고 해요. 중국과 일본에서도 구독수가 꾸준히 늘어나는 흐름을 보였는데요, 환율 하락 때문에 해외 매출 환산 효과가 줄어들면서 탑 라인은 전분기대비 2.2% 감소했다는 겁니다. 쉽게 말하면, 구독수 감소는 멈췄지만 환율 영향으로 전체 매출 성장은 조금 주춤했던 셈이에요.",
-          "easy2_title": "내년에는 실적이 좋아질 일만 남았다고 봅니다",
-          "easy2_desc": "그래서 증권사는 2027년 매출액이 1,029억원으로 10.3% 늘고 영업이익은 422억원으로 12.0% 늘어날 것으로 전망했는데요, 10월에 새로 들어온 배우 이광수가 구독수 1위에 오르면서 국내 구독수가 완만한 회복 국면에 들어섰다고 판단했기 때문이에요. 중국 QQ뮤직 라인업이 커지고 미국 버블 하우스 뉴욕이 그랜드 오픈을 앞두고 있어 기대가 크지만, 초기 비용은 타이트하게 관리할 계획이라 부담은 크지 않다는 겁니다. 쉽게 말하면, 여러 해외 확장 덕분에 내년에는 실적이 확실히 반등할 거라고 본 셈이에요.",
-          "topic": "디어유의 3분기 실적 평가와 2027년 구독수 회복 및 해외 확장 기대감에 대한 유안타증권의 분석이에요.",
-          "points": [
-            "3분기 실적과 구독수 추이: 3분기 매출액은 228억원으로 작년 동기 대비 2.4% 늘었고 영업이익은 92억원으로 5.6% 늘어 시장 컨센서스에 부합했다고 해요. 국내 버블 평균 구독수는 197만명으로 작년 4분기부터 이어지던 감소세가 멈췄고, 중국과 일본 구독수도 늘어나는 모습을 보였다는 겁니다. 뭔 소리냐면, 핵심 지표인 구독수가 바닥을 다졌다는 말이에요.",
-            "2027년 실적 전망: 2027년 매출액은 1,029억원, 영업이익은 422억원으로 좋아질 거라고 증권사는 전망했는데요, 배우 이광수 입단 효과로 국내 구독수가 회복 국면에 들어섰기 때문이에요. 중국 QQ뮤직의 로열티 수익이 늘고 미국 버블 하우스 뉴욕이 12월 4일 그랜드 오픈을 앞두고 있다는 겁니다. 쉽게 말하면, 신사업 성과가 더해지면서 실적이 커질 일만 남았다고 본 거예요.",
-            "투자의견과 목표주가 제시: 구독수 바닥이 확인되었고 대형 지식재산권(IP) 입점과 미국 버블 하우스 오픈이 다가와 주가 하방 압력이 낮다고 판단해 투자의견 매수와 목표주가 30,000원을 제시하며 커버리지를 재개했다고 해요. 목표주가는 내년도 예상 주당순이익(EPS) 1,738원에 타겟 주가수익비율(PER) 17배를 곱해서 산출했다는 겁니다. 쉽게 말하면, 현재 주가 아래로는 안전마블이 있고 위로는 열린 구간이라는 말이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "8911",
-          "link": "https://m.stock.naver.com/research/company/98503",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i78ff497174",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "유안타증권",
-          "title": "[유안타증권] 한화솔루션 2027년 실적 소폭 개선 vs 현금흐름 부족",
-          "easy1_title": "내년 실적은 조금 나아지는데 돈 돌기는 더 팍팍해집니다",
-          "easy1_desc": "유안타증권에서 한화솔루션의 2027년 영업실적을 살펴봤더니, 매출액 15.8조원과 영업이익 5,775억원으로 소폭 개선될 거라고 해요. 그런데 순차입금 규모는 12조원에 달해서 연간 4,500억원대 순금융비용 압박이 쉽게 줄어들기 힘들다는 말이에요. 쉽게 말하면, 벌어들이는 돈은 조금 늘어나지만 이자 부담 때문에 실제 지갑 사정은 여전히 팍팍한 셈이라는 겁니다.",
-          "easy2_title": "태양광 보조금은 늘어나는데 현금흐름은 오히려 마이너스가 됩니다",
-          "easy2_desc": "그래서 유안타증권은 2027년 적정주가를 2.1만원으로 낮춰 잡았는데요, 이유는 차세대 태양전지 탠덤셀 투자로 인해 연간 Capex 규모가 2.1조원으로 늘어나기 때문이에요. 영업활동에서 나오는 잉여현금이 2026년 △0.1조원에서 2027년 △1.3조원으로 확대된다는 장점이 사라지고 현금이 부족해진다는 겁니다. 결국 투자자산 매각으로 메워야 한다는 단점이 있는데, 태양광 보조금으로 실적은 좋아져도 현금흐름은 악화된다는 말이에요.",
-          "topic": "유안타증권은 한화솔루션의 2027년 영업실적이 소폭 개선되지만 현금흐름 악화와 투자 부담을 반영해 적정주가를 2.1만원으로 하향 조정했다고 밝혔다.",
-          "points": [
-            "2027년 실적 추정치: 유안타증권은 2027년 연간 예상 실적을 매출액 15.8조원, 영업이익 5,775억원, 지배주주 순이익 2,543억원 등으로 집계했다고 밝혔어요. 주요 부문별로는 기초소재 348억원, 신재생에너지 6,006억원 등으로 나뉘어 소폭 증익될 거라고 해요. 뭔 소리냐면, 전년도 영업이익 5,417억원에 비해 이익 규모가 조금 커진다는 말이에요.",
-            "태양광 펀더멘탈 변화: 유안타증권은 2027년에 긍정 요소와 불안 요소가 함께 나타난다고 분석했는데요, 미국 카스터빌 공장 완공으로 생산보조금(AMPC)이 1조원으로 늘어난다는 장점이 있어요. 하지만 미국 태양광 모듈 설치량은 42GW인 반면 현지 모듈 생산캐파는 91GW여서 수급율이 46%에 그치는 공급과잉 심화라는 단점도 같이 따라온다는 겁니다.",
-            "현금흐름 악화와 목표주가 하향: 유안타증권은 차세대 태양전지 탠덤셀 투자로 인해 연간 Capex가 2.1조원으로 늘어나면서 영업활동 잉여현금 부족이 △1.3조원으로 확대된다고 봤어요. 그래서 기존 33,862원이던 적정주가를 2.1만원으로 내렸다는 거예요. 쉽게 말하면, 대규모 투자 때문에 현금 빠져나가는 속도가 훨씬 크다고 보입니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "19106",
-          "link": "https://m.stock.naver.com/research/company/98502",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "icd50816981",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "유안타증권",
-          "title": "[유안타증권] SKC 2027년 영업 흑전 vs 2가지 숙제!",
-          "easy1_title": "2027년에는 영업이익이 흑자로 돌아설 것으로 보입니다",
-          "easy1_desc": "유안타증권은 2027년 전사 영업손익이 매출액 2조 4천억원, 영업이익 130억원으로 소폭 흑자전환할 것으로 내다봤는데요, 반도체 테스트소켓 자회사인 ISC㈜의 확장과 말레이시아로 공장을 이전한 전지박 자회사 덕분이라는 겁니다. 하지만 순손익은 6개년 연속 적자 상태가 이어진다는 점도 함께 언급했어요. 쉽게 말하면 영업은 겨우 숨통이 트이지만 전체 순이익 적자는 계속된다는 말이에요.",
-          "easy2_title": "동박 지분가치가 떨어져서 적정주가를 낮춘다고 밝혔습니다",
-          "easy2_desc": "증권사는 동박 자회사인 SK넥실리스㈜의 영구채 발행으로 실효지분율이 59%에서 32%로 낮아진 것을 반영해 적정주가를 7만 1천원으로 내렸는데요, 이에 따라 지분가치가 감소하는 타격을 입었기 때문이라는 겁니다. 지분율이 낮아져서 0조 8천억원 규모의 지분가치가 줄어든다는 단점이 있는데요, 대신 재무구조를 바꾸는 과정이라는 장점도 같이 따라온다는 겁니다. 쉽게 말하면 가치가 줄어든 만큼 목표주가를 11만원에서 7만 1천원으로 낮췄다는 말이에요.",
-          "topic": "SKC의 2027년 영업 흑자 전환 전망과 함께 화학 및 동박 부문에 남아 있는 구조조정 과제에 대한 유안타증권의 분석이다.",
-          "points": [
-            "2027년 영업손익 흑자 전환: 유안타증권은 2027년 예상 실적을 매출액 2조 4천억원, 영업이익 130억원으로 제시하며 영업손익이 4개년 만에 흑자로 돌아설 것으로 분석했어요. 뭔 소리냐면 반도체 테스트소켓 자회사인 ISC㈜가 커지고 말레이시아로 공장을 옮긴 전지박 자회사가 하반기에 흑자를 낼 것으로 기대되기 때문이라는 말이에요.",
-            "남아 있는 두 가지 숙제: 증권사는 2027년에도 화학부문 재편과 동박부문의 폴란드 가동 이슈라는 2가지 과제가 남아 있다고 지적했는데요, 정부 주도의 울산지역 엔씨씨(NCC) 다운사이징과 폴란드 공장의 불투명한 가동 여부가 부담이기 때문이라는 겁니다. 게다가 나트륨배터리 상용화도 또 다른 위협 요인으로 작용한다고 덧붙였어요.",
-            "적정주가 하향 조정: 유안타증권은 동박 자회사의 영구채 발행으로 인한 실효지분율 하락과 지분가치 감소를 반영해 적정주가를 7만 1천원으로 하향 조정했어요. 쉽게 말하면 신종자본증권 발행 거래로 실효지분율이 낮아져서 0조 8천억원의 지분가치가 줄어들었기 때문이라는 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "18049",
-          "link": "https://m.stock.naver.com/research/company/98501",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i9661ffda7b",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "신한투자증권",
-          "title": "[신한투자증권] 유니트론텍 PER 2배, 물러설 곳이 없다",
-          "easy1_title": "환율 때문에 실적이 주춤했지만 주가는 너무 싸다",
-          "easy1_desc": "신한투자증권은 유니트론텍의 영업이익이 2Q26에 385억원으로 정점을 찍은 뒤 3Q26에 환율 급락으로 85억원까지 줄어들면서 주가가 저평가되었다고 봤는데요, 2027년 매출총이익률을 10.0%로 가정해 영업이익 820억원을 전망해 봤더니 주가수익비율(PER) 2배 수준이라 현재의 할인은 과도하다는 겁니다. 뭔 소리냐면, 일시적인 환율 충격 때문에 실적이 내려앉았지만 벌어들이는 체력에 비하면 지금 주가는 지나치게 낮다는 말이에요. 쉽게 말하면, 알짜 기업인데 억울하게 가격이 깎여 있다는 셈이에요.",
-          "easy2_title": "DDR5 전환과 새 사업 기대감으로 물러설 곳이 없다",
-          "easy2_desc": "그래서 신한투자증권은 연간 판가 재협상과 디디알파이브(DDR5)로의 풀체인지가 단가를 올리는 구조여서 높은 판가 유지가 가능하다고 판단했는데요, 여기에 최대주주 변경과 현대차그룹 부품 체인 확대 및 인공지능(AI) 데이터센터 관련 신사업 기대감까지 겹쳐 있다는 거예요. 판가가 떨어지지 않고 새로운 먹거리가 붙는다는 장점이 있는데, 대신 늘어난 차입금과 재고자산이 부담으로 작용할 수도 있다는 점도 함께 살펴봐야 한다는 겁니다. 쉽게 말하면, 악재는 이미 주가에 다 반영되었고 앞으로 치고 나갈 일만 남았다는 말이에요.",
-          "topic": "신한투자증권은 유니트론텍이 환율 하락으로 일시적인 실적 부진을 겪었으나 독점적인 차량용 메모리 공급 구조와 인공지능(AI) 신사업 기대감에 비춰 현재 주가가 과도하게 저평가되어 있다고 분석했어요.",
-          "points": [
-            "차량용 메모리 독점 구조: 신한투자증권은 유니트론텍이 마이크론의 국내 차량 전장 메모리를 독점적으로 배정받아 유통하고 있다고 봤는데요, 차량용 반도체는 한 번 탑재되면 애프터서비스 시장까지 10년 정도 유지되기 때문에 업황 하락기에도 이익이 덜 흔들린다는 겁니다. 뭔 소리냐면, 경쟁자가 적고 고객이 공급사를 쉽게 바꾸지 못하는 진입 장벽이 단단하다는 말이에요.",
-            "DDR5 전환과 단가 상승: 그래서 신한투자증권은 차량용 메모리 판가가 연간 단위로 재협상되며 차종이 풀체인지될 때 디디알파이브(DDR5) 세대 교체와 함께 탑재량이 늘어나는 구조라고 설명했는데요, 이러한 사양 고도화가 앞으로 몇 년간 단가를 계속 높여 매출 기반을 계단식으로 끌어올린다는 거예요. 쉽게 말하면, 차가 바뀔 때마다 더 비싸고 좋은 부품이 들어가서 자연스럽게 매출이 커진다는 셈이에요.",
-            "로봇 및 AI 신사업 기대: 또한 신한투자증권은 현대모비스가 보스턴 다이내믹스 휴머노이드 부품 체인을 총괄하면서 유니트론텍의 역할도 함께 커질 것으로 기대했는데요, 이미 현대모비스에 마이크론 메모리와 마이크로칩 엠씨유(MCU)를 공급하고 있어 현대차그룹 새만금 인공지능(AI) 데이터센터 등 로봇 및 추론 서버 관련 신사업으로 접점을 넓힐 수 있다는 겁니다. 뭔 소리냐면, 기존의 자동차 부품 공급 경험이 새로운 로봇과 인공지능(AI) 시장으로 통하는 다리가 된다는 말이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "14459",
-          "link": "https://m.stock.naver.com/research/company/98500",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i8dbebc04ec",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "신한투자증권",
-          "title": "[신한투자증권] 카카오페이 기대하던 혁신은 2028년으로",
-          "easy1_title": "기대가 큰 혁신이 2028년으로 미뤄졌다는 겁니다",
-          "easy1_desc": "증권사는 스테이블코인 사업과 관련해 법안의 영향이나 유통 중심 모델을 따져봤더니, 실제 사업화 시점이 2028년으로 제시되어 2027년 이익 기여가 제한적이라고 봤거든요. 뭔 소리냐면, 새로운 성장 동력으로 기대하던 부분이 생각보다 천천히 움직인다는 말이에요. 그래서 관련 기대 수익이 줄어들 수밖에 없는데, 장점은 미리 글로벌 파트너들과 인프라를 다져간다는 거고요. 쉽게 말하면, 당장의 큰 이익보다는 먼 미래를 보고 기초를 닦는 셈이라는 말이에요.",
-          "easy2_title": "증권 부문 이익이 줄어서 적정주가를 낮춰 잡았어요",
-          "easy2_desc": "증권사는 증권 잔여지분을 매입한 직후에 증권 분기 영업이익이 급감한 점을 짚어봤는데요, 국내 증권주 평균 주가순자산비율(PBR)이 1배를 밑도는 점을 고려하면 자본 배분 효율성이 낮다고 봤다는 거예요. 그 결과 조정 순현금과 스테이블코인 비즈니스 축소를 적용해 2027년에서 2028년 적정주가를 22,000원~27,000원으로 낮춰 잡았다고 밝혔는데요, 투자의견은 중립을 유지하겠다는 계획이에요. 목표주가가 제한적이라는 단점이 있는데, 대신 본업인 결제 부문이 탄탄하게 받쳐준다는 장점도 같이 따라온다는 겁니다.",
-          "topic": "신한투자증권은 카카오페이의 3분기 실적과 향후 전망을 분석하면서, 본업인 결제 부문은 탄탄하지만 스테이블코인 사업화 시점 지연과 증권 부문 변동성을 반영해 적정주가를 낮췄다고 밝혔어요.",
-          "points": [
-            "결제 본업 성장: 증권사는 3분기 연결 매출이 3,021억원으로 전년동기대비 27% 늘었다고 분석했는데요, 특히 온라인과 오프라인 및 해외 전 영역에서 고른 성장을 보이며 결제 서비스 매출 비중이 51%로 확대되었다는 겁니다. 뭔 소리냐면, 주식 시장이 흔들려도 일상적인 결제라는 본업이 든든하게 버텨주고 있다는 말이에요.",
-            "스테이블코인 지연: 증권사는 디지털자산법 제정안을 따져봤더니 은행 지분이 50%를 넘는 컨소시엄에만 발행을 허용하고 있어 유통 중심 모델인 카카오페이는 관련 기대 수익이 줄어들 수밖에 없다고 봤거든요. 뭔 소리냐면, 제도적인 벽 때문에 실제 돈이 되는 시기가 2028년으로 밀렸다는 말이에요.",
-            "증권 부문 부진: 증권사는 카카오페이증권이 지분을 매입한 직후 국내 주식 거래가 줄면서 분기 영업이익이 157억원으로 60%나 급감했다고 밝혔는데요, 국내 증권주 평균 주가순자산비율(PBR)이 1배를 밑도는 것과 맞물려 자본 배분 효율성이 낮다고 봤다는 거예요. 쉽게 말하면, 증권 쪽에서 이익이 크게 흔들린 셈이라는 말이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "27392",
-          "link": "https://m.stock.naver.com/research/company/98499",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "idffd63899f",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "키움증권",
-          "title": "[키움증권] 현대모비스 물적분할 시 주식매수청구권 도입 이래 최대 규모: 램프사업 매각 코멘트",
-          "easy1_title": "당장 돈을 벌려고 하는 사업 정리가 아니라는 겁니다",
-          "easy1_desc": "키움증권은 현대모비스가 램프사업을 매각하는 게 당장 현금을 손에 쥐려는 목적이 아니라고 봤는데요, 매각 대금의 절반 이상이 임직원 위로금으로 쓰이고 주식매수청구권까지 더해지면 오히려 돈이 빠져나가는 구조라는 겁니다. 그러니까 순현금 유출을 감내하면서까지 미래 신사업에 투자하기 위한 밑거름을 닦는 셈이라는 말이에요. 결국 이번 딜의 성패는 회사가 어디까지 현금 유출을 버텨낼 수 있을지가 관건이라는 겁니다.",
-          "easy2_title": "주주 권리 행사의 실익이 점점 줄어들고 있다고 봤습니다",
-          "easy2_desc": "증권사는 주식매수청구권 행사가격이 주주확정기준일 종가 대비 23.4% 확정 수익이라 하락장의 대안일 수 있지만, 이후 주가가 오르면서 권리 행사의 실익이 줄어들고 있다고 봤는데요, 마감일인 12월 14일까지 기관들이 눈치를 보며 결정을 미룰 것으로 예상된다는 겁니다. 매입 청구액이 1조 원을 넘지 않으면 순현금 8조 원을 가진 현대모비스가 전량 매입해 딜을 마무리할 텐데, 남은 주식은 대부분 소각 대상이 될 가능성이 높다는 말이에요. 쉽게 말하면, 자사주 소각 효과로 추가적인 주당순이익(EPS) 상승 서프라이즈를 기대할 수 있다는 겁니다.",
-          "topic": "키움증권은 현대모비스의 램프사업 분할 매각과 주식매수청구권 이슈가 단기 자금 확보가 아닌 신사업 투자를 위한 과정이며, 주가 흐름과 자사주 소각 등을 고려할 때 실익이 크다고 봤습니다.",
-          "points": [
-            "순현금유출 감내와 딜의 관건: 키움증권은 이번 매각이 당장 유동성을 채우기보다 순현금 유출을 감수하면서 신사업에 자금을 넣기 위한 목적이라고 봤는데요, 국민연금 같은 주주의 역사적 사례를 반영하면 현대모비스가 투입할 자금은 최대 4.0조 원 수준으로 줄어든다는 겁니다. 뭔 소리냐면, 표면적인 철회 요건인 2,300억 원 기준보다는 회사가 감내할 수 있는 순현금유출 상한선이 어디까지인지가 실질적인 바로미터라는 말이에요.",
-            "주식매수청구권 실익과 자사주 소각: 증권사는 주가 상승으로 인해 주식매수청구권 행사의 실익이 줄어들고 있으며, 청구액이 1조 원을 넘지 않으면 8조 원의 순현금을 가진 현대모비스가 전량 매입해 딜을 끝낼 것으로 봤는데요, 개정된 상법에 따라 1년 이내에 자기주식을 소각하거나 처분해야 한다는 겁니다. 쉽게 말하면, 자사주 매입만으로 최대 3%의 추가적인 주당순이익(EPS) 상승 서프라이즈를 기대할 수 있다는 셈이에요.",
-            "레거시 자산 매각과 후속 딜: 키움증권은 램프를 시작으로 물리적 인공지능(Physical AI) 투자를 위해 레거시 자산과 사업 매각을 계속 추진할 계획이라고 봤는데요, 기존 램프는 매출 대비 부담스러운 연구개발(R&D) 투자가 필요했기에 매각 후 연결 마진이 개선되는 효과가 있다는 겁니다. 대신 첫 물적분할 매각이 주식매수청구권 때문에 무산되면 현행 제도 아래서 후속 딜이 동력을 잃을 수 있다는 단점도 같이 따라온다는 말이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "6560",
-          "link": "https://m.stock.naver.com/research/company/98498",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i9c5ff283b2",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "미래에셋증권",
-          "title": "[미래에셋증권] 코스메카코리아 성장의 다음 단계, 이익 회복",
-          "easy1_title": "주문은 크게 늘었는데 비용 부담 때문에 이익이 조금 아쉬웠습니다",
-          "easy1_desc": "미래에셋증권이 코스메카코리아를 분석해 봤더니, 3분기 매출은 늘었지만 늘어난 주문에 대응하는 과정에서 외주 비용과 인센티브가 많이 들어 영업이익이 컨센서스를 밑돌았다고 해요. 주문이 쏟아져서 매출이 커진 건 좋은데, 그 덕분에 오히려 비용 부담이 커져서 수익성이 잠시 주춤했다는 말이에요. 쉽게 말하면, 장사는 잘됐지만 일손과 외주비가 너무 많이 나가서 남는 게 조금 줄어든 셈이라는 말이에요.",
-          "easy2_title": "앞으로는 새 공장이 돌아가면서 비용을 털어내고 다시 좋아질 겁니다",
-          "easy2_desc": "그래서 미래에셋증권은 6월에 인수한 오창 공장이 본격적으로 가동되고 외주 의존도가 낮아지면 수익성이 다시 회복될 것으로 예상했는데요, 방법은 자체 생산 능력을 키워서 외주 비용과 잔업 부담을 줄이겠다는 계획이에요. 공장이 돌기 전까지는 비용 부담이 계속된다는 단점이 있는데, 대신 내재화가 끝나는 시점부터는 이익이 본격적으로 개선될 거라는 장점이 있다는 겁니다. 쉽게 말하면, 지금의 비용 고민은 새 공장이 돌아갈 때까지 거쳐 가는 과정이라는 겁니다.",
-          "topic": "미래에셋증권은 코스메카코리아에 대해 투자의견 매수와 목표주가 150,000원으로 커버리지를 개시하면서, 한국 법인의 인디 브랜드 수주 확대와 향후 오창 공장 가동을 통한 이익 회복 가능성을 분석했어요.",
-          "points": [
-            "목표주가 산출: 미래에셋증권은 12MF EPS에 Target P/E 17배를 적용해 목표주가를 150,000원으로 산정했다고 밝혔어요. 타깃 멀티플은 과거 수주가 늘어나고 수익성이 좋아졌던 2Q24에서 3Q24의 평균 12MF P/E를 썼다는 겁니다.",
-            "한국 법인 성장: 3분기 한국 법인은 에이피알과 달바 같은 다수 인디 브랜드를 고객사로 두고 2,011억원의 매출을 기록하며 전사 성장을 이끌었어요. 특정 고객사 의존도가 낮아서 중소 고객사의 주문과 신규 고객사 유입이 실적에 고르게 반영된다는 말이에요.",
-            "수익성 개선 과제: 미래에셋증권은 국내 수익성 저하의 원인이 수요 부진이 아니라 늘어난 주문에 맞추느라 쓴 외주 비용과 인센티브 때문이라고 진단했어요. 따라서 2027년 하반기 가동을 목표로 하는 오창 공장을 통해 외주 의존도를 낮추는 것이 핵심 과제라는 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "14689",
-          "link": "https://m.stock.naver.com/research/company/98497",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "ic837966e9f",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "미래에셋증권",
-          "title": "[미래에셋증권] 코스맥스 해외까지 탄탄한 성장 코스",
-          "easy1_title": "국내랑 해외에서 다 잘 나가서 목표주가를 38만원으로 새로 잡았어요",
-          "easy1_desc": "미래에셋증권에서 코스맥스(화장품 연구개발·생산 기업)를 분석해 봤더니, 투자의견은 매수이고 목표주가는 380,000원으로 새로 커버리지를 시작했다고 해요. 이게 뭔 소리냐면, 글로벌 1위 ODM사(주문자 상표 부착 생산업체)인 이 회사가 한국 법인 수주가 늘고 미국 법인도 영업 흑자로 돌아섰기 때문에 앞으로 가치가 다시 평가받을 수 있다는 말이에요. 그래서 실적이 탄탄하게 성장할 거라고 봤다는 건데요, 장점은 해외 이익 기여가 커진다는 점이지만 대신 공장 가동률이 높아져서 생산능력이 중요하다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 국내외 수주가 다 좋아서 이익이 불어날 걸로 보인다는 셈이에요.",
-          "easy2_title": "내년에도 영업이익이 30퍼센트 넘게 불어날 거라고 추정했어요",
-          "easy2_desc": "그래서 미래에셋증권은 2027F 매출액이 3조 9,283억원으로 21.2% 늘고 영업이익은 3,807억원으로 31.6% 증가할 거라고 추정했는데요, 방법은 한국 법인이 평택 1공장 증설로 생산능력을 키우고 미국 법인은 매출이 커지면서 고정비 부담이 줄어들게 하겠다는 계획이에요. 실적이 좋아진다는 장점이 있는데, 대신 증설이 내년 초에 몰려 있어서 초기 가동 효율에 따라 마진이 흔들릴 수 있다는 단점도 있다는 겁니다. 쉽게 말하면, 내년 매출 증가율은 21.2%이고 영업이익 증가율은 31.6%에 가깝다고 보입니다.",
-          "topic": "미래에셋증권은 코스맥스가 국내 스킨케어 수주 호조와 미국 법인의 흑자 유지에 힘입어 탄탄한 실적 성장을 이어갈 것으로 추정했어요.",
-          "points": [
-            "국내외 수주와 이익 성장: 한국 법인은 에센스나 미스트 같은 고마진 품목 주문이 늘고 겔마스크 이익도 커져서 수익성이 좋아졌다고 해요. 뭔 소리냐면, 인디 브랜드 해외 판매에 글로벌 대형사 스킨케어 외주 수요까지 더해졌다는 말이에요.",
-            "미국 법인 흑자와 증설 효과: 미국 법인은 2Q26에 첫 영업 흑자로 돌아선 뒤에 3분기에도 흑자를 지켰는데요, 크림이나 에센스 같은 스킨케어 전반에서 개발 의뢰가 늘고 있다는 겁니다. 여기에 한국 법인은 평택 1공장 증설로 연말에서 내년 1월 사이에 캐파가 약 10% 늘어날 예정이라고 해요.",
-            "밸류에이션과 목표주가 산출: 미래에셋증권은 12MF EPS에 Target P/E 17배를 적용해서 목표주가를 380,000원으로 냈는데요, 글로벌 상장 ODM사 중 유일한 Peer인 인터코스의 12MF P/E를 타깃 멀티플로 썼다는 겁니다. 쉽게 말하면, 글로벌 1위 지위와 대형사 고객 기반을 바탕으로 밸류에이션을 매긴 셈이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "14520",
-          "link": "https://m.stock.naver.com/research/company/98496",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i2054c0f74d",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "미래에셋증권",
-          "title": "[미래에셋증권] 한국콜마 국내가 증명한 체력",
-          "easy1_title": "국내 선케어랑 스킨케어가 잘 나가서 실적이 확 좋아졌거든요",
-          "easy1_desc": "미래에셋증권에 따르면 3분기 한국콜마의 국내 별도 매출액은 선케어와 스킨케어 고객사의 해외 판매가 늘어나면서 4,337억 원을 기록했다고 하는데요. 이게 전년 동기 대비 34.7%나 늘어난 수치라서 분기 최대 실적을 갈아치운 셈이에요. 쉽게 말하면 국내 시장에서 체력을 확실하게 증명한 겁니다.",
-          "easy2_title": "내년 7월에 원료동이 다 지어지면 생산 공정도 훨씬 원활해질 거라는 겁니다",
-          "easy2_desc": "증권사는 칭량과 제조 공정에서 병목 현상이 생기고 있어서 내년 7월 원료동이 완공되기 전까지 추가 생산 능력을 확보하는 게 중요하다고 봤는데요. 공장을 빌리거나 계열사 공간을 쓰는 방안도 검토 중인데 인건비가 늘어나는 단점도 있다는 거예요. 대신 생산 여력이 넓어지면 전사 이익 성장을 든든하게 받쳐 준다는 장점이 있거든요.",
-          "topic": "미래에셋증권은 한국콜마에 대해 국내 사업의 고성장과 해외 법인의 적자 축소 기대를 반영해 투자의견 매수와 목표주가 160,000원으로 커버리지를 시작했다고 밝혔어요.",
-          "points": [
-            "국내 ODM 최대 매출: 선케어와 스킨케어 비중이 각각 32%와 48%로 합산 80%를 차지하면서 국내 별도 매출이 4,337억 원으로 뛰어올랐거든요. 자외선 차단 기술과 제형 안정성을 바탕으로 주문이 계속 늘어나는 추세라는 말이에요.",
-            "미국 법인과 고객사 변화: 미국 법인은 3분기 매출액이 180억 원으로 전년 동기 대비 122.2% 늘어났는데요. 글로벌 MNC 색조 브랜드가 매출 비중 20% 이상의 2위 고객사로 올라섰지만 아직 가동률은 8% 수준이라 고정비 부담을 줄여야 한다는 과제가 남아 있다는 겁니다.",
-            "2026년 연간 실적 전망: 증권사는 2026년 전체 매출액이 3조 2,027억 원으로 작년보다 17.6% 늘어나고 영업이익은 3,417억 원으로 42.6% 증가할 거라고 추정했거든요. 국내 별도가 성장을 이끌고 미국 법인의 적자가 줄어들면서 전체 이익도 뒷받침될 것으로 보입니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 국내 별도가 성장을 이끌고 미국 법인의 적자가 줄어들면서 전체 이익도 뒷받침될 것으로 보입니다.",
-          "body_chars": "15141",
-          "link": "https://m.stock.naver.com/research/company/98495",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i7e568da903",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "미래에셋증권",
-          "title": "[미래에셋증권] LG생활건강 기대와 숫자 사이",
-          "easy1_title": "엘지생활건강에 대해 투자의견 중립과 목표주가 28만원으로 새로 분석을 시작했다는 거예요",
-          "easy1_desc": "미래에셋증권 조세은 연구원이 엘지생활건강의 목표주가를 280,000원으로 잡고 분석을 시작했는데요. 과거의 높았던 수익성을 그대로 적용하기는 어렵다고 봤거든요. 면세 사업이 살아나고 북미 브랜드를 다시 짜고 있지만 이익이 얼마나 이어질지 확인해야 한다는 말이에요. 쉽게 말하면, 기대감이 있지만 실제 숫자로 증명되는지 지켜보자는 셈이에요.",
-          "easy2_title": "북미와 중국에서 각자 브랜드를 키우고 구조를 바꾸고 있다는 말이에요",
-          "easy2_desc": "과거 인수했던 법인 중심에서 벗어나 자체 브랜드를 키우는 데 집중하고 있는데요. 3Q26 북미 자체 브랜드 매출이 20% 늘어났고 닥터그루트가 세포라 424개 매장에 들어갔거든요. 다만 마케팅 투자가 계속 들어가서 비용이 늘어난다는 단점도 있는데, 장점은 판매 기반이 넓어지고 있다는 점이에요. 쉽게 말하면, 체질을 바꾸고 있지만 비용 부담도 같이 커지는 중이라는 겁니다.",
-          "topic": "엘지생활건강의 3분기 실적과 앞으로의 사업 재편 방향에 대한 미래에셋증권의 분석이에요.",
-          "points": [
-            "목표주가 산출 배경: 목표주가는 12개월 선행 주당순이익(12MF EPS)에 타깃 주가수익비율(Target P/E) 20배를 곱해서 나왔는데요. 2022년 이후 수익성이 나빠진 뒤의 평균치를 썼거든요. 현재 주가는 15배 수준에서 거래되고 있다는 말이에요. 쉽게 말하면, 과거 고성장하던 시절의 밸류에이션을 바로 쓰기는 어렵다고 본 겁니다.",
-            "3분기 실적 리뷰: 3분기 매출액은 1조 5,774억원이고 영업이익은 704억원을 기록해 시장 예상치보다 낮았는데요. 면세 매출이 살아나면서 뷰티 부문 적자는 줄었지만 일회성 관세 환입 효과가 사라지고 비용이 늘어났거든요. 지배주주 순이익은 북미 에이본 매각 때문에 84억원으로 줄었다는 말이에요. 쉽게 말하면, 면세는 좋아졌지만 비용과 매각 손실 때문에 이익이 눈에 띄게 줄어든 셈이에요.",
-            "2026년 실적 전망: 미래에셋증권은 2026년 매출액을 6조 2,328억원, 영업이익을 2,999억원으로 추정했는데요. 에이본 매각과 중국 사업 재편 때문에 전체 매출은 조금 줄어들 것으로 봤거든요. 대신 면세 물량 조절에 따른 기저효과와 매장 효율화 덕분에 영업이익은 75.7% 늘어날 것으로 전망했다는 말이에요. 쉽게 말하면, 매출은 줄어도 수익성은 좋아질 거라고 본 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "17635",
-          "link": "https://m.stock.naver.com/research/company/98494",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i77b9cdbaac",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "키움증권",
-          "title": "[키움증권] 삼성E&A 삼성전자 포함 그룹사 투자 수혜 점검",
-          "easy1_title": "삼성전자의 HBM 투자로 혜택을 볼 것으로 전망됩니다",
-          "easy1_desc": "키움증권은 삼성E&A의 그룹사 투자 수혜가 중장기적으로 이어질 가능성이 높다고 봤는데요, 특히 삼성전자의 HBM(고대역폭 메모리) 중심 투자와 맞물려 기흥 카이로스 프로젝트나 Taylor Fab2 같은 대규모 공사 수주가 늘어나는 구조라는 겁니다. 쉽게 말하면, 고객사가 AI 반도체 생산을 늘릴수록 이 회사의 일감이 커지는 셈이라는 말이에요.",
-          "easy2_title": "그룹사의 추가 투자까지 더해져 주가 조정을 기회로 봅니다",
-          "easy2_desc": "증권사는 삼성전자 외에도 삼성전기의 세종 신공장 증설이나 삼성바이오로직스의 6공장 투자 집행 계획 덕분에 공사 수주 기회가 넓어졌다고 밝혔는데요, 이런 중장기 성장을 바탕으로 최근의 주가 하락은 매수 기회로 보는 것이 타당하다고 분석했어요. 주가가 내려간 단점은 있지만, 회사의 성장 여력이 크다는 장점이 더 크다는 겁니다.",
-          "topic": "키움증권은 삼성E&A가 삼성전자와 주요 그룹사의 반도체 및 바이오 시설 투자 확대에 힘입어 중장기적인 수혜를 입을 것으로 분석했어요.",
-          "points": [
-            "삼성전자 HBM 투자: 키움증권은 기흥 카이로스 프로젝트나 Taylor Fab2 같은 삼성전자의 파운드리 공장 투자가 구체화되고 있다고 밝혔는데요, 언론 보도에 따르면 기흥 카이로스 프로젝트는 약 25조원 규모로 HBM 베이스다이를 생산할 것으로 전망된다는 겁니다. 쉽게 말하면, 첨단 메모리 공장 건설이 본격화되면서 삼성E&A의 추가 수주 가능성도 커졌다는 말이에요.",
-            "그룹사 공사 수주 확대: 증권사는 삼성전자뿐만 아니라 삼성전기와 삼성바이오로직스의 투자 증가도 실적에 보탬이 된다고 분석했는데요, 삼성전기는 약 7,100억원 규모의 세종 2.0 신공장 증설 수주를 발표했고, 삼성바이오로직스도 6공장 투자 집행 계획을 밝혔다는 거예요. 덕분에 건설 수주 저변이 삼성 그룹사 전반으로 넓어지는 흐름이라는 겁니다.",
-            "실적 추정치와 주가 판단: 키움증권은 반도체 투자 사이클의 수혜 강도가 과거보다 클 것으로 추정하며 목표주가 88,000원을 유지한다고 밝혔는데요, 그룹사 투자에 따른 중장기 성장이 기대되므로 최근의 주가 조정을 매수 기회로 평가했다는 말이에요. 쉽게 말하면, 업황 개선 속도에 비해 주가가 낮아진 상태라는 겁니다."
-          ],
-          "evidence_ok": "5/6",
-          "bad_numbers": "",
-          "check_flags": "point1 근거 원문에 없음",
-          "body_chars": "16283",
-          "link": "https://m.stock.naver.com/research/company/98493",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "ic9cdb372ae",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "미래에셋증권",
-          "title": "[미래에셋증권] 아모레퍼시픽 다시, 아모레의 시간",
-          "easy1_title": "더마와 헤어케어로 전 세계에서 다시 살아나고 있어요",
-          "easy1_desc": "미래에셋증권에서 아모레퍼시픽의 목표주가를 190,000원으로 잡고 분석을 시작했는데요. 과거에는 중국이나 특정 주력 브랜드에 기대던 구조였는데, 지금은 에스트라나 일리윤 같은 더마 브랜드와 헤어케어 쪽이 해외에서 잘 팔리고 있거든요. 쉽게 말하면, 중국 의존도를 낮추고 미국이나 유럽 등 여러 지역과 브랜드로 체질이 바뀐 셈이에요.",
-          "easy2_title": "내년에는 매출과 이익이 더 좋아질 것으로 보고 있어요",
-          "easy2_desc": "미래에셋증권은 2026년 전체 매출액을 4조 7,383억원, 영업이익은 4,921억원으로 내다봤는데요. 국내에서는 이커머스와 MBS 같은 수익성 높은 채널 비중이 커지고 있고, 해외에서도 마케팅 투자를 효율적으로 바꾸면서 실적이 늘어날 것이라는 계획이에요. 이익이 커진다는 장점이 있는데, 대신 해외 사업을 키우는 과정에서 마케팅 비용이 계속 들어간다는 점도 같이 따라온다는 겁니다.",
-          "topic": "미래에셋증권은 아모레퍼시픽에 대해 투자의견 매수와 목표주가 190,000원으로 커버리지를 시작하면서 더마와 헤어케어 중심의 글로벌 성장을 전망했어요.",
-          "points": [
-            "목표주가 산정 근거: 미래에셋증권은 12MF EPS에 Target P/E 25배를 적용해서 목표주가를 190,000원으로 산출했는데요. 타깃 멀티플로 쓴 25배는 과거 해외 성장기 초입이었던 2013년에서 2014년 사이의 평균 12MF P/E를 가져온 거라는 말이에요. 쉽게 말하면, 예전에 해외에서 잘 나갈 때의 평균 수준을 지금 시점에 다시 적용해 본 겁니다.",
-            "더마 브랜드 실적 성장: 에스트라나 일리윤, 코스알엑스 같은 더마 브랜드들이 해외에서 성과를 내면서 전체 매출 비중이 20% 수준에서 20%대 중반으로 올랐거든요. 특히 에스트라와 일리윤의 BY26 합산 매출액은 4,000억원을 넘어서며 전년보다 67%나 늘어났다는 겁니다. 뭔 소리냐면, 민감성 피부나 피부 장벽을 관리하는 제품을 찾는 소비자가 늘면서 더마 사업이 회사의 새로운 성장 축으로 자리 잡았다는 말이에요.",
-            "헤어케어 사업 확장: 미쟝센이나 려 같은 헤어케어 브랜드들도 해외에서 두 자릿수 매출 성장을 기록하며 외형과 수익성이 같이 좋아졌는데요. BY26 헤어케어 매출액은 약 5,000억원에 달하고 영업이익률도 적자에서 한 자릿수 후반까지 회복했다는 거예요. 대용량 샴푸보다는 두피 에센스나 트리트먼트 같은 고기능성 제품에 집중해서 해외 시장을 공략하고 있다는 셈이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "19813",
-          "link": "https://m.stock.naver.com/research/company/98492",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i023c8ef7ed",
-          "source_name": "네이버 리서치 종목",
-          "kind": "증권사 리포트",
-          "writer": "KB증권",
-          "title": "[KB증권] SK오션플랜트 속도 조절 중이나, 튼튼한 기초체력 양호",
-          "easy1_title": "목표주가는 낮췄지만 살 만하다고 봤습니다",
-          "easy1_desc": "증권사는 SK오션플랜트의 기존 수주 지연 등을 반영해 목표주가를 16,000원으로 낮췄는데요, 그 이유는 예상보다 프로젝트가 늦어졌기 때문이라는 거예요. 그런데도 투자의견 Buy를 유지한 것은 최근 종가 대비 상승여력이 66.7% 남아있다는 점을 반영했거든요. 쉽게 말하면, 눈높이는 조금 낮아졌지만 여전히 매력적인 자리라는 셈이에요.",
-          "easy2_title": "지금은 속도를 조절 중이지만 실적 개선은 2028년부터로 보입니다",
-          "easy2_desc": "특수선 매출이 급감하면서 전체 매출 규모가 줄어드는 속도 조절을 겪었는데요, 대신 마진이 높은 해상풍력 비중이 65.7%로 높아지면서 영업이익률이 개선됐다는 거예요. 내년에는 수주가 다시 이어지면서 2028년부터 본격적인 실적 성장세에 기여할 것으로 기대되거든요. 서서히 기초체력을 다지고 있다는 장점이 있는 반면, 당장 눈앞의 매출은 줄었다는 단점도 같이 따라온다는 겁니다.",
-          "topic": "SK오션플랜트의 3분기 실적과 목표주가 하향 조정, 그리고 향후 수주 및 실적 전망에 대한 KB증권의 분석이에요.",
-          "points": [
-            "목표주가 16,000원으로 하향: 증권사는 가중평균자본비용(WACC)이 높아지고 안마해상풍력 같은 기존 프로젝트가 지연된 점을 반영해 목표주가를 16,000원으로 36.0% 내렸는데요, 대신 최근 종가 기준으로 상승여력이 66.7% 남아있다는 점을 근거로 삼았거든요. 쉽게 말하면, 주가 목표는 낮아졌지만 여전히 투자 매력은 남아있다고 판단한 겁니다.",
-            "3분기 매출 감소와 이익률 개선: 특수선 매출이 줄어들면서 3분기 전체 매출액은 1,168억원으로 내려앉았는데요, 그 자리를 마진이 높은 해상풍력 부문이 65.7%의 비중으로 채워주면서 영업이익률은 14.5%로 개선됐다는 거예요. 매출 규모는 줄었지만 알짜배기 사업 비중이 커졌다는 장점이 있는 셈이에요.",
-            "2027년 수주 재개와 2028년 실적 성장: 증권사는 내년에 해상풍력과 상선 수주가 다시 이어지면서 2028년부터 본격적인 실적 개선이 나타날 것으로 전망했는데요, 신규 수주 건들의 매출이 이때부터 반영될 예정이기 때문이라는 거예요. 불확실성으로 꼽히는 지분 매각 이슈도 내년 상반기 중에 최종 결론이 나올 것으로 기대하고 있습니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 내년에는 수주가 다시 이어지면서 2028년부터 본격적인 실적 성장세에 기여할 것으로 기대되거든요.; 예측 의심: 불확실성으로 꼽히는 지분 매각 이슈도 내년 상반기 중에 최종 결론이 나올 것으로 기대하고 있습니다.",
-          "body_chars": "18619",
-          "link": "https://m.stock.naver.com/research/company/98491",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i7c25c56672",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "DS투자증권",
-          "title": "[DS투자증권]  AIDC 기대감이 현실화되는 순간",
-          "easy1_title": "데이터센터 건설이 27년 이후 실적을 결정할 핵심입니다",
-          "easy1_desc": "건설 업종의 올해 주가 상승은 대형 원전 수주 기대감이 이끌었는데요, 이제는 막연한 기대보다는 27년과 28년 실적을 실제로 끌어올릴 수주를 쌓는 기업에 주목해야 한다는 게 증권사의 판단이에요. 그 중심에 바로 데이터센터가 있거든요. 쉽게 말하면, 데이터센터 수주가 곧바로 매출로 이어지는 구조라 이 분야에서 성과를 내는 곳이 실적 레버리지가 클 것이라는 말이에요.",
-          "easy2_title": "데이터센터는 짓기 까다로워 기술력 있는 곳만 살아남습니다",
-          "easy2_desc": "데이터센터는 일반 건물과 달리 기계·전기·배관 등 설비 비중이 전체 공사비의 70~85%를 차지할 정도로 높거든요. AI 데이터센터로 갈수록 발열을 잡기 위한 수랭식 냉각 기술 같은 전문 역량이 필수적이라 시공사가 10개 미만으로 제한적이라는 거예요. 공급 능력이 제한된 시장인 만큼 단가 상승 국면에서도 시공사의 협상력이 유지되는 장점이 있습니다.",
-          "topic": "정부의 3대 메가 프로젝트 추진에 따라 국내 데이터센터 건설 시장이 급성장할 것으로 보이며, 이에 따른 시공사의 수주 경쟁력이 중요해졌다는 분석입니다.",
-          "points": [
-            "데이터센터 시장의 성장과 그룹사 주도: 국내 데이터센터 시장은 2029년 11.1조원 규모로 커질 전망인데요, 성장의 중심에는 대기업 그룹사가 있다고 봤어요. 발전소와 부지, 안정적인 현금흐름을 가진 대기업 그룹사가 AI 인프라 사업에서 유리한 위치를 차지할 수밖에 없다는 겁니다.",
-            "AI 데이터센터의 높은 진입장벽: AI 데이터센터는 일반 데이터센터보다 랙당 전력 밀도가 훨씬 높아서 냉각 설비 등 기계 공종 물량이 크게 늘어납니다. 설계 변경이 잦고 기자재 조달이 까다로워 변수에 빠르게 대처하는 시공사의 역량이 곧 경쟁력이라고 증권사는 설명했어요.",
-            "GS건설의 수주 가시성: 증권사는 GS건설을 건설업종 Top Pick으로 제시했는데요, 국내 최다인 22건의 데이터센터 레퍼런스를 보유하고 있기 때문이에요. 특히 그룹사 프로젝트인 동해 AI 데이터센터가 1단계 건축허가를 받아 착공에 들어가는 등 수주 가시성이 가장 높다고 봤습니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 정부의 3대 메가 프로젝트 추진에 따라 국내 데이터센터 건설 시장이 급성장할 것으로 보이며, 이에 따른 시공; 긴 원문 — 앞 30000자만 읽음(전체 124119자)",
-          "body_chars": "124119",
-          "link": "https://m.stock.naver.com/research/industry/47246",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i1ac29959c5",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "DS투자증권",
-          "title": "[DS투자증권]  [ESG] 꺾이지 않는 유럽의 바람",
-          "easy1_title": "호르무즈 사태로 에너지 비용이 크게 늘었다는 겁니다",
-          "easy1_desc": "DS투자증권은 유럽이 호르무즈 사태 이후 화석연료 수입국 중 가장 큰 규모의 에너지 추가 비용을 부담했다고 밝혔는데요. 그 이유를 따져봤더니 수입 물량 전체가 글로벌 가격에 노출되어 있고 천연가스와 정제제품 가격 상승률이 높았기 때문이라는 거예요. 쉽게 말하면, 천연가스 가격 상승률이 원유의 7배가 넘으면서 지난해 총 가스 수입 비용의 83%에 달하는 추가 비용을 부담하게 된 셈이라는 말이에요.",
-          "easy2_title": "풍력 발전 확대로 리스크를 관리하고 있다는 거예요",
-          "easy2_desc": "그래서 유럽 정부는 재정 여력이 줄어드는 가운데 재생에너지 발전 비중을 확대해 가격 충격에 대응하고 있다고 보았는데요. 고금리 환경에서도 풍력 경매가 역대 최대 수준을 기록했고 인허가 간소화가 이를 뒷받침하고 있다는 겁니다. 단점으로는 금리가 수익성에 부담을 준다는 점이 있는데, 장점은 풍력이 에너지 수입 의존도를 낮추는 핵심 수단으로 자리 잡고 있다는 거든요. 쉽게 말하면, 풍력 투자가 에너지 안보를 지키는 현실적인 해법이라는 말이에요.",
-          "topic": "DS투자증권은 호르무즈 사태로 에너지 비용 부담을 겪은 유럽이 풍력 발전 확대를 통해 에너지 구조를 전환하고 있다고 분석했어요.",
-          "points": [
-            "에너지 비용 부담: 유럽은 호르무즈 사태 이후 화석연료 수입국 중 가장 큰 추가 비용을 부담했다고 하는데요. 그게 뭔 소리냐면 수입 물량이 글로벌 가격에 노출되고 천연가스 가격이 급등했기 때문이라는 말이에요. 결국 추가 수입 비용이 지난해 총 가스 수입 비용의 83%에 달하는 규모로 추정된다는 겁니다.",
-            "풍력 경매와 인허가: 고금리 환경에서도 유럽의 풍력 경매는 역대 최대 수준을 기록했다고 보았는데요. 입찰 경쟁이 되살아나면서 평균 낙찰가가 2023년 고점 대비 35% 하락했다는 거예요. 여기에 독일의 인허가 간소화와 EU의 Grids Package가 풍력발전 설치 확대를 뒷받침할 전망이라는 겁니다.",
-            "에너지 안보와 구조 전환: 풍력과 태양광 발전 비중이 사상 처음으로 화석연료 발전을 넘어섰다고 하는데요. 금리가 수익성에 부담인 것은 사실이지만 유럽의 풍력 투자 방향을 바꾸지는 못하고 있다는 거예요. 쉽게 말하면, 에너지 안보가 풍력 수요를 이끄는 최우선 의제로 자리 잡았다는 말이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "18111",
-          "link": "https://m.stock.naver.com/research/industry/47245",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i2ecd0e414c",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "교보증권",
-          "title": "[교보증권]  2026년 10월 주요 유통업체 및 면세점 매출 동향",
-          "easy1_title": "온라인이 전체 유통 성장을 이끌었는데 오프라인은 줄었습니다",
-          "easy1_desc": "교보증권은 2026년 10월 주요 유통업체 매출액이 작년 같은 달보다 5.7퍼센트 늘었다고 분석했는데요, 온라인 쪽이 주요 플랫폼 쇼핑행사 덕분에 10.9퍼센트 성장하면서 전체 성장률을 끌어올렸다는 겁니다. 반면 오프라인은 전년보다 이른 추석 때문에 생긴 기저효과로 식품 매출이 줄어들면서 1.4퍼센트 역신장을 기록했다고 해요. 쉽게 말하면 온라인이 키운 폭이 오프라인이 까먹은 폭보다 훨씬 컸던 셈이라는 말이에요.",
-          "easy2_title": "면세점은 내국인 수요가 늘고 편의점은 날씨가 도와줬습니다",
-          "easy2_desc": "면세점은 원화 강세 때문에 내국인 구매 수요가 늘어나면서 전체 매출이 4.4퍼센트 증가했다고 증권사는 밝혔는데요, 편의점 역시 강수일수가 줄어드는 등 영업환경이 좋아져서 구매건수가 늘고 식품 매출이 커졌다는 거예요. 두 곳 모두 외부 환경 덕을 좀 봤다는 장점이 있는데, 면세점의 경우 외국인 객단가는 계속 떨어진다는 단점도 같이 섞여 있다는 겁니다. 쉽게 말하면 내국인과 날씨라는 외부 호재가 실적을 받쳐준 셈이에요.",
-          "topic": "2026년 10월 주요 유통업체와 면세점의 매출 동향을 분석하여 채널별 증감 원인을 살펴본 보고서예요.",
-          "points": [
-            "온오프라인 명암: 온라인은 쇼핑행사에 힘입어 10.9퍼센트 성장한 반면, 오프라인은 이른 추석 기저효과로 식품 매출이 줄면서 1.4퍼센트 역신장했다고 분석했어요. 뭔 소리냐면 온라인이 전체를 먹여 살렸지만 대형마트 식품 매출은 13.1퍼센트나 고꾸라졌다는 말이에요.",
-            "백화점과 대형마트 실적: 백화점은 명품 가격 인상 효과가 없어서 구매단가가 4.0퍼센트 내렸지만 구매건수가 늘어 전체 매출은 1.0퍼센트 플러스를 유지했다고 보았어요. 반면 대형마트는 추석 기저효과로 가전문화 마이너스 29.1퍼센트 등 전 품목이 내렸다는 겁니다.",
-            "편의점과 면세점 흐름: 편의점은 강수일수가 줄어든 덕분에 즉석식품 중심으로 식품 매출이 5.0퍼센트 늘며 3.6퍼센트 성장했다고 밝혔고, 면세점은 내국인 구매 수요 확대에 힘입어 4.4퍼센트 증가했다고 전했어요. 쉽게 말하면 편의점은 날씨 덕을, 면세점은 환율 덕을 본 셈입니다."
+            "바이오산업의 날 개최: 산업통상부가 여러 기관과 함께 11월 27일에 서울 웨스틴조선 호텔에서 2026년 바이오산업의 날 행사를 개최했는데요, K-바이오 도약의 주역인 기업인의 사기를 북돋우고 한 해 성과를 나누기 위해 2020년부터 시작해 올해로 일곱 번째를 맞았다는 겁니다. 뭔 소리냐면, 매년 이맘때 업계 사람들이 모여서 서로 격려하고 판을 넓히는 자리라는 말이에요.",
+            "유공자 장관 표창 수여: 이날 행사에서는 인력양성과 수출증대 등 8개 분야에서 바이오산업 발전에 기여한 유공자들에게 총 34점의 장관 표창이 수여되었는데요, 이민우 산업성장실장과 업계 관계자 등 200여 명이 참석했다고 해요. 쉽게 말하면, 한 해 동안 각자의 자리에서 애쓴 사람들에게 상을 주며 힘을 실어 준 셈이라는 말이에요.",
+            "우수 성과사례 발표: 장관 표창 수여자 중에는 포트래이와 로봇앤드디자인이 주요 성과를 직접 발표하기도 했는데요, 포트래이는 백신 품질과 효능·안전성을 검증하는 기술을 상용화했고, 로봇앤드디자인은 세포 분리부터 배양까지 치료제 생산 전 과정을 자동화한 시스템을 선보였다는 거예요. 뭔 소리냐면, 검증 기술과 무인 생산 자동화라는 두 가지 무기를 각각 보여 줬다는 말이에요."
           ],
           "evidence_ok": "5/6",
           "bad_numbers": "",
           "check_flags": "easy2 근거 원문에 없음",
-          "body_chars": "4680",
-          "link": "https://m.stock.naver.com/research/industry/47244",
+          "body_chars": "2427",
+          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172464/view",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "i6f0f716f7a",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "하나증권",
-          "title": "[하나증권]  K뷰티 Scale Up / 가계소득 모멘텀을 기다리며",
-          "easy1_title": "화장품은 수출이 불티나고 환율 하락이 변수라는 겁니다",
-          "easy1_desc": "화장품 수출을 살펴봤더니 2026년에 전년 대비 30%를 넘고 있고 2027년 수출도 22% 늘어날 것으로 보인다고 해요. 미국과 유럽의 오프라인 채널이 넓어지고 중남미에도 새로 진출하는 덕분이라는 겁니다. 다만 환율이 내려가면 브랜드 업체들이 단가를 낮추라고 요구하거나 가격을 올릴 수 있어서 마진이 떨어지는 단점도 있는데, 장점은 가격을 올려도 수요가 계속 받쳐주면 환율 불확실성이 해소된다는 거고요. 쉽게 말하면 해외 주문은 너무 많은데 환율이 어떻게 되느냐가 관건이라는 말이에요.",
-          "easy2_title": "유통은 성과급 덕분에 2027년에 소비가 살아날 거라는 계획이에요",
-          "easy2_desc": "유통 쪽을 봤더니 2027년 상반기에는 삼성전자와 SK하이닉스의 성과급이 21.9조원으로 늘어나면서 신규 소비가 생겨날 것으로 예상된다고 해요. 하반기에는 고용과 임금까지 좋아져서 가계소비가 늘어날 거라는 기대가 있다는 겁니다. 주가가 낮아서 지금은 사 놓고 기다리기 좋다는 장점이 있는데, 대신 2026년 4분기에는 실적이나 지표가 안 좋아서 바로 오르기는 어렵다는 점도 같이 따라온다는 거고요. 쉽게 말하면 지금은 바닥을 잡고 2027년의 소득 모멘텀을 기다리는 시기라는 말이에요.",
-          "topic": "화장품 수출의 가파른 성장과 유통 시장의 반도체 성과급 효과에 따른 전망을 다룬 내용이에요.",
+          "id": "iad99e9a927",
+          "source_name": "산업부 보도 RSS(POST)",
+          "kind": "산업통상부 보도자료",
+          "writer": "산업통상부",
+          "title": "산업부 장관, 베트남 중앙정책전략위원장 만나 첨단산업·원전·공급망 등 전략적 경제 협력 논의",
+          "easy1_title": "베트남과 원전부터 첨단산업까지 경제 협력을 논의했다",
+          "easy1_desc": "산업통상부 김정관 장관이 정부서울청사에서 응우옌 타잉 응이 공산당 중앙정책전략위원장을 만났는데요. 금년에 양국 교역과 한국의 누적 對 베트남 투자가 모두 1,000억 불을 달성한 성과를 바탕으로 미래 성장 동력을 확보하기 위한 방안을 논의했다는 겁니다. 뭔 소리냐면, 내년 한-베 수교 35주년을 앞두고 상호 보완적인 산업 협력을 한층 고도화하겠다는 말이에요. 쉽게 말하면, 베트남이 2045년 고소득국으로 도약하는 과정에서 첨단산업과 원전 등 전략적 경제 협력을 강화하겠다는 셈이에요.",
+          "easy2_title": "원전 건설과 제조 인공지능 협력 방안을 추진한다",
+          "easy2_desc": "김정관 장관은 UAE와 체코 등에서 입증된 한국의 우수한 원전 기술력을 바탕으로 닌투언 2 원전 사업 협력이 본격화되도록 당 차원의 지원을 당부했는데요. 아울러 국가 생산성 혁신을 위한 제조 AI(인공지능) 및 반도체·AI 데이터센터 투자 협력에 대해서도 폭넓게 의견을 교환했다는 겁니다. 원전 협력을 통해 안정적인 전력 공급원을 확보하고 제조 현장의 인공지능 전환을 선도할 수 있다는 장점이 있는데요. 대신 상대국의 정책 변화나 현지 제도적 여건에 따라 사업 추진 속도가 달라질 수 있다는 점도 같이 따라온다는 겁니다.",
+          "topic": "산업통상부 장관이 베트남 중앙정책전략위원장과 만나 첨단산업, 원전, 공급망 등 전략적 경제 협력 방안을 논의했다는 내용의 보도자료예요.",
           "points": [
-            "화장품 수출 호조: 미국과 유럽 등 글로벌 시장에서 K뷰티 수요가 이어지면서 2027년 화장품 수출이 149.8억 달러로 전년 대비 22% 늘어날 것으로 추정했다고 해요. 뭔 소리냐면 해외 리테일러 입점과 물류센터 확충 덕분에 ODM 공장들이 쉴 새 없이 돌아가고 있다는 말이에요.",
-            "미국과 유럽 중심의 확장: 미국에서는 가격을 안정시키면서 수출이 다시 살아났고, 유럽에서는 네덜란드와 폴란드 물류센터를 통해 매출이 크게 늘었다는 거예요. 쉽게 말하면 지역별로 거점을 넓히면서 K뷰티의 최대 수출 지역이 매년 바뀌고 있다는 말이에요.",
-            "유통 업종의 반도체 효과: 반도체 성과급이 늘어나면서 신규 소비가 발생하고 백화점 소매 판매를 끌어올릴 수 있다고 봤는데요, 현재 백화점 밸류에이션이 역대 최저점에 가까워서 내년의 가계소득 모멘텀을 기다려볼 만하다고 했어요. 대신 2026년 4분기에는 매크로와 실적이 모두 안 좋아서 주가 모멘텀을 찾기 어렵다는 단점도 있다는 겁니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 62090자)",
-          "body_chars": "62090",
-          "link": "https://m.stock.naver.com/research/industry/47243",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i958cdcfb58",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "하나증권",
-          "title": "[하나증권]  10월 유럽 내 중국차 판매 +71%, 세이프가드 앞둔 질주",
-          "easy1_title": "유럽에서 중국 자동차들이 세이프가드 시행 전에 물량을 쏟아내고 있어요",
-          "easy1_desc": "10월 유럽 자동차 시장에서 중국 6개사의 판매량이 작년보다 71%나 늘어났는데요. 이건 12월 1일부터 시행되는 세이프가드(긴급수입제한조치)를 앞두고 미리 물량을 밀어내고 있기 때문이라는 거예요. 쉽게 말하면, 규제가 시작되기 전에 최대한 많이 팔아치우려는 전략인 셈이에요.",
-          "easy2_title": "유럽 전기차 시장은 커지는데 현대차와 기아는 모델별로 희비가 갈렸어요",
-          "easy2_desc": "유럽 전체 전기차 시장은 10월에 40% 성장하며 호조를 보였는데요. 현대차는 기존 모델이 노후화되면서 판매가 부진했지만, 기아는 EV2나 EV3 같은 신모델을 투입하면서 판매를 크게 늘렸다는 거예요. 다만 소형 전기차 위주로 성장하고 있어서 수익성이 어떻게 될지는 지켜봐야 한다는 말이에요.",
-          "topic": "2026년 10월 유럽 자동차 시장의 판매 동향과 중국 브랜드의 급성장, 그리고 현대차·기아의 대응 상황을 분석한 리포트입니다.",
-          "points": [
-            "중국 브랜드의 유럽 시장 공략: 중국 6개사의 10월 판매 증가율은 71%를 기록하며 시장 점유율을 크게 높였는데요. 특히 지리, BYD, 체리 같은 브랜드들이 현대차의 점유율을 추월하는 모습까지 보였다는 거예요. 세이프가드 시행을 앞두고 물량을 공격적으로 밀어낸 결과로 보입니다.",
-            "현대차와 기아의 유럽 판매 실적: 현대차와 기아의 10월 합산 판매는 작년보다 2% 줄어들며 다소 부진했는데요. 현대차는 내연기관차 비중이 높아 시장 감소의 영향을 그대로 받았지만, 기아는 전기차 신모델을 앞세워 판매를 늘리는 등 그룹 안에서도 차이를 보였다는 거예요.",
-            "유럽 전기차 시장의 성장과 경쟁: 유럽 내 전기차 판매는 10월에 40% 증가하며 전체 시장을 견인하고 있는데요. 시장이 커지는 만큼 중국 브랜드들과의 경쟁도 심해지고 있다는 거예요. 현대차는 아이오닉3를 통해 점유율 반등을 노리고 있고, 기아는 다양한 전기차 신모델로 판매를 늘리고 있습니다."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 35276자)",
-          "body_chars": "35276",
-          "link": "https://m.stock.naver.com/research/industry/47242",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i1358680e32",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "한화투자증권",
-          "title": "[한화투자증권]  10월 주요 유통업체 매출 동향 – 그럼에도 증익",
-          "easy1_title": "추석이 언제였냐에 따라 유통업체 성적이 확 달라졌는데요",
-          "easy1_desc": "10월 유통업체 실적을 뜯어봤더니 지난해에는 10월이었던 추석이 올해는 9월로 옮겨간 게 큰 영향을 미쳤거든요. 제수용품과 선물세트 판매 시점이 달라지면서 대형마트 매출은 -14.1% YoY로 줄어든 반면 온라인 매출은 +10.9% YoY 성장을 기록했다는 말이에요. 쉽게 말하면, 달력상 명절 위치가 바뀌면서 마트와 온라인의 희비가 엇갈렸다는 겁니다.",
-          "easy2_title": "백화점은 성장이 둔화됐는데 오히려 이익은 늘었거든요",
-          "easy2_desc": "백화점의 매출 성장률은 +1.0% YoY로 낮아졌지만, 명품 대신 패션 쪽으로 소비가 이동하면서 상품 믹스가 개선됐다는 분석이에요. 그 덕분에 성장률이 전년 수준에 머물렀음에도 불구하고 증익을 시현한 것으로 한화투자증권은 파악했는데요. 이익이 늘어난다는 장점이 있는 반면, 소득효과가 본격적으로 나타나면 카테고리별 성장률이 다시 변동할 수도 있다는 단점도 같이 따라온다는 겁니다.",
-          "topic": "한화투자증권은 2026년 10월 주요 유통업체들의 매출 동향을 분석해 추석 시점 차이와 카테고리별 소비 변화가 실적에 미친 영향을 설명했어요.",
-          "points": [
-            "대형마트와 온라인의 엇갈린 흐름: 추석 시점이 지난해 10월에서 올해 9월로 바뀌면서 대형마트 매출 증감률은 -14.1% YoY로 감소했는데요. 반대로 온라인 매출 증감률은 +10.9% YoY 성장하는 모습을 시현했다는 말이에요. 쉽게 말하면, 명절 선물세트 판매 시기가 앞당겨진 영향이 컸던 셈이에요.",
-            "백화점 상품 믹스 개선: 백화점 전체 매출 성장률은 +1.0% YoY로 둔화되었지만 카테고리별로 보면 명품 성장률이 +1.0% YoY로 낮아진 반면 패션 성장률은 카테고리별 가중평균 기준 +3% YoY 성장하며 상대적으로 견조했다고 해요. 뭔 소리냐면, 사치재 소비가 명품에서 의류 쪽으로 이동하는 트레이딩 다운 현상이 나타나고 있다는 말이에요.",
-            "면세점 외형 성장의 배경: 면세점은 +4.4% YoY 외형 성장을 기록했는데, 환율이 하락하면서 내국인 수요가 개선된 것이 주효했다고 한화투자증권은 파악했어요. 구체적으로 내국인 수요는 +6% YoY, +9% MoM 증가했다고 해요."
+            "중장기 산업발전 행동계획 수립: 김정관 장관은 베트남이 희망하는 전자와 조선, 철강, 소재부품, 에너지 기자재 등 주력 산업 분야의 협력을 강화하기로 했는데요. 이를 위해 「2027~2030년 중장기 한-베 산업발전 행동계획」을 베트남 정부와 공동 수립할 계획임을 공유했다는 겁니다. 뭔 소리냐면, 주력 산업 분야에서 양국 간 실질적 성과를 이끌어내기 위한 구체적인 로드맵을 마련하겠다는 말이에요.",
+            "닌투언 2 원전 및 제조 AI 협력: 베트남이 최근 일본과의 닌투언 2 원전 협력을 공식 종료한 것과 관련해 한국의 우수한 원전 기술력과 인력양성 역량을 강조했는데요. 아울러 1,500여 개의 제조·인공지능 기업과 연구기관 등이 참여하는 ‘M.AX 얼라이언스’를 통해 제조 현장의 인공지능 전환을 선도하고 있음을 소개했다는 겁니다. 쉽게 말하면, 원전 건설 협력과 인공지능 인프라 투자를 동시에 추진하겠다는 거예요.",
+            "한-베 FTA 업그레이드 및 공급망 강화: 양측은 양국 교역의 균형 있고 지속가능한 성장을 위해 베트남 기업의 공급망 참여 확대를 지속 지원하기로 했는데요. 발효 10주년이 경과한 한-베 자유무역협정(FTA)의 상품과 서비스 등 시장접근 환경을 개선하기 위해 업그레이드 개정에 대한 검토도 추진하기로 했다는 겁니다. 뭔 소리냐면, 기존 협정을 보완해서 교역과 투자 환경을 더 유리하게 만들겠다는 말이에요."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "7289",
-          "link": "https://m.stock.naver.com/research/industry/47241",
+          "body_chars": "2204",
+          "link": "https://www.motir.go.kr/kor/article/ATCLe0854704d/172463/view",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "i4738f1df17",
-          "source_name": "네이버 리서치 산업",
+          "id": "i9dc19772ab",
+          "source_name": "네이버 리서치 종목",
           "kind": "증권사 리포트",
           "writer": "한화투자증권",
-          "title": "[한화투자증권]  [ESG] 저PBR 이사회, 달랐던 것은 독립이사가 아니라 의장석",
-          "easy1_title": "저PBR 이사회에서 다른 건 독립이사 경력이 아니라 의장석뿐이랍니다",
-          "easy1_desc": "한화투자증권은 저PBR 기업들의 이사회 독립성 지표 10개를 비교해 봤는데요, 비교군과 뚜렷한 차이를 보인 건 대표이나 지배주주가 의장을 맡는지 하나뿐이었다고 해요. 저PBR 121개사 중 93.4%에서 대표나 지배주주가 의장을 맡아 비교군의 79.6%보다 높았다는 말이에요. 반면 자본시장이나 지배구조 경력이 있는 독립이사를 둔 경험은 저PBR 명단 편입률에 유의한 차이를 주지 않았다는 겁니다. 쉽게 말하면, 이사회 구성에서 눈에 띄는 차이는 다른 게 아니라 의장석에 있다는 셈이에요.",
-          "easy2_title": "그러니 독립이사 명단보다 2027년 2~3월 결산 배당이나 소각을 확인하고 담으세요",
-          "easy2_desc": "그래서 한화투자증권은 독립이사 점수가 높거나 명단이 화려하다고 해서 먼저 담을 근거는 약하다고 봤는데요, 독립이사가 늘어나도 의장석이 그대로면 배당이나 소각을 정하는 구조는 같다고 보기 때문이에요. 2027년 3월 주총에서 독립이사가 늘어도 의장석이 그대로면 배당·소각을 정하는 구조는 비슷하다고 보입니다. 대신 2027년 2~3월 결산 배당이나 소각 결의로 실제 이행이 확인된 회사부터 담을 필요가 있다고 판단한다는 겁니다. 쉽게 말하면, 명단만 보지 말고 실제 주주환원 결의가 나오는 걸 보고 움직여야 한다는 말이에요.",
-          "topic": "한화투자증권은 저PBR 기업의 이사회 독립성 지표를 분석한 결과, 독립이사 경력보다 대표이사·지배주주의 의장 겸직 여부가 핵심 차이라며 실제 주주환원 이행을 확인한 뒤 투자해야 한다고 봤습니다.",
+          "title": "[한화투자증권] 에이피알 중요한 시기, 최고의 선택",
+          "easy1_title": "에이피알이 브랜드501을 사들이기로 했다고 밝혔는데요",
+          "easy1_desc": "한화투자증권은 에이피알이 브랜드501의 주식을 사들여 지분율을 87.3%로 높인다고 공시했다고 봤는데요. 거래 종결일은 12월 31일이며 총 취득금액은 3,900억원 규모라고 밝혔어요. 쉽게 말하면, 에이피알이 브랜드501을 품에 안으면서 덩치를 키우는 셈이라는 말이에요.",
+          "easy2_title": "물류망과 광고 집행을 합치면 비용 구조가 좋아질 거라는데요",
+          "easy2_desc": "브랜드501은 해외 매출 비중이 높지만 광고와 배송 부담이 크다는 단점이 있는데요. 장점은 에이피알의 물류망과 광고 집행 규모가 더해지면 비용 구조가 빠르게 개선되어갈 가능성이 높다는 거예요. 쉽게 말하면, 비용은 줄이고 효율은 높이겠다는 계획인 셈이에요.",
+          "topic": "한화투자증권은 에이피알의 브랜드501 인수와 그에 따른 실적 개선 효과를 분석했어요.",
           "points": [
-            "이사회 독립성 지표의 차이: 한화투자증권은 저PBR 기업과 비교군 150개사의 독립성 지표 10개를 살펴봤는데요, 통계적으로 유의한 차이를 보인 것은 대표이사나 지배주주가 이사회 의장을 맡는지 하나뿐이었다고 해요. 의장이 확인된 저PBR 121개사의 93.4%에서 대표이사나 지배주주가 의장을 맡아 비교군의 79.6%보다 높았다는 말이에요. 반면 독립이사 비중이나 경력 같은 나머지 9개 지표에서는 뚜렷한 차이가 없었다는 겁니다.",
-            "경력 독립이사 영향: 자본시장이나 지배구조 경력이 있는 독립이사를 두었는지에 따라 저PBR 명단 편입률은 뚜렷이 달라지지 않았다고 해요. 자산 1천억원 이상 상장사 1,668개사를 살펴보았더니, 이런 독립이사를 둔 301개사 중 28개사인 9.3%가 저PBR 명단에 올랐고 그렇지 않은 1,367개사는 8.3%가 올랐다는 겁니다. 경력 독립이사가 있는 회사는 계획 공시가 더 많았지만, 저PBR 명단에 드는 비율 자체는 통계적으로 유의한 차이가 없었다고 봅니다.",
-            "투자 전략과 이행 확인: 한화투자증권은 이사회 독립성 점수가 높은 저PBR 기업을 먼저 담는 방식은 근거가 약하다고 판단했는데요, 의장이 그대로면 배당이나 소각을 정하는 구조는 같다고 보기 때문이에요. 2027년 3월 주총에서 독립이사가 늘어도 의장석이 그대로면 배당·소각을 정하는 구조는 비슷하다고 보입니다. 그래서 저PBR 기업은 독립이사 명단보다 2027년 2~3월 결산 배당 및 소각 결의로 이행이 확인된 회사부터 편입을 검토할 필요가 있다고 판단한다는 겁니다."
+            "브랜드501 인수 개요: 에이피알은 브랜드501의 주식을 취득해 거래 후 지분율을 87.30%로 확보할 계획이라고 봤는데요. 총 취득금액은 3,900억원이며 자기자본 대비 87.5% 수준이라고 밝혔어요. 뭔 소리냐면, 회사가 보유한 자금과 차입금으로 대규모 인수를 진행한다는 말이에요.",
+            "비용 구조와 수익성 분석: 브랜드501은 해외 B2C(기업과 소비자 간 거래) 중심이라 광고선전비와 운반비 부담이 크다는 단점이 있는데요. 장점은 에이피알의 물류망이 합쳐지면 비용이 줄어들 수 있다는 거예요. 쉽게 말하면, 에이피알에 인수된 이후 비용 효율화가 진행될 가능성이 높다고 봤다는 겁니다.",
+            "실적 연결 편입 효과: 사업계획을 기준으로 연결 편입 시 에이피알의 2027년 추정치 대비 매출액은 6,468억원 증가할 것으로 기대된다고 봤는데요. 영업이익과 지배주주순이익도 각각 307억원, 209억원 늘어날 거라는 거예요. 뭔 소리냐면, 인수 효과로 전체 실적이 탄력을 받는다는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "14267",
+          "link": "https://m.stock.naver.com/research/company/98558",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i756522ce93",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "한화투자증권",
+          "title": "[한화투자증권] 와이지엔터테인먼트 4Q26 빅뱅 레버리지, 내년 신인 모멘텀",
+          "easy1_title": "공연 덕분에 4분기 수익은 좋아질 겁니다",
+          "easy1_desc": "3분기에는 서구권 공연의 초기 셋업 때문에 원가 부담이 높았는데요, 4분기에는 수익성 좋은 일본과 아시아 지역 중심으로 진행되는 만큼 3분기 대비 강한 수익성을 기대해도 된다는 거예요. 게다가 지난 3분기 빅뱅 엠디 관련 대손 상각이 약 20억원 반영됐는데, 일회적인 상각으로 4분기부터는 없을 것으로 추정한다고 해요. 쉽게 말하면, 비용 부담은 털어내고 알짜 지역 공연으로 이익이 커진다는 셈이에요.",
+          "easy2_title": "내년에는 대형 지식재산권이 줄어 신인에 기대를 걸어야 합니다",
+          "easy2_desc": "내년에는 빅뱅 투어가 이른 상반기에 끝나서 대형 지식재산권의 실적 기여가 올해 대비 크게 줄어들 것으로 예상되는데요, 그래서 외형 역성장에 대한 우려가 불가피한 상황이라는 거예요. 결국 베이비몬스터의 본격적인 성장과 신인 2팀의 조기 안착을 기대해야 하는데, 상반기 보이그룹과 하반기 걸그룹 데뷔를 가정한다고 해요. 신인이 잘 자리 잡으면 좋다는 장점이 있지만, 초기 성과에 따라 실적이 흔들릴 수도 있다는 점도 같이 따라온다는 겁니다.",
+          "topic": "한화투자증권은 와이지엔터테인먼트의 대형 지식재산권 공백에 따라 실적 추정치를 낮추고 목표주가를 6만원으로 조정했다고 밝혔어요.",
+          "points": [
+            "4분기 실적과 빅뱅 레버리지: 빅뱅의 20주년 월드투어는 총 19개 도시 39회차로 진행되며 베뉴 최대 캐파 가정 시 총 모객 200만명을 충분히 상회하는 대규모 투어라고 해요. 3분기에는 서구권 중심의 초기 진행으로 원가 부담이 높았지만, 4분기는 수익성 좋은 일본과 아시아 지역 중심으로 진행되어 강한 수익성을 기대한다고 했어요. 뭔 소리냐면, 초기 비용이 컸던 3분기를 지나 알짜 지역 위주로 이익이 붙는다는 말이에요.",
+            "내년 신인 모멘텀과 외형 우려: 내년에는 빅뱅 투어가 이른 상반기에 끝나서 대형 지식재산권의 실적 기여가 올해 대비 크게 줄어들 것으로 예상된다고 해요. 때문에 외형 역성장에 대한 우려가 불가피한 상황인데, 결국 베이비몬스터의 본격적인 성장과 신인 2팀의 조기 안착을 기대해야 한다는 거예요. 쉽게 말하면, 기존 대장주 공백을 새로운 신인들이 얼마나 채워주느냐가 관건이라는 말이에요.",
+            "목표주가 하향 조정: 한화투자증권은 내년 대형 지식재산권의 공백이 예상되는 만큼 올해 대비 외형 역성장이 불가피할 전망이라고 했어요. 이에 따라 실적 추정치를 하향하면서 목표주가를 6만원으로 조정했다고 밝혔는데요. 다만 내년 신인 2팀에 대한 기대는 유효하며 섹터 리레이팅 시 소외될 이유는 없다는 판단이라는 거예요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "8958",
+          "link": "https://m.stock.naver.com/research/company/98557",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i4d4a3cd196",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 동아제약 동아제약을 품은 동아쏘시오홀딩스",
+          "easy1_title": "동아제약이 자회사들을 품으면서 체질이 바뀌었다고 봤어요",
+          "easy1_desc": "동아쏘시오홀딩스가 10월 1일 날 동아제약을 흡수 합병하고 사명을 동아제약으로 바꿨는데요, 이게 뭔 소리냐면 그동안 지주회사라 붙어 있던 할인 요인이 해소되었다는 말이에요. 노스카나 같은 피부외용제와 파티온 같은 화장품이 20~30%대 고성장을 이어가고 있거든요. 쉽게 말하면 회사의 가치 상승을 제대로 반영해야 할 시점이라는 겁니다.",
+          "easy2_title": "3분기 실적을 이끈 주역은 신제품 얼박사와 피부외용제랍니다",
+          "easy2_desc": "동아제약이 2026년 3분기 매출액 약 4,130억원과 영업이익 약 351억원을 달성했다고 하는데요, 그중에서도 출시 이후 에너지 드링크 시장 점유율을 넓힌 얼박사가 3분기 누적 500억원을 넘겼다는 거예요. 박카스 외에도 애크논이나 멜라토닝 같은 피부외용제 성장이 일반의약품을 이끌었다는 거고요. 쉽게 말하면 신제품과 주력 제품이 함께 커지고 있다는 셈이에요.",
+          "topic": "증권사는 동아제약에 대해 투자의견 매수와 목표주가 150,000원을 신규로 제시했다고 밝혔어요.",
+          "points": [
+            "합병과 사업 확장: 동아제약은 10월 1일 자로 동아제약을 흡수 합병하고 사명을 변경했다고 하는데요, 주요 사업부로 비티젠, 용마로지스, 동아에코팩 등이 있다는 거예요. 용마로지스도 화주 물량이 늘면서 2026년 10% 이상 성장이 가능할 것으로 기대된다는 겁니다.",
+            "3분기 실적과 성장 동력: 올해 3분기 누적으로 얼박사가 500억원을 초과 달성하며 에너지 드링크 시장에서 M/S를 넓혔다고 하는데요, 애크논이나 멜라토닝 같은 피부외용제 3종의 성장이 돋보였다는 말이에요. 박카스 D와 F 외의 부문도 가격 인상 효과와 얼박사 덕분에 올해 10% 이상 성장할 것으로 기대된다는 셈이에요.",
+            "밸류에이션과 가치 산정: 동아제약의 흡수합병으로 사업지주회사로 바뀌면서 동아제약은 영업가치로 반영했다고 하는데요, 용마로지스나 비티젠 같은 비상장사는 2025년 장부가액으로 반영했다는 거예요. 동아에스티나 에스티팜은 최근 3개월 평균 시가총액 기준으로 반영해 목표주가를 정했다는 겁니다."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "예측 의심: 용마로지스도 화주 물량이 늘면서 2026년 10% 이상 성장이 가능할 것으로 기대된다는 겁니다.; 예측 의심: 박카스 D와 F 외의 부문도 가격 인상 효과와 얼박사 덕분에 올해 10% 이상 성장할 것으로 기대된다는 셈이",
+          "body_chars": "6857",
+          "link": "https://m.stock.naver.com/research/company/98556",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i09b918ffad",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 대웅제약 기다림이 필요한 시간",
+          "easy1_title": "나보타를 미리 내보내서 실적은 좋았지만 앞으로는 공백이 생길 수밖에 없어요",
+          "easy1_desc": "대웅제약이 2026년 3분기 별도기준 매출액 약 4,158억원(+17.1% YoY) 및 영업이익 약 768억원(+43.3% YoY, OPM 약 18.5%)을 달성했다고 하는데요. 그 이유를 찾아봤더니 나보타 미국 선제적 출하 및 디지털 헬스케어 사업부 성장에 기인한다고 해요. 그런데 뭔 소리냐면 파트너사가 물량을 미리 요청해서 이번에 실적이 잘 나온 거지만 향후 1-2개분기는 미국 출하량이 크게 감소한다는 말이에요. 쉽게 말하면 앞서 당겨 쓴 실적 때문에 다가올 분기에는 잠시 쉬어가는 공백이 생긴다는 셈이에요.",
+          "easy2_title": "경쟁도 세지고 재판도 앞두고 있어서 목표주가는 낮춰 잡았어요",
+          "easy2_desc": "그래서 DS투자증권은 동사에 대하여 투자의견은 매수로 유지하나 목표주가는 기존 190,000원에서 150,000원으로 소폭 하향한다고 밝혔는데요. 배경을 살펴봤더니 P-CAB 시장 경쟁이 심해지고 나보타도 미국 공백과 중국 후발주자 진입으로 부담이 커졌기 때문이라는 거예요. 장점으로는 탄탄한 사업 기반이 있다는 점인데, 단점은 여러 불확실성이 겹쳐 있다는 거거든요. 쉽게 말하면 여러 리스크가 해소되는 것을 차분히 지켜봐야 하는 구간이라는 말이에요.",
+          "topic": "대웅제약의 2026년 3분기 실적 성과와 미국 나보타의 선제적 출하에 따른 향후 공백 및 목표주가 하향 조정에 대한 DS투자증권의 분석이에요.",
+          "points": [
+            "3분기 실적 호조의 배경: 대웅제약이 2026년 3분기 별도기준 매출액 약 4,158억원(+17.1% YoY) 및 영업이익 약 768억원(+43.3% YoY, OPM 약 18.5%)를 달성했다고 하는데요. 그 내용을 뜯어봤더니 OTC 사업부가 약 528억원(+21% YoY)으로 견조했고 나보타 수출이 약 1,068억원(+127.9% YoY)으로 크게 늘었기 때문이라는 겁니다. 뭔 소리냐면 미국 파트너사의 요청으로 물량을 미리 내보낸 효과가 컸다는 말이에요.",
+            "파트너십 변경과 출하량 공백: ETC 사업부가 2,184억원(-3% YoY)로 부진했는데 펙수클루 매출액이 약 34억원(-84.5% YoY, -75.6% QoQ)으로 줄었기 때문이라고 보았는데요. 종근당과의 파트너십 조기 종료로 유통 채널 재고 소진이 필요해 출하량이 줄어든 탓이라는 겁니다. 쉽게 말하면 2027년 1분기부터 직판 체제로 온기 전환되기 전까지는 관련 영향이 이어진다는 셈이에요.",
+            "목표주가 하향과 여러 불확실성: DS투자증권은 대웅제약에 대해 투자의견은 매수를 유지하지만 목표주가는 150,000원으로 내렸다고 밝혔는데요. P-CAB 시장 경쟁이 격화되고 2027년 1월에는 보툴리눔 톡신 균주 관련 2심 선고도 앞두고 있기 때문이라는 겁니다. 뭔 소리냐면 다양한 불확실성이 해소되는 것을 지켜봐야 하는 시간이라는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "7242",
+          "link": "https://m.stock.naver.com/research/company/98555",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i41d530e8a5",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 수산인더스트리 ESG와 맞닿아 있는 기업",
+          "easy1_title": "원전 정비로 친환경 에너지에 발을 맞추고 있어요",
+          "easy1_desc": "수산인더스트리가 원자력 발전 중심에서 신재생 발전소 같은 친환경 발전원으로 본업의 범위를 넓혀가고 있다고 해요. 본업인 정비가 국내 원자력발전소 생태계가 안정적으로 돌아가는 걸 받쳐주기 때문에 에너지 전환과 맞닿아 있다는 말이에요. 쉽게 말하면 친환경 흐름에 맞춰 사업 판을 넓히는 셈이라는 겁니다.",
+          "easy2_title": "경영 승계를 마치고 주주를 위해 배당도 늘렸어요",
+          "easy2_desc": "정석현 회장이 지분을 정보윤 각자대표에게 증여하면서 승계 구도가 정리되어 경영 불확실성을 덜어냈다고 봤는데요. 3월 기업가치 제고 계획을 통해 고배당기업 요건을 맞추겠다고 밝힌 뒤 25년 결산배당은 주당 900원으로 상장 이후 가장 많았다는 겁니다. 불확실성이 줄어드는 장점이 있는 반면 새로운 리더십에 대한 기대와 검증은 계속 따라온다는 점도 같이 봐야 해요.",
+          "topic": "수산인더스트리가 원전 정비 경쟁력을 바탕으로 사업을 넓히고 배당을 늘려 주주 가치를 높이고 있다는 DS투자증권의 분석이에요.",
+          "points": [
+            "친환경과 안전 중심의 사업 확장: 국내 원전 계획 예방정비를 주력으로 삼으면서 UAE 바라카 원전 같은 해외 무탄소 전원 운영에도 참여하고 있다고 해요. 자회사인 수산이앤에스는 원자로 안전을 맡는 안전등급 제어기기인 POSAFE-Q PLC를 국내에서 유일하게 만들어 원전 안전성과 국산화에 기여하고 있다는 겁니다. 쉽게 말하면 국내외에서 원전 정비와 핵심 부품 공급을 함께 맡고 있다는 말이에요.",
+            "승계 정리와 주주환원 강화: 회장 지분 증여로 승계가 끝나 경영 불확실성을 덜어냈고 25년 결산배당은 주당 900원으로 상장 이후 최대를 기록했다고 봤는데요. 앞으로 실적이 좋아지면서 배당이 더 늘어나고 이사회 독립성이 강해져 주주가치가 올라갈 것으로 기대한다는 겁니다.",
+            "비용 증가와 향후 실적 개선 전망: 3분기 매출액은 841억 원으로 전년 동기보다 3.7% 늘었지만 영업이익은 89억 원으로 12.3% 줄었다고 해요. 바라카 원전 비파괴검사와 자회사의 항공우주 분야 진출 준비 때문에 비용이 늘어 수익성 개선이 아쉬웠지만 27년부터는 해외 사업이 안정되고 정비 수요가 늘면서 수익이 함께 좋아질 것으로 증권사는 예상했어요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "10012",
+          "link": "https://m.stock.naver.com/research/company/98554",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "ib494bbc23e",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 솔루엠 27년이 기대되는 이유",
+          "easy1_title": "전자부품은 좀 아쉬운데 전자가격표시기 회복은 확실합니다",
+          "easy1_desc": "DS투자증권은 솔루엠의 3분기 실적을 분석해 봤더니, TV 수요가 줄고 원가를 아끼려는 기조 때문에 전자부품 쪽은 수익성이 생각만큼 안 좋아졌다고 봤는데요. 뭔 소리냐면 비싼 부품인 3-in-1 보드 매출이 줄어들었기 때문이라는 말이에요. 그렇지만 전자가격표시기 중심의 정보통신기술 사업부는 바닥을 지나서 회복하는 모양새를 보이고 있다는 겁니다. 쉽게 말하면, 부품 쪽은 주춤했지만 전자가격표시기 쪽은 물량이 늘면서 두 자릿수 영업이익률을 되찾았다는 셈이에요.",
+          "easy2_title": "인공지능 데이터센터 부품 공급으로 실적을 더 키워보겠습니다",
+          "easy2_desc": "그래서 DS투자증권은 2027년에 인공지능 데이터센터용 부품 공급이 본격화되면 전자부품 사업부의 실적도 좋아질 거라고 전망했는데요. 방법은 고전압 직류 환경에서 전력을 안정적으로 바꾸는 부품을 개발해서 새로운 매출을 만들어내겠다는 계획이에요. 공급이 본격적으로 시작되면 새로운 매출이 나올 수 있다는 장점이 있는데, 대신 초기 샘플 검증과 후속 검증 과정을 거쳐야 한다는 점도 같이 따라온다는 겁니다.",
+          "topic": "솔루엠의 3분기 실적 평가와 전자가격표시기 및 인공지능 데이터센터 부품 사업을 통한 2027년 성장 전망에 대한 DS투자증권의 생각이에요.",
+          "points": [
+            "전자부품과 전자가격표시기의 엇갈린 실적: DS투자증권은 3분기 실적에서 TV 수요 부진과 원가 절감 기조로 전자부품 수익성 개선은 제한적이었다고 분석했는데요. 뭔 소리냐면 단가가 높은 3-in-1 보드 매출이 줄었기 때문이라는 말이에요. 반면에 전자가격표시기 중심의 정보통신기술 사업부는 물량 회복으로 생산 효율이 좋아지면서 두 자릿수 영업이익률을 회복했다고 봤어요.",
+            "인공지능 데이터센터용 부품 공급 추진: 그래서 DS투자증권은 2027년에 인공지능 서버의 소비전력 증가에 발맞춰 800V급 고전압 직류 기반 전력 공급 구조로 바뀌고 있다고 설명했는데요. 이에 따라 안정적인 전력변환을 구현하는 신규 부품 수요가 늘어날 전망이라고 밝혔어요. 동사는 배터리 백업 유닛용 직류-직류 컨버터를 개발 중이며 2027년 1분기 양산을 목표로 파트너사와 검증을 진행하는 중이라는 겁니다.",
+            "목표주가 하향과 매수 의견 유지: 그래서 DS투자증권은 괴리율을 고려해서 목표주가를 19,000원으로 내렸지만 중장기적 관점에서는 매수 의견을 유지한다고 밝혔는데요. 실적의 바닥은 이미 확인했다는 판단이에요. 쉽게 말하면, 실적 하방은 제한적일 것이며 신규 수주와 데이터센터 공급망 합류가 가시화될 때 주가 재평가도 가능하다는 셈이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "8476",
+          "link": "https://m.stock.naver.com/research/company/98553",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "ic64234dbbc",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 현대엘리베이터 높은 주주환원율 유지",
+          "easy1_title": "제조는 조금 주춤해도 서비스가 든든하게 받쳐주고 있거든요",
+          "easy1_desc": "현대엘리베이터의 3분기 실적을 뜯어봤더니, 내수 엘리베이터 평균 판매가격이 떨어지면서 제조 부문은 부진했다고 해요. 그렇지만 신규 설치가 줄어드는 와중에도 유지보수 서비스가 이익을 든든하게 방어하는 구조가 다시 확인됐다는 겁니다. 쉽게 말하면, 물건 값은 내려갔어도 서비스 쪽이 그 빈자리를 잘 메워준 셈이라는 말이에요.",
+          "easy2_title": "특별배당과 주주환원은 계속 이어간다는 계획이에요",
+          "easy2_desc": "그래서 증권사는 스페이스X 투자 회수금을 특별배당 재원으로 쓰겠다는 회사의 계획과 주주환원을 감안해 목표주가를 유지한다고 봤는데요, 서비스 이익 성장을 보면 현재의 주가 하락은 과도하다는 판단이라는 거예요. 주주들에게 돌려주는 정책이 이어진다는 장점이 있는데, 대신 제조 부문의 판가 하락세가 언제까지 갈지는 지켜봐야 한다는 점도 같이 따라온다는 겁니다.",
+          "topic": "현대엘리베이터의 3분기 실적과 주주환원 정책을 바탕으로 한 증권사의 평가예요.",
+          "points": [
+            "3분기 실적과 기저효과: 3분기 연결 매출은 6,042억 원, 영업이익은 339억 원을 기록했고 순이익은 -125억 원으로 적자 전환했다고 해요. 2분기 스페이스X 상장으로 펀드를 통해 보유한 지분의 평가이익이 반영되면서 기저가 높았고, 이를 제외한 경상 영업이익은 안정적 흐름을 보이고 있다는 겁니다.",
+            "제조와 서비스 부문 엇갈림: 내수 엘리베이터 평균 판매가격이 25년 8,100만 원에서 7,300만 원으로 하락하면서 제조 부문 영업이익은 91억 원에 그쳤는데요, 반면 서비스 영업이익은 297억 원으로 10% 늘어나며 전체 이익을 방어해 줬다는 말이에요. 뭔 소리냐면, 승강기 설치 대수가 줄어든 영향이 시차를 두고 제조에 반영됐지만 유지보수 서비스가 이를 만회했다는 겁니다.",
+            "투자의견과 목표주가 유지: 증권사는 26년 영업이익을 2,098억 원, 27년은 2,138억 원으로 추정하면서 투자의견 매수와 목표주가 110,000원을 유지한다고 밝혔어요. 분기배당 주당 1,000원과 자기주식 249만 주 소각 같은 주주환원 정책이 계속 이어지고 있다는 거고요."
           ],
           "evidence_ok": "5/6",
           "bad_numbers": "",
           "check_flags": "point3 근거 원문에 없음",
-          "body_chars": "6169",
-          "link": "https://m.stock.naver.com/research/industry/47240",
+          "body_chars": "11188",
+          "link": "https://m.stock.naver.com/research/company/98552",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ie257e4d979",
+          "id": "iaab442c5ec",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 동아에스티 핵심 사업부 견조한 성장 중",
+          "easy1_title": "핵심 사업부는 잘 나가는데 영업이익은 예상을 크게 웃돌았어요",
+          "easy1_desc": "동아에스티의 2026년 3분기 실적을 뜯어봤더니, 매출액은 약 2,065억원으로 예상보다 조금 낮았는데 영업이익은 약 128억원을 크게 웃돌았다고 해요. 왜 그런가 봤더니 판관비를 아끼고 R&D 비용 집행이 미뤄졌기 때문이라는 겁니다. 쉽게 말하면, 돈 쓸 일을 뒤로 미루면서 이익이 커 보인 셈이라는 말이에요.",
+          "easy2_title": "목표주가는 낮췄지만 신약 덕분에 추가 성장을 기대하고 있어요",
+          "easy2_desc": "그래서 DS투자증권은 투자의견을 매수로 유지하면서도 목표주가는 50,000원으로 낮췄는데요, 이유는 제약사 평균 multiple 10.4배를 적용해 다시 계산했기 때문이에요. 목표주가가 낮아졌다는 단점도 있는데, 장점은 최근 엑스코프리가 급여를 받아 나와서 국내 점유율이 빠르게 늘어날 가능성이 크다는 거거든요. 쉽게 말하면, 눈높이는 낮췄지만 새 품목으로 반등을 노린다는 겁니다.",
+          "topic": "동아에스티의 2026년 3분기 실적 흐름과 주요 사업부의 성장 상황에 대한 DS투자증권의 분석이에요.",
+          "points": [
+            "ETC 사업부와 주요 품목 성장: ETC 사업부 매출액이 약 1,559억원으로 자큐보를 필두로 계속 커지고 있다고 해요. 자큐보는 약 220억원으로 잘 나가는 반면, 그로트로핀은 경쟁이 심해졌는데도 약 364억원으로 견조한 매출을 지켜냈다는 겁니다. 뭔 소리냐면, 경쟁 속에서도 핵심 품목들이 제 역할을 해내고 있다는 말이에요.",
+            "해외 및 디지털헬스 사업부 동향: 해외사업부는 경기 침체로 캔 박카스 같은 품목이 줄어 약 392억원으로 부진했는데요, 대신 일본 바이오시밀러 매출이 늘어서 구조적인 성장을 기대해 볼 수 있다는 거예요. 여기에 디지털헬스 사업부는 약 28억원으로 규모는 작지만 하이카디 M350 등을 출시하며 빠르게 몸집을 불리고 있다는 겁니다.",
+            "목표주가 하향과 신약 기대감: 증권사는 2027년 12m Fw. EBITDA 약 820억원에 평균 multiple 10.4배를 적용해 목표주가를 50,000원으로 낮췄다고 해요. 하지만 11월 2일 출시된 엑스코프리가 국내 환자 36만명 중 일부를 빠르게 파고들 것으로 보인다는 겁니다. 쉽게 말하면, 실적이 대부분 도입 품목에 기인해서 수익성 개선을 위한 추가 전략은 여전히 필요하다는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "예측 의심: 하지만 11월 2일 출시된 엑스코프리가 국내 환자 36만명 중 일부를 빠르게 파고들 것으로 보인다는 겁니다.",
+          "body_chars": "6909",
+          "link": "https://m.stock.naver.com/research/company/98551",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "ib9ba6ead97",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 한솔홀딩스 테크닉스 편입으로 연결 실적 확대",
+          "easy1_title": "한솔테크닉스가 들어오면서 전체 실적이 눈에 띄게 좋아졌습니다",
+          "easy1_desc": "DS투자증권에서 한솔홀딩스의 실적을 살펴보았는데요, 2분기 중에 연결로 편입된 한솔테크닉스가 3분기부터 온기 반영되면서 매출 6,330억원과 영업이익 196억원을 기록했다고 밝혔어요. 쉽게 말하면, 새로운 회사가 들어온 덕분에 전체 규모가 확실히 커졌다는 말이에요.",
+          "easy2_title": "이제는 제지 유통을 넘어서 IT가 실적의 중심이 되고 있습니다",
+          "easy2_desc": "DS투자증권은 2027년 연결 영업이익 857억원 가운데 한솔테크닉스가 차지하는 비중이 560억원에 이를 것으로 추정했는데요, 테크닉스의 지분율이 20.7%에서 38.3%로 확대되었기 때문이에요. 사업의 무게중심이 제지와 물류에서 IT 쪽으로 완전히 옮겨가고 있다는 셈이에요.",
+          "topic": "한솔홀딩스가 한솔테크닉스 편입에 힘입어 연결 실적을 크게 확대하고 IT 중심으로 체질을 바꾸고 있다는 DS투자증권의 분석이다.",
+          "points": [
+            "한솔테크닉스 편입 효과: DS투자증권은 한솔테크닉스가 3분기부터 온기 반영되면서 매출과 영업이익이 대폭 늘어났다고 분석했어요. 뭔 소리냐면, 자회사 편입 효과로 인해 연결 기준 매출액이 6,330억원, 영업이익이 196억원으로 크게 불어났다는 말이에요.",
+            "실적 중심의 IT 이동: 증권사는 2027년 전체 연결 영업이익 857억원 중에서 한솔테크닉스가 560억원을 담당할 것으로 보았는데요, 지분율이 38.3%로 커졌기 때문이에요. 쉽게 말하면, 기존의 제지 유통과 물류 중심에서 IT 분야로 회사의 주 수익원이 이동 중이라는 겁니다.",
+            "주가 저평가와 투자의견: DS투자증권은 현재 주가가 PBR 0.2배와 배당수익률 4.5%를 기록 중이라고 밝혔어요. 고배당과 IT 실적 확대를 감안할 때 지금은 상당한 과매도 구간이라고 판단했다는 거예요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "8807",
+          "link": "https://m.stock.naver.com/research/company/98550",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i4153e975a4",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 파미셀 두산 증설 최대 수혜, 4분기 최대 실적 전망",
+          "easy1_title": "고객사의 전환 과정 때문에 잠깐 숨을 골랐다",
+          "easy1_desc": "3분기 실적을 살펴봤더니 매출은 370억원이고 영업이익은 119억원으로 나왔는데요, 이게 2분기와 비슷할 줄 알았던 추정치를 아주 조금 밑돌았다는 말이에요. 그 이유가 고객사가 베라루빈으로 갈아타는 과정에서 잠시 쉬어가는 구간을 거쳤기 때문이라는 겁니다. 영업이익률은 3개 분기 연속으로 32%를 넘겼다는 장점이 있는데, 대신 일시적인 숨 고르기 때문에 성장이 살짝 주춤해 보였다는 셈이에요. 쉽게 말하면, 잠시 숨을 고르는 동안에도 마진은 잘 지켜냈다는 뜻입니다.",
+          "easy2_title": "증설 효과가 터지면서 앞으로 최대 실적을 낼 거다",
+          "easy2_desc": "그래서 4분기에는 중국 창수향 주문이 크게 불어나면서 분기 최대 실적을 찍을 거라고 전망했는데요, 해외로 나가는 건 레진과 경화제를 같이 주기 때문에 국내보다 마진이 훨씬 높다는 거예요. 마진이 높은 경화제 비중이 커지면서 영업이익률도 좋아질 거라는 장점이 있는데, 대신 울산 3공장에 375억원이라는 적지 않은 투자금이 들어간다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 공장 증설과 주문 증가가 맞물려 실적이 크게 뛸 준비를 하고 있다는 말이에요.",
+          "topic": "파미셀의 3분기 실적 흐름과 두산 증설에 따른 앞으로의 실적 전망에 대한 DS투자증권의 생각이에요.",
+          "points": [
+            "3분기 실적 숨 고르기: 3분기 매출 370억원과 영업이익 119억원을 기록해 예상치를 살짝 밑돌았는데요, 이게 고객사가 베라루빈으로 전환하는 과정에서 거친 자연스러운 숨 고르기였다는 말이에요. 영업이익률은 3개 분기 연속으로 32%를 넘겼다는 점이 눈에 띕니다.",
+            "4분기 최대 실적 전망: 10월부터 중국 창수 공장향 주문이 크게 늘어나면서 4분기 매출 475억원과 영업이익 195억원으로 분기 최대 실적을 낼 것으로 전망했는데요, 해외향은 경화제 비중이 높아서 수익성이 좋아진다는 장점이 있다는 거예요. 울산 3공장은 375억원을 들여 2027년 1월 완공을 목표로 잡고 있습니다.",
+            "이원화 우려와 밸류에이션: 경쟁사의 진입으로 공급망 이원화 이야기가 돌았지만 확인해 보니 독점이 그대로 유지되고 있다고 밝혔는데요, 원료를 바꾸면 신뢰성 리스크가 커서 쉽게 못 바꾼다는 거예요. 현재 주가는 과매도 구간이라고 판단했다는 설명입니다."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "9286",
+          "link": "https://m.stock.naver.com/research/company/98549",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "iff0353bc33",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 유니드 4분기 판가 전가가 관건",
+          "easy1_title": "지난 분기에는 비용이 더 빨리 늘어나서 적자가 났어요",
+          "easy1_desc": "3분기 연결 매출은 3,780억원으로 15% 늘었지만 영업이익은 -21억원으로 적자로 돌아섰는데요, 이는 가성칼륨 판가 상승으로 외형은 컸지만 계절적 비수기에 해상 운임과 환율 하락이 겹쳤기 때문이에요. 여기에 외환 관련 손실 99억원이 더해지면서 순이익까지 -44억원으로 적자 전환했다는 말이에요. 쉽게 말하면, 물건은 많이 팔았는데 비용과 환율 때문에 남는 게 없었다는 셈이에요.",
+          "easy2_title": "앞으로는 비용을 가격에 얼마나 잘 얹느냐가 중요해요",
+          "easy2_desc": "그래서 DS투자증권은 3분기에 반영하지 못한 비용 상승분을 판가에 옮기는 작업과 울산 공장의 가동률을 정상화하는 것이 4분기 실적의 핵심이라고 봤는데요, 상반기 이란 사태로 떨어졌던 국내 가동률이 3분기 누적 78.6%에 머물러 있기 때문이에요. 판가를 올리는 속도가 빨라지면 실적이 좋아질 수 있다는 장점이 있는데, 만약 운임과 환율이 지난 분기 수준에 머물면 추정치를 낮출 수도 있다는 점도 같이 염두에 둬야 한다는 겁니다.",
+          "topic": "유니드의 3분기 실적 부진 원인과 4분기 이후의 실적 전망에 대한 DS투자증권의 분석이에요.",
+          "points": [
+            "3분기 실적 부진: 3분기 매출은 3,780억원으로 15% 늘었으나 영업이익은 -21억원으로 적자 전환했는데요, 해상 운임 상승과 환율 하락으로 매출총이익률이 10.8%로 떨어졌기 때문이에요. 게다가 외환 관련 손실 99억원까지 겹치면서 순이익도 -44억원으로 적자를 기록했다는 말이에요.",
+            "국내 법인과 판가 전가: 국내 법인은 상반기 이란 사태 여파로 3분기 누적 가동률이 78.6%에 그쳐 정상 수준에 미치지 못하고 있는데요, 3분기에 다 반영하지 못한 비용을 제품 가격에 얼마나 빨리 전가하느냐가 4분기 실적을 가르는 열쇠라는 거예요.",
+            "중국 법인과 연간 전망: 중국 법인은 3분기 적자 속에서도 해외 매출이 2,262억원으로 24% 늘며 외형 성장을 이어갔고 증설도 추진 중인데요, DS투자증권은 이를 바탕으로 2026년 전체 매출을 1조 5,549억원으로 추정하면서 현재 주가는 과매도 구간이라고 봤다는 거예요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "9253",
+          "link": "https://m.stock.naver.com/research/company/98548",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i7e8e0d483f",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 두산로보틱스 솔루션으로 외형 성장",
+          "easy1_title": "솔루션 매출 늘었지만 고정비 부담은 여전해요",
+          "easy1_desc": "두산로보틱스의 3분기 연결 매출이 162억 원으로 전년 동기 대비 59% 늘었다고 하는데요, 자동화 솔루션 비중이 커지면서 외형 성장을 이뤄냈다는 겁니다. 그런데 분기 판관비가 180억 원 수준이라 현재 매출총이익률 기준으로는 분기 매출 630억 원 이상을 내야 고정비를 감당할 수 있다고 보는데요, 쉽게 말하면 매출은 불어났지만 여전히 비용 부담이 크다는 셈이에요.",
+          "easy2_title": "목표주가를 낮췄지만 1월 모멘텀은 남아있어요",
+          "easy2_desc": "그래서 DS투자증권은 투자의견 중립을 유지하고 목표주가를 58,000원으로 낮췄다고 밝혔는데요, 스마트팩토리와 AMR 등 신규 사업에서 매출 인식이 늦어질 경우 2027년에도 적자가 이어질 수 있다는 거예요. 흑자 전환까지는 실적 가시성을 지켜봐야 한다는 단점이 있는데, 장점은 내년 1월에 미국 CES발 로봇 관련 모멘텀이 남아있다는 거거든요. 쉽게 말하면 방향성은 맞지만 당장 실적이 찍히는 걸 좀 더 확인해야 한다는 말이에요.",
+          "topic": "두산로보틱스의 3분기 실적과 솔루션 중심의 외형 성장에도 불구하고 고정비 부담과 흑자 전환 시점에 대해 DS투자증권이 분석한 내용이에요.",
+          "points": [
+            "3분기 실적과 매출 구성 변화: 두산로보틱스의 3분기 연결 매출은 162억 원을 기록해 전년 동기 대비 59% 늘었다고 하는데요, 자동화 솔루션 매출 비중이 50.5%로 확대되면서 구성이 변했다는 거예요. 뭔 소리냐면, 로봇 외에 솔루션 중심의 판매가 늘면서 북미 지역 매출이 49%를 차지하게 됐다는 말이에요.",
+            "고정비 부담과 현금 감소: 하지만 분기 판관비가 180억 원 수준이라 이를 커버하려면 분기 매출 630억 원 이상이 필요하다고 파악됐는데요, 이는 3분기 매출의 약 4배 수준이라는 겁니다. 3분기 말 현금성자산도 531억 원으로 연초 1,567억 원에서 크게 줄어들었다는 점도 함께 언급됐어요.",
+            "향후 전망과 목표주가 하향: 증권사는 2027년에 매출 1,497억 원을 기록하며 영업이익 15억 원으로 흑자 전환할 것으로 가정했는데요, 스마트팩토리와 AMR 등 신규 사업 550억 원을 반영한 수치라는 거예요. 만약 매출 인식이 지연되면 2027년에도 적자가 이어질 수 있어 목표주가를 58,000원으로 낮췄다고 밝혔어요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "7939",
+          "link": "https://m.stock.naver.com/research/company/98547",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "id157155eaf",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 동인기연 영업은 개선세, 환율로 순이익은 부진",
+          "easy1_title": "장사는 잘됐는데 환율 때문에 남는 게 깎였다",
+          "easy1_desc": "DS투자증권에서 동인기연의 3분기 실적을 살펴봤는데요, 연결 매출은 605억 원으로 작년 같은 때보다 11% 늘고 영업이익도 57억 원으로 12% 늘어나는 등 본업인 장사는 잘됐다는 겁니다. 그런데 순이익은 -34억 원으로 적자로 돌아섰는데, 금융원가가 94억 원으로 크게 불어난 게 원인이라는 거예요. 외환차손 44억 원과 외화환산손실 36억 원이 반영된 탓인데, 환율이 떨어진 영향 때문이라는 말입니다. 쉽게 말하면, 물건은 잘 팔아놓고 환율이 내려가는 바람에 장부상 손실이 커졌다는 셈이에요.",
+          "easy2_title": "앞으로는 좋아질 거라 보지만 눈높이는 낮춰 잡았다",
+          "easy2_desc": "그래서 DS투자증권은 동인기연의 올해 전체 매출을 2,709억 원, 영업이익을 304억 원으로 추정했는데요, 4분기는 한 해 중 매출이 가장 큰 시기라 작년과 비슷한 수익성을 낼 수 있을 거로 봤다는 거예요. 다만 주식 목표주가는 15,500원으로 낮춰 잡았는데, 현재 주가가 역사적 과매도 구간에 들어섰다고 판단했기 때문이라는 겁니다. 실적 추정치가 단단하다는 장점은 있는데, 환율 변동 같은 외부 요인에 흔들릴 수 있다는 점은 염두에 두어야 한다는 말입니다. 쉽게 말하면, 회사의 체력은 탄탄하지만 눈높이는 한 차례 낮춰서 바라봐야 한다는 셈이에요.",
+          "topic": "동인기연의 3분기 실적에서 영업은 좋아졌으나 환율 하락으로 순이익이 부진했던 점과 앞으로의 실적 전망을 담은 증권사 리포트예요.",
+          "points": [
+            "3분기 실적과 환율 영향: 동인기연의 3분기 연결 매출은 605억 원, 영업이익은 57억 원으로 늘어났지만 순이익은 -34억 원으로 적자 전환했다고 해요. 외환차손 44억 원과 외화환산손실 36억 원이 반영된 결과인데, 3분기 환율이 떨어진 게 직접적인 타격을 줬다는 겁니다. 뭔 소리냐면, 영업 자체는 잘 굴러갔지만 환율 문제 때문에 이익 부문에서 큰 손실을 봤다는 말이에요.",
+            "제품별 성장의 명암: 품목별로는 테크니컬 매출이 231억 원, 아웃도어 용품이 98억 원으로 성장을 이끌었다고 분석했는데요, 마진이 높은 테크니컬 매출 비중도 3분기 누적 37.1%로 늘어났다는 거예요. 반면 캐쥬얼은 233억 원으로 정체됐고 자사 브랜드 용품은 43억 원으로 줄어들었다는 점이 대조적이라는 겁니다. 쉽게 말하면, 잘 나가는 등산용 및 아웃도어 품목이 전체 성장을 떠받치고 있다는 셈이에요.",
+            "연간 전망과 목표주가 조정: DS투자증권은 올해 전체 매출을 2,709억 원, 영업이익을 304억 원으로 추정하면서 목표주가를 15,500원으로 내렸다고 밝혔는데요, 4분기는 연중 매출이 가장 커서 작년과 비슷한 수익성을 낼 거로 봤다는 거예요. 현재 주가는 26년 기준 PER 3.5배, PBR 0.4배, 배당수익률 6.6%로 역사적 과매도 구간이라고 진단했다는 겁니다. 신사업인 아웃도어용 특수화와 텀블러는 아직 추정치에 넣지 않았다는 설명이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "7541",
+          "link": "https://m.stock.naver.com/research/company/98546",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i5c7caff3ba",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] 경동나비엔 본업은 견조",
+          "easy1_title": "영업이익이 많이 늘었는데 환율 때문에 순이익은 줄었다고 해요",
+          "easy1_desc": "DS투자증권은 경동나비엔의 3분기 연결 매출이 3,824억 원을 기록했다고 밝혔는데요. 영업이익은 378억 원으로 전년 동기 대비 373% 늘어났지만, 환율 하락으로 인해 외환차손 351억 원이 반영되면서 순이익은 적자로 돌아섰다는 겁니다. 쉽게 말하면, 본업은 잘 벌었지만 환율 변동 때문에 영업외 손실이 컸다는 셈이에요.",
+          "easy2_title": "지금 주가는 너무 많이 내려와서 과매도 구간이라고 봤어요",
+          "easy2_desc": "그래서 증권사는 경동나비엔의 목표주가를 110,000원으로 유지한다고 밝혔는데요. 영업이익이 77% 늘어날 것으로 추정되는데도 주가는 오히려 크게 하락했기 때문이라는 거예요. 주가가 떨어지면서 매수 기회가 될 수 있다는 장점이 있는데, 대신 환율이나 판가 전가 속도에 따라 실적이 흔들릴 수도 있다는 점도 같이 감안해야 한다는 겁니다.",
+          "topic": "DS투자증권은 경동나비엔의 3분기 실적을 분석하고 환율 영향과 향후 실적 전망을 내놓았어요.",
+          "points": [
+            "본업 실적과 기저효과: 경동나비엔은 3분기 누적 영업이익 1,859억 원을 기록해 25년 연간 이익을 이미 넘어섰다고 해요. 전분기 영업이익률이 21.7%까지 올랐던 것은 미국 관세 환급금이 반영된 결과인데, 이를 감안하면 3분기 영업이익률 9.9%는 정상 수준으로 돌아온 것이라는 분석이에요. 쉽게 말하면, 일시적 요인이 빠지면서 본래의 흐름을 찾아간 셈이에요.",
+            "환율 하락과 순이익 적자: 영업이익이 378억 원을 기록했음에도 지배주주 순이익은 -25억 원으로 적자 전환했다고 하는데요. 수출 비중이 높은 구조 때문에 3분기 환율 하락이 외환차손 351억 원으로 고스란히 반영됐기 때문이라는 겁니다. 뭔 소리냐면, 물건은 잘 팔았지만 환율 때문에 영업외 비용이 크게 불어났다는 말이에요.",
+            "향후 실적과 투자의견: 증권사는 26년 전체 매출액을 1조 7,224억 원, 영업이익을 2,543억 원으로 추정했는데요. 4분기는 동절기를 앞둔 성수기인 만큼 앞선 성장 흐름이 이어질 것으로 보이지만, 외환손실이 반복되면 순이익이 추정치를 밑돌 수도 있다는 거예요. 3분기 말 부채비율은 84%로 재무구조는 안정적이라고 덧붙였어요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "예측 의심: 4분기는 동절기를 앞둔 성수기인 만큼 앞선 성장 흐름이 이어질 것으로 보이지만, 외환손실이 반복되면 순이익이",
+          "body_chars": "8491",
+          "link": "https://m.stock.naver.com/research/company/98545",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i21910a8eaf",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "DS투자증권",
+          "title": "[DS투자증권] SK스퀘어 당초 계획의 14배 넘는 주주환원 결정",
+          "easy1_title": "올해 주주들에게 돌려줄 돈이 원래 계획보다 무려 14배나 많아졌어요",
+          "easy1_desc": "DS투자증권에서 SK스퀘어의 주주환원 계획을 살펴봤더니, 2028년까지 경상배당수입의 60% 이상과 키옥시아 특별배당 수입의 100%를 환원한다고 밝혔거든요. 이게 무슨 소리냐면, 특별배당 1조 4,600억 원 전액에 경상배당 4조 7,400억 원의 60%를 적용해서 약 4조 3,000억 원 수준이 된다는 말이에요. 연초에 세웠던 계획인 3,100억 원과 비교하면 무려 14배에 달하는 규모라는 겁니다. 쉽게 말하면, 올해 예상되는 주주환원 규모가 최소 4조 3,000억 원으로 크게 불어났다는 셈이에요.",
+          "easy2_title": "자사주를 없애면 돈을 들이지 않고도 지분율과 배당이 함께 오르게 됩니다",
+          "easy2_desc": "SK하이닉스가 자사주를 사들여 소각하면 SK스퀘어의 지분율이 0.67%p 오를 것으로 증권사는 내다봤는데요, SK하이닉스가 추가 매입과 소각도 계속 이어가겠다고 밝혔기 때문이에요. 이렇게 되면 SK스퀘어 입장에서는 따로 자금을 투입하지 않아도 지분법손익과 배당수입이 동시에 늘어나는 장점이 있거든요. 대신 SK하이닉스의 정책이나 자사주 소각 일정에 회사의 실적이 크게 좌우된다는 점도 같이 따라온다는 겁니다.",
+          "topic": "SK스퀘어의 대규모 주주환원 결정과 SK하이닉스 지분율 상승에 따른 실적 및 목표주가 분석이에요.",
+          "points": [
+            "3분기 영업이익과 지분법손익: 3분기 영업이익은 7조 9,406억 원을 기록했는데, 이는 사실상 지분법손익에 해당한다고 증권사는 분석했어요. SK하이닉스의 순이익 12조 5,344억 원 중 6조 5,500억 원은 신주 발행에 따른 지분변동 차액이며, 이를 제외한 세전이익은 영업이익과 같은 7조 9,000억 원이라는 겁니다. 쉽게 말하면, SK스퀘어의 실적은 SK하이닉스의 순이익 움직임에 큰 영향을 받는 구조라는 셈이에요.",
+            "대규모 주주환원과 현금 유입 시기: 11월 2일에 공시된 주주환원 계획에 따르면 2028년까지 경상배당수입의 60% 이상과 키옥시아 특별배당 수입 전액을 환원한다고 밝혔는데요, 현금은 4분기부터 본격적으로 들어온다는 계획이에요. 3분기까지 받은 배당금은 누적 3,835억 원이었지만, 4분기에는 SK하이닉스의 3분기 배당인 2조 9,200억 원이 유입될 예정이거든요. 쉽게 말하면, 4분기부터 대규모 현금이 실제로 회사로 들어오기 시작한다는 말이에요.",
+            "목표주가 120만 원 제시 배경: 증권사는 SK스퀘어의 목표주가를 120만 원으로 잡고 커버리지를 재개했는데, 현재 할인율이 50%에 육박한다고 진단했어요. 시가총액은 94조원이지만 보유한 SK하이닉스 지분은 169조원에 달하고, 차입금이 없으면서 내년에 4.3조원의 주주환원이 예정되어 있거든요. 쉽게 말하면, 현재 주가는 자산 가치에 비해 상당한 과매도 상태라고 증권사는 파악했다는 겁니다."
+          ],
+          "evidence_ok": "5/6",
+          "bad_numbers": "3000 4600 7400 9000 9200",
+          "check_flags": "topic 근거 원문에 없음",
+          "body_chars": "8961",
+          "link": "https://m.stock.naver.com/research/company/98544",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i70f7505a69",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "교보증권",
+          "title": "[교보증권] 에이피알 에이피알, 닥터멜락신 인수 관련 코멘트",
+          "easy1_title": "에이피알이 닥터멜락신을 인수해 부담을 낮췄습니다",
+          "easy1_desc": "교보증권은 에이피알이 11월 26일 공시를 통해 브랜드 501의 지분 87.3%를 총 3,900억원에 취득한다고 밝혔는데요. 이번 거래가액 기준 브랜드 501의 100% 단순 환산 지분가치는 약 4,500억원 수준이라, 기존 언론보도에서 거론되던 2~3조원 수준을 크게 밑돈다는 말이에요. 쉽게 말하면 시장 예상보다 인수에 따른 재무 부담이 제한적이라는 셈이에요.",
+          "easy2_title": "새로운 주가 트리거를 마련했다고 봤습니다",
+          "easy2_desc": "에이피알의 주가는 그동안 환율 급락에 따른 수익성 부진 우려로 고점 대비 최대 50%까지 조정받았는데요. 이번 인수로 브랜드 포트폴리오가 다양해지면서 그간 할인 요인으로 작용해 온 단일 브랜드 의존도에 대한 우려도 완화될 전망이라는 겁니다. 새로운 주가 트리거가 생겼다는 장점이 있는데, 대신 환율 하락에 따른 수익성 부담은 여전히 남아 있다는 점도 같이 염두에 두어야 한다는 거예요.",
+          "topic": "에이피알의 닥터멜락신 인수와 이에 따른 외형 확대 및 수익성 개선 가능성에 대한 교보증권의 분석이에요.",
+          "points": [
+            "인수 가격과 재무 부담: 교보증권은 에이피알이 브랜드 501 지분 87.3%를 3,900억원에 인수했다고 밝혔는데요. 외부평가의견서상 2026년 예상 매출액 6,571억원, 영업이익 493억원, 순이익 418억원 기준으로 Implied P/E는 약 11배로 나타났어요. 쉽게 말하면 인수 가격은 매우 매력적인 수준이라는 말이에요.",
+            "외형 확대 전략: 에이피알은 메디큐브의 글로벌 사업 운영 경험을 활용해 닥터멜락신의 외형 확대를 추진할 계획인데요. 틱톡에서 제품을 접한 소비자가 아마존에서 제품을 검색하고 구매하는 경로가 활성화될 전망이에요. 오프라인에서는 에이피알이 확보한 글로벌 유통망을 활용해 주요 리테일러 입점 기회를 넓힌다는 겁니다.",
+            "수익성 개선 기대: 닥터멜락신은 틱톡 마케팅으로 외형을 키워 왔으며 향후 오프라인 중심의 해외 B2B 매출 확대가 수익성 개선에 기여할 전망인데요. 외부평가의견서는 해외 B2B 매출 비중이 2031년 24%까지 확대될 것으로 가정했어요. 쉽게 말하면 해외 B2B 매출 비중 확대가 전사 영업이익률 개선에 도움을 준다는 셈이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "5600",
+          "link": "https://m.stock.naver.com/research/company/98543",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "ia550be2cbd",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "하나증권",
+          "title": "[하나증권] 삼천리 SMP 변화에도 안정적인 발전 실적",
+          "easy1_title": "삼천리가 3분기에 이익을 많이 낸 걸 살펴봤는데요",
+          "easy1_desc": "하나증권은 2026년 3분기 실적을 분석해 봤는데요, 영업이익이 428억원으로 88.1% 늘어났거든요. 그게 뭔 소리냐면, 도시가스 판매 부문에서 가격이 올랐고 에스파워라는 자회사에서도 마진이 좋아졌다는 말이에요. 그래서 앞으로도 이런 흐름이 이어질 수 있다는 겁니다. 쉽게 말하면, 3분기 이익 증가 폭이 88.1%에 가깝다고 보입니다.",
+          "easy2_title": "투자를 많이 해도 현금이 넉넉한 이유를 따져봤는데요",
+          "easy2_desc": "성경식품 인수 같은 일로 투자가 3배 이상 늘어난 걸 확인해 봤는데요, 그래도 순현금 상태를 계속 지키고 있거든요. 돈이 어디서 나나 했더니 안정적인 이익 덕분에 이익잉여금이 계속 불어난다는 겁니다. 투자가 늘어난다는 단점도 있는데, 장점은 든든한 현금 흐름이 뒷받침된다는 거거든요. 쉽게 말하면, 투자는 3배 이상 늘었지만 곳간은 여전히 튼튼한 셈이에요.",
+          "topic": "하나증권은 삼천리의 3분기 실적이 견조하고 주주환원으로 재평가를 받을 수 있다고 봤습니다.",
+          "points": [
+            "3분기 실적 호조: 하나증권은 3분기 매출액 1.1조원을 기록하며 전년대비 22.3% 늘어난 것을 확인해 봤는데요, 도시가스 외형이 커졌고 에스파워 매출도 1,494억원으로 12.1% 늘었거든요. 뭔 소리냐면, 원가 감소 같은 일시적인 일을 빼도 전체적으로 이익이 잘 나왔다는 말이에요.",
+            "투자 증가와 재무 상태: 하나증권은 3분기 누적 별도 Capex(자본적 지출)가 3,433억원으로 전년대비 3배 이상 커진 것을 분석해 봤는데요, 지분투자가 많이 늘었기 때문이거든요. 그렇지만 순현금 상태를 계속 유지하고 있어서 재무적으로는 안정적이라고 봤다는 거예요.",
+            "주주환원 기대감: 하나증권은 현재 밸류에이션이 동종업체보다 낮다고 봤는데요, 앞으로 배당성향이 높아지는 등 주주환원 정책이 확실해지면 주가가 다시 평가받을 수 있다는 겁니다. 쉽게 말하면, 낮은 밸류에이션이 주주환원을 통해 회복될 수도 있다는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "9628",
+          "link": "https://m.stock.naver.com/research/company/98542",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "ie0c57a28f0",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "하나증권",
+          "title": "[하나증권] 세방전지 외생 변수에 꺾인 3분기, 이제 회복과 ESS 기여 앞둬",
+          "easy1_title": "환율이랑 재료비 때문에 3분기 실적이 꺾였어요",
+          "easy1_desc": "세방전지의 3분기 연결 매출액은 전년 수준을 유지했는데요, 반면 연결 영업이익률은 0.6%로 4.4%p 하락했거든요. 환율과 원재료비 상승 등이 한꺼번에 반영되었기 때문이라는 말이에요. 쉽게 말하면, 매출은 그대로인데 비용이 불어나서 남는 게 거의 없어진 셈이라는 겁니다.",
+          "easy2_title": "앞으로는 북미 전력망용 ESS 사업이 실적을 이끌어 갈 겁니다",
+          "easy2_desc": "그래서 북미 전력망용 컨테이너 ESS 모듈/팩 사업이 본격적인 양산을 앞두고 있다는 건데요, 4분기부터 매출이 발생하면서 관련 부담도 완화될 것이라는 전망이에요. 이 사업이 본격적으로 기여하면 2027년에는 실적이 크게 좋아질 것이라는 겁니다.",
+          "topic": "세방전지의 3분기 실적 부진 원인과 북미 전력망용 에너지저장장치(ESS) 사업을 통한 회복 전망에 대한 하나증권의 분석이에요.",
+          "points": [
+            "3분기 실적 부진: 중동향 물량이 줄었지만 판가 인상으로 매출액은 전년 수준을 유지했는데요, 반면 환율과 원재료비 상승 등으로 영업이익률은 0.6%로 뚝 떨어졌거든요. 뭔 소리냐면, 원가 부담과 물류비 증가가 겹치면서 이익이 크게 꺾였다는 말이에요.",
+            "북미 ESS 사업 확대: 세방리튬배터리가 북미 전력망용 ESS 사업에 총 1,800억원의 자본적 지출(Capex)을 집행하고 있다는 건데요, 연말까지 풀가동 체제에 들어간다는 계획이에요. 쉽게 말하면, 현지 생산으로 관세 부담이 없어 안정적이라는 겁니다.",
+            "2027년 실적 반등 전망: 하나증권은 3분기를 저점으로 본업이 회복 국면에 진입할 것으로 봤는데요, 2027년에는 본업 회복에 세방리튬배터리의 흑자 전환까지 더해질 것으로 추정했어요. 장점은 이익이 크게 늘어난다는 점인데, 대신 2026년에는 배당성향 25% 정책상 주당배당금(DPS) 하락이 불가피하다는 단점도 같이 따라온다는 겁니다."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "10791",
+          "link": "https://m.stock.naver.com/research/company/98541",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "id2df9dc2a7",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "유안타증권",
+          "title": "[유안타증권] 티씨케이 쌓이는 수주, 비어가는 재고",
+          "easy1_title": "환율이 흔들려도 마진은 좋아졌다고 봤어요",
+          "easy1_desc": "유안타증권은 4분기 예상 매출액과 영업이익을 각각 1,155억원과 319억원으로 추정했는데요, 원/달러 환율이 떨어지는 부담이 있었는데도 샤워헤드를 비롯한 고부가 제품 비중이 커지면서 수익성이 견조할 전망이라고 밝혔거든요. 쉽게 말하면 환율 조건은 아쉬운데 팔린 물건 구성이 좋아져서 이익률이 27.6%까지 좋아졌다는 셈이에요.",
+          "easy2_title": "주문은 계속 쌓이는데 창고 재고는 비어간다는군요",
+          "easy2_desc": "그렇게 영업이익이 늘어나는 이유를 2027년과 2028년 예상치로 짚어봤더니, 낸드 식각 투자가 본격화되면서 3분기말 기준 수주잔고는 2,451억원에 달하는 반면 완성품 재고는 줄어드는 흐름이라고 분석했어요. 재고가 비면 새로 가동되는 라인이 곧바로 실적으로 이어진다는 장점이 있는데, 대신 대외 환경이나 고객사 일정 변화에 실적이 크게 흔들릴 수도 있다는 점도 함께 염두에 둬야 한다는 겁니다.",
+          "topic": "유안타증권은 티씨케이에 대해 수주 잔고가 쌓이고 수익성 개선이 기대된다며 목표주가 310,000원에 투자의견 BUY로 커버리지를 재개시했다고 밝혔어요.",
+          "points": [
+            "4분기 실적 추정: 유안타증권은 4분기 영업이익을 319억원으로 추정했는데요, 9월부터 진행한 기존 라인 생산성 개선 효과가 반영되었기 때문이라고 밝혔어요. 뭔 소리냐면 원/달러 환율이 내렸어도 고부가 제품 비중이 늘어나면서 이익을 지켜냈다는 말이에요.",
+            "중장기 실적 전망: 2027년과 2028년 예상 영업이익을 각각 1,724억원과 2,268억원으로 추정했는데요, Solid SiC의 최대 수요처인 낸드 식각 투자가 본격화되고 있기 때문이라고 분석했어요. 쉽게 말하면 전방 산업 투자가 늘어나면서 회사의 핵심 제품 수요가 확실하게 살아나고 있다는 겁니다.",
+            "목표주가 산정: 목표주가는 310,000원으로 제시했는데, 2027~2028년 평균 예상 EPS 14,678원에 Target PER 21배를 적용했다고 설명했어요. 증권사는 낸드 가격 하락 우려가 존재하지만 기술 전환과 AI용 수요를 고려하면 실적 가시성이 높다고 봤다는 거예요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "12593",
+          "link": "https://m.stock.naver.com/research/company/98540",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i0e8554378d",
+          "source_name": "네이버 리서치 종목",
+          "kind": "증권사 리포트",
+          "writer": "유안타증권",
+          "title": "[유안타증권] 파라다이스 주가 부진에 가려진 복합 리조트 성장세",
+          "easy1_title": "복합 리조트 성장세가 주가 부진에 가려져 있었다",
+          "easy1_desc": "유안타증권에서 파라다이스 실적을 뜯어봤더니, 카지노와 호텔 부문 모두 탄탄하게 커 가고 있었다고 해요. 그런데도 주가는 힘을 못 받고 있었는데, 알고 보니 복합 리조트의 진짜 성장이 가려져 있던 거라는 말이에요. 쉽게 말하면, 겉보기와 달리 알짜배기 성장은 계속되고 있었다는 셈이에요.",
+          "easy2_title": "하얏트 리젠시 흑자전환과 내년 기대감이 크다",
+          "easy2_desc": "여기에 하얏트 리젠시가 처음으로 흑자로 돌아섰고 비용도 아끼면서 이익이 커지는 효과가 나타났다고 밝혔는데요, 앞으로는 모객 여력이 더 넓어지면서 영업이익이 매출보다 더 가파르게 늘어날 거라고 봤다는 거예요. 실적이 좋아질 가능성이 있다는 장점이 있는데, 대신 중국인 VIP 수요가 흔들릴 수도 있다는 점은 지켜봐야 한다는 겁니다.",
+          "topic": "유안타증권은 파라다이스의 3분기 실적이 카지노와 호텔 부문의 견조한 성장에 힘입어 시장 예상을 뛰어넘었다고 분석했다.",
+          "points": [
+            "3분기 실적 호조: 카지노와 호텔이 고르게 크면서 하얏트 리젠시가 흑자로 돌아섰고 비용 효율화까지 겹쳤다고 해요. 뭔 소리냐면, 잘 나가는 사업 덕분에 전체 영업이익이 시장 예상보다 17.6% 높게 나왔다는 말이에요.",
+            "카지노 부문 실적: 중국인 VIP 방문객이 줄어들기는 했지만 일본인 VIP와 Mass 고객이 늘어나면서 빈자리를 채웠다고 하는데요, 여기에 홀드율까지 올라가면서 순매출이 역대 최대치를 찍었다는 겁니다.",
+            "2027년 전망: 한중 FTA 후속협상으로 관광객을 직접 모으기 좋아졌고 추가로 콤프 객실을 쓸 여유도 남아 있다고 해요. 쉽게 말하면, 내년에는 드롭액이 늘고 비용이 안정되면서 영업이익이 더 크게 불어날 것으로 보인다는 겁니다."
+          ],
+          "evidence_ok": "5/6",
+          "bad_numbers": "",
+          "check_flags": "예측 의심: 쉽게 말하면, 내년에는 드롭액이 늘고 비용이 안정되면서 영업이익이 더 크게 불어날 것으로 보인다는 겁니다.; point3 근거 원문에 없음",
+          "body_chars": "15217",
+          "link": "https://m.stock.naver.com/research/company/98539",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i2c615d5a06",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "하나증권",
+          "title": "[하나증권]  자본의 양보다 질이 중요해지는 시점",
+          "easy1_title": "새로운 자본 규제 때문에 후순위채 발행이 확 줄었습니다",
+          "easy1_desc": "2027년 1월 1일부터 보험사에 기본자본 K-ICS비율 규제가 들어올 예정이라, 그전에 미리 자본을 채우려고 찍어내던 후순위채 인기가 뚝 떨어졌거든요. 실제로 2026년 11월 초 누적 기준으로는 3.8조원으로 전년 대비 55.4%나 줄어들었다는 말이에요. 빚을 내서 자본을 불리기가 까다로워졌다는 단점은 있는데, 대신 자본의 질을 탄탄하게 관리해야 하는 계기가 된다는 장점도 같이 따라온다는 겁니다. 쉽게 말하면, 후순위채를 통한 자본 확충이 3.8조원으로 확 줄어든 셈이에요.",
+          "easy2_title": "기본자본을 잘 쌓는 보험사만 주주환원을 늘릴 수 있습니다",
+          "easy2_desc": "해약환급금준비금 관련 제도가 바뀌면서 단기적인 부담은 덜어냈지만, 금리가 오를 때 기본자본비율이 뚝 떨어질 수도 있다는 점은 조심해야 하거든요. 특히 준비금 적립 부담이 큰 곳일수록 이익을 탄탄하게 내서 기본자본을 스스로 쌓는 게 중요해질 전망이라는 말이에요. 주가를 볼 때도 이익만 보는 게 아니라 기본자본비율이 얼마나 안정적인지가 핵심이 될 수 있다는 겁니다. 쉽게 말하면, 자본 여력이 튼튼한 삼성화재 같은 곳이 주주환원을 넓힐 가능성이 크다고 봤다는 거예요.",
+          "topic": "하나증권은 2027년 도입되는 보험사 기본자본 규제에 따라 자본의 질 관리가 중요해졌으며, 자본 여력이 안정적인 삼성화재를 톱픽으로 제시한다고 봤다.",
+          "points": [
+            "기본자본비율 규제 도입: 금융당국이 보험사의 기본자본 규제 기준을 50%로 정하고 2027년 1월 1일부터 적용하겠다고 밝혔거든요. 기준에 못 미치면 50% 미만은 경영개선권고, 0% 미만은 경영개선요구 대상이 된다는 말이에요. 다만 2035년 말까지 9년 동안 경과조치를 두어 분기별로 차근차근 맞추도록 했다는 겁니다. 쉽게 말하면, 2027년 1분기말부터 2036년 1분기말까지 단계적으로 기준을 채워야 한다는 셈이에요.",
+            "자본확충 수단과 부채 평가: 후순위채 같은 자본성증권으로 자본을 불리기가 어려워졌고 금리가 오를 때 자본비율이 좋아지는 효과도 예전만 못하거든요. 여기에 신용위험스프레드를 구할 때 직전 10년 평균 위험스프레드의 15%를 하한으로 두는 등 부채 할인율 산출 기준도 바뀐다는 말이에요. 금융당국이 시뮬레이션을 해 봤더니 제도 변경에 따른 영향은 제한적이었다고 파악했다는 겁니다. 쉽게 말하면, 자본을 쌓는 방법은 좁아졌지만 부채 평가 방식의 변화가 미치는 타격은 크지 않다고 봤다는 거예요.",
+            "주주환원 여력과 톱픽 제시: 해약환급금준비금 제도가 개선되면서 당장 큰 부담은 덜었지만 금리가 오르면 기본자본비율이 내려갈 가능성에는 계속 유의해야 하거든요. 결국 앞으로는 이익을 얼마나 잘 내는지와 함께 기본자본비율이 얼마나 안정적인지가 회사의 가치를 가르는 잣대가 된다는 말이에요. 하나증권은 이런 흐름 속에서 탄탄한 자본 여력을 가진 삼성화재를 추천 종목으로 꼽았다는 겁니다. 쉽게 말하면, 자본 안정성을 바탕으로 주주환원을 넓힐 가능성이 높은 삼성화재를 Top Pick으로 제시했다는 셈이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "6642",
+          "link": "https://m.stock.naver.com/research/industry/47265",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i88db6b12b3",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "하나증권",
+          "title": "[하나증권]   미국 중간 선거 이후의 해상 운임",
+          "easy1_title": "유조선과 컨테이너선 운임이 가파르게 떨어지고 있거든요",
+          "easy1_desc": "미국 중간선거 이후에 전쟁이 끝날 수도 있다는 기대감이 돌면서 초대형 유조선(VLCC)과 컨테이너선 운임이 큰 폭으로 내려갔는데요, 중동 바깥의 운임 하락이 빠르게 나타나면서 11월 말 기준으로 초대형 유조선 운임은 55만 달러 수준이고 미주 발은 25만 달러 수준이라는 겁니다. 운임이 내려간다는 장점이 있는데, 대신 관련 선사들의 이익이나 주가에는 부담이 될 수도 있다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 전쟁 종식 가능성 때문에 해운 운임이 전체적으로 하향 안정화되는 셈이라는 말이에요.",
+          "easy2_title": "수에즈 운하가 다시 열리면서 운임 상승이 막히고 있거든요",
+          "easy2_desc": "수에즈 운하의 통항이 다시 시작되면서 컨테이너선 운임이 올라가는 것을 막고 있는데, 실제로 11월 들어 통항량이 2023년의 70% 수준까지 회복되었다고 해요. 수에즈 운하 복귀가 본격화되면서 운임 상승이 저지되는 효과가 있다는 겁니다. 다만 트럼프 대통령이 과잉생산 관세를 예고하면서 단기적으로는 운임이 다시 오를 수도 있는 동인으로 작용한다는 점도 있다는 겁니다. 쉽게 말하면, 운하가 열려 운임이 잡히고 있지만 관세 변수도 남아 있는 셈이라는 말이에요.",
+          "topic": "미국 중간선거 이후 해운 시장의 변화와 선종별 운임 및 실적 전망에 대한 하나증권의 분석이에요.",
+          "points": [
+            "초대형 유조선(VLCC) 운임 하락: 초대형 유조선(VLCC) 운임은 10월 초를 정점으로 큰 폭으로 떨어져서 11월 말에는 55만 달러 수준을 보였는데요, 중동 바깥의 운임 하락이 빠르게 나타나면서 미주 발 운임도 25만 달러 수준이라고 해요. 전쟁이 다시 일어나지 않는다면 운임 수준은 하향 안정화될 것으로 보인다는 겁니다. 쉽게 말하면, 전쟁 종식 기대감으로 유조선 운임이 내려가는 추세라는 말이에요.",
+            "미주 컨테이너선 운임 하락과 수에즈 운하: 11월에 미주 컨테이너선 운임도 급격하게 내려가서 EC 미주 운임이 9월 이후 처음으로 10,000달러 미만으로 떨어졌는데요, 4분기 비수기인 데다 민주당의 상하원 장악으로 과격한 관세 불확실성이 줄어들었기 때문이라는 거예요. 수에즈 운하 통항량이 2023년의 70% 수준까지 회복되면서 운임 상승이 저지되고 있다는 점도 작용했다고 해요. 쉽게 말하면, 운하 복귀와 정치적 불확실성 완화가 겹쳐서 컨테이너선 운임이 정상화되었다는 말이에요.",
+            "건화물선(BDI)과 선사 실적 전망: 해운사 전반적으로 2027년 증익 시나리오는 쉽지 않고, 2026년 이익 성장률이 가팔랐던 스팟 노출도가 높은 선사의 감익 폭이 클 전망인데요, 반면에 건화물선(BDI)은 최근 3,000포인트를 돌파하며 견조한 운임을 기록해 가장 실적이 안정적일 가능성이 높다고 해요. 팬오션은 2027년 증익 가시성이 높고 벌크선 이익 변동성도 크지 않을 것으로 예상된다는 겁니다. 쉽게 말하면, 주가가 전쟁 종식을 미리 반영해 내려갔기 때문에 2027년에 이익을 늘릴 수 있는 선사가 상대적으로 부각받는다는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "예측 의심: 전쟁이 다시 일어나지 않는다면 운임 수준은 하향 안정화될 것으로 보인다는 겁니다.; 예측 의심: 팬오션은 2027년 증익 가시성이 높고 벌크선 이익 변동성도 크지 않을 것으로 예상된다는 겁니다.",
+          "body_chars": "4323",
+          "link": "https://m.stock.naver.com/research/industry/47264",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "id0161204a1",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "하나증권",
+          "title": "[하나증권]  유틸리티 Weekly: 한국가스공사의 LNG 트레이딩 확대",
+          "easy1_title": "한국가스공사가 LNG 트레이딩을 확대한다고 밝혔습니다",
+          "easy1_desc": "한국가스공사가 2027년 1월에 액화천연가스(LNG) 트레이딩 부서를 새로 만들어서 사업을 본격적으로 키우겠다고 밝혔는데요. 트레이딩용 물량을 기존에 들여오던 국내 계약 물량과 따로 관리하면서 점차 늘려갈 계획이라는 겁니다. 국내에서 수요가 바뀔 때 대응하는 방향으로 추진한다고 보았는데요. 쉽게 말하면 해외 판매를 본격적으로 늘리겠다는 셈이에요.",
+          "easy2_title": "AI 데이터센터 전력계통영향평가 제도를 바꾼다고 봅니다",
+          "easy2_desc": "정부가 인공지능 데이터센터(AIDC)를 빠르게 짓도록 돕기 위해서 전력계통영향평가 제도를 손질했다고 보았는데요. 수도권에서 계약전력 50메가와트(MW) 이하로 추진하는 곳은 평가를 면제하고 특구 안의 사업은 비기술적 평가를 생략하는 방식으로 바뀐다는 겁니다. 대규모 사업은 패스트트랙을 적용해서 빠르게 처리한다는 방침인데요. 쉽게 말하면 규모가 작은 비수도권 사업은 절차가 크게 줄어든다는 말이에요.",
+          "topic": "하나증권은 유틸리티 업종의 주간 동향을 정리하면서 한국가스공사의 액화천연가스(LNG) 트레이딩 확대와 주요 정책 변화를 분석했다고 밝혔습니다.",
+          "points": [
+            "한국가스공사 LNG 트레이딩 확대: 한국가스공사가 2027년 1월에 액화천연가스(LNG) 트레이딩 부서를 새로 만들어서 사업을 본격적으로 키울 예정이라고 밝혔는데요. 트레이딩용 물량을 기존 도입 물량과 따로 관리하면서 점차 확대할 계획이라는 겁니다. 언론에 따르면 2025년 실적은 139만톤으로 2024년 대비 32.4% 증가했다고 보았습니다.",
+            "AI 데이터센터 전력계통영향평가 개편: 정부가 인공지능 데이터센터(AIDC)를 빠르게 짓도록 돕기 위해 전력계통영향평가 제도를 손질했다고 밝혔는데요. 수도권에서 계약전력 50메가와트(MW) 이하로 추진하는 비수도권 사업은 전력계통영향평가 의무에서 면제된다는 겁니다. 대규모 메가프로젝트와 인허가 일괄처리 대상 사업에는 우선 평가를 적용한다고 보았습니다.",
+            "동서울변환소 주민협의체 합의: 정부와 한국전력, 지역 주민대표 등으로 구성된 동서울변환소 주민협의체 활동이 마무리되었다고 보았는데요. 주민투표 협의서안에 최종 합의하면서 제3자 검증이 최대 160일 동안 이뤄질 예정이라는 겁니다. 검증과 동시에 변환소 증설에 필요한 행정절차에 착수한다고 밝혔습니다."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "15063",
+          "link": "https://m.stock.naver.com/research/industry/47263",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i4b3a68b177",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "하나증권",
+          "title": "[하나증권]  SKT/KMW 적극 매수하세요",
+          "easy1_title": "에스케이텔레콤 주가 빠진다고 겁먹을 필요는 없어요",
+          "easy1_desc": "인공지능 데이터센터 관련 주식들이 떨어지면서 에스케이텔레콤에 대한 걱정이 커졌는데요, 금리가 내리고 있고 2027년부터 비과세 배당을 시작하기 때문에 상대적으로 매력적이라고 하나증권은 봤어요. 세후 배당수익률이 5%를 넘어가기 때문에 주가가 내릴 때 고배당주 역할을 해 줄 거라는 말이에요. 쉽게 말하면, 지금 주가 수준에서는 든든한 방어력이 생기는 셈이라는 겁니다.",
+          "easy2_title": "케이엠더블유는 내년 미국 시장을 보고 미리 잡아두세요",
+          "easy2_desc": "미국에서 거대한 주파수 경매가 열리고 삼성전자의 벤더 선정 가능성이 높아지면서 2027년에는 실적이 턴어라운드(실적 개선)될 것으로 하나증권은 예상했는데요, 스페이스엑스의 지상망 투자와 화웨이 제재에 따른 반사 이익까지 겹쳐서 장비 매출이 늘어날 거라는 거예요. 연말부터 유망한 주식으로 수급이 이동할 수 있다는 장점이 있는데, 대신 시기를 잘 맞춰야 한다는 점도 같이 고려해야 한다는 겁니다. 쉽게 말하면, 내년 호재를 보고 미리 선점하는 게 좋다는 말이에요.",
+          "topic": "하나증권은 에스케이텔레콤과 케이엠더블유를 각각 통신주와 통신장비주의 최선호 종목으로 꼽으며 적극 매수를 추천했어요.",
+          "points": [
+            "에스케이텔레콤 하방경직성: 인공지능 관련 주가 급락에도 불구하고 금리 하락과 비과세 배당 덕분에 세후 배당수익률이 5%를 넘어서 주가가 더 안 떨어지고 버틸 힘이 크다고 하나증권은 분석했어요. 뭔 소리냐면, 배당 매력 덕분에 주가가 방어될 수 있다는 말이에요.",
+            "케이엠더블유 실적 개선: 미국의 대규모 주파수 경매와 스페이스엑스의 투자 본격화에 힘입어 2027년에 무선통신장비 매출이 급증할 가능성이 높다고 하나증권은 전망했어요. 쉽게 말하면, 여러 해외 호재가 겹치면서 장비 부문 실적이 좋아질 수 있다는 겁니다.",
+            "종목별 투자 매력도: 통신서비스 업종에서는 에스케이텔레콤, 엘지유플러스, 케이티 순으로 매력적이라고 하나증권은 평가했는데요, 에스케이텔레콤은 배당과 요금제 개편 기대감이 커서 최선호주로 꼽혔다는 거예요. 통신장비주 중에서는 케이엠더블유를 단기 최선호주로 제시했어요."
+          ],
+          "evidence_ok": "5/6",
+          "bad_numbers": "",
+          "check_flags": "easy2 근거 원문에 없음",
+          "body_chars": "11333",
+          "link": "https://m.stock.naver.com/research/industry/47262",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i1fd3e2d603",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
           "writer": "유안타증권",
           "title": "[유안타증권]  디지털 자산 Daily",
-          "easy1_title": "비트코인은 6만 달러를 지켜냈지만 아직 오를 거라 보긴 이르다",
-          "easy1_desc": "유안타증권은 비트코인이 전일 하락을 멈추고 6만 달러 선을 방어했다고 밝혔는데요, 그렇다고 바로 반등할 거라고 단정할 수는 없다는 겁니다. 수급을 뜯어봤더니 현물 상장지수펀드(ETF) 유출은 줄었지만 온체인에서는 장기보유자의 매물이 오히려 늘었거든요. 쉽게 말하면, 매도 압력이 살짝 줄긴 했어도 수요 공백이 아직 해소되지 않은 셈이라는 말이에요.",
-          "easy2_title": "단기와 장기의 흐름이 엇갈려 저평가 속에서도 신중해야 한다",
-          "easy2_desc": "유안타증권은 시장의 밸류에이션 저평가가 한층 심화되어 MVRV-Z가 0.22까지 내렸다고 분석했는데요, 과거 사이클 바닥이 음수였다는 걸 보면 지금을 바닥 확정으로 보기엔 무리가 있다는 겁니다. 단기에는 유출 지속과 매물 출회로 약세를 보이겠지만, 장기적으로는 저평가와 제도권 편입에 근거해 강세 흐름을 보일 거라고 내다봤어요. 서둘러 바닥을 잡기보다 미국계 수급의 향방을 연휴 이후에 차분히 확인해야 한다는 점이 중요하다고 전했습니다.",
-          "topic": "유안타증권은 비트코인이 6만 달러 선을 지지하며 수급 교착 상태를 보이는 가운데, 단기 약세와 장기 강세 전망이 엇갈린다고 분석했어요.",
+          "easy1_title": "비트코인은 6만 달러 위에서 버텼지만 진짜 수요는 약해졌거든요",
+          "easy1_desc": "유안타증권은 비트코인이 6만 달러 선 위에서 지지되면서 하락세가 진정됐다고 분석했는데요, 반등 과정에 숏 포지션이 정리됐고 베이시스도 정상화됐다는 말이에요. 그런데 현물 수요는 오히려 약해져서 11월 현물 상장지수펀드(ETF) 유출은 사상 최대를 기록했거든요. 쉽게 말하면, 가격이 오른 게 진짜 수요가 살아나서라기보다는 선물 시장의 숏 포지션이 청소된 덕분이라는 셈이에요.",
+          "easy2_title": "가장 싸졌을 때를 나타내는 지표는 여전히 매력적인 자리라고 보입니다",
+          "easy2_desc": "현재 시장의 밸류에이션(가치 평가) 지표인 엠브이알브이-지(MVRV-Z)가 0.24를 기록해 저평가 구간을 유지하고 있다고 밝혔는데요, 장기보유자의 매물 출회는 계속되고 있다는 거예요. 단기적으로는 현물 수요가 약해서 약세를 보이겠지만, 장기적으로는 저평가 상태와 제도권 편입에 근거해 강세로 갈 수 있다는 전망이거든요. 쉽게 말하면, 지금은 가격이 싸져서 매력은 있지만 실제로 수요가 살아나기까지는 시간이 걸릴 수 있다는 겁니다.",
+          "topic": "유안타증권은 디지털자산 일일 보고서에서 비트코인의 가격 안정세가 진짜 수요 회복이 아니라 숏 포지션 정리 등에 기댄 것이며 기간별로 다른 흐름을 보일 것으로 분석했다고 밝혔습니다.",
           "points": [
-            "현물 ETF와 온체인 수급: 유안타증권은 현물 ETF 유출이 전일 대비 줄어들며 매도 압력이 다소 완화되었다고 파악했는데요, 반면 온체인 지표에서는 장기보유자의 매물 출회가 오히려 확대되었다는 겁니다. 뭔 소리냐면, 긍정적인 신호와 부정적인 신호가 서로 엇갈려 나타나고 있다는 말이에요.",
-            "밸류에이션 저평가 심화: 유안타증권은 MVRV-Z 지표가 0.22까지 내리면서 저평가가 한층 더 깊어졌다고 설명했는데요, 과거 바닥이 음수였던 점을 감안하면 지금을 바닥으로 확정하기는 어렵다는 겁니다. 쉽게 말하면, 싸긴 한데 그렇다고 당장 반등한다는 신호는 아니라는 셈이에요.",
-            "미국 수급과 향후 전망: 유안타증권은 미국 현물의 할인 현상이 이어지면서 수요 공백이 해소되지 않았다고 짚었는데요, 미국계 수급의 향방은 추수감사절 휴장이 끝난 뒤 연휴 이후에나 확인할 수 있을 거라는 전망이에요. 단기적으로는 약세가 이어지겠지만 중기는 중립, 장기는 강세를 보일 거라고 분석했습니다."
+            "파생 시장의 과열 해소: 유안타증권은 근월 선물이 만기를 넘기면서 왜곡됐던 베이시스가 12월물 기준 정상 프리미엄으로 복귀했다고 분석했는데요, 이 과정에서 숏 포지션이 정리되면서 파생 측면의 과열 신호가 일단락됐다는 말이에요. 쉽게 말하면, 선물 시장에서 불안하게 얽혀 있던 노이즈가 먼저 풀렸다는 겁니다.",
+            "사상 최대 규모의 현물 유출: 하지만 현물 수요의 약화는 계속 이어지고 있다고 지적했는데요, 전일 현물 상장지수펀드(ETF) 유출이 다시 확대되면서 11월 월간 유출은 사상 최대를 경신했다는 거예요. 온체인 상에서도 장기보유자의 매물 출회가 지속되고 거래소로 자금이 순유입됐다는 단점이 같이 따라온다는 겁니다.",
+            "기간별 시장 전망과 저평가: 엠브이알브이-지(MVRV-Z)가 0.24를 기록해 저평가 구간을 유지하고 있다고 설명했는데요, 이를 바탕으로 단기는 현물 수요 약화로 약세, 중기는 유출과 저평가가 부딪혀 중립, 장기는 저평가와 제도권 편입을 근거로 강세를 보일 것으로 전망했다고 해요. 쉽게 말하면, 당장에는 약하지만 길게 보면 가치가 낮아져 있는 상태라는 셈이에요."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "7174",
-          "link": "https://m.stock.naver.com/research/industry/47239",
+          "body_chars": "7227",
+          "link": "https://m.stock.naver.com/research/industry/47261",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "i842437482a",
+          "id": "i0b94a7be3b",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
           "writer": "유진투자증권",
-          "title": "[유진투자증권]  중국 리스크 소화 기간",
-          "easy1_title": "미국이 중국의 AI 기술을 막으려 법을 더 조이겠다고 봤습니다",
-          "easy1_desc": "미국 의회에서 중국이 AI 연산 자원을 모으지 못하도록 여러 가지 입법에 속도를 내고 있다고 해요. 대중국 수출 통제가 글로벌 컴퓨팅 수요에 얼마나 영향을 줄지 확실하지 않아서 반도체 업종 주가에 계속 부담이 된다는 말이에요. 쉽게 말하면, 미국의 규제 움직임 때문에 시장에 불확실성이 커진 셈이라는 겁니다.",
-          "easy2_title": "중국 수요가 줄어도 북미 쪽이 물량을 다 흡수할 수 있다고 봤습니다",
-          "easy2_desc": "중국이 2027년에 추가로 확보할 연산 자원은 글로벌 출하량에 비하면 미미한 수준이라고 해요. 그래서 중국향 공급이 제한되더라도 북미 고객사가 그 물량의 상당 부분을 받아낼 수 있다고 판단했다는 거예요. 장점은 수요 공백 우려가 잦아들면 주가가 반등할 수 있다는 건데, 대신 정확한 수요 감소 폭을 아직 가늠하기 어렵다는 단점도 같이 따라온다는 겁니다.",
-          "topic": "유진투자증권은 미국의 대중국 반도체 수출 통제 강화와 중국 메모리 수요 둔화가 반도체 업종에 미치는 영향을 분석했어요.",
+          "title": "[유진투자증권]  「디지털자산기본법」 3가지 관전 포인트",
+          "easy1_title": "금융회사들이 디지털자산 시장으로 들어올 길이 열렸습니다",
+          "easy1_desc": "유진투자증권은 디지털자산기본법 발의로 기존 금융회사가 디지털자산으로 사업 영역을 넓힐 제도적 기반이 마련됐다고 봤는데요, 그게 뭔 소리냐면 전통 금융업과 디지털자산 산업의 경계가 흐려진다는 말이에요. 금융 기능별로 새로운 경쟁과 협업이 이뤄진다는 장점이 있는데, 대신 기존 사업자들과의 주도권 싸움이 치열해질 수 있다는 점도 같이 따라온다는 겁니다. 쉽게 말하면 금융과 가상자산 판도가 크게 뒤바뀌는 셈이라는 말이에요.",
+          "easy2_title": "거래소 지분 규제와 스테이블코인 발행을 눈여겨봐야 합니다",
+          "easy2_desc": "그래서 유진투자증권은 이번 의원안에서 거래소 소유분산과 스테이블코인 발행 구조를 핵심 쟁점으로 꼽았는데요, 방법은 플랫폼운영자의 주식 소유 한도를 20%로 제한하고 은행 중심의 발행 컨소시엄을 유도하는 거라는 계획이에요. 규제가 명확해지면 사업 전략을 세우기 편해진다는 장점이 있는데, 대신 세부 이행 방식에 따라 기업들의 경영권이나 지배구조에 타격이 생길 수도 있다는 점도 있다는 겁니다. 쉽게 말하면 세부 규정에 따라 기업들의 희비가 엇갈린다는 말이에요.",
+          "topic": "유진투자증권은 디지털자산기본법 발의를 계기로 디지털자산 PBS 시장, 거래소 소유분산, 스테이블코인이라는 3가지 쟁점이 향후 산업 판도에 미칠 영향을 점검했다고 밝혔다.",
           "points": [
-            "중국 메모리 수요 둔화: 일부 중화권 하이퍼스케일러가 메모리 주문을 줄이면서 북미 고객과 온도 차이가 난다고 해요. 그 배경으로 GPU와 HBM 공급 부족이나 북미보다 낮은 데이터센터 투자수익률 같은 이유들을 꼽았다는 거예요. 쉽게 말하면, 공급망 병목 때문에 서버 구축이 늦어지면서 메모리 주문도 같이 밀리고 있다는 말이에요.",
-            "미국의 원격 접근 통제: 미국 상무부 산업안보국이 해외 데이터센터를 통한 첨단 반도체 원격 접근을 제한하는 규정을 발표했다고 해요. 의회에서도 원격 접근을 수출통제 대상으로 넣는 법안이 추진 중이라는 거예요. 뭔 소리냐면, 직접 칩을 보내는 것뿐만 아니라 인터넷으로 빌려 쓰는 방식까지 막겠다는 말이에요.",
-            "리스크 소화와 주가 반등: 북미 클라우드 업체들이 여전히 연산 자원 부족을 겪고 있어서 중국향 공급 제한을 충분히 흡수할 수 있다고 봤어요. 시장이 이런 리스크를 소화하고 나면 수요 공백 우려가 줄어들면서 반도체 업종 주가도 반등할 수 있다고 판단했다는 거예요. 쉽게 말하면, 지금의 불확실한 기간을 지나면 주가가 다시 힘을 얻을 수도 있다는 셈이에요."
+            "디지털자산 PBS 시장: 유진투자증권은 신탁업자 특례를 통해 증권사들이 보관업을 중심으로 디지털자산 PBS(Prime Brokerage Service) 시장에 직접 진출할 기반이 마련됐다고 봤는데요, 뭔 소리냐면 기존 증권업과 달리 보관, 주문집행, 거래시장 연결 등의 역량이 중요해진다는 말이에요. 국내 증권사 중 21개사가 신탁업 인가를 보유하고 있어 참여 기반이 넓은 편인데, 단일 사업자가 전부 하기보다는 전문기업과의 협업 형태로 발전할 가능성이 크다는 겁니다.",
+            "거래소 소유분산 규제: 유진투자증권은 의원안이 플랫폼운영자의 주식 소유 한도를 원칙적으로 20%로 제한하면서도 강제매각 조항은 두지 않아 시장 해석이 엇갈린다고 봤는데요, 뭔 소리냐면 의결권은 제한되지만 경제적 지분은 유지될 수 있어서 향후 이행 방식이 쟁점이라는 말이에요. 미래에셋의 디지털엑스 인수나 네이버파이낸셜과 두나무의 기업결합 같은 사례에서 경영권 프리미엄과 사업 시너지에 큰 변수로 작용할 전망이라는 겁니다.",
+            "스테이블코인: 유진투자증권은 금융위가 은행권 과반 지분을 전제로 기술기업의 최대주주 참여도 가능한 원화 스테이블코인 발행 구조를 제시했다고 봤는데요, 뭔 소리냐면 현행 은행법상 15% 출자 제한 때문에 최소 4개 은행이 참여해야 한다는 말이에요. 외화 스테이블코인의 경우 해외 발행사의 국내 진입 요건과 국내 사업자의 유통 허용 범위에 따라 핀테크 기업의 사업 영역이 달라질 수 있다는 겁니다."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "7265",
-          "link": "https://m.stock.naver.com/research/industry/47238",
+          "body_chars": "13845",
+          "link": "https://m.stock.naver.com/research/industry/47260",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ic4113263be",
+          "id": "i207f0c14a0",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
           "writer": "유진투자증권",
-          "title": "[유진투자증권]  소형 로켓, 다시 오는 기회",
-          "easy1_title": "소형 로켓 시장이 다시 기회를 맞이했습니다",
-          "easy1_desc": "유진투자증권에 따르면 과거에는 중간 단계에 머물렀던 소형 발사체 시장이 소형위성 군집이 늘어나면서 독립된 시장으로 자리 잡았다고 해요. 스페이스X의 팰컨9 라이드셰어가 소형위성 물량을 흡수하며 위기를 맞기도 했지만, 최근 뉴글렌과 벌컨의 사고 및 신규 중형 발사체의 지연으로 발사 공급이 부족해졌다는 거예요. 쉽게 말하면, 중형 발사체 공백으로 인해 소형 로켓이 다시 주목받는 셈이라는 말이에요.",
-          "easy2_title": "2029년에서 2030년 사이의 공백기가 기회 구간입니다",
-          "easy2_desc": "스타십의 라이드셰어가 가능해지는 시점이 2030년 전후로 예상되면서 2029년과 2030년 사이의 궤도 접근 공백이 소형 발사체의 가격과 수요에 모두 유리할 전망이라고 봤는데요, 방법은 위성과 서비스를 더한 통합 기업이나 국방 신속발사 계약을 보유한 기업에 주목하는 것이라는 계획이에요. 이 시기에는 가격보다 발사 확실성이 중요해진다는 장점이 있는데, 대신 소형위성 사업자의 발사 비용 상승이라는 리스크도 같이 따라온다는 겁니다.",
-          "topic": "유진투자증권은 중형 발사체의 공급 부족과 팰컨9 라이드셰어 예약 중단으로 인해 소형 발사체 시장이 2029~2030년에 새로운 기회를 맞이할 것이라고 분석했어요.",
+          "title": "[유진투자증권]  FCC, 스페이스X 궤도 데이터센터 100만 기 승인",
+          "easy1_title": "스페이스X의 우주 데이터센터 100만 기 배치를 허가받았다",
+          "easy1_desc": "미국 연방통신위원회(FCC)에서 스페이스X의 궤도 AI 데이터센터 위성망 스타마인드에 대해 최대 100만 기 배치를 승인했는데요, 이는 현재 지구 궤도에서 운용 중인 전체 위성인 약 1만 6,000기의 60배가 넘는 엄청난 숫자라는 거예요. 아마존이나 비아샛 같은 반대 측의 요구는 받아들여지지 않았고, 스페이스X는 올해 1월 말 신청서를 낸 지 약 10개월 만에 15년 기한의 허가를 받아냈다는 말입니다. 쉽게 말하면, 우주에 거대한 데이터센터를 지을 수 있는 첫 관 통과를 엄청난 규모로 해낸 셈이에요.",
+          "easy2_title": "지상 전력 한계를 넘어 우주로 가지만 해결할 숙제도 많다",
+          "easy2_desc": "스페이스X가 우주로 데이터센터를 올리려는 이유는 지상에서 전력 수요와 주민 반발이라는 벽에 부딪히고 있기 때문인데요, 우주에서는 태양광으로 전력 제약 없이 컴퓨팅을 늘릴 수 있다는 장점이 있거든요. 하지만 2035년까지 10만 기를 채우려면 매년 수많은 위성을 쏘아 올려야 해서 스타십의 주 단위 발사와 kg당 수백 달러대 단가가 얼마나 빨리 안착하느냐가 중요하다는 거예요. 쉽게 말하면, 전력 부족을 해결할 좋은 방법이지만 매년 엄청난 양을 쏘아 올려야 하는 만만찮은 숙제가 같이 걸려 있다는 겁니다.",
+          "topic": "유진투자증권은 미국 연방통신위원회가 스페이스X의 대규모 궤도 데이터센터 위성망 배치를 승인한 배경과 향후 과제를 분석했다고 밝혔다.",
           "points": [
-            "소형 로켓 시장 재평가: 유진투자증권은 전 세계 소형 발사체 발사가 2018년 13회에서 2025년 47회로 3.6배 늘어났다고 밝혔는데요, 과거에는 다음 로켓으로 가기 위한 중간 단계였지만 소형위성 군집이 늘면서 전용 발사가 독립된 시장으로 자리 잡았다는 거예요. 뭔 소리냐면, 소형위성을 원하는 궤도에 원하는 시점에 올려 주는 수요가 커졌다는 말이에요.",
-            "라이드셰어와 구조조정: 스페이스X가 2021년부터 팰컨9 라이드셰어를 정기 노선처럼 운영해 소형위성 물량을 흡수하면서 소형 로켓 시장은 위기를 맞았다고 분석했는데요, 그 결과 2022~2024년 사이에 버진오빗과 아스트라 등이 차례로 정리되었다는 거예요. 쉽게 말하면, 저렴한 라이드셰어가 발사 능력 없는 프로젝트를 걸러낸 셈이라는 말이에요.",
-            "발사 공급 병목과 수혜: 뉴글렌과 벌컨의 사고 및 뉴트론 등 신규 중형 발사체 지연으로 발사 공급에 제약이 걸렸다고 전했는데요, 스페이스X 또한 2028년 말 이후 팰컨9 라이드셰어 신규 예약을 중단할 것으로 알려져 소형 발사체 수요에 유리하게 작용한다는 거예요. 뭔 소리냐면, 2029년과 2030년 사이의 궤도 접근 공백으로 인해 소형 발사체의 가격과 수요가 모두 수혜를 입는다는 말이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 38383자)",
-          "body_chars": "38383",
-          "link": "https://m.stock.naver.com/research/industry/47237",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "ifff6524cbc",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "iM증권",
-          "title": "[iM증권]  2027년 증시 및 산업 전망",
-          "easy1_title": "앞으로 미국 경제는 물가와 금리 리스크에 노출될 거라는 겁니다",
-          "easy1_desc": "아이엠증권(iM증권)은 2027년 글로벌 경제를 분석해 봤더니, 주요국 성장률은 안정적이겠지만 여전히 물가와 금리 리스크가 남아 있다고 해요. 뭔 소리냐면, 금리가 급격히 내리기보다는 안정적인 중물가와 중금리 흐름이 이어진다는 말이에요. 쉽게 말하면, 성장은 유지되지만 차입 비용 부담은 계속 안고 가는 셈이라는 말입니다.",
-          "easy2_title": "한국 경제는 반도체 슈퍼사이클 덕분에 든든한 방패막이 있다는 겁니다",
-          "easy2_desc": "아이엠증권은 한국 경제를 살펴봤더니, 반도체 수출 호조 덕분에 성장 모멘텀도 강하고 재정건전성도 양호하다고 밝혔어요. 그 덕분에 대외 역풍에 시달리지 않을 수 있는 강한 인공지능(AI) 방패막을 갖게 되었다는 거예요. 쉽게 말하면, 탄탄한 경상수지 흑자와 반도체 덕분에 다른 나라보다 훨씬 유리한 위치에 있다는 겁니다.",
-          "topic": "2027년 증시 및 산업 전망과 대 차입경제 및 인공지능(AI) 경제의 흐름을 분석한 리포트예요.",
-          "points": [
-            "미국 AI 순환금융 구조: 아이엠증권은 인공지능(AI) 프론티어의 매출과 수익 확인이 순환고리의 지속가능성을 가르는 핵심 변수라고 분석했어요. 공급망의 이익은 지수 안에 쌓이지만 적자와 부채는 지수 밖에 남는 구조라는 겁니다. 결국 채권시장에서 조달된 돈이 주식시장으로 흘러들어 가는 구조여서 채권금리 등이 중요해진다는 말이에요.",
-            "한국 증시와 코스피 전망: 아이엠증권은 코스피가 종전 이후 80% 랠리 후 고점 대비 약 40% 조정받았다고 설명했어요. 2027년 상반기에는 인공지능(AI) 적용 단계로 소프트웨어, 보안, 피지컬 인공지능(AI)이 주도하고, 하반기에는 토큰 수요 급증과 함께 메모리 및 인공지능(AI) 인프라가 재가속될 것으로 전망했다는 거예요. 쉽게 말하면, 상반기는 활용이고 하반기는 다시 인프라 중심이라는 말입니다.",
-            "글로벌 경제의 중립금리 상승: 아이엠증권은 저물가 환경이 막히고 정부부채 증가와 인구사이클 및 인공지능(AI) 성장 모멘텀 등으로 자연이자율, 즉 중립금리 수준이 팬데믹 이후 상승하는 추세라고 봤어요. 지정학적 리스크 확산에 따른 국방 지출 증가와 기후변화 및 인공지능(AI) 투자 지출 확대가 차입 비용 상승 요인이라는 거예요. 결국 이러한 중립금리 상승은 장기국채금리의 하방경직성을 강화시키는 요인으로 작용한다고 밝혔습니다."
-          ],
-          "evidence_ok": "5/6",
-          "bad_numbers": "",
-          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 296842자); topic 근거 원문에 없음",
-          "body_chars": "296842",
-          "link": "https://m.stock.naver.com/research/industry/47236",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "i2f5bdbcde9",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "유진투자증권",
-          "title": "[유진투자증권]  고유가 터널 끝, 이륙 준비 완료",
-          "easy1_title": "내년에는 유가랑 환율이 내려서 비용 부담이 확 줄어들거든요",
-          "easy1_desc": "유진투자증권은 항공운송 업종을 분석하면서 여객 수요가 꾸준한 가운데 내년에는 유가와 환율이 떨어지면서 비용 부담이 덜어지는 구간이라고 봤는데요, 구체적으로 항공유 가격은 4Q26 150달러/배럴을 정점으로 27년 평균 113달러/배럴로 내려갈 것으로 추정했다는 겁니다. 비용이 줄어들면 이익이 늘어난다는 장점이 있는데, 다만 그 전에 4분기에는 고유가와 일회성 비용 영향이 이어진다는 점도 같이 언급했어요. 쉽게 말하면, 비용 부담이라는 터널을 지나 실적이 좋아질 채비를 마쳤다는 말이에요.",
-          "easy2_title": "제주항공이랑 대한항공 목표주가도 나란히 올려 잡았다는 겁니다",
-          "easy2_desc": "그래서 유진투자증권은 제주항공 목표주가를 10,000원으로, 대한항공 목표주가를 40,000원으로 각각 상향 조정했다고 밝혔는데요, 제주항공은 일본 성수기 효과와 중국 노선 확대에 기대를 걸었고, 대한항공은 탄탄한 화물 시황과 통합 시너지 가능성을 긍정적으로 짚었다는 거예요. 목표주가가 오르면서 투자자들에게는 매력적인 기회가 될 수도 있다는 점이 장점이지만, 증권사 추정치가 어긋날 위험도 있다는 겁니다. 쉽게 말하면, 두 항공사 모두 내년 실적 개선 폭이 클 것으로 기대된다는 말이에요.",
-          "topic": "유진투자증권은 여객 수요 강세와 유가 하락에 힘입어 항공운송 업종이 내년에 큰 폭의 실적 개선을 이룰 것으로 전망했어요.",
-          "points": [
-            "항공 여객과 화물 수요의 흐름: 유진투자증권은 인바운드와 환승 수요를 중심으로 여객 수요가 탄탄하다고 봤는데요, 실제로 2026년 1~9월 인천공항 국제선 여객은 5,819만명으로 사상 최대를 기록했다고 해요. 화물 역시 10월 물동량이 28만톤으로 2021년 이후 최대를 기록하며 좋은 흐름을 이어가고 있다는 겁니다.",
-            "제주항공 실적과 노선 확장: 유진투자증권은 제주항공이 일본 노선에서 국적사 1위 자리를 지키며 겨울 성수기 효과를 누릴 것으로 봤는데요, 9월에 확보한 중국 운수권과 한한령 해제 효과로 2027년 중국 노선 여객이 약 21만명 늘어날 것으로 기대했다는 거예요. 여기에 기단을 새로 바꾸면서 비용 절감 효과까지 더해질 전망이라는 말이에요.",
-            "대한항공의 실적 개선 전망: 유진투자증권은 대한항공의 4분기 실적이 고유가 부담으로 잠시 주춤하겠지만, 2027년에는 영업이익이 2조 2,467억원으로 크게 좋아질 것으로 추정했는데요, 유가와 환율이 모두 내리면서 비용 부담이 줄어들기 때문이라는 거예요. 게다가 통합 시너지가 본격적으로 실적에 반영되면 추가로 좋아질 여지도 있다고 판단했다는 말이에요."
-          ],
-          "evidence_ok": "6/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 쉽게 말하면, 두 항공사 모두 내년 실적 개선 폭이 클 것으로 기대된다는 말이에요.",
-          "body_chars": "26236",
-          "link": "https://m.stock.naver.com/research/industry/47235",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "iab6fe682e7",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "유진투자증권",
-          "title": "[유진투자증권]  로봇 인뎁스 해설 ③ – 미·중의 정체, 한국의 기회",
-          "easy1_title": "미국과 중국의 로봇 사업이 주춤하는 게 우리에겐 기회라는 겁니다",
-          "easy1_desc": "선두 기업인 테슬라는 외부 판매와 제품 공개 일정이 늦어졌고, 중국 로봇도 물량은 많은데 실제 작업 현장에 투입되는 건 더디다고 해요. 그래서 증권사는 지금의 정체기가 국내 기업들에게는 마지막 기회라고 봤다는 거예요. 쉽게 말하면, 남들이 주춤하는 사이에 우리가 치고 나갈 발판이 생겼다는 말이에요.",
-          "easy2_title": "국내 대기업들이 로봇 사업을 본격적으로 준비하고 있다는 겁니다",
-          "easy2_desc": "실제로 삼성과 현대차, LG 같은 국내 대기업들은 조직을 정비하고 관련 채용을 늘리며 사업화에 속도를 내고 있는데요. 그룹별로 역할 분담을 확실하게 하거나 부품 양산 준비를 뚜렷하게 하고 있는 모습이에요. 채용이 급증한 건 2027년부터 본격적으로 생산 능력을 키우려는 움직임이라는 겁니다.",
-          "topic": "미국과 중국의 로봇 사업이 정체된 틈을 타 국내 대기업들이 본격적인 사업화 준비에 나섰다는 유진투자증권의 분석이에요.",
-          "points": [
-            "테슬라 로봇 사업 지연: 테슬라는 외부 판매 일정과 V3 공개가 미뤄졌고 생산량도 목표에 미달했다고 해요. 공급망 선정이나 설계에서 어려움을 겪고 있다는 말이에요.",
-            "중국 로봇의 한계와 구조조정: 중국 휴머노이드는 출하량이 많아도 대부분 공연이나 교육용에 치우쳐 있어 실제 현장 투입이 더디다는 거예요. 대당 연간 운영비가 인건비를 넘어서는 수준이라 산업 구조조정도 본격화될 전망이라고 해요.",
-            "국내 대기업의 양산 준비: 국내 주요 그룹들은 계열사 간 분업과 수직계열화를 통해 양산 체제를 갖추고 있는데요. 관련 채용 공고를 보면 2027년 생산능력 확대를 전제로 발 빠르게 움직이고 있다는 겁니다."
+            "스타마인드 승인 규모: 미국 연방통신위원회(FCC)가 스페이스X의 스타마인드 위성 100만 기 배치를 승인했는데, 이는 현재 지구 궤도에 있는 전체 위성인 약 1만 6,000기의 60배가 넘는 규모라는 거예요. 경쟁사들의 반대에도 불구하고 1월 말 신청 후 약 10개월 만에 15년 기한의 허가를 따냈다는 말입니다. 쉽게 말하면, 우주 사업 역사상 보기 드문 초대형 승인이 떨어진 셈이에요.",
+            "우주행 배경: 지상에서는 데이터센터가 전력 수요와 주민 반발에 부딪히고 있어서 스페이스X가 우주로 눈을 돌렸다고 보았는데요, 우주에서는 태양광을 써서 전력 제약 없이 컴퓨팅을 늘릴 수 있다는 장점이 있거든요. 구글이나 엔비디아 관련 프로젝트처럼 경쟁도 이어지고 있다는 겁니다. 쉽게 말하면, 땅 위에서 겪는 전력 한계를 우주 태양광으로 풀겠다는 구상이에요.",
+            "남은 변수와 조건: 다만 궤도 잔해 계획 보완 전까지는 600km 이상 고도 배치가 제한되며 환경 비판도 남아있다고 하는데요, 2035년까지 10만 기를 채우려면 매년 연평균 1만 2,000기 가까이를 쏘아 올려야 하는 엄청난 속도를 내야 한다는 거예요. 결국 스타십의 주 단위 발사와 단가가 얼마나 빨리 안착하느냐가 성패를 가를 전망이라고 유진투자증권은 분석했어요."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "6571",
-          "link": "https://m.stock.naver.com/research/industry/47234",
+          "body_chars": "3039",
+          "link": "https://m.stock.naver.com/research/industry/47259",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ifc7a1412f5",
+          "id": "i263a57097f",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
           "writer": "유진투자증권",
           "title": "[유진투자증권]  안녕하세요 데일리에요 (로봇/방산/조선)",
-          "easy1_title": "일본 공작기계가 16달 연속 늘어난 배경을 뜯어봤습니다",
-          "easy1_desc": "유진투자증권은 10월 일본 공작기계 수주가 2,043.8억엔으로 전년 동기 대비 42.5% 늘어 역대 두 번째 규모를 기록했다고 밝혔는데요. 그 이유는 인공지능(AI) 데이터센터와 반도체 투자가 늘면서 제조장비 수요가 급증했기 때문이라는 겁니다. 업체들이 부품 재고를 1년 이상치까지 늘리는 모습도 나타났다는 단점 같은 현상도 함께 보이는데요. 쉽게 말하면, AI와 반도체 장비 수요 덕분에 관련 기계 주문이 꾸준히 늘어나는 셈이라는 말이에요.",
-          "easy2_title": "방산과 조선 분야의 주요 계약 변화를 살펴봤습니다",
-          "easy2_desc": "방사청이 내년 육군 다족보행로봇 도입을 추진하면서 2027년 11월까지 약 200대를 들여올 예정이라고 유진투자증권은 설명했는데요. 반면 한화오션은 태국 해군 호위함 사업에서 입찰요건서 절차상 하자 때문에 우선협상대상자 지위를 잃었다고 해요. 로봇 쪽은 물량을 확보하며 커지는 장점이 있는데, 조선 쪽은 절차 문제로 계약이 흔들릴 수도 있다는 점이 같이 나타난다는 겁니다. 쉽게 말하면, 방산은 로봇 도입이 본격화되고 조선은 절차 문제로 변수가 생겼다는 말이에요.",
-          "topic": "유진투자증권은 로봇, 방산, 조선 분야의 11월 주요 뉴스 흐름과 공작기계 및 계약 변동 사항을 짚어봤다고 밝혔어요.",
+          "easy1_title": "삼성은 로봇 사업을 전사 성장축으로 키우고 있습니다",
+          "easy1_desc": "유진투자증권은 삼성이 DS부문에 로보틱스팀을 신설하고 M&A 전담조직을 만들며 미국에서 억대 연봉 로봇 인재를 확보하는 등 로봇 관련 조직을 대폭 강화했다고 밝혔는데요. 이는 로봇이 단순한 연구개발 테마를 넘어 실제 제조 적용과 사업화 및 외부 투자까지 아우르는 전사 성장축으로 격상되는 흐름이 뚜렷하다는 거예요. 조직이 커지면서 실행력이 빨라지는 장점이 있지만, 투자 규모가 커지는 만큼 사업 성과에 대한 부담도 함께 커진다는 점을 염두에 둘 필요가 있습니다. 쉽게 말하면, 삼성의 로봇 행보가 전사적 역량을 집중하는 단계로 접어들었다는 말이에요.",
+          "easy2_title": "머스크의 초대형 컨테이너선 발주는 중국 조선소로 향했습니다",
+          "easy2_desc": "머스크가 24,000TEU급 LNG 이중연료 초대형 컨테이너선 최소 20척을 중국 헝리 조선소에 발주했다고 유진투자증권은 전했는데요. 당초 후동중화와 한국 조선사들도 후보군에 있었으나 최종 선택은 중국 헝리로 결정되었다는 겁니다. 이 과정에서 중국의 컨테이너선 경쟁력이 중형선을 거쳐 18,000TEU급과 24,000TEU Megamax까지 올라왔다는 점을 보여준 셈이에요. 중국 조선업의 기술과 건조 능력이 대형선 분야까지 빠르게 확장되고 있다는 점에서 한국 조선사들에게는 경계해야 할 신호로 보입니다.",
+          "topic": "유진투자증권은 로봇, 방산, 조선 분야의 주요 국내외 뉴스 동향과 증권가 소식을 정리해 전했습니다.",
           "points": [
-            "일본 공작기계 수주: 유진투자증권은 10월 일본 공작기계 수주가 2,043.8억엔으로 전년 동기 대비 42.5% 증가했다고 짚었는데요. AI 데이터센터와 반도체 투자가 커지면서 제조장비 수요가 급증한 배경이 있다고 설명했어요. 뭔 소리냐면, 관련 장비 수요가 몰리면서 일부 업체는 부품 재고를 1년 이상치까지 쌓아두기도 했다는 말이에요.",
-            "다족보행로봇 도입 추진: 방사청이 내년 육군 다족보행로봇 국내 구매를 추진하면서 2027년 11월까지 약 200대를 도입할 계획이라고 유진투자증권은 전했는데요. 국회 예산안에 관련 구매예산 200억원이 반영되었으며 현대로템과 LIG D&A의 2파전 양상이라고 해요. 쉽게 말하면, 민간 피지컬 AI 로봇으로 정찰과 수송 임무를 바꾸는 사업이 속도를 내는 중이라는 겁니다.",
-            "태국 호위함 사업 취소: 한화오션이 태국 해군 차세대 호위함 사업의 조달 취소 공고에 따라 우선협상대상자 지위를 잃었다고 유진투자증권은 공시를 바탕으로 밝혔는데요. 취소된 이유는 기술이나 가격 문제가 아니라 입찰요건서의 절차상 하자 때문이라고 해요. 새 입찰과 계약은 2027년 9월까지 마무리되는 일정으로 재참여 가능성이 열려 있다는 말이에요."
+            "삼성의 로봇 사업 전사적 격상: 유진투자증권은 삼성이 CES 2027 휴머노이드 공개를 앞두고 RX 개발조직을 강화하고 DS부문에 로보틱스팀을 신설했다고 설명했는데요. 핵심 인재 승진과 미국 채용 및 M&A 전담조직 신설까지 동시에 추진되면서 로봇 사업이 전사 성장축으로 자리 잡았다는 겁니다. 쉽게 말하면, 로봇이 삼전의 미래 먹거리로 확실히 낙점되었다는 말이에요.",
+            "한·페루 고위정책협의회 개최: 한국과 페루가 11월 27일 외교차관급이 참여하는 제9차 고위정책협의회를 개최할 예정이라고 유진투자증권은 언급했는데요. 페루 측 공식자료에서 방산산업 협력 강화를 이번 협의회의 주요 의제로 명시했다고 해요. 페루 측은 이를 향후 대통령 방한 및 정상외교 이전의 사전 협의 성격으로 설명했다는 겁니다.",
+            "머스크의 헝리 조선소 발주: 유진투자증권은 머스크가 24,000TEU급 LNG 이중연료 초대형 컨테이너선 최소 20척을 중국 헝리 조선소에 발주했다고 밝혔는데요. 경쟁 과정에서 당초 후동중화와 한국 조선사들도 후보군에 포함되어 있었다고 해요. 뭔 소리냐면, 중국의 컨테이너선 경쟁력이 중형선에서 18,000TEU급을 거쳐 24,000TEU Megamax까지 완전히 올라왔다는 점이 핵심이라는 말이에요."
           ],
           "evidence_ok": "5/6",
           "bad_numbers": "",
           "check_flags": "topic 근거 원문에 없음",
-          "body_chars": "2277",
-          "link": "https://m.stock.naver.com/research/industry/47233",
+          "body_chars": "2115",
+          "link": "https://m.stock.naver.com/research/industry/47258",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "i09cad3bafa",
+          "id": "i3d91cae416",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
-          "writer": "IBK투자증권",
-          "title": "[IBK투자증권]  [Europe Tracker] 유럽 자동차 10월: BEV YoY +61.4%, YTD 점유율 23.4%로 확대",
-          "easy1_title": "유럽 전기차 시장은 쑥쑥 크는데 기존 자동차 회사는 힘을 못 쓰네요",
-          "easy1_desc": "IBK투자증권에서 2026년 10월 유럽 자동차 시장을 살펴봤더니, 배터리 전기차인 BEV 판매량이 28.0만대로 작년보다 61.4%나 늘어나면서 전체 성장을 이끌었다고 해요. 그런데 폭스바겐이나 스텔란티스 같은 기존 완성차 업체들은 주요 브랜드 판매가 줄어들면서 점유율이 쪼그라들었다는 말이에요. 쉽게 말하면, 전기차로 판이 바뀌는 동안 옛날 강자들은 오히려 주춤하고 있는 셈이라는 겁니다.",
-          "easy2_title": "중국 전기차와 테슬라는 엄청나게 팔리면서 판을 흔들고 있어요",
-          "easy2_desc": "여기에 비야디(BYD)나 체리(Chery) 같은 중국 제조사들과 테슬라가 무섭게 치고 올라오면서 점유율을 크게 넓혔다는 분석인데요, 테슬라는 작년 10월보다 83.5% 늘었고 비야디도 128.1%나 급증했다고 해요. 테슬라와 중국 브랜드들이 저렴한 가격과 다양한 전기차를 무기로 유럽 시장을 파고들고 있다는 장점이 있는 반면, 기존 유럽 회사들 입장에서는 큰 위협이 된다는 겁니다. 결국 앞으로 가격 경쟁력과 전기차 신차를 얼마나 잘 내놓느냐가 승부를 가를 거라고 증권사는 전망했어요.",
-          "topic": "IBK투자증권은 2026년 10월 유럽 자동차 시장에서 배터리 전기차 수요가 급증하는 반면 전통 완성차 업체의 점유율은 축소되고 있다고 분석했어요.",
+          "writer": "신한투자증권",
+          "title": "[신한투자증권]  디지털자산기본법과 블랙록의 토큰화 MMF",
+          "easy1_title": "국내 디지털자산 제도가 만들어지면서 금융사 진출이 넓어질 겁니다",
+          "easy1_desc": "디지털자산기본법 정부안이 공개되면서 은행 중심 컨소시엄의 원화 스테이블코인(법정화폐 연동 디지털 자산) 발행과 국내 ICO(초기 코인 공개) 허용 방안이 제시됐는데요. 이렇게 국내 금융기관의 디지털자산 사업 참여를 위한 제도적 기반이 마련된다는 말이에요. 발행뿐만 아니라 수탁과 유통 등 관련 금융서비스의 제도화로 이어질 셈이라는 겁니다. 다만 스테이블코인 발행 주체나 거래소 대주주 지분 제한처럼 이해관계가 엇갈리는 부분은 앞으로 입법 과정에서 바뀔 수도 있다는 겁니다.",
+          "easy2_title": "블랙록이 토큰화 MMF를 내놓으면서 자금 운용 범위가 넓어졌어요",
+          "easy2_desc": "블랙록이 홍콩에서 토큰화 MMF(머니마켓펀드)인 BlackRock HKD Digital Liquidity Fund를 출시했는데, 전문투자자는 홍콩달러 스테이블코인으로 청약하고 환매할 수 있거든요. 기존에는 스테이블코인이 주로 지급결제나 거래 수단으로만 쓰였는데, 이제는 기업이 유휴자금을 토큰화 MMF에 투자하고 필요할 때 환매해 결제에 쓰는 구조로 확장된다는 말이에요. 블록체인 기반 금융서비스가 개별적인 결제를 넘어 기업의 자금이동과 운용을 포괄하는 인프라로 발전하고 있다는 겁니다.",
+          "topic": "신한투자증권은 디지털자산기본법 도입과 블랙록의 토큰화 MMF 출시를 바탕으로 국내외 디지털자산 산업의 제도화와 활용 범위 확대 가능성을 분석했어요.",
           "points": [
-            "전기차 중심의 시장 성장: IBK투자증권이 2026년 10월 유럽 신차 등록 데이터를 뜯어봤더니, 전체 신차 등록은 93.9만대로 작년보다 2.6% 늘어나는 데 그쳤지만 전기차인 BEV 판매량은 28.0만대로 61.4%나 급증했다고 해요. 덕분에 1~10월 누적 기준 BEV 점유율은 23.4%까지 올라가면서 가솔린 점유율인 20.8%와의 차이를 더 벌렸다는 말이에요. 쉽게 말하면, 전체 자동차 시장은 천천히 움직이는데 전기차 쪽만 엄청난 속도로 커지고 있다는 겁니다.",
-            "유럽 주요 완성차 업체의 부진: 반면 폭스바겐 그룹이나 스텔란티스, 르노 등 전통적인 유럽 자동차 회사들은 10월 판매량이 각각 9.0%, 7.0%, 8.5%씩 줄어들면서 대부분 부진을 겪었다고 해요. 폭스바겐은 스코다와 아우디 판매가 줄었고 스텔란티스는 오펠과 푸조가 부진을 이끌면서 전체 실적에 부담을 줬다는 말이에요. 다만 현대차그룹 안에서는 기아가 18.5% 늘어난 반면 현대차는 18.7% 줄어드는 등 브랜드마다 다른 모습을 보였다고 증권사는 설명했어요.",
-            "테슬라와 중국 브랜드의 약진: 이와 달리 테슬라와 중국 자동차 기업들은 중저가 전기차와 플러그인 하이브리드(PHEV) 라인업을 앞세워 판매를 크게 늘렸다고 하는데요, 비야디의 10월 점유율은 작년 1.5%에서 3.3%로 올라갔고 체리와 리프모터 등도 폭발적인 성장세를 보였다는 거예요. 중국 브랜드와 테슬라가 공격적으로 치고 들어오면서 유럽 완성차 자리를 빠르게 위협하고 있다는 셈이에요."
+            "디지털자산기본법 정부안 공개: 은행권 합산 지분 50% 초과 컨소시엄에 원화 스테이블코인 발행을 우선 허용하고 백서 신고와 정보 공시를 전제로 국내 ICO를 허용하는 방안이 제시됐는데요. 거래소 대주주 지분 보유 한도는 원칙적으로 20%, 금융위원회 승인 시 최대 34%로 제한하는 방안도 포함됐다는 말이에요. 기존 가상자산이용자보호법이 이용자 보호와 불공정거래 규제에 집중했다면 이번 정부안은 발행과 유통 등 산업 전반으로 규율 범위를 넓힌 셈이라는 겁니다.",
+            "블랙록 홍콩 토큰화 MMF 출시: 운용자산 규모 약 1억달러인 BlackRock HKD Digital Liquidity Fund가 출시됐으며 스탠다드차타드와 Ant International이 초기 투자자로 참여했는데요. 스테이블코인과 토큰화 MMF가 연결되면서 기업은 결제에 필요한 자금을 스테이블코인으로 갖고 있으면서 남는 돈은 MMF에 투자할 수 있게 된다는 말이에요. Ant International이 참여한 금융기관 협력 사례처럼 블록체인 금융이 기업 자금운용 인프라로 발전하고 있다는 겁니다.",
+            "비트코인 현물 ETF 자금 유출: 미국의 추가 긴축 우려가 이어지는 가운데 11월 미국 비트코인 현물 ETF의 누적 순유출 규모는 4억달러를 넘어섰고 비트코인은 5.5만달러 부근까지 하락한 뒤 반등했는데요. 매크로 불확실성에 따른 투자심리 위축과 수급 악화가 반등을 막고 있다는 말이에요. 가격 하락으로 단기 보유자의 손실 부담이 커져 반등 과정에서도 매도 물량이 나올 수 있어 단기적으로는 5.5만~5.8만달러가 지지 구간, 6.2만~6.4만달러가 저항 구간이라고 신한투자증권은 봤다는 겁니다."
           ],
-          "evidence_ok": "4/6",
+          "evidence_ok": "6/6",
           "bad_numbers": "",
-          "check_flags": "easy2 근거 원문에 없음; topic 근거 원문에 없음",
-          "body_chars": "28340",
-          "link": "https://m.stock.naver.com/research/industry/47232",
+          "check_flags": "",
+          "body_chars": "6068",
+          "link": "https://m.stock.naver.com/research/industry/47257",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ic30b571542",
+          "id": "i1647f67a08",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "유진투자증권",
+          "title": "[유진투자증권]  로봇 인뎁스 해설 ④ – 휴머노이드 시장 전망",
+          "easy1_title": "휴머노이드가 언제 얼마나 커질지 따져봤습니다",
+          "easy1_desc": "유진투자증권은 로봇이 사람의 물리적 노동을 대신한다는 전제 아래 성능과 경제성을 기준으로 장기 수요를 추정해 봤는데요, 그 결과 2030년 설치 대수는 13만 대에 이를 것으로 보인다는 겁니다. 초기에는 연구용이나 현장 데이터 확보 목적이 크지만 점차 보급이 본격화될 텐데요, 쉽게 말하면 기술이 성숙해지고 가격이 낮아지는 시점에 맞춰 시장이 단계별로 열린다는 말이에요.",
+          "easy2_title": "어느 부품사에 주목해야 할지도 살펴봤습니다",
+          "easy2_desc": "2027년부터 현장 배치가 시작되면서 완제품 업체에 관심이 쏠릴 텐데요, 부품 공급망이 이제 막 형성되는 단계라 병목 부품을 공급하는 기업이 중요해진다는 거예요. 부품사를 자세히 들여다보면 공급망 진입에 따른 기회가 있다는 장점이 있는데, 대신 양산 물량이 더디게 늘어날 수도 있다는 점은 염두에 둬야 한다는 겁니다.",
+          "topic": "유진투자증권은 휴머노이드 시장의 장기 수요와 권역별·분야별 보급 전망을 분석했다고 밝혔습니다.",
+          "points": [
+            "산업용 휴머노이드 전망: 산업용 초기 수요는 물류와 창고 및 일반 제조가 주도할 것으로 유진투자증권은 추정했는데요, 2030년 산업용 설치 대수의 약 75%를 차지한다는 겁니다. 가격과 성능이 보급 속도를 좌우하는 구조인데, 2040년 설치 대수는 기본 시나리오 기준으로 289만 대에 이를 것으로 보인다는 말이에요.",
+            "가정용 휴머노이드 전망: 가정용 수요는 가구 지출 한도와 가사노동의 가치를 기준으로 추정했다고 하는데요, 초기 수요는 미국 등 서구권의 다인 가구를 중심으로 형성될 것으로 보인다는 겁니다. 2035년에는 가정용 출하량이 산업용을 추월하고, 2040년 가정용 설치 대수는 498만 대에 달할 거라는 셈이에요.",
+            "부품 공급망과 병목 현상: 휴머노이드 부품 공급망은 이제 막 형성되는 단계라서 어떤 기업이 완제품 업체의 밸류체인에 진입하는지가 주요 관심사라고 유진투자증권은 분석했는데요, 양산 물량이 더디게 늘어날 가능성이 있다는 거예요. 그래서 부품사 중에서는 병목 부품 공급사에 주목할 필요가 있다는 말입니다."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "예측 의심: 가격과 성능이 보급 속도를 좌우하는 구조인데, 2040년 설치 대수는 기본 시나리오 기준으로 289만 대에 ",
+          "body_chars": "5955",
+          "link": "https://m.stock.naver.com/research/industry/47256",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i0cfa93d38b",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "iM증권",
+          "title": "[iM증권]  쉽지 않음에도, 다시 한번",
+          "easy1_title": "중국 차가 해외로 몰려오고 미국 관세는 그대로 남아 부담이에요",
+          "easy1_desc": "증권사는 2027년 글로벌 자동차 수요가 9,300만대로 정체될 거라고 봤는데요. 중국 안에서 다 못 팔린 물량이 해외로 쏟아지면서 유럽이나 신흥국에서 경쟁이 더 치열해진다는 말이에요. 게다가 15% 대미 관세도 그대로 유지될 가능성이 높아서 관세가 줄어들던 지난 해 같은 재미는 보기 어렵다는 겁니다. 쉽게 말하면, 시장 전체는 조용한데 바깥에서 밀려오는 경쟁 때문에 버티기가 더 팍팍해진 셈이라는 말이에요.",
+          "easy2_title": "기아는 유럽과 내수에서 크고 현대차는 인도와 국내에서 답을 찾아요",
+          "easy2_desc": "그래서 증권사는 현대차와 기아가 지역마다 다른 전략으로 이 시기를 지나갈 거라고 분석했는데요. 기아는 유럽과 국내에서 전기차와 신차를 앞세워 판매를 늘리겠다고 했고, 현대차는 인도 공장 증산과 국내 신차 효과로 빈자리를 채운다는 계획이에요. 판매가 늘어나는 장점이 있지만, 그 과정에서 인센티브나 비용이 불어날 수도 있다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 각자 잘하는 지역의 판매량을 끌어올려 전체 실적을 방어해야 한다는 말이에요.",
+          "topic": "2027년 글로벌 자동차 시장의 경쟁 구도 변화와 현대차·기아의 지역별 대응 전략에 대한 증권사의 분석이에요.",
+          "points": [
+            "중국 물량의 해외 진출: 증권사는 중국이 신에너지차 지원을 줄이면서 남는 재고를 수출로 털어내고 있다고 밝혔어요. 뭔 소리냐면, 중국 차들이 유럽과 신흥국 시장으로 몰려가면서 레거시 완성차 업체들의 자리를 위협하고 있다는 말이에요.",
+            "관세와 환율의 영향: 대미 관세율이 15%로 유지되면서 지난 해 같은 관세 감소 효과는 사라진다고 분석했어요. 게다가 원/달러 환율이 낮아지고 원자재와 메모리 반도체 가격 부담까지 더해져서 이익 추정은 보수적으로 잡아야 한다는 겁니다.",
+            "현대차와 기아의 방어력: 미국과 인도 비중이 높은 현대차와 기아는 상대적으로 방어력이 좋다고 진단했어요. 다만 유럽 시장에서는 중국 업체들과의 경쟁 속에서 인센티브 비용을 어떻게 관리하느냐가 실적의 중요한 갈림길이 될 거라고 봤다는 거예요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 66027자)",
+          "body_chars": "66027",
+          "link": "https://m.stock.naver.com/research/industry/47255",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "ib7b94089cc",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "iM증권",
+          "title": "[iM증권]  녹록지 않은 업황, 만만치 않은 경쟁",
+          "easy1_title": "올해 조선주는 수주가 늘었는데도 테마 기대감이 약해져 주가가 하락했다",
+          "easy1_desc": "2025년에는 수주가 줄었는데도 주가가 올랐던 반면, 2026년에는 수주가 늘었는데도 주가는 오히려 떨어지는 정반대 흐름이 나타났는데요. 이는 본업인 상선 업황보다는 미국과의 조선업 협력 같은 테마성 호재에 주가가 더 크게 움직였기 때문이라는 겁니다. 쉽게 말하면, 기대했던 테마의 진행이 더뎌지면서 주가가 하락세를 탔다는 말이에요.",
+          "easy2_title": "중국이 물량을 쓸어가고 후판 가격도 올라 내년 업황이 만만치 않다",
+          "easy2_desc": "중국 조선소가 공격적으로 설비를 늘려 전세계 발주량의 대부분을 흡수하고 있는 데다가, 인도량 증가로 주요 원가인 후판 가격까지 상승 압력을 받고 있거든요. 증권사는 이 때문에 2027년부터 2028년까지의 수주와 실적 업황이 녹록지 않을 것으로 전망했는데요. 장점은 주가가 많이 내려 밸류에이션 매력이 높아졌다는 점이지만, 동시에 원가 상승과 중국과의 경쟁이라는 단점도 같이 이어진다는 겁니다.",
+          "topic": "iM증권은 테마성 기대감이 줄어든 시점에서 본업인 상선 업황과 중국과의 경쟁, 원가 상승 요인을 바탕으로 2027년 조선업 전망을 분석했어요.",
+          "points": [
+            "수주와 주가의 디커플링: 조선업 주가는 전통적으로 실적의 선행지표인 수주량에 비례해 움직여 왔지만, 2025년과 2026년에는 수주 증감과 주가 흐름이 정반대로 나타났는데요. 뭔 소리냐면, 본업의 실적보다는 미국 함정 협력 같은 테마성 이벤트에 주가가 민감하게 반응했다가 관련 기대감이 줄어들며 주가가 하락했다는 말이에요.",
+            "중국 조선소의 설비 확장: 중국 주요 조선사들이 도크와 조선기지를 신설하고 블록 조립 설비를 확충하며 생산 능력을 공격적으로 늘리고 있거든요. 증권사는 중국의 연간 인도량이 2020년 1,219만CGT에서 2028년 4,806만CGT로 급증할 것으로 보았는데요. 쉽게 말하면, 늘어난 전세계 발주량의 대부분을 중국이 흡수하면서 한국의 수주 점유율은 역대 최저 수준으로 떨어졌다는 겁니다.",
+            "후판 가격 상승 압력: 중국의 조선용 후판 소비량과 생산량이 꾸준히 늘어나면서 2027년 이후에는 후판 수요가 더욱 확대될 것으로 전망되는데요. 뭔 소리냐면, 건조량이 늘어나며 주요 원가인 후판 가격의 상승 압력이 커져 2027년과 2028년 실적에 부담으로 작용할 수 있다는 말이에요."
+          ],
+          "evidence_ok": "5/6",
+          "bad_numbers": "",
+          "check_flags": "예측 의심: 중국의 조선용 후판 소비량과 생산량이 꾸준히 늘어나면서 2027년 이후에는 후판 수요가 더욱 확대될 것으로 ; 긴 원문 — 앞 30000자만 읽음(전체 47222자); point3 근거 원문에 없음",
+          "body_chars": "47222",
+          "link": "https://m.stock.naver.com/research/industry/47254",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "iec454a0dc0",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "신한투자증권",
+          "title": "[신한투자증권]  공급과잉의 Deja Vu",
+          "easy1_title": "공급과잉은 과거 고성장기에 결정된 생산능력에서 시작되는 거랍니다",
+          "easy1_desc": "신한투자증권은 설비투자가 과거의 높은 성장률을 바탕으로 결정되지만 설비가 완공되는 시점에는 수요 성장률이 이미 낮아져 있기 때문에 공급과잉이 발생한다고 봤는데요. 철강과 자동차 산업 모두 고성장기에 늘어난 생산능력이 수요 둔화 이후에도 쉽게 줄어들지 않으면서 가동률 하락과 수익성 악화로 이어졌다는 거예요. 쉽게 말하면, 옛날에 잔뜩 지어 둔 공장들이 수요가 꺾였는데도 그대로 남아 있어서 문제가 생긴 셈이라는 말이에요.",
+          "easy2_title": "과잉기의 승자는 가장 많이 만드는 기업이 아니라 버티는 기업입니다",
+          "easy2_desc": "그래서 신한투자증권은 모든 대응의 성패가 투입 자본이 자본비용 이상을 버는지와 잉여현금흐름 창출 여부에 달렸다고 분석했는데요. 자동차 산업의 경쟁이 판매량 중심에서 자본효율로 옮겨가고 있는 만큼, 가동률과 믹스, 자본수익률 개선 여부를 따져 실적 방어형 기업을 핵심으로 두는 전략이 필요하다고 제안했어요. 철저한 원가 통제와 현금 창출력을 지닌 기업만 살아남는다는 장점이 있지만, 그만큼 프리미엄 시장에서의 경쟁이 치열해진다는 단점도 같이 따라온다는 겁니다.",
+          "topic": "자동차와 철강 산업에서 나타난 공급과잉의 원인과 구조조정, 수출 및 보호무역 대응 방안을 분석한 리포트예요.",
+          "points": [
+            "생산능력과 수요의 불일치: 신한투자증권은 설비투자가 결정되는 시점과 공장이 완공되는 시점의 수요 격차가 공급과잉을 야기한다고 분석했는데요. 철강은 15년간 생산능력이 117% 늘어나는 동안 생산은 91% 증가하는 데 그쳤고, 자동차도 생산능력은 25년간 두 배 늘었지만 생산은 정체되면서 가동률이 62%까지 떨어졌다는 거예요. 뭔 소리냐면, 수요는 꺾였는데 생산 시설은 오히려 너무 많이 늘어나서 처치 곤란이 되었다는 말이에요.",
+            "대응책의 한계와 밀어내기 수출: 그래서 기업들은 설비 감축이나 수출 확대로 대응하고 있으나 그 한계가 뚜렷하다고 밝혔는데요. 설비 감축은 막대한 비용과 고용 문제로 더디게 진행되고, 수출은 과잉을 해외로 넘길 뿐이어서 단가 하락과 통상 장벽이라는 부메랑으로 돌아온다는 거예요. 수출이 단기적으로는 내수 감소분을 메워 주지만, 결국 해외 재고 누적과 관세 인상 같은 새로운 장벽을 부른다는 단점이 있거든요.",
+            "보호무역과 투자 전략: 마지막으로 신한투자증권은 미국과 EU 등이 관세 장벽을 높이면서 시장이 지역별로 분절되고 있다고 진단했는데요. 이러한 환경에서 살아남기 위해 단순 판매량보다 자본효율성과 3년 평균 잉여현금흐름 기반의 저평가 기업을 중심으로 실적 방어형 전략을 세워야 한다고 강조했어요. 쉽게 말하면, 앞으로는 물량만 쫓는 기업 대신 현금을 확실히 쥐고 있는 체력 좋은 기업에 집중해야 한다는 겁니다."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 94740자)",
+          "body_chars": "94740",
+          "link": "https://m.stock.naver.com/research/industry/47253",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i5dde28269d",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "신한투자증권",
+          "title": "[신한투자증권]  역대급 블프, K뷰티 존재감 Up",
+          "easy1_title": "블랙프라이데이 대박 덕분에 K뷰티가 웃었습니다",
+          "easy1_desc": "신한투자증권은 최근 블랙프라이데이를 맞아 미국과 유럽 시장에서 한국 화장품 수출이 엄청난 초강세를 이어가고 있다고 밝혔는데요. 10월 화장품 수출이 전년동기대비 57% 증가한 데 이어 11월 1일부터 20일까지는 62%나 늘어나면서 기세가 더욱 거세졌다는 말이에요. 수출이 폭증한 덕분에 관련 주가도 강세를 보인 셈이라는 겁니다. 쉽게 말하면, 역대급 수요를 만난 K뷰티의 존재감이 확실히 커졌다는 겁니다.",
+          "easy2_title": "미국 아마존 100위 안에 한국 제품들이 줄을 서 있습니다",
+          "easy2_desc": "미국 아마존 Top 100위 안에 진입한 한국 기초 화장품 제품 수가 6월 26개에서 11월 34개로 꾸준히 우상향하고 있다고 봤는데요. 에이피알이나 아모레퍼시픽 같은 브랜드사뿐만 아니라 코스맥스 같은 제조사 제품들도 15가지 이상 랭크되며 인디뷰티 수출 트렌드를 이끌고 있다는 계획이에요. 기초 제품뿐만 아니라 헤어와 바디케어에서도 랭크가 유지되는 장점이 있는데, 대신 품목별로 인기가 집중되는 곳이 다르다는 점도 같이 따라온다는 겁니다. 쉽게 말하면, 미국과 유럽 주요국 아마존에서 K뷰티 제품들이 상위권을 골고루 차지하고 있다는 말이에요.",
+          "topic": "신한투자증권은 블랙프라이데이 특수를 맞아 미국과 유럽 등 글로벌 시장에서 K뷰티 화장품 수출과 아마존 입점 순위가 가파르게 상승하며 강력한 존재감을 드러내고 있다고 분석했어요.",
+          "points": [
+            "수출 증가세: 신한투자증권은 미국과 유럽을 중심으로 한국 화장품 수출이 초강세를 지속하고 있다고 밝혔는데요. 10월 화장품 수출은 전년동기대비 57% 증가한 데 이어 3개월 평균 43%를 기록했고, 11월 1일부터 20일까지는 62%나 급증했다고 설명했어요. 뭔 소리냐면, 블랙프라이데이 특수를 타면서 수출 증가세가 한층 더 가팔라졌다는 말이에요.",
+            "미국 아마존 입점 확대: 신한투자증권은 미국 아마존 뷰티 카테고리에서 Top 100위에 진입한 한국 제품 수가 6월 26개에서 10월 23개를 거쳐 11월에는 34개로 늘어났다고 분석했는데요. 특히 기초 화장품 부문에서는 47개 제품이 진입했고 색조 부문에서도 10개 제품이 진입해 역사적 상단을 높였다고 봤어요. 쉽게 말하면, 기초와 색조를 가리지 않고 아마존 순위권 진입이 꾸준히 늘어나는 추세라는 겁니다.",
+            "유럽 시장 성과: 신한투자증권은 영국, 프랑스, 이탈리아 등 유럽 시장에서도 에이피알 메디큐브 제품들이 순위를 장악하고 있다고 밝혔는데요. 프랑스와 이탈리아에서의 수요 급등은 9월 하순부터 10월에 발생한 이벤트여서 4Q26 실적에 반영될 것으로 추정했어요. 제조사 측면에서는 코스맥스가 다수 제품을 진입시키며 수혜를 입고 있다는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 55983자)",
+          "body_chars": "55983",
+          "link": "https://m.stock.naver.com/research/industry/47252",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "ib542ac8e1e",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "키움증권",
+          "title": "[키움증권]  4분기 매출 전망 하향 조정 불가피",
+          "easy1_title": "유통 업체들의 4분기 매출 전망을 낮출 수밖에 없겠는데요",
+          "easy1_desc": "산업통상부에서 발표한 10월 주요 유통업체 매출 동향을 살펴봤더니, 명절 시점 차이를 감안해도 주요 유통 업태의 매출이 둔화되고 있는 것으로 추산된다고 해요. 11월 소비자심리지수 하락과 자산효과 악화, 원화 강세 영향 등을 고려해 보면 주요 유통 업체들의 4분기 매출 전망치는 하향 조정이 불가피할 것으로 키움증권은 판단했다는 겁니다. 쉽게 말하면, 소비 심리가 위축되면서 전체적인 유통 실적이 주춤할 수밖에 없다는 말이에요.",
+          "easy2_title": "편의점은 선방하겠지만 백화점은 타격을 입을 셈이에요",
+          "easy2_desc": "세부 업태별로 살펴보면 편의점은 원화 강세에도 외국인 매출 성장세가 견조하고 가공식품 가격 인상 수혜를 입어 상대적으로 양호한 성장률을 기록했는데요, 반면 백화점은 자산효과 악화와 원화 강세로 내외국인 명품 구매가 줄어들면서 부정적인 영향을 받을 가능성이 높다고 해요. 편의점은 상대적으로 선방한다는 장점이 있는데, 대신 백화점 쪽은 소비심리 둔화 직격탄을 맞게 된다는 점이 함께 나타난다는 겁니다. 쉽게 말하면, 업종에 따라 희비가 엇갈리고 있는 셈이라는 말이에요.",
+          "topic": "키움증권은 10월 주요 유통업체 매출 둔화와 매크로 환경 악화를 근거로 유통 업태의 4분기 매출 전망 하향 조정이 불가피하다고 밝혔다.",
+          "points": [
+            "10월 매출 둔화 흐름: 산업통상부 발표에 따르면 편의점과 온라인 채널만 9월 대비 10월 매출 성장률이 개선되었고 백화점, 할인점, SSM은 모두 전월대비 성장률이 둔화된 것으로 나타났는데요, 백화점의 경우 명품 매출 성장률이 8월 +15.6%에서 9월 +6.9%를 거쳐 10월 +1.0%로 빠르게 둔화된 영향이 컸다고 해요. 뭔 소리냐면, 명절 시점 차이도 있었지만 자산효과 악화와 원화 강세가 겹치면서 전체 성장률이 꺾였다는 말이에요.",
+            "할인점과 편의점의 엇갈린 흐름: 할인점은 9월 +4.0%에서 10월 -14.1%로 매출 성장률이 악화되었으나 이는 대부분 명절 시점 차이 영향에 기인한 것으로 분석됐는데요, 홈플러스가 11월 27일부터 상품 매입 자금 부족에 따른 67개 점포 영업의 일시 중단을 선언한 만큼 경쟁점들의 반사수혜는 확대될 수 있다고 키움증권은 봤어요. 반면 편의점은 9월 +2.9%에서 10월 +3.6%로 소폭 개선되며 상대적으로 양호한 흐름을 보였다는 겁니다.",
+            "소비심리지수 하락과 가계 구매력: 실제 한국은행에 따르면 국내외 증시 조정이 지속되고 대출금리가 상승하면서 11월 소비자심리지수는 전월대비 2.3pt 하락한 103.1을 기록했다고 해요. 올해 7월부터 한국은행 기준금리 인상이 시작되어 7월 이후 누적 +75bp 인상된 점을 감안한다면, 시차를 두고 가계 구매력에 추가적인 영향을 줄 가능성도 고려할 필요가 있다고 키움증권은 분석했어요. 쉽게 말하면, 금리 인상과 증시 조정 여파가 가계의 지갑을 더 닫게 만들 수 있다는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "",
+          "body_chars": "5519",
+          "link": "https://m.stock.naver.com/research/industry/47251",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "if5d96b586f",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
           "writer": "IBK투자증권",
           "title": "[IBK투자증권]  [IBKS Daily] 인터넷/게임",
-          "easy1_title": "크래프톤이 몸집은 줄이고 속도는 높인 새 인공지능 모델을 내놨어요",
-          "easy1_desc": "크래프톤이 25일에 직접 자체 개발한 300억 개 매개변수 거대언어모델(LLM)인 라온-1 미니 정식 버전을 공개했는데요, 전체 중 40억 개만 활성화하는 전문가 혼합(MoE) 구조를 써서 추론 비용과 응답 시간을 줄였다고 해요. 여러 대화에서 지시를 반영하는 능력을 보는 멀티챌린지에서 64.9점을 기록해 프리뷰보다 5.9점 올랐다는 겁니다. 쉽게 말하면, 가볍고 빠른 방식으로 성능까지 더 끌어올렸다는 셈이에요.",
-          "easy2_title": "인공지능 비서가 뜨면서 네이버와 카카오의 고민이 깊어졌어요",
-          "easy2_desc": "이용자를 대신해 검색부터 예약이나 고객센터 문의까지 처리하는 인공지능 에이전트 서비스 피클이 인기를 끌고 있는데요, 이 외부 에이전트의 접근을 어디까지 열어줄지가 네이버와 카카오의 새로운 과제로 떠올랐다는 겁니다. 네이버는 대리 문의에 응대하지 않기로 했고 카카오는 연동 조치가 없다는 입장이지만, 양사 모두 외부 에이전트 접근 정책은 아직 마련하지 않은 상태라는 거예요. 차단하는 쪽과 아직 정하지 않은 쪽으로 나뉘는데, 장점은 플랫폼 보안을 지키는 거지만 대신 이용자 편의를 넓히기는 어렵다는 단점도 같이 따른다는 겁니다.",
-          "topic": "인터넷 및 게임 업종의 주요 기업 동향과 인공지능 기술 공개 및 대응 현황에 관한 내용이에요.",
+          "easy1_title": "카카오게임즈는 오딘 확장과 신작 출시를 준비하고 있거든요",
+          "easy1_desc": "IBK투자증권은 카카오게임즈가 오딘 발할라 라이징의 12월 대형 업데이트와 중국 진출을 준비하고 있다고 밝혔는데요. 후속작 오딘Q 발키리스 콜을 2027년 1월 한국과 대만과 일본에 동시 출시할 예정이라는 겁니다. 쿼터뷰와 강화된 PvP로 하드코어 다중접속역할수행게임(MMORPG) 이용자를 겨냥해 원작과 방향을 달리했다고 보입니다. 쉽게 말하면 오딘 IP를 두 갈래로 넓혀서 공략하겠다는 셈이에요.",
+          "easy2_title": "네이버는 챗GPT를 제친 의료 특화 AI 기술보고서를 공개했는데요",
+          "easy2_desc": "IBK투자증권은 네이버가 의학 지식뿐 아니라 복잡한 환자 상담까지 수행하는 의료 특화 인공지능(AI) KMed-31B 기술보고서를 공개했다고 전했습니다. 고난도 의료 상담 능력을 평가하는 헬스벤치 하드에서 51.48점을 기록했다는 건데요. 병원 자체 서버에서 운영할 수 있게 개발돼 민감한 진료기록을 외부로 보내지 않아도 되는 장점이 있다고 합니다. 쉽게 말하면 헬스케어 전담조직과 병원용 소프트웨어 사업을 확대하겠다는 계획이라는 말이에요.",
+          "topic": "IBK투자증권은 인터넷과 게임 업종의 주요 기업 동향과 국내외 이슈를 정리해 분석했다고 밝혔습니다.",
           "points": [
-            "크래프톤의 AI 모델 공개: 크래프톤이 300억 개 매개변수 대형언어모델(LLM)인 라온-1 미니 정식 버전을 공개했는데요, 일부만 활성화하는 전문가 혼합(MoE) 구조를 써서 비용과 시간을 줄였다고 해요. 해외 동급 모델 6종보다 높은 점수를 기록했다는 겁니다.",
-            "멀티챌린지 성능 평가: 이어지는 대화에서 지시를 반영하는 능력을 평가하는 멀티챌린지에서 64.9점을 기록해 프리뷰보다 5.9점 올랐는데요, 이는 크래프톤에 따르면 해외 동급 모델 6종보다 높은 점수라고 해요. 쉽게 말하면, 성능 비교에서 확실히 눈에 띄는 결과를 냈다는 말이에요.",
-            "네이버와 카카오의 정책 과제: 인공지능 비서 피클이 인기를 끌면서 네이버와 카카오가 외부 에이전트 접근을 어디까지 허용할지 고민하고 있는데요, 네이버는 대리 문의에 응대하지 않기로 했고 카카오는 관련 조치가 없는 상태라는 겁니다. 양사 모두 아직 외부 에이전트 접근 정책을 마련하지 않았다는 거예요."
+            "카카오게임즈 오딘 확장: IBK투자증권은 카카오게임즈가 12월 대형 업데이트와 중국 진출을 준비하고 있으며 후속작 오딘Q를 2027년 1월 한국·대만·일본에 동시 출시할 예정이라고 봤습니다. 오딘Q는 쿼터뷰와 강화된 PvP로 하드코어 MMORPG 이용자를 겨냥해 원작과 방향을 달리했다는 건데요. 과금과 경쟁 콘텐츠 운영 수준이 흥행 변수로 꼽힌다는 겁니다.",
+            "네이버 의료 특화 AI: IBK투자증권은 네이버가 의학 지식과 복잡한 환자 상담을 수행하는 의료 특화 AI KMed-31B 기술보고서를 공개했다고 밝혔습니다. 헬스벤치 하드에서 51.48점을 기록하며 고난도 의료 상담 능력을 평가받았다는 건데요. 병원 자체 서버에서 운영해 민감한 진료기록을 외부로 보내지 않아도 된다는 장점이 있다고 보입니다.",
+            "투자 판단과 책임: IBK투자증권은 본 자료가 과거의 자료를 기초로 한 투자 참고 자료라고 설명했습니다. 향후 주가 움직임은 과거의 패턴과 다를 수 있다는 건데요. 고객은 자신의 판단과 책임 하에 종목 선택이나 투자 시기를 최종 결정해야 한다는 겁니다."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
           "check_flags": "",
-          "body_chars": "4652",
-          "link": "https://m.stock.naver.com/research/industry/47231",
+          "body_chars": "4638",
+          "link": "https://m.stock.naver.com/research/industry/47250",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ie149815fed",
+          "id": "ib6a9491d87",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
           "writer": "키움증권",
-          "title": "[키움증권]  27년 전망: 가능성을 팔던 시대, 경쟁력을 파는 시대",
-          "easy1_title": "기술이전은 최고치인데 주가는 코스닥 제약지수 저점 수준이거든요",
-          "easy1_desc": "올해 기술이전 최대 마일스톤 금액의 합산이 이미 역대 최대 규모였던 2025년을 상회했는데요, 반면에 시장의 투자심리가 기업의 기초체력보다 더 크게 악화되었다는 말이에요. 코스닥 제약 지수는 올해 고점 대비 -60% 이상 하락했고 국가별 MSCI Healthcare Index YTD 수익률 또한 주요국 중 한국만 -16%로 하락했어요. 쉽게 말하면, 실제 성과는 좋은데 투자자들의 마음이 얼어붙어 주가만 뚝 떨어졌다는 셈이라는 말이에요.",
-          "easy2_title": "대형사가 먼저 방어주 역할을 하고 나면 아우인 바이오텍에게 바톤이 넘어간다는 겁니다",
-          "easy2_desc": "과거 2015년에도 기술이전 호황 이후 바이오시밀러 개화기를 맞았던 시기와 유사할 것으로 전망되는데요, 단지 이번에는 높아진 시장 눈높이와 심화된 글로벌 경쟁으로 옥석가리기가 더욱 중요한 시기로 진화했다는 겁니다. 대형 제약바이오 업체가 긍정적 흐름을 보이고 호재에 다시 반응하기 시작할 때 투자심리가 전환된다고 봤는데요, 장점은 대형사가 먼저 시장의 방어주이자 성장주 역할을 해 준다는 점이고, 단점은 글로벌 경쟁이 심화되어 꼼꼼한 선별이 필요하다는 점이에요. 쉽게 말하면, 형님 격인 대형사들이 먼저 단단하게 버텨 준 뒤에 바이오텍 쪽으로 온기가 퍼져 나간다는 말이에요.",
-          "topic": "키움증권은 2027년 제약바이오 섹터가 역대급 기술이전과 특허절벽에 따른 시밀러 황금기를 맞아 옥석가리기를 통해 회복기로 진입할 것으로 분석했어요.",
+          "title": "[키움증권]  선별적 접근, 진짜를 골라낼 시간",
+          "easy1_title": "내년 세트 업황은 더 험난하고 출하량은 줄어든다고 봐요",
+          "easy1_desc": "키움증권에서 2027년 폴더블 스마트폰을 제외한 전 세트 출하량이 작년 대비 감소할 것으로 전망했는데요. 스마트폰은 이미 중저가 제품군 위주로 강한 부품 오더컷이 발생하고 있거든요. 메모리 가격이 오르면서 세트 업체의 수익성도 더 약화될 수 있다는 말이에요. 쉽게 말하면, 내년에는 스마트폰과 PC 같은 세트 부문이 여러모로 힘든 시기를 겪는 셈이라는 겁니다.",
+          "easy2_title": "기판 시장은 구조적인 품귀 현상 속에서 진짜를 가려내야 해요",
+          "easy2_desc": "반면 기판 부문은 최대 병목 요소로 꼽히면서 구조적인 공급 부족이 이어지고 있다고 분석했는데요. 특히 ASIC의 확산과 CPU 수요 확대 같은 기술 트렌드가 새로운 기회 요소로 작용하고 있거든요. 다만 원재료 가격 상승이나 증설에 따른 감가상각비 부담도 같이 따라온다는 말이에요. 쉽게 말하면, 옥석 가리기를 통해 확실한 경쟁력이 있는 기업을 골라내야 한다는 겁니다.",
+          "topic": "키움증권은 2027년 전기전자 및 디스플레이 산업에서 세트 업황의 부진과 기판 부문의 구조적 공급 부족을 진단하며 비커머디티 중심의 선별적 투자 전략을 제시했어요.",
           "points": [
-            "행동재무학과 투자심리 악화: 제약바이오 섹터는 기업가치 대부분이 장기간에 걸친 불확실한 미래 현금흐름에 의존하기 때문에 행동재무학적 요인이 주가에 크게 작용하기 쉬운데요, 기술이전 계약 증가 및 글로벌 임상 파이프라인 진척에도 시장에서 긍정적 성과를 충분히 반영하지 않아 투자심리가 위축되었다는 겁니다. 뭔 소리냐면, 회사의 실제 기초체력은 튼튼한데 투자자들의 불안한 감정 때문에 주가만 한참 밑돌고 있다는 말이에요.",
-            "특허절벽과 시밀러 황금기 도래: 특허절벽과 함께 미국 정부의 의료비 절감을 위한 바이오시밀러 촉진 강화가 기대되면서 중장기적으로 시밀러 황금기가 도래할 것으로 전망되는데요, 미국 의료비 절감 정책과 경쟁 촉진 법안이 바이오시밀러 시장 확대 기회로 이어진다는 겁니다. 산도즈 같은 곳은 바이오시밀러와 제네릭 합산 특허만료 시장이 2026~2030년 260억 달러에서 2036~2040년 370억 달러로 확대될 것으로 평가했다고 해요.",
-            "오픈이노베이션과 M&A 활성화: 빅파마의 지난 10년간 신규 임상시험 비중이 약 50% 감소하면서 외부 바이오텍의 혁신 기술을 도입하는 오픈이노베이션 전략이 중요해지고 있는데요, 중소형 바이오텍의 주가 하락으로 인수 부담이 낮아진 반면 기술이전과 상업화에 성공한 대형 제약바이오 기업들의 자금 여력은 확대되었다는 겁니다. 장점은 유망 파이프라인을 효율적으로 확보할 수 있다는 점인데, 대신 우량 자산 확보 경쟁이 심화되면서 투자수익률을 관리해야 한다는 과제도 함께 따라온다는 말이에요."
-          ],
-          "evidence_ok": "5/6",
-          "bad_numbers": "",
-          "check_flags": "예측 의심: 특허절벽과 함께 미국 정부의 의료비 절감을 위한 바이오시밀러 촉진 강화가 기대되면서 중장기적으로 시밀러 황금; 긴 원문 — 앞 30000자만 읽음(전체 72204자); point3 근거 원문에 없음",
-          "body_chars": "72204",
-          "link": "https://m.stock.naver.com/research/industry/47230",
-          "addr": "처리-2",
-          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
-        },
-        {
-          "id": "iab96900059",
-          "source_name": "네이버 리서치 산업",
-          "kind": "증권사 리포트",
-          "writer": "키움증권",
-          "title": "[키움증권]  비만학회 출장보고서: 비만치료제 2차 전쟁",
-          "easy1_title": "체중 많이 빼기 경쟁에서 환자 맞춤형 치료로 바뀝니다",
-          "easy1_desc": "키움증권은 비만치료제 2차 전쟁이 단순한 감량폭 경쟁을 넘어 환자별 맞춤 치료 경쟁으로 확대되고 있다고 봤는데요, 과거 당뇨병이나 고지혈증 치료제 시장이 동반질환에 따라 약을 고르는 구조로 바뀐 것과 비슷한 흐름이라는 겁니다. 쉽게 말하면, 이제는 얼마나 많이 빼느냐뿐만 아니라 환자 상황에 맞는 치료를 찾느냐가 중요해진 셈이에요.",
-          "easy2_title": "아밀린과 체성분이 이번 학회의 핵심 중심이었습니다",
-          "easy2_desc": "키움증권이 참석한 미국 비만학회에서는 아밀린과 체성분이 중심이었다고 밝혔는데요, 릴리와 노보 등 주요 회사가 아밀린 데이터를 들고 나왔고 근육보존 기전 포스터에 사람이 몰렸다는 거예요. 체중 감량의 질이 다음 차별화 기준으로 자리 잡는 분위기라는 말입니다.",
-          "topic": "키움증권은 미국 비만학회(ObesityWeek 2026) 출장을 바탕으로 비만치료제 시장의 2차 경쟁 구도와 주요 제약사들의 전략을 분석했다고 밝혔어요.",
-          "points": [
-            "릴리의 독주와 차세대 전략: 키움증권은 릴리가 강력한 주사제와 경구제인 파운다요를 두 축으로 시장 1위를 차지하고 있다고 분석했는데요, 감량폭 경쟁을 넘어 지속성과 합병증 개선을 내세우고 있다는 겁니다. 후발주자를 막기 위해 릴리는 EloraTZP와 레타트루타이드 같은 차세대 효능 약물 개발을 진행 중이라고 전해졌어요.",
-            "노보의 경구제와 소아 적응증: 노보는 경구 위고비가 출시 첫해 파운다요를 앞섰고 6세 이상 소아 적응증 확대를 추진하고 있다고 하는데요, 주사제 매출 감소를 경구제가 메우는 구조라는 말입니다. 다만 2027년 가격 인하와 특허 만료가 겹쳐 성장의 질이 불안하다며, 결국 4분기 카그리세마 허가 결정이 중요하다고 증권사는 봤습니다.",
-            "국내 기업의 기술 기회: 키움증권은 국내 기업들이 GLP-1 단독 효능 경쟁보다 근육 보존이나 경구 다중작용처럼 빅파마의 포트폴리오 공백을 메우는 기전에 집중하고 있다고 밝혔는데요, 한미약품의 UCN2나 디앤디파마텍 유래 경구 파이프라인이 대표적이라는 겁니다. 이런 기술들은 글로벌 경쟁 구도 변화에 따라 기술 가치가 재평가될 수 있는 관전 포인트라고 전해집니다."
+            "세트 업황 악화와 감익 가능성: 키움증권은 2027년 스마트폰과 PC 등의 출하량이 추가로 줄어들고 원가 부담이 커진다고 분석했는데요. 이에 따라 세트 업종 및 노출도가 높은 종목은 감익 가능성까지 염두에 두어야 한다고 봤거든요. 결국 커머디티 부품이 아닌 비커머디티 위주로 접근해야 한다는 겁니다.",
+            "ASIC과 CPU 중심의 기술 트렌드: 고객사의 자체 가속기 양산이 겹치면서 ASIC의 확산이 고사양 기판 고객과 채택 모델을 늘리는 효과를 낸다고 밝혔는데요. 여기에 AI 추론과 에이전틱 AI 확산에 따라 CPU 기반 연산 수요도 함께 증가하고 있거든요. 결국 관련 기판과 모듈 수요가 꾸준히 성장하는 수혜로 이어진다는 말이에요.",
+            "기판의 공급 부족과 비용 부담: 기판 시장은 구조적인 쇼티지가 지속되는 긍정적 측면이 있는 반면 원재료 가격 상승이라는 암초도 함께 있다고 진단했는데요. 업스트림 업체의 판가 인상 압박과 고다층 기판 양산에 따른 비용 부담이 커지고 있거든요. 쉽게 말하면, 탄탄한 판가 방어력과 수율을 갖춘 진짜 기업을 가려내야 하는 시점이라는 겁니다."
           ],
           "evidence_ok": "6/6",
           "bad_numbers": "",
-          "check_flags": "",
-          "body_chars": "25093",
-          "link": "https://m.stock.naver.com/research/industry/47229",
+          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 87513자)",
+          "body_chars": "87513",
+          "link": "https://m.stock.naver.com/research/industry/47249",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         },
         {
-          "id": "ica92c5076c",
+          "id": "id7a2d32f95",
           "source_name": "네이버 리서치 산업",
           "kind": "증권사 리포트",
-          "writer": "신한투자증권",
-          "title": "[신한투자증권]  27년 홀수 해가 더욱 특별해지는 중",
-          "easy1_title": "중국 시장까지 열리면 27년 홀수 해가 더 특별해질 겁니다",
-          "easy1_desc": "신한투자증권 지인해 연구위원이 엔터와 미디어, 레저 업종을 살펴봤는데요. 한한령 해제 분위기에 맞춰 주가가 미디어, 엔터, 레저 순서로 움직이고 있다고 해요. 중국이 온전히 풀릴 경우 좋아질 수 있는 순서와 똑같아서 시장이 합리적으로 반응하고 있다는 겁니다. 쉽게 말하면, 중국 개방 기대감이 주가에 차근차근 반영되고 있는 셈이라는 말이에요.",
-          "easy2_title": "미디어는 동시방영으로 이익이 크게 늘어날 수 있습니다",
-          "easy2_desc": "미디어 업종은 구작 판매나 한중 공동제작, 신작 동시방영으로 수익을 낼 수 있다고 하는데요. 만약 신작 동시방영이 가능해지면 해외 리쿱율이 최소 10%p 개선되어 큰 폭의 이익 레버리지가 가능해진다는 계획이에요. 제작비는 그대로인데 매출처만 오롯이 새롭게 생기는 장점이 있는데, 대신 정치 변수에 따른 해외 대규모 재계약 불확실성도 같이 감안해야 한다는 겁니다. 쉽게 말하면, 중국 방영 여부가 실적 성장의 핵심 열쇠라는 말이에요.",
-          "topic": "한-중 FTA 후속협상 실질타결에 따른 엔터, 미디어, 레저 업종의 영향과 전망에 대한 신한투자증권의 분석이에요.",
+          "writer": "키움증권",
+          "title": "[키움증권]  배당지원금 신청하세요",
+          "easy1_title": "성장에서 분배로 초점이 옮겨 가고 있습니다",
+          "easy1_desc": "2026년 상반기 국내 증시가 이익 성장에 집중했다면, 최근에는 주주로의 분배인 주주환원으로 관심이 점진적으로 옮겨 가고 있는데요. 2024년부터 밸류업 정책이 법제화되었고 반도체 기업들의 역대급 규모의 주주환원도 예정되어 있기 때문이라는 겁니다. 쉽게 말하면, 기업이 벌어들인 돈을 주주들에게 돌려주는 흐름이 뚜렷해졌다는 말이에요.",
+          "easy2_title": "증권, 보험, 지주 업종의 배당 수혜가 예상됩니다",
+          "easy2_desc": "이러한 환경에서 증권, 보험, 지주 업종이 수혜를 볼 것으로 키움증권은 내다봤는데요. 증권은 배당수익률이 높아졌고 보험은 높은 배당 안정성을 자랑하며 지주는 자회사 배당수익 증가를 기대할 수 있기 때문이라는 겁니다. 다만 업황 자체는 녹록지 않다는 단점도 있는데, 장점은 주주환원 확대에 따른 관심도가 높아진다는 거거든요. 쉽게 말하면, 각 업종별로 고민은 있으되 배당 매력은 커졌다는 셈이에요.",
+          "topic": "키움증권은 배당 관심도 확대에 따라 증권, 보험, 지주 업종이 수혜를 볼 것으로 분석했습니다.",
           "points": [
-            "엔터 업종의 수혜와 과제: 엔터주는 중국 투어가 재개된다면 매우 큰 이벤트가 될 수 있다고 봤는데요. 이미 소규모 팬미팅과 앨범, 팝업 굿즈는 판매되고 있었지만 아티스트가 직접 공연을 가야 하는 물리적 상황 때문에 다른 시장을 포기해야 할 수도 있다는 단점도 존재하거든요. 장점은 대형 공연이 열릴 경우 엄청난 파급력이 있다는 건데, 중국 본토 투어는 여전히 불확실성이 남아 있다는 겁니다.",
-            "미디어 업종의 구조적 수혜: 미디어는 구작 판매, 한중 공동제작, 신작 동시방영으로 수익화가 가능하다고 밝혔는데요. 과거 드라마 해외 바이어가 아시아와 넷플릭스, 디즈니 등 OTT 중심으로 재편되면서 넷플릭스와 중국에 동시 판매한 기록이 없었다는 거예요. 동시방영이 이뤄지면 제작비 변동 없이 매출처만 늘어나 스튜디오드래곤 같은 회사가 큰 수혜를 볼 것으로 추정했어요.",
-            "레저 업종과 호텔 종목 전망: 레저 부문에서는 한국 여행사가 중국 본토에서 아웃바운드 영업이 가능해진다는 기대감이 있지만 본토 직접 영업 경험이 부족해 수익화에 오랜 시간이 필요하다고 분석했는데요. 반면 호텔 종목들은 지속되는 인바운드 호황과 방한 중국인 대상 비자규제 완화 기대로 선제적 비중확대가 필요하다고 봤어요. 멀티플도 하단인 GS피앤엘 12개월 선행 PER 8.3배, 서부T&D 10.0배 수준에서 거래되고 있다는 겁니다."
+            "배당에 대한 시장 관심 확대: 상반기에는 이익 성장이 증시를 이끌었지만 2027년에는 분배로 관심이 옮겨갈 것으로 키움증권은 예상했습니다. 고배당기업 배당소득 분리과세 제도와 반도체 업종을 중심으로 급증한 이익이 주주환원으로 연결되기 때문이라는 건데요. 쉽게 말하면, 자본시장 규제 변화와 대규모 배당 지급이 맞물려 주주환원에 대한 관심이 커진다는 말이에요.",
+            "증권 업종의 저점 매수 전략: 증권 업종은 금리 상승과 거래대금 감소로 업황이 쉽지 않지만 주가 하락으로 배당수익률이 8~9%대로 높아졌다고 키움증권은 밝혔습니다. 시장 심리가 개선되지 않으면 밸류 트랩에 갇힐 수 있다는 단점도 있는데, 장점은 펀더멘털을 기반으로 반등을 노리는 저점 매수 접근이 가능하다는 거거든요. 쉽게 말하면, 거래대금 감소 우려에도 불구하고 배당 매력을 바탕으로 접근할 시점이라는 셈이에요.",
+            "보험과 지주 업종의 방어주 매력: 보험은 신계약 시장 축소 우려가 있으나 배당 안정성이 부각되며, 지주는 상법 개정 등 규제 변화에 따른 의결권 가치 부각과 자회사 배당 증가 수혜를 볼 것으로 키움증권은 전망했습니다. 업종별로 불확실성이 남아있다는 한계도 있지만, 방어주로서의 매력과 주주환원 확대 기조가 지속된다는 거거든요. 쉽게 말하면, 불확실한 환경 속에서도 꾸준한 배당과 정책 수혜가 지지력으로 작용한다는 말이에요."
+          ],
+          "evidence_ok": "6/6",
+          "bad_numbers": "",
+          "check_flags": "긴 원문 — 앞 30000자만 읽음(전체 107903자)",
+          "body_chars": "107903",
+          "link": "https://m.stock.naver.com/research/industry/47248",
+          "addr": "처리-2",
+          "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
+        },
+        {
+          "id": "i96f7339a9b",
+          "source_name": "네이버 리서치 산업",
+          "kind": "증권사 리포트",
+          "writer": "IBK투자증권",
+          "title": "[IBK투자증권]  [유통업체 매출 동향] 10월: 시점 차이일까?",
+          "easy1_title": "10월 유통업체 매출은 좋아졌지만 명절을 빼고 보면 긍정적으로 보기 어렵다",
+          "easy1_desc": "2026년 10월 유통업체 매출액을 살펴봤더니 전년동기대비 5.7% 성장했는데요, 오프라인은 추석 연휴 시점 차이로 1.4% 감소한 반면 온라인은 배송일수 증가로 10.9% 성장했다는 겁니다. 합산 실적은 늘었지만 9월과 10월 명절 효과를 감안하면 긍정적인 실적으로 보기는 어렵다는 평가인데요, 쉽게 말하면 명절 시점 차이를 고려해도 전체적인 소비 흐름은 기대치에 못 미친 셈이라는 말이에요.",
+          "easy2_title": "소비력 약화가 뚜렷해지면서 필수 소비재 위주로 재편되는 추세가 이어질 것이다",
+          "easy2_desc": "필수 소비재인 식품 채널은 선방하는 반면 고가 제품이나 준내구재 상품 부진이 뚜렷해졌는데요, 자산 가격 하락과 금융비용 증가 때문에 이러한 소비 구조가 당분간 지속될 가능성이 높다는 겁니다. 증권사에서는 거시경제 지표와 실질 소비 간의 차이가 지속된다고 봤는데요, 2027년에는 이러한 기조가 더 빨라질 것으로 예상한다는 계획이에요.",
+          "topic": "2026년 10월 유통업체 매출 동향을 분석하고 오프라인과 온라인의 실적 차이와 소비력 약화에 따른 향후 전망을 다룬 리포트예요.",
+          "points": [
+            "오프라인 부진: 오프라인 채널의 10월 매출은 추석 연휴 시점 차이에 따른 집객력 감소 여파로 1.4% 감소했는데요, 성장을 이끌었던 백화점 채널이 둔화되고 비식품 부진이 가속화되고 있다는 겁니다. 그나마 편의점이 기저효과로 선전하는 모습을 보였지만 증가율이 낮아 긍정적으로 해석하기는 어렵다는 말이에요.",
+            "온라인 성장: 온라인 유통 채널은 배송일수 증가 효과 덕분에 두 자릿수인 10.9%의 성장률을 달성했는데요, 식품과 서비스 부문이 각각 12%와 12.5% 성장하며 필수 소비재 구매 비중이 높아지는 모습이 목격된다는 겁니다. 반면 가전이나 패션 같은 품목은 회복이 더디게 나타나고 있다는 점이 특징이에요.",
+            "소비 구조 변화: 필수 소비재인 식품은 선방하는 반면 고가 제품과 준내구재 상품은 뚜렷한 부진을 보이고 있는데요, 자산 가격 하락에 따른 소득 감소와 금융비용 증가로 인해 소비 여력이 줄어들었기 때문이라는 겁니다. 증권사에서는 이러한 소비 구조와 거시경제 지표 간의 괴리가 2027년에도 계속해서 빨라질 것으로 예상했다는 거예요."
           ],
           "evidence_ok": "5/6",
           "bad_numbers": "",
-          "check_flags": "topic 근거 원문에 없음",
-          "body_chars": "14433",
-          "link": "https://m.stock.naver.com/research/industry/47228",
+          "check_flags": "easy1 근거 원문에 없음",
+          "body_chars": "10523",
+          "link": "https://m.stock.naver.com/research/industry/47247",
           "addr": "처리-2",
           "source": "v2_secretary/결과/거푸집2/거푸집2_요약표.csv"
         }
@@ -4290,7024 +4114,7311 @@ window.PANEL_DATA = {
       "status": "돎 (하루 AI 2콜 독립 묶기 대조)",
       "counts": {
         "news_in": {
-          "val": 371,
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "val": 370,
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         "events_out": {
-          "val": 14,
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "val": 12,
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         "single_out": {
-          "val": 302,
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "val": 324,
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         "all_clusters": {
-          "val": 316,
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "val": 336,
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         "bad_numbers": {
           "val": 0,
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         "calls": {
           "val": 2,
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         }
       },
       "events": [
         {
-          "id": "e261127-01",
+          "id": "e261128-01",
           "rank_by_count": 1,
-          "name": "한은 기준금리 인상",
-          "easy": "한국은행이 기준금리를 0.25%포인트 인상해 연 3.25%로 끌어올렸습니다. 뭔 소리냐면 올해 하반기에만 세 차례 금리를 올리며 물가 안정을 위해 다시 긴축의 고삐를 바짝 죄고 있다는 겁니다.",
-          "quote": "한은, 기준금리 0.25% 인상…2년 만에 연 3.25% / 한은, 기준금리 0.25% 인상…2년 만에 연 3.25% 한겨레",
-          "member_count": 9,
-          "sample_articles": [
-            {
-              "n": 165,
-              "title": "한은, 기준금리 0.25%p 인상…2년 만에 연 3.25% - 한겨레",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9kaWJkTjM5bmJlYUh1RFVHbWdhSTdLOVRLY2oxTDZhNFE0QTJMTzlLV0VoSGVpRmg3NVZoYUR2dWVra0VIdnEtakJTUFR1N0IwbzBETlBNNXRMMTlRYUlmUFcyb2xsVGJXMWhjbWVDM09tZw?oc=5"
-            },
-            {
-              "n": 169,
-              "title": "한국은행, 기준금리 0.25%P 올려 3.25% - 국제신문",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNY3ZLRlBXQVZNN1RnNF9uZlFURFRjZTl5SHJrcW8tLTBpMlZBUnhkRFd1VE5Oek1pbU9pYjQ2dnpFZS1XeGVlQnNHUGFLRXBEUVFtaFQyMkc1SzVDMVNheFZCU3Q0Wnc0UU9VU19HMkk1QUF0T1ZMemhnNVZheTNxMXVFS1VZalhLZXZpRjN3?oc=5"
-            },
-            {
-              "n": 167,
-              "title": "한국은행 기준금리 3.25%로 인상…하반기에만 세번째 - 경상일보",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBFVlFSOXFRWUFWa0c4Y25ScndCYW1rMkJWRmNWR3B6WHE4V182d0tPQk14WWdmNXpnYWpDTzNSNUQwcnZSTlhOTmx3U29oU0lpbmFOX24waW1CY3RRV1dLN0s1Q2NRc2h6T0hGNA?oc=5"
-            },
-            {
-              "n": 170,
-              "title": "[더나은미래 경제브리핑] 한국은행 기준금리 0.25%포인트 인상, 올해 들어 세 번째...홈플러스 재개장 석 달 만에 ‘셧다운’, 27일부터 영업 중단 - 더나은미래",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1LZFNWWW14NTJobXpONFVCaThRck5qY3dKQzV3d19iNU1wRHdoYnh5R2lBOTJpanJ6S1FyU2FyWlFuVzZ3ZENuUFpXdVdaRFFrV1E?oc=5"
-            },
-            {
-              "n": 166,
-              "title": "한은 기준금리 연 3%→3.25% 인상…다시 긴축 박차 가한다 - 중앙일보",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBYdnFnalE1WGVnc3llMlp1X282clpWS19jWmJmQjdEeC1sZzRoUjdSRXh3cWNvd3kwWmxjS293MWlTNTdQU0V0N0Q5NGZLV2F6NTNLS2RR?oc=5"
-            },
-            {
-              "n": 162,
-              "title": "한은 금통위, 기준금리 3.25%로 인상…성장률 전망 크게 올려 - 조선일보",
-              "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxObWt5aUFEV1RlNTY0dWxuSnFlQ01Xdl96QkZKSnd6eXdDSlRYSDVMeFZNem16MjBiSERxa0YwMVFtYms3NWd4cmdsa2oza2JKSU9RaGxUaTVRNlN3bktKZEYtdXNvVy1TNHlMYk81eTZKTXFlOC1sUUJfVGlSdFpMaVk1SnEyV3BnZkJSeGN3?oc=5"
-            },
-            {
-              "n": 160,
-              "title": "대출금리 5% 시대에 금리 인상… 한은이 보낸 ‘무거운 청구서’ - 더스쿠프",
-              "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBrZm9xYUN6MThYbWVtZHdscHU3MUFzMWJPUWVyNVZ2WURxOFgxYTdmOWpuSEtucjk1SVRWeURfc1A3LTZRSFBUOVVPWTRrakxEamM1Z0VkQ2l6TUROWlpHb1RzMEV2eG1OUlgxQjZB?oc=5"
-            },
-            {
-              "n": 168,
-              "title": "한은 기준금리 인상, 성장률 전망 대폭 상향‥\"물가 안정 중점\" - MBC 뉴스",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9sa0FmYTlGNGtYdVppaVdXTG16cC1SaEdudnoxVnVFaDB5Q0NTeGg1bWlDa3R1eXFUc29VMUpvOXJTWWx2ZEgtZy1zeE4xQmVXQlI1RXo4UUJCWm9ucWZrTFdzWEV5Y1NnWWVkN2JBUEo3QjQ3ZVlDMNIBeEFVX3lxTE1TU0J3WGdZbFpIdWxTYVVFeFdieFJoUm03QThGZkRJMHA1YllpdTFEMU9sLWZ2YndSeEF5TE81eEVKZmd0QkRtaldwVURFV1o5VXhQQWxFakg1cmc3d1lXOVB4VWt5M2JhdWw2THdiNC1xX3Y4enZYYQ?oc=5"
-            },
-            {
-              "n": 171,
-              "title": "기준금리 3.25%로 올린 한은, 이번엔 왜 인상을 택했을까? - 네이버페이 머니스토리",
-              "source_name": "'한국은행 기준금리'",
-              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5ZWUV5SkJHSUhQUk5qVUUtQ1NlbVAyTXA1ZFJUdW5HbjQyNkRveTBvNVNYMWl2X3h5eVFzYlVxd2xoT2dxS0E5b3h3MFhhWHpTTXc?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-02",
-          "rank_by_count": 2,
-          "name": "한전 전력망 통합구축 수상",
-          "easy": "한국전력이 기존 송전선로를 활용하는 전력망 통합구축 성과로 인사혁신처장상을 받았습니다. 뭔 소리냐면 송전선로 효율화를 통해 연간 최대 6000억 원을 절감하고 신규 철탑을 40% 감축하는 적극행정을 인정받았다는 말이에요.",
-          "quote": "한전, 기존 송전선로 활용 전력망 통합 구축 성과 인정 / 한전, 기존 송전선로 활용 전력망 통합 구축 성과 인정 투데이에너지",
-          "member_count": 8,
-          "sample_articles": [
-            {
-              "n": 65,
-              "title": "한전, 기존 송전선로 활용 전력망 통합 구축 성과 인정 - 투데이에너지",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1CYXpEQmR4dXZUZkxiRDhuS2pwZ0dWMmRtV1VCLWIyYWtiYzJyeUtqa3I1WFNhRUlIYVFqb3FQMEJYMnZGSFZyRjk0bUhTU0hLdi01b3h6M1U1Z1lycTdrV2RPa0JxcHB5REVHX1Nn?oc=5"
-            },
-            {
-              "n": 64,
-              "title": "한전, 기존 송전선로 활용해 전력망 확충 패러다임 바꾼다 - 에너지데일리",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE8zTTQ4OVR2REktTHRaWHFZLWY4c1RaNHh1TmNqc3NMalNEVGZ4Nk04bEFKajNZY2dQZmI4RlNGMFl1Tl9GUmZUMnJfekk3ZGNma3d5UmlZTlY0VjAwRmlkUXlfNWZ6LTQ1NnBLVVZfUnNNdw?oc=5"
-            },
-            {
-              "n": 69,
-              "title": "“전력망, 기존 송전선로 효율화시 연간 최대 6,000억원 절감” - 인사이트에너지뉴스",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBJYXF2cWtOQXk3SmoxLUUtaU12Nl9LSXBpTGZkaTJYMkE2LVJDcVYyN2NTR1ByYUhsN3NjUk50ZURhNUQ0bVY5aXBCaDlSNXh2SEk3V2Z1ZVlLUEJ5ckFOOVJIYnlKT213OEc00gFrQVVfeXFMUElhcXZxa05BeTdKajEtRS1pTXY2X0tJcGlMZmRpMlgyQTYtUkNxVjI3Y1NHUHJhSGw3c2NSTnRlRGE1RDRtVjlpcEJoOVI1eHZISTdXZnVlWUtQQnlyQU45UkhieUpPbXc4RzQ?oc=5"
-            },
-            {
-              "n": 71,
-              "title": "한전, 기존 송전선로 활용한 전력망 통합구축으로 적극행정 인사혁신처장상 수상 > 뉴스 - 더코리아",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBzLWNNY1dXRC1JN01MRWc5UGc0ZVh1ZU5GMUg1Z2g4QkJUd1czUTVPRWhPQjQ3cmlPd2ZzTFR6TnBsR2ZyWnNuNTM2SQ?oc=5"
-            },
-            {
-              "n": 68,
-              "title": "한전, 기존 송전선로 활용해 신규 철탑 40% 감축 추진 - 에너지안전신문",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBuZE9vOXJmY2VJaXpOVDRoczdWbGdnTmJyd3pjbnlqeXJlY2FpbVNjR2xuRFJwWlhpZElOY0xFdHZmQU5IUjJWYkxXakkxaG1Ea2tuM0tJeVZVR1ZfbTVTWFRGVUs?oc=5"
-            },
-            {
-              "n": 70,
-              "title": "한전, 기존 송전선로 활용 ‘전력망 통합구축’으로 인사혁신처장상 - 에너지코리아뉴스",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB4MXp0ZHBRZjY4ZC0zeFFGUVFZUHFRMEh2ZXYwRnotZ19lUUNBcUozR3pxSXF6UjRtRjNvb05TdVVzZE1nREU0bnRvYW05dDlDQjJVVG9yb3FNam1ZanY4Vzh6UlRfLVgxZ1h0a0xSbTE?oc=5"
-            },
-            {
-              "n": 59,
-              "title": "한국전력공사, 전력망 통합구축으로 인사혁신처장상 수상 - 글로벌뉴스통신GNA",
-              "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1Qdmd5VXpoQTdudGRxaC1Wa1BXajE5SU1reDM4Q0JiandqTjE3NWk1SnR5VDRGWlVNNUphVkduallYUG5tRHFSMkpfbWw3a0FEQW9kYjJ6b2g2cWZEZFg2LU1ya2Y0X1lqX1dqM3duWENnUXpE?oc=5"
-            },
-            {
-              "n": 67,
-              "title": "한전, ‘기존 송전선로 활용 전력망 통합구축’공로 인정…인사혁신처장상 영예 - 에너지플랫폼뉴스",
-              "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE91WElJTkkyOWZodU9zSlhDdWlaWVZQVkRLVFBtUXg2UGRVbFNKOGtTSTEwWHpKbFFyVXhvUEk1cWRCVHpGUm5NWkU2Ykt3aVZNSlE3ck9vWUpDZVotRmpadWFpZjNIeS1zdzdYZNIBcEFVX3lxTE9iY2htblZ5UTJqU3FSdGY1OG1uQ1pIdlFfUkQ4ZDM2SHlUcGk4cXNmZm5fYl9zeTkwWUpGSkVXOS1RMTZkTkFUdnh0QWV6X2dITnRlWGJJU1dnejFBTi1yc3dQcjYyZjM2R256SUljX0I?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-03",
-          "rank_by_count": 3,
-          "name": "중국 반도체 HBM 추격",
-          "easy": "중국의 화웨이와 창신 등 반도체 업계가 삼성전자와 SK하이닉스를 추격하기 위해 차세대 HBM 기술 공개와 개발에 박차를 가하고 있습니다. 뭔 소리냐면 첨단 메모리 분야에서 중국의 도전이 거세지자 국내 기업들도 격차 벌리기에 총력을 기울이고 있다는 겁니다.",
-          "quote": "HBM·D램까지 넘보는 중국…삼전·하닉, 격차 더 벌린다 / HBM·D램까지 넘보는 중국…삼전·하닉, 격차 더 벌린다 뉴스토마토",
-          "member_count": 8,
-          "sample_articles": [
-            {
-              "n": 84,
-              "title": "HBM·D램까지 넘보는 중국…삼전·하닉, 격차 더 벌린다 - 뉴스토마토",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5wR0hNeFkzSGlyY1FrMTNjcVdDR0lkYmVaMnpNMnRSeXBHeS1uNDUtWFpvalBYdVpDZjVGZnBwcW5oazg1a2ctbFhTWmtWR1lTUU4wOTVvZHBLcEl5VUJsSw?oc=5"
-            },
-            {
-              "n": 79,
-              "title": "중국 인공지능 반도체 점유율 증가 전망에도 한계 부각, UBS \"HBM 제조 능력 부족이 제약\" - 비즈니스포스트",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0tNFhGRFBIa1ZSZldGaWtJTFZDOWFFN0hnQ3FHbjhBS052V0JkUjZqRHRZVjM2SG5TWmpEdDNqS19vRmxUYnBBT2xqcFg1anVzSDV5ZVozYjREZHYwa18wRTRsbHpobU9JYUo4OUcyRlNGWVk?oc=5"
-            },
-            {
-              "n": 81,
-              "title": "화웨이, 차세대 HBM 개발 추진...삼성전자·SK하이닉스에 도전장 - M이코노미뉴스",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5idHFxM1NicVFjeEhEckU1cXk5SGRHdHQwdDVvM2h5d2FKWEJLTW9kbjl2UXdlUktkY1k3RDBELS1ncWRleDBTa0dJMHhlY2lwTXhTQ3A3VHB0NmV1N1RiMGZPME9SQ0U?oc=5"
-            },
-            {
-              "n": 92,
-              "title": "中 화웨이·창신, 첨단 메모리 개발 급피치...삼성·SK하이닉스에 도전장 - 뉴스핌",
-              "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE43aW9wa3NaWFl0ZjBOSTNKZm1LbWpZd2FuUS1nVHNLZTE1QXBwR2lSa3REM0NJSVJ5azNZZjhzNXloVmFCQnhRZVl4TGNXMFRaNEwtR1poVFB0WGlY?oc=5"
-            },
-            {
-              "n": 80,
-              "title": "中 반도체업계, 삼전·하닉 추격에 고삐…HBM·낸드 기술 진전 - 파이낸셜뉴스",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9YalRwUnFZS3lYbGNDVTZLMFVBcjBvMjhCWXN4b2pfdUdjR0pncWVrX2lQakNtN25NWW9lMjJuOWlxNE9SSkU5eUlyS3NNWm1lVVd0R3ZkTFI5QQ?oc=5"
-            },
-            {
-              "n": 82,
-              "title": "中 화웨이, 차세대 HBM 기술 공개 추진… 삼성·SK하이닉스에 도전장 - Chosunbiz",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOOUxSbEtqb1BtVE56YzNaYlcyYmFtem1RdHR0anVoMURWRl9nYTMzdGtTTDFmaHV1eGJ3N05XWW9IT1hBSHdJVGNRcnNLeXJ2WlV0THVfeDFOc2ZvZnJQekdFUzc5ekM1VnV0S0ZHemxtYUFxaGpiLUNVV3hoZFlsMW130gGWAUFVX3lxTE4wVDJJSUMxRkJQVnRsaFFfU1J0WXBtSExPc1Q3Wi1kdmNxd2pLRW9DZUdkbmhtRDNTc0RrM2dhcGdfY0RFRjRPMmM3R3V3dVhyZWR5N3k4ZVdjZ0FhSGJqdGZKVDlzS3RzODlramxxS1BCQUF4RUNSY01KellsTkVFZUZoZVZ"
-            },
-            {
-              "n": 78,
-              "title": "고단층 HBM ‘내장형 냉각’ 본격화···삼전·하닉 ‘발열 잡기’ 총력 - 시사저널e",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9xYmtHdXdlRGItUnh4Z1FwcWlPVWI2cHhsTE5mRWlSc3VZN3ZBS3BPVUNPVTc1MWVPSHlORkh3TG5OSGljR3JER3plVkRqQU1uS25zTU5kWXdudm5tNHg3Smw4VlJiYXNyVU1MSWhmd3Nibkc3anfSAXZBVV95cUxPcWJrR3V3ZURiLVJ4eGdRcHFpT1ViNnB4bExOZkVpUnN1WTd2QUtwT1VDT1U3NTFlT0h5TkZId0xuTkhpY0dyREd6ZVZEakFNbktuc01OZFl3bnZubTR4N0psOFZSYmFzclVNTEloZndzYm5HN2p3?oc=5"
-            },
-            {
-              "n": 77,
-              "title": "중국 화웨이, 삼성·하이닉스 따라잡을 새 HBM 공개 준비 - 연합뉴스",
-              "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1nUnh4Wk1VNThjVGQ4SlRsZmlYX1YyeWZTcG5JYW1CUmxZdlM2RXA0N25DWlN3WU52X0dFanRSYXR4TXpVUERxSzBUS3hiY25zWHhMWEJRS3Y4ZTDSAWBBVV95cUxOcXQ1cTFQM25ielY0ZlV3TnZhbzY2YkwzT0ZnMGx4cTAtWU5TWFVNYVZtcDdCdEFpVUp2WGdhV2x5S3QtRWNjZHdldnQ5Zl9PYmZKNU5fc3F5ZFVFclI3WkQ?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름",
-            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-04",
-          "rank_by_count": 4,
-          "name": "자본시장 개혁기구 출범",
-          "easy": "정부가 자본시장 개혁 전담 기구의 수장으로 김용범 메리츠금융지주 부회장을 낙점하고 민간에 전권을 부여했습니다. 뭔 소리냐면 금융당국이 주도하던 기존 정책에서 벗어나 시장 전문가들에게 제도 개혁의 주도권을 넘겨 주겠다는 겁니다.",
-          "quote": "자본시장개혁기구 수장에 메리츠 김용범…민간에 전권 부여 / (서울=연합뉴스) 강수련 기자 = 정부가 이재명 대통령이 주문한 자본시장 개혁기구의 수장을 김용범 메리츠지주 부회장에 맡기고 개혁작업의 전권을",
+          "name": "동서발전 ESS 중앙계약시장 확보",
+          "easy": "동서발전이 에너지저장장치 중앙계약시장 입찰에서 672MW 규모의 물량을 확보했습니다. 그게 뭔 소리냐면 호남권 등의 전력계통을 안정화하고 재생에너지 확대를 위한 기반을 다진다는 말이에요. 누적 용량 기준으로 국내 1위에 올랐다고 보입니다.",
+          "quote": "동서발전, ESS 확대로 호남권 전력계통 안정화 추진",
           "member_count": 6,
           "sample_articles": [
             {
-              "n": 1576,
-              "title": "자본시장개혁기구 수장에 메리츠 김용범…민간에 전권 부여",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126171600002"
-            },
-            {
-              "n": 1503,
-              "title": "자본시장 개혁 민간委 뜬다",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219710"
-            },
-            {
-              "n": 32,
-              "title": "\"1주의 가치는 같다\"…김용범 메리츠 부회장, 자본시장 개혁 사령탑",
-              "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191353"
-            },
-            {
-              "n": 1560,
-              "title": "자본시장개혁기구 수장에 메리츠 김용범…민간에 전권 부여(종합)",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126171651002"
-            },
-            {
-              "n": 1475,
-              "title": "'대통령 직보' 자본시장 개혁기구 출범…위원장에 김용범 메리츠 부회장",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262896i"
-            },
-            {
-              "n": 1523,
-              "title": "민간 자본시장 개혁기구 출범…위원장에 메리츠 김용범 부회장",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/stock/12219562"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-05",
-          "rank_by_count": 5,
-          "name": "종부세 대상자 증가",
-          "easy": "수도권을 중심으로 집값이 오른 영향으로 올해 주택분 종합부동산세 고지 대상자가 지난해보다 19만명 늘어난 73만명을 기록했습니다. 뭔 소리냐면 1가구 1주택자 고지 인원과 평균 세액이 크게 늘어나면서 세부담이 가중됐다는 말이에요.",
-          "quote": "“공시가격 상승 영향”…강남·마용성 아파트 보유세 40% 안팎 증가 / 전용 84㎡ 기준 원베일리 2800만원↑ 잠실주공5단지 43.2%·도곡렉슬 43.1% 각각 늘어 “거주용 1주택 세부담은 완화될 수 있어”서울",
-          "member_count": 6,
-          "sample_articles": [
-            {
-              "n": 1525,
-              "title": "“공시가격 상승 영향”…강남·마용성 아파트 보유세 40% 안팎 증가",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219528"
-            },
-            {
-              "n": 1516,
-              "title": "종부세 대상 1주택자 8만명 늘어…여당에서도 \"증세 속도 늦추자\"",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219628"
-            },
-            {
-              "n": 1567,
-              "title": "[연합뉴스 이 시각 헤드라인] - 18:00",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126171000011"
-            },
-            {
-              "n": 1506,
-              "title": "종부세 고지서 ‘82만명’에 날아갔다…1년새 19만명 늘어",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219702"
-            },
-            {
-              "n": 1504,
-              "title": "종부세 82만명 고지 … 1년새 19만명 급증",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219709"
-            },
-            {
-              "n": 1524,
-              "title": "“집값 올랐다고 좋아할게 아녔어”…종부세 대상·세액 4년 만에 최대",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/realestate/12219536"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름",
-            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-06",
-          "rank_by_count": 6,
-          "name": "뉴럴링크 임상 승인",
-          "easy": "뇌와 컴퓨터를 연결하는 기술을 개발하는 뉴럴링크가 미국 FDA로부터 첫 확증 임상시험 승인을 받았습니다. 뭔 소리냐면 루게릭병 치유 등을 위한 뇌-컴퓨터 인터페이스 상용화 작업이 한 걸음 더 속도를 내게 됐다는 겁니다.",
-          "quote": "루게릭병 치유 나선 뉴럴링크...BCI 기술 어디까지 왔나 / 루게릭병 치유 나선 뉴럴링크...BCI 기술 어디까지 왔나 이코리아",
-          "member_count": 5,
-          "sample_articles": [
-            {
-              "n": 1656,
-              "title": "루게릭병 치유 나선 뉴럴링크...BCI 기술 어디까지 왔나 - 이코리아",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5FT2d4ZVU5THoyQTdxdnI5d0ZrNjR5cUxvY0toa3NTcjFVYmRfNjV5QTZzcHFEQTFJVmVwMlFnYW54UU1Kb3B5UnZOTUc1OE1MSUlLTkkzNDI5em1IMWVHSFdjMkNPcmJ4dHNDN1FTYw?oc=5"
-            },
-            {
-              "n": 1657,
-              "title": "뉴럴링크, FDA서 첫 확증 임상시험 승인받아…뇌-컴퓨터 인터페이스 상용화에 한 걸음 - 디멘시아뉴스",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1lYXZLS1JBVWdNNGV1NmRFRVlGYy14VWY0N1pkSnYtanVCSXJEaDRoWXo1YlJhVms2SmZ1M2RyYmwtbDlacGFvekYweTFGU2pIT3hQWjM3bllyUDB6bmhaY0JMR0Nub1V6R1AzNFMwai13Zw?oc=5"
-            },
-            {
-              "n": 1658,
-              "title": "뉴럴링크 BCI 기술, '피보탈 임상' 美FDA 승인 획득…상용화 속도 - 더구루",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBZDlVRnNWUkdOOExJQWNiRFM1alFiTjVJWERtNlRJdDJMdlVRVDZwckhxc2tMdlJCY3VCSVFZRmg4MExCM2xIeGZoSGlaTGpxU285MldOMTVROWlaN1RYWGJhRQ?oc=5"
-            },
-            {
-              "n": 1661,
-              "title": "뉴럴링크, '뇌 이식 칩' 핵심 임상 美FDA 승인…상용화 시험대 - 뉴시스",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1jUlN0ZkZ4V2JHcUY3V2hVa3hPV2JwR0o3NmphU3JaTGExdVg2aWtJbmxKNHhCNXMzbEFqTlJPRTJpdHhtYXBvdVZ6SHRIaXlSQWZqSlc1RjJrWUpsU3lyZdIBeEFVX3lxTE5tWGFvSXVjbE1qWEJ3eXdhUEtQZHRHRkxIaHJVYlRRRmxpNEpDV3dFSGc5MUw1aVlzbXNRbkhNam1pa2Q3MGRwUF9oYjltZmpNNUcyM29MMXRyckhMakh1Z0hvUGFVZThvcDRIZG1oaWJrU1MzNzF2cw?oc=5"
-            },
-            {
-              "n": 1660,
-              "title": "AI 커닝 막기도 벅찬데…머스크 ‘뇌 이식 칩’ 상용화 성큼 [핫이슈] - 서울신문",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1GTl9WMHNYQ3dtMnc4Sk81R0ZTR3hkakFvXy1iOENYT1lmdDF6dWVQVV9VVlhiWUlzU1NSRmFBczZmcWt4c0FoNE1IUkRPb2NsQ1VjX1BTQ1BrUQ?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-07",
-          "rank_by_count": 7,
-          "name": "삼성전자 반도체 조직 개편",
-          "easy": "삼성전자가 메모리 개발체제를 일원화하고 첨단 패키징 조직을 되살리는 대대적인 조직 개편을 단행했습니다. 뭔 소리냐면 반도체 경쟁력을 높이기 위해 후공정에 힘을 싣고 개발 속도를 끌어올리겠다는 겁니다.",
-          "quote": "삼성전자, 대대적 조직 개편…",
-          "member_count": 5,
-          "sample_articles": [
-            {
-              "n": 98,
-              "title": "삼성전자, 대대적 조직 개편…\"메모리 개발체제 일원화\" - 한국경제",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAtdWxPSmlEN1ZXd0tIcExRcmNXT3VqQTdDbm51N2tuOFZmY2VESzR1WEFoSXpiZDFjZWNoeEhycnJZcENrdG1GU3JPMjhuY1A1TmtmQXJMZTlDQQ?oc=5"
-            },
-            {
-              "n": 1448,
-              "title": "삼성전자, 대대적 조직 개편…\"메모리 개발체제 일원화\"",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630891"
-            },
-            {
-              "n": 97,
-              "title": "삼성전자, ‘첨단 패키징’ 조직 되살려…반도체 승부처 후공정에 힘 - 한겨레",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9URTg0OV9ZMTlzeWhWT2ktbEk3ejJlLXhTUGU1cThWSzFNYVhpOXd0NmdwcFRIYU04ckRHakhYYkJGWW9xbUltMC12bnhaTXozRFdGM0loTVhHTEMwSGY4SDRNRVU2NFhrR2c?oc=5"
-            },
-            {
-              "n": 99,
-              "title": "삼성전자, 반도체 경쟁력 높이고 미래 먹거리 키운다…조직개편 단행 - CEO스코어데일리",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFA2SjVBMDdManFZMGRQQjdZNWpGbDh3dFFnMURkaEU1VTh3elA0STBrQms2MTdfMGNuWURmRUVTWEwxU1VfTF9ZdVFhOEwza1RPbjltaVZzTld4Q2tEOGtsTVVlRFo0aF9z?oc=5"
-            },
-            {
-              "n": 100,
-              "title": "삼성전자, 반도체 조직 개편…메모리 '개발 속도'·시스템LSI '영업력 강화' - 디지털투데이",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE84UFFucmlseHNEWlR1czlOMWhJLUVlM1EyUk5yLXNFdThYS1VUb3F1dXhDeUtxUnhUTjlZcmNHR3JvRlBnUVhqMlVaY0NsdXVURDZOLVhvWDlpWVlSUFh5QjBFSndiWTQ3cXMxcnBxancxMFk?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-08",
-          "rank_by_count": 8,
-          "name": "한전 제주 전기예보 시행",
-          "easy": "한국전력이 제주에서 재생에너지가 남는 시간대에 전기요금을 50% 할인하는 탐라는 전기예보를 시행합니다. 뭔 소리냐면 전력이 남는 낮 시간대에 요금을 깎아 주어 소비를 유도하고 전력 계통의 부담을 줄여 보겠다는 거예요.",
-          "quote": "한전, 재생e 남는 시간대 전기요금 50% 할인… 제주서 ‘탐라는 전기예보’ 시행 / 한전, 재생e 남는 시간대 전기요금 50% 할인… 제주서 ‘탐라는 전기예보’ 시행 에너지데일리",
-          "member_count": 4,
-          "sample_articles": [
-            {
-              "n": 126,
-              "title": "한전, 재생e 남는 시간대 전기요금 50% 할인… 제주서 ‘탐라는 전기예보’ 시행 - 에너지데일리",
-              "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9YaDFqTnhfVmtDel9fUVd1XzBtNE54MVZNSzZOaXZDYXpYRG9iN1FhajQ5V2pfVWstUmJqZmFzVWNjRDZQM2lXTTlIQkhsQVBSWWJPODF6ekVRd2ZSS0YtMGdsdjhLSF81ZE5iZnA3SHprZw?oc=5"
-            },
-            {
-              "n": 62,
-              "title": "한국전력 '탐라는 전기예보' 시행···제주서 재생에너지 남는 날 '전기 반값' - 팍스경제TV",
-              "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5QTDBBR3VIZHZhWFJ2c1pLTUtzY21QTGJoanJuODJ5a2hJTHM2YTdNWGxhY2FwcjMwVzNtcFJyRHQ5dllub3BVM1VEU2c5Y241VTVZX0JFd3VTRHFrYUtReWQwZU9PMlk?oc=5"
-            },
-            {
-              "n": 128,
-              "title": "한전, 제주서 낮 시간대 전기요금 50% 할인 - 뉴스락",
-              "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9FYVZVUUtuOHlFdWxBanNfQm9zaHBKVU9HWFZNSnM5TTFiSGxWMFZIMkNfcTluUVlfeThfNmU5SHNZSk1aMUZDMHdjcjlYdG1MMjBITFg1Sm16T1pmalVyYUd3VTgxWHo0ZUJyUGxR?oc=5"
-            },
-            {
-              "n": 125,
-              "title": "한전, 제주 ‘탐라는 전기예보’…낮 전기요금 50% 할인 - 에너지안전신문",
-              "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5GeEtNQVBPaGx2VTJnWHV3d1VDM2E3cTRobDRfWThjYjBJa1FKRktkU1YzOXVxTmEwTm1ZajI2VFByWlNQTjMwbmtzQVVYUEdERXZ5a0IyaWVWQ1lBbnlYdjlTaHk?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-09",
-          "rank_by_count": 9,
-          "name": "이브이첨단소재 프롤로지움 배터리 공개",
-          "easy": "이브이첨단소재의 투자사인 프롤로지움이 미국항공우주국 워크숍에서 차세대 우주 배터리를 공개했습니다. 뭔 소리냐면 4세대 리튬 세라믹 배터리 기술을 선보이면서 우주항공 시장 공략에 나서고 있다는 말이에요.",
-          "quote": "이브이첨단소재 투자사 ‘프롤로지움’, NASA 워크숍서 차세대 우주 배터리 공개… 투자자산 가치 재부각 / 이브이첨단소재 투자사 ‘프롤로지움’, NASA 워크숍서 차세대 우주 배터리 공개… 투자자산 가치 재부각 NBN미디어",
-          "member_count": 4,
-          "sample_articles": [
-            {
-              "n": 188,
-              "title": "이브이첨단소재 투자사 ‘프롤로지움’, NASA 워크숍서 차세대 우주 배터리 공개… 투자자산 가치 재부각 - NBN미디어",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9yb0ZxVmxDRW9vM01QWEo5TVJOWWlQZUlMV2RsUTZNYkFjd2p2bERVaDlkbVI2TTJUSDhPTE53aEE0SU5QcXdtSWdBMzF0bDlYVEx6bmRNdmRwMENKLVZJNzZBeU45QdIBakFVX3lxTE1oUHE0RWNDS3dLSVZpZW9kd1NSLUVmRGZTYm5SNm9qak8xY0NqZ2UzNHRUUnpvUl9Sd0hrSk54Sy1yT2ZtQ2dMQ3RVYVBKNFptdk1oY2Z5WVJsdzRtSjJHMy1FcVNCaHhoSWc?oc=5"
-            },
-            {
-              "n": 187,
-              "title": "이브이첨단소재 \"프롤로지움, NASA 워크숍서 차세대 배터리 공개\" - 뉴시스",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB3b3owQmpwUTZDc0k5ZXNCajBjMno4QTVrUk9OSWJ5aEI0dm9WYlRQMU9qRDlWQVZZYXFhdkota3VhOWF6bk5NMjdsdkc5TVJJenFtWnRfd1JyeDgyV1VTR9IBeEFVX3lxTE5pNjJFcnV2RHk4Q3kxbTJqcThmNlRKUnB5VHNsbWZVdkZrMVFPRGFqU1QteVc5QVRzSkpUY2xyMHFxelFCS29SbjNybmdoWkJLY05lOE5PN015WW1CQWxJVkhKZDV6Q0NxeE8zZnNHcEo1aGtjaFhTdA?oc=5"
-            },
-            {
-              "n": 190,
-              "title": "이브이첨단소재 투자사 프롤로지움, NASA서 차세대 배터리 공개…우주항공 시장 공략 - 아주경제",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9rUXNPMk1TYUhJYU9EUkF1SWcyTEVEV2xxNVBCeGNSVXZvZWhjbVpYWEtVN3hmZFpBSmw0VXpEQjRhMnZMNVhraUd4VVhBNU14Wk01ZW5zSExuUdIBWEFVX3lxTFBJb2lGRkE5RDJfX0pURGFfY1BNS1RYN0hwbVdQVWZpcGhvdEFpSU4tWndwZTlmVXpIV1VJeE1XYVdfNFR3T280V0haVjZWdFZqUjFuRnk5WXo?oc=5"
-            },
-            {
-              "n": 184,
-              "title": "이브이첨단소재 \"프롤로지움, NASA서 4세대 리튬 세라믹 배터리 공개\" - 뉴스핌",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBTNEgwUnRhVUQ3Qmkwa1pKbGIwMXgwZnd5dlp5U0JTa3JlS25rNlV2MlY3Z1dzYzRUckxHRDNwa3R4aElHeG1EVjZ4dTh5TkF3RnlfSlZJcE1ORnVj?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-10",
-          "rank_by_count": 10,
-          "name": "휴머노이드 로봇 ETF 인기",
-          "easy": "미래에셋자산운용의 TIGER 코리아휴머노이드로봇산업 ETF가 올해 개인 순매수 5000억 원을 돌파했습니다. 뭔 소리냐면 제조현장용 로봇과 휴머노이드 관련 산업에 대한 개인 투자자들의 관심이 그만큼 뜨겁다는 말이에요.",
-          "quote": "'TIGER 코리아휴머노이드로봇산업 ETF' 올해 개인 순매수 5000억 돌파 / 'TIGER 코리아휴머노이드로봇산업 ETF' 올해 개인 순매수 5000억 돌파 CNews",
-          "member_count": 4,
-          "sample_articles": [
-            {
-              "n": 180,
-              "title": "'TIGER 코리아휴머노이드로봇산업 ETF' 올해 개인 순매수 5000억 돌파 - CNews",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Qci1jQ2VzMzYyN3ZRY0V6cmI3Q3RuZGp0V1RNQnVPQzNpY2Fpd2dvaUkwWDFsbVV1WENQa2EySG9ZMDY2T2dQQjhJalYwYy13VEhpNll5R3hlb0ZMc2F2N1czVWtPR1ExSU4yRFhQZEpnaXNVSXBJ?oc=5"
-            },
-            {
-              "n": 183,
-              "title": "‘TIGER 코리아휴머노이드로봇산업 ETF’, 올해 개인 순매수 5000억 원 돌파 - 포춘코리아",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5RZE5YSm5tNnktbU5qWG1WM2tVMUhmMDlMZWx0dW1CRjZqdUltc1BEQzVvT2t6NFoxSlozZm85U0dfcVc5UWlTYXZmWm1sT1pwdkRiM0tRTjlScXI3eHVLcDZqd0E1eGt0V0pueC00NmZpUdIBdkFVX3lxTE5zc01pN2o2dy1IZ3pKV2xfakhUNWt1VzB4VHV4OWlGTGQ5UXl1TU5mWVdRYmV0c0ZTQmxORnhjZ0JzZmFNWDg3SFZSZHAzeFA4dk1GSnR1SjhNU2Y5LVk1ZGpWNXJHS3VaMFZfX2RWY1ZCX2Z0R0E?oc=5"
-            },
-            {
-              "n": 181,
-              "title": "미래에셋자산운용 ‘TIGER 코리아휴머노이드로봇산업 ETF’ 개인 순매수 5천억 넘겨 - CNB뉴스",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBxck9UVnBMbzJwZzRPNGRUbU80cXUzUDhVRlF0N3JwYlJKekhLblhjV0QtVEM1ZDZ3UmdLaXRLOENudXlTYmltTktlRE8zSGdfUFlEa3VXbjZiQU0zTTM4dFdmTWN0REZ5NUI0?oc=5"
-            },
-            {
-              "n": 179,
-              "title": "TIGER 코리아휴머노이드로봇 ETF, 개인 순매수 5000억 원 돌파 - 글로벌이코노믹",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQemFyWDFFY3B2YTZkc1dMeTgtdnNaSGczR3F3NTlXTUdNTFdBeWZPX0QwbjVpbG9uT1JQTFFHaUstbzdWOXU1MVkxaERfNUhUb2x4MDZtajZSYXZETFBGbTJWeU9sR2dpTFdnVlZCb2Y5Z0k5b3I2clFieHN2SjJpeHFYMkNQTk15?oc=5"
-            }
-          ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-11",
-          "rank_by_count": 11,
-          "name": "에이피알 브랜드501 인수",
-          "easy": "코스피 상장사 에이피알이 화장품 제조 판매 업체 브랜드501의 주식 5만주를 700억원에 추가 취득해 지분율 87.3%를 확보했습니다. 뭔 소리냐면 스킨케어 브랜드 닥터멜락신을 운영하는 브랜드501을 인수하면서 경영권을 확실히 쥐고 사업 다각화에 나선다는 말이에요.",
-          "quote": "에이피알 \"브랜드501 주식 700억원어치 추가취득…지분율 87.3%\"",
-          "member_count": 3,
-          "sample_articles": [
-            {
-              "n": 1588,
-              "title": "에이피알 \"브랜드501 주식 700억원어치 추가취득…지분율 87.3%\"",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126162600008"
-            },
-            {
-              "n": 1574,
-              "title": "에이피알, 브랜드501 주식 700억원 규모 취득…\"경영권 확보\"(종합)",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126162651008"
-            },
-            {
-              "n": 1541,
-              "title": "에이피알, 뷰티 브랜드 '닥터멜락신' 인수",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219622"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": false,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-12",
-          "rank_by_count": 12,
-          "name": "ESS 중앙계약시장 낙찰",
-          "easy": "에너지저장장치 3차 중앙계약시장에서 1194MW가 낙찰되며 전국 14곳이 우선협상 대상자로 선정됐습니다. 뭔 소리냐면 2차 대비 낙찰 규모가 두 배 늘어나는 등 역대 최대 규모로 진행됐다는 겁니다.",
-          "quote": "ESS 3차 중앙계약시장 1194MW 낙찰…2차 대비 두 배 늘어 / ESS 3차 중앙계약시장 1194MW 낙찰…2차 대비 두 배 늘어 기후에너지데이터뱅크",
-          "member_count": 3,
-          "sample_articles": [
-            {
-              "n": 117,
-              "title": "ESS 3차 중앙계약시장 1194MW 낙찰…2차 대비 두 배 늘어 - 기후에너지데이터뱅크",
+              "n": 121,
+              "title": "동서발전, ESS 확대로 호남권 전력계통 안정화 추진 - 국토일보",
               "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5qb1dxaU93RVBnZFg1bTRrZElXa3FLbmlEOVMtSXFzdHZQLWNtQ3FXNGwtSHV6b195WGZlSVZ6T1drQ0tsQVVYYjB5TWljNTA3VnM5TnhUVWpBelhUNWc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9MMG9aR0RKRlI5SW9XZGNneTJfWDlIYmJYbmRNVktzSEQ0V0ZPUG9pNW1QSlVSUGZJMTAzMTYxeVkwSGg3Y0JHVVdzNlgxczRsZUVxWmxEYm1PVjBaSTJFTm9BNnU?oc=5"
+            },
+            {
+              "n": 122,
+              "title": "전력망 안정 위해 전국 14곳에 1,194MW 규모 ESS 구축 - ebiznews",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE42djRQUGxMU01OdTNqTmNjakhXYXUtU0IwenRvMWJlU0RlcVRLbWlnRlA1dXZKOHNCMTJreWNGV0hsSF84c0Vsd3JObXRWc2kybFhibktxVTZkZE5sU3lwVEdqVjY0UnZaQ3hj?oc=5"
             },
             {
               "n": 118,
-              "title": "3차 ESS 중앙계약시장 우선협상 대상자 선정…14곳 구축 - 연합뉴스",
+              "title": "동서발전, '에너지저장장치 입찰 672MW' 확보 - 발전산업신문",
               "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBaUG9CRjdRcUdFUXVRbFRqOUtTdkltS3Jid2pUU1ZPQV9HS2ZMVEhYVVlhamNBMm45dUhZaE45YVlWME5vbndKX1A5bzZxRzlzX216bzlxeWlSRUJEcUphZtIBYEFVX3lxTFBaUG9CRjdRcUdFUXVRbFRqOUtTdkltS3Jid2pUU1ZPQV9HS2ZMVEhYVVlhamNBMm45dUhZaE45YVlWME5vbndKX1A5bzZxRzlzX216bzlxeWlSRUJEcUphZg?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1iNUN1Y08yX3M2QUdZbnVOVDlGM1Y3ZHVZUzRRWWV1WVFmZTBXR3RIXy13ck1VcjdseS1SaXJ3amlYOGw1bndOX2tHWm1QdzNTR2pCalZFT05RNk1rMUpwY1dIdHFJSjJt?oc=5"
             },
             {
               "n": 120,
-              "title": "'역대 최대' 3차 ESS 입찰… 전국 14곳 우선협상 대상 선정 - 한국일보",
+              "title": "동서발전, ESS 중앙계약시장 672MW 확보...누적 용량 국내 1위 - 산경e뉴스",
               "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA2cFd5STZVRjVLSm96a2ttX2g4ek5LUGVqVmVlendVNmFUanJabzl3M0dNbTRJSkxoWWdCZ2oyRE9RNWdTanZQMnFodTFFSGNPdnNaaFBiQXZPZW51Q3NFSGpLWkdSVk1nT2FjWm9jVEtObkU?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5NbGNoRUNkdnUzR3BOOXRxUHdGdUsyVHdKVmFkZ3ZFM3l2Szl4M2k1SWNjaTN3UmxWMU01eS0tSGJyN3ZkZ3NHSnFfeVFLdk9VNFJ3RTZ6MEZsUkhpZVI2QmlmRmF4S2c?oc=5"
+            },
+            {
+              "n": 124,
+              "title": "동서발전, ESS 3차 중앙계약시장 입찰 672MW 확보했다 - 에너지데일리",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9Ddko3eERGQzVkV3EtSFBVTlhuU1dkM3RTOFF6dTJCSUVNTWhnTXlJWjA0T05MQ1RpZzExdTg1NHJCTEFTWW40QTM5ZjliMFNCSDhVLXNTRlNFNVZjbmR6c2IwSGZWRGJBVmVDSlRBX0NNUQ?oc=5"
+            },
+            {
+              "n": 117,
+              "title": "동서발전, ESS 중앙계약 시장 서 672MW 규모 물량 확보…재생에너지 확대 기반 구축 - 에너지플랫폼뉴스",
+              "source_name": "'ESS 에너지저장'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE02VEZIT09Jc1ZzdE9YNW1QdTZDdmlmY292eERhWERPaEdSVDAweS1ZMk1FaGZsVTJuRlI1TXVubEMyTWczR1A5eEJpVzRRTnJBVjFGSFdkQlZZT3dxX3lFWE9oZUY4Z3JHT3hDd9IBcEFVX3lxTE8zU25sTnhzSVZ5MGN2elo5bFV0UzRURWJsSk8zNHA2UHZRclh4UGRsenY4ZFpudkUwZGg3YVVfT1JwTjRxRzJ0VWs0OEpFTk5reE9GbjAyczFHRzU0a2dwSEZQSmVRZ0VQRGFlbFhKRnI?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-02",
+          "rank_by_count": 2,
+          "name": "SK하이닉스 자사주 매입 확대",
+          "easy": "SK하이닉스가 최근 주가 하락에 대응해 하루 70만 주 규모의 자사주 매수 주문량을 기존보다 2배로 확대한다고 밝혔습니다. 주주가치를 높이기 위한 조치인데요, 쉽게 말하면 매수 속도를 두 배로 높여 주가 방어에 나선 셈이에요.",
+          "quote": "SK하이닉스, 자사주 매수 주문량 2배 확대…하루 70만 주",
+          "member_count": 5,
+          "sample_articles": [
+            {
+              "n": 92,
+              "title": "SK하이닉스, 자사주 매수 주문량 2배 확대…하루 70만 주 - 글로벌이코노믹",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOQmpxelFEVjhEbGVGdTAzVHVFREw4aXJ2Rm1VTWd5ZFR3SWV6d05OVlBxZURuZXhZZXRDWUV4aVMxMXNNQlE1S2RFU2RiZjVUR01GdFBHY3Flak9ibjE0ZEdlTmt2cmh2Z2J3R3EycnVHWFFCTTQzR0RpcXVROGNxZmJGYXR3Zw?oc=5"
+            },
+            {
+              "n": 85,
+              "title": "SK하이닉스, 자사주 일일 매수 주문량 두 배로…\"주주가치 제고 차원\" - Chosunbiz",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcXBOMUdDbnB4X3NIalhnVk82ZlhOc1dUakdRMVQ1Zm5HWnh1cm56LTlWNWJ0SThGQTgxX1ZWd25QbVNSZThXRmFWWVFiX2VjT1g0SWpvZ0tlUks1dE9VS2kzT3h0RkpTR1htTzd2VFVRRk9KN1NubjduZWU5YUl6aXl2anZNNEtF?oc=5"
+            },
+            {
+              "n": 91,
+              "title": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고 - KBS 뉴스",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5wOUVMRk9BcGFjODBkUktaWkJDN0plc2JUMXdOaWJITElSZEVUZ1ZYR1dOTTIzZlZfN0RGb0N5MnVGdElaajdDUkk1MjdCVk9HWWtLcC11XzVQVkk?oc=5"
+            },
+            {
+              "n": 86,
+              "title": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고 - 연합뉴스",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE00SG5MbVVoeUVXU3YwRnJWdGdHUm4xTm1oOW5MU0hYVU1VMG83WE5wM2lxdGhUOFpkWmFxd0ZWeVYxcWlxYXRPYVRMSkV0b0x2dWQ3QUh0QktZYWfSAWBBVV95cUxQMURjWllvS1l6dXpwbzBRVHFnUDlyZlotcGFwSzhFbnR5SW5tQ1N6Y3ItX283cl92N1ROMEIwS3RBU2E1Z2U1MF9TdWJtLUVmUTFLSmwtMGppUDdMWUFhaDA?oc=5"
+            },
+            {
+              "n": 89,
+              "title": "SK하이닉스, 자사주 매입 속도 2배로…하루 70만주 주문 - 뉴스핌",
+              "source_name": "'SK하이닉스'",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9paEZNUnFTYXNrX1UySjhia0h4UVNKN2pydVIzWlhMREdJTnVqX28zbEJmRlZUTnhTem9xZ1k5MjVveEx1bjFEN1dTaWVFN3Y1Y1lDVmhFNUZwejRE?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-03",
+          "rank_by_count": 3,
+          "name": "미래대응기금 강행 논란",
+          "easy": "정부와 여당이 야당의 강력한 반발 속에서도 162조원 규모의 미래대응기금 지출액을 국회 동의 없이 30% 범위에서 증액할 수 있도록 하는 방안을 강행하기로 했습니다. 학계와 야당에서는 빚을 내 재정저수지를 만들면 안 된다며 상시 추경 논란이 이어지고 있거든요.",
+          "quote": "국회 예비심사없이 훑은 162조 미래기금…결국 비공개 소소위서 담판 전망",
+          "member_count": 5,
+          "sample_articles": [
+            {
+              "n": 2419,
+              "title": "국회 예비심사없이 훑은 162조 미래기금…결국 비공개 소소위서 담판 전망",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220447"
+            },
+            {
+              "n": 2416,
+              "title": "박홍근 “미래대응기금, 연기금투자풀에 여유자금 위탁 검토”",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220465"
+            },
+            {
+              "n": 2426,
+              "title": "\"국회 동의없이 30% 지출 증액\" 野반발속 당정 미래기금 강행",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220429"
+            },
+            {
+              "n": 2420,
+              "title": "[단독] 국회 동의 없이 13조 더 쓴다…162조 미래기금 강행 ‘상시 추경’ 논란",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220443"
+            },
+            {
+              "n": 2415,
+              "title": "학계 \"104조 빚내 재정저수지 만들면 안돼\"",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220471"
             }
           ],
           "flags": [
-            "대표 제목 인용이 원문과 다름"
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
           ],
           "unlumped_from": "",
           "is_single": false,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-13",
-          "rank_by_count": 13,
-          "name": "차기 ECB 총재 낙점",
-          "easy": "스페인 출신의 파블로 에르난데스 데코스 국제결제은행 사무총장이 차기 유럽중앙은행 총재로 낙점됐습니다. 뭔 소리냐면 비둘기파로 꼽히는 인물이 유럽 통화 정책의 수장으로 자리를 옮기게 됐다는 말이에요.",
-          "quote": "차기 ECB 총재 '비둘기파' 스페인 데코스 낙점 / (베를린=연합뉴스) 김계연 특파원 = 스페인 출신인 파블로 에르난데스 데코스 국제결제은행(BIS) 사무총장이 차기 유럽중앙은행(ECB) 총재로",
+          "id": "e261128-04",
+          "rank_by_count": 4,
+          "name": "한국은행 기준금리 인상",
+          "easy": "한국은행이 기준금리를 연 3.25%로 올리며 올해 세 번째 인상을 단행했습니다. 신현송 총재가 통화정책을 펼 때 환율과 물가를 우선시한다는 관측이 나오는데요, 국고채 금리와 채권 시장에도 만기별로 희비가 엇갈렸습니다.",
+          "quote": "환율, 물가가 먼저…한은 총재 통화정책에 ‘주가’는 후순위였다 [BOK WATCHER]",
+          "member_count": 5,
+          "sample_articles": [
+            {
+              "n": 2418,
+              "title": "환율, 물가가 먼저…한은 총재 통화정책에 ‘주가’는 후순위였다 [BOK WATCHER]",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220459"
+            },
+            {
+              "n": 172,
+              "title": "한은, 기준금리 3.25%로 올려…올해 세 번째 인상 - 경북일보",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9IZEVsalhmNDFZREpaQUdrcVc4YjBmTGVIS3hGaVJpS2E1TUhoYUxkWWU1R0RJeUEweDlSNjBRaEJIY0dwRmlXSzFoLWg3UEx5VHFJN2ZsUTR5alZQXzB5cmxWdXhGV3ZSWFh5eXhVaw?oc=5"
+            },
+            {
+              "n": 171,
+              "title": "한은 \"내년 韓경제, 4.1% 성장 전망\"…기준금리 연 3.25%로 올렸다 - 머니투데이 - 머니투데이",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8zYW5hQlJlaFJRRGVzVk5oSXVtanl6YjNONWg0X1Q3M1AyZERvYlpCU2d1dVMxTHJSQzZKYWhOWktYVkhFaTgtSHBjME9SRXpRU0xuaENRNWgtS01SbkVvMTJFYXRLT0Fxa25N0gFwQVVfeXFMUEJtZkFDWVZMdkx2WW5ndlhOV0VPU01DckU1WmpxY2huUXFEb2haQjMxbGF1UHI4bE1lcnlXWjlWR2x2eG9lNmFRLVc4WncyRFZyTlRjVlg5a1RUZ3lNd2tOZURGdXZoLWs5MkVTR0E0Zw?oc=5"
+            },
+            {
+              "n": 167,
+              "title": "한은 기준금리 올린 날 무슨 일이?…국고채 만기별로 희비 엇갈린 이유 - 매일경제 마켓",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82Ql9PM0NfS0FwdzU3WW5zWGtGTzFLbVc0aXRqUkpmbm9nam5DSHVtQjFyMEdxbWFVUHZDaDNGOWhYVWJwQ2NfUDMyZU9GckxHbFE?oc=5"
+            },
+            {
+              "n": 168,
+              "title": "김민석 “한국은행 기준 금리 인상에 서민 부담…당력 동원해 민생 정치 올인” - KBS 뉴스",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8xVFdKQTRLUTJaUXI3aWRtUUpSbTNrWDBTV0RDODBzZDFQMnlpMlBmUjJ3V3lGVDBYMW56S25yUHRRNkxMSlQ1SXh1RGUwWE04bHFlNW9qbUo5U1k?oc=5"
+            }
+          ],
+          "flags": [
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
+          ],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-05",
+          "rank_by_count": 5,
+          "name": "트럼프 관세 및 호남 반도체 압박",
+          "easy": "미국이 관세를 앞세워 반도체 공장 유치에 나선 가운데 호남 반도체 메가 프로젝트를 거론하며 압박을 가하고 있습니다. 약속을 어기면 25%의 관세를 부과할 수 있다는 건데요, 정부는 반도체는 미국 수요에 대응하고 석화는 공급과잉을 해소하는 전략을 주목하고 있습니다.",
+          "quote": "미, 관세 근거로 ‘호남 반도체’ 들었다…‘약속 어기면 25%’ 압박",
+          "member_count": 4,
+          "sample_articles": [
+            {
+              "n": 150,
+              "title": "정부, 미국 관세 대응 전략 주목...\"반도체는 美 수요 대응, 석화는 공급과잉 해소\" - 시사뉴스",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9GVHpscE1EbjNWUEV6UmpEazh0MmZhTVQ5RFpYd2ZOTDRvVFdfcnJvTGVGWnFiaWpLUFVnQ1l3S09sdy0tSEdOMG0zb1FXSG1jQjIzanZiQlFRa3hfazJ1LVhIaw?oc=5"
+            },
+            {
+              "n": 152,
+              "title": "美, 관세 근거로 ‘호남 반도체’ 들었다…“약속 어기면 25%” 압박 - 중앙일보",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBUM1FiTHhWVTVRTUktNk5Ob2cxS0s2bk5RS2hPNGdCcTQ0Zkc4MklsT1gwWG5hc3JIWEVkNjdaRkdaUGVsdHBIQzdBQllHY25zalduM0xn?oc=5"
+            },
+            {
+              "n": 153,
+              "title": "다시 관세 버튼 누른 트럼프...'호남 반도체'도 트집 [뉴스UP] - YTN",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE54VVEwbGN1Ry1MUnRaWkw5U3gzU0I0VEdLaXFXVHFUUHBscXhCTDI5dXZFcllfb0F2bnJPemI1Q3FpMGxJcl9BVUhRX1JVZi03QkxVSk1xT0xRUzIzWEE?oc=5"
+            },
+            {
+              "n": 156,
+              "title": "美 ‘과잉생산 관세’ 근거 된 호남 반도체 메가 프로젝트 - 조선일보",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPZjljek5IalE3My13a0xoZDBYM2lMNG5GZjdYX2d1WVYydzlrTDlGUllFQkpmR0RsQ3dKSzZUWnBXbVJiRUdCRlVYekU5SkVueFJCZ3BleU5hdnBRMGh2RW5IR3JGeHJELUs3ZzNWR3QzcTkwd3hWTk05UDVvOFZDbnVIZGRTUkdhR211WkpPMkhkWFloYWRlWnhqUWswQQ?oc=5"
+            }
+          ],
+          "flags": [
+            "대표 제목 인용이 원문과 다름",
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
+          ],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-06",
+          "rank_by_count": 6,
+          "name": "무신사 3분기 실적 호조",
+          "easy": "무신사의 올 3분기까지 누적 수출액이 646억원을 기록하며 1년 전보다 4배 이상 급증했습니다. K패션을 앞세운 해외 역직구 거래액이 크게 늘었기 때문인데요, 매출과 영업이익 모두 역대 최대를 기록했다고 보입니다.",
+          "quote": "'K패션 성지' 무신사 실적 날았다",
+          "member_count": 4,
+          "sample_articles": [
+            {
+              "n": 2366,
+              "title": "'K패션 성지' 무신사 실적 날았다",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753631"
+            },
+            {
+              "n": 2483,
+              "title": "무신사, 3분기 누적 수출액 작년比 4.9배로 급증…역대 최대",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127145100030"
+            },
+            {
+              "n": 2450,
+              "title": "'외국인 쇼핑' 효과 본 무신사 … 매출 34% 증가하며 실적 잔치",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12220354"
+            },
+            {
+              "n": 2460,
+              "title": "무신사, 3분기 누적 매출 역대 최대…영업익 67% 급증",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/business/12219980"
+            }
+          ],
+          "flags": [
+            "분야로 묶였을 수 있음(제목끼리 거의 안 겹침)"
+          ],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-07",
+          "rank_by_count": 7,
+          "name": "한국가스공사 실적 및 미수금 증가",
+          "easy": "한국가스공사가 해외 LNG 사업 호조로 이익이 늘었지만 미수금 부담도 동시에 커지고 있습니다. 현대차증권 등에서는 LNG 가격 상승이 양날의 검으로 작용한다고 분석했는데요, 목표가가 상향 조정되기도 했습니다.",
+          "quote": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담",
+          "member_count": 4,
+          "sample_articles": [
+            {
+              "n": 147,
+              "title": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담 - 파이낸셜뉴스",
+              "source_name": "'LNG 가격'",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIRnJ0dXNwcEZPWFVrNF9rY2x2bGIxQ2toTWJPS1YtRGs2U3IwU3A4NFR3U0FNekgyQnk4Ry12b0JSODBYM3AtalFEYlJyWDlaY1ZuYjBmQU5JQQ?oc=5"
+            },
+            {
+              "n": 145,
+              "title": "\"한국가스공사, 해외 LNG로 이익·미수금 동반 급증…목표가↑\"-현대차 - 한국경제",
+              "source_name": "'LNG 가격'",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1hZnozOWJkbmNDZzZOWlhFanU3bm5LMkJ0YVIwS1lZZXlzcHZYQjRScXAtb25VNjNFUkc1dHlIWG9CaldBejBxc3MxaXpqeTFLR2I4WWtHMGVvZw?oc=5"
+            },
+            {
+              "n": 2406,
+              "title": "비수기 뚫고 영업익 51% 껑충…\"한국가스공사, 상승 여력 있다\"",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274975i"
+            },
+            {
+              "n": 141,
+              "title": "[리포트 브리핑]한국가스공사, '양날의 LNG 가격 상승' 목표가 49,000원 - 현대차증권 - 뉴스핌",
+              "source_name": "'LNG 가격'",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9DdldDQk9JRkV5T2tKUHhidGRuX3U1c3VmOHY2d25QSXI1d2hZcktTdVRsWWM1QWpXUFRuazJqVXR0dmtCX2F1VzNaQjBFelBGamVlOHhoRWZoWFNR?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-08",
+          "rank_by_count": 8,
+          "name": "한전 제주 전기요금 50% 할인",
+          "easy": "한국전력이 제주 지역에서 재생에너지가 넘칠 때 전기를 쓰면 요금을 50% 할인해주는 탐라는 전기예보 제도를 시행해 눈길을 끕니다. 그게 뭔 소리냐면 전력 공급이 과잉될 때 소비를 유도해 계통 안정을 꾀한다는 말이에요. 장점은 요금 부담을 낮추고 친환경 에너지 활용도를 높인다는 건데, 쉽게 말하면 할인 폭이 50%에 이른다고 보입니다.",
+          "quote": "한전, 개인정보 유출 피해 예방 총력…제주선 전기요금 50% 할인",
+          "member_count": 3,
+          "sample_articles": [
+            {
+              "n": 130,
+              "title": "한전, 개인정보 유출 피해 예방 총력…제주선 전기요금 50% 할인 - 쿠키뉴스",
+              "source_name": "'전기요금'",
+              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBFR21xT1Q1YWtPQV9XcmhUZ0w4TktNWWVsaThQQ2I0T0dxeUtpWVozWWpyYzg5QVlrbkplUHA2c2lXMThsd3FJaVNyZEVLOTFRWEI3NlFGZ0VBclpyZGpmbXQzVQ?oc=5"
+            },
+            {
+              "n": 131,
+              "title": "재생에너지 넘칠 때 전기 쓰면 50% 할인…한전 제주서 시행 - 에너지타임즈",
+              "source_name": "'전기요금'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBJTURvQTRSdUtwU3M3YXNXNmFVQUd1YkdSMUxOempUb040UTd5ZXo0dzdiQUQtY1ZjanpLUWJNa2hyV3lZMTRaNkg1YzJtbi1zUmlISWJNLUpiZ3lmSFYzbjJMQTlDTFc0Z2w5SQ?oc=5"
+            },
+            {
+              "n": 127,
+              "title": "\"낮에 전기 쓰면 요금 반값\"…한전, 제주서 '탐라는 전기예보' 시행 - 파인드비",
+              "source_name": "'전기요금'",
+              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9jd1Rra1RFb0tuRFJTbnFraVZiUF94NjQ2NE1sVDRNX2xvREFMTUdkeTF4YVlHcGJydnNSWExiVlBFTzNLU2VFNEpVY0hqd3pCc01yM0xDMmFueVdGMW9jZG5ST2VzZw?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-09",
+          "rank_by_count": 9,
+          "name": "국민연금 3분기 실적 발표",
+          "easy": "올해 3분기 국민연금기금 적립금은 1664조원으로 석 달 만에 202조원이 줄어든 것으로 나타났습니다. 기금운용 수익률은 13.28%를 기록했는데요, 국내주식 하락률이 가장 컸다는 분석이에요.",
+          "quote": "국민연금 적립금 석달만에 202조원↓…3분기 수익률 13%",
+          "member_count": 3,
+          "sample_articles": [
+            {
+              "n": 2481,
+              "title": "국민연금 적립금 석달만에 202조원↓…3분기 수익률 13%",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127153400530"
+            },
+            {
+              "n": 2414,
+              "title": "3개월만에 202조원 사라진 국민연금 적립금…국내주식 하락률 가장 컸다",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220533"
+            },
+            {
+              "n": 2445,
+              "title": "[속보] 국민연금 9월말 기준수익률 연초대비 13%",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12220415"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-10",
+          "rank_by_count": 10,
+          "name": "로봇주 수요 확대 기대감 급등",
+          "easy": "향후 휴머노이드 수요 확대에 대한 기대가 커지면서 로봇 관련 주가가 급등 마감했습니다. 삼성전자의 로봇 역량 제고 계획과 맞물려 관련 종목들이 상한가를 기록하기도 했는데요, 쉽게 말하면 로봇 산업에 대한 시장의 관심이 크게 쏠린 겁니다.",
+          "quote": "[특징주] 로봇주, 수요 확대 기대감에 급등…일부 상한가(종합)",
+          "member_count": 3,
+          "sample_articles": [
+            {
+              "n": 2523,
+              "title": "[특징주] 로봇주, 수요 확대 기대감에 급등…일부 상한가(종합)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127040751008"
+            },
+            {
+              "n": 181,
+              "title": "[특징주] 로봇주, 수요 확대 기대감에 급등…일부 상한가(종합) - 연합뉴스",
+              "source_name": "'휴머노이드 로봇'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4xck1pVnpmMy1iX1NLcXV0ekthbmxDYk5VQVMtNURtRncyWFFXWkRXUE5MdnJELWU3ZklycERGc0d0SFR1endZeUhoTFR1Mlp1N1o2ZTZEZm4wckpQVHUycNIBYEFVX3lxTE4xck1pVnpmMy1iX1NLcXV0ekthbmxDYk5VQVMtNURtRncyWFFXWkRXUE5MdnJELWU3ZklycERGc0d0SFR1endZeUhoTFR1Mlp1N1o2ZTZEZm4wckpQVHUycA?oc=5"
+            },
+            {
+              "n": 2462,
+              "title": "삼성전자 로봇에 힘주자 관련주 줄줄이 급등…제닉스로보틱스 상한가",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219958"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": false,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-11",
+          "rank_by_count": 11,
+          "name": "해외송금업체 이나인페이 해킹 피해",
+          "easy": "국내 소액해외송금업체 이나인페이가 해킹 공격을 받아 약 25억원의 자금을 탈취당했습니다. 해킹으로 인한 자금 탈취 사고 중 가장 큰 규모인데요, 금융감독원이 곧바로 현장점검에 나섰습니다.",
+          "quote": "송금업체 공격해 25억 빼갔다 … '자금 탈취 해킹'에 금융권 비상",
           "member_count": 2,
           "sample_articles": [
             {
-              "n": 1590,
-              "title": "차기 ECB 총재 '비둘기파' 스페인 데코스 낙점",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126196000082"
+              "n": 2428,
+              "title": "송금업체 공격해 25억 빼갔다 … '자금 탈취 해킹'에 금융권 비상",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220407"
             },
             {
-              "n": 1589,
-              "title": "차기 ECB 총재에 '비둘기파' 스페인 데코스(종합)",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126196051082"
+              "n": 2475,
+              "title": "국내 송금업체 해킹으로 25억원 피해…금감원 현장점검 착수",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127162500002"
             }
           ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
+          "flags": [],
           "unlumped_from": "",
           "is_single": false,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-14",
-          "rank_by_count": 14,
-          "name": "스페인 데이터센터 재생에너지 의무화",
-          "easy": "스페인이 대형 데이터센터를 대상으로 재생에너지 사용률 80%를 시간별로 의무화하는 규제를 도입합니다. 뭔 소리냐면 관련 업계의 소송이 예고되는 등 전력 수급과 환경 기준을 두고 마찰이 빚어지고 있다는 겁니다.",
-          "quote": "스페인, 데이터센터 재생전력 80% 시간별 의무화…업계 소송 예고 / 스페인, 데이터센터 재생전력 80% 시간별 의무화…업계 소송 예고 AI타임스",
+          "id": "e261128-12",
+          "rank_by_count": 12,
+          "name": "금감원 검사·제재 관행 개혁",
+          "easy": "금융당국이 금융감독원의 검사 및 제재 권한에 대한 통제를 대폭 강화하는 금융행정 쇄신안을 발표했습니다. 업무 전반을 훑는 정기검사는 원칙적으로 금지하고 사전통지와 심의회 통제를 신설했는데요, 이른바 깜깜이 검사 관행을 대수술하는 셈이에요.",
+          "quote": "금감원 '깜깜이 검사' 관행 대수술",
           "member_count": 2,
           "sample_articles": [
             {
-              "n": 138,
-              "title": "스페인, 데이터센터 재생전력 80% 시간별 의무화…업계 소송 예고 - AI타임스",
-              "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9fcUdGUVZRb25GaVE3OHRYdTR2aDFTbkxvdFhFQmlIclgtU2xMZkdEZnZNS1hlN3BxOGFnYks3WTctckJYYXBQZzl3TGp3UFYyMThFdC1zSEdSejc4N25veC1nd01SUE10NGc?oc=5"
+              "n": 2425,
+              "title": "금감원 '깜깜이 검사' 관행 대수술",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220432"
             },
             {
-              "n": 139,
-              "title": "스페인, 대형 데이터센터 규제 도입...재생에너지 사용률 80% 의무화 - 뉴스;트리",
-              "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9GdUlJMVV6NWE3YWRzeVU4TnhkZ2NRdGpmWDBRNktLSVo3My14U1pVbWNPbnEtWklraV8xVVVtNG1XU3lCRkZoWndMWmt1MjFtWU1zZnhUMnhlc21z?oc=5"
+              "n": 2441,
+              "title": "금감원 ‘깜깜이 검사’ 대수술…검사 범위 사전통지, 심의회 통제 신설",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12219986"
             }
           ],
-          "flags": [
-            "대표 제목 인용이 원문과 다름"
-          ],
+          "flags": [],
           "unlumped_from": "",
           "is_single": false,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         }
       ],
       "single_articles": [
         {
-          "id": "e261127-15",
-          "rank_by_count": 15,
-          "name": "美 “삼성전자·SK하이닉스, 李대통령” 콕 집어…韓에 최대 25% 관세 으름장",
+          "id": "e261128-13",
+          "rank_by_count": 13,
+          "name": "환경공단, 수질오염총량관리제 개선 방안 모색",
           "easy": "",
-          "quote": "美 “삼성전자·SK하이닉스, 李대통령” 콕 집어…韓에 최대 25% 관세 으름장",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 87,
-              "title": "美 “삼성전자·SK하이닉스, 李대통령” 콕 집어…韓에 최대 25% 관세 으름장 - 서울신문",
-              "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE84ekdYcHpaWVRfOXpnbnpsTm42Rk1vdXJORE15OEktbUFYQWpvamw0dXl0NThES284SjhpUjhOTDVhZW1STmE4M1VlTnFJWkFydHhtRkZEbnRXR2FxbDFyZ0ZhQUpVVWYwZDIweGtWUmVGeU5lOC0w?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-16",
-          "rank_by_count": 16,
-          "name": "반도체 키우는 것도 문제?…트럼프의 달라진 관세 명분",
-          "easy": "",
-          "quote": "반도체 키우는 것도 문제?…트럼프의 달라진 관세 명분",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 153,
-              "title": "반도체 키우는 것도 문제?…트럼프의 달라진 관세 명분 - 비즈워치",
-              "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAwcWNKQy03TmhSWWJFMXlHLVMteUd6VnFjTVVxLW1RanJ0MXlCS0RaV0JoNGRUUEVacWtpWVBnbVRfQnNYRFlqcTY4LWlEdXhIZkhQNEE5QnBYbWFMN09GVkFWSmVuNlkzblp4Nw?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-17",
-          "rank_by_count": 17,
-          "name": "관세 근거로 \"호남 반도체\"…‘15% 사수’ 최악은 면했지만",
-          "easy": "",
-          "quote": "관세 근거로 \"호남 반도체\"…‘15% 사수’ 최악은 면했지만",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 155,
-              "title": "관세 근거로 \"호남 반도체\"…‘15% 사수’ 최악은 면했지만 - JTBC",
-              "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE81WEFCWHBBWU4xZWNvRUQ1di1hbHM0TDhkZ3M1bFlKRlRiQm5MVW9ycWw3ZUZJR2lId21wdE9KUkxMNEhvVUQ0a1ZZQ0llSVFaWF9LWQ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-18",
-          "rank_by_count": 18,
-          "name": "'호남 반도체'가 미국의 관세 압력 불러? 속죄양 만들기",
-          "easy": "",
-          "quote": "'호남 반도체'가 미국의 관세 압력 불러? 속죄양 만들기",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 156,
-              "title": "'호남 반도체'가 미국의 관세 압력 불러? 속죄양 만들기 - 세상을 바꾸는 시민언론 민들레",
-              "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0waXk2c1JxdFVYVkNQLW1oemctTE5ZcnEwY05qenZLQ1ZmTTRqS2sxbkdsUTFxb0VpeVhNRG9lRXYtaGpmVEgwRG1GNW9GRklfVjhLTHZ6Sk52QTF2UllfWWpIQkh3cWk0S1RmNQ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-19",
-          "rank_by_count": 19,
-          "name": "호남 반도체로 美 추가 관세?...\"확대 해석\"",
-          "easy": "",
-          "quote": "호남 반도체로 美 추가 관세?...\"확대 해석\"",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 151,
-              "title": "호남 반도체로 美 추가 관세?...\"확대 해석\" - KBC광주방송",
-              "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE16X1BsbFhVamZtMFBkYlV0cW9fbDFmYzF6VDBTaUhNNzA2NEtNeU1TeFBhME95UjhycXlLZng3TjN6Y0lVcUlVNjl2WTlPM1gzRHVmRkVqSENSamZXdE9Qag?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-20",
-          "rank_by_count": 20,
-          "name": "“약속 어기면 관세 25%”…미국, 호남 반도체 꼬투리 잡았다",
-          "easy": "",
-          "quote": "“약속 어기면 관세 25%”…미국, 호남 반도체 꼬투리 잡았다",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 149,
-              "title": "“약속 어기면 관세 25%”…미국, 호남 반도체 꼬투리 잡았다 - 중앙일보",
-              "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE51ejAzMTg4Y3VhdVc4MmthaWtlRHJBUm80N3dxQUlXN1hBUTgzZlpJRjF4aVIyalhTYlJJZ19FZnVEQVRhTVV0c19PR0ZwdzhQUnBNNElB?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-21",
-          "rank_by_count": 21,
-          "name": "관세 근거로 '호남 반도체' 지목한 미국...파장은? [이슈ON]",
-          "easy": "",
-          "quote": "관세 근거로 '호남 반도체' 지목한 미국...파장은? [이슈ON]",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 154,
-              "title": "관세 근거로 '호남 반도체' 지목한 미국...파장은? [이슈ON] - YTN",
-              "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAtSEQwOHRSdWVnYi1GN28ycFZXbnNzN2paZVpzOVg5bEg5RHJ3S2gwT0N0OUxQYmtzUHJSLXllLWpNYUgwSkhJZmlNY1JBcDlMTU5JR3g4Q3l4ZU1UdnNXTWRaR25HYUN1cnY0aVNJU0l1TDg5MlE?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-22",
-          "rank_by_count": 22,
-          "name": "美, 한국산 관세 25% 가능성 열어둬…산업부 “최종 15% 유지 전망”",
-          "easy": "",
-          "quote": "美, 한국산 관세 25% 가능성 열어둬…산업부 “최종 15% 유지 전망”",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 3,
-              "title": "美, 한국산 관세 25% 가능성 열어둬…산업부 “최종 15% 유지 전망”",
-              "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375352"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-23",
-          "rank_by_count": 23,
-          "name": "반도체·자동차 콕 집은 미국‥정부 \"과잉생산 동의 어려워\"",
-          "easy": "",
-          "quote": "반도체·자동차 콕 집은 미국‥정부 \"과잉생산 동의 어려워\"",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 152,
-              "title": "반도체·자동차 콕 집은 미국‥정부 \"과잉생산 동의 어려워\" - MBC 뉴스",
-              "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9EUjkyaUNmdUhJQTdGQXQ4ZjdDSlp2SUcyT3JSMDdrcnRmZGRqaS1tbFlnalpaYUNodWZJX0xndmtKMm1fc3FJNHJDbXU1d0FtcDFId01mSm9LTGF1dFVFYXo4MXU1M1NqNHFhUHBoM29OSW85NE0zUNIBeEFVX3lxTE1BbXRmNFNlaHRCS29oMzF4SG9CLS04MWl0RV9sTUxIY1Y1TE0xdDYtWGwtUDlpZTdCT096eXp5SlBUNk1jTGdrX2NfMUtrcFdEVXl2Y1FDQlpfY1c3SDZicVlhUGV1TWtzbXFBc211SDl2cDJrbVVKOQ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-24",
-          "rank_by_count": 24,
-          "name": "韓 수출 1조달러 돌파…美 무역 압박 빌미되나",
-          "easy": "",
-          "quote": "韓 수출 1조달러 돌파…美 무역 압박 빌미되나",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1465,
-              "title": "韓 수출 1조달러 돌파…美 무역 압박 빌미되나",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631461"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "미국 관세와 반도체 타격",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-25",
-          "rank_by_count": 25,
-          "name": "AI·전기화가 바꾸는 글로벌 산업 질서…한국의 돌파구는?",
-          "easy": "",
-          "quote": "AI·전기화가 바꾸는 글로벌 산업 질서…한국의 돌파구는?",
+          "quote": "환경공단, 수질오염총량관리제 개선 방안 모색",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 1,
-              "title": "AI·전기화가 바꾸는 글로벌 산업 질서…한국의 돌파구는?",
+              "title": "환경공단, 수질오염총량관리제 개선 방안 모색",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375350"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375398"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-26",
-          "rank_by_count": 26,
-          "name": "‘철도 혜택은 누가 보고, 비용은 누가 내나’…철도연, 투자·비용 해법 제시",
+          "id": "e261128-14",
+          "rank_by_count": 14,
+          "name": "한난, ‘따뜻한 인턴십’으로 발달장애인 27명 정규직 전환",
           "easy": "",
-          "quote": "‘철도 혜택은 누가 보고, 비용은 누가 내나’…철도연, 투자·비용 해법 제시",
+          "quote": "한난, ‘따뜻한 인턴십’으로 발달장애인 27명 정규직 전환",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 2,
-              "title": "‘철도 혜택은 누가 보고, 비용은 누가 내나’…철도연, 투자·비용 해법 제시",
+              "title": "한난, ‘따뜻한 인턴십’으로 발달장애인 27명 정규직 전환",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375351"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375397"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-27",
-          "rank_by_count": 27,
-          "name": "(RE100 컨퍼런스)반도체 온실가스 배출 84%가 전력...“규모 있는 재생E·예측 가능 시장 필수”",
+          "id": "e261128-15",
+          "rank_by_count": 15,
+          "name": "서울에너지공사, SH공사와 감사업무 협력 강화",
           "easy": "",
-          "quote": "(RE100 컨퍼런스)반도체 온실가스 배출 84%가 전력...“규모 있는 재생E·예측 가능 시장 필수”",
+          "quote": "서울에너지공사, SH공사와 감사업무 협력 강화",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 3,
+              "title": "서울에너지공사, SH공사와 감사업무 협력 강화",
+              "source_name": "전기신문",
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375396"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-16",
+          "rank_by_count": 16,
+          "name": "양재승 건전협 회장 “데이터센터 입지, 전력 공급부터 확인해야”",
+          "easy": "",
+          "quote": "양재승 건전협 회장 “데이터센터 입지, 전력 공급부터 확인해야”",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 4,
-              "title": "(RE100 컨퍼런스)반도체 온실가스 배출 84%가 전력...“규모 있는 재생E·예측 가능 시장 필수”",
+              "title": "양재승 건전협 회장 “데이터센터 입지, 전력 공급부터 확인해야”",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375346"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375391"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-28",
-          "rank_by_count": 28,
-          "name": "에코프로, 청주·포항서 김장 봉사활동 전개…지역 취약계층 지원",
+          "id": "e261128-17",
+          "rank_by_count": 17,
+          "name": "건실협 신임 회장에 김철 계룡건설 차장",
           "easy": "",
-          "quote": "에코프로, 청주·포항서 김장 봉사활동 전개…지역 취약계층 지원",
+          "quote": "건실협 신임 회장에 김철 계룡건설 차장",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 5,
-              "title": "에코프로, 청주·포항서 김장 봉사활동 전개…지역 취약계층 지원",
+              "title": "건실협 신임 회장에 김철 계룡건설 차장",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375349"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375395"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-29",
-          "rank_by_count": 29,
-          "name": "내년 수도권 공공주택 5.6만호 입주자 모집…올해 전망치보다 44%↑",
+          "id": "e261128-18",
+          "rank_by_count": 18,
+          "name": "환경보전원, 학교환경교육 정책협력 강화",
           "easy": "",
-          "quote": "내년 수도권 공공주택 5.6만호 입주자 모집…올해 전망치보다 44%↑",
+          "quote": "환경보전원, 학교환경교육 정책협력 강화",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 6,
-              "title": "내년 수도권 공공주택 5.6만호 입주자 모집…올해 전망치보다 44%↑",
+              "title": "환경보전원, 학교환경교육 정책협력 강화",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375348"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375382"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-30",
-          "rank_by_count": 30,
-          "name": "(인사) 기후에너지환경부",
+          "id": "e261128-19",
+          "rank_by_count": 19,
+          "name": "인텍에프에이, 아산 신공장 시대 활짝…대용량 ESS PCS 거점 도약",
           "easy": "",
-          "quote": "(인사) 기후에너지환경부",
+          "quote": "인텍에프에이, 아산 신공장 시대 활짝…대용량 ESS PCS 거점 도약",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 7,
-              "title": "(인사) 기후에너지환경부",
+              "title": "인텍에프에이, 아산 신공장 시대 활짝…대용량 ESS PCS 거점 도약",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375347"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375394"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-31",
-          "rank_by_count": 31,
-          "name": "히트펌프·전극보일러 도입 대비…집단E 안전기준 손질 전망",
+          "id": "e261128-20",
+          "rank_by_count": 20,
+          "name": "전국 1호 ‘햇빛소득마을’ 준공...그랜드썬기술단, 선정 4개월 만에 상업운전",
           "easy": "",
-          "quote": "히트펌프·전극보일러 도입 대비…집단E 안전기준 손질 전망",
+          "quote": "전국 1호 ‘햇빛소득마을’ 준공...그랜드썬기술단, 선정 4개월 만에 상업운전",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 8,
-              "title": "히트펌프·전극보일러 도입 대비…집단E 안전기준 손질 전망",
+              "title": "전국 1호 ‘햇빛소득마을’ 준공...그랜드썬기술단, 선정 4개월 만에 상업운전",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375345"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375392"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-32",
-          "rank_by_count": 32,
-          "name": "두산에너빌리티, 창원 에너지 취약계층 겨울나기 5년째 지원",
+          "id": "e261128-21",
+          "rank_by_count": 21,
+          "name": "에너지공단, 내부통제경영대상 4년 연속 수상...국내 첫 ‘내부통제경영시스템’ 인증 획득",
           "easy": "",
-          "quote": "두산에너빌리티, 창원 에너지 취약계층 겨울나기 5년째 지원",
+          "quote": "에너지공단, 내부통제경영대상 4년 연속 수상...국내 첫 ‘내부통제경영시스템’ 인증 획득",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 9,
-              "title": "두산에너빌리티, 창원 에너지 취약계층 겨울나기 5년째 지원",
+              "title": "에너지공단, 내부통제경영대상 4년 연속 수상...국내 첫 ‘내부통제경영시스템’ 인증 획득",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375344"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375390"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-33",
-          "rank_by_count": 33,
-          "name": "넥슨, 신작 판타지 월드 RPG ‘아주르 프로밀리아’ 국내 정식 출시",
+          "id": "e261128-22",
+          "rank_by_count": 22,
+          "name": "위제이, 산단 태양광·PPA 도입 효과 분석으로 ‘성남 기후테크 컨페어’ 최우수상",
           "easy": "",
-          "quote": "넥슨, 신작 판타지 월드 RPG ‘아주르 프로밀리아’ 국내 정식 출시",
+          "quote": "위제이, 산단 태양광·PPA 도입 효과 분석으로 ‘성남 기후테크 컨페어’ 최우수상",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 10,
-              "title": "넥슨, 신작 판타지 월드 RPG ‘아주르 프로밀리아’ 국내 정식 출시",
+              "title": "위제이, 산단 태양광·PPA 도입 효과 분석으로 ‘성남 기후테크 컨페어’ 최우수상",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375343"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375389"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-34",
-          "rank_by_count": 34,
-          "name": "한수원, 연료전지 준공식 대신 지역나눔…120세대에 온기",
+          "id": "e261128-23",
+          "rank_by_count": 23,
+          "name": "KTL, 원주에 유·무인드론시험소 개소…미래항공 시험평가 지원 본격화",
           "easy": "",
-          "quote": "한수원, 연료전지 준공식 대신 지역나눔…120세대에 온기",
+          "quote": "KTL, 원주에 유·무인드론시험소 개소…미래항공 시험평가 지원 본격화",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 11,
-              "title": "한수원, 연료전지 준공식 대신 지역나눔…120세대에 온기",
+              "title": "KTL, 원주에 유·무인드론시험소 개소…미래항공 시험평가 지원 본격화",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375342"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375388"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-35",
-          "rank_by_count": 35,
-          "name": "[COP31] 글로벌 기후 싱크탱크 E3G 전문가 3인, '합의 불발로 막 내린 COP31…기후 대응 해법 무게추 ‘전기화’로 이동'",
+          "id": "e261128-24",
+          "rank_by_count": 24,
+          "name": "전기차 100만대 그다음은…국회서 ‘EV 생태계’ 해법 찾는다",
           "easy": "",
-          "quote": "[COP31] 글로벌 기후 싱크탱크 E3G 전문가 3인, '합의 불발로 막 내린 COP31…기후 대응 해법 무게추 ‘전기화’로 이동'",
+          "quote": "전기차 100만대 그다음은…국회서 ‘EV 생태계’ 해법 찾는다",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 12,
-              "title": "[COP31] 글로벌 기후 싱크탱크 E3G 전문가 3인, '합의 불발로 막 내린 COP31…기후 대응 해법 무게추 ‘전기화’로 이동'",
+              "title": "전기차 100만대 그다음은…국회서 ‘EV 생태계’ 해법 찾는다",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375261"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375387"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-36",
-          "rank_by_count": 36,
-          "name": "한국플랜트서비스, 품질경쟁력 우수기업에…6년 만의 쾌거",
+          "id": "e261128-25",
+          "rank_by_count": 25,
+          "name": "채비, 물류 터미널로 충전 무대 넓힌다…타타대우·대신택배와 맞손",
           "easy": "",
-          "quote": "한국플랜트서비스, 품질경쟁력 우수기업에…6년 만의 쾌거",
+          "quote": "채비, 물류 터미널로 충전 무대 넓힌다…타타대우·대신택배와 맞손",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 13,
-              "title": "한국플랜트서비스, 품질경쟁력 우수기업에…6년 만의 쾌거",
+              "title": "채비, 물류 터미널로 충전 무대 넓힌다…타타대우·대신택배와 맞손",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375341"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375367"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-37",
-          "rank_by_count": 37,
-          "name": "위드인천에너지, 4년째 지역사회에 따뜻한 온기 나눔",
+          "id": "e261128-26",
+          "rank_by_count": 26,
+          "name": "(부고)박현호(산업통상부 홍보지원팀장)씨 부친상",
           "easy": "",
-          "quote": "위드인천에너지, 4년째 지역사회에 따뜻한 온기 나눔",
+          "quote": "(부고)박현호(산업통상부 홍보지원팀장)씨 부친상",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 14,
-              "title": "위드인천에너지, 4년째 지역사회에 따뜻한 온기 나눔",
+              "title": "(부고)박현호(산업통상부 홍보지원팀장)씨 부친상",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375340"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375386"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-38",
-          "rank_by_count": 38,
-          "name": "(RE100 컨퍼런스) 김희성 BEP 의장 '고도 기다리듯' 멈춘 PPA 시장...\"변동성 버틸 전략 필요\"",
+          "id": "e261128-27",
+          "rank_by_count": 27,
+          "name": "한전KPS, 지속가능경영 두각…KSI 1위·최고경영자상",
           "easy": "",
-          "quote": "(RE100 컨퍼런스) 김희성 BEP 의장 '고도 기다리듯' 멈춘 PPA 시장...\"변동성 버틸 전략 필요\"",
+          "quote": "한전KPS, 지속가능경영 두각…KSI 1위·최고경영자상",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 15,
-              "title": "(RE100 컨퍼런스) 김희성 BEP 의장 '고도 기다리듯' 멈춘 PPA 시장...\"변동성 버틸 전략 필요\"",
+              "title": "한전KPS, 지속가능경영 두각…KSI 1위·최고경영자상",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375337"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375385"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-39",
-          "rank_by_count": 39,
-          "name": "고속도로 유휴부지 활용 ‘1호 햇빛소득마을’ 준공",
+          "id": "e261128-28",
+          "rank_by_count": 28,
+          "name": "서부발전, 中企 동반성장 성과…동탑훈장·장관상 겹경사",
           "easy": "",
-          "quote": "고속도로 유휴부지 활용 ‘1호 햇빛소득마을’ 준공",
+          "quote": "서부발전, 中企 동반성장 성과…동탑훈장·장관상 겹경사",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 16,
-              "title": "고속도로 유휴부지 활용 ‘1호 햇빛소득마을’ 준공",
+              "title": "서부발전, 中企 동반성장 성과…동탑훈장·장관상 겹경사",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375338"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375384"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-40",
-          "rank_by_count": 40,
-          "name": "머스코코리아, 골프장 환경에 특화된 신제품 ‘QF-900’ 전격 공개",
+          "id": "e261128-29",
+          "rank_by_count": 29,
+          "name": "중부발전, 상생결제 10년간 3.8조원…중기부 장관상",
           "easy": "",
-          "quote": "머스코코리아, 골프장 환경에 특화된 신제품 ‘QF-900’ 전격 공개",
+          "quote": "중부발전, 상생결제 10년간 3.8조원…중기부 장관상",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 17,
-              "title": "머스코코리아, 골프장 환경에 특화된 신제품 ‘QF-900’ 전격 공개",
+              "title": "중부발전, 상생결제 10년간 3.8조원…중기부 장관상",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375333"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375383"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-41",
-          "rank_by_count": 41,
-          "name": "광주교통공사, AI 전력관제 교육용 시뮬레이터 자체 개발",
+          "id": "e261128-30",
+          "rank_by_count": 30,
+          "name": "서울에너지공사, 공동주택 에너지믹스 활성화 방안 모색",
           "easy": "",
-          "quote": "광주교통공사, AI 전력관제 교육용 시뮬레이터 자체 개발",
+          "quote": "서울에너지공사, 공동주택 에너지믹스 활성화 방안 모색",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 18,
-              "title": "광주교통공사, AI 전력관제 교육용 시뮬레이터 자체 개발",
+              "title": "서울에너지공사, 공동주택 에너지믹스 활성화 방안 모색",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375336"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375380"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-42",
-          "rank_by_count": 42,
-          "name": "광명역~인천공항 공항버스, 수소버스로 바뀐다",
+          "id": "e261128-31",
+          "rank_by_count": 31,
+          "name": "한수원, 체코 원전 건설 잰걸음…두코바니에 현장 거점",
           "easy": "",
-          "quote": "광명역~인천공항 공항버스, 수소버스로 바뀐다",
+          "quote": "한수원, 체코 원전 건설 잰걸음…두코바니에 현장 거점",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 19,
-              "title": "광명역~인천공항 공항버스, 수소버스로 바뀐다",
+              "title": "한수원, 체코 원전 건설 잰걸음…두코바니에 현장 거점",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375335"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375381"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-43",
-          "rank_by_count": 43,
-          "name": "AI 시대 새 병목은 ‘전력’…한전·한전기술지주, ‘에너지 풀스택’으로 기후테크 키운다",
+          "id": "e261128-32",
+          "rank_by_count": 32,
+          "name": "GS파워, 부천·안양 발전소 인근 이웃에 김장김치 나눔",
           "easy": "",
-          "quote": "AI 시대 새 병목은 ‘전력’…한전·한전기술지주, ‘에너지 풀스택’으로 기후테크 키운다",
+          "quote": "GS파워, 부천·안양 발전소 인근 이웃에 김장김치 나눔",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 20,
-              "title": "AI 시대 새 병목은 ‘전력’…한전·한전기술지주, ‘에너지 풀스택’으로 기후테크 키운다",
+              "title": "GS파워, 부천·안양 발전소 인근 이웃에 김장김치 나눔",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375334"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375379"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-44",
-          "rank_by_count": 44,
-          "name": "전기공사협회, 무등록 태양광 광고 등 신재생에너지 현안 대응 모색",
+          "id": "e261128-33",
+          "rank_by_count": 33,
+          "name": "환경산업기술원-제주도, 탄소중립·녹색경제 활성화 맞손",
           "easy": "",
-          "quote": "전기공사협회, 무등록 태양광 광고 등 신재생에너지 현안 대응 모색",
+          "quote": "환경산업기술원-제주도, 탄소중립·녹색경제 활성화 맞손",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 21,
-              "title": "전기공사협회, 무등록 태양광 광고 등 신재생에너지 현안 대응 모색",
+              "title": "환경산업기술원-제주도, 탄소중립·녹색경제 활성화 맞손",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375326"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375378"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-45",
-          "rank_by_count": 45,
-          "name": "가덕도신공항 공사비 조정 특별법 개정안 여야 공동발의",
+          "id": "e261128-34",
+          "rank_by_count": 34,
+          "name": "가스공사, 수도권·충청권 10개 도시가스사와 15년 공급계약",
           "easy": "",
-          "quote": "가덕도신공항 공사비 조정 특별법 개정안 여야 공동발의",
+          "quote": "가스공사, 수도권·충청권 10개 도시가스사와 15년 공급계약",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 22,
-              "title": "가덕도신공항 공사비 조정 특별법 개정안 여야 공동발의",
+              "title": "가스공사, 수도권·충청권 10개 도시가스사와 15년 공급계약",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375332"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375377"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-46",
-          "rank_by_count": 46,
-          "name": "인천공항공사, 아시아 최초 ‘세계공항혁신상 최고 공항리더’ 수상",
+          "id": "e261128-35",
+          "rank_by_count": 35,
+          "name": "국가자격시험 부정행위 대응 전방위 강화…사각지대까지 점검",
           "easy": "",
-          "quote": "인천공항공사, 아시아 최초 ‘세계공항혁신상 최고 공항리더’ 수상",
+          "quote": "국가자격시험 부정행위 대응 전방위 강화…사각지대까지 점검",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 23,
-              "title": "인천공항공사, 아시아 최초 ‘세계공항혁신상 최고 공항리더’ 수상",
+              "title": "국가자격시험 부정행위 대응 전방위 강화…사각지대까지 점검",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375331"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375376"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-47",
-          "rank_by_count": 47,
-          "name": "제주, 2035년 재생에너지 100% 도전…전력시장까지 바꾼다",
+          "id": "e261128-36",
+          "rank_by_count": 36,
+          "name": "한난, 납품대금 연동 우수기관 선정…중기부 장관 표창",
           "easy": "",
-          "quote": "제주, 2035년 재생에너지 100% 도전…전력시장까지 바꾼다",
+          "quote": "한난, 납품대금 연동 우수기관 선정…중기부 장관 표창",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 24,
-              "title": "제주, 2035년 재생에너지 100% 도전…전력시장까지 바꾼다",
+              "title": "한난, 납품대금 연동 우수기관 선정…중기부 장관 표창",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375328"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375375"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-48",
-          "rank_by_count": 48,
-          "name": "체코 원전 시공사 교체 후속조치 착수…팀코리아 사업 점검",
+          "id": "e261128-37",
+          "rank_by_count": 37,
+          "name": "[단독] 발전 5社 통합 실무조직 5배로 키운다",
           "easy": "",
-          "quote": "체코 원전 시공사 교체 후속조치 착수…팀코리아 사업 점검",
+          "quote": "[단독] 발전 5社 통합 실무조직 5배로 키운다",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 25,
-              "title": "체코 원전 시공사 교체 후속조치 착수…팀코리아 사업 점검",
+              "title": "[단독] 발전 5社 통합 실무조직 5배로 키운다",
               "source_name": "전기신문",
-              "link": "https://www.electimes.com/news/articleView.html?idxno=375310"
+              "link": "https://www.electimes.com/news/articleView.html?idxno=375368"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-49",
-          "rank_by_count": 49,
-          "name": "Imperial Brands PLC 주가, 오늘 급등한 이유는?",
+          "id": "e261128-38",
+          "rank_by_count": 38,
+          "name": "인베스팅닷컴 선정 이번 주 주목할 종목",
           "easy": "",
-          "quote": "Imperial Brands PLC 주가, 오늘 급등한 이유는?",
+          "quote": "인베스팅닷컴 선정 이번 주 주목할 종목",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 26,
-              "title": "Imperial Brands PLC 주가, 오늘 급등한 이유는?",
+              "title": "인베스팅닷컴 선정 이번 주 주목할 종목",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2191373"
+              "link": "https://kr.investing.com/news/stock-market-news/article-2192030"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-50",
-          "rank_by_count": 50,
-          "name": "알트리아 그룹·일본담배산업 인수 관심에 임페리얼 브랜즈 주가 1999년 이후 최대 상승",
+          "id": "e261128-39",
+          "rank_by_count": 39,
+          "name": "Anthropic 공매도 증가…보호예수 해제 앞두고 대차 주식 늘어",
           "easy": "",
-          "quote": "알트리아 그룹·일본담배산업 인수 관심에 임페리얼 브랜즈 주가 1999년 이후 최대 상승",
+          "quote": "Anthropic 공매도 증가…보호예수 해제 앞두고 대차 주식 늘어",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 27,
-              "title": "알트리아 그룹·일본담배산업 인수 관심에 임페리얼 브랜즈 주가 1999년 이후 최대 상승",
+              "title": "Anthropic 공매도 증가…보호예수 해제 앞두고 대차 주식 늘어",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191372"
+              "link": "https://kr.investing.com/news/stock-market-news/article-2192018"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-51",
-          "rank_by_count": 51,
-          "name": "블랙프라이데이 특가: InvestingPro 60% 할인으로 저평가 종목 찾기",
+          "id": "e261128-40",
+          "rank_by_count": 40,
+          "name": "오라클 주가, 오늘 3.2% 오른 이유는?",
           "easy": "",
-          "quote": "블랙프라이데이 특가: InvestingPro 60% 할인으로 저평가 종목 찾기",
+          "quote": "오라클 주가, 오늘 3.2% 오른 이유는?",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 28,
-              "title": "블랙프라이데이 특가: InvestingPro 60% 할인으로 저평가 종목 찾기",
+              "title": "오라클 주가, 오늘 3.2% 오른 이유는?",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191387"
+              "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2192016"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-52",
-          "rank_by_count": 52,
-          "name": "Deutsche Bank, 위성 교체 비용 부담에 Eutelsat 투자의견 ‘매도’로 하향",
+          "id": "e261128-41",
+          "rank_by_count": 41,
+          "name": "Nebius NV 주가, 오늘 상승하는 이유는?",
           "easy": "",
-          "quote": "Deutsche Bank, 위성 교체 비용 부담에 Eutelsat 투자의견 ‘매도’로 하향",
+          "quote": "Nebius NV 주가, 오늘 상승하는 이유는?",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 29,
-              "title": "Deutsche Bank, 위성 교체 비용 부담에 Eutelsat 투자의견 ‘매도’로 하향",
+              "title": "Nebius NV 주가, 오늘 상승하는 이유는?",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191363"
+              "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2192015"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-53",
-          "rank_by_count": 53,
-          "name": "캐나다 S&P/TSX 상승 출발…급락 뒤 반등세 이어가",
+          "id": "e261128-42",
+          "rank_by_count": 42,
+          "name": "메타 플랫폼스 주가, 오늘 상승한 이유는?",
           "easy": "",
-          "quote": "캐나다 S&P/TSX 상승 출발…급락 뒤 반등세 이어가",
+          "quote": "메타 플랫폼스 주가, 오늘 상승한 이유는?",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 30,
-              "title": "캐나다 S&P/TSX 상승 출발…급락 뒤 반등세 이어가",
+              "title": "메타 플랫폼스 주가, 오늘 상승한 이유는?",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191360"
+              "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2192014"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-54",
-          "rank_by_count": 54,
-          "name": "월 $7.50 미만으로 투자 기회를 찾는 방법",
+          "id": "e261128-43",
+          "rank_by_count": 43,
+          "name": "씨게이트 주가, 오늘 급등한 이유는?",
           "easy": "",
-          "quote": "월 $7.50 미만으로 투자 기회를 찾는 방법",
+          "quote": "씨게이트 주가, 오늘 급등한 이유는?",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 31,
-              "title": "월 $7.50 미만으로 투자 기회를 찾는 방법",
+              "title": "씨게이트 주가, 오늘 급등한 이유는?",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191355"
+              "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2192013"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-55",
-          "rank_by_count": 55,
-          "name": "바클레이즈, 중국산 지게차 수입 급증에 유럽 업체 투자의견 하향",
+          "id": "e261128-44",
+          "rank_by_count": 44,
+          "name": "Fitch, Stellantis 신용등급 ‘BBB’ 부여…전망은 ‘부정적’",
           "easy": "",
-          "quote": "바클레이즈, 중국산 지게차 수입 급증에 유럽 업체 투자의견 하향",
+          "quote": "Fitch, Stellantis 신용등급 ‘BBB’ 부여…전망은 ‘부정적’",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 32,
+              "title": "Fitch, Stellantis 신용등급 ‘BBB’ 부여…전망은 ‘부정적’",
+              "source_name": "인베스팅 주식",
+              "link": "https://kr.investing.com/news/stock-market-news/article-2192008"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-45",
+          "rank_by_count": 45,
+          "name": "FDA, 신장질환 치료제 결정 연기…버텍스 주가 7% 하락",
+          "easy": "",
+          "quote": "FDA, 신장질환 치료제 결정 연기…버텍스 주가 7% 하락",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 33,
-              "title": "바클레이즈, 중국산 지게차 수입 급증에 유럽 업체 투자의견 하향",
+              "title": "FDA, 신장질환 치료제 결정 연기…버텍스 주가 7% 하락",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191351"
+              "link": "https://kr.investing.com/news/stock-market-news/article-2191985"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-56",
-          "rank_by_count": 56,
-          "name": "ams OSRAM AG 주가, 오늘 약 10% 급등한 이유는?",
+          "id": "e261128-46",
+          "rank_by_count": 46,
+          "name": "골드만삭스, 주목할 중국 휴머노이드 로봇 관련 종목 선정",
           "easy": "",
-          "quote": "ams OSRAM AG 주가, 오늘 약 10% 급등한 이유는?",
+          "quote": "골드만삭스, 주목할 중국 휴머노이드 로봇 관련 종목 선정",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 34,
-              "title": "ams OSRAM AG 주가, 오늘 약 10% 급등한 이유는?",
+              "title": "골드만삭스, 주목할 중국 휴머노이드 로봇 관련 종목 선정",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2191336"
+              "link": "https://kr.investing.com/news/stock-market-news/article-2191981"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-57",
-          "rank_by_count": 57,
-          "name": "구리값 11개월 최저치서 반등…영국 광산주 상승",
+          "id": "e261128-47",
+          "rank_by_count": 47,
+          "name": "팔란티어 테크놀로지스 주가, 오늘 왜 상승하나?",
           "easy": "",
-          "quote": "구리값 11개월 최저치서 반등…영국 광산주 상승",
+          "quote": "팔란티어 테크놀로지스 주가, 오늘 왜 상승하나?",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 35,
-              "title": "구리값 11개월 최저치서 반등…영국 광산주 상승",
+              "title": "팔란티어 테크놀로지스 주가, 오늘 왜 상승하나?",
               "source_name": "인베스팅 주식",
-              "link": "https://kr.investing.com/news/stock-market-news/article-2191334"
+              "link": "https://kr.investing.com/news/stock-market-news/article-93CH-2191977"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-58",
-          "rank_by_count": 58,
-          "name": "독일 소비자신뢰 소폭 개선에도 역대 최저 수준 근접",
+          "id": "e261128-48",
+          "rank_by_count": 48,
+          "name": "아일랜드 10월 소매판매량 전월 대비 0.1% 감소…전년 대비 3.9% 증가",
           "easy": "",
-          "quote": "독일 소비자신뢰 소폭 개선에도 역대 최저 수준 근접",
+          "quote": "아일랜드 10월 소매판매량 전월 대비 0.1% 감소…전년 대비 3.9% 증가",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 36,
-              "title": "독일 소비자신뢰 소폭 개선에도 역대 최저 수준 근접",
+              "title": "아일랜드 10월 소매판매량 전월 대비 0.1% 감소…전년 대비 3.9% 증가",
               "source_name": "인베스팅 경제",
-              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191337"
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191821"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-59",
-          "rank_by_count": 59,
-          "name": "프랑스 10월 산업생산자물가 전년 대비 9.6% 상승",
+          "id": "e261128-49",
+          "rank_by_count": 49,
+          "name": "벨기에 11월 소비자물가 전년 대비 5.09% 상승",
           "easy": "",
-          "quote": "프랑스 10월 산업생산자물가 전년 대비 9.6% 상승",
+          "quote": "벨기에 11월 소비자물가 전년 대비 5.09% 상승",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 37,
-              "title": "프랑스 10월 산업생산자물가 전년 대비 9.6% 상승",
+              "title": "벨기에 11월 소비자물가 전년 대비 5.09% 상승",
               "source_name": "인베스팅 경제",
-              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191247"
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191802"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-60",
-          "rank_by_count": 60,
-          "name": "덴마크 10월 소매판매 0.7% 감소…전자제품 판매 부진",
+          "id": "e261128-50",
+          "rank_by_count": 50,
+          "name": "프랑스 3분기 GDP 0.2% 감소…수출 급감이 성장률 끌어내려",
           "easy": "",
-          "quote": "덴마크 10월 소매판매 0.7% 감소…전자제품 판매 부진",
+          "quote": "프랑스 3분기 GDP 0.2% 감소…수출 급감이 성장률 끌어내려",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 38,
-              "title": "덴마크 10월 소매판매 0.7% 감소…전자제품 판매 부진",
+              "title": "프랑스 3분기 GDP 0.2% 감소…수출 급감이 성장률 끌어내려",
               "source_name": "인베스팅 경제",
-              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191208"
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191771"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-61",
-          "rank_by_count": 61,
-          "name": "오늘의 파운드화: 미국 휴일에 달러 박스권 유지, 파운드화 보합",
+          "id": "e261128-51",
+          "rank_by_count": 51,
+          "name": "독일 10월 취업자 수 전년 대비 0.5% 감소",
           "easy": "",
-          "quote": "오늘의 파운드화: 미국 휴일에 달러 박스권 유지, 파운드화 보합",
+          "quote": "독일 10월 취업자 수 전년 대비 0.5% 감소",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 39,
+              "title": "독일 10월 취업자 수 전년 대비 0.5% 감소",
+              "source_name": "인베스팅 경제",
+              "link": "https://kr.investing.com/news/economic-indicators/article-2191762"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-52",
+          "rank_by_count": 52,
+          "name": "ECB 조사: 2026년 10월 유로존 소비자 물가상승 기대 높아져",
+          "easy": "",
+          "quote": "ECB 조사: 2026년 10월 유로존 소비자 물가상승 기대 높아져",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 40,
+              "title": "ECB 조사: 2026년 10월 유로존 소비자 물가상승 기대 높아져",
+              "source_name": "인베스팅 경제",
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191753"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-53",
+          "rank_by_count": 53,
+          "name": "잠비아, 물가상승률 목표 범위 유지에 기준금리 10.75% 동결",
+          "easy": "",
+          "quote": "잠비아, 물가상승률 목표 범위 유지에 기준금리 10.75% 동결",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 41,
+              "title": "잠비아, 물가상승률 목표 범위 유지에 기준금리 10.75% 동결",
+              "source_name": "인베스팅 경제",
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191749"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-54",
+          "rank_by_count": 54,
+          "name": "스페인 11월 물가상승률 4.1%로 하락…연료 가격이 주도",
+          "easy": "",
+          "quote": "스페인 11월 물가상승률 4.1%로 하락…연료 가격이 주도",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 42,
+              "title": "스페인 11월 물가상승률 4.1%로 하락…연료 가격이 주도",
+              "source_name": "인베스팅 경제",
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191717"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-55",
+          "rank_by_count": 55,
+          "name": "스웨덴 3분기 구인 건수 9,500건 증가…기업 부문이 주도",
+          "easy": "",
+          "quote": "스웨덴 3분기 구인 건수 9,500건 증가…기업 부문이 주도",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 43,
+              "title": "스웨덴 3분기 구인 건수 9,500건 증가…기업 부문이 주도",
+              "source_name": "인베스팅 경제",
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191698"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-56",
+          "rank_by_count": 56,
+          "name": "스웨덴, 2026년 3분기 GDP 0.5% 성장…가계 소비가 견인",
+          "easy": "",
+          "quote": "스웨덴, 2026년 3분기 GDP 0.5% 성장…가계 소비가 견인",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 44,
+              "title": "스웨덴, 2026년 3분기 GDP 0.5% 성장…가계 소비가 견인",
+              "source_name": "인베스팅 경제",
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191694"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-57",
+          "rank_by_count": 57,
+          "name": "영국 순이민 7만7000명…팬데믹 기간 제외하면 1997년 이후 최저",
+          "easy": "",
+          "quote": "영국 순이민 7만7000명…팬데믹 기간 제외하면 1997년 이후 최저",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 45,
+              "title": "영국 순이민 7만7000명…팬데믹 기간 제외하면 1997년 이후 최저",
+              "source_name": "인베스팅 경제",
+              "link": "https://kr.investing.com/news/economic-indicators/article-93CH-2191647"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-58",
+          "rank_by_count": 58,
+          "name": "오늘 파운드화 소폭 상승…위험선호 회복에 연준 긴축 재반영 영향 상쇄",
+          "easy": "",
+          "quote": "오늘 파운드화 소폭 상승…위험선호 회복에 연준 긴축 재반영 영향 상쇄",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 46,
-              "title": "오늘의 파운드화: 미국 휴일에 달러 박스권 유지, 파운드화 보합",
+              "title": "오늘 파운드화 소폭 상승…위험선호 회복에 연준 긴축 재반영 영향 상쇄",
               "source_name": "인베스팅 외환",
-              "link": "https://kr.investing.com/news/forex-news/article-2191307"
+              "link": "https://kr.investing.com/news/forex-news/article-2191803"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-62",
-          "rank_by_count": 62,
-          "name": "끈질긴 PCE 물가에 12월 Fed 금리 인상 전망 굳어지며 글로벌 채권 랠리 주춤",
+          "id": "e261128-59",
+          "rank_by_count": 59,
+          "name": "골드만삭스, 유로 미국 달러 연말까지 1.12로 반등 전망",
           "easy": "",
-          "quote": "끈질긴 PCE 물가에 12월 Fed 금리 인상 전망 굳어지며 글로벌 채권 랠리 주춤",
+          "quote": "골드만삭스, 유로 미국 달러 연말까지 1.12로 반등 전망",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 47,
-              "title": "끈질긴 PCE 물가에 12월 Fed 금리 인상 전망 굳어지며 글로벌 채권 랠리 주춤",
+              "title": "골드만삭스, 유로 미국 달러 연말까지 1.12로 반등 전망",
               "source_name": "인베스팅 외환",
-              "link": "https://kr.investing.com/news/forex-news/article-2191287"
+              "link": "https://kr.investing.com/news/forex-news/article-93CH-2191781"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-63",
-          "rank_by_count": 63,
-          "name": "달러, 추수감사절 앞두고 2026년 고점 아래서 숨 고르기…유로 하락",
+          "id": "e261128-60",
+          "rank_by_count": 60,
+          "name": "미 국채 금리 소폭 상승…10년물 가격 8거래일 연속 상승 마감",
           "easy": "",
-          "quote": "달러, 추수감사절 앞두고 2026년 고점 아래서 숨 고르기…유로 하락",
+          "quote": "미 국채 금리 소폭 상승…10년물 가격 8거래일 연속 상승 마감",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 48,
-              "title": "달러, 추수감사절 앞두고 2026년 고점 아래서 숨 고르기…유로 하락",
+              "title": "미 국채 금리 소폭 상승…10년물 가격 8거래일 연속 상승 마감",
               "source_name": "인베스팅 외환",
-              "link": "https://kr.investing.com/news/forex-news/article-2191126"
+              "link": "https://kr.investing.com/news/forex-news/article-2191780"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-64",
-          "rank_by_count": 64,
-          "name": "[포토뉴스]한국전력 강릉지사, 연탄배달 봉사",
+          "id": "e261128-61",
+          "rank_by_count": 61,
+          "name": "국제유가 상승에 아시아 통화 약세…달러는 소폭 하락",
           "easy": "",
-          "quote": "[포토뉴스]한국전력 강릉지사, 연탄배달 봉사",
+          "quote": "국제유가 상승에 아시아 통화 약세…달러는 소폭 하락",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 49,
+              "title": "국제유가 상승에 아시아 통화 약세…달러는 소폭 하락",
+              "source_name": "인베스팅 외환",
+              "link": "https://kr.investing.com/news/forex-news/article-2191571"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-62",
+          "rank_by_count": 62,
+          "name": "캐나다달러, 미국 추수감사절 거래 한산한 가운데 약세",
+          "easy": "",
+          "quote": "캐나다달러, 미국 추수감사절 거래 한산한 가운데 약세",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 50,
+              "title": "캐나다달러, 미국 추수감사절 거래 한산한 가운데 약세",
+              "source_name": "인베스팅 외환",
+              "link": "https://kr.investing.com/news/forex-news/article-2191429"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-63",
+          "rank_by_count": 63,
+          "name": "[어워드 Pick] 한전KDN·한국전력, AI 품질혁신과 K-전력기기 동반성장 성과",
+          "easy": "",
+          "quote": "[어워드 Pick] 한전KDN·한국전력, AI 품질혁신과 K-전력기기 동반성장 성과",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 56,
-              "title": "[포토뉴스]한국전력 강릉지사, 연탄배달 봉사 - 강원일보",
+              "title": "[어워드 Pick] 한전KDN·한국전력, AI 품질혁신과 K-전력기기 동반성장 성과 - 라이센스뉴스",
               "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1CdC0zS3NWUHgtTnpIZDNnUFRCbmZRR3V4djRiQ2tIdTZrZlhMOVZrNFFRNVRISFlqWDdtZ0ZjTTl2MWNteUc0bDB3bllvWThwOWd0Qk9sSXJQcWc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5ELWQ0bVFIeUdJSnZNNDJ5MmxUVEtBNnRLTzUzekV2c2o5eE1nVzU4VXJGWHA3b19NSjJQUFNzTjlfdldMR2g4RGZ4dGR2QjBvQ29wUWFEekpiejdfNTBiME9zdUE2V0pVU0tF?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-65",
-          "rank_by_count": 65,
-          "name": "한국전력 경기본부, 도내 고등학생 10명에 장학금 1천만 원 전달",
+          "id": "e261128-64",
+          "rank_by_count": 64,
+          "name": "‘26년도 한국에너지대상 에너지효율부분 한전 서울본부 전력사업처장 김홍식 대통령표창 수상",
           "easy": "",
-          "quote": "한국전력 경기본부, 도내 고등학생 10명에 장학금 1천만 원 전달",
+          "quote": "‘26년도 한국에너지대상 에너지효율부분 한전 서울본부 전력사업처장 김홍식 대통령표창 수상",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 57,
-              "title": "한국전력 경기본부, 도내 고등학생 10명에 장학금 1천만 원 전달 - 기호일보",
+              "title": "‘26년도 한국에너지대상 에너지효율부분 한전 서울본부 전력사업처장 김홍식 대통령표창 수상 - 한국전력신문",
               "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAySHFpcThmQ1p2MHl6ZmFRUlFMZ0RSd3ZBZGZmU0JOQ1hHc09SR1hoMnVmWHg0Rm90QXBEc0prOTF4RENnNFJMbjlTV1k2ZDMyeGE5OUdWMVN1bXN5MHpaazF2dTV3d3NTMEtITDZHYw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE56eVhkcXV1R1U4czlzbmhTS29ieFVHZGlKeEdIVjBTZklvZk8xRGNhaVRocXRIUFV4emdHVmRTZjZvczBUbHV3ZkFCM2kxTi1yZzByRkFmTDF1ZEhMN0stZUhNNHdBVHZPbXc?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-66",
-          "rank_by_count": 66,
-          "name": "국무조정실, 잇단 해킹 한국전력 공직복무 점검 검토…“위반사항 일벌백계”",
+          "id": "e261128-65",
+          "rank_by_count": 65,
+          "name": "[장중수급포착] 한국전력, 외국인 7일 연속 순매수행진... 주가 +2.15%",
           "easy": "",
-          "quote": "국무조정실, 잇단 해킹 한국전력 공직복무 점검 검토…“위반사항 일벌백계”",
+          "quote": "[장중수급포착] 한국전력, 외국인 7일 연속 순매수행진... 주가 +2.15%",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 58,
-              "title": "국무조정실, 잇단 해킹 한국전력 공직복무 점검 검토…“위반사항 일벌백계” - 데일리시큐",
+              "title": "[장중수급포착] 한국전력, 외국인 7일 연속 순매수행진... 주가 +2.15% - 뉴스핌",
               "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBqX09jWWJhdmVYTUtOU2RKM1U3YXdMS3Y1RWdaT1A3c2dDME9DN000MExUWmhEVDAxbHFENHlJbkljeWUzMFJVajBwREZlYVNibHk4NjNaelFJV1pnUnRadWQyU0JnekhvMFZ1Zw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE15d0hjYXRKTUxuNUc3RHFxNWFYVDZBZTBJLUQ2dlpkbEdDM29CLWNvamx5ZkhOaU52amVYQW1BdTc3M05XOW1yVGdoRzRtYjQ0MkJHa2d1bEZfS2RY?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-67",
-          "rank_by_count": 67,
-          "name": "한국전력기술, 직원 참여형 안전동행단 ‘안전캐치크루’ 출범",
+          "id": "e261128-66",
+          "rank_by_count": 66,
+          "name": "한국전력, 동반성장 대통령표창 수상···창업기업 816곳 육성 성과",
           "easy": "",
-          "quote": "한국전력기술, 직원 참여형 안전동행단 ‘안전캐치크루’ 출범",
+          "quote": "한국전력, 동반성장 대통령표창 수상···창업기업 816곳 육성 성과",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 59,
+              "title": "한국전력, 동반성장 대통령표창 수상···창업기업 816곳 육성 성과 - 팍스경제TV",
+              "source_name": "'한국전력'",
+              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE10a3JrZmI4YVBWYWdpY2w0cEJlekZCY0tscUtIajI3SWMxRVlCdG9tVGhVX0xXbUE1V2tKak9DS0NjMWs3d2xMdEx3WGlhdkNUSU9lV1c2VUVKU2V1cUNBUDBDVjV3RkE?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-67",
+          "rank_by_count": 67,
+          "name": "청송군, 영양변전소 조속한 신설 건의...윤경희 군수, 한전 사장 만나 전력계통 현안 전달",
+          "easy": "",
+          "quote": "청송군, 영양변전소 조속한 신설 건의...윤경희 군수, 한전 사장 만나 전력계통 현안 전달",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 60,
-              "title": "한국전력기술, 직원 참여형 안전동행단 ‘안전캐치크루’ 출범 - 일렉트릭파워",
+              "title": "청송군, 영양변전소 조속한 신설 건의...윤경희 군수, 한전 사장 만나 전력계통 현안 전달 - 경북신문",
               "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5VUzRwVHNWZmkxSGUwZGJQSjlOcV9ZZVAxcjhNYXh6cDVFdHgzNDd3ak1UNkp5WWFYYkJsb1FNRFdLb1g4cm0yQ2hPaUhIRzhmS3BVMkI1RWZyXzVSRWhaMTFGVy1jZw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFAzN2xwRDVrQWRlYW5kQThuUEswbjlUa1RHTEVoZXJMTU9mYTN0bGZGWlVfd0VFY0RROXNaWmpOZV9OUmtSSHZRMy1EQnhuMG5WeEZUTFhLaTQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-68",
+          "id": "e261128-68",
           "rank_by_count": 68,
-          "name": "국조실, 한국전력 개인정보 유출 관련 \"공직복무 점검 검토\"",
+          "name": "한전–국립생태원, 안정적 전력공급과 멸종위기종 보호 힘 모은다",
           "easy": "",
-          "quote": "국조실, 한국전력 개인정보 유출 관련 \"공직복무 점검 검토\"",
+          "quote": "한전–국립생태원, 안정적 전력공급과 멸종위기종 보호 힘 모은다",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 61,
-              "title": "국조실, 한국전력 개인정보 유출 관련 \"공직복무 점검 검토\" - MBC 뉴스",
+              "title": "한전–국립생태원, 안정적 전력공급과 멸종위기종 보호 힘 모은다 - 에너지데일리",
               "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1McHFzM2hFMnNqaEtBby1PbmpOVGcxNGxaTW1EQ2VpbXZSTlkxbTNuVngySF94NmVScVdmM2s4WE02ckp0dmo1V1pUUHBxNjNTa1lJNU5zckpORjlKR2FMNU5rY3FjMHhKdTEzcmtYREFkckcydmNnatIBeEFVX3lxTE1mVkRQREZ6NVV2eWdiU0RqX3dLWi1KRVptQTZuckRMbEI0eHFYdDhHQjFDcGFHQ1hQX2hLb0c3bkhnR3BiU1pEU2tmVFUwZWdfT29vdGlFMTNBZndyTFJaX2dOOC1WX1QtTDNWd1pwXzdPTVVLaU1FLQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5YbW1DVnFHZTVEQWFWVmRGSmVRbXF1OUdNQVV5YXlmODRRUWFqTGtrMHhERDMxZm02NF9fdTZyUXBqNHV0Zkh6YVRDMWFQREJRMmV3MjJsZFdtdG9rNGhTdmVuelc5ZXN6TGZ2YmlBTDdQdw?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-69",
+          "id": "e261128-69",
           "rank_by_count": 69,
-          "name": "한국전력공사 강릉지사, 사랑의 연탄나눔 봉사활동",
+          "name": "한국전력, '2026년 올해의 상생기업대상' 대통령표창 수상 - 머니투데이",
           "easy": "",
-          "quote": "한국전력공사 강릉지사, 사랑의 연탄나눔 봉사활동",
+          "quote": "한국전력, '2026년 올해의 상생기업대상' 대통령표창 수상 - 머니투데이",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 62,
+              "title": "한국전력, '2026년 올해의 상생기업대상' 대통령표창 수상 - 머니투데이 - 머니투데이",
+              "source_name": "'한국전력'",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9EVUE5WTMxMndpRTl2RXFnOHNpdHdFREFWRDZ3QmR5WXVZZU56bkhOZVhPejBsdUhnd0lYbjg3U09uTEVJdFJWQWJvcmZIWEJQUWhCS3BKc25zQjVVd1dhWDNLcFYyc3VOVWfSAW9BVV95cUxQbDVaUDN0MGFyX3R4amRWcXAyclJQQUNTSmNMY3M0Z0swVGpPTmx5YzBITHlrVG9ubFUzOXhiREZMcy1HMUxKdnlQRl9OWmNRSWk1LVVGOWtyb3EydWJfSGJIYmxtSUcyZXlEdkJzYjA?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-70",
+          "rank_by_count": 70,
+          "name": "한전, 뱀 이동 경로 분석해 정전 막는다",
+          "easy": "",
+          "quote": "한전, 뱀 이동 경로 분석해 정전 막는다",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 63,
-              "title": "한국전력공사 강릉지사, 사랑의 연탄나눔 봉사활동 - 강원도민일보",
+              "title": "한전, 뱀 이동 경로 분석해 정전 막는다 - 매일일보",
               "source_name": "'한국전력'",
-              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9lVGdFVmExclZGSmZOVk15akJwUUZnOVdmWkVtd2xWaVhkQllIbmNSV1ljanQ0U004ekVGZFN3NE80cWdGR00xQmZ4MGNPUGR0Ml90Mk1mZGtyTGxSQ0F1bjVJdlJNTG5f?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBmSVRhT1pnd0kwMmRvQVdXY1RHYXhYUjBqNjdhaTZCWVBFUWJwMU5hTjREUmRpYUtfYjFmcWNpT0FtUTY2MG9Qc1c5Y1plUzNWVWVXMGQ5MGhidEtpOUx4NUhvZGY?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-70",
-          "rank_by_count": 70,
-          "name": "현대차 울산공장 전력망 보강…154㎸ 송전선로 신설 승인 - 울산매일",
+          "id": "e261128-71",
+          "rank_by_count": 71,
+          "name": "한전, 철탑 40% 줄이는 전력망 통합구축으로 인사혁신처장상",
           "easy": "",
-          "quote": "현대차 울산공장 전력망 보강…154㎸ 송전선로 신설 승인 - 울산매일",
+          "quote": "한전, 철탑 40% 줄이는 전력망 통합구축으로 인사혁신처장상",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 66,
-              "title": "현대차 울산공장 전력망 보강…154㎸ 송전선로 신설 승인 - 울산매일 - 울산최초, 최고의 조간신문",
+              "n": 64,
+              "title": "한전, 철탑 40% 줄이는 전력망 통합구축으로 인사혁신처장상 - ebiznews",
               "source_name": "'전력망 송전선'",
-              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1wOVVUZWx5M0c4VnRMN3I0N3NQcGFYX2RBSHBNUHBuUG1XNGFJMHdxR2x3b1U4NEdQLVFZUjRSMzlwSTYtTkU1Yl81MW85dWU5czF1WVVHVmNseF9jemt4Nl9TMGowNGxoanfSAW5BVV95cUxOTUx1azA1bWlJdjR0aF95QVdxR19uUUtXWW9MV2VXVmRUejBlRHB0VEhSVFFVN2xZUDl3d0p6V2R1d3J4bmowZlQ1TE90b0FSVWY5YV8xWF9uVFNzdE1oQzhFRVFzR1g2aGs3Slphdw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE4xOXQ1dThJQTFsZS15U29oSk5xTTc1TUliQ1ZEaW5HRmt2dEQwUVc3WHpycFA4OGRsVm5waFY3WjJOemxPeEZaMzlKWEJ5UnpmMlp1UTFkSDBYRmVXQUh2ODh4U19KMVYxOE5F?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-71",
-          "rank_by_count": 71,
-          "name": "변압기 주문 밀렸는데 과잉생산 이유로 또 관세 카드 꺼낸 美 … K-전력기기, 현지생산 대응력이 관건",
+          "id": "e261128-72",
+          "rank_by_count": 72,
+          "name": "새 송전망 건설전 기존 전력망부터 효율화…연간 최대 6014억 절감",
           "easy": "",
-          "quote": "변압기 주문 밀렸는데 과잉생산 이유로 또 관세 카드 꺼낸 美 … K-전력기기, 현지생산 대응력이 관건",
+          "quote": "새 송전망 건설전 기존 전력망부터 효율화…연간 최대 6014억 절감",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 65,
+              "title": "새 송전망 건설전 기존 전력망부터 효율화…연간 최대 6014억 절감 - 에너지프로슈머",
+              "source_name": "'전력망 송전선'",
+              "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE45cHJKNUhnMUtvYVB6RWpPdlBjc3N6YkZEcGkwdnFsQ2w4eXc2LXNRNDJ0YTlRZkJyZGRnNVVtb2h6TlVjS1I3THZOU1c?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-73",
+          "rank_by_count": 73,
+          "name": "AI가 키운 글로벌 수요…전력기기 3사, \"수출 성장판 열었다\"",
+          "easy": "",
+          "quote": "AI가 키운 글로벌 수요…전력기기 3사, \"수출 성장판 열었다\"",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 72,
-              "title": "변압기 주문 밀렸는데 과잉생산 이유로 또 관세 카드 꺼낸 美 … K-전력기기, 현지생산 대응력이 관건 - 뉴데일리 경제",
+              "title": "AI가 키운 글로벌 수요…전력기기 3사, \"수출 성장판 열었다\" - 미디어펜",
               "source_name": "'변압기 수출'",
-              "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQQ1JqRElPTVh6N01wS0h0VTkyNUhJUWtRbWdxUkMtd2xmMUFkWS1sVWNFTWg4QVA3NFhMSGwxcjhYQVM3WXVvUlZSY2JVLXNWNFpkanp6eWFPQ1doYm01eEdHb0Nmd2FuV3hWVzlPSEMtNDRmQ3lsdUZDU2NKVzE0UtIBgAFBVV95cUxQQ1JqRElPTVh6N01wS0h0VTkyNUhJUWtRbWdxUkMtd2xmMUFkWS1sVWNFTWg4QVA3NFhMSGwxcjhYQVM3WXVvUlZSY2JVLXNWNFpkanp6eWFPQ1doYm01eEdHb0Nmd2FuV3hWVzlPSEMtNDRmQ3lsdUZDU2NKVzE0Ug?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5tSEhuMWFwLTdGbGVpNnFlcENuckY1S3JDa1NmQm1IbzBGNkN3TTh5N2V1Vk9fdFBXZmgyWk9RZ19EQXRSa1FuYnBWaU5MeUI5N3l2OEFFNlDSAVhBVV95cUxObUhIbjFhcC03RmxlaTZxZXBDbnJGNUtyQ2tTZkJtSG8wRjZDd004eTdldVZPX3RQV2ZoMlpPUWdfREF0UmtRbmJwVmlOTHlCOTd5djhBRTZQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-72",
-          "rank_by_count": 72,
-          "name": "발전소부터 케이블까지…물 만난 K전력기기",
+          "id": "e261128-74",
+          "rank_by_count": 74,
+          "name": "‘현지화 없는 수출’ 중동 줄이고 유럽 키운다더니…HD현대일렉트릭, 유럽 수주 32% 급감 ‘역풍’",
           "easy": "",
-          "quote": "발전소부터 케이블까지…물 만난 K전력기기",
+          "quote": "‘현지화 없는 수출’ 중동 줄이고 유럽 키운다더니…HD현대일렉트릭, 유럽 수주 32% 급감 ‘역풍’",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 74,
-              "title": "발전소부터 케이블까지…물 만난 K전력기기 - 한국경제",
+              "title": "‘현지화 없는 수출’ 중동 줄이고 유럽 키운다더니…HD현대일렉트릭, 유럽 수주 32% 급감 ‘역풍’ - 뉴스퀘스트",
               "source_name": "'변압기 수출'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1OemMyQnlPalV1SzhsZFBzUUZRUXZWeld0OEcwS21VR3FkeTBUdkJiUjhidkdlcUJiclhEaWhGUmFRVUVEdnRLcHpTRGR6VzNwUG9qeHNwQm5Hdw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5GVXBLTE56LWZob055WmlHUEFmOGt5X2xOM1V6cEluQ0NRMGI4cEVlcFhldkN3OUwzejN1RThVdW9FaXgzckx4SmpiNGtGYnVfSzhwcktoNXpWV1FPVU9ZaXFnUWthSFFQZnRTT1d0WQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-73",
-          "rank_by_count": 73,
-          "name": "일진홀딩스, 일진전기 PRS 1300억 덫",
+          "id": "e261128-75",
+          "rank_by_count": 75,
+          "name": "美 중간선거 끝나도 관세 압박 여전…K기업 “투자 인센티브 유지해야”",
           "easy": "",
-          "quote": "일진홀딩스, 일진전기 PRS 1300억 덫",
+          "quote": "美 중간선거 끝나도 관세 압박 여전…K기업 “투자 인센티브 유지해야”",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 76,
-              "title": "일진홀딩스, 일진전기 PRS 1300억 덫 - DealSite경제TV",
+              "n": 75,
+              "title": "美 중간선거 끝나도 관세 압박 여전…K기업 “투자 인센티브 유지해야” - 아시아투데이",
               "source_name": "'변압기 수출'",
-              "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5MWVlzR2I0QnFDVFR5VFhmUDRocTJaR1RnajREcEpKdUgyQmppVWwzYV9pbmpZakVYdHFSd3RfLWdfSmphbXFETVBGUEVfelRCS0VzcmNLaw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE56RUJYY1FOQkJUaFptZkEzODB6U0lCMmJLTlkyTUtfY1hEbk9yUkFYaVNoRmhMNlZEenJ6ZzZNLUdHR2xDWnE5RW0tTnRiUDQwbU1YcjJyUzhaYnYxNUFzeVFneXdfbnVYTTZkRg?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-74",
-          "rank_by_count": 74,
-          "name": "특징주, 한미반도체-HBM(고대역폭메모리) 테마 상승세에 5.57% ↑",
+          "id": "e261128-76",
+          "rank_by_count": 76,
+          "name": "“36단 HBM·2000단 낸드”…2040년 반도체 청사진",
           "easy": "",
-          "quote": "특징주, 한미반도체-HBM(고대역폭메모리) 테마 상승세에 5.57% ↑",
+          "quote": "“36단 HBM·2000단 낸드”…2040년 반도체 청사진",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 77,
+              "title": "“36단 HBM·2000단 낸드”…2040년 반도체 청사진 - 뉴스토마토",
+              "source_name": "'HBM 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1PZzZGSTVOQ3JSMXNmajJSOEdYYm9RaFBsVHF2dk1NemlYUGpXZjE2Z01nN3lqMWxRY0szdC1JU0RqQ2RBdTR1S09yNDBDcF8tbnNTRmN2WWZGSWQ0VzJNZQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-77",
+          "rank_by_count": 77,
+          "name": "\"없어서 못 판다더니 웬일\"…반도체 시장에 심상찮은 신호",
+          "easy": "",
+          "quote": "\"없어서 못 판다더니 웬일\"…반도체 시장에 심상찮은 신호",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 78,
+              "title": "\"없어서 못 판다더니 웬일\"…반도체 시장에 심상찮은 신호 - 한국경제",
+              "source_name": "'HBM 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBhZ085a2U0Ui01czVPZHZFd2RtUEotSU9jdHlMaVBpVWllS1d3VGdEOEdvLV9WNmxZTkhhSHlrUnJweFZvenI0Zkhud2xEWnVvRTY2SF9wOTgtUQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-78",
+          "rank_by_count": 78,
+          "name": "中 반도체, 삼성전자·SK하이닉스 추격 가속…HBM·낸드 진전",
+          "easy": "",
+          "quote": "中 반도체, 삼성전자·SK하이닉스 추격 가속…HBM·낸드 진전",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 79,
+              "title": "中 반도체, 삼성전자·SK하이닉스 추격 가속…HBM·낸드 진전 - 서울경제TV",
+              "source_name": "'HBM 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1XTHlhZVNlSkY4WTl5U0dyay1kUVFSQllRMF93bFhOcG1wWXZ6dEFlRFh2NlJxMnJxZno0Ml96ZVJvVkFRZHR4bVhyZUZUaWdOeWU4RDZOUVl1cUxpUUxjZGRqYUw?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-79",
+          "rank_by_count": 79,
+          "name": "\"낸드는 흔들리고 HBM은 버틴다\"···기로에 선 반도체 슈퍼사이클",
+          "easy": "",
+          "quote": "\"낸드는 흔들리고 HBM은 버틴다\"···기로에 선 반도체 슈퍼사이클",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 80,
+              "title": "\"낸드는 흔들리고 HBM은 버틴다\"···기로에 선 반도체 슈퍼사이클 - 서울파이낸스",
+              "source_name": "'HBM 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBTYkZSaWxVOGZic243dk5WNGVrdzFHdTRIT2QzclpWQy1HQnpTQXBiZW9DRi00Ml9NSWl3LVdpSmdXa2hmcmNNZDZSVWVOa0ZaYWIwUlhGNjJyc29yR0dkamxIb0NHX2oxdHc?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-80",
+          "rank_by_count": 80,
+          "name": "삼성전자·화웨이, '반도체 올림픽' ISSCC 2027서 차세대 HBM 정면승부",
+          "easy": "",
+          "quote": "삼성전자·화웨이, '반도체 올림픽' ISSCC 2027서 차세대 HBM 정면승부",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 82,
+              "title": "삼성전자·화웨이, '반도체 올림픽' ISSCC 2027서 차세대 HBM 정면승부 - 뉴시스",
+              "source_name": "'HBM 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE91d0l2R2VxZXFzY2p4VDVTZ3Rhb0U5cEJMa01nckdLX3k1bnU4eUtWaExYMW9PQlkyZnlFbzR5R3FoaFdBWGFuLV9NV1NJcUhiT0RWNVdRT1N2U3JwdWJlUNIBeEFVX3lxTE1YUzIyOGNmVzZjYjVwMHU1OTFWMWJkakJKMi1mR3p6djE3OEM4SkVBMWp2dFU4Y0t0b1YxdW9SYlQzcDVMTWwtQ1BBM0tSU2c1VGpsS1JDdkdFRFRSMFlyVm5BQ1BncXR4VDBmUVZNbkhidVdQV1V4SQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-81",
+          "rank_by_count": 81,
+          "name": "중국 CXMT와 화웨이의 HBM 위협 '시기상조' 평가, 삼성전자 SK하이닉스에 영향 미미",
+          "easy": "",
+          "quote": "중국 CXMT와 화웨이의 HBM 위협 '시기상조' 평가, 삼성전자 SK하이닉스에 영향 미미",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 83,
-              "title": "특징주, 한미반도체-HBM(고대역폭메모리) 테마 상승세에 5.57% ↑ - 매일경제 마켓",
+              "title": "중국 CXMT와 화웨이의 HBM 위협 '시기상조' 평가, 삼성전자 SK하이닉스에 영향 미미 - 비즈니스포스트",
               "source_name": "'HBM 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5aa3ZfZmpXb3JWX0d6bm8tS3lZb2tfVUN1WlFyTDFSYXRjNXVwSnMtYktZbW9ScFNMS0N4S1hTbnVmSFM2ZmY5bjZTdXBtbjM1WVE?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9YSlFVenBmZ2FwNlF6TzctNF9oOG5iY3FPREdJdG82MDRVTE40NlNqUERtd0N4NU0tWU9EcGJMVjlpNU1CUnRVaEdWMXBsTWVPMmFvR1JzTzZVazAtOVdMOGpvTGllbDVJWDVTYnVtTUVLN1k?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-75",
-          "rank_by_count": 75,
-          "name": "삼성전자·SK하이닉스 장기공급계약 '물음표'…장부에 받은 돈이 없다",
+          "id": "e261128-82",
+          "rank_by_count": 82,
+          "name": "[미국 특징주] 마이크론, HBM 시장서 화웨이·창신메모리 도전 직면",
           "easy": "",
-          "quote": "삼성전자·SK하이닉스 장기공급계약 '물음표'…장부에 받은 돈이 없다",
+          "quote": "[미국 특징주] 마이크론, HBM 시장서 화웨이·창신메모리 도전 직면",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 85,
-              "title": "삼성전자·SK하이닉스 장기공급계약 '물음표'…장부에 받은 돈이 없다 - 연합인포맥스",
-              "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9NT1hlbmtET1VLb3pxMUtHZ0xUR0VZNjZsajFSSGFJTnFkZ05YMGlJQ2V1Q3RGTHFBX2ZGRGNSUDZQd1U5WW5oTXBaeVQ3bjR3Mnh5U25ET3NSbFh2SzRyLXZGNG9QSnYzT1ktdWctLXU?oc=5"
+              "n": 84,
+              "title": "[미국 특징주] 마이크론, HBM 시장서 화웨이·창신메모리 도전 직면 - 뉴스핌",
+              "source_name": "'HBM 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE56cC1fdGhVVmZ1STloZWlVaHlGbXQ3WUU3XzE1aE9DZGV5bDBhUGlST3pteUlQOWNXNXFGczlvaERBU25aNG4tODN2LXkyVHdCQVhSMmhVYTFiNTJr?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-76",
-          "rank_by_count": 76,
-          "name": "[데스크칼럼] 삼성전자와 SK하이닉스의 주주라면 By FinancialPost",
+          "id": "e261128-83",
+          "rank_by_count": 83,
+          "name": "SK하이닉스 하루 만에 매수 1위로 돌렸다…초고수, 삼성전자은 매도[주식 초고수는 지금]",
           "easy": "",
-          "quote": "[데스크칼럼] 삼성전자와 SK하이닉스의 주주라면 By FinancialPost",
+          "quote": "SK하이닉스 하루 만에 매수 1위로 돌렸다…초고수, 삼성전자은 매도[주식 초고수는 지금]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 86,
-              "title": "[데스크칼럼] 삼성전자와 SK하이닉스의 주주라면 By FinancialPost - Investing.com 한국어",
+              "n": 87,
+              "title": "SK하이닉스 하루 만에 매수 1위로 돌렸다…초고수, 삼성전자은 매도[주식 초고수는 지금] - 매일경제",
               "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9aT1phUHlPS2hTWF9iaUdENVE0Vk5ZQnduNFpTa3dtOGVBLXVrODhuNHg5Y0VQQ0N5QmU3Y1B3T3BsSktqcFVHcXoxYWN5WFlHMzlRVDRPQW0wUXhzWVQ4cEFSQ1hVSDIwS1pUd0k1dmc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE15ZFJ3eG1EZ0ZyN2xiZlBwOXUtaWFMYkVtNmhPc2U5aTBPOFRDRzg1eWpFODBWdUpqd2hfTlkxMXdnclpid3gwMlJBaG05VzJkbkE?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-77",
-          "rank_by_count": 77,
-          "name": "취약계층 식탁을 풍성하게… SK하이닉스와 ‘행복도시락’ 지원",
-          "easy": "",
-          "quote": "취약계층 식탁을 풍성하게… SK하이닉스와 ‘행복도시락’ 지원",
+          "id": "e261128-84",
+          "rank_by_count": 84,
+          "name": "삼성전자, 역대 최대 30조원 배당…SK하이닉스도 14조원 지급 예고",
+          "easy": "삼성전자가 역대 최대 규모인 30조 원의 배당을 실시하고, 에스케이하이닉스도 14조 원 지급을 예고했습니다. 주주들에게 막대한 자금이 돌아간다는 건데요. 쉽게 말하면 두 회사가 엄청난 금액을 배당으로 푼다는 겁니다.",
+          "quote": "삼성전자, 역대 최대 30조원 배당…SK하이닉스도 14조원 지급 예고",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 88,
-              "title": "취약계층 식탁을 풍성하게… SK하이닉스와 ‘행복도시락’ 지원 - 조선일보",
+              "title": "삼성전자, 역대 최대 30조원 배당…SK하이닉스도 14조원 지급 예고 - ESG경제",
               "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPb29TY2VTQXFNbk1pN0hQbGFMX2JvREhyYUhIOEtCSzJDeGU4R2NKVmk0TGVfRVh4X08xWEQxb3hUZnJqOWFwQk1mWXZUUnpIQzExWHl1YmVNQXNFZzI4UzhKZWVjRldzUkZyanhVMEN6b2pYbEh3OGlFelpSb28yQkVqUDM5cDN6U1o0?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1vbXEwZDBDaHRmdWRBc1QyY0tqMkd4cFhDT2tzZFdXc01Ec1I2Q0hNZkt0SG5Sb3VGd3ZHcFp2ZHhzVk8xS3B4bm1nejJ4RTRqSTRZRE1ZSkNoRnAxM09VbjZkdDZLVzNMZEZ1Ng?oc=5"
             }
           ],
-          "flags": [],
+          "flags": [
+            "쉬운 요약 = 고른 뒤 채움(합친 제목 기준)"
+          ],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-78",
-          "rank_by_count": 78,
-          "name": "“삼성전자·SK하이닉스만의 문제 아니었다”…美마이크론 이틀 새 15% 폭락, 반도체 무슨 일?",
+          "id": "e261128-85",
+          "rank_by_count": 85,
+          "name": "하루 만에 SK하이닉스 매수한 초고수들…바이오·로봇 '팔자'",
           "easy": "",
-          "quote": "“삼성전자·SK하이닉스만의 문제 아니었다”…美마이크론 이틀 새 15% 폭락, 반도체 무슨 일?",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 89,
-              "title": "“삼성전자·SK하이닉스만의 문제 아니었다”…美마이크론 이틀 새 15% 폭락, 반도체 무슨 일? - 데일리25",
-              "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9sZmVycFMwR3hWa3hNalF4VHJLa3I2X2dvVUF4U2ZOdkJGVUpGRXphN2FDZ0tEeUdHR2gwdU5fNnNrV3c0RXk0ZElEZFh5VGx4MzJXOVE5ZmJ1akFEWjZwb3AtdnhfdUkyT2hKaA?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-79",
-          "rank_by_count": 79,
-          "name": "삼성전자·SK하이닉스 특별배당, 커버드콜 ETF에 반영",
-          "easy": "",
-          "quote": "삼성전자·SK하이닉스 특별배당, 커버드콜 ETF에 반영",
+          "quote": "하루 만에 SK하이닉스 매수한 초고수들…바이오·로봇 '팔자'",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 90,
-              "title": "삼성전자·SK하이닉스 특별배당, 커버드콜 ETF에 반영 - 코리아리포트",
+              "title": "하루 만에 SK하이닉스 매수한 초고수들…바이오·로봇 '팔자' - 한국경제",
               "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5EcGxDVl9kSVVyTWl2eUVYN205ZmhiX0luSDFDVlpXOTF3R3BGOVBaRVFjOERBWGV5endOaTVyaTN4YlNPRHVjR2pUM2QtYmhJa1pqNXp2WWNyaV9TeU9kNTBkdVAtc084cWhHQmV3R1A?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBnbndtXzlBdVdFQlk1aUVxb3kzX3F6bzZPRUFiRC1ETTFMMjFOYUtKR0JiMFVBTmg2VUIxZkJRVG1xcUljWkppT1lHUlRnVkZhRzZDVVM2Z3Qzdw?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-80",
-          "rank_by_count": 80,
-          "name": "삼성전자·SK하이닉스 \"오너만 책임경영?”…코스피 고점 이후 임원 자사주 순매도",
+          "id": "e261128-86",
+          "rank_by_count": 86,
+          "name": "'삼성그룹 로봇 파트너' 제우스, 삼성전자 반도체 '100% 무인화'에 라인 확대 기대감 '증폭'",
           "easy": "",
-          "quote": "삼성전자·SK하이닉스 \"오너만 책임경영?”…코스피 고점 이후 임원 자사주 순매도",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 91,
-              "title": "삼성전자·SK하이닉스 \"오너만 책임경영?”…코스피 고점 이후 임원 자사주 순매도 - 스트레이트뉴스",
-              "source_name": "'SK하이닉스'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBIelBqaWtpcW1qbGtSNjlDdktuTDk0T2JGUkxKRnlrT3lqTFFZdUFNMDNUUDJQdlRnMWRNdWZLeDRRU2ZXMGNsbUotUVFheU5tTXRwcFJrS2xFY1NXZ3BwQzFscUNCaUR6dVBhSlZYdUFTMTA?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-81",
-          "rank_by_count": 81,
-          "name": "[단독] 삼성 “반도체 공장 무인화”… 로봇팀 꾸렸다",
-          "easy": "",
-          "quote": "[단독] 삼성 “반도체 공장 무인화”… 로봇팀 꾸렸다",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 93,
-              "title": "[단독] 삼성 “반도체 공장 무인화”… 로봇팀 꾸렸다 - 전자신문",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBfT1Y2NFVhaFlmOF9zYl8ya3o1UXZ3ZjUxWVZ6MTNPblNWa0l6SVhLd0l6SUZ1NWlYT1Fza2IxS3pEN1lIWS1kMlZJbV9Fdw?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-82",
-          "rank_by_count": 82,
-          "name": "머스크도 애타는 삼성전자 반도체…이재용 \"뭘 더 해줄 수 있나?\"",
-          "easy": "",
-          "quote": "머스크도 애타는 삼성전자 반도체…이재용 \"뭘 더 해줄 수 있나?\"",
+          "quote": "'삼성그룹 로봇 파트너' 제우스, 삼성전자 반도체 '100% 무인화'에 라인 확대 기대감 '증폭'",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 94,
-              "title": "머스크도 애타는 삼성전자 반도체…이재용 \"뭘 더 해줄 수 있나?\" - 주간조선",
+              "title": "'삼성그룹 로봇 파트너' 제우스, 삼성전자 반도체 '100% 무인화'에 라인 확대 기대감 '증폭' - 프라임경제",
               "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5XdGgxYW9KckQ1VjNISFBDcmtKYkNobXJVcDdELXY3YjlVWUNqbFBDZmRrbkdMdzN1SXJEdmM3WS0zOWxmWGZPVVhwaGxQcmtXQjNRTkxuRXQzTF9hb19OdTJyZm8yZWV1MDA0?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5ONUN0b3poTV9YWG4zLV9IamlzMWN0d0wwd1ZlWjgtNl9WUzNqaUN1dFlJQUpCVm1YOVJ6SFRZS0hmdXR0Z0xuUGZ5VmJSZ21aTk5KQWhONXptSUZYbHlFR1ZobmZXQjdqQVFXNQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-83",
-          "rank_by_count": 83,
-          "name": "승진 줄인 삼성전자, 반도체는 늘렸다 - 머니투데이",
+          "id": "e261128-87",
+          "rank_by_count": 87,
+          "name": "엑시콘, 반도체 검사장비 국책과제 특허 삼성전자와 공유",
           "easy": "",
-          "quote": "승진 줄인 삼성전자, 반도체는 늘렸다 - 머니투데이",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 95,
-              "title": "승진 줄인 삼성전자, 반도체는 늘렸다 - 머니투데이 - 머니투데이",
-              "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE10cDRGdU1wdVZ1VXVFMm5KV0ZrQWFlbzNzZ1VLbEZUMWV4ZHJzaGpicERqVlRSMFBFbDYzYW9UQ1d4ZzNtSEVrcjdodUlvR1VZWjNuU1RmeHBKMmNYQkJleEtibERoQUEyTktzM9IBckFVX3lxTE5YOHdRRS0tNnlnbkJXYUlkblQ3bzZZVzN5azhfZjNmYm9xTEZFUmdjb25ubGVsdUlPOE1nRXpqOGNUa1hvZ3dFTVdScjBLZ2xKU1lmaEduRzVxVGxnQVVUdElsS1JyY1dSMVRpZGhyLUJodw?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-84",
-          "rank_by_count": 84,
-          "name": "\"이재용, '반도체 장기구매할게' 머스크에 '그럼 뭘 해줄건데'\"",
-          "easy": "",
-          "quote": "\"이재용, '반도체 장기구매할게' 머스크에 '그럼 뭘 해줄건데'\"",
+          "quote": "엑시콘, 반도체 검사장비 국책과제 특허 삼성전자와 공유",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 96,
-              "title": "\"이재용, '반도체 장기구매할게' 머스크에 '그럼 뭘 해줄건데'\" - 연합뉴스",
+              "title": "엑시콘, 반도체 검사장비 국책과제 특허 삼성전자와 공유 - 지디넷코리아",
               "source_name": "'삼성전자 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04TjBVSEh1SHQ5RXFaM0tOSHBrMzZmTDJPUzhINVlFN29Ea2ZVaGs5c0Vya1R2aTZHUEY2R2VmNnR2YW1pZXROY2ZwaTRkZXhXWkVoc1h3S1V5RE3SAWBBVV95cUxNbWxwczBRbUktS3BrampndUk4bDdxODRSMHA2VXVjMjk4ZTk4Tm5SVW1UNU1xVjMtNXg2eVNSdG9Sa1JFLTJxc3FhQUE4WDJQRlEyazMyV0didWNXd05tSEU?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFB4cHlpZk9VNWc5d0xaVjBDRGpHaC0zQkN4WDV3QzBIcy1UVW1pM0ItTVBLVW9XeklMMHNQOGNuVFpsQzBqbVF1dEJsODFIc3B6ZjBfazdB?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-85",
-          "rank_by_count": 85,
-          "name": "젠슨 황만이 아니었다…엔비디아 임원, ‘대중국 반도체 밀수’ 혐의 기업 임원과 혼인",
+          "id": "e261128-88",
+          "rank_by_count": 88,
+          "name": "삼성, 반도체 공장 무인화 시동…2030년 로봇 1만대 전망",
           "easy": "",
-          "quote": "젠슨 황만이 아니었다…엔비디아 임원, ‘대중국 반도체 밀수’ 혐의 기업 임원과 혼인",
+          "quote": "삼성, 반도체 공장 무인화 시동…2030년 로봇 1만대 전망",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 101,
-              "title": "젠슨 황만이 아니었다…엔비디아 임원, ‘대중국 반도체 밀수’ 혐의 기업 임원과 혼인 - 한겨레",
-              "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBTRkpWSkpaTmZDM01uckMxSDJSWlhGUjBWVFNQMlJpX1dabFR1RzB4blB6NkdOMlN6VmJMUWllenN5RF9zRXNUUkk1cDhyQk1IX1NwOEJNQ0RLT29PYkZCbXFydGtILWpyYnQ2RkQ4NA?oc=5"
+              "n": 98,
+              "title": "삼성, 반도체 공장 무인화 시동…2030년 로봇 1만대 전망 - 엠에스투데이",
+              "source_name": "'삼성전자 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9HZzRXeEhVbkwzZEU2Tm9QVjY5dUZLVlBNb292T0ZDXzN4SG9qUjZBUW5FN3E5VGthUjI2Mjg3NEI0ZElJLTJXWF9RVkY4UmhMN1ZaRllRekVkRGFGTWdXQXM4Sk1odDNheW9wM9IBcEFVX3lxTE1FZFFxU0szWV9FZldhMnNUNWEyaGFrZUJqc29OaFZLRElZbF9LakFyYV90UUgxZkxrMmZfWEkyQ3MxWTBFZXJTQ0dEVDd2elJVcS1IUnVsV3lOTmtJTFJuSnNyb1R6YjluaGNnWThvMmQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-86",
-          "rank_by_count": 86,
-          "name": "금가는 엔비디아 독점 생태계…AI기업들, AMD·자체 칩으로",
+          "id": "e261128-89",
+          "rank_by_count": 89,
+          "name": "테슬라 CEO 일론 머스크 삼성전자 반도체 장기구매 요청에, 이재용 \"뭘 더 해줄 건데?\"",
           "easy": "",
-          "quote": "금가는 엔비디아 독점 생태계…AI기업들, AMD·자체 칩으로",
+          "quote": "테슬라 CEO 일론 머스크 삼성전자 반도체 장기구매 요청에, 이재용 \"뭘 더 해줄 건데?\"",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 99,
+              "title": "테슬라 CEO 일론 머스크 삼성전자 반도체 장기구매 요청에, 이재용 \"뭘 더 해줄 건데?\" - 비즈니스포스트",
+              "source_name": "'삼성전자 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFB5YVN0ZHNieTlDZElHaGZHYVAyRUpqcG5hTkJudzFqNVhQZWdPYVFDNHBKQ2g2MUZ0eWtWYmxKU3c3MFVHYXJmcDE3LWx5Yk5DWmN5LXNVU2xYTjBsTGFnbDJKT29ONkkzYnlQZWg5M1laWU0?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-90",
+          "rank_by_count": 90,
+          "name": "삼성전자, 대대적 조직개편…반도체 경쟁력 강화·미래 먹거리 확보",
+          "easy": "",
+          "quote": "삼성전자, 대대적 조직개편…반도체 경쟁력 강화·미래 먹거리 확보",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 100,
+              "title": "삼성전자, 대대적 조직개편…반도체 경쟁력 강화·미래 먹거리 확보 - 이지경제",
+              "source_name": "'삼성전자 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9XbFVwWE16eEFDdkdvb0dKWExTSExxbjNJZW1MckpYUXA4elFDZWpYMmg2ZFBvdWpia3cydEYtM2NVb21qc2VEZW1VYUFMbDlRem43RmlOek94b1BMeDdFcThkVm1iNnczYVV3NkVn?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-91",
+          "rank_by_count": 91,
+          "name": "'젠슨황 불륜 상대' 연계 中시설서 엔비디아 최첨단 칩 발견",
+          "easy": "엔비디아의 최첨단 인공지능 칩이 중국의 한 데이터센터에서 발견되었습니다. 이 시설이 앨리스 황이라는 인물과 연계되어 있다는 보도가 나왔는데요. 쉽게 말하면 엔비디아의 핵심 칩이 중국 시설에 들어가 있었다는 겁니다.",
+          "quote": "'젠슨황 불륜 상대' 연계 中시설서 엔비디아 최첨단 칩 발견",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 102,
-              "title": "금가는 엔비디아 독점 생태계…AI기업들, AMD·자체 칩으로 - 조선일보",
+              "title": "'젠슨황 불륜 상대' 연계 中시설서 엔비디아 최첨단 칩 발견 - 연합뉴스",
               "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNMFNHM0FMU0l1OGRzODZkbTI5bDBEX0tlS3VwbGE1bkxoRlNOMkhZUHB5VzQ0QTJETEFWLUs2MFJlWXU2NUNNaGhuM2pFQ184U2I0STViVEM0eFdNc1JVNWxhXy1PY0xUNFJxMDNPbG1aNGZpUlF3S2ZHZUZ5ZkE5akVQdw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HVjJuVE9hcUNXeGplWGZ0enlyMk5IM2FIcHh4by1ZQjU1a0dBeVlmRUE3UVJtTWlkU3kyX2ZyN2VORWR4RHlOT3g3SWhLclZmUURSVVJiV21ZUG_SAWBBVV95cUxOSE1md2U1VHlWSWxOSDZ2dDBjRk52OHhnN1dtdk5xdVBIaWViMlVsdm9va1ZRZWgzMlFZdGo4czhBNldpcDlaRUNFaHA5UlVZQ0pnYXFqV3daQ1NOandTRUE?oc=5"
             }
           ],
-          "flags": [],
+          "flags": [
+            "쉬운 요약 = 고른 뒤 채움(합친 제목 기준)"
+          ],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-87",
-          "rank_by_count": 87,
-          "name": "“중국에 1%라도 임대하면 칩 못팔아”…엔비디아 판매상 강경방침",
+          "id": "e261128-92",
+          "rank_by_count": 92,
+          "name": "AI 노스트라다무스 \"엔비디아·테슬라 가치 잃을것\"…대체 왜 - 머니투데이",
           "easy": "",
-          "quote": "“중국에 1%라도 임대하면 칩 못팔아”…엔비디아 판매상 강경방침",
+          "quote": "AI 노스트라다무스 \"엔비디아·테슬라 가치 잃을것\"…대체 왜 - 머니투데이",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 103,
-              "title": "“중국에 1%라도 임대하면 칩 못팔아”…엔비디아 판매상 강경방침 - KBS 뉴스",
+              "title": "AI 노스트라다무스 \"엔비디아·테슬라 가치 잃을것\"…대체 왜 - 머니투데이 - 머니투데이",
               "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE04LU5yQW42Q0JIQzZ2RVhLb2lUTXJmY0FZODcwWUppRGdhUDY2TXlFMndqdmw4QUFyNEplWnN2RkpSSWFfNnRabEFTcDFEOWlnYVhUSW5KYjZ4SVE?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9kLTBjZFRSZ1ZMR016VkQ4YXZpeHNrMmYyYVVvVVBqZ1ZMSGptTS1QNmJMSEJGekx2eXpUQ3l5MFJRbHNRY0cyRF84ZklHQUNuZzRjZTdLVTEwLTYwa3ZiUTI1dkwtSUxp0gFuQVVfeXFMT1c0emQtNjdVaVpTMzVYeFN3ZnEwOTBiZ0YxRGJNOC1qN3pRVUFUQVRxNllyYUFqMElTU0xnVFhVbG1Jd1MtaHNHLXlJSnVGTmlBZTA1SzBCR0RtQ1NFem03YkhmdHVpNEtab1BrcVE?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-88",
-          "rank_by_count": 88,
-          "name": "\"中에 AI 컴퓨팅 자원 조금이라도 빌려주면 엔비디아 칩 못 산다\"",
+          "id": "e261128-93",
+          "rank_by_count": 93,
+          "name": "‘젠슨 황 불륜 상대’ 연관된 中 데이터센터에서 엔비디아 최첨단 칩 발견",
           "easy": "",
-          "quote": "\"中에 AI 컴퓨팅 자원 조금이라도 빌려주면 엔비디아 칩 못 산다\"",
+          "quote": "‘젠슨 황 불륜 상대’ 연관된 中 데이터센터에서 엔비디아 최첨단 칩 발견",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 104,
-              "title": "\"中에 AI 컴퓨팅 자원 조금이라도 빌려주면 엔비디아 칩 못 산다\" - 뉴시스",
+              "title": "‘젠슨 황 불륜 상대’ 연관된 中 데이터센터에서 엔비디아 최첨단 칩 발견 - Chosunbiz",
               "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5fdWI1T21MOUpCTDdpcnVWWWw3d2M0aHlGdHEweWJBYlZnbGZLUURHUVc0SFhFZ09PenlhMUtBLWNrNDBIeGdpWWZxRlJlb3EwRU9WakFac3VfXzhEaDhDVzF2OTFlZnNYWFlPM1hzbXFGb2l3RC1aetIBeEFVX3lxTE5fdWI1T21MOUpCTDdpcnVWWWw3d2M0aHlGdHEweWJBYlZnbGZLUURHUVc0SFhFZ09PenlhMUtBLWNrNDBIeGdpWWZxRlJlb3EwRU9WakFac3VfXzhEaDhDVzF2OTFlZnNYWFlPM1hzbXFGb2l3RC1aeg?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNmpKaDZFQXJDWkoybGtuTkx5bk44M2lTR2FwWUlkRkx0RExIaVBjZGNwNlJZZWtkcDdZMnVUOEhVMUxqeEc4bmFNUHo3WkFoTzlwbFRFYVBYTlpkbnBPcDhOZXRuUGRYdlc3elIwUUFmRTh0OVNpeDBjRFd5d2ZXb19MNm5LU21QYjZUOGJFbUxXR2xwYWRUVkYxRHM2QdIBsgFBVV95cUxNal82RkxnMzFUNTlfZVdDeF9HaXVmOEt0SUoyOVB1UFpEMzhWQjVZNFhuTHpTWGtNR21LQXpVOWJrMmwyUUtvNXFUbFlsd1RDZ2M0Tlp6X1dXSHhkbzhZaWlMWTJwWXJIdWY"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-89",
-          "rank_by_count": 89,
-          "name": "‘젠슨 황 컴백’에도 엔비디아 휘청… S&P, 신용 강등 경고",
+          "id": "e261128-94",
+          "rank_by_count": 94,
+          "name": "엔비디아, AI 칩 탑재 서버 동남아 4개국 배송 금지…FT 보도",
           "easy": "",
-          "quote": "‘젠슨 황 컴백’에도 엔비디아 휘청… S&P, 신용 강등 경고",
+          "quote": "엔비디아, AI 칩 탑재 서버 동남아 4개국 배송 금지…FT 보도",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 105,
-              "title": "‘젠슨 황 컴백’에도 엔비디아 휘청… S&P, 신용 강등 경고 - 동아일보",
+              "title": "엔비디아, AI 칩 탑재 서버 동남아 4개국 배송 금지…FT 보도 - 국제뉴스",
               "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1HN1NBM0szQm5yekljRUN0b1R3bm50NnNFbDZhOHdCLW13MnhfdWZHeGpreW5uRUhXYy1HV2IyektyNjR0bFJrcHg2UGZGdHpjZDRJX1czcGdUemxlXzNCZFFpZVdIdjY2WkdFUzhCd0pkeE9hMWfSAWZBVV95cUxQOTBoNGZoWXM5MEJvb2RCb2VSLVN0eEwwZ1FXeExmaWRaeW44NV9ieTNsSGRFMlI4UzdsMUtHQVB2ZDhHRDREcUpFT2tFVFZrUnZ0VlU1WmhYNW1oWmxsSjVmUnhVWGc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBsMFBhYU5USUR0Y1I0anc2LUFQUFg1UHZ4bHh3X0t1UHV4U0h6SlVuU0xZX1BDUDExX3NodUxJWkFnc2VsNEt4OWFydmtvbldCWnBDZUhpTWNOcEY4SXc4cmxOaEhsTXlnblN1MDR3?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-90",
-          "rank_by_count": 90,
-          "name": "美 반도체 규제에 아시아 AI 대출 차질…엔비디아 협력사도 영향",
+          "id": "e261128-95",
+          "rank_by_count": 95,
+          "name": "엔비디아 최첨단 AI칩, 中데이터센터에 설치…앨리스 황과 연결고리도",
           "easy": "",
-          "quote": "美 반도체 규제에 아시아 AI 대출 차질…엔비디아 협력사도 영향",
+          "quote": "엔비디아 최첨단 AI칩, 中데이터센터에 설치…앨리스 황과 연결고리도",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 106,
-              "title": "美 반도체 규제에 아시아 AI 대출 차질…엔비디아 협력사도 영향 - 글로벌이코노믹",
+              "title": "엔비디아 최첨단 AI칩, 中데이터센터에 설치…앨리스 황과 연결고리도 - 뉴스1",
               "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeHlKMFdpcHBzX1piUXd0SHBYXzBjbTVwMnVhZXpfdnlBTkowV3NGNlY4LW5MQWZyeVJfNDU5V3IxaXNGMDVoOEdNdG1BMEg3Xzl1b2dzNnI4WFFiYnNwRUlMcjdMOHJaWG1JendOZGQ0cEVNYXNpTFpPem4tel9lTjZOMkZvc1Jn?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4zOU9tVVRhWGhyN25LXzl2MWp2cVlLbXBCTUItZDFhZkRBU3c1bEhlNzVwd2w2SjVxNm00RFdFS0pBNHdIeEx5b3RSODBIS0haRk1kZEF5Zm4?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-91",
-          "rank_by_count": 91,
-          "name": "엔비디아, 동남아 서버 출하 중단…中 AI 우회로 봉쇄",
+          "id": "e261128-96",
+          "rank_by_count": 96,
+          "name": "뉴욕 증시, AI 관련 주 반등에 동반 상승 출발...엔비디아는 1% 넘게 하락",
           "easy": "",
-          "quote": "엔비디아, 동남아 서버 출하 중단…中 AI 우회로 봉쇄",
+          "quote": "뉴욕 증시, AI 관련 주 반등에 동반 상승 출발...엔비디아는 1% 넘게 하락",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 107,
-              "title": "엔비디아, 동남아 서버 출하 중단…中 AI 우회로 봉쇄 - 파이낸셜뉴스",
+              "title": "뉴욕 증시, AI 관련 주 반등에 동반 상승 출발...엔비디아는 1% 넘게 하락 - YTN",
               "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YaURXZmJ5T3lEMUdsNVpCUFkteFRnejlQaHlic3d0VlluZklsZEtZTnhlbnF0WUdmN0MwV2ZjMEc3bHQ1ak9FX0xfR0YtQjkxTnhidHdTN2pTQQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBUZXNSRlNNSkJrNDZYMk1NWG8tUUV4bGpwSF9ZaFBPUTV0bmhYbGtNMENldXZQVDRITVpUTWdiMnZLZm03RmFlMFVENVBOeWNrUFlHZnk5eDJuMEJNM0E?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-92",
-          "rank_by_count": 92,
-          "name": "젠슨 황 돌아왔는데 왜?…S&P, 엔비디아 신용등급 강등 검토",
+          "id": "e261128-97",
+          "rank_by_count": 97,
+          "name": "엔비디아 스캔들이 드러낸 아시아 AI 투자 붐의 숨은 위험",
           "easy": "",
-          "quote": "젠슨 황 돌아왔는데 왜?…S&P, 엔비디아 신용등급 강등 검토",
+          "quote": "엔비디아 스캔들이 드러낸 아시아 AI 투자 붐의 숨은 위험",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 108,
-              "title": "젠슨 황 돌아왔는데 왜?…S&P, 엔비디아 신용등급 강등 검토 - JTBC",
+              "title": "엔비디아 스캔들이 드러낸 아시아 AI 투자 붐의 숨은 위험 - BBC",
               "source_name": "'엔비디아'",
-              "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE51amNzQXVNX0ZFUElBWjcxdHA0eWZ2cWdFSUpEc1lNU2RrVUFxRUxKdjMtZnN1U01pQWpYc29wckZxUXR0clJIeUFrS1FZcjM5WUJPeg?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5TUVdjWU9PVUN4YWs4bHJmeHVPeDhOemZKSEpLbE56X0V1NWVja1JienFjSl9jcVZCTklhckN5LW83TnhrejhabURldUNQbXVUOHY4bTJFQU5ncVBKeVHSAWNBVV95cUxNWVp2RVJNeHozaXRCZEEzZ3U5Z2tSbGNFZUJYMGpJcmJ1b2d6U1BwSWMxTVNZTHdPRENZV1A1b0lmVVNDSlFJSUhDNzRTdkFkMkgxWlVYdkVlUVBkSXJKOFRTM2c?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-93",
-          "rank_by_count": 93,
-          "name": "얼마나 짓느냐보다 무엇을 짓느냐…현대·DL, 해외 수주 전략 변화",
+          "id": "e261128-98",
+          "rank_by_count": 98,
+          "name": "체코·스웨덴, 원전 공급망 협력 확대…삼성물산·현대건설 등 유럽 수주 청신호",
           "easy": "",
-          "quote": "얼마나 짓느냐보다 무엇을 짓느냐…현대·DL, 해외 수주 전략 변화",
+          "quote": "체코·스웨덴, 원전 공급망 협력 확대…삼성물산·현대건설 등 유럽 수주 청신호",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 109,
-              "title": "얼마나 짓느냐보다 무엇을 짓느냐…현대·DL, 해외 수주 전략 변화 - 한국금융신문",
+              "title": "체코·스웨덴, 원전 공급망 협력 확대…삼성물산·현대건설 등 유럽 수주 청신호 - 더구루",
               "source_name": "'원전 수주 SMR'",
-              "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBBQjlReXQ2UnRPaGZRSDNlU19NMlBVdURoNWZ0Ml9UMEdJb2YzU3RndmJnbU1XaDNNSDc0ZWhaWEZuTHQxd0tJVXI4VVIwOUwxU2IyNGU2elp4MlZ5SjBydEZzU0pxWGFmTXBTLWR0Z0syclV1SjFpWHMtMVU?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBDeXh0dkx6bHdoX3hTR21mMHFOOXpzWTRaMFZobDJRS0F5WmRwNTRIS2JrSENJY2xOY3ZuMW5FMUY2elBJeVlXTU5CUlRWbW9pOEtXaUd1WGNuOUE0d3ZhbzRuWQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-94",
-          "rank_by_count": 94,
-          "name": "리투아니아, 2028년 원전 재도입안 의회 제출 추진…SMR 건설 검토",
+          "id": "e261128-99",
+          "rank_by_count": 99,
+          "name": "美 HALEU 22.8톤 재활용, 韓 SMR·원자력협정 새 물꼬",
           "easy": "",
-          "quote": "리투아니아, 2028년 원전 재도입안 의회 제출 추진…SMR 건설 검토",
+          "quote": "美 HALEU 22.8톤 재활용, 韓 SMR·원자력협정 새 물꼬",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 110,
-              "title": "리투아니아, 2028년 원전 재도입안 의회 제출 추진…SMR 건설 검토 - 더구루",
+              "title": "美 HALEU 22.8톤 재활용, 韓 SMR·원자력협정 새 물꼬 - 에너지안전신문",
               "source_name": "'원전 수주 SMR'",
-              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE14V2lfWTJ0dGJfWUJwdmVoUW9jeE5mVnVzeGxkNi1rdG9GQ285N3VFb1JYWXVuek40ZDhIV2ZCM05jeDUtdzF0dTFUQjdReVJ6cFBvUDMzalJYS3ZITWJQeTVBRQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9DM1ZlVDlUbzh4MF9ER0k3Ymw5QmFBX21GWDBXSk91eEw1ODBZZldXb2hWTWhLSVRvLWlST1NhZEFicUNycmRSZ2x1cFJ0VGo0bGd6M0ktUzItdDN3RU51bkFHQ00?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-95",
-          "rank_by_count": 95,
-          "name": "포항시, 에너지위원회 개최… 영덕원전 전력망·4세대 SMR 등 미래 전략 모색",
+          "id": "e261128-100",
+          "rank_by_count": 100,
+          "name": "체코·스웨덴, 원전 협력 추진…사업 참여·공급망 공동 구축 등 논의",
           "easy": "",
-          "quote": "포항시, 에너지위원회 개최… 영덕원전 전력망·4세대 SMR 등 미래 전략 모색",
+          "quote": "체코·스웨덴, 원전 협력 추진…사업 참여·공급망 공동 구축 등 논의",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 111,
-              "title": "포항시, 에너지위원회 개최… 영덕원전 전력망·4세대 SMR 등 미래 전략 모색 - 스트레이트뉴스",
+              "n": 114,
+              "title": "체코·스웨덴, 원전 협력 추진…사업 참여·공급망 공동 구축 등 논의 - 더구루",
               "source_name": "'원전 수주 SMR'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE43S010VWw4d1NuOHhSeEdZTjU4a1FXc2FkQkNFTUpJNzJ6NXRLT1dDaUpmaVlWajUtdlZZYm5IZXk4dFRvVnVnTzlDcGVsN2d1bVppMWg4NEZEM0dBcFFNSEkzTVoyNlhOTF9jcUtOVzlIaHfSAXdBVV95cUxOdVVHb3dqa0E3OW15d21acEpEZTJ2alB1YUZ6REVRc0NKSFM5XzJxanlGTkhkX2pVaHcxYXAyVGRsaXRJMHRMLWtZLUJkQ0ttQVlvc0QyUGxyb3A1QUtpM0M0WnE0VUllVmI0Q2FZUXFzODZ6eVBuSQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9ZdTY5TWhJU2NjWVJ6MmxfX2xycVNCdlFtelBRcWpkQmt3eGVCNy1Oa2xKQzV5V29VcUhuZDVWTl8zQ21FSWo5TkVSYVBNSllwWkVadTRGeGxrSUItYzA2QQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-96",
-          "rank_by_count": 96,
-          "name": "반도체에 가려진 조방원 추락…조선 반토막, 방산·원전 휘청 - 머니투데이",
+          "id": "e261128-101",
+          "rank_by_count": 101,
+          "name": "DS證, “현대건설, AI 데이터센터 역량 우수하지만⋯주가 반등 열쇠는 원전”",
           "easy": "",
-          "quote": "반도체에 가려진 조방원 추락…조선 반토막, 방산·원전 휘청 - 머니투데이",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 112,
-              "title": "반도체에 가려진 조방원 추락…조선 반토막, 방산·원전 휘청 - 머니투데이 - 머니투데이",
-              "source_name": "'원전 수주 SMR'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1KMFgyYVMwbkJMaTlVOGpfZlhTZHJRdmV6UUVxYnVCblRRemJsMWZ5WGtabU8ydm9EX3hHYjJmNlBQakJWVE1tWHRRaUNBSFNTa0lIcXlERC1HRGhWQ0NhRG96MkQ2TDFLQ0JvUlBR0gFuQVVfeXFMTUowWDJhUzBuQkxpOVU4al9mWFNkclF2ZXpRRXFidUJuVFF6YmwxZnlYa1ptTzJ2b0RfeEdiMmY2UFBqQlZUTW1YdFFpQ0FIU1NrSUhxeURELUdEaFZDQ2FEb3oyRDZMMUtDQm9SUFE?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-97",
-          "rank_by_count": 97,
-          "name": "원전 90GW·전력망 2500만㎞, 경남과 창원의 기회",
-          "easy": "",
-          "quote": "원전 90GW·전력망 2500만㎞, 경남과 창원의 기회",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 113,
-              "title": "원전 90GW·전력망 2500만㎞, 경남과 창원의 기회 - 에너지안전신문",
-              "source_name": "'원전 수주 SMR'",
-              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFB4SVBVaU5sV1VyYnVwb3N2NFdEWnlzV0dsZ0VHNVNKVVNIZXdFZFYtWXVoakhtZ0hrOGVKZDF2dTVQMEhCY2cwV0lqOVdOdmdCM0dMRnU4WHZBWFdxci10bmZvRmI?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-98",
-          "rank_by_count": 98,
-          "name": "탄소중립 달성위한 청정에너지원 ‘SMR’이 뜬다",
-          "easy": "",
-          "quote": "탄소중립 달성위한 청정에너지원 ‘SMR’이 뜬다",
+          "quote": "DS證, “현대건설, AI 데이터센터 역량 우수하지만⋯주가 반등 열쇠는 원전”",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 115,
-              "title": "탄소중립 달성위한 청정에너지원 ‘SMR’이 뜬다 - 기계설비신문",
+              "title": "DS證, “현대건설, AI 데이터센터 역량 우수하지만⋯주가 반등 열쇠는 원전” - 이투데이",
               "source_name": "'원전 수주 SMR'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBUMi1Dc0JqdVZXYnQ4OGdZcjcyRkJESWc3Y0w0d3p6anNDMWRVdVpzb0pSLUFHNmV2OURCYjUwRkRjeWV4OEJBZHNPaEVOMlpGSzNjcE5EdHpwTHhUV3RVQmsySkxOWk1LVUNyMw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBEb0pNV3ZYeHpGZ2M3Q0gxT3M2OThlczlWZkc1NTQwWTRyZ1pZZTU3OXZ0ZEN2ODlYdU1LcnZ5akFMczhEeTFQY1pQLVQzN1pEZnI4SQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-99",
-          "rank_by_count": 99,
-          "name": "\"SMR 상용화, 설계표준화-계측자동화로 경제성 확보해야\"",
+          "id": "e261128-102",
+          "rank_by_count": 102,
+          "name": "뉴스케일 집단소송 피소…6GW SMR 상용화 경쟁력 논란",
           "easy": "",
-          "quote": "\"SMR 상용화, 설계표준화-계측자동화로 경제성 확보해야\"",
+          "quote": "뉴스케일 집단소송 피소…6GW SMR 상용화 경쟁력 논란",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 116,
-              "title": "\"SMR 상용화, 설계표준화-계측자동화로 경제성 확보해야\" - 파이낸셜뉴스",
+              "title": "뉴스케일 집단소송 피소…6GW SMR 상용화 경쟁력 논란 - 에너지안전신문",
               "source_name": "'원전 수주 SMR'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9Kd0dKZzQ5YThwS0s5RHNkcXhBaWlIcXFvR0dtaTBGNGh1Q0dCcFJQY2FtajBESU1XSUFfM1hwOW1BMlhQcjZOOHVQWmMwQWEtTVpWemd1VE5rdw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE84VjJYY3p1c1pILVVpNVVvV3gyUVZRSV9XZUxwYlVHX2o1TVZ1UTZvelhSMkxLRnFPVTF1dHFWemZnMW4tNWFJbXRSZnZjMGZCUDZackdkR1lxV0ZRaGZVNDZ5OFQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-100",
-          "rank_by_count": 100,
-          "name": "美 데이터센터 이어 ESS도 입지 갈등···K배터리 사업 변수 되나",
+          "id": "e261128-103",
+          "rank_by_count": 103,
+          "name": "세방리튬배터리, LG엔솔 덕분에 ESS 공장 '풀가동'",
           "easy": "",
-          "quote": "美 데이터센터 이어 ESS도 입지 갈등···K배터리 사업 변수 되나",
+          "quote": "세방리튬배터리, LG엔솔 덕분에 ESS 공장 '풀가동'",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 119,
-              "title": "美 데이터센터 이어 ESS도 입지 갈등···K배터리 사업 변수 되나 - 시사저널e",
+              "title": "세방리튬배터리, LG엔솔 덕분에 ESS 공장 '풀가동' - 디일렉",
               "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1VUDVHRTdfMjU4TlNYMGs0cnhJSHhJSWg4eFRUTXQ4SkNUbDBxdGpNdkZNOGJENmhnZnJvaTdIbTdiYjFDb0NKdllEY014SHdPN0NoYXhoQ2lmVVVqNDBhNldCdXZCSUFOSWxpLVNMQ2lORnc1b0HSAXZBVV95cUxNVVA1R0U3XzI1OE5TWDBrNHJ4SUh4SUloOHhUVE10OEpDVGwwcXRqTXZGTThiRDZoZ2Zyb2k3SG03YmIxQ29DSnZZRGNNeEh3TzdDaGF4aENpZlVVajQwYTZXQnV2QklBTklsaS1TTENpTkZ3NW9B?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1XZnNKdGUzNnFkVmlHa19LRjJuZTFvTnNqZUJxeVY2dDRpMUNhRTMwVWF1LUxRbmtiOURjQmJKQWFXTHUwVlFCZGxFaDZ0Q1htaFdSaGVtNmlPTUp0YkRGYWszT0Nidw?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-101",
-          "rank_by_count": 101,
-          "name": "마이너스 전력가격 700시간…스페인 ESS 시장에 글로벌 자본 몰린다",
+          "id": "e261128-104",
+          "rank_by_count": 104,
+          "name": "정부 ESS 최대규모 입찰서 삼성SDI 63%, SK온 37% 확보",
           "easy": "",
-          "quote": "마이너스 전력가격 700시간…스페인 ESS 시장에 글로벌 자본 몰린다",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 121,
-              "title": "마이너스 전력가격 700시간…스페인 ESS 시장에 글로벌 자본 몰린다 - 임팩트온",
-              "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE14Z3BQdUpCZFFSOGJyNG1DR2ZQTlUxbVEta0pjUzluQ2plbWgzS2l2UDRWUUpuWGxGZ2tYa21kTVVaUnNDXzNTZWVZNzBMb1hxN3RLaEJLSFhqbVNhT2ZYeWlkWHBhLTh1aUE?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-102",
-          "rank_by_count": 102,
-          "name": "[분석-글로벌성공기업] [파워엑스] 배터리로 전기를 저장하고 운반하다…일본 에너지 안보의 승부수",
-          "easy": "",
-          "quote": "[분석-글로벌성공기업] [파워엑스] 배터리로 전기를 저장하고 운반하다…일본 에너지 안보의 승부수",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 122,
-              "title": "[분석-글로벌성공기업] [파워엑스] 배터리로 전기를 저장하고 운반하다…일본 에너지 안보의 승부수 - 비즈니스리포트",
-              "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE4tNWNDczR1YXV6eUpCdVlBVWdVMXRjNGlHdnhsVjZnaU9Jd2FTNWpjUFNsWDA3NkNVME9wdk9ra3ctZW9ITFFLTHZHWXJXNXNrUldGVkN3M1BwYUZKbVNwVjJIVjZWQk1GNDFyWGVPUQ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-103",
-          "rank_by_count": 103,
-          "name": "[철도 에너지 전환, 현장에서 길을 찾다] ⑥ 같은 ESS, 다르게 쓴다…동해선 평해·후포역 전력비 절감법",
-          "easy": "",
-          "quote": "[철도 에너지 전환, 현장에서 길을 찾다] ⑥ 같은 ESS, 다르게 쓴다…동해선 평해·후포역 전력비 절감법",
+          "quote": "정부 ESS 최대규모 입찰서 삼성SDI 63%, SK온 37% 확보",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 123,
-              "title": "[철도 에너지 전환, 현장에서 길을 찾다] ⑥ 같은 ESS, 다르게 쓴다…동해선 평해·후포역 전력비 절감법 - 전기신문",
+              "title": "정부 ESS 최대규모 입찰서 삼성SDI 63%, SK온 37% 확보 - Chosunbiz",
               "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE81ZV9GMDZyVEdueXFlTDIxTVJDbTZUbFgySnlyLTBJcWMyNV8tdFpnQTdzWXhNUWcxVS0tYnRuS1drcTY0TExrd3hkcjdoNVFkVmEtRG13X04xanZvQkNjbllPS2Q5VlFCVjFNOTdocDjSAXBBVV95cUxPNWVfRjA2clRHbnlxZUwyMU1SQ202VGxYMkp5ci0wSXFjMjVfLXRaZ0E3c1l4TVFnMVUtLWJ0bktXa3E2NExMa3d4ZHI3aDVRZFZhLURtd19OMWp2b0JDY25ZT0tkOVZRQlYxTTk3aHA4?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZmd3RkRsblRpeDA1a2UyV1dGdW5LWkR4WEJIRUxRX2RpRldxTzByV2xULV90b29JSnlueTZVVmREc1d4UkMtV0dodWgtRWxZWVY5TVZWQWRjbXYyWThkU25Sa2xEVUhyQ3VHaUZ4WWpSYkItbGxYX3ZSVXY3UzJ1bzBoaXXSAZgBQVVfeXFMTWl3djRxUld0MmYzWUxwTUNwZ0I4T1JxYnp2YlVrdENvMTlTWXRfV2dYdTFBcEVFaUh0OXNOTDZIX05JLUpIRGlEMlBBYzMyYUx1akdncFF5SVNBYmhPU3BMRVRYaWdOUFJWWXBkcTNHT2RtSFdtREhoYnVsVEk5cURDSnQ"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-104",
-          "rank_by_count": 104,
-          "name": "미국 ESS 시장 장시간 방전 제품 수요 확대, LG엔솔·삼성SDI·SK온 대응 주목",
-          "easy": "",
-          "quote": "미국 ESS 시장 장시간 방전 제품 수요 확대, LG엔솔·삼성SDI·SK온 대응 주목",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 124,
-              "title": "미국 ESS 시장 장시간 방전 제품 수요 확대, LG엔솔·삼성SDI·SK온 대응 주목 - 비즈니스포스트",
-              "source_name": "'ESS 에너지저장'",
-              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE80emI1VzRlbVNmY1pUT1dPRG5EeTYtZW5hcm1XSFhCWW92MTc3czJYX1hCNkctaEI5M2o5Z1JyNm9Lb2oyS3pxcUpRenJHWjNzUHpReS1xekpDMFA5R3lVSkJzeUlrcUVjWlB5UkxnUVlaNzg?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-105",
+          "id": "e261128-105",
           "rank_by_count": 105,
-          "name": "한은 포항본부 “전기료 10%↑ 시, 지역 주요 철강3社 1,867億 부담”",
+          "name": "농특위, 수산분야 전기요금 개선 속도낸다",
           "easy": "",
-          "quote": "한은 포항본부 “전기료 10%↑ 시, 지역 주요 철강3社 1,867億 부담”",
+          "quote": "농특위, 수산분야 전기요금 개선 속도낸다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 127,
-              "title": "한은 포항본부 “전기료 10%↑ 시, 지역 주요 철강3社 1,867億 부담” - 철강금속신문",
+              "n": 125,
+              "title": "농특위, 수산분야 전기요금 개선 속도낸다 - 한국농어민신문",
               "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1LenlVRHpfUUNtdnlMS1RHeF9mU0l3OEJnamY2c1U2eE52dTdZZi16NUpPWkFrSnUwbVhWdE1ka0dkbTQzREZuTGVtSE51bmF6WWFsX2sxY1h5VG54ay1ZVlRKY1c4eE5Hbmc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9oUUhyZVN0WmkxVWVyZlhHbUNUTW5oN2hzbVN6cWRYR0FnSTlnMDA3RGRYVDNick02QW9SX1JCcGZCN2VpOUM1Yy1xbzRWQl90MFpQcW1kaTAzbmp0MGJtNU5EV3luYm42eDhyYw?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-106",
+          "id": "e261128-106",
           "rank_by_count": 106,
-          "name": "[기고] 전기요금이 오르면 납품단가는 어떻게 될까",
+          "name": "전력 비용 고공행진 지속, 유럽 경제 전기요금 '눈치' 보기 시작 - www.cn-insight.kr",
           "easy": "",
-          "quote": "[기고] 전기요금이 오르면 납품단가는 어떻게 될까",
+          "quote": "전력 비용 고공행진 지속, 유럽 경제 전기요금 '눈치' 보기 시작 - www.cn-insight.kr",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 126,
+              "title": "전력 비용 고공행진 지속, 유럽 경제 전기요금 '눈치' 보기 시작 - www.cn-insight.kr",
+              "source_name": "'전기요금'",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9LcGhvSWhXT3ZJNTlBejU3OXN3NUpfOG1mTjFCRnI4YS1RQTNZMEhRRXBQdE5OVEFtZkU5SUJCbENWejJLOGhLN0IyYV9pQWJxWTFnOWd1Qk93ajBkckVzZGZqcHhWeXF6V1E?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-107",
+          "rank_by_count": 107,
+          "name": "한전, 낮 시간대 전기요금 50% 인하 ‘탐라는 전기예보’ 시행",
+          "easy": "",
+          "quote": "한전, 낮 시간대 전기요금 50% 인하 ‘탐라는 전기예보’ 시행",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 128,
+              "title": "한전, 낮 시간대 전기요금 50% 인하 ‘탐라는 전기예보’ 시행 - ebiznews",
+              "source_name": "'전기요금'",
+              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1xa0tpdGtuMHpWc2RTMTRsY0F0WlNxd2xUeVJtb29rWFJsM3JmT3dNSmZXblUzRHI1N3ljbVIxdlhKTmdnRzNUU1FzLThHZ2tmTjg4XzdIWHRMRzlJWWt5czhLbTRad01CU09r?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-108",
+          "rank_by_count": 108,
+          "name": "인천 경제계, 전기요금 역차별 해소·철강산업 위기 대응 등 5대 현안 정치권에 건의",
+          "easy": "",
+          "quote": "인천 경제계, 전기요금 역차별 해소·철강산업 위기 대응 등 5대 현안 정치권에 건의",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 129,
-              "title": "[기고] 전기요금이 오르면 납품단가는 어떻게 될까 - 파이낸셜뉴스",
+              "title": "인천 경제계, 전기요금 역차별 해소·철강산업 위기 대응 등 5대 현안 정치권에 건의 - 자치의정브리핑",
               "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB4VWIySEp0RXlkaV82NVA5Y3ZKbWRZWW1iVXV0d2xwSzRUaEZMaGw1UEdld2lSakkzcnlwX2VNTjMzd0xrNWU3NVRZUl91R3pQdlJuamRzQkpCQQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1ZbkNjWFR1RjBMOFM4Q0IyMVpoXzVGZVpxUDNFY1NROFJCQ0xkYllzVTlvQ2hVWUg2U0lWYjRFOGlOV1dmS3g3TW53NVpXOXN0WEs5aURYclNBSWxnaExz?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-107",
-          "rank_by_count": 107,
-          "name": "전기료 5만 원에서 2천 원…햇빛이 가져온 '온기'",
-          "easy": "",
-          "quote": "전기료 5만 원에서 2천 원…햇빛이 가져온 '온기'",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 130,
-              "title": "전기료 5만 원에서 2천 원…햇빛이 가져온 '온기' - LG헬로비전",
-              "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBacVVKNTZkZjFxM3NZTkxDaENRcU5CMVQwZmg0YloxaXVOaTQ4QUhaOFNvUHV6Si1QZUhacGNVVkpTdktnaHFyLW9BMHdZcTNzR2dzNXcxVWI5dnFhR19sRmxlRURzT2NqOUZ2YzVtVE9yQnZXbmfSAXZBVV95cUxQWnFVSjU2ZGYxcTNzWU5MQ2hDUXFOQjFUMGZoNGJaMWl1Tmk0OEFIWjhTb1B1ekotUGVIWnBjVVZKU3ZLZ2hxci1vQTB3WXEzc0dnczV3MVViOXZxYUdfbEZsZUVEc09jajlGdmM1bVRPckJ2V25n?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-108",
-          "rank_by_count": 108,
-          "name": "포천시 과부과 전기요금 포착한 공직자, 적극행정 우수사례로 선정",
-          "easy": "",
-          "quote": "포천시 과부과 전기요금 포착한 공직자, 적극행정 우수사례로 선정",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 131,
-              "title": "포천시 과부과 전기요금 포착한 공직자, 적극행정 우수사례로 선정 - 중부일보",
-              "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5BNnZLRXJyWV84WXpzcTJOZXFldmNJb3FHNmQwTGQtX2xCTHp6aFFhRzhRMkItRFBCd05jUHNpUUpCTVVIekFuSWtBckFJV1VNUElCUzM4bU1YaU5CYnFDbV83QnNfSFpBNzFVczVXQQ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-109",
+          "id": "e261128-109",
           "rank_by_count": 109,
-          "name": "[김경식의 이세계 ESG]전력시장 개혁을 막는 세 가지 도그마",
+          "name": "AI 데이터센터 대전환…전력·냉각 인프라 해법 찾는다",
           "easy": "",
-          "quote": "[김경식의 이세계 ESG]전력시장 개혁을 막는 세 가지 도그마",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 132,
-              "title": "[김경식의 이세계 ESG]전력시장 개혁을 막는 세 가지 도그마 - 경향신문",
-              "source_name": "'전기요금'",
-              "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9vYTd4bHoydDRObEpoeEowZDgyV2FXVHY1SS1pM01sZV9wVFRKaDgwS1FTeEt3Mi1tYmxHZl81WFRaX3MybTNudHFQZHl6dU5PT2o1RjZmUXNpbXZsSC1v0gFfQVVfeXFMT29hN3hsejJ0NE5sSmh4SjBkODJXYVdUdjVJLWkzTWxlX3BUVEpoODBLUVN4S3cyLW1ibEdmXzVYVFpfczJtM250cVBkeXp1Tk9PajVGNmZRc2ltdmxILW8?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-110",
-          "rank_by_count": 110,
-          "name": "‘전력 고속도로’가 AI데이터센터 속도전 승패 좌우⋯강원, 변전소 14곳 확충 절실",
-          "easy": "",
-          "quote": "‘전력 고속도로’가 AI데이터센터 속도전 승패 좌우⋯강원, 변전소 14곳 확충 절실",
+          "quote": "AI 데이터센터 대전환…전력·냉각 인프라 해법 찾는다",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 133,
-              "title": "‘전력 고속도로’가 AI데이터센터 속도전 승패 좌우⋯강원, 변전소 14곳 확충 절실 - 강원일보",
+              "title": "AI 데이터센터 대전환…전력·냉각 인프라 해법 찾는다 - 에너지안전신문",
               "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1ENHYwWnNvbWRWZFJ4YUd4VnR0VEhnaWZVakdaS0RhZVVZV1ExZldIekhzNGRkV1BpbWxVc3RkYnZrQUYyVHp3NlZZMmxxUXlNdXJZc0c5Qml1NWs?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5FdzJ4WlNkc09xMV9qNlhaenlrejhXZElFcHJVLTM4aTMxX2dQZ2dLeHZNU1pyeG01RWFFaW5XQ0VWT3ZPTUNnNjdXaXFJZkg1RU1KcWpCRUR4elNMZllpbll6MlY?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-111",
-          "rank_by_count": 111,
-          "name": "골드만삭스 \"美 데이터센터 붐 2028년까지 지속…전력·천연가스 수요 증가할 것\"",
+          "id": "e261128-110",
+          "rank_by_count": 110,
+          "name": "“사망 앞당긴 데이터센터 대기오염…거리 예외 없이 한해 650명 추산”",
           "easy": "",
-          "quote": "골드만삭스 \"美 데이터센터 붐 2028년까지 지속…전력·천연가스 수요 증가할 것\"",
+          "quote": "“사망 앞당긴 데이터센터 대기오염…거리 예외 없이 한해 650명 추산”",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 134,
-              "title": "골드만삭스 \"美 데이터센터 붐 2028년까지 지속…전력·천연가스 수요 증가할 것\" - 더구루",
+              "title": "“사망 앞당긴 데이터센터 대기오염…거리 예외 없이 한해 650명 추산” - 한겨레",
               "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9rYlAwc2dwR2k4alFDSE9pZXQydThsZzZXcEk0Njl1WVJNQUQ1YTNTWVNpb1dHTGl2cVRlalFnNnRmelhHNlBDeVB1Smg2RmZrbUpqVWhjYmdnT3JrTEFxcTcyWQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5oaXdZOWVHNWNFd01sdWlZZzVGcTdmSDhfLUcydmtobXVvdTFSQ1hKOGMyQXJvTTA0WVFxMS1OU1VYVkd4MGQ1Q2RndjJkdDBZWWJMY1BjWWVNbl9wUWpra0hTeGE1OWVXUTRPT2tIMmtrQQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-112",
-          "rank_by_count": 112,
-          "name": "포스코, AI 데이터센터·전력 설비 미래소재 승부수…’포스맥 실드·POCEL’로 시장 공략 By FinancialPost",
+          "id": "e261128-111",
+          "rank_by_count": 111,
+          "name": "美 발전소 건설러시…K전력기업, 220조원 '황금시장' 열린다",
           "easy": "",
-          "quote": "포스코, AI 데이터센터·전력 설비 미래소재 승부수…’포스맥 실드·POCEL’로 시장 공략 By FinancialPost",
+          "quote": "美 발전소 건설러시…K전력기업, 220조원 '황금시장' 열린다",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 135,
-              "title": "포스코, AI 데이터센터·전력 설비 미래소재 승부수…’포스맥 실드·POCEL’로 시장 공략 By FinancialPost - Investing.com 한국어",
+              "title": "美 발전소 건설러시…K전력기업, 220조원 '황금시장' 열린다 - 재외동포신문",
               "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ETjBrZlFEZVJYdVljcUZFZXNyNDg0Q25yM0hDaFhmZkJZVmlucGxVcmZ4SnctTVBxMFl4VC16REE3Q0poWUJxOFhuY3NSa0ItYnJVUEliVldHMXJxQktkZW9QM21Oald5M0g5ZW5vN18?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1POGZ3dlJZVEdHQ1NFTjRGblMtS3NpWnk5WlhYUnFtUkNIUFVqRVFPeGRWSHRqZGt3Qi1TOTU3dXlNNUw1MkNTSnBWeExhVUxhLUJnWFItV1dtbzQ0SmU3d3h0TUF3NlJSN0p6LQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-113",
-          "rank_by_count": 113,
-          "name": "데이터센터 전력 심사 강화에도 '10MW 미만'은 사각지대",
+          "id": "e261128-112",
+          "rank_by_count": 112,
+          "name": "EU, 데이터센터 용량 3배 확대 추진…재생에너지 의무화 안해",
           "easy": "",
-          "quote": "데이터센터 전력 심사 강화에도 '10MW 미만'은 사각지대",
+          "quote": "EU, 데이터센터 용량 3배 확대 추진…재생에너지 의무화 안해",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 136,
-              "title": "데이터센터 전력 심사 강화에도 '10MW 미만'은 사각지대 - 글로벌이코노믹",
+              "title": "EU, 데이터센터 용량 3배 확대 추진…재생에너지 의무화 안해 - 뉴스;트리",
               "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNUhtelplN1lDLThCZHlZQ2xRRGltejBzY3hYMFBzOENsM0xkOFJtd2RlanFoYmxETnVKc0taZzdWbWVZYmpJdFMyX25rYnBjU2VCS1RnbmdqWkh6MjFiMHl1c0Q5TnN0U1JYSURJbzlaLWZLU1NQZmEzdkZKYnVURW9OeVk?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBWNkRtSmNGZW1nOVN4UDF1SEFOT2NQbkxRLXZlWlVLcThrZU1wTFN3N2dUZFZaUWNOQzUwVWozUkZOUl81eFZ3OXNoMEJFbVhQd3VMekNJRXZ0MmI5?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-114",
-          "rank_by_count": 114,
-          "name": "부산 AI 인재 8000명 양성…데이터센터·전력 인프라 연계 '미래 산업' 키운다",
+          "id": "e261128-113",
+          "rank_by_count": 113,
+          "name": "[일본 특징주] 도쿄전력, 10조엔 투자해 AI 데이터센터 유치",
           "easy": "",
-          "quote": "부산 AI 인재 8000명 양성…데이터센터·전력 인프라 연계 '미래 산업' 키운다",
+          "quote": "[일본 특징주] 도쿄전력, 10조엔 투자해 AI 데이터센터 유치",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 137,
-              "title": "부산 AI 인재 8000명 양성…데이터센터·전력 인프라 연계 '미래 산업' 키운다 - 한국경제",
+              "title": "[일본 특징주] 도쿄전력, 10조엔 투자해 AI 데이터센터 유치 - 뉴스핌",
               "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBrU1V6Q1NvQTN5WU1WbjZ4cFRoNG9Tc2Rna2hKTHI3NHdXQnFIZGtwZlpRc3U2ODhWZldlV0N5Q1k3ckk2TTBQTmxGLWlwcXFBTE1tVVh5cG5PUQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE51TWZJWkZCYndHS1Qzb1ZOeDB5VlplOV9lX3V2UnNoTmhvODY5M3RpVUV0TUFEX1BwUkNTSVdIbVhEUDBCTHk4dnphcU4yT2ZPbGdmQ2RCaTRTOXd0?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-115",
-          "rank_by_count": 115,
-          "name": "[데이터센터 REPORT ①] 데이터센터, 새로운 산업 권력의 탄생",
+          "id": "e261128-114",
+          "rank_by_count": 114,
+          "name": "양재승 건전협 회장 “데이터센터 입지, 전력 공급부터 확인해야”",
           "easy": "",
-          "quote": "[데이터센터 REPORT ①] 데이터센터, 새로운 산업 권력의 탄생",
+          "quote": "양재승 건전협 회장 “데이터센터 입지, 전력 공급부터 확인해야”",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 138,
+              "title": "양재승 건전협 회장 “데이터센터 입지, 전력 공급부터 확인해야” - 전기신문",
+              "source_name": "'데이터센터 전력'",
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE4zMlhsTWFEZjdkTHlpQkVZS2toWEp0N3JMU1hLVzV4ZTl5cWhNX1dLN3IwU2g2ZXcwd1FGc1Q3ZF9kbzBxYXNvY3FJWTNrdTVUcFZad2RyR0EwY01lZUF3U0JfMGE1by14bm04eGlSX3LSAXBBVV95cUxOMzJYbE1hRGY3ZEx5aUJFWUtraFhKdDdyTFNYS1c1eGU5eXFoTV9XSzdyMFNoNmV3MHdRRnNUN2RfZG8wcWFzb2NxSVkza3U1VHBWWndkckdBMGNNZWVBd1NCXzBhNW8teG5tOHhpUl9y?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-115",
+          "rank_by_count": 115,
+          "name": "전기료 인상에 AI 데이터센터 반대 확산…기업 인수전도 차질",
+          "easy": "",
+          "quote": "전기료 인상에 AI 데이터센터 반대 확산…기업 인수전도 차질",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 140,
-              "title": "[데이터센터 REPORT ①] 데이터센터, 새로운 산업 권력의 탄생 - https://www.climatepol.com/",
+              "title": "전기료 인상에 AI 데이터센터 반대 확산…기업 인수전도 차질 - 이투뉴스",
               "source_name": "'데이터센터 전력'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE40Sk9CZVZnY0Zza0ZMY3VVSFNFREFsQ3lkY0Z4SUs5TFdSUzdNTEtnaFVHa2hHdEpiVzI5ZmpXVHVBMTc2RGI5WmEwUmg5RzJSY3lJTkJUY2dkYWk0NlFCV2R1NEcxUU5JVmVxbw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5Ib2NwZnB5cEVWSTMtSkxWOUkxQUk3NGRPRHllNkU2Q0pIZExCUDctdl9ncFpkUGxhN1pNVVNQUFY0cFg4eXhKTFNYM0phV1lpcWRLeFZHRll1Q2tmMVl5bm81UkxRZkHSAWtBVV95cUxPOHlJcUhGNXpEYzQ4bEpyQVdOal9Yb2tVMUhTc2xpNlRtWVhtM0JqZUN1elg4cUZGNzdvc2JVQ2R4Y1NwT2lOd3AtdFhkMktUNGxkekhLRDVMTExtMUtpWG4xSWVSRWwzU3dmdw?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-116",
+          "id": "e261128-116",
           "rank_by_count": 116,
-          "name": "미국산 LNG 유럽行 잇따라… 동북아 한파 땐 확보 경쟁 격화",
+          "name": "LNG선도 中 턱밑까지 쫓아왔는데…원가 상승에 K조선 이중고",
           "easy": "",
-          "quote": "미국산 LNG 유럽行 잇따라… 동북아 한파 땐 확보 경쟁 격화",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 141,
-              "title": "미국산 LNG 유럽行 잇따라… 동북아 한파 땐 확보 경쟁 격화 - 에너지플랫폼뉴스",
-              "source_name": "'LNG 가격'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1pcHg1Ukp3Q25ySTFEZndfazMydDh3OUZERTRJWk1TNDA4MVd0aS1YOERoV2RZZGR3ajZsTllobHpmR0I0czU1ZEpNT1dwYTlUOC1lRFVoRmQzWjR1eHVwby0zaHpnNEgwN0gzVdIBcEFVX3lxTE1RbUJPM2dBdk9xR2R3UHBDUUl6a1k5SFRwYnc0T19ZU1R1SXVVblZSWEhnV0hGWENTVnowSzBXTnNmaHQ0WEJjTzh5c2lHcE9KUWJoTjJ6WXpWdkRTYTJFQ1NMYTZBS0Ztc0EwX1BwSDg?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-117",
-          "rank_by_count": 117,
-          "name": "유럽, 아시아 제치고 미국산 LNG 확보 경쟁 우위…겨울철 가스 수급 불안 고조",
-          "easy": "",
-          "quote": "유럽, 아시아 제치고 미국산 LNG 확보 경쟁 우위…겨울철 가스 수급 불안 고조",
+          "quote": "LNG선도 中 턱밑까지 쫓아왔는데…원가 상승에 K조선 이중고",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 142,
-              "title": "유럽, 아시아 제치고 미국산 LNG 확보 경쟁 우위…겨울철 가스 수급 불안 고조 - 에너지데일리",
+              "title": "LNG선도 中 턱밑까지 쫓아왔는데…원가 상승에 K조선 이중고 - 중앙일보",
               "source_name": "'LNG 가격'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5MWnVJSGlwbVVYdkR0bF92YVFyNUhkSjdfMmY0QVp1bXRnZDc3YnpHOVVjTjQ0aEZQSHMxWXpxdFBKSW1JQVRMV2dxR29uXzA2d1dXNl9xZXdmRVNoeGdBcXM2cFg3WUFLU3lrVFUyN3Q0QQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE4yTmRFd0VfZjF1WWlZN2xBUmRCMFpyZC1oUnhzT0doQnlHbThYNGF3WEZySTR3RVh3Q0h4ZDgyQkdYY0ZyREltODZUOG14Y2ZMMGFVS293?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-118",
-          "rank_by_count": 118,
-          "name": "유럽 천연가스 가격 보합권…중동 긴장 고조에 공급 우려 재부각",
+          "id": "e261128-117",
+          "rank_by_count": 117,
+          "name": "하나증권 \"AI 데이터센터 전력 규제 완화…LS ELECTRIC·효성중공업 적극 매수 기회\" |",
           "easy": "",
-          "quote": "유럽 천연가스 가격 보합권…중동 긴장 고조에 공급 우려 재부각",
+          "quote": "하나증권 \"AI 데이터센터 전력 규제 완화…LS ELECTRIC·효성중공업 적극 매수 기회\" |",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 143,
-              "title": "유럽 천연가스 가격 보합권…중동 긴장 고조에 공급 우려 재부각 - Investing.com 한국어",
+              "title": "하나증권 \"AI 데이터센터 전력 규제 완화…LS ELECTRIC·효성중공업 적극 매수 기회\" | - 핀포인트뉴스",
               "source_name": "'LNG 가격'",
-              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0tbGR4U3dYeEkySW01VjVuMXhPdlo1eTdDTnFITGI1dDBYX2hKNjNVaGZ3c1pxdEpxTElEdkZ4Uzhpdkk3U0l6VFlMQldLbTV0WHNuLXo0WTQyRk4tMllKLTNGSzctRmtHaVZiRlV0QQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9EdkxoNVdfVkd3REQtaHFDQXJId2lpUE1QYlV3dVB0NnVKTGJMcVBLSVdsTU1VV1g2UURxbHRMdUJMOVdjMUs1Ul9MNllST3dCV1NUM0ZHbXRKR1J3RjBxeU43b19GZWxKOVpSYWFfbkduQ2JISlZZ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-119",
+          "id": "e261128-118",
+          "rank_by_count": 118,
+          "name": "공사 없이 따뜻해진다! '난방비 폭탄' 피하는 거실 인테리어 꿀팁",
+          "easy": "",
+          "quote": "공사 없이 따뜻해진다! '난방비 폭탄' 피하는 거실 인테리어 꿀팁",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 144,
+              "title": "공사 없이 따뜻해진다! '난방비 폭탄' 피하는 거실 인테리어 꿀팁 - 네이버페이 머니스토리",
+              "source_name": "'LNG 가격'",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1NT1lXbkV5VDFxbzJXV1RNWXVEWXhMT09waEFzTkEyc1d6Qzk1a3Q3d0lGSmowNjVrOFQ2c29ZdGpFWjZ4SzktMjJERzZDOWZRNHoxYnpxeDJSTEE?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-119",
           "rank_by_count": 119,
-          "name": "포스코, 美 셰일가스전 인수 완료…글로벌 LNG 공급망 확장 본격화",
+          "name": "호주, 국내 가스 의무 비축제 법안 통과…LNG 수출정책 변화 주목",
           "easy": "",
-          "quote": "포스코, 美 셰일가스전 인수 완료…글로벌 LNG 공급망 확장 본격화",
+          "quote": "호주, 국내 가스 의무 비축제 법안 통과…LNG 수출정책 변화 주목",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 145,
-              "title": "포스코, 美 셰일가스전 인수 완료…글로벌 LNG 공급망 확장 본격화 - 에너지프로슈머",
+              "n": 148,
+              "title": "호주, 국내 가스 의무 비축제 법안 통과…LNG 수출정책 변화 주목 - 투데이에너지",
               "source_name": "'LNG 가격'",
-              "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTFByOVZsNXdTX29veWZjSUlGWmhJZ0RTMm5PV1RaLU80al9CdzBmVXNxVmxuY1FwTC1FR1l1emFSMTFiX1V2MXF3M2JiVlg?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE12SnVCcTFNWUFUc1FOUGh2LWszc1RRbGxSZ1hyY2dTRktFbUVKdFhKdHlRRVdOSlJ0cGdnemRsa2Z3S0gzM2ltOWthU1ppQnJTSzZ6N0czNnZXQkh6YWNFUnZPUzE5NXF5UmRoQmZB?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-120",
+          "id": "e261128-120",
           "rank_by_count": 120,
-          "name": "미, 한국관세 15% 유지했지만…‘K반도체 전략’ 콕 찍어 시비",
+          "name": "[김대호 진단] 호남 반도체와 트럼프 관세폭탄",
           "easy": "",
-          "quote": "미, 한국관세 15% 유지했지만…‘K반도체 전략’ 콕 찍어 시비",
+          "quote": "[김대호 진단] 호남 반도체와 트럼프 관세폭탄",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 150,
-              "title": "미, 한국관세 15% 유지했지만…‘K반도체 전략’ 콕 찍어 시비 - 한겨레",
+              "n": 149,
+              "title": "[김대호 진단] 호남 반도체와 트럼프 관세폭탄 - 글로벌이코노믹",
               "source_name": "'미국 관세 반도체'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9nOFUzQ2RGU2JxZjVGOEJCcy1NazlmcjYxN0NDbUgtVXpsRC16V1VTeUhNY1N4dTJiWlFFZFh0TzRIamZCbTRxcDh5TXN4YVJXNzBXd25oRnNnLVcxdVVuVGZIXzV1Vm9MOFFBOFZ5LXl0dw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPR2VHWDN2T1JxZDU5UmFIcWtmV1J3WkM3Q1l0Njc4UzRsMDRHLTB0R21xSTl6bEJJdl9fNk9UWWRhR09Kd1lSbWdYNmljUHBzOWZSM1oxLVl5MHkyMDl5cXp4WlcwbzZldWVtWnRGRmZXR2FwU0pxMDRPVkVNNzJKYWxpcnc?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-121",
+          "id": "e261128-121",
           "rank_by_count": 121,
-          "name": "\"젠슨 황 이탈은 금리 3번 인상 충격\"...미국 경제의 민낯",
+          "name": "관세 앞세워 반도체 공장 유치 나선 美…국내 반도체 업계도 촉각",
+          "easy": "미국이 관세를 앞세워 반도체 공장 유치에 나섰습니다. 관세 압박과 함께 세액공제 연장도 추진하고 있는데요. 쉽게 말하면 미국이 압박과 혜택을 동시에 주며 투자를 끌어내려 한다는 겁니다.",
+          "quote": "관세 앞세워 반도체 공장 유치 나선 美…국내 반도체 업계도 촉각",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 154,
+              "title": "관세 앞세워 반도체 공장 유치 나선 美…국내 반도체 업계도 촉각 - 뉴시스",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1EeWpobFBrM0wzSk9TWXhYU1lvbmowNGFDOVFjTlgwU1RWNWlneER4RjNEUzZmWUhUanhUZTJhV01yXzdrQ240dG1DMUlMVFZSZWJLb2ZzYlMxS3VSRlJWaNIBeEFVX3lxTFAwTWJtZmFqYzBGTlRXR3ZfeTRKTmhGdDcwVFRKZHo2Wm1tMDJnM2M5SWtfUXZnaVk0UFJfVWhMdkVyYTVoRl9KeGtHXzVTUTVRTXhWQzIyaUc3RENPRWRRZFlIVlc4d1AwQkFpZmZCajRpeGY2SW9RMQ?oc=5"
+            }
+          ],
+          "flags": [
+            "쉬운 요약 = 고른 뒤 채움(합친 제목 기준)"
+          ],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-122",
+          "rank_by_count": 122,
+          "name": "관세로 압박하고 세액공제 연장 추진…美 반도체 투자 유치 총력",
           "easy": "",
-          "quote": "\"젠슨 황 이탈은 금리 3번 인상 충격\"...미국 경제의 민낯",
+          "quote": "관세로 압박하고 세액공제 연장 추진…美 반도체 투자 유치 총력",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 155,
+              "title": "관세로 압박하고 세액공제 연장 추진…美 반도체 투자 유치 총력 - 아이뉴스24",
+              "source_name": "'미국 관세 반도체'",
+              "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBtOHpFaWk5ZnNTX21hOEdsMHN1NFVGeFBrRTNnakRZZ1JZdGMzV2g2OEJlN1EtRkhHV0V3YjlzMUJxdTVFaTVHZlZqbw?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-123",
+          "rank_by_count": 123,
+          "name": "금리 인상 확률이 98%인데, 10년 국채 금리는 왜 내려갈까?",
+          "easy": "",
+          "quote": "금리 인상 확률이 98%인데, 10년 국채 금리는 왜 내려갈까?",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 157,
-              "title": "\"젠슨 황 이탈은 금리 3번 인상 충격\"...미국 경제의 민낯 - YTN",
+              "title": "금리 인상 확률이 98%인데, 10년 국채 금리는 왜 내려갈까? - CME Group",
               "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8yNFhqVWNRSXdzRG1RblFfenBRT1NWYnBHZ2k3ZmVCRU03bkdsa1lCNU9zVzgtRUw2YkQ1ZzNoWnlFSHhkekM5WlNhSlhmeUFia3VhQk1PNHZ5ZGhKVnc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOeDhvMi1lOWhVSkw4dmhxWHVYZ2dWWnRwWm83WmlTbHU3QWlYTDFROXk3Z3JsWG5oVnBmNEMwM3JrYkxIdzNpX0JrNUs2N05hemxVbW1PTmY3SUpxSUN3NmZrajk0WDRpLU5CMEZrVEFSSVl1eHQ4WjlWY0xNQko4anFDTDBtUHM?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-122",
-          "rank_by_count": 122,
-          "name": "[기획] \"한은 다음은 연준\"…12월 美 금리인상 예고에 '긴축 도미노'",
+          "id": "e261128-124",
+          "rank_by_count": 124,
+          "name": "Bernstein “2027년 금 강세 전망…연준 금리 인상 중단 가능성”",
           "easy": "",
-          "quote": "[기획] \"한은 다음은 연준\"…12월 美 금리인상 예고에 '긴축 도미노'",
+          "quote": "Bernstein “2027년 금 강세 전망…연준 금리 인상 중단 가능성”",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 159,
-              "title": "[기획] \"한은 다음은 연준\"…12월 美 금리인상 예고에 '긴축 도미노' - 매일일보",
+              "n": 158,
+              "title": "Bernstein “2027년 금 강세 전망…연준 금리 인상 중단 가능성” - Investing.com 한국어",
               "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9sMUcxYllJSkpPNlp5SGxvbkx6UVUteVdwTlhzTmFaYW4tc2lUYzZJVDNhZEJtT211Qk5KbUFkaTZUQWxsb0JmZktLMnVnZ0R1d2FYSnhMSEZxZTBnaWY5cDBYeGc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE83WEtpa1hCUWFwaWs5UjRRRG5fZDhIS1h6WDJwWEtqcnNZYWk1U2dxUENRQTYzdjVPRS1PeDJHeWZXbWdZbkpwWGJkUVVKOFdhU0szR2RSVk5oUXBUSzkzUFVnb3p1aFFGdDZSTm02TQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-123",
-          "rank_by_count": 123,
-          "name": "연준 의장 딜레마…인플레 억제냐 시장안정 속도조절이냐",
+          "id": "e261128-125",
+          "rank_by_count": 125,
+          "name": "S&P500 선물, 추수감사절 휴장 후 상승세…美 국채금리↑ |",
           "easy": "",
-          "quote": "연준 의장 딜레마…인플레 억제냐 시장안정 속도조절이냐",
+          "quote": "S&P500 선물, 추수감사절 휴장 후 상승세…美 국채금리↑ |",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 161,
-              "title": "연준 의장 딜레마…인플레 억제냐 시장안정 속도조절이냐 - 매일경제 마켓",
+              "title": "S&P500 선물, 추수감사절 휴장 후 상승세…美 국채금리↑ | - 연합인포맥스",
               "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBaM2NaYmwtVjNYX1Zmc04zTlp1NHFEektkelB6UjcwM1JMY0NhdktrSnoxd3NacDVZOEZaek5LMnZxTndyb2VFNzkyUVFYOF8wU2c?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5QcGtxUkdNS1BLNHNZV25DMF80VkJzMk94X3F1cGQyaGF3RGRjc3pXOVZESEVfeFRmMEl1ajhkNWxzaTB1MGdOT2FpZzJseDlST1JCdGIzOTVCOTFQdXVWSUdSaHJZalZibDc3dW5mOWJ6bVp0?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-124",
-          "rank_by_count": 124,
-          "name": "목표 2배 가까운 미국 물가…12월 기준금리 인상 무게",
+          "id": "e261128-126",
+          "rank_by_count": 126,
+          "name": "영국 파운드화 상승, 영란은행의 매파적 기조가 연준 금리 인상 기대 상쇄",
           "easy": "",
-          "quote": "목표 2배 가까운 미국 물가…12월 기준금리 인상 무게",
+          "quote": "영국 파운드화 상승, 영란은행의 매파적 기조가 연준 금리 인상 기대 상쇄",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 162,
+              "title": "영국 파운드화 상승, 영란은행의 매파적 기조가 연준 금리 인상 기대 상쇄 - www.tmgm.com",
+              "source_name": "'연준 금리'",
+              "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOSURMWFJVSExhc3k2dG5aZmhwSmJRN0xYaTdVUDUwdlFPb1dWY3RvZVptM3FTNjduZHBSVDYwMjlFaFU5bTd6YVAyLUJ3d2ZUVjlzRWVaTVk2UHM4ak5UZFhWbDRCUHFNVjVTMnBIeXJqZzdtN2x1U1YtaC1JZWoydnJ0ZmhCS0FiT2xZSDBvVUdkSkdvblNJVnY5Ry1HYTRLZTBlWWFxa1VPZWlYUzA0WmhvQ01rUUMwTGZtbk1relEyd0R4RGNtLUpNWnE?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-127",
+          "rank_by_count": 127,
+          "name": "나스닥100 변동성 2025년 4월 이후 최대…연준 금리 인상 임박",
+          "easy": "",
+          "quote": "나스닥100 변동성 2025년 4월 이후 최대…연준 금리 인상 임박",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 163,
-              "title": "목표 2배 가까운 미국 물가…12월 기준금리 인상 무게 - 연합뉴스TV",
+              "title": "나스닥100 변동성 2025년 4월 이후 최대…연준 금리 인상 임박 - BeInCrypto",
               "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE8tMmMwRFhuVnY3TEd3b043RG9lN3lFUWpxWF83MWQ3eVgtOFRFNWlqM2tycXNJMW5BdXpNT1hGMUFFOHR0RXBnMTBMQkI4S3Q1MkplenVQSkM4UDh0eDU2S3hXRzZ6VEE?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBwRjlIcEdCSmhyVS13a2k0Y2QxQmM4ZkdtN2d1WnNGZ1FueGNtblhUY01pWVd2ZUpDOTY4VUs2QzNqTHBaRTRvWmpkSWpFYXo3MGxMbG82NU42dEdJMl8yM3FfaHNYTGplajhHUC1fOHk?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-125",
-          "rank_by_count": 125,
-          "name": "연준 금리 인상 전망이 시장 심리 좌우하며 금값 상승 탄력 확보에 난항",
+          "id": "e261128-128",
+          "rank_by_count": 128,
+          "name": "금값 1년 만에 최저 찍었는데…AI 공포 가라앉자 반등",
           "easy": "",
-          "quote": "연준 금리 인상 전망이 시장 심리 좌우하며 금값 상승 탄력 확보에 난항",
+          "quote": "금값 1년 만에 최저 찍었는데…AI 공포 가라앉자 반등",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 164,
-              "title": "연준 금리 인상 전망이 시장 심리 좌우하며 금값 상승 탄력 확보에 난항 - www.tmgm.com",
+              "title": "금값 1년 만에 최저 찍었는데…AI 공포 가라앉자 반등 - 매일신문",
               "source_name": "'연준 금리'",
-              "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxORnlFUDVhNjRZOVJKNVg5LXR6NGR1b1lYbmNIWlc0MmNqSVpYV3BlRG5Kd2kyNUl1R19HNnF2ZkRYWW11QnBCejIzcExwUjRLSDU2WFBYck9DOXZZWHlVWWxMN2xqTHE4WlVoSlE3Yk1ROHVGd2Y2LWdETDRjaEFjVjZSU2tZNkdTUkQ1eC1EY2hkVWw5clJOLWZtZkpJd3M1bXBfTlJuNTIxbGpEeWlqZjRFS0czTXNuZThNSmt6QzF6azRITElPZUZxSXpVcU0?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBQcUpKRFRiVEk0WGdqRDlyd3BVRkVsaWJ2OWZQOFhwdVBnMFFOOXB5QlNnVkEyTjdZeHk4QUp3VHlVbjQ2a3N6VWlKMktOdE5xM0NRTkVRUjhLTGI3THpBRlZB?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-126",
-          "rank_by_count": 126,
-          "name": "핵융합 상용화 앞당긴다…블루포인트, ‘퓨전 빌더스’ 내달 2일 개최",
+          "id": "e261128-129",
+          "rank_by_count": 129,
+          "name": "해외기관, 한은 기준금리 전망 엇갈려",
           "easy": "",
-          "quote": "핵융합 상용화 앞당긴다…블루포인트, ‘퓨전 빌더스’ 내달 2일 개최",
+          "quote": "해외기관, 한은 기준금리 전망 엇갈려",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 172,
-              "title": "핵융합 상용화 앞당긴다…블루포인트, ‘퓨전 빌더스’ 내달 2일 개최 - 매일경제",
-              "source_name": "'핵융합 초전도'",
-              "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1tSW0tU0p1NlZ5VUNuUkdhRENmd3UxNG5qSzVvUndUam5DUlFwVjUyTjV5cVRTRzVLZzVPcWRYbHFtM2tDWUhJdjRWMEpiUQ?oc=5"
+              "n": 170,
+              "title": "해외기관, 한은 기준금리 전망 엇갈려 - 스트레이트뉴스",
+              "source_name": "'한국은행 기준금리'",
+              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5jcXdfZHY5bldBakhQMjREd2ZSTVlKcG1hOUEzMVFLMjRkRkQ1S1ZVczhnV1J4T25VTG9MY2NOUHpZczgtMTZzWlB0Z0R1ZHZpWHJrdmtrNk5NN2g0aWZSS1pmdDZLSWhnWlJNLUxkR3lwWG_SAXdBVV95cUxPZkZpaUlnTjItbF80T09qWkl2bzBiQzNiUjZ3QTN5ZkRIeHNUOEFaQ1Y0YkRSbTRlVFlwaTFxdjZzTlIzc1FDVlJKR2pZN1JYV2xHSGI5NlI0ckcwbGRLMUtKOW05OFkySTFjTklCOEZMOVhzNWVCNA?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-127",
-          "rank_by_count": 127,
-          "name": "과기한림원, 2027년도 정회원 34명 선출…여성 과학기술인 6명",
+          "id": "e261128-130",
+          "rank_by_count": 130,
+          "name": "AI 데이터센터 전력난이 불붙였나…신성델타테크 ·비츠로테크·서남 초전도체주 '폭풍질주'",
           "easy": "",
-          "quote": "과기한림원, 2027년도 정회원 34명 선출…여성 과학기술인 6명",
+          "quote": "AI 데이터센터 전력난이 불붙였나…신성델타테크 ·비츠로테크·서남 초전도체주 '폭풍질주'",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 173,
-              "title": "과기한림원, 2027년도 정회원 34명 선출…여성 과학기술인 6명 - 전자신문",
+              "title": "AI 데이터센터 전력난이 불붙였나…신성델타테크 ·비츠로테크·서남 초전도체주 '폭풍질주' - 핀포인트뉴스",
               "source_name": "'핵융합 초전도'",
-              "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBoNlhEaU01ZlFiX0pkT1llU3paTlAwNWkzcERfWE1RbkVOdUJ0TWtieGxlMlNyMzVuWkRvWDRwb213dTREQkMyVG5uOHFMZw?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBOWjNtYnVxMmx0Y3pXajJhVHNSdW1VdVNVZlRjUFFadGRpUGowRHAzM1lwRlhzRU1oeWlLdmR5VTJURERFd0EyZTRxLTNpWld4YTJQdWRRSVJuOUxPbGljSm9USG5VbV9mVFFXMHFQeXpNcXBPUkVR0gF3QVVfeXFMUE5aM21idXEybHRjeldqMmFUc1J1bVV1U1VmVGNQUVp0ZGlQajBEcDMzWXBGWHNFTWh5aUt2ZHlVMlREREV3QTJlNHEtM2laV3hhMlB1ZFFJUm45TE9saWNKb1RIblVtX2ZUUVcwcVB5ek1xcE9SRVE?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-128",
-          "rank_by_count": 128,
-          "name": "일본, 세계 최대 규모의 핵융합 원자로 가동 가속화",
+          "id": "e261128-131",
+          "rank_by_count": 131,
+          "name": "공장 양산형 핵융합로 스타포지, 660만 유로 프리시드 투자유치",
           "easy": "",
-          "quote": "일본, 세계 최대 규모의 핵융합 원자로 가동 가속화",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 175,
-              "title": "일본, 세계 최대 규모의 핵융합 원자로 가동 가속화 - Laodong.vn",
-              "source_name": "'핵융합 초전도'",
-              "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQV9YZnpYVFZZRTZpdlNSOFhlTnBEbG11ekNxYmU4ckVFV3ZIa1ZHc2pnQUNWUGxXUjJVRGJhZS1qYjRRWWdhM012ZDJQaFJFb3pkZGVCM1NUWHZsRmwzNWw3dzJnREZScmN1X2p3bTA3Yk56QVMxbzRkejU2bnoySHlfalN3dkwtWm9GZ1FYT2dDSWluc2RTSFd2aFRsZy1GbU1zYkw1YmZOTVZ2b0xJ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-129",
-          "rank_by_count": 129,
-          "name": "日 블랙AI, 풀스택 휴머노이드 로봇 개발 본격화…시드 투자 유치",
-          "easy": "",
-          "quote": "日 블랙AI, 풀스택 휴머노이드 로봇 개발 본격화…시드 투자 유치",
+          "quote": "공장 양산형 핵융합로 스타포지, 660만 유로 프리시드 투자유치",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 176,
-              "title": "日 블랙AI, 풀스택 휴머노이드 로봇 개발 본격화…시드 투자 유치 - 로봇신문",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5jLVpGN2xUaDlyWmM1aXBVanRqRmk0V3pBQm5hTV84UVZkTldUeEFVZkVFak5Oc1ZPb0U1Ri1qeV9WVm1Dbmh6NlVrVnFPVUxrQ0Z3LUNlTUlnelRVQXZLQVQ3a2MwQWFCek1Fcw?oc=5"
+              "title": "공장 양산형 핵융합로 스타포지, 660만 유로 프리시드 투자유치 - 와우테일",
+              "source_name": "'핵융합 초전도'",
+              "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE01UTBaSnpmQ3ZaWTlmY19pTmxTLVRsVl8xanQyeUdqb0g5b0RxOUxvTVBsVFNFdWFyWEhkSk5XeFlzQ3FSN1FLZk1UUEdEVkE?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-130",
-          "rank_by_count": 130,
-          "name": "약국 휴머노이드 로봇 내년 상용화 추진…첫 임무는 '재고 조사'",
+          "id": "e261128-132",
+          "rank_by_count": 132,
+          "name": "골드만삭스, 주목할 중국 휴머노이드 로봇 관련 종목 선정",
           "easy": "",
-          "quote": "약국 휴머노이드 로봇 내년 상용화 추진…첫 임무는 '재고 조사'",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 177,
-              "title": "약국 휴머노이드 로봇 내년 상용화 추진…첫 임무는 '재고 조사' - 약사공론",
-              "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1GVTJUbVZBUFlSMHBCb3hnMjZSME0yVFFUVEZDVmJVNmltT2lWYzc4WHRmaWdUeXdYcURMdEN3ZzJsWjVhaGxkMGFhV1VQYVRNeTdTOFBGTlk1TFRGb2IyU090UllJZElQVVM1Qg?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-131",
-          "rank_by_count": 131,
-          "name": "[영상] 머스크 도발에 사과 집어 든 휴머노이드 로봇…\"테이블 옮겨도 성공\"",
-          "easy": "",
-          "quote": "[영상] 머스크 도발에 사과 집어 든 휴머노이드 로봇…\"테이블 옮겨도 성공\"",
+          "quote": "골드만삭스, 주목할 중국 휴머노이드 로봇 관련 종목 선정",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 178,
-              "title": "[영상] 머스크 도발에 사과 집어 든 휴머노이드 로봇…\"테이블 옮겨도 성공\" - 지디넷코리아",
+              "title": "골드만삭스, 주목할 중국 휴머노이드 로봇 관련 종목 선정 - Investing.com 한국어",
               "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9ZdURZbGd6QzlDT2E2ejloWVEzeWpmRDkteGQ0S0RJRlpCa2xRWEhDcEkxNXJOLS0wamNodDBfalR5eFNpNUc1ZEdWYWxmMmhXNTdpVjJn?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE95eENVb0ZlbEJRdWZfY215QTJzQW05YlF5cUJWa2FhQTNJSWphcVdOT2Y1bU1xYlYxYWtTbWptckhPSGFhMTU1dDBIYzVYWXN2bzk1V2NIc3MtUzlKZkVPU09iNmFxZjBkODJsVnVWRkQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-132",
-          "rank_by_count": 132,
-          "name": "한국로봇융합硏 '극한지 탐사용 휴머노이드 로봇' 개발",
+          "id": "e261128-133",
+          "rank_by_count": 133,
+          "name": "\"휴머노이드 로봇 성큼…'블루칼라 피난처' 사라지고 무역질서 바뀐다\"",
           "easy": "",
-          "quote": "한국로봇융합硏 '극한지 탐사용 휴머노이드 로봇' 개발",
+          "quote": "\"휴머노이드 로봇 성큼…'블루칼라 피난처' 사라지고 무역질서 바뀐다\"",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 179,
+              "title": "\"휴머노이드 로봇 성큼…'블루칼라 피난처' 사라지고 무역질서 바뀐다\" - 연합인포맥스",
+              "source_name": "'휴머노이드 로봇'",
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9xb1AzOGkyRE5ROE1NTHB0RUF2aXFKOXVNaG51eUY4U1dqQUdHM2hqeGhDa3Z2UlZoRU16dHVhYzg0QlhoMUJjQk9xM2x6S2pjblEzZWYxMUQ0eURIWXBYSU00QjU4WTNQMzRUeVFBUlnSAXRBVV95cUxNYWp4V21ab0hfaGtCdnFHZE9BSFJnYWVQSzZrdjh1amt4UjFvTkc0QlVtNjhQckZkZHdqNkl3OFhlSlRUc1FtZ3NMV283T2xDNzVVQVh1UnNvbHNHRmw5d2ptbnI2d29tLU96UFNzME5lVHNSbA?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-134",
+          "rank_by_count": 134,
+          "name": "中 로봇기업 샤오펑 “휴머노이드, 1~2년 내 가정 진출 가능”",
+          "easy": "",
+          "quote": "中 로봇기업 샤오펑 “휴머노이드, 1~2년 내 가정 진출 가능”",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 180,
+              "title": "中 로봇기업 샤오펑 “휴머노이드, 1~2년 내 가정 진출 가능” - 헬로티",
+              "source_name": "'휴머노이드 로봇'",
+              "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBXWElZenE2c1puWEMtam1yOEM4U0N1djNlLUZsd25mYS1CVFlzb2picEdhT0dJZXNhX0FSajhCa0lzLTBEQnlONUJLVTU2R2ZYdkJBYWJPU3phUGtiZlFv?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-135",
+          "rank_by_count": 135,
+          "name": "Xpeng, 휴머노이드 로봇 사업 확장, 가정용 시장 공략",
+          "easy": "",
+          "quote": "Xpeng, 휴머노이드 로봇 사업 확장, 가정용 시장 공략",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 182,
-              "title": "한국로봇융합硏 '극한지 탐사용 휴머노이드 로봇' 개발 - 뉴시스",
+              "title": "Xpeng, 휴머노이드 로봇 사업 확장, 가정용 시장 공략 - IDNFinancials",
               "source_name": "'휴머노이드 로봇'",
-              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1DeEhydjdsSzlLVlRTdnpuRG9vTVVMMWVJbEJtUFFvcHM0RGl3NGFYSHFHeC1NY3UwejJseDFib19UcTVwWjJtd0ZySmhONV9xSDQ1SHoyZlJXa1I3OUZVOExLY3ljeGl6c2M1d0M5YXhmQ0FlSC1WetIBeEFVX3lxTE1DeEhydjdsSzlLVlRTdnpuRG9vTVVMMWVJbEJtUFFvcHM0RGl3NGFYSHFHeC1NY3UwejJseDFib19UcTVwWjJtd0ZySmhONV9xSDQ1SHoyZlJXa1I3OUZVOExLY3ljeGl6c2M1d0M5YXhmQ0FlSC1Weg?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxORVRFUlBZQVF6VlFkMjJRSWpsT0R3UWw3NENSQ2NaejVIWHRNaEc0Y2xJclNTdWZxTGRYdHFrR3BMeUJuLUFQWmQtQVk5SEFMaHJJWElRaUZsb1RkSkdOVXNkSV8tZk1ZQm5SZUE4aWRxR0lXaDMtUHhMTUFtRkVFaDAtS3NqeUR4MWFLNDhNNEt0NTFJX2cySHRsaVp4NnZ2bmt0YjQ4ZDRmU0ZaWEFBM0xmRW93QkprX3pJRVpzalktTkE5eDFwX0JBS2VNSUZxX3liOXBrZGw4a0hSeE5jTmZERU1iVW5fNExvbm1Nc2gzeHNHZW5lX3dDeWliT2R4S1k3QmVnVDk3alV"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-133",
-          "rank_by_count": 133,
-          "name": "대주전자재료 전고체 배터리 '들썩'…삼성전기·동화기업·이수스페셜티케미컬·레이크머티리얼즈 주목",
+          "id": "e261128-136",
+          "rank_by_count": 136,
+          "name": "‘두 발’이냐 ‘바퀴’냐… 휴머노이드, 이동 방식 전쟁",
           "easy": "",
-          "quote": "대주전자재료 전고체 배터리 '들썩'…삼성전기·동화기업·이수스페셜티케미컬·레이크머티리얼즈 주목",
+          "quote": "‘두 발’이냐 ‘바퀴’냐… 휴머노이드, 이동 방식 전쟁",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 183,
+              "title": "‘두 발’이냐 ‘바퀴’냐… 휴머노이드, 이동 방식 전쟁 - 조선일보",
+              "source_name": "'휴머노이드 로봇'",
+              "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOaXBNQnBRVXVkQ05ZX0tFVFJGWXRTSHNaSzZKeHRVZmlTMW5aNlZ4d0ZTUlJGSS13T2tYMDdRX1NVd25uZjRZWjNkYjd1UWZ5bWhRWFlsRFJHbFlfUDBCM1ZmYUVoQmNyLWU0NFNZZDBRZDNKSHhEMTVKSkMybzJlWHpJVQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-137",
+          "rank_by_count": 137,
+          "name": "테슬라, 독일 정밀기계 기업 인수 나서…휴머노이드 로봇 생산 기반 강화",
+          "easy": "",
+          "quote": "테슬라, 독일 정밀기계 기업 인수 나서…휴머노이드 로봇 생산 기반 강화",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 184,
+              "title": "테슬라, 독일 정밀기계 기업 인수 나서…휴머노이드 로봇 생산 기반 강화 - 제민일보",
+              "source_name": "'휴머노이드 로봇'",
+              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFA2cmpoczY4Z2VDbkJtajkzUVlVaHZaZmRnT2lGNUpzeDJ0QnVGQVhNNjdaX3ZXNFEtRTBHNU5iV0hvWHREYTR1Mk0xTk82dUlBak1WVFdDLWd2N25pUlY1RmdWcjgzUQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-138",
+          "rank_by_count": 138,
+          "name": "AMD-카스봇, 휴머노이드 로봇용 '엣지 AI' 테스트",
+          "easy": "",
+          "quote": "AMD-카스봇, 휴머노이드 로봇용 '엣지 AI' 테스트",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 185,
-              "title": "대주전자재료 전고체 배터리 '들썩'…삼성전기·동화기업·이수스페셜티케미컬·레이크머티리얼즈 주목 - 핀포인트뉴스",
-              "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10dU9ldmR3TzRoZDZxQVdHOXFvRDQyMVd3VHFxYWZiXzZ3ZThlemk4WUctZm9Bb3pqNXRTVGVfNGdEUUNKaUNlanFCSl83RUE0YWVXTVFCMlZ1N2pFeFltVjhuRGxMc0twLVc5bjJEQ2FKT3AyWDFF0gF3QVVfeXFMTXR1T2V2ZHdPNGhkNnFBV0c5cW9ENDIxV3dUcXFhZmJfNndlOGV6aThZRy1mb0Fvemo1dFNUZV80Z0RRQ0ppQ2VqcUJKXzdFQTRhZVdNUUIyVnU3akV4WW1WOG5EbExzS3AtVzluMkRDYUpPcDJYMUU?oc=5"
+              "title": "AMD-카스봇, 휴머노이드 로봇용 '엣지 AI' 테스트 - 로봇신문",
+              "source_name": "'휴머노이드 로봇'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE12SDBOWC1VbnZnVDFsWWxYMzJiTzB4WTVzazZWQnZWMkcxWlFxWVF1ZGF2bnRsYVd0ZDY1RVNDMW9tcFBaQldhdG50d2EtWE5WeGl4R0xicE45UTBuaGhjZzFobmtUWUNUMDE3Uw?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-134",
-          "rank_by_count": 134,
-          "name": "현대글로비스, 미래차 폐배터리·소재 공급망 구축..한국자동차해체재활용업협회와 맞손",
+          "id": "e261128-139",
+          "rank_by_count": 139,
+          "name": "산업교육연구소, AI 활용한 차세대 배터리 소재 분석 12월 11일 세미나",
           "easy": "",
-          "quote": "현대글로비스, 미래차 폐배터리·소재 공급망 구축..한국자동차해체재활용업협회와 맞손",
+          "quote": "산업교육연구소, AI 활용한 차세대 배터리 소재 분석 12월 11일 세미나",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 186,
-              "title": "현대글로비스, 미래차 폐배터리·소재 공급망 구축..한국자동차해체재활용업협회와 맞손 - 한국정경신문",
+              "title": "산업교육연구소, AI 활용한 차세대 배터리 소재 분석 12월 11일 세미나 - 산경e뉴스",
               "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9zeUQ4a2dyM3h4NC1CZTFWQUNYMm84UzF1RFZvY0pfUTE3Tko5UW16dW5lNmtYNjdiUS1ES1hZTjhKTjhaSzYyVzZwOFZPN1JTSXc?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1TLU1xeHFWMm8wQUNrZGlqYnRmU3BXeTloLWoxdGJwOVNGM0RLa1N3ajhsOEc2cTA3dTlteWlLOGVwcm1qQ2RwRGR1U2EwSHNvR3U0ZWpncHktSjVNaTBmbG1UTHJZYlE?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-135",
-          "rank_by_count": 135,
-          "name": "현대글로비스, 폐차서 배터리·알루미늄 회수…재활용 소재 공급망 구축",
+          "id": "e261128-140",
+          "rank_by_count": 140,
+          "name": "배터리 소재 품질경영 성과…롯데에너지머티, 우수기업 선정",
           "easy": "",
-          "quote": "현대글로비스, 폐차서 배터리·알루미늄 회수…재활용 소재 공급망 구축",
+          "quote": "배터리 소재 품질경영 성과…롯데에너지머티, 우수기업 선정",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 187,
+              "title": "배터리 소재 품질경영 성과…롯데에너지머티, 우수기업 선정 - 에너지신문",
+              "source_name": "'배터리 소재'",
+              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFAyMHBSa25HbUhzNGotTndjaFhua0o3Q0F0V29OSUstTGhHdnNtX3Rub3ltTUtVNkFsdXVRbF84LWJjY2x6Z2hiblRrVHJKU3U2Z0NsckZzTVdvcTdjQndVVDBYeFAzeDlJMEgzLXNxdXhvQQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-141",
+          "rank_by_count": 141,
+          "name": "양극재 다크호스 바스프, CATL과 유럽서 협력 확대",
+          "easy": "",
+          "quote": "양극재 다크호스 바스프, CATL과 유럽서 협력 확대",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 188,
+              "title": "양극재 다크호스 바스프, CATL과 유럽서 협력 확대 - 디일렉",
+              "source_name": "'배터리 소재'",
+              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBKb0VfcGhaUHJLOUlOLThQdUVNdkhGRXdZeVhWWUZLbHFsTUMwNmRBMVdoSXI5QTM2Um9PZVZyaHZWek5SeHQwci1QdGRTc1NzcjZBaW5KVThOQ0xFZk9DSEQyUXpDQQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-142",
+          "rank_by_count": 142,
+          "name": "EU '배터리 여권' 여파 소재업계까지…K-배터리 데이터 표준화 숙제",
+          "easy": "",
+          "quote": "EU '배터리 여권' 여파 소재업계까지…K-배터리 데이터 표준화 숙제",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 189,
-              "title": "현대글로비스, 폐차서 배터리·알루미늄 회수…재활용 소재 공급망 구축 - 아시아투데이",
+              "title": "EU '배터리 여권' 여파 소재업계까지…K-배터리 데이터 표준화 숙제 - www.ebn.co.kr",
               "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE45VGgzWmk4ODZpZjZzckU2dlRaMjdWdE5lTlZwaDNZNUlKc1RPc2hUeXh3WW1GY0xsQi1YM3d0QXczRzlsRkJJU3dTVmlPM0gzTHk0enIxN2o5TUtQTGFiRFRMUHZDZ3B6anBMYjdB?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB0MDNUcjdmMlB1R2dVUW4zc2ZWMW5YRktkT3A0dmR1cnU3dFdZQVVVMUJaUEhlQXhCSXY1cW84c2pkajUyZ1c4dzF4TExzVEg0aGVFdlNzRXZtTnZyTWFVeFhacjllRXFX?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-136",
-          "rank_by_count": 136,
-          "name": "전기차 배터리를 4분 만에 충전할 수 있는 기술이 현실에 점점 가까워지고 있습니다.",
+          "id": "e261128-143",
+          "rank_by_count": 143,
+          "name": "나트륨이온 배터리 상용화 불붙었다…에코프로·에코프로비엠부터 삼성SDI·LG엔솔·소재·장비주 '폭풍 질주'",
           "easy": "",
-          "quote": "전기차 배터리를 4분 만에 충전할 수 있는 기술이 현실에 점점 가까워지고 있습니다.",
+          "quote": "나트륨이온 배터리 상용화 불붙었다…에코프로·에코프로비엠부터 삼성SDI·LG엔솔·소재·장비주 '폭풍 질주'",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 190,
+              "title": "나트륨이온 배터리 상용화 불붙었다…에코프로·에코프로비엠부터 삼성SDI·LG엔솔·소재·장비주 '폭풍 질주' - 핀포인트뉴스",
+              "source_name": "'배터리 소재'",
+              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9xNEJQQUtsc196QnRVRXNOVEZJT0R0aVROMHJ3b2J5c2tXeE1DUmlKOE5OVl9CTmp3Q05iRGNzRFdFT1VfUXMzSktIQ1dkZkFUTGNfSkNuOVZ0UGx2REZZdnF6Ti1kc3FSeXVELTAyZ29kcU93X1g40gF3QVVfeXFMT3E0QlBBS2xzX3pCdFVFc05URklPRHRpVE4wcndvYnlza1d4TUNSaUo4Tk5WX0JOandDTmJEY3NEV0VPVV9RczNKS0hDV2RmQVRMY19KQ245VnRQbHZERll2cXpOLWRzcVJ5dUQtMDJnb2RxT3dfWDg?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-144",
+          "rank_by_count": 144,
+          "name": "2조원 ESS 물량 양분…삼성SDI·SK온, 국내 공장 가동 탄력",
+          "easy": "",
+          "quote": "2조원 ESS 물량 양분…삼성SDI·SK온, 국내 공장 가동 탄력",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 191,
-              "title": "전기차 배터리를 4분 만에 충전할 수 있는 기술이 현실에 점점 가까워지고 있습니다. - Vietnam.vn",
+              "title": "2조원 ESS 물량 양분…삼성SDI·SK온, 국내 공장 가동 탄력 - 지디넷코리아",
               "source_name": "'배터리 소재'",
-              "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQU3d1TThMNGNBTXl3REFVdzlvUDVVNlBNbGFWeWx0c3M0RWlZNzgycFdtd0NpVGd5a3hSa1JnU2JkbnpFdW9RLWh1OUNlOTVrX3JQak50SzFXR2RIeEdzZnFKTVNaSHhjS3BDT240dU9STUpUZjR3UDZwMjlkU1RVd2xMU0piUjdwcE0zdkFB?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1RVGE4WjJWMFFrSzNZTzNySktLOVJISjQ1SnBKNGdpejJjR1NDZEF6ZW5XUmk1SXpxZXhRUkEwRGxUbmpOaVFVSE16MTRfM2N1b0dkbjNn?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-137",
-          "rank_by_count": 137,
-          "name": "美 과잉생산 관세에 中 반발…미중 무역휴전 다시 '시험대'",
+          "id": "e261128-145",
+          "rank_by_count": 145,
+          "name": "'3년차 대표' 구동휘 성과, LS MnM 두 번째 성장축 '니켈'에 달렸다",
           "easy": "",
-          "quote": "美 과잉생산 관세에 中 반발…미중 무역휴전 다시 '시험대'",
+          "quote": "'3년차 대표' 구동휘 성과, LS MnM 두 번째 성장축 '니켈'에 달렸다",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 192,
+              "title": "'3년차 대표' 구동휘 성과, LS MnM 두 번째 성장축 '니켈'에 달렸다 - 한국금융신문",
+              "source_name": "'배터리 소재'",
+              "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE83al9zbzRUQ1lVU3V0ajN1OWlkdFozOVJMU182SE81T1VGdjdwUkhWbWEtc1VEeTdGZ2lIendXbVdUZEdKRVQtNGRvREJKRTI3bDlaZk9rZkhqZnlVWHotZUx5cFRnbmlncXVBT3pHbHZ4U2g2RXhLakljbnc?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-146",
+          "rank_by_count": 146,
+          "name": "국산 전기차 세액공제 막판 검토…\"배터리·소재 생산지까지 따져야 실효\"",
+          "easy": "",
+          "quote": "국산 전기차 세액공제 막판 검토…\"배터리·소재 생산지까지 따져야 실효\"",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 193,
-              "title": "美 과잉생산 관세에 中 반발…미중 무역휴전 다시 '시험대' - 연합뉴스",
-              "source_name": "'희토류 수출통제'",
-              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5YN3RzRmpXNm05NHQzVzd2YXEyc0VxU0x4R1lELVBiRFpPVDY2bnFHRXV3U0FTS3daTGZJUUtrRGVrUTQwTDZMZFpCRk93NFlNVEZZb3h0S1ZleUhOdHBXNtIBYEFVX3lxTE5YN3RzRmpXNm05NHQzVzd2YXEyc0VxU0x4R1lELVBiRFpPVDY2bnFHRXV3U0FTS3daTGZJUUtrRGVrUTQwTDZMZFpCRk93NFlNVEZZb3h0S1ZleUhOdHBXNg?oc=5"
+              "title": "국산 전기차 세액공제 막판 검토…\"배터리·소재 생산지까지 따져야 실효\" - 뉴시스",
+              "source_name": "'배터리 소재'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5lTFVYcFdSZGtNV0JUaFV6OGU5bnRKcVVkOFFueGFoakx1SkJOMk5QWElvSjVZc2o0elN4RFdBMkFXcmVkVGs4ampLVkJkRTdkaDdzdUZUbHEwSDIyT1pwMtIBeEFVX3lxTE1sZThUa0JxV0c0UlpZcTBsb1lHN3lKVHFxbkp5bHRXYjJVeXBxUUt4MXczTjhRU2ZkRjlZa0Nvdk9uM21WcDdwRUgtRUk2MExWYW9EQVZMZlowUnRfcHRuVDJNeXdNOThhd0h6cXVlbG1WSWJxZFNnUQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-138",
-          "rank_by_count": 138,
-          "name": "희토류 양산 앞둔 LS에코에너지, 美中 공급망 갈등 '반사이익' 예고",
+          "id": "e261128-147",
+          "rank_by_count": 147,
+          "name": "희토류 비축분 풀어 버티는 日···16년 노력에도 정제·자석 공급망은 중국 천하",
           "easy": "",
-          "quote": "희토류 양산 앞둔 LS에코에너지, 美中 공급망 갈등 '반사이익' 예고",
+          "quote": "희토류 비축분 풀어 버티는 日···16년 노력에도 정제·자석 공급망은 중국 천하",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 194,
-              "title": "희토류 양산 앞둔 LS에코에너지, 美中 공급망 갈등 '반사이익' 예고 - Daum",
+              "title": "희토류 비축분 풀어 버티는 日···16년 노력에도 정제·자석 공급망은 중국 천하 - 여성경제신문",
               "source_name": "'희토류 수출통제'",
-              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9Sb0JreVQ0VkRPRjdDWnhEZ0dVUWFLbmltcWtVM0RYV182U3RfLUpPRG1meGxpQjR6bUV0REdQSi04NldjXzBmY1ZCTDJVNTZ1VzczaUJJZWRjcUZFZlJoS3d3Z3Atd2czaVE?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBoZXRfTXZUMGpNcXFNMFUtWE9CVEN2NV9XczJ5cExmS2xLOXhkeTI4d0pxb21RN0tVV3JOQXc3WWFWZTRpdllqd0NUT0Rxb2ZPOEMwc05ZTTRlWkR1ZUQ2c3pZRjVGemtHd3Nlc1hBcHVzcWtvdFBB0gF3QVVfeXFMUGhldF9NdlQwak1xcU0wVS1YT0JUQ3Y1X1dzMnlwTGZLbEs5eGR5Mjh3SnFvbVE3S1VXck5BdzdZYVZlNGl2WWp3Q1RPRHFvZk84QzBzTllNNGVaRHVlRDZzellGNUZ6a0d3c2VzWEFwdXNxa290UEE?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-139",
-          "rank_by_count": 139,
-          "name": "희토류 의식했나…미국, 중국 추가관세에 기존합의 준수",
+          "id": "e261128-148",
+          "rank_by_count": 148,
+          "name": "동맹엔 15%·중국엔 최대 40% 관세 내건 트럼프, 고율 관세로 희토류 빗장 풀까",
           "easy": "",
-          "quote": "희토류 의식했나…미국, 중국 추가관세에 기존합의 준수",
+          "quote": "동맹엔 15%·중국엔 최대 40% 관세 내건 트럼프, 고율 관세로 희토류 빗장 풀까",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 197,
-              "title": "희토류 의식했나…미국, 중국 추가관세에 기존합의 준수 - 코인리더스",
+              "n": 196,
+              "title": "동맹엔 15%·중국엔 최대 40% 관세 내건 트럼프, 고율 관세로 희토류 빗장 풀까 - The Economy Korea",
               "source_name": "'희토류 수출통제'",
-              "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5zQ29KMkxzRkJrVTMtLTBCTFdOZmgyd1JLZXl4OW9vR0dqVmVTMHNFVlVHeHFabDBFRWpTYzdpTHduTzBjN2dfUVdB?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9naGotMHhfVjFxVm1GRTdpZzFZNGdnVHl5Q0dLaVY4VHFLY25OcXBseWJyLXVKcXFrOC1lbGtpX1pxRms0N1JZVFVqU2xEWHpkbkhoempIMzktTEk?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-140",
-          "rank_by_count": 140,
-          "name": "밴스 \"젠슨 황, 법무부 수사 안 받아\"…트럼프 '조사' 발언과 엇갈려",
+          "id": "e261128-149",
+          "rank_by_count": 149,
+          "name": "[월드 프리즘] ‘AI’ 지우고 ‘초지능’ 꺼낸 미국…미·중 패권 경쟁, 모델 넘어 인프라·전력전으로",
           "easy": "",
-          "quote": "밴스 \"젠슨 황, 법무부 수사 안 받아\"…트럼프 '조사' 발언과 엇갈려",
+          "quote": "[월드 프리즘] ‘AI’ 지우고 ‘초지능’ 꺼낸 미국…미·중 패권 경쟁, 모델 넘어 인프라·전력전으로",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 198,
+              "title": "[월드 프리즘] ‘AI’ 지우고 ‘초지능’ 꺼낸 미국…미·중 패권 경쟁, 모델 넘어 인프라·전력전으로 - 뉴시안",
+              "source_name": "'희토류 수출통제'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBkdkttWWw0Vkx0T1VYaThLQWtMNjFzYjJQNUFNYmNISy1rMmxWYVlGV1l4MUdaMmFwNHJXbG1sN09HZGJRWVlGMWNMZ2hUamljeFVHNUFMWDNOZ3BMVkpwYlFiN2tnOElSUDRDcA?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-150",
+          "rank_by_count": 150,
+          "name": "미국, 중국 관세 최대 20% 제안…희토류 보복은 경계 : 국제",
+          "easy": "",
+          "quote": "미국, 중국 관세 최대 20% 제안…희토류 보복은 경계 : 국제",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 199,
-              "title": "밴스 \"젠슨 황, 법무부 수사 안 받아\"…트럼프 '조사' 발언과 엇갈려 - 뉴스핌",
-              "source_name": "'젠슨황 발언'",
-              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5LR2JGQ2xwREp5cTV6YUlGT0pMZ2N2RFh3TW9UNTNJZnd4QWtXbFhOX3hsaVRzLXpIRjhKSGd5QUE3d2h0WGx1WFZfUV9obDhiRnAxdmZyMjlzbmVK?oc=5"
+              "title": "미국, 중국 관세 최대 20% 제안…희토류 보복은 경계 : 국제 - 재경일보",
+              "source_name": "'희토류 수출통제'",
+              "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBFMlgxNzJMcTN1VnJrUFFzdlNwRTc4el9SUXlPWEwwZU5iM3FPdTNzS0RMTjNlUWQzMnk3WFlFZzBRdjNRVVRjQ3pMdw?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-141",
-          "rank_by_count": 141,
-          "name": "돌아온 젠슨황 “행동강령 위반 용납 안 돼”",
+          "id": "e261128-151",
+          "rank_by_count": 151,
+          "name": "중국으로의 살아있는 장어 수출 허가증 발급이 일시적으로 중단됩니다.",
           "easy": "",
-          "quote": "돌아온 젠슨황 “행동강령 위반 용납 안 돼”",
+          "quote": "중국으로의 살아있는 장어 수출 허가증 발급이 일시적으로 중단됩니다.",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 200,
-              "title": "돌아온 젠슨황 “행동강령 위반 용납 안 돼” - Chosunbiz",
-              "source_name": "'젠슨황 발언'",
-              "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxORUFwNXpHLXVHaHIzY0hJVm1mR1VZOU9BSkhpWW5FaTRxRWgyZmJvWEY4N3RGMk4tUURpRVhIQS1FTUtLcFFBbW52dWJpYS1BdFRRR1VLUEZmM01MdGdxSDVwWFVvWGNhRlRhT0FGdG9nakk1X1dCV0J0cTVIV0lHYkhrLWNGdnF4MmM0WFpJZHlray1FNUNWOW9IQnNYZ9IBsgFBVV95cUxQN18yOFpQVkhFXzhFZXRrdE5PM29xdmZmd1NIRy14djl4cjVpeWVoVUF4U0FTc1VjRDJmbmNtNmNPRzBncUtmNWh4cGdvMGdfZndBODloNnJDSlI1eEViTlRHMVh4UTFGWUN"
+              "title": "중국으로의 살아있는 장어 수출 허가증 발급이 일시적으로 중단됩니다. - Vietnam.vn",
+              "source_name": "'희토류 수출통제'",
+              "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPY09MVFpJMU5KUG9CMkltNHVmV0ZydDlncWtQOURyZFdRNUs0WTR1cWtpX3ZhcmJFOTdDZmtaaUFxSC04Zm9CMFdXUkRzUC10aXVtcHd1WXVHN1U0cDYtWkZVRkxsS2hRVWxJS09CZzhlRWw3T1BCMm9XX0I1RlJWUXR0MXMwNkFfYm1MdQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-142",
-          "rank_by_count": 142,
-          "name": "美 법무부, 젠슨 황 공식 수사 안 했다…트럼프 발언과 배치",
+          "id": "e261128-152",
+          "rank_by_count": 152,
+          "name": "“미쳤다, 젠슨 황 복귀 알고 4천억 콜옵션 수익 ”…SNS 글 진위 논란",
           "easy": "",
-          "quote": "美 법무부, 젠슨 황 공식 수사 안 했다…트럼프 발언과 배치",
+          "quote": "“미쳤다, 젠슨 황 복귀 알고 4천억 콜옵션 수익 ”…SNS 글 진위 논란",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 201,
-              "title": "美 법무부, 젠슨 황 공식 수사 안 했다…트럼프 발언과 배치 - 스페셜타임스",
+              "title": "“미쳤다, 젠슨 황 복귀 알고 4천억 콜옵션 수익 ”…SNS 글 진위 논란 - 한겨레",
               "source_name": "'젠슨황 발언'",
-              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1LR1BiY2RVeGFFaDFPRGNEMmJyckNkTXFRc2VvamZDNEpDem00Wkt5MHFXeFNqVWZmekFEV0s0cjhyZ19icHAxckdVbnE5LUFtM2pYWFlZdUxfTjZHcU9HU1hwX3FldG5YYzV6eG1xMlJ3UQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBCdXYxTjF0U19LUXU0WEpLaEh1VUFZQXlZczZkcExxbng5V1pweEs3VDdxS1k3dkx4Ynhha21OTklnSkdOQ2o0WnZYSkNvck5tdnRFNzYxMVZsM0ZEYlhXc3U4RDR4bzM2MVRmRjh5QQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-143",
-          "rank_by_count": 143,
-          "name": "밴스부통령 \"젠슨황 대통령사면 불필요, 법무부 수사 대상도 아냐\"",
+          "id": "e261128-153",
+          "rank_by_count": 153,
+          "name": "\"AI가 아니라 AI 쓰는 사람에게 일자리 뺏길 것\"…머스크도 \"동의\"",
           "easy": "",
-          "quote": "밴스부통령 \"젠슨황 대통령사면 불필요, 법무부 수사 대상도 아냐\"",
+          "quote": "\"AI가 아니라 AI 쓰는 사람에게 일자리 뺏길 것\"…머스크도 \"동의\"",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 202,
+              "title": "\"AI가 아니라 AI 쓰는 사람에게 일자리 뺏길 것\"…머스크도 \"동의\" - 뉴시스",
+              "source_name": "'젠슨황 발언'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9IREhBWkRJNHNaSHlHWUJhNHRSUVA3ZWMyVUpyOUZWelJidGtQd0R6bS1PMFdMZ2NLbG9yMklaSmVXNm9vZDQ2aXhUay1vQ0hUR196RHMxOURISEJvdnh4ZdIBeEFVX3lxTE5jOWFKbXozX3hJd2RXMVpJcmU5Sk9zbWpGN2FnRndxbFJ1aERfNmdEU3p0ak5zQk5GZUQxZnFJbHE0VWZOcV95Uk0xM3NseXVnaFE0TW5CWnZETlRzNTlxRDd0dDBoc2FQeXBjbWxqV3NqVGd6ci1obg?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-154",
+          "rank_by_count": 154,
+          "name": "트럼프 “젠슨 황 아무런 문제없고…난 세계 위해 훌륭한 일 했다”",
+          "easy": "",
+          "quote": "트럼프 “젠슨 황 아무런 문제없고…난 세계 위해 훌륭한 일 했다”",
           "member_count": 1,
           "sample_articles": [
             {
               "n": 203,
-              "title": "밴스부통령 \"젠슨황 대통령사면 불필요, 법무부 수사 대상도 아냐\" - 뉴시스",
+              "title": "트럼프 “젠슨 황 아무런 문제없고…난 세계 위해 훌륭한 일 했다” - 데일리안",
               "source_name": "'젠슨황 발언'",
-              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5pdk94SFNqTlRaU2RpeGJZTXA1RG41Nnl1a2VndmdISUFoSDRiOFdXYnV5YXR3bFpUREdhdk1MckRNN0VMT095ckRPRjhJanJmQzdMRDdMc0dDZnZsR2Iwa3BCdlpNY3RTa3dEejA4d3dqd0lyMUM1WdIBeEFVX3lxTE5pdk94SFNqTlRaU2RpeGJZTXA1RG41Nnl1a2VndmdISUFoSDRiOFdXYnV5YXR3bFpUREdhdk1MckRNN0VMT095ckRPRjhJanJmQzdMRDdMc0dDZnZsR2Iwa3BCdlpNY3RTa3dEejA4d3dqd0lyMUM1WQ?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxObEJ1MlNrMTJDZTZ5V0NCakVEY3R4NWlXTFR5WEY5NGNocXlWaVBTazZXYnRDVFpqOFJUYmtTY0tiQUtpRGZYeHcwX05kaXM5VVQ5TG9OSXYybG9LQ1ZRbUdJQW93T1MxUndWbWdnUkJVSXF6QXZpWGcxSC1TUm9YSGtkUHVqR1RHWXhEZTNXLVRqOHg2TEdaZjFhRzJkSU1GVzkyTnp5TnFpSEY5eFZRRm1KdjBwVERkVmotdEdCLVlmcElUNHhYREYtWFNINGdWM2l0el83X3Y0RHhzVUxTRHZCc3NkODg3cW56bERMejQwXzlNTWpRbUtlN0J6NkdnUjFkODZ5Vjc5MkQ"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-144",
-          "rank_by_count": 144,
-          "name": "美민주당 상원 원내대표 \"젠슨 황, 미국 수출통제법 위반\" 직격…정치권 반발 확대",
-          "easy": "",
-          "quote": "美민주당 상원 원내대표 \"젠슨 황, 미국 수출통제법 위반\" 직격…정치권 반발 확대",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 204,
-              "title": "美민주당 상원 원내대표 \"젠슨 황, 미국 수출통제법 위반\" 직격…정치권 반발 확대 - 더구루",
-              "source_name": "'젠슨황 발언'",
-              "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1IZUo2eC1PSExtYTZqcEFMbWNUWXVzVVduVjMwcHBKajZock10RTZCelJFTWVOd0hDV3c2TmMtNmFyNEVwRU43RWwzUkctOHRfNHRiazRiRV92bThYemROclpsQQ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-145",
-          "rank_by_count": 145,
-          "name": "농협 조합장 1104명 \"농협 본사 지방이전 대상서 제외해야\"",
-          "easy": "",
-          "quote": "농협 조합장 1104명 \"농협 본사 지방이전 대상서 제외해야\"",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1440,
-              "title": "농협 조합장 1104명 \"농협 본사 지방이전 대상서 제외해야\"",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/202611273485i"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-146",
-          "rank_by_count": 146,
-          "name": "'이 시나리오면 2028년 먹구름'…한국은행이 보낸 경고 [분석+]",
-          "easy": "",
-          "quote": "'이 시나리오면 2028년 먹구름'…한국은행이 보낸 경고 [분석+]",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1441,
-              "title": "'이 시나리오면 2028년 먹구름'…한국은행이 보낸 경고 [분석+]",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112625776"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-147",
-          "rank_by_count": 147,
-          "name": "\"머스크마저 이런 제안을\"…삼성전자 몸값 치솟자 벌어진 일",
-          "easy": "",
-          "quote": "\"머스크마저 이런 제안을\"…삼성전자 몸값 치솟자 벌어진 일",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1442,
-              "title": "\"머스크마저 이런 제안을\"…삼성전자 몸값 치솟자 벌어진 일",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112634217"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-148",
-          "rank_by_count": 148,
-          "name": "박종복 前 SC제일은행장, 은행연합회장 선출",
-          "easy": "",
-          "quote": "박종복 前 SC제일은행장, 은행연합회장 선출",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1443,
-              "title": "박종복 前 SC제일은행장, 은행연합회장 선출",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/202611263347i"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-149",
-          "rank_by_count": 149,
-          "name": "\"화웨이, 차세대 HBM 기술 공개 눈앞\"",
-          "easy": "",
-          "quote": "\"화웨이, 차세대 HBM 기술 공개 눈앞\"",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1444,
-              "title": "\"화웨이, 차세대 HBM 기술 공개 눈앞\"",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631791"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-150",
-          "rank_by_count": 150,
-          "name": "무뇨스·송호성 유임…모비스 사장에 백철승",
-          "easy": "",
-          "quote": "무뇨스·송호성 유임…모비스 사장에 백철승",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1445,
-              "title": "무뇨스·송호성 유임…모비스 사장에 백철승",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630911"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-151",
-          "rank_by_count": 151,
-          "name": "통합 LCC '부산'에 둥지…\"김해공항 제2허브 도약 시동\" [종합]",
-          "easy": "",
-          "quote": "통합 LCC '부산'에 둥지…\"김해공항 제2허브 도약 시동\" [종합]",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1446,
-              "title": "통합 LCC '부산'에 둥지…\"김해공항 제2허브 도약 시동\" [종합]",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/202611262531g"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-152",
-          "rank_by_count": 152,
-          "name": "초대형 LCC '통합 진에어'…부산 본사 시대 연다",
-          "easy": "",
-          "quote": "초대형 LCC '통합 진에어'…부산 본사 시대 연다",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1447,
-              "title": "초대형 LCC '통합 진에어'…부산 본사 시대 연다",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630901"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-153",
-          "rank_by_count": 153,
-          "name": "HS효성, 안성훈·성낙양 사장 승진",
-          "easy": "",
-          "quote": "HS효성, 안성훈·성낙양 사장 승진",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1449,
-              "title": "HS효성, 안성훈·성낙양 사장 승진",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630881"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-154",
-          "rank_by_count": 154,
-          "name": "두산, 동대문 떠나 을지로에 신사옥",
-          "easy": "",
-          "quote": "두산, 동대문 떠나 을지로에 신사옥",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1450,
-              "title": "두산, 동대문 떠나 을지로에 신사옥",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630851"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-155",
+          "id": "e261128-155",
           "rank_by_count": 155,
-          "name": "삼천리그룹, 길형도·서광영 사장 승진",
+          "name": "트럼프, 젠슨 황 '2기' 발언에 안보 우려 부정",
           "easy": "",
-          "quote": "삼천리그룹, 길형도·서광영 사장 승진",
+          "quote": "트럼프, 젠슨 황 '2기' 발언에 안보 우려 부정",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1451,
-              "title": "삼천리그룹, 길형도·서광영 사장 승진",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630871"
+              "n": 205,
+              "title": "트럼프, 젠슨 황 '2기' 발언에 안보 우려 부정 - 데일리바이트(DAILY BYTE)",
+              "source_name": "'젠슨황 발언'",
+              "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNRjFNdllhbGs1aEttWDlyM0dqdV90cDhIQ1o5SHl3RTVLRVFYd1R0LTVOdUdjdlZKNjFhN3pWR3Q5YldzUjVjNlFxellZVVZBdnRHOFRzS242V3ZKWnozemI1R2RKRDE5Qjh4OXg4SzRHeE13SmgyeWVxMUgyMXFzTDJxQ2k5U3RSZXpxQ0JVbjVPbVU?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-156",
+          "id": "e261128-156",
           "rank_by_count": 156,
-          "name": "[포토] 수출 1조달러 달성 기념 우표 발행",
+          "name": "\"젠슨황 복귀, 내가 큰일했다\" 트럼프 자랑…안보위협 '일축' - 머니투데이",
           "easy": "",
-          "quote": "[포토] 수출 1조달러 달성 기념 우표 발행",
+          "quote": "\"젠슨황 복귀, 내가 큰일했다\" 트럼프 자랑…안보위협 '일축' - 머니투데이",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1452,
-              "title": "[포토] 수출 1조달러 달성 기념 우표 발행",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630821"
+              "n": 206,
+              "title": "\"젠슨황 복귀, 내가 큰일했다\" 트럼프 자랑…안보위협 '일축' - 머니투데이 - 머니투데이",
+              "source_name": "'젠슨황 발언'",
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5TalIza2pkSG92Tk9UcGpZeEljYzhYXzJldXNQSENYRXVaMERVbjJibHpzUTFkRlNMcG9zd1F4NjRQWlNvNVZacWItdGlVck9hcllGaFp2Sk1NbzdEMWNsRlZBR05wdU530gFuQVVfeXFMTmk0ckRzZ3JkSzZOQWFBQ0l6N1NfYlloM2ZZaHdkWThBOHFJemRyMVRvUk0yX3l0aURGZUgzR25RQjNSdXNHQXI4dVZVaU1SNzBDM050aFpMellmdkVUNUM5aDVXaUtlR2RyTzg3clE?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-157",
+          "id": "e261128-157",
           "rank_by_count": 157,
-          "name": "[단독] \"AI 호황은 이제 시작\" 잭팟 예고…220조 쏟아붓는다",
+          "name": "밴스·러트닉 vs 루비오·베선트… 젠슨 황 복귀 찬반 놓고 세게 붙었다",
           "easy": "",
-          "quote": "[단독] \"AI 호황은 이제 시작\" 잭팟 예고…220조 쏟아붓는다",
+          "quote": "밴스·러트닉 vs 루비오·베선트… 젠슨 황 복귀 찬반 놓고 세게 붙었다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1453,
-              "title": "[단독] \"AI 호황은 이제 시작\" 잭팟 예고…220조 쏟아붓는다",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630781"
+              "n": 207,
+              "title": "밴스·러트닉 vs 루비오·베선트… 젠슨 황 복귀 찬반 놓고 세게 붙었다 - 조선일보",
+              "source_name": "'젠슨황 발언'",
+              "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxObHhFNXJUTVFWajhTeDMtWE83bWZmeHR0a0dOczlSVndWamVGQ3dLcWVHMGFHNEg4NThqMzFSODU0VGpOdk9jLVlIWEloZFRzZ1U5OFVJOFNnWk91Qm5OMHdfZjU3SHRpQzNpcE9FSGV2anpuYU0xMzdWU2x1akV4a2JRRVQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-158",
+          "id": "e261128-158",
           "rank_by_count": 158,
-          "name": "美 전력난, 트럼프 리쇼어링 정책이 촉발",
+          "name": "젠슨 황 복귀 도운 트럼프…美 여론분석가 \"파면도 가능\"",
           "easy": "",
-          "quote": "美 전력난, 트럼프 리쇼어링 정책이 촉발",
+          "quote": "젠슨 황 복귀 도운 트럼프…美 여론분석가 \"파면도 가능\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1454,
-              "title": "美 전력난, 트럼프 리쇼어링 정책이 촉발",
-              "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630801"
+              "n": 208,
+              "title": "젠슨 황 복귀 도운 트럼프…美 여론분석가 \"파면도 가능\" - 뉴시스",
+              "source_name": "'젠슨황 발언'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE52bkR2ZnRlZXpmZlVkR2tMRUw4Q295QkNqdWhqQXgyRnFYcXQ0M19Rb0RRY1BxenVnZ1R5enZ5N1p5NW9pMzFoUHZwZTdOMl82ZC05SjVZUk9uWUw5WHU3VdIBeEFVX3lxTE9RdGE1MV9nNUNjT0NRcUx4N1psdzFRbFRQemc4V0M0THAwVDdqLUxXcEVzMDFVeEVpeTJTY21FZi1jR3Ezb0hhQ0pXbklLa1RLUDVUSWZBemRxUG0xTkJmUjBqdE9VSC0wbVBQZ1F1YU9QRXhQdlhDeg?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-159",
+          "id": "e261128-159",
           "rank_by_count": 159,
-          "name": "발전소부터 케이블까지…물 만난 K전력기기",
+          "name": "AI 셀오프 끝?...\"안심하긴 일러\"[박신영의 개장전 요것만]",
           "easy": "",
-          "quote": "발전소부터 케이블까지…물 만난 K전력기기",
+          "quote": "AI 셀오프 끝?...\"안심하긴 일러\"[박신영의 개장전 요것만]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1455,
-              "title": "발전소부터 케이블까지…물 만난 K전력기기",
+              "n": 2354,
+              "title": "AI 셀오프 끝?...\"안심하긴 일러\"[박신영의 개장전 요것만]",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112630811"
+              "link": "https://www.hankyung.com/article/202611285700i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-160",
+          "id": "e261128-160",
           "rank_by_count": 160,
-          "name": "[단독] 지분 정리 필요한 5대 코인거래소…K국부펀드 등판론 '급부상'",
+          "name": "한국 오면 통째로 퍼먹는다…1469만뷰 터진 '이 케이크' 정체",
           "easy": "",
-          "quote": "[단독] 지분 정리 필요한 5대 코인거래소…K국부펀드 등판론 '급부상'",
+          "quote": "한국 오면 통째로 퍼먹는다…1469만뷰 터진 '이 케이크' 정체",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1456,
-              "title": "[단독] 지분 정리 필요한 5대 코인거래소…K국부펀드 등판론 '급부상'",
+              "n": 2355,
+              "title": "한국 오면 통째로 퍼먹는다…1469만뷰 터진 '이 케이크' 정체",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631661"
+              "link": "https://www.hankyung.com/article/202611275054g"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-161",
+          "id": "e261128-161",
           "rank_by_count": 161,
-          "name": "[단독] 지분 이어 자기자본 규제까지…코인원·디지털엑스 인가 '촉각'",
+          "name": "공장을 로봇 학습장으로…3D 데이터 용량 98% 줄인 그리네타",
           "easy": "",
-          "quote": "[단독] 지분 이어 자기자본 규제까지…코인원·디지털엑스 인가 '촉각'",
+          "quote": "공장을 로봇 학습장으로…3D 데이터 용량 98% 줄인 그리네타",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1457,
-              "title": "[단독] 지분 이어 자기자본 규제까지…코인원·디지털엑스 인가 '촉각'",
+              "n": 2356,
+              "title": "공장을 로봇 학습장으로…3D 데이터 용량 98% 줄인 그리네타",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631651"
+              "link": "https://www.hankyung.com/article/202611275169i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-162",
+          "id": "e261128-162",
           "rank_by_count": 162,
-          "name": "은행·증권사, 디지털자산 보관업 진출 쉬워진다",
+          "name": "이란 전쟁에 기름값 치솟더니…유럽 항공사들 줄줄이 문 닫는다",
           "easy": "",
-          "quote": "은행·증권사, 디지털자산 보관업 진출 쉬워진다",
+          "quote": "이란 전쟁에 기름값 치솟더니…유럽 항공사들 줄줄이 문 닫는다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1458,
-              "title": "은행·증권사, 디지털자산 보관업 진출 쉬워진다",
+              "n": 2357,
+              "title": "이란 전쟁에 기름값 치솟더니…유럽 항공사들 줄줄이 문 닫는다",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631671"
+              "link": "https://www.hankyung.com/article/2026112755087"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-163",
+          "id": "e261128-163",
           "rank_by_count": 163,
-          "name": "구로공단서 실리콘밸리로…\"韓제조업과 美기술 잇겠다\"",
+          "name": "이연재 대표 \"미술품 고르던 안목, 주얼리 창업 무기 됐죠\"",
           "easy": "",
-          "quote": "구로공단서 실리콘밸리로…\"韓제조업과 美기술 잇겠다\"",
+          "quote": "이연재 대표 \"미술품 고르던 안목, 주얼리 창업 무기 됐죠\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1459,
-              "title": "구로공단서 실리콘밸리로…\"韓제조업과 美기술 잇겠다\"",
+              "n": 2358,
+              "title": "이연재 대표 \"미술품 고르던 안목, 주얼리 창업 무기 됐죠\"",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112632151"
+              "link": "https://www.hankyung.com/article/2026112754111"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-164",
+          "id": "e261128-164",
           "rank_by_count": 164,
-          "name": "롯데카드, 제주 농가에 2억 기금 전달",
+          "name": "LIG, 네덜란드 참전용사에 감사 기념품",
           "easy": "",
-          "quote": "롯데카드, 제주 농가에 2억 기금 전달",
+          "quote": "LIG, 네덜란드 참전용사에 감사 기념품",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1460,
-              "title": "롯데카드, 제주 농가에 2억 기금 전달",
+              "n": 2359,
+              "title": "LIG, 네덜란드 참전용사에 감사 기념품",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112632231"
+              "link": "https://www.hankyung.com/article/2026112754231"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-165",
+          "id": "e261128-165",
           "rank_by_count": 165,
-          "name": "LG전자, 독거 어르신에 김장 김치 전달",
+          "name": "AX융합硏 초대 원장에 조주완 前 LG전자 사장",
           "easy": "",
-          "quote": "LG전자, 독거 어르신에 김장 김치 전달",
+          "quote": "AX융합硏 초대 원장에 조주완 前 LG전자 사장",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1461,
-              "title": "LG전자, 독거 어르신에 김장 김치 전달",
+              "n": 2360,
+              "title": "AX융합硏 초대 원장에 조주완 前 LG전자 사장",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112632221"
+              "link": "https://www.hankyung.com/article/2026112754131"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-166",
+          "id": "e261128-166",
           "rank_by_count": 166,
-          "name": "美, 메가프로젝트·국민성장펀드까지 '관세 명분' 삼았다",
+          "name": "재무·기획통 지고 현장·기술통 뜬다…신임 CEO 63%가 이공계",
           "easy": "",
-          "quote": "美, 메가프로젝트·국민성장펀드까지 '관세 명분' 삼았다",
+          "quote": "재무·기획통 지고 현장·기술통 뜬다…신임 CEO 63%가 이공계",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1462,
-              "title": "美, 메가프로젝트·국민성장펀드까지 '관세 명분' 삼았다",
+              "n": 2361,
+              "title": "재무·기획통 지고 현장·기술통 뜬다…신임 CEO 63%가 이공계",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631471"
+              "link": "https://www.hankyung.com/article/2026112754371"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-167",
+          "id": "e261128-167",
           "rank_by_count": 167,
-          "name": "손잡은 韓·사우디, 물밑선 '석화 구조조정' 진통",
+          "name": "임원 인사 키워드는 '40대·AX리더·신상필벌'",
           "easy": "",
-          "quote": "손잡은 韓·사우디, 물밑선 '석화 구조조정' 진통",
+          "quote": "임원 인사 키워드는 '40대·AX리더·신상필벌'",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1463,
-              "title": "손잡은 韓·사우디, 물밑선 '석화 구조조정' 진통",
+              "n": 2362,
+              "title": "임원 인사 키워드는 '40대·AX리더·신상필벌'",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631501"
+              "link": "https://www.hankyung.com/article/2026112754361"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-168",
+          "id": "e261128-168",
           "rank_by_count": 168,
-          "name": "렌터카에도 전기차 전환지원금 준다",
+          "name": "2027 기업 마운드, '현장 에이스' 등판",
           "easy": "",
-          "quote": "렌터카에도 전기차 전환지원금 준다",
+          "quote": "2027 기업 마운드, '현장 에이스' 등판",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1464,
-              "title": "렌터카에도 전기차 전환지원금 준다",
+              "n": 2363,
+              "title": "2027 기업 마운드, '현장 에이스' 등판",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631481"
+              "link": "https://www.hankyung.com/article/2026112754451"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-169",
+          "id": "e261128-169",
           "rank_by_count": 169,
-          "name": "초호황 맞나…실질소득 3년 만에 최대폭 감소",
+          "name": "10대 그룹 CEO 80% 유임…관세·금리 파고에 '안정' 택했다",
           "easy": "",
-          "quote": "초호황 맞나…실질소득 3년 만에 최대폭 감소",
+          "quote": "10대 그룹 CEO 80% 유임…관세·금리 파고에 '안정' 택했다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1466,
-              "title": "초호황 맞나…실질소득 3년 만에 최대폭 감소",
+              "n": 2364,
+              "title": "10대 그룹 CEO 80% 유임…관세·금리 파고에 '안정' 택했다",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631391"
+              "link": "https://www.hankyung.com/article/2026112754261"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-170",
+          "id": "e261128-170",
           "rank_by_count": 170,
-          "name": "\"삼전닉스 시총, 수익 3배 불과\"…한은 총재의 이례적 저평가 진단",
+          "name": "[단독] 쿠팡, 첫 화면 3초에 승부 건다…인스타式 가로 상품설명 도입",
           "easy": "",
-          "quote": "\"삼전닉스 시총, 수익 3배 불과\"…한은 총재의 이례적 저평가 진단",
+          "quote": "[단독] 쿠팡, 첫 화면 3초에 승부 건다…인스타式 가로 상품설명 도입",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1467,
-              "title": "\"삼전닉스 시총, 수익 3배 불과\"…한은 총재의 이례적 저평가 진단",
+              "n": 2365,
+              "title": "[단독] 쿠팡, 첫 화면 3초에 승부 건다…인스타式 가로 상품설명 도입",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112631401"
+              "link": "https://www.hankyung.com/article/2026112753661"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-171",
+          "id": "e261128-171",
           "rank_by_count": 171,
-          "name": "'순직·공상 경찰 자녀 지원' 현대百 보훈부 감사패",
+          "name": "28년 노하우 담은 AI비서 개발…한촌설렁탕의 실험",
           "easy": "",
-          "quote": "'순직·공상 경찰 자녀 지원' 현대百 보훈부 감사패",
+          "quote": "28년 노하우 담은 AI비서 개발…한촌설렁탕의 실험",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1468,
-              "title": "'순직·공상 경찰 자녀 지원' 현대百 보훈부 감사패",
+              "n": 2367,
+              "title": "28년 노하우 담은 AI비서 개발…한촌설렁탕의 실험",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112632191"
+              "link": "https://www.hankyung.com/article/2026112753611"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-172",
+          "id": "e261128-172",
           "rank_by_count": 172,
-          "name": "보험료 할인해도…5세대 실손 전환 저조",
+          "name": "美지속가능성보고서 경연서 호텔롯데 최고등급상 수상",
           "easy": "",
-          "quote": "보험료 할인해도…5세대 실손 전환 저조",
+          "quote": "美지속가능성보고서 경연서 호텔롯데 최고등급상 수상",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1469,
-              "title": "보험료 할인해도…5세대 실손 전환 저조",
+              "n": 2368,
+              "title": "美지속가능성보고서 경연서 호텔롯데 최고등급상 수상",
               "source_name": "한국경제 경제",
-              "link": "https://www.hankyung.com/article/2026112632381"
+              "link": "https://www.hankyung.com/article/2026112753651"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-173",
+          "id": "e261128-173",
           "rank_by_count": 173,
-          "name": "\"주식으로 와이프 가방 사줬습니다\"…사진 보니 '눈물'",
+          "name": "\"없어서 못 판다더니 웬일\"…반도체 시장에 심상찮은 신호",
           "easy": "",
-          "quote": "\"주식으로 와이프 가방 사줬습니다\"…사진 보니 '눈물'",
+          "quote": "\"없어서 못 판다더니 웬일\"…반도체 시장에 심상찮은 신호",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1470,
-              "title": "\"주식으로 와이프 가방 사줬습니다\"…사진 보니 '눈물'",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112633497"
+              "n": 2369,
+              "title": "\"없어서 못 판다더니 웬일\"…반도체 시장에 심상찮은 신호",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112754081"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-174",
+          "id": "e261128-174",
           "rank_by_count": 174,
-          "name": "트럼프, 젠슨 황 복귀 바란 까닭 [한경 프리미엄9 TODAY]",
+          "name": "낸드 이어 D램값도 하락하나",
           "easy": "",
-          "quote": "트럼프, 젠슨 황 복귀 바란 까닭 [한경 프리미엄9 TODAY]",
+          "quote": "낸드 이어 D램값도 하락하나",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1471,
-              "title": "트럼프, 젠슨 황 복귀 바란 까닭 [한경 프리미엄9 TODAY]",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112632371"
+              "n": 2370,
+              "title": "낸드 이어 D램값도 하락하나",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112754431"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-175",
+          "id": "e261128-175",
           "rank_by_count": 175,
-          "name": "혼돈의 시대…2027 대예측",
+          "name": "한화 3형제부터 신유열·허서홍, 오너 3·4세 경영 일선 전진배치",
           "easy": "",
-          "quote": "혼돈의 시대…2027 대예측",
+          "quote": "한화 3형제부터 신유열·허서홍, 오너 3·4세 경영 일선 전진배치",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1472,
-              "title": "혼돈의 시대…2027 대예측",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112631341"
+              "n": 2371,
+              "title": "한화 3형제부터 신유열·허서홍, 오너 3·4세 경영 일선 전진배치",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112754251"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-176",
+          "id": "e261128-176",
           "rank_by_count": 176,
-          "name": "단기채 늘린 NH증권, 증권주 줄하락에도 '선방'",
+          "name": "징계에 막힌 임원 승진, 금융사 '인사족쇄' 푼다",
           "easy": "",
-          "quote": "단기채 늘린 NH증권, 증권주 줄하락에도 '선방'",
+          "quote": "징계에 막힌 임원 승진, 금융사 '인사족쇄' 푼다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1473,
-              "title": "단기채 늘린 NH증권, 증권주 줄하락에도 '선방'",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112632111"
+              "n": 2372,
+              "title": "징계에 막힌 임원 승진, 금융사 '인사족쇄' 푼다",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753801"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-177",
+          "id": "e261128-177",
           "rank_by_count": 177,
-          "name": "\"엔비디아 아직 팔 때 아니다\"…'빅쇼트' 주인공의 반전 베팅",
+          "name": "\"연속 야간근무 3일로 제한\"…새벽배송 빗장 거나",
           "easy": "",
-          "quote": "\"엔비디아 아직 팔 때 아니다\"…'빅쇼트' 주인공의 반전 베팅",
+          "quote": "\"연속 야간근무 3일로 제한\"…새벽배송 빗장 거나",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1474,
-              "title": "\"엔비디아 아직 팔 때 아니다\"…'빅쇼트' 주인공의 반전 베팅",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112632041"
+              "n": 2373,
+              "title": "\"연속 야간근무 3일로 제한\"…새벽배송 빗장 거나",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753811"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-178",
+          "id": "e261128-178",
           "rank_by_count": 178,
-          "name": "'AI 기지국'이 온다…통신장비株 다시 뜨나",
+          "name": "3분기 해외 카드사용 66억弗 '역대 최대'",
           "easy": "",
-          "quote": "'AI 기지국'이 온다…통신장비株 다시 뜨나",
+          "quote": "3분기 해외 카드사용 66억弗 '역대 최대'",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1476,
-              "title": "'AI 기지국'이 온다…통신장비株 다시 뜨나",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262628i"
+              "n": 2374,
+              "title": "3분기 해외 카드사용 66억弗 '역대 최대'",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753831"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-179",
+          "id": "e261128-179",
           "rank_by_count": 179,
-          "name": "오늘의 프리미엄9 콘텐츠 다이제스트(11월 26일)",
+          "name": "코로나로 미뤘던 결혼 9.7만건…올 8월까지 60% 회복",
           "easy": "",
-          "quote": "오늘의 프리미엄9 콘텐츠 다이제스트(11월 26일)",
+          "quote": "코로나로 미뤘던 결혼 9.7만건…올 8월까지 60% 회복",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1477,
-              "title": "오늘의 프리미엄9 콘텐츠 다이제스트(11월 26일)",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262769i"
+              "n": 2375,
+              "title": "코로나로 미뤘던 결혼 9.7만건…올 8월까지 60% 회복",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753791"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-180",
+          "id": "e261128-180",
           "rank_by_count": 180,
-          "name": "'빅쇼트' 버리 \"엔비디아, 지금 공매도 할 때 아냐…200달러 되면 다시\"",
+          "name": "새 ECB 수장 데코스, 유럽 물가 잡나",
           "easy": "",
-          "quote": "'빅쇼트' 버리 \"엔비디아, 지금 공매도 할 때 아냐…200달러 되면 다시\"",
+          "quote": "새 ECB 수장 데코스, 유럽 물가 잡나",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1478,
-              "title": "'빅쇼트' 버리 \"엔비디아, 지금 공매도 할 때 아냐…200달러 되면 다시\"",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262720i"
+              "n": 2376,
+              "title": "새 ECB 수장 데코스, 유럽 물가 잡나",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753511"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-181",
+          "id": "e261128-181",
           "rank_by_count": 181,
-          "name": "[마감시황] 장 막판 상승폭 반납한 코스피…0.29% 오른 4711.21 마감",
+          "name": "\"아들인지 딸인지 궁금해서\"…70만원짜리 은밀한 거래 정체",
           "easy": "",
-          "quote": "[마감시황] 장 막판 상승폭 반납한 코스피…0.29% 오른 4711.21 마감",
+          "quote": "\"아들인지 딸인지 궁금해서\"…70만원짜리 은밀한 거래 정체",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1479,
-              "title": "[마감시황] 장 막판 상승폭 반납한 코스피…0.29% 오른 4711.21 마감",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262700i"
+              "n": 2377,
+              "title": "\"아들인지 딸인지 궁금해서\"…70만원짜리 은밀한 거래 정체",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753521"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-182",
+          "id": "e261128-182",
           "rank_by_count": 182,
-          "name": "\"주문해도 1년 기다려야\"…가격 협상력 강화에 기판주 '들썩'",
+          "name": "삼성SDI, '역대 최대' ESS 정부계약 63% 수주",
           "easy": "",
-          "quote": "\"주문해도 1년 기다려야\"…가격 협상력 강화에 기판주 '들썩'",
+          "quote": "삼성SDI, '역대 최대' ESS 정부계약 63% 수주",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1480,
-              "title": "\"주문해도 1년 기다려야\"…가격 협상력 강화에 기판주 '들썩'",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262450i"
+              "n": 2378,
+              "title": "삼성SDI, '역대 최대' ESS 정부계약 63% 수주",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753461"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-183",
+          "id": "e261128-183",
           "rank_by_count": 183,
-          "name": "\"버티자\" 다독이던 전문가…삼전 레버리지 차트 보자 눈물",
+          "name": "동국제강 '오너 4세' 장선익 사장 승진",
           "easy": "",
-          "quote": "\"버티자\" 다독이던 전문가…삼전 레버리지 차트 보자 눈물",
+          "quote": "동국제강 '오너 4세' 장선익 사장 승진",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1481,
-              "title": "\"버티자\" 다독이던 전문가…삼전 레버리지 차트 보자 눈물",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112626167"
+              "n": 2379,
+              "title": "동국제강 '오너 4세' 장선익 사장 승진",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753411"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-184",
+          "id": "e261128-184",
           "rank_by_count": 184,
-          "name": "증권주 주가 두자릿수 하락할 때...NH투자증권은 선방한 이유",
+          "name": "현대차, 소형 전기 SUV '아이오닉 M' 내년 中 출격",
           "easy": "",
-          "quote": "증권주 주가 두자릿수 하락할 때...NH투자증권은 선방한 이유",
+          "quote": "현대차, 소형 전기 SUV '아이오닉 M' 내년 中 출격",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1482,
-              "title": "증권주 주가 두자릿수 하락할 때...NH투자증권은 선방한 이유",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611260989i"
+              "n": 2380,
+              "title": "현대차, 소형 전기 SUV '아이오닉 M' 내년 中 출격",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753431"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-185",
+          "id": "e261128-185",
           "rank_by_count": 185,
-          "name": "'전강후약' 코스피, 4700선 가까스로 사수…외국인 또 '팔자'",
+          "name": "HD현대, 中 건설기계 부품사업 확대",
           "easy": "",
-          "quote": "'전강후약' 코스피, 4700선 가까스로 사수…외국인 또 '팔자'",
+          "quote": "HD현대, 中 건설기계 부품사업 확대",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1483,
-              "title": "'전강후약' 코스피, 4700선 가까스로 사수…외국인 또 '팔자'",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112626626"
+              "n": 2381,
+              "title": "HD현대, 中 건설기계 부품사업 확대",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753451"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-186",
+          "id": "e261128-186",
           "rank_by_count": 186,
-          "name": "NH투자증권, 이노씨에스알과 네팔 벽돌 탄소감축 MOU",
+          "name": "우리금융저축銀 대표에 박종인·우리자산신탁 대표엔 박장근",
           "easy": "",
-          "quote": "NH투자증권, 이노씨에스알과 네팔 벽돌 탄소감축 MOU",
+          "quote": "우리금융저축銀 대표에 박종인·우리자산신탁 대표엔 박장근",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1484,
-              "title": "NH투자증권, 이노씨에스알과 네팔 벽돌 탄소감축 MOU",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112626336"
+              "n": 2382,
+              "title": "우리금융저축銀 대표에 박종인·우리자산신탁 대표엔 박장근",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753441"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-187",
+          "id": "e261128-187",
           "rank_by_count": 187,
-          "name": "\"주식보다 낫네\"…'年 6%' 우량회사채, JP모간도 주목",
+          "name": "한화시스템, 나토 인증 획득…글로벌 시장 공략 기반 마련",
           "easy": "",
-          "quote": "\"주식보다 낫네\"…'年 6%' 우량회사채, JP모간도 주목",
+          "quote": "한화시스템, 나토 인증 획득…글로벌 시장 공략 기반 마련",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1485,
-              "title": "\"주식보다 낫네\"…'年 6%' 우량회사채, JP모간도 주목",
-              "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262331i"
+              "n": 2383,
+              "title": "한화시스템, 나토 인증 획득…글로벌 시장 공략 기반 마련",
+              "source_name": "한국경제 경제",
+              "link": "https://www.hankyung.com/article/2026112753421"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-188",
+          "id": "e261128-188",
           "rank_by_count": 188,
-          "name": "스페이스X 주가에 울고 웃는다…하루 만에 21% 치솟은 종목",
+          "name": "\"10조로 되겠냐고요\"…개미들이 진짜 원하는 건 따로 있다 [분석+]",
           "easy": "",
-          "quote": "스페이스X 주가에 울고 웃는다…하루 만에 21% 치솟은 종목",
+          "quote": "\"10조로 되겠냐고요\"…개미들이 진짜 원하는 건 따로 있다 [분석+]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1486,
-              "title": "스페이스X 주가에 울고 웃는다…하루 만에 21% 치솟은 종목",
+              "n": 2384,
+              "title": "\"10조로 되겠냐고요\"…개미들이 진짜 원하는 건 따로 있다 [분석+]",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262428i"
+              "link": "https://www.hankyung.com/article/2026112749456"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-189",
+          "id": "e261128-189",
           "rank_by_count": 189,
-          "name": "美, 스페이스X 위성 100만기 배치 승인…우주항공株 '들썩'",
+          "name": "'한한령 풀리면 날아갈 줄 알았는데'…일주일 만에 '날벼락' [종목+]",
           "easy": "",
-          "quote": "美, 스페이스X 위성 100만기 배치 승인…우주항공株 '들썩'",
+          "quote": "'한한령 풀리면 날아갈 줄 알았는데'…일주일 만에 '날벼락' [종목+]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1487,
-              "title": "美, 스페이스X 위성 100만기 배치 승인…우주항공株 '들썩'",
+              "n": 2385,
+              "title": "'한한령 풀리면 날아갈 줄 알았는데'…일주일 만에 '날벼락' [종목+]",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262510i"
+              "link": "https://www.hankyung.com/article/2026112750406"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-190",
+          "id": "e261128-190",
           "rank_by_count": 190,
-          "name": "[오후시황] 기관 8800억원 순매수 힘입어…코스피, 1%대 강세 유지",
+          "name": "\"눈물 쏟고 고개 숙이고\"…코스피 반토막에 전문가들도 '충격'",
           "easy": "",
-          "quote": "[오후시황] 기관 8800억원 순매수 힘입어…코스피, 1%대 강세 유지",
+          "quote": "\"눈물 쏟고 고개 숙이고\"…코스피 반토막에 전문가들도 '충격'",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1488,
-              "title": "[오후시황] 기관 8800억원 순매수 힘입어…코스피, 1%대 강세 유지",
+              "n": 2386,
+              "title": "\"눈물 쏟고 고개 숙이고\"…코스피 반토막에 전문가들도 '충격'",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262293i"
+              "link": "https://www.hankyung.com/article/202611274867H"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-191",
+          "id": "e261128-191",
           "rank_by_count": 191,
-          "name": "은행은 줄이고 보험사는 늘리나…증안펀드 확대의 '채권 나비효과'",
+          "name": "한국거래소, 희귀질환 아동에 1.2억 기부",
           "easy": "",
-          "quote": "은행은 줄이고 보험사는 늘리나…증안펀드 확대의 '채권 나비효과'",
+          "quote": "한국거래소, 희귀질환 아동에 1.2억 기부",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1489,
-              "title": "은행은 줄이고 보험사는 늘리나…증안펀드 확대의 '채권 나비효과'",
+              "n": 2387,
+              "title": "한국거래소, 희귀질환 아동에 1.2억 기부",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262170i"
+              "link": "https://www.hankyung.com/article/2026112754211"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-192",
+          "id": "e261128-192",
           "rank_by_count": 192,
-          "name": "기술주 떨어질 때 26% 올랐다…AI 대신 뜬 '이 테마'",
+          "name": "金, 고점 대비 30% 뚝…월가선 바닥론 솔솔",
           "easy": "",
-          "quote": "기술주 떨어질 때 26% 올랐다…AI 대신 뜬 '이 테마'",
+          "quote": "金, 고점 대비 30% 뚝…월가선 바닥론 솔솔",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1490,
-              "title": "기술주 떨어질 때 26% 올랐다…AI 대신 뜬 '이 테마'",
+              "n": 2388,
+              "title": "金, 고점 대비 30% 뚝…월가선 바닥론 솔솔",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262322i"
+              "link": "https://www.hankyung.com/article/2026112753871"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-193",
+          "id": "e261128-193",
           "rank_by_count": 193,
-          "name": "\"삼전닉스, 700조원 벌었는데…주가 이해 불가\" 한은 총재의 탄식",
+          "name": "하향 리포트 1000개 쏟아질 때 목표가 오른 '알짜 종목'은",
           "easy": "",
-          "quote": "\"삼전닉스, 700조원 벌었는데…주가 이해 불가\" 한은 총재의 탄식",
+          "quote": "하향 리포트 1000개 쏟아질 때 목표가 오른 '알짜 종목'은",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1491,
-              "title": "\"삼전닉스, 700조원 벌었는데…주가 이해 불가\" 한은 총재의 탄식",
+              "n": 2389,
+              "title": "하향 리포트 1000개 쏟아질 때 목표가 오른 '알짜 종목'은",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262121i"
+              "link": "https://www.hankyung.com/article/2026112753891"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-194",
+          "id": "e261128-194",
           "rank_by_count": 194,
-          "name": "'반도체 초호황 맞아?' 한숨 커졌다…3년 만에 벌어진 일",
+          "name": "'주주환원 발표=상승'…수급 공백이 만든 공식",
           "easy": "",
-          "quote": "'반도체 초호황 맞아?' 한숨 커졌다…3년 만에 벌어진 일",
+          "quote": "'주주환원 발표=상승'…수급 공백이 만든 공식",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1492,
-              "title": "'반도체 초호황 맞아?' 한숨 커졌다…3년 만에 벌어진 일",
+              "n": 2390,
+              "title": "'주주환원 발표=상승'…수급 공백이 만든 공식",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611262171i"
+              "link": "https://www.hankyung.com/article/2026112753911"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-195",
+          "id": "e261128-195",
           "rank_by_count": 195,
-          "name": "'아이온2' 실적 받쳤지만…NC, '대형 신작'으로 반등 물꼬 틀까",
+          "name": "바이오·로봇·배터리 급등…코스닥 간만에 웃었다",
           "easy": "",
-          "quote": "'아이온2' 실적 받쳤지만…NC, '대형 신작'으로 반등 물꼬 틀까",
+          "quote": "바이오·로봇·배터리 급등…코스닥 간만에 웃었다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1493,
-              "title": "'아이온2' 실적 받쳤지만…NC, '대형 신작'으로 반등 물꼬 틀까",
+              "n": 2391,
+              "title": "바이오·로봇·배터리 급등…코스닥 간만에 웃었다",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611261529i"
+              "link": "https://www.hankyung.com/article/2026112753921"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-196",
+          "id": "e261128-196",
           "rank_by_count": 196,
-          "name": "대신자산운용, 도쿄 롯폰기 서비스드 아파트먼트 172실 개관",
+          "name": "'증안펀드 증액' 기대에 코스닥 급등",
           "easy": "",
-          "quote": "대신자산운용, 도쿄 롯폰기 서비스드 아파트먼트 172실 개관",
+          "quote": "'증안펀드 증액' 기대에 코스닥 급등",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1494,
-              "title": "대신자산운용, 도쿄 롯폰기 서비스드 아파트먼트 172실 개관",
+              "n": 2392,
+              "title": "'증안펀드 증액' 기대에 코스닥 급등",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112622246"
+              "link": "https://www.hankyung.com/article/2026112754441"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-197",
+          "id": "e261128-197",
           "rank_by_count": 197,
-          "name": "예탁결제원 \"KOFR 산출·공시 5주년…산출오류·수정공시 0건\"",
+          "name": "삼전닉스 연말 배당금만 44조…내수 불씨 살릴까",
           "easy": "",
-          "quote": "예탁결제원 \"KOFR 산출·공시 5주년…산출오류·수정공시 0건\"",
+          "quote": "삼전닉스 연말 배당금만 44조…내수 불씨 살릴까",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1495,
-              "title": "예탁결제원 \"KOFR 산출·공시 5주년…산출오류·수정공시 0건\"",
+              "n": 2393,
+              "title": "삼전닉스 연말 배당금만 44조…내수 불씨 살릴까",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112622076"
+              "link": "https://www.hankyung.com/article/2026112754061"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-198",
+          "id": "e261128-198",
           "rank_by_count": 198,
-          "name": "하나증권, 출석 5일에 국내주식 매수쿠폰…태권브이 이벤트",
+          "name": "석유 왕좌 탈취한 반도체…50년 만에 뒤집힌 '돈줄 공식'",
           "easy": "",
-          "quote": "하나증권, 출석 5일에 국내주식 매수쿠폰…태권브이 이벤트",
+          "quote": "석유 왕좌 탈취한 반도체…50년 만에 뒤집힌 '돈줄 공식'",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1496,
-              "title": "하나증권, 출석 5일에 국내주식 매수쿠폰…태권브이 이벤트",
+              "n": 2394,
+              "title": "석유 왕좌 탈취한 반도체…50년 만에 뒤집힌 '돈줄 공식'",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112621966"
+              "link": "https://www.hankyung.com/article/2026112753531"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-199",
+          "id": "e261128-199",
           "rank_by_count": 199,
-          "name": "AI 거품론 뚫고…\"내년에 코스피 ○○○○까지 간다\" 전망",
+          "name": "글로벌 로펌이 맡던 해외 M&A…K로펌, 이젠 '兆단위 빅딜' 총괄",
           "easy": "",
-          "quote": "AI 거품론 뚫고…\"내년에 코스피 ○○○○까지 간다\" 전망",
+          "quote": "글로벌 로펌이 맡던 해외 M&A…K로펌, 이젠 '兆단위 빅딜' 총괄",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1497,
-              "title": "AI 거품론 뚫고…\"내년에 코스피 ○○○○까지 간다\" 전망",
+              "n": 2395,
+              "title": "글로벌 로펌이 맡던 해외 M&A…K로펌, 이젠 '兆단위 빅딜' 총괄",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611261862i"
+              "link": "https://www.hankyung.com/article/2026112753471"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-200",
+          "id": "e261128-200",
           "rank_by_count": 200,
-          "name": "中에 밀려 주가 60% 폭락했는데…\"내년은 한국 독무대\" [분석+]",
+          "name": "월가서 '금값 바닥론' 솔솔 [한경 프리미엄9 TODAY]",
           "easy": "",
-          "quote": "中에 밀려 주가 60% 폭락했는데…\"내년은 한국 독무대\" [분석+]",
+          "quote": "월가서 '금값 바닥론' 솔솔 [한경 프리미엄9 TODAY]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1498,
-              "title": "中에 밀려 주가 60% 폭락했는데…\"내년은 한국 독무대\" [분석+]",
+              "n": 2396,
+              "title": "월가서 '금값 바닥론' 솔솔 [한경 프리미엄9 TODAY]",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/2026112614536"
+              "link": "https://www.hankyung.com/article/2026112753341"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-201",
+          "id": "e261128-201",
           "rank_by_count": 201,
-          "name": "서학 초고수들, 다시 반도체 반등에 베팅...칩 레버리지 ETF·마이크론 사들여",
+          "name": "증안펀드 기대에 코스닥 8.13% 급등…바이오·로봇이 이끌고 2차전지·반도체가 밀었다",
           "easy": "",
-          "quote": "서학 초고수들, 다시 반도체 반등에 베팅...칩 레버리지 ETF·마이크론 사들여",
+          "quote": "증안펀드 기대에 코스닥 8.13% 급등…바이오·로봇이 이끌고 2차전지·반도체가 밀었다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1499,
-              "title": "서학 초고수들, 다시 반도체 반등에 베팅...칩 레버리지 ETF·마이크론 사들여",
+              "n": 2397,
+              "title": "증안펀드 기대에 코스닥 8.13% 급등…바이오·로봇이 이끌고 2차전지·반도체가 밀었다",
               "source_name": "한국경제 증권",
-              "link": "https://www.hankyung.com/article/202611261940i"
+              "link": "https://www.hankyung.com/article/202611275241i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-202",
+          "id": "e261128-202",
           "rank_by_count": 202,
-          "name": "월급이 물가를 못 따라간다…현금성 지원 사라지자 가계 실질소득 줄어",
+          "name": "오늘의 프리미엄9 콘텐츠 다이제스트(11월 27일)",
           "easy": "",
-          "quote": "월급이 물가를 못 따라간다…현금성 지원 사라지자 가계 실질소득 줄어",
+          "quote": "오늘의 프리미엄9 콘텐츠 다이제스트(11월 27일)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1500,
-              "title": "월급이 물가를 못 따라간다…현금성 지원 사라지자 가계 실질소득 줄어",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219746"
+              "n": 2398,
+              "title": "오늘의 프리미엄9 콘텐츠 다이제스트(11월 27일)",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611275074i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-203",
+          "id": "e261128-203",
           "rank_by_count": 203,
-          "name": "“월급날 은행이 다 털어갑니다”…기준금리 인상 폭탄맞은 영끌족들",
+          "name": "이달 들어 '목표가 하향' 리포트 1000건 돌파…그 속에서 오른 86곳은?",
           "easy": "",
-          "quote": "“월급날 은행이 다 털어갑니다”…기준금리 인상 폭탄맞은 영끌족들",
+          "quote": "이달 들어 '목표가 하향' 리포트 1000건 돌파…그 속에서 오른 86곳은?",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1501,
-              "title": "“월급날 은행이 다 털어갑니다”…기준금리 인상 폭탄맞은 영끌족들",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219738"
+              "n": 2399,
+              "title": "이달 들어 '목표가 하향' 리포트 1000건 돌파…그 속에서 오른 86곳은?",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274992i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-204",
+          "id": "e261128-204",
           "rank_by_count": 204,
-          "name": "신현송 \"내년 4.1% 성장 자신\"… 기준금리 인상 재시동",
+          "name": "정부는 왜 김용범 메리츠금융지주 부회장에게 자본시장 개혁을 맡겼을까?",
           "easy": "",
-          "quote": "신현송 \"내년 4.1% 성장 자신\"… 기준금리 인상 재시동",
+          "quote": "정부는 왜 김용범 메리츠금융지주 부회장에게 자본시장 개혁을 맡겼을까?",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1502,
-              "title": "신현송 \"내년 4.1% 성장 자신\"… 기준금리 인상 재시동",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219713"
+              "n": 2400,
+              "title": "정부는 왜 김용범 메리츠금융지주 부회장에게 자본시장 개혁을 맡겼을까?",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274619i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-205",
+          "id": "e261128-205",
           "rank_by_count": 205,
-          "name": "애플 겨눈 공정위 … 통상갈등 새 불씨되나",
+          "name": "외국인·기관 쌍끌이 매수에 코스피 4.3% 급등…4900선 탈환",
           "easy": "",
-          "quote": "애플 겨눈 공정위 … 통상갈등 새 불씨되나",
+          "quote": "외국인·기관 쌍끌이 매수에 코스피 4.3% 급등…4900선 탈환",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1505,
-              "title": "애플 겨눈 공정위 … 통상갈등 새 불씨되나",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219706"
+              "n": 2401,
+              "title": "외국인·기관 쌍끌이 매수에 코스피 4.3% 급등…4900선 탈환",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/2026112751366"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-206",
+          "id": "e261128-206",
           "rank_by_count": 206,
-          "name": "계속되는 고성장·고물가…소비 부진에도 '긴축' 고삐",
+          "name": "\"삼전·닉스 비중 줄였다\"…액티브 ETF, 수익률 방어에 '분주'",
           "easy": "",
-          "quote": "계속되는 고성장·고물가…소비 부진에도 '긴축' 고삐",
+          "quote": "\"삼전·닉스 비중 줄였다\"…액티브 ETF, 수익률 방어에 '분주'",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1507,
-              "title": "계속되는 고성장·고물가…소비 부진에도 '긴축' 고삐",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219695"
+              "n": 2402,
+              "title": "\"삼전·닉스 비중 줄였다\"…액티브 ETF, 수익률 방어에 '분주'",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274818i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-207",
+          "id": "e261128-207",
           "rank_by_count": 207,
-          "name": "신현송 \"반도체기업 시총 2천조, 영업이익의 3배밖에 안돼\"",
+          "name": "\"발표 직전 살걸\"…기업들 '자사주 소각' 한 방에 '개미 환호'",
           "easy": "",
-          "quote": "신현송 \"반도체기업 시총 2천조, 영업이익의 3배밖에 안돼\"",
+          "quote": "\"발표 직전 살걸\"…기업들 '자사주 소각' 한 방에 '개미 환호'",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1508,
-              "title": "신현송 \"반도체기업 시총 2천조, 영업이익의 3배밖에 안돼\"",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219694"
+              "n": 2403,
+              "title": "\"발표 직전 살걸\"…기업들 '자사주 소각' 한 방에 '개미 환호'",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274923i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-208",
+          "id": "e261128-208",
           "rank_by_count": 208,
-          "name": "민간위 논의 결과 李대통령에 직보 … 증시 체질개선 주도권 쥔다",
+          "name": "[마감시황] 외국인 1조원 넘게 샀다…코스피 4900선 회복·코스닥 8% 급등 마감",
           "easy": "",
-          "quote": "민간위 논의 결과 李대통령에 직보 … 증시 체질개선 주도권 쥔다",
+          "quote": "[마감시황] 외국인 1조원 넘게 샀다…코스피 4900선 회복·코스닥 8% 급등 마감",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1509,
-              "title": "민간위 논의 결과 李대통령에 직보 … 증시 체질개선 주도권 쥔다",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219690"
+              "n": 2404,
+              "title": "[마감시황] 외국인 1조원 넘게 샀다…코스피 4900선 회복·코스닥 8% 급등 마감",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611275045i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-209",
+          "id": "e261128-209",
           "rank_by_count": 209,
-          "name": "\"건강검진 지원에 과세기준 세울것\"",
+          "name": "\"강남 아파트 4번 불탄 셈\"…증시 급락에 전문가 쓴소리",
           "easy": "",
-          "quote": "\"건강검진 지원에 과세기준 세울것\"",
+          "quote": "\"강남 아파트 4번 불탄 셈\"…증시 급락에 전문가 쓴소리",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1510,
-              "title": "\"건강검진 지원에 과세기준 세울것\"",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219671"
+              "n": 2405,
+              "title": "\"강남 아파트 4번 불탄 셈\"…증시 급락에 전문가 쓴소리",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274846H"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-210",
+          "id": "e261128-210",
           "rank_by_count": 210,
-          "name": "수도권 집팔고 지방 내려가면 전 연령층 양도세 감면받는다",
+          "name": "코스피 4.3% 상승 4900 회복…코스닥 8%대 올라 700 탈환",
           "easy": "",
-          "quote": "수도권 집팔고 지방 내려가면 전 연령층 양도세 감면받는다",
+          "quote": "코스피 4.3% 상승 4900 회복…코스닥 8%대 올라 700 탈환",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1511,
-              "title": "수도권 집팔고 지방 내려가면 전 연령층 양도세 감면받는다",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219672"
+              "n": 2407,
+              "title": "코스피 4.3% 상승 4900 회복…코스닥 8%대 올라 700 탈환",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/2026112750106"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-211",
+          "id": "e261128-211",
           "rank_by_count": 211,
-          "name": "개인투자용 국채 12월 발행 안한다",
+          "name": "한국거래소, 희귀질환 아동에 치료비 1억2000만원 지원",
           "easy": "",
-          "quote": "개인투자용 국채 12월 발행 안한다",
+          "quote": "한국거래소, 희귀질환 아동에 치료비 1억2000만원 지원",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1512,
-              "title": "개인투자용 국채 12월 발행 안한다",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219669"
+              "n": 2408,
+              "title": "한국거래소, 희귀질환 아동에 치료비 1억2000만원 지원",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274823i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-212",
+          "id": "e261128-212",
           "rank_by_count": 212,
-          "name": "[단독] 해외 되파는 韓기업 원자재에도 정부 보증",
+          "name": "삼성SDS, 자사주 2만7614주 소각 결정…시가 기준 약 53억원",
           "easy": "",
-          "quote": "[단독] 해외 되파는 韓기업 원자재에도 정부 보증",
+          "quote": "삼성SDS, 자사주 2만7614주 소각 결정…시가 기준 약 53억원",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1513,
-              "title": "[단독] 해외 되파는 韓기업 원자재에도 정부 보증",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219668"
+              "n": 2409,
+              "title": "삼성SDS, 자사주 2만7614주 소각 결정…시가 기준 약 53억원",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/2026112748556"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-213",
+          "id": "e261128-213",
           "rank_by_count": 213,
-          "name": "금리 인상 선반영? 은행株 동반 하락",
+          "name": "연초보다 30% 빠진 금값…월가서 '바닥론' 솔솔",
           "easy": "",
-          "quote": "금리 인상 선반영? 은행株 동반 하락",
+          "quote": "연초보다 30% 빠진 금값…월가서 '바닥론' 솔솔",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1514,
-              "title": "금리 인상 선반영? 은행株 동반 하락",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219654"
+              "n": 2410,
+              "title": "연초보다 30% 빠진 금값…월가서 '바닥론' 솔솔",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274718i"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-214",
+          "id": "e261128-214",
           "rank_by_count": 214,
-          "name": "결백은 오직 ‘법정’에서…네타냐후 형사 재판이 조작기소 특검에 던지는 통찰 [논설실 Pick]",
+          "name": "NH투자증권, ETF로 하는 연금 자산배분 설명한 THE100리포트 발간",
           "easy": "",
-          "quote": "결백은 오직 ‘법정’에서…네타냐후 형사 재판이 조작기소 특검에 던지는 통찰 [논설실 Pick]",
+          "quote": "NH투자증권, ETF로 하는 연금 자산배분 설명한 THE100리포트 발간",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1515,
-              "title": "결백은 오직 ‘법정’에서…네타냐후 형사 재판이 조작기소 특검에 던지는 통찰 [논설실 Pick]",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219645"
+              "n": 2411,
+              "title": "NH투자증권, ETF로 하는 연금 자산배분 설명한 THE100리포트 발간",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/2026112748536"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-215",
+          "id": "e261128-215",
           "rank_by_count": 215,
+          "name": "한국예탁결제원, 전자주총 의무화 앞두고 '운영 효율화 워크숍'",
+          "easy": "",
+          "quote": "한국예탁결제원, 전자주총 의무화 앞두고 '운영 효율화 워크숍'",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2412,
+              "title": "한국예탁결제원, 전자주총 의무화 앞두고 '운영 효율화 워크숍'",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/2026112748516"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-216",
+          "rank_by_count": 216,
+          "name": "금리 인상에도 시들해진 은행주…증권가 \"상승 탄력 둔화될 것\"",
+          "easy": "",
+          "quote": "금리 인상에도 시들해진 은행주…증권가 \"상승 탄력 둔화될 것\"",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2413,
+              "title": "금리 인상에도 시들해진 은행주…증권가 \"상승 탄력 둔화될 것\"",
+              "source_name": "한국경제 증권",
+              "link": "https://www.hankyung.com/article/202611274722i"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-217",
+          "rank_by_count": 217,
+          "name": "김정관 산업장관 “R&D 노동특례 늦어지면 청년 일자리 잃을 것”",
+          "easy": "",
+          "quote": "김정관 산업장관 “R&D 노동특례 늦어지면 청년 일자리 잃을 것”",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2417,
+              "title": "김정관 산업장관 “R&D 노동특례 늦어지면 청년 일자리 잃을 것”",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220464"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-218",
+          "rank_by_count": 218,
           "name": "[표] 외국환율고시표",
           "easy": "",
           "quote": "[표] 외국환율고시표",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1517,
+              "n": 2421,
               "title": "[표] 외국환율고시표",
               "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219585"
+              "link": "https://www.mk.co.kr/news/economy/12220436"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-216",
-          "rank_by_count": 216,
-          "name": "[표] 당좌거래정지",
-          "easy": "",
-          "quote": "[표] 당좌거래정지",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1518,
-              "title": "[표] 당좌거래정지",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219583"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-217",
-          "rank_by_count": 217,
-          "name": "[포토] 신한은행, 청년 창업가에 2천억 대출",
-          "easy": "",
-          "quote": "[포토] 신한은행, 청년 창업가에 2천억 대출",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1519,
-              "title": "[포토] 신한은행, 청년 창업가에 2천억 대출",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219584"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-218",
-          "rank_by_count": 218,
-          "name": "주택금융 정보 등 64개 개방 … AI·자산관리 활용도 높인다",
-          "easy": "",
-          "quote": "주택금융 정보 등 64개 개방 … AI·자산관리 활용도 높인다",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1520,
-              "title": "주택금융 정보 등 64개 개방 … AI·자산관리 활용도 높인다",
-              "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219582"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-219",
+          "id": "e261128-219",
           "rank_by_count": 219,
-          "name": "가계빚 규제에 중금리대출 42% '뚝'",
+          "name": "조정지역 임대아파트, LH에 팔면 양도세 감면",
           "easy": "",
-          "quote": "가계빚 규제에 중금리대출 42% '뚝'",
+          "quote": "조정지역 임대아파트, LH에 팔면 양도세 감면",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1521,
-              "title": "가계빚 규제에 중금리대출 42% '뚝'",
+              "n": 2422,
+              "title": "조정지역 임대아파트, LH에 팔면 양도세 감면",
               "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219580"
+              "link": "https://www.mk.co.kr/news/economy/12220434"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-220",
+          "id": "e261128-220",
           "rank_by_count": 220,
-          "name": "\"금리 인상에 이자 급증\" 잠 못드는 영끌·빚투족",
+          "name": "[포토] KB, '올해의 상생기업' 대통령표창 수상",
           "easy": "",
-          "quote": "\"금리 인상에 이자 급증\" 잠 못드는 영끌·빚투족",
+          "quote": "[포토] KB, '올해의 상생기업' 대통령표창 수상",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1522,
-              "title": "\"금리 인상에 이자 급증\" 잠 못드는 영끌·빚투족",
+              "n": 2423,
+              "title": "[포토] KB, '올해의 상생기업' 대통령표창 수상",
               "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219578"
+              "link": "https://www.mk.co.kr/news/economy/12220435"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-221",
+          "id": "e261128-221",
           "rank_by_count": 221,
-          "name": "선불충전금 한도 200만원→500만원…네이버페이·카카오페이 달라진다",
+          "name": "하나·iM·기업·농협은행 '지역재투자 평가' 최우수",
           "easy": "",
-          "quote": "선불충전금 한도 200만원→500만원…네이버페이·카카오페이 달라진다",
+          "quote": "하나·iM·기업·농협은행 '지역재투자 평가' 최우수",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1526,
-              "title": "선불충전금 한도 200만원→500만원…네이버페이·카카오페이 달라진다",
+              "n": 2424,
+              "title": "하나·iM·기업·농협은행 '지역재투자 평가' 최우수",
               "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219491"
+              "link": "https://www.mk.co.kr/news/economy/12220431"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-222",
+          "id": "e261128-222",
           "rank_by_count": 222,
-          "name": "전현희 의원, ‘청년 창업’ 금융지원 9000억 원 조성…창업가 부담 줄인다",
+          "name": "임종룡 2기 '안정'에 방점 … 우리금융 자회사 8곳 유임",
           "easy": "",
-          "quote": "전현희 의원, ‘청년 창업’ 금융지원 9000억 원 조성…창업가 부담 줄인다",
+          "quote": "임종룡 2기 '안정'에 방점 … 우리금융 자회사 8곳 유임",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1527,
-              "title": "전현희 의원, ‘청년 창업’ 금융지원 9000억 원 조성…창업가 부담 줄인다",
+              "n": 2427,
+              "title": "임종룡 2기 '안정'에 방점 … 우리금융 자회사 8곳 유임",
               "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219434"
+              "link": "https://www.mk.co.kr/news/economy/12220430"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-223",
+          "id": "e261128-223",
           "rank_by_count": 223,
-          "name": "과도한 보험 판매수수료 제한…소비자 전가 막는다",
+          "name": "'베이비부머' 1973년생부터 정년 65세… 기업 \"청년 채용 위축\"",
           "easy": "",
-          "quote": "과도한 보험 판매수수료 제한…소비자 전가 막는다",
+          "quote": "'베이비부머' 1973년생부터 정년 65세… 기업 \"청년 채용 위축\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1528,
-              "title": "과도한 보험 판매수수료 제한…소비자 전가 막는다",
+              "n": 2429,
+              "title": "'베이비부머' 1973년생부터 정년 65세… 기업 \"청년 채용 위축\"",
               "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219380"
+              "link": "https://www.mk.co.kr/news/economy/12220406"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-224",
+          "id": "e261128-224",
           "rank_by_count": 224,
-          "name": "신한은행, 신보·기보와 청년창업자에 2000억 대출",
+          "name": "초고령사회 진입한 한국…보험사, 보상 넘어 돌봄·생활지원 나서야",
           "easy": "",
-          "quote": "신한은행, 신보·기보와 청년창업자에 2000억 대출",
+          "quote": "초고령사회 진입한 한국…보험사, 보상 넘어 돌봄·생활지원 나서야",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1529,
-              "title": "신한은행, 신보·기보와 청년창업자에 2000억 대출",
+              "n": 2430,
+              "title": "초고령사회 진입한 한국…보험사, 보상 넘어 돌봄·생활지원 나서야",
               "source_name": "매일경제 경제",
-              "link": "https://www.mk.co.kr/news/economy/12219174"
+              "link": "https://www.mk.co.kr/news/economy/12220347"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-225",
+          "id": "e261128-225",
           "rank_by_count": 225,
-          "name": "금리 올렸는데 은행주 왜 파래요…한발 먼저 가는 주식 ‘선반영’ 해석",
+          "name": "“설계사 수수료 줄면 내 보험료도 싸지나요?”…내년 보험 가입 때 달라지는 것",
           "easy": "",
-          "quote": "금리 올렸는데 은행주 왜 파래요…한발 먼저 가는 주식 ‘선반영’ 해석",
+          "quote": "“설계사 수수료 줄면 내 보험료도 싸지나요?”…내년 보험 가입 때 달라지는 것",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1530,
-              "title": "금리 올렸는데 은행주 왜 파래요…한발 먼저 가는 주식 ‘선반영’ 해석",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219785"
+              "n": 2431,
+              "title": "“설계사 수수료 줄면 내 보험료도 싸지나요?”…내년 보험 가입 때 달라지는 것",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220275"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-226",
+          "id": "e261128-226",
           "rank_by_count": 226,
-          "name": "“AI 거품”이라더니 13일만에 말 바꿨다…상승에 베팅 건 ‘빅쇼트’ 주인공",
+          "name": "새마을금고, 유엔 기관과 손잡고 아시아·태평양 금융 소외 해소 나서",
           "easy": "",
-          "quote": "“AI 거품”이라더니 13일만에 말 바꿨다…상승에 베팅 건 ‘빅쇼트’ 주인공",
+          "quote": "새마을금고, 유엔 기관과 손잡고 아시아·태평양 금융 소외 해소 나서",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1531,
-              "title": "“AI 거품”이라더니 13일만에 말 바꿨다…상승에 베팅 건 ‘빅쇼트’ 주인공",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219779"
+              "n": 2432,
+              "title": "새마을금고, 유엔 기관과 손잡고 아시아·태평양 금융 소외 해소 나서",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220222"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-227",
+          "id": "e261128-227",
           "rank_by_count": 227,
-          "name": "제 역할 전혀 못하는 ETF…AI·반도체만 담고 투자자는 단타 친다",
+          "name": "“더 넣은 돈은 0원인데, 노후자금 1.3억 껑충”…은퇴 시 수익률 2%p 격차",
           "easy": "",
-          "quote": "제 역할 전혀 못하는 ETF…AI·반도체만 담고 투자자는 단타 친다",
+          "quote": "“더 넣은 돈은 0원인데, 노후자금 1.3억 껑충”…은퇴 시 수익률 2%p 격차",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1532,
-              "title": "제 역할 전혀 못하는 ETF…AI·반도체만 담고 투자자는 단타 친다",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219765"
+              "n": 2433,
+              "title": "“더 넣은 돈은 0원인데, 노후자금 1.3억 껑충”…은퇴 시 수익률 2%p 격차",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220197"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-228",
+          "id": "e261128-228",
           "rank_by_count": 228,
-          "name": "금리·AI 수익성 우려에 관세까지…여의도 족집게 “반등 시그널 이때 나온다” [머니닥터 시장진단]",
+          "name": "하나·iM·기업·농협은행…‘지역재투자 평가’ 최우수 등급",
           "easy": "",
-          "quote": "금리·AI 수익성 우려에 관세까지…여의도 족집게 “반등 시그널 이때 나온다” [머니닥터 시장진단]",
+          "quote": "하나·iM·기업·농협은행…‘지역재투자 평가’ 최우수 등급",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1533,
-              "title": "금리·AI 수익성 우려에 관세까지…여의도 족집게 “반등 시그널 이때 나온다” [머니닥터 시장진단]",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219730"
+              "n": 2434,
+              "title": "하나·iM·기업·농협은행…‘지역재투자 평가’ 최우수 등급",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220179"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-229",
+          "id": "e261128-229",
           "rank_by_count": 229,
-          "name": "\"증시 안정 위해 반드시 증액\" vs \"지수 방어 효과 제한적\"",
+          "name": "가계·기업대출 다 줄었는데…보험사 연체율 왜 오르나",
           "easy": "",
-          "quote": "\"증시 안정 위해 반드시 증액\" vs \"지수 방어 효과 제한적\"",
+          "quote": "가계·기업대출 다 줄었는데…보험사 연체율 왜 오르나",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1534,
-              "title": "\"증시 안정 위해 반드시 증액\" vs \"지수 방어 효과 제한적\"",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219691"
+              "n": 2435,
+              "title": "가계·기업대출 다 줄었는데…보험사 연체율 왜 오르나",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220087"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-230",
+          "id": "e261128-230",
           "rank_by_count": 230,
-          "name": "삼성SDI도 1.4조원 자사주 전량 소각",
+          "name": "산업연 “반도체 호황으로 더 걷힌 법인세, 비반도체 산업에 투자해야”",
           "easy": "",
-          "quote": "삼성SDI도 1.4조원 자사주 전량 소각",
+          "quote": "산업연 “반도체 호황으로 더 걷힌 법인세, 비반도체 산업에 투자해야”",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1535,
-              "title": "삼성SDI도 1.4조원 자사주 전량 소각",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219678"
+              "n": 2436,
+              "title": "산업연 “반도체 호황으로 더 걷힌 법인세, 비반도체 산업에 투자해야”",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220080"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-231",
+          "id": "e261128-231",
           "rank_by_count": 231,
-          "name": "금감원, 공개매수신고서 심사 강화",
+          "name": "“신고하면 최대 30억원”…건보공단, ‘가짜 직장가입자’ 전쟁 선포",
           "easy": "",
-          "quote": "금감원, 공개매수신고서 심사 강화",
+          "quote": "“신고하면 최대 30억원”…건보공단, ‘가짜 직장가입자’ 전쟁 선포",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1536,
-              "title": "금감원, 공개매수신고서 심사 강화",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219675"
+              "n": 2437,
+              "title": "“신고하면 최대 30억원”…건보공단, ‘가짜 직장가입자’ 전쟁 선포",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12220070"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-232",
+          "id": "e261128-232",
           "rank_by_count": 232,
-          "name": "\"ETF 대형주 쏠림 막으려면 액티브형 규제 완화해야\"",
+          "name": "쇼핑 기록으로 대출 심사…케이뱅크·웰컴저축銀, 네이버페이와 맞손",
           "easy": "",
-          "quote": "\"ETF 대형주 쏠림 막으려면 액티브형 규제 완화해야\"",
+          "quote": "쇼핑 기록으로 대출 심사…케이뱅크·웰컴저축銀, 네이버페이와 맞손",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1537,
-              "title": "\"ETF 대형주 쏠림 막으려면 액티브형 규제 완화해야\"",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219676"
+              "n": 2438,
+              "title": "쇼핑 기록으로 대출 심사…케이뱅크·웰컴저축銀, 네이버페이와 맞손",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12219999"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-233",
+          "id": "e261128-233",
           "rank_by_count": 233,
-          "name": "에스텍 '헐값 공개매수' 논란 … 日 대주주에 태클 건 美 투자사",
+          "name": "“앞으로 더 벌 일만 남았습니다”…은행 이자이익 48조 ‘역대최대’",
           "easy": "",
-          "quote": "에스텍 '헐값 공개매수' 논란 … 日 대주주에 태클 건 美 투자사",
+          "quote": "“앞으로 더 벌 일만 남았습니다”…은행 이자이익 48조 ‘역대최대’",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1538,
-              "title": "에스텍 '헐값 공개매수' 논란 … 日 대주주에 태클 건 美 투자사",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219653"
+              "n": 2439,
+              "title": "“앞으로 더 벌 일만 남았습니다”…은행 이자이익 48조 ‘역대최대’",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12219997"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-234",
+          "id": "e261128-234",
           "rank_by_count": 234,
-          "name": "주식 거래량은 17% 뚝 … 공매도는 되레 5% 쑥",
+          "name": "연회비 1만5000원으로 특급호텔 할인까지…프리미엄 카드 혜택 어떤 게 있나",
           "easy": "",
-          "quote": "주식 거래량은 17% 뚝 … 공매도는 되레 5% 쑥",
+          "quote": "연회비 1만5000원으로 특급호텔 할인까지…프리미엄 카드 혜택 어떤 게 있나",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1539,
-              "title": "주식 거래량은 17% 뚝 … 공매도는 되레 5% 쑥",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219652"
+              "n": 2440,
+              "title": "연회비 1만5000원으로 특급호텔 할인까지…프리미엄 카드 혜택 어떤 게 있나",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12219992"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-235",
+          "id": "e261128-235",
           "rank_by_count": 235,
-          "name": "'4조대어' SK팜테코, 소수지분 매각 본격화",
+          "name": "中대사 “한미동맹 현대화, 中겨냥해선 안돼…관세전쟁 끝까지 응전”",
           "easy": "",
-          "quote": "'4조대어' SK팜테코, 소수지분 매각 본격화",
+          "quote": "中대사 “한미동맹 현대화, 中겨냥해선 안돼…관세전쟁 끝까지 응전”",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1540,
-              "title": "'4조대어' SK팜테코, 소수지분 매각 본격화",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219648"
+              "n": 2442,
+              "title": "中대사 “한미동맹 현대화, 中겨냥해선 안돼…관세전쟁 끝까지 응전”",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/world/12219976"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-236",
+          "id": "e261128-236",
           "rank_by_count": 236,
-          "name": "제일기획, 2027년 정기 임원인사 단행...권현정·홍상우 부사장 승진",
+          "name": "“상급지 갈아타기 직전, 주식 폭망해 포기”…내 집 마련의 꿈도 ‘흔들’",
           "easy": "",
-          "quote": "제일기획, 2027년 정기 임원인사 단행...권현정·홍상우 부사장 승진",
+          "quote": "“상급지 갈아타기 직전, 주식 폭망해 포기”…내 집 마련의 꿈도 ‘흔들’",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1542,
-              "title": "제일기획, 2027년 정기 임원인사 단행...권현정·홍상우 부사장 승진",
-              "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219525"
+              "n": 2443,
+              "title": "“상급지 갈아타기 직전, 주식 폭망해 포기”…내 집 마련의 꿈도 ‘흔들’",
+              "source_name": "매일경제 경제",
+              "link": "https://www.mk.co.kr/news/economy/12219955"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-237",
+          "id": "e261128-237",
           "rank_by_count": 237,
-          "name": "IMM컨소, 12년 보유 끝 현대LNG해운 매각 마무리",
+          "name": "‘트리플 할인’일 때 담아서 키워볼까…1년 만에 48% 오른 ETF [이번주 찜할 ETF]",
           "easy": "",
-          "quote": "IMM컨소, 12년 보유 끝 현대LNG해운 매각 마무리",
+          "quote": "‘트리플 할인’일 때 담아서 키워볼까…1년 만에 48% 오른 ETF [이번주 찜할 ETF]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1543,
-              "title": "IMM컨소, 12년 보유 끝 현대LNG해운 매각 마무리",
+              "n": 2444,
+              "title": "‘트리플 할인’일 때 담아서 키워볼까…1년 만에 48% 오른 ETF [이번주 찜할 ETF]",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219459"
+              "link": "https://www.mk.co.kr/news/stock/12220445"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-238",
+          "id": "e261128-238",
           "rank_by_count": 238,
-          "name": "日 키옥시아, 엔비디아와 SSD 실증···韓 HBM 일부 대체 노려",
+          "name": "\"노후 생활비·자녀 결혼자금 … 모든 돈에 꼬리표를 붙여라\"",
           "easy": "",
-          "quote": "日 키옥시아, 엔비디아와 SSD 실증···韓 HBM 일부 대체 노려",
+          "quote": "\"노후 생활비·자녀 결혼자금 … 모든 돈에 꼬리표를 붙여라\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1544,
-              "title": "日 키옥시아, 엔비디아와 SSD 실증···韓 HBM 일부 대체 노려",
+              "n": 2446,
+              "title": "\"노후 생활비·자녀 결혼자금 … 모든 돈에 꼬리표를 붙여라\"",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/world/12219457"
+              "link": "https://www.mk.co.kr/news/stock/12220398"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-239",
+          "id": "e261128-239",
           "rank_by_count": 239,
-          "name": "ETF 10년새 23배 성장…자본硏 “액티브 ETF 규제 완화해야”",
+          "name": "美 세포배양 로봇社 셀트리오, 韓 상장 속도",
           "easy": "",
-          "quote": "ETF 10년새 23배 성장…자본硏 “액티브 ETF 규제 완화해야”",
+          "quote": "美 세포배양 로봇社 셀트리오, 韓 상장 속도",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1545,
-              "title": "ETF 10년새 23배 성장…자본硏 “액티브 ETF 규제 완화해야”",
+              "n": 2447,
+              "title": "美 세포배양 로봇社 셀트리오, 韓 상장 속도",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219453"
+              "link": "https://www.mk.co.kr/news/stock/12220397"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-240",
+          "id": "e261128-240",
           "rank_by_count": 240,
-          "name": "[단독] 금감원, 공개매수신고서 심사 강화한다…일반주주 보호 포석",
+          "name": "'증안펀드 증액 기대감'… 하루 8% 튀어 오른 코스닥",
           "easy": "",
-          "quote": "[단독] 금감원, 공개매수신고서 심사 강화한다…일반주주 보호 포석",
+          "quote": "'증안펀드 증액 기대감'… 하루 8% 튀어 오른 코스닥",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1546,
-              "title": "[단독] 금감원, 공개매수신고서 심사 강화한다…일반주주 보호 포석",
+              "n": 2448,
+              "title": "'증안펀드 증액 기대감'… 하루 8% 튀어 오른 코스닥",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219280"
+              "link": "https://www.mk.co.kr/news/stock/12220396"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-241",
+          "id": "e261128-241",
           "rank_by_count": 241,
-          "name": "“2028년, 위고비 복제약 출시합니다”…월 1회 비만약도 개발중인 K제약",
+          "name": "비트코인 현물 ETF, 출시 이후 최대 월간 순유출…XRP만 나 홀로 순유입 전환[엠블록레터]",
           "easy": "",
-          "quote": "“2028년, 위고비 복제약 출시합니다”…월 1회 비만약도 개발중인 K제약",
+          "quote": "비트코인 현물 ETF, 출시 이후 최대 월간 순유출…XRP만 나 홀로 순유입 전환[엠블록레터]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1547,
-              "title": "“2028년, 위고비 복제약 출시합니다”…월 1회 비만약도 개발중인 K제약",
+              "n": 2449,
+              "title": "비트코인 현물 ETF, 출시 이후 최대 월간 순유출…XRP만 나 홀로 순유입 전환[엠블록레터]",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/it/12219422"
+              "link": "https://www.mk.co.kr/news/stock/12220356"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-242",
+          "id": "e261128-242",
           "rank_by_count": 242,
-          "name": "초고수, 기준금리 인상에 금융주 손 떼고 대한항공 담았다[주식 초고수는 지금]",
+          "name": "뿔난 카카오엔터 연예인 주주들…“카카오 분할 막아달라”",
           "easy": "",
-          "quote": "초고수, 기준금리 인상에 금융주 손 떼고 대한항공 담았다[주식 초고수는 지금]",
+          "quote": "뿔난 카카오엔터 연예인 주주들…“카카오 분할 막아달라”",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1548,
-              "title": "초고수, 기준금리 인상에 금융주 손 떼고 대한항공 담았다[주식 초고수는 지금]",
+              "n": 2451,
+              "title": "뿔난 카카오엔터 연예인 주주들…“카카오 분할 막아달라”",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219395"
+              "link": "https://www.mk.co.kr/news/stock/12220295"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-243",
+          "id": "e261128-243",
           "rank_by_count": 243,
-          "name": "[인기검색TOP5] 셀로맥스사이언스, 미래에셋벤처투자, 나라스페이스테크놀로지, 나무가, 삼성전기",
+          "name": "증시 ‘들었다 놨다’ 외국인 “하루 만에 1조 넘게 샀다”…코스피 4900선 회복",
           "easy": "",
-          "quote": "[인기검색TOP5] 셀로맥스사이언스, 미래에셋벤처투자, 나라스페이스테크놀로지, 나무가, 삼성전기",
+          "quote": "증시 ‘들었다 놨다’ 외국인 “하루 만에 1조 넘게 샀다”…코스피 4900선 회복",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1549,
-              "title": "[인기검색TOP5] 셀로맥스사이언스, 미래에셋벤처투자, 나라스페이스테크놀로지, 나무가, 삼성전기",
+              "n": 2452,
+              "title": "증시 ‘들었다 놨다’ 외국인 “하루 만에 1조 넘게 샀다”…코스피 4900선 회복",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219388"
+              "link": "https://www.mk.co.kr/news/stock/12220228"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-244",
+          "id": "e261128-244",
           "rank_by_count": 244,
-          "name": "홈플러스 매각에 1곳 인수의향서 제출…인수여력이 관건",
+          "name": "5% 뛴 SK하이닉스 담고 4.7% 오른 삼성전자 던졌다…초고수, 삼전닉스 정반대 매매[주식 초고수는 지금]",
           "easy": "",
-          "quote": "홈플러스 매각에 1곳 인수의향서 제출…인수여력이 관건",
+          "quote": "5% 뛴 SK하이닉스 담고 4.7% 오른 삼성전자 던졌다…초고수, 삼전닉스 정반대 매매[주식 초고수는 지금]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1550,
-              "title": "홈플러스 매각에 1곳 인수의향서 제출…인수여력이 관건",
+              "n": 2453,
+              "title": "5% 뛴 SK하이닉스 담고 4.7% 오른 삼성전자 던졌다…초고수, 삼전닉스 정반대 매매[주식 초고수는 지금]",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219327"
+              "link": "https://www.mk.co.kr/news/stock/12220218"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-245",
+          "id": "e261128-245",
           "rank_by_count": 245,
-          "name": "KB증권, 시각장애인 금융서비스 문턱 낮춘다…고객 목소리 직접 청취",
+          "name": "F4 “공매도 특이동향 현재로선 없어...위법 혐의 엄중 대응”",
           "easy": "",
-          "quote": "KB증권, 시각장애인 금융서비스 문턱 낮춘다…고객 목소리 직접 청취",
+          "quote": "F4 “공매도 특이동향 현재로선 없어...위법 혐의 엄중 대응”",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1551,
-              "title": "KB증권, 시각장애인 금융서비스 문턱 낮춘다…고객 목소리 직접 청취",
+              "n": 2454,
+              "title": "F4 “공매도 특이동향 현재로선 없어...위법 혐의 엄중 대응”",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219293"
+              "link": "https://www.mk.co.kr/news/stock/12220186"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-246",
+          "id": "e261128-246",
           "rank_by_count": 246,
-          "name": "“출렁이는 증시, 연말 절세 어떻게?”…우리투자증권, 30일 투자 웨비나 개최",
-          "easy": "",
-          "quote": "“출렁이는 증시, 연말 절세 어떻게?”…우리투자증권, 30일 투자 웨비나 개최",
+          "name": "한은 기준금리 올린 날 무슨 일이?…국고채 만기별로 희비 엇갈린 이유",
+          "easy": "한국은행이 기준금리를 올린 날 국고채 만기별로 희비가 엇갈렸습니다. 채권 시장의 반응이 만기마다 다르게 나타났는데요. 쉽게 말하면 금리 인상에 따라 채권별로 다른 결과가 나왔다는 겁니다.",
+          "quote": "한은 기준금리 올린 날 무슨 일이?…국고채 만기별로 희비 엇갈린 이유",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1552,
-              "title": "“출렁이는 증시, 연말 절세 어떻게?”…우리투자증권, 30일 투자 웨비나 개최",
+              "n": 2455,
+              "title": "한은 기준금리 올린 날 무슨 일이?…국고채 만기별로 희비 엇갈린 이유",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219286"
+              "link": "https://www.mk.co.kr/news/stock/12220173"
             }
           ],
-          "flags": [],
+          "flags": [
+            "쉬운 요약 = 고른 뒤 채움(합친 제목 기준)"
+          ],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-247",
+          "id": "e261128-247",
           "rank_by_count": 247,
-          "name": "티로보틱스, CES 2027서 제조현장용 휴머노이드 ‘TR-WORKS’ 첫선",
+          "name": "“100만원부터 가입 가능”…신한투자증권, 연 5% 발행어음 출시",
           "easy": "",
-          "quote": "티로보틱스, CES 2027서 제조현장용 휴머노이드 ‘TR-WORKS’ 첫선",
+          "quote": "“100만원부터 가입 가능”…신한투자증권, 연 5% 발행어음 출시",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1553,
-              "title": "티로보틱스, CES 2027서 제조현장용 휴머노이드 ‘TR-WORKS’ 첫선",
+              "n": 2456,
+              "title": "“100만원부터 가입 가능”…신한투자증권, 연 5% 발행어음 출시",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219247"
+              "link": "https://www.mk.co.kr/news/stock/12220086"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-248",
+          "id": "e261128-248",
           "rank_by_count": 248,
-          "name": "퇴직연금 디폴트옵션, 어디가 제일 잘하나…미래에셋證, 업계 1위",
+          "name": "AI가 만들어 낸 ‘속도의 역전’…北핵보다 北해킹이 무서운 이유 [기자24시]",
           "easy": "",
-          "quote": "퇴직연금 디폴트옵션, 어디가 제일 잘하나…미래에셋證, 업계 1위",
+          "quote": "AI가 만들어 낸 ‘속도의 역전’…北핵보다 北해킹이 무서운 이유 [기자24시]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1554,
-              "title": "퇴직연금 디폴트옵션, 어디가 제일 잘하나…미래에셋證, 업계 1위",
+              "n": 2457,
+              "title": "AI가 만들어 낸 ‘속도의 역전’…北핵보다 北해킹이 무서운 이유 [기자24시]",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219232"
+              "link": "https://www.mk.co.kr/news/stock/12220044"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-249",
+          "id": "e261128-249",
           "rank_by_count": 249,
-          "name": "웨이비스, 한화시스템서 천마 핵심 모듈 후속 수주…누적 105억 원 돌파",
+          "name": "더시에나는 왜 골프존카운티를 인수하려 하나",
           "easy": "",
-          "quote": "웨이비스, 한화시스템서 천마 핵심 모듈 후속 수주…누적 105억 원 돌파",
+          "quote": "더시에나는 왜 골프존카운티를 인수하려 하나",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1555,
-              "title": "웨이비스, 한화시스템서 천마 핵심 모듈 후속 수주…누적 105억 원 돌파",
+              "n": 2458,
+              "title": "더시에나는 왜 골프존카운티를 인수하려 하나",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219212"
+              "link": "https://www.mk.co.kr/news/stock/12220033"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-250",
+          "id": "e261128-250",
           "rank_by_count": 250,
-          "name": "삼성 금융계열사 5곳, 임원 28명 승진…부사장 9명·상무 19명",
+          "name": "SK하이닉스 하루 만에 매수 1위로 돌렸다…초고수, 삼성전자은 매도[주식 초고수는 지금]",
           "easy": "",
-          "quote": "삼성 금융계열사 5곳, 임원 28명 승진…부사장 9명·상무 19명",
+          "quote": "SK하이닉스 하루 만에 매수 1위로 돌렸다…초고수, 삼성전자은 매도[주식 초고수는 지금]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1556,
-              "title": "삼성 금융계열사 5곳, 임원 28명 승진…부사장 9명·상무 19명",
+              "n": 2459,
+              "title": "SK하이닉스 하루 만에 매수 1위로 돌렸다…초고수, 삼성전자은 매도[주식 초고수는 지금]",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/economy/12219209"
+              "link": "https://www.mk.co.kr/news/stock/12220025"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-251",
+          "id": "e261128-251",
           "rank_by_count": 251,
-          "name": "파루 최대주주 지본, 파루 주식 5억원 추가 매수",
+          "name": "[속보] 코스닥 5%대 급등에 매수 사이드카 발동",
           "easy": "",
-          "quote": "파루 최대주주 지본, 파루 주식 5억원 추가 매수",
+          "quote": "[속보] 코스닥 5%대 급등에 매수 사이드카 발동",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1557,
-              "title": "파루 최대주주 지본, 파루 주식 5억원 추가 매수",
+              "n": 2461,
+              "title": "[속보] 코스닥 5%대 급등에 매수 사이드카 발동",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/business/12219173"
+              "link": "https://www.mk.co.kr/news/stock/12219974"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-252",
+          "id": "e261128-252",
           "rank_by_count": 252,
-          "name": "한은 금리 인상은 선반영…금융지주 주가 일제히 하락",
+          "name": "[MK시그널] 에스엘, 전동화 부품 성장 및 로봇 사업 확장 기대감 등에 주가 상승세... MK시그널 추천 후 상승률 12.82% 기록",
           "easy": "",
-          "quote": "한은 금리 인상은 선반영…금융지주 주가 일제히 하락",
+          "quote": "[MK시그널] 에스엘, 전동화 부품 성장 및 로봇 사업 확장 기대감 등에 주가 상승세... MK시그널 추천 후 상승률 12.82% 기록",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1558,
-              "title": "한은 금리 인상은 선반영…금융지주 주가 일제히 하락",
+              "n": 2463,
+              "title": "[MK시그널] 에스엘, 전동화 부품 성장 및 로봇 사업 확장 기대감 등에 주가 상승세... MK시그널 추천 후 상승률 12.82% 기록",
               "source_name": "매일경제 증권",
-              "link": "https://www.mk.co.kr/news/stock/12219126"
+              "link": "https://www.mk.co.kr/news/stock/12219932"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-253",
+          "id": "e261128-253",
           "rank_by_count": 253,
-          "name": "KS인더스트리, 50억원 유상증자…프라임라이트투자조합1호에 제3자배정",
+          "name": "[MK 골든크로스 돌파종목 : 아이티엠반도체(084850) & 인바디(041830)]",
           "easy": "",
-          "quote": "KS인더스트리, 50억원 유상증자…프라임라이트투자조합1호에 제3자배정",
+          "quote": "[MK 골든크로스 돌파종목 : 아이티엠반도체(084850) & 인바디(041830)]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1559,
-              "title": "KS인더스트리, 50억원 유상증자…프라임라이트투자조합1호에 제3자배정",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126185200008"
+              "n": 2464,
+              "title": "[MK 골든크로스 돌파종목 : 아이티엠반도체(084850) & 인바디(041830)]",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219929"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-254",
+          "id": "e261128-254",
           "rank_by_count": 254,
-          "name": "오세훈·김은혜, 부동산 정책 공조…내달 1일 세미나 공동 개최(종합)",
+          "name": "브랜드501 인수한 에이피알…증권가 “인수가 3900억은 솔직히” [오늘 나온 보고서]",
           "easy": "",
-          "quote": "오세훈·김은혜, 부동산 정책 공조…내달 1일 세미나 공동 개최(종합)",
+          "quote": "브랜드501 인수한 에이피알…증권가 “인수가 3900억은 솔직히” [오늘 나온 보고서]",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1561,
-              "title": "오세훈·김은혜, 부동산 정책 공조…내달 1일 세미나 공동 개최(종합)",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126122651001"
+              "n": 2465,
+              "title": "브랜드501 인수한 에이피알…증권가 “인수가 3900억은 솔직히” [오늘 나온 보고서]",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219844"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-255",
+          "id": "e261128-255",
           "rank_by_count": 255,
-          "name": "'국세外 걷으면 간판 바꿔야' 지적에 안덕수 \"고민해보겠다\"(종합2보)",
+          "name": "DS투자증권 “SK스퀘어, 4조3000억 주주환원 전망…당초 계획의 14배”",
           "easy": "",
-          "quote": "'국세外 걷으면 간판 바꿔야' 지적에 안덕수 \"고민해보겠다\"(종합2보)",
+          "quote": "DS투자증권 “SK스퀘어, 4조3000억 주주환원 전망…당초 계획의 14배”",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1562,
-              "title": "'국세外 걷으면 간판 바꿔야' 지적에 안덕수 \"고민해보겠다\"(종합2보)",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126091352002"
+              "n": 2466,
+              "title": "DS투자증권 “SK스퀘어, 4조3000억 주주환원 전망…당초 계획의 14배”",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219839"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-256",
+          "id": "e261128-256",
           "rank_by_count": 256,
-          "name": "李대통령 \"정부지원으로 성공한 기업, 이익 독차지 말고 재투자\"",
+          "name": "에이피알, 틱톡숍서 맞붙던 경쟁사 품었다…목표가↑",
           "easy": "",
-          "quote": "李대통령 \"정부지원으로 성공한 기업, 이익 독차지 말고 재투자\"",
+          "quote": "에이피알, 틱톡숍서 맞붙던 경쟁사 품었다…목표가↑",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1563,
-              "title": "李대통령 \"정부지원으로 성공한 기업, 이익 독차지 말고 재투자\"",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126176100001"
+              "n": 2467,
+              "title": "에이피알, 틱톡숍서 맞붙던 경쟁사 품었다…목표가↑",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219832"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-257",
+          "id": "e261128-257",
           "rank_by_count": 257,
-          "name": "무디스 \"AI확산에 동일 산업 내 기업 간 신용도 격차 확대될 것\"",
+          "name": "팔사람은 다 팔았다던데... 주가 V자 반등 안나온 이유",
           "easy": "",
-          "quote": "무디스 \"AI확산에 동일 산업 내 기업 간 신용도 격차 확대될 것\"",
+          "quote": "팔사람은 다 팔았다던데... 주가 V자 반등 안나온 이유",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1564,
-              "title": "무디스 \"AI확산에 동일 산업 내 기업 간 신용도 격차 확대될 것\"",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126182500008"
+              "n": 2468,
+              "title": "팔사람은 다 팔았다던데... 주가 V자 반등 안나온 이유",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/business/12219828"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-258",
+          "id": "e261128-258",
           "rank_by_count": 258,
-          "name": "[인사] 현대해상",
+          "name": "“솔직히 당신도 공매도 하고싶잖아”…‘하락베팅’ 이달 5% 급증",
           "easy": "",
-          "quote": "[인사] 현대해상",
+          "quote": "“솔직히 당신도 공매도 하고싶잖아”…‘하락베팅’ 이달 5% 급증",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1565,
-              "title": "[인사] 현대해상",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126180100002"
+              "n": 2469,
+              "title": "“솔직히 당신도 공매도 하고싶잖아”…‘하락베팅’ 이달 5% 급증",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219806"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-259",
+          "id": "e261128-259",
           "rank_by_count": 259,
-          "name": "천호성 전북교육감, 지방교육재정교부금 개편 관련 가정통신문",
+          "name": "‘트리플 할인’일 때 담아서 키워볼까 … 1년 만에 48% 오른 ETF",
           "easy": "",
-          "quote": "천호성 전북교육감, 지방교육재정교부금 개편 관련 가정통신문",
+          "quote": "‘트리플 할인’일 때 담아서 키워볼까 … 1년 만에 48% 오른 ETF",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1566,
-              "title": "천호성 전북교육감, 지방교육재정교부금 개편 관련 가정통신문",
-              "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126174300055"
+              "n": 2470,
+              "title": "‘트리플 할인’일 때 담아서 키워볼까 … 1년 만에 48% 오른 ETF",
+              "source_name": "매일경제 증권",
+              "link": "https://www.mk.co.kr/news/stock/12219561"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-260",
+          "id": "e261128-260",
           "rank_by_count": 260,
-          "name": "원주시의회 산업경제위, 기업·인공지능 교육 현장 점검",
+          "name": "'AI 시대' 미래준비 최고 도시는 샌프란시스코…서울 8위로 상승",
           "easy": "",
-          "quote": "원주시의회 산업경제위, 기업·인공지능 교육 현장 점검",
+          "quote": "'AI 시대' 미래준비 최고 도시는 샌프란시스코…서울 8위로 상승",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1568,
-              "title": "원주시의회 산업경제위, 기업·인공지능 교육 현장 점검",
+              "n": 2473,
+              "title": "'AI 시대' 미래준비 최고 도시는 샌프란시스코…서울 8위로 상승",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126176000062"
+              "link": "https://www.yna.co.kr/view/AKR20261127169800371"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-261",
+          "id": "e261128-261",
           "rank_by_count": 261,
-          "name": "한은, 12월 최대 5.7조원 규모 통화안정증권 발행",
+          "name": "정부, '연속 야간근로 3일 이하 제한' 추진…초심야 별도 관리",
           "easy": "",
-          "quote": "한은, 12월 최대 5.7조원 규모 통화안정증권 발행",
+          "quote": "정부, '연속 야간근로 3일 이하 제한' 추진…초심야 별도 관리",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1569,
-              "title": "한은, 12월 최대 5.7조원 규모 통화안정증권 발행",
+              "n": 2474,
+              "title": "정부, '연속 야간근로 3일 이하 제한' 추진…초심야 별도 관리",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126175000002"
+              "link": "https://www.yna.co.kr/view/AKR20261127166100530"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-262",
+          "id": "e261128-262",
           "rank_by_count": 262,
-          "name": "송미령 장관 \"토마토 바이러스 농가 보상…휴경 자금도 지원\"",
+          "name": "피노, 188억5천만원 유상증자…이케이케이알파제이호사모투자합자회사에 제3자배정",
           "easy": "",
-          "quote": "송미령 장관 \"토마토 바이러스 농가 보상…휴경 자금도 지원\"",
+          "quote": "피노, 188억5천만원 유상증자…이케이케이알파제이호사모투자합자회사에 제3자배정",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1570,
-              "title": "송미령 장관 \"토마토 바이러스 농가 보상…휴경 자금도 지원\"",
+              "n": 2476,
+              "title": "피노, 188억5천만원 유상증자…이케이케이알파제이호사모투자합자회사에 제3자배정",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126132800030"
+              "link": "https://www.yna.co.kr/view/AKR20261127159500008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-263",
+          "id": "e261128-263",
           "rank_by_count": 263,
-          "name": "재경부, 12월 국고채 2.2조원 발행…개인투자용은 미발행",
+          "name": "노사정, 초광역특구 기간제 논의 매듭…다음 의제 '노사관계'",
           "easy": "",
-          "quote": "재경부, 12월 국고채 2.2조원 발행…개인투자용은 미발행",
+          "quote": "노사정, 초광역특구 기간제 논의 매듭…다음 의제 '노사관계'",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1571,
-              "title": "재경부, 12월 국고채 2.2조원 발행…개인투자용은 미발행",
+              "n": 2477,
+              "title": "노사정, 초광역특구 기간제 논의 매듭…다음 의제 '노사관계'",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126173400002"
+              "link": "https://www.yna.co.kr/view/AKR20261127161700530"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-264",
+          "id": "e261128-264",
           "rank_by_count": 264,
-          "name": "박종복 은행연합회장 선출…신한금융 사외이사 사임(종합)",
+          "name": "AI 보안기업 에임인텔리전스, K-디지털 챔피언십 대상",
           "easy": "",
-          "quote": "박종복 은행연합회장 선출…신한금융 사외이사 사임(종합)",
+          "quote": "AI 보안기업 에임인텔리전스, K-디지털 챔피언십 대상",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1572,
-              "title": "박종복 은행연합회장 선출…신한금융 사외이사 사임(종합)",
+              "n": 2478,
+              "title": "AI 보안기업 에임인텔리전스, K-디지털 챔피언십 대상",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126051451002"
+              "link": "https://www.yna.co.kr/view/AKR20261127156800017"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-265",
+          "id": "e261128-265",
           "rank_by_count": 265,
-          "name": "경남도, 거제 남부관광단지 조성 승인…멸종위기 대흥란 이식",
+          "name": "김범수 'SM시세조종 혐의' 무죄 확정…공소청 상고 포기",
           "easy": "",
-          "quote": "경남도, 거제 남부관광단지 조성 승인…멸종위기 대흥란 이식",
+          "quote": "김범수 'SM시세조종 혐의' 무죄 확정…공소청 상고 포기",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1573,
-              "title": "경남도, 거제 남부관광단지 조성 승인…멸종위기 대흥란 이식",
+              "n": 2479,
+              "title": "김범수 'SM시세조종 혐의' 무죄 확정…공소청 상고 포기",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126173600052"
+              "link": "https://www.yna.co.kr/view/AKR20261127156300004"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-266",
+          "id": "e261128-266",
           "rank_by_count": 266,
-          "name": "해진공, 해상공급망 복원력·북극항로 해법 모색",
+          "name": "대동, 550억원 주주배정 유상증자 결정",
           "easy": "",
-          "quote": "해진공, 해상공급망 복원력·북극항로 해법 모색",
+          "quote": "대동, 550억원 주주배정 유상증자 결정",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1575,
-              "title": "해진공, 해상공급망 복원력·북극항로 해법 모색",
+              "n": 2480,
+              "title": "대동, 550억원 주주배정 유상증자 결정",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126168800051"
+              "link": "https://www.yna.co.kr/view/AKR20261127146900008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-267",
+          "id": "e261128-267",
           "rank_by_count": 267,
-          "name": "삼성카드, 배당성향 50%로 높인다…자사주 소각도 추진",
+          "name": "[연합뉴스 이 시각 헤드라인] - 18:00",
           "easy": "",
-          "quote": "삼성카드, 배당성향 50%로 높인다…자사주 소각도 추진",
+          "quote": "[연합뉴스 이 시각 헤드라인] - 18:00",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1577,
-              "title": "삼성카드, 배당성향 50%로 높인다…자사주 소각도 추진",
+              "n": 2482,
+              "title": "[연합뉴스 이 시각 헤드라인] - 18:00",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126170400002"
+              "link": "https://www.yna.co.kr/view/AKR20261127144700011"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-268",
+          "id": "e261128-268",
           "rank_by_count": 268,
-          "name": "신한은행, 강원체육 발전·우수선수 육성에 8천만원 기탁",
+          "name": "나주 육용오리 농장서 고병원성 AI 확진…이달 들어 11번째",
           "easy": "",
-          "quote": "신한은행, 강원체육 발전·우수선수 육성에 8천만원 기탁",
+          "quote": "나주 육용오리 농장서 고병원성 AI 확진…이달 들어 11번째",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1578,
-              "title": "신한은행, 강원체육 발전·우수선수 육성에 8천만원 기탁",
+              "n": 2484,
+              "title": "나주 육용오리 농장서 고병원성 AI 확진…이달 들어 11번째",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126167900062"
+              "link": "https://www.yna.co.kr/view/AKR20261127152300030"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-269",
+          "id": "e261128-269",
           "rank_by_count": 269,
-          "name": "무신사 스탠다드, 서울숲 스토어 개점…\"지역 상권 활성화 견인\"(종합)",
+          "name": "순천서 전남광주경영자포럼 개최…\"성장 기반 마련\"",
           "easy": "",
-          "quote": "무신사 스탠다드, 서울숲 스토어 개점…\"지역 상권 활성화 견인\"(종합)",
+          "quote": "순천서 전남광주경영자포럼 개최…\"성장 기반 마련\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1579,
-              "title": "무신사 스탠다드, 서울숲 스토어 개점…\"지역 상권 활성화 견인\"(종합)",
+              "n": 2485,
+              "title": "순천서 전남광주경영자포럼 개최…\"성장 기반 마련\"",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126052651030"
+              "link": "https://www.yna.co.kr/view/AKR20261127151200054"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-270",
+          "id": "e261128-270",
           "rank_by_count": 270,
-          "name": "울산중구의원 \"몰아주기 논란 업체와 또 계약…서류 오류 방치\"",
+          "name": "인터넷은행 3사, 3분기 중·저신용자 대출비중 목표치 30% 넘겨",
           "easy": "",
-          "quote": "울산중구의원 \"몰아주기 논란 업체와 또 계약…서류 오류 방치\"",
+          "quote": "인터넷은행 3사, 3분기 중·저신용자 대출비중 목표치 30% 넘겨",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1580,
-              "title": "울산중구의원 \"몰아주기 논란 업체와 또 계약…서류 오류 방치\"",
+              "n": 2486,
+              "title": "인터넷은행 3사, 3분기 중·저신용자 대출비중 목표치 30% 넘겨",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126161400057"
+              "link": "https://www.yna.co.kr/view/AKR20261127149500002"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-271",
+          "id": "e261128-271",
           "rank_by_count": 271,
-          "name": "춘천기업혁신파크, 수도권 바이오기업 유치 본격화",
+          "name": "서울시, 세계스마트시티기구 의장 연임…3년 더 도시협력 이끈다",
           "easy": "",
-          "quote": "춘천기업혁신파크, 수도권 바이오기업 유치 본격화",
+          "quote": "서울시, 세계스마트시티기구 의장 연임…3년 더 도시협력 이끈다",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1581,
-              "title": "춘천기업혁신파크, 수도권 바이오기업 유치 본격화",
+              "n": 2487,
+              "title": "서울시, 세계스마트시티기구 의장 연임…3년 더 도시협력 이끈다",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126167000062"
+              "link": "https://www.yna.co.kr/view/AKR20261127145400371"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-272",
+          "id": "e261128-272",
           "rank_by_count": 272,
-          "name": "드림인사이트, 30억원 제3자배정 유상증자",
+          "name": "[게시판] 무역구제제도 논문발표대회서 우수 논문 5편 시상",
           "easy": "",
-          "quote": "드림인사이트, 30억원 제3자배정 유상증자",
+          "quote": "[게시판] 무역구제제도 논문발표대회서 우수 논문 5편 시상",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1582,
-              "title": "드림인사이트, 30억원 제3자배정 유상증자",
+              "n": 2488,
+              "title": "[게시판] 무역구제제도 논문발표대회서 우수 논문 5편 시상",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126167300008"
+              "link": "https://www.yna.co.kr/view/AKR20261127143900003"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-273",
+          "id": "e261128-273",
           "rank_by_count": 273,
-          "name": "외교차관, 온두라스·과테말라 차관과 투자·개발협력 등 논의",
+          "name": "국힘 '10·15 대책' 취소소송 패소…法 \"시장 안정 더 중요\"(종합)",
           "easy": "",
-          "quote": "외교차관, 온두라스·과테말라 차관과 투자·개발협력 등 논의",
+          "quote": "국힘 '10·15 대책' 취소소송 패소…法 \"시장 안정 더 중요\"(종합)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1583,
-              "title": "외교차관, 온두라스·과테말라 차관과 투자·개발협력 등 논의",
+              "n": 2489,
+              "title": "국힘 '10·15 대책' 취소소송 패소…法 \"시장 안정 더 중요\"(종합)",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126166500504"
+              "link": "https://www.yna.co.kr/view/AKR20261127099751004"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-274",
+          "id": "e261128-274",
           "rank_by_count": 274,
-          "name": "국고채 금리, 기준금리 인상·매파적 점도표에 상승(종합)",
+          "name": "울산항만공사 사장 사표 수리…조만간 의원면직 처리",
           "easy": "",
-          "quote": "국고채 금리, 기준금리 인상·매파적 점도표에 상승(종합)",
+          "quote": "울산항만공사 사장 사표 수리…조만간 의원면직 처리",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1584,
-              "title": "국고채 금리, 기준금리 인상·매파적 점도표에 상승(종합)",
+              "n": 2490,
+              "title": "울산항만공사 사장 사표 수리…조만간 의원면직 처리",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126162551008"
+              "link": "https://www.yna.co.kr/view/AKR20261127141700051"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-275",
+          "id": "e261128-275",
           "rank_by_count": 275,
-          "name": "삼성화재 부사장에 조번형·황상민 선임",
+          "name": "국고채 금리, 증시 강세에 중단기물 상승…초장기물은 하락(종합)",
           "easy": "",
-          "quote": "삼성화재 부사장에 조번형·황상민 선임",
+          "quote": "국고채 금리, 증시 강세에 중단기물 상승…초장기물은 하락(종합)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1585,
-              "title": "삼성화재 부사장에 조번형·황상민 선임",
+              "n": 2491,
+              "title": "국고채 금리, 증시 강세에 중단기물 상승…초장기물은 하락(종합)",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126163100002"
+              "link": "https://www.yna.co.kr/view/AKR20261127135151008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-276",
+          "id": "e261128-276",
           "rank_by_count": 276,
-          "name": "한-에콰도르 전략적경제협력협정 비준동의안, 외통위 통과",
+          "name": "iM금융지주, 차기 회장 후보군 황병우 등 3명으로 압축",
           "easy": "",
-          "quote": "한-에콰도르 전략적경제협력협정 비준동의안, 외통위 통과",
+          "quote": "iM금융지주, 차기 회장 후보군 황병우 등 3명으로 압축",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1586,
-              "title": "한-에콰도르 전략적경제협력협정 비준동의안, 외통위 통과",
+              "n": 2492,
+              "title": "iM금융지주, 차기 회장 후보군 황병우 등 3명으로 압축",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126152900001"
+              "link": "https://www.yna.co.kr/view/AKR20261127136500053"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-277",
+          "id": "e261128-277",
           "rank_by_count": 277,
-          "name": "공사 멈춘 광주대표도서관에 지방채 90억 편성",
+          "name": "韓총리 \"올해 주택공급 목표 달성 총력…내년 준비도 서둘러야\"",
           "easy": "",
-          "quote": "공사 멈춘 광주대표도서관에 지방채 90억 편성",
+          "quote": "韓총리 \"올해 주택공급 목표 달성 총력…내년 준비도 서둘러야\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1587,
-              "title": "공사 멈춘 광주대표도서관에 지방채 90억 편성",
+              "n": 2493,
+              "title": "韓총리 \"올해 주택공급 목표 달성 총력…내년 준비도 서둘러야\"",
               "source_name": "연합뉴스 경제",
-              "link": "https://www.yna.co.kr/view/AKR20261126161900054"
+              "link": "https://www.yna.co.kr/view/AKR20261127133800001"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-278",
+          "id": "e261128-278",
           "rank_by_count": 278,
-          "name": "IPO 한파에 ANH스트럭쳐도 코스닥 상장 철회…이달만 6곳째",
+          "name": "국고채 금리 대체로 상승…3년물 연 3.685%",
           "easy": "",
-          "quote": "IPO 한파에 ANH스트럭쳐도 코스닥 상장 철회…이달만 6곳째",
+          "quote": "국고채 금리 대체로 상승…3년물 연 3.685%",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1591,
-              "title": "IPO 한파에 ANH스트럭쳐도 코스닥 상장 철회…이달만 6곳째",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126179500008"
+              "n": 2494,
+              "title": "국고채 금리 대체로 상승…3년물 연 3.685%",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127135100008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-279",
+          "id": "e261128-279",
           "rank_by_count": 279,
-          "name": "[게시판] 금투협·증권사 14곳, 자립준비청년 139명에 ISA 후원",
+          "name": "충북지사, 지방시대위원장에 시장형 공기업 등 배치 건의(종합)",
           "easy": "",
-          "quote": "[게시판] 금투협·증권사 14곳, 자립준비청년 139명에 ISA 후원",
+          "quote": "충북지사, 지방시대위원장에 시장형 공기업 등 배치 건의(종합)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1592,
-              "title": "[게시판] 금투협·증권사 14곳, 자립준비청년 139명에 ISA 후원",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126176700008"
+              "n": 2495,
+              "title": "충북지사, 지방시대위원장에 시장형 공기업 등 배치 건의(종합)",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127039551064"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-280",
+          "id": "e261128-280",
           "rank_by_count": 280,
-          "name": "\"미 칩규제 강화, 中 새 AI모델 개발 직격…출시 연기\"(종합)",
+          "name": "엔비디아발 'AI 조정' 잦아드나…코스피·코스닥, 급등 마감(종합)",
           "easy": "",
-          "quote": "\"미 칩규제 강화, 中 새 AI모델 개발 직격…출시 연기\"(종합)",
+          "quote": "엔비디아발 'AI 조정' 잦아드나…코스피·코스닥, 급등 마감(종합)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1593,
-              "title": "\"미 칩규제 강화, 中 새 AI모델 개발 직격…출시 연기\"(종합)",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126128551009"
+              "n": 2496,
+              "title": "엔비디아발 'AI 조정' 잦아드나…코스피·코스닥, 급등 마감(종합)",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127078351008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-281",
+          "id": "e261128-281",
           "rank_by_count": 281,
-          "name": "에이피알, 애프터마켓서 10%대 급등",
+          "name": "[게시판] 한국거래소, 부산 여성가장 지원 키트 제작 봉사활동",
           "easy": "",
-          "quote": "에이피알, 애프터마켓서 10%대 급등",
+          "quote": "[게시판] 한국거래소, 부산 여성가장 지원 키트 제작 봉사활동",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1594,
-              "title": "에이피알, 애프터마켓서 10%대 급등",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126165900008"
+              "n": 2497,
+              "title": "[게시판] 한국거래소, 부산 여성가장 지원 키트 제작 봉사활동",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127133300008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-282",
+          "id": "e261128-282",
           "rank_by_count": 282,
-          "name": "국고채 금리 대체로 상승…3년물 연 3.622%",
+          "name": "경남제약, 40억원 유상증자…㈜엑스에 제3자배정",
           "easy": "",
-          "quote": "국고채 금리 대체로 상승…3년물 연 3.622%",
+          "quote": "경남제약, 40억원 유상증자…㈜엑스에 제3자배정",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1595,
-              "title": "국고채 금리 대체로 상승…3년물 연 3.622%",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126162500008"
+              "n": 2498,
+              "title": "경남제약, 40억원 유상증자…㈜엑스에 제3자배정",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127130900008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-283",
+          "id": "e261128-283",
           "rank_by_count": 283,
-          "name": "[표] 코스피 지수선물·옵션 시세표(26일)-3",
+          "name": "씨티 \"증안펀드 20∼40조 확대 가능…이르면 12월 1∼2조 투입\"",
           "easy": "",
-          "quote": "[표] 코스피 지수선물·옵션 시세표(26일)-3",
+          "quote": "씨티 \"증안펀드 20∼40조 확대 가능…이르면 12월 1∼2조 투입\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1596,
-              "title": "[표] 코스피 지수선물·옵션 시세표(26일)-3",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126159200008"
+              "n": 2499,
+              "title": "씨티 \"증안펀드 20∼40조 확대 가능…이르면 12월 1∼2조 투입\"",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127130600008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-284",
+          "id": "e261128-284",
           "rank_by_count": 284,
-          "name": "[표] 코스피 지수선물·옵션 시세표(26일)-2",
+          "name": "공공부문 비정규직 80만명 추산…차별해소·처우개선 논의 본격화",
           "easy": "",
-          "quote": "[표] 코스피 지수선물·옵션 시세표(26일)-2",
+          "quote": "공공부문 비정규직 80만명 추산…차별해소·처우개선 논의 본격화",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1597,
-              "title": "[표] 코스피 지수선물·옵션 시세표(26일)-2",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126159300008"
+              "n": 2500,
+              "title": "공공부문 비정규직 80만명 추산…차별해소·처우개선 논의 본격화",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127078600530"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-285",
+          "id": "e261128-285",
           "rank_by_count": 285,
-          "name": "[표] 코스피 지수선물·옵션 시세표(26일)-1",
+          "name": "[게시판] 농식품부, 27∼29일 '대한민국 과일 산업대전' 개최",
           "easy": "",
-          "quote": "[표] 코스피 지수선물·옵션 시세표(26일)-1",
+          "quote": "[게시판] 농식품부, 27∼29일 '대한민국 과일 산업대전' 개최",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1598,
-              "title": "[표] 코스피 지수선물·옵션 시세표(26일)-1",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126159400008"
+              "n": 2501,
+              "title": "[게시판] 농식품부, 27∼29일 '대한민국 과일 산업대전' 개최",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127095100030"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-286",
+          "id": "e261128-286",
           "rank_by_count": 286,
-          "name": "'5G 특화망' 유캐스트, 코스닥 신규 상장…30일 첫 거래",
+          "name": "박홍근 \"미래기금, 연기금투자풀에 일정 기간 맡기는 방향 검토\"",
           "easy": "",
-          "quote": "'5G 특화망' 유캐스트, 코스닥 신규 상장…30일 첫 거래",
+          "quote": "박홍근 \"미래기금, 연기금투자풀에 일정 기간 맡기는 방향 검토\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1599,
-              "title": "'5G 특화망' 유캐스트, 코스닥 신규 상장…30일 첫 거래",
-              "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126157700008"
+              "n": 2502,
+              "title": "박홍근 \"미래기금, 연기금투자풀에 일정 기간 맡기는 방향 검토\"",
+              "source_name": "연합뉴스 경제",
+              "link": "https://www.yna.co.kr/view/AKR20261127115900002"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-287",
+          "id": "e261128-287",
           "rank_by_count": 287,
-          "name": "'15% 할인' 광주 북구 지역화폐, 3시간 만에 91억 완판(종합)",
+          "name": "뉴욕증시, AI 관련주 반등에 상승 출발",
           "easy": "",
-          "quote": "'15% 할인' 광주 북구 지역화폐, 3시간 만에 91억 완판(종합)",
+          "quote": "뉴욕증시, AI 관련주 반등에 상승 출발",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1600,
-              "title": "'15% 할인' 광주 북구 지역화폐, 3시간 만에 91억 완판(종합)",
+              "n": 2503,
+              "title": "뉴욕증시, AI 관련주 반등에 상승 출발",
               "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126109951054"
+              "link": "https://www.yna.co.kr/view/AKR20261127170700009"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-288",
+          "id": "e261128-288",
           "rank_by_count": 288,
-          "name": "삼성생명 부사장에 '자산운용 전문가' 고윤상",
+          "name": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
           "easy": "",
-          "quote": "삼성생명 부사장에 '자산운용 전문가' 고윤상",
+          "quote": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1601,
-              "title": "삼성생명 부사장에 '자산운용 전문가' 고윤상",
+              "n": 2504,
+              "title": "SK하이닉스, 자사주 일일 매수 주문량 2배로…주주가치 제고",
               "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126157200002"
+              "link": "https://www.yna.co.kr/view/AKR20261127165200003"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-289",
+          "id": "e261128-289",
           "rank_by_count": 289,
-          "name": "'전강후약' 코스피, 0.29% 상승…전날 급락후 간신히 반등(종합)",
+          "name": "[표] 주간 거래소 기관 순매수도 상위종목",
           "easy": "",
-          "quote": "'전강후약' 코스피, 0.29% 상승…전날 급락후 간신히 반등(종합)",
+          "quote": "[표] 주간 거래소 기관 순매수도 상위종목",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1602,
-              "title": "'전강후약' 코스피, 0.29% 상승…전날 급락후 간신히 반등(종합)",
+              "n": 2505,
+              "title": "[표] 주간 거래소 기관 순매수도 상위종목",
               "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126145451008"
+              "link": "https://www.yna.co.kr/view/AKR20261127155000008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-290",
+          "id": "e261128-290",
           "rank_by_count": 290,
-          "name": "연준 의장 딜레마…인플레 억제냐 시장안정 속도조절이냐",
+          "name": "[표] 주간 코스닥 기관 순매수도 상위종목",
           "easy": "",
-          "quote": "연준 의장 딜레마…인플레 억제냐 시장안정 속도조절이냐",
+          "quote": "[표] 주간 코스닥 기관 순매수도 상위종목",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1603,
-              "title": "연준 의장 딜레마…인플레 억제냐 시장안정 속도조절이냐",
+              "n": 2506,
+              "title": "[표] 주간 코스닥 기관 순매수도 상위종목",
               "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126148200009"
+              "link": "https://www.yna.co.kr/view/AKR20261127154900008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-291",
+          "id": "e261128-291",
           "rank_by_count": 291,
-          "name": "전날 9~11% 폭락했던 삼전닉스, 0.4%·2% 찔끔 반등(종합)",
+          "name": "[표] 주간 거래소 외국인 순매수도 상위종목",
           "easy": "",
-          "quote": "전날 9~11% 폭락했던 삼전닉스, 0.4%·2% 찔끔 반등(종합)",
+          "quote": "[표] 주간 거래소 외국인 순매수도 상위종목",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1604,
-              "title": "전날 9~11% 폭락했던 삼전닉스, 0.4%·2% 찔끔 반등(종합)",
+              "n": 2507,
+              "title": "[표] 주간 거래소 외국인 순매수도 상위종목",
               "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126044251008"
+              "link": "https://www.yna.co.kr/view/AKR20261127154800008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-292",
+          "id": "e261128-292",
           "rank_by_count": 292,
-          "name": "[특징주] 태양광주, 유가급등·우주 AIDC 기대감 등에 일부 상승(종합)",
+          "name": "[표] 주간 코스닥 외국인 순매수도 상위종목",
           "easy": "",
-          "quote": "[특징주] 태양광주, 유가급등·우주 AIDC 기대감 등에 일부 상승(종합)",
+          "quote": "[표] 주간 코스닥 외국인 순매수도 상위종목",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1605,
-              "title": "[특징주] 태양광주, 유가급등·우주 AIDC 기대감 등에 일부 상승(종합)",
+              "n": 2508,
+              "title": "[표] 주간 코스닥 외국인 순매수도 상위종목",
               "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126049251008"
+              "link": "https://www.yna.co.kr/view/AKR20261127154700008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-293",
+          "id": "e261128-293",
           "rank_by_count": 293,
-          "name": "[표] 거래소 외국인 순매수도 상위종목(26일)",
+          "name": "온코닉테라퓨틱스, 애프터마켓서 10%대 급등",
           "easy": "",
-          "quote": "[표] 거래소 외국인 순매수도 상위종목(26일)",
+          "quote": "온코닉테라퓨틱스, 애프터마켓서 10%대 급등",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1606,
-              "title": "[표] 거래소 외국인 순매수도 상위종목(26일)",
+              "n": 2509,
+              "title": "온코닉테라퓨틱스, 애프터마켓서 10%대 급등",
               "source_name": "연합뉴스 마켓+",
-              "link": "https://www.yna.co.kr/view/AKR20261126149400008"
+              "link": "https://www.yna.co.kr/view/AKR20261127154100008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-294",
+          "id": "e261128-294",
           "rank_by_count": 294,
-          "name": "Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions",
+          "name": "한화갤러리아, 종로 보령빌딩 인수 추진…250억 조건부 투자확약",
           "easy": "",
-          "quote": "Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions",
+          "quote": "한화갤러리아, 종로 보령빌딩 인수 추진…250억 조건부 투자확약",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1607,
-              "title": "Agencies announce dollar thresholds for applicability of truth in lending and consumer leasing rules for consumer credit and lease transactions",
-              "source_name": "연준 보도자료",
-              "link": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125b.htm"
+              "n": 2510,
+              "title": "한화갤러리아, 종로 보령빌딩 인수 추진…250억 조건부 투자확약",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127139500030"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-295",
+          "id": "e261128-295",
           "rank_by_count": 295,
-          "name": "Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans",
+          "name": "국제유가, 중동긴장 악화·공급우려에 3주 하락세 마침표",
           "easy": "",
-          "quote": "Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans",
+          "quote": "국제유가, 중동긴장 악화·공급우려에 3주 하락세 마침표",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1608,
-              "title": "Agencies announce dollar thresholds for smaller loan exemption from appraisal requirements for higher-priced mortgage loans",
-              "source_name": "연준 보도자료",
-              "link": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261125a.htm"
+              "n": 2511,
+              "title": "국제유가, 중동긴장 악화·공급우려에 3주 하락세 마침표",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127115100009"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-296",
+          "id": "e261128-296",
           "rank_by_count": 296,
-          "name": "Meeting of 28-29 October 2026",
+          "name": "[표] 코스피 지수선물·옵션 시세표(27일)-3",
           "easy": "",
-          "quote": "Meeting of 28-29 October 2026",
+          "quote": "[표] 코스피 지수선물·옵션 시세표(27일)-3",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1621,
-              "title": "Meeting of 28-29 October 2026",
-              "source_name": "ECB 보도자료",
-              "link": "https://www.ecb.europa.eu//press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html"
+              "n": 2512,
+              "title": "[표] 코스피 지수선물·옵션 시세표(27일)-3",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127133200008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-297",
+          "id": "e261128-297",
           "rank_by_count": 297,
-          "name": "금융권 양자컴퓨팅 도입 속도…엑스게이트·아이씨티케이 노려볼까",
+          "name": "[표] 코스피 지수선물·옵션 시세표(27일)-2",
           "easy": "",
-          "quote": "금융권 양자컴퓨팅 도입 속도…엑스게이트·아이씨티케이 노려볼까",
+          "quote": "[표] 코스피 지수선물·옵션 시세표(27일)-2",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1639,
-              "title": "금융권 양자컴퓨팅 도입 속도…엑스게이트·아이씨티케이 노려볼까 - 핀포인트뉴스",
-              "source_name": "'양자컴퓨팅 기술 상용화'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9XVkxuWHlGVVdFVDBIZUtIRVlha2ZEcFhPQU9MTFBoYVlfclhGVk1YbUsxSUNFREFOLXdzZTRmbDdsUkpCR0FKY3BTNXgxN2hWSFBDQ0lqYXlFaC1fN3RzY2dkNWZKWjJiVXBSYnhHZk5JQ2d1ZlQw0gF3QVVfeXFMT1dWTG5YeUZVV0VUMEhlS0hFWWFrZkRwWE9BT0xMUGhhWV9yWEZWTVhtSzFJQ0VEQU4td3NlNGZsN2xSSkJHQUpjcFM1eDE3aFZIUENDSWpheUVoLV83dHNjZ2Q1ZkpaMmJVcFJieEdmTklDZ3VmVDA?oc=5"
+              "n": 2513,
+              "title": "[표] 코스피 지수선물·옵션 시세표(27일)-2",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127133000008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-298",
+          "id": "e261128-298",
           "rank_by_count": 298,
-          "name": "오큐티, 오류내성 양자컴 개발 핵심기술 기반 확보",
+          "name": "[표] 코스피 지수선물·옵션 시세표(27일)-1",
           "easy": "",
-          "quote": "오큐티, 오류내성 양자컴 개발 핵심기술 기반 확보",
+          "quote": "[표] 코스피 지수선물·옵션 시세표(27일)-1",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1640,
-              "title": "오큐티, 오류내성 양자컴 개발 핵심기술 기반 확보 - 매일경제",
-              "source_name": "'양자컴퓨팅 기술 상용화'",
-              "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9jV1VJWE9mRThveG84U20zeEpId014ZVBxT3k1NlAwNFYwSkZSb3hTcVdoV0JaRlNjSnpxWjJTN0ZUV0VVYkE?oc=5"
+              "n": 2514,
+              "title": "[표] 코스피 지수선물·옵션 시세표(27일)-1",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127133100008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-299",
+          "id": "e261128-299",
           "rank_by_count": 299,
-          "name": "해킹 피해 속출에 칼 빼 들었다… 이더리움 재단, 차기 업그레이드 난항 예고",
+          "name": "'미국 AI 기업 투자' 등 ETF 3종, 내달 1일 신규 상장",
           "easy": "",
-          "quote": "해킹 피해 속출에 칼 빼 들었다… 이더리움 재단, 차기 업그레이드 난항 예고",
+          "quote": "'미국 AI 기업 투자' 등 ETF 3종, 내달 1일 신규 상장",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1645,
-              "title": "해킹 피해 속출에 칼 빼 들었다… 이더리움 재단, 차기 업그레이드 난항 예고 - 핀포인트뉴스",
-              "source_name": "'양자컴퓨팅 기술 상용화'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1qTGVkTHJWb1BLVVRMdmUzVjRFRHdpT2F1NW55MGRHX1hjLUtLSXZEd1dzR0ZOekJwTUJlNEtKRkRmdDVMS0FoUVhNTm1oWlRHM2QwaE9vU0VRWE9kckZVaDVEaG1kYXZ2VjczVVc1cmpSUnZ1SDk40gF3QVVfeXFMTWpMZWRMclZvUEtVVEx2ZTNWNEVEd2lPYXU1bnkwZEdfWGMtS0tJdkR3V3NHRk56QnBNQmU0S0pGRGZ0NUxLQWhRWE1ObWhaVEczZDBoT29TRVFYT2RyRlVoNURobWRhdnZWNzNVVzVyalJSdnVIOTg?oc=5"
+              "n": 2515,
+              "title": "'미국 AI 기업 투자' 등 ETF 3종, 내달 1일 신규 상장",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127129900008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-300",
+          "id": "e261128-300",
           "rank_by_count": 300,
-          "name": "[KIST 양자 초격차, 韓·美 연결]QWC서 한국 양자 기술 뽐내...주요 美 기업과 협력 물꼬도 터",
+          "name": "원/달러 환율, 증시 반등·월말 네고에 하락…1,337.9원",
           "easy": "",
-          "quote": "[KIST 양자 초격차, 韓·美 연결]QWC서 한국 양자 기술 뽐내...주요 美 기업과 협력 물꼬도 터",
+          "quote": "원/달러 환율, 증시 반등·월말 네고에 하락…1,337.9원",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1646,
-              "title": "[KIST 양자 초격차, 韓·美 연결]QWC서 한국 양자 기술 뽐내...주요 美 기업과 협력 물꼬도 터 - 전자신문",
-              "source_name": "'양자컴퓨팅 기술 상용화'",
-              "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5SQnJBdU1MTmlhOVFUakVTVWd1eEZnNG1HXzl3Vkt4U2pCamtGUmxoMHNBLXVuSHk0Vk5Ec0FVX0hCcGNER0dZQUt5UC02dw?oc=5"
+              "n": 2516,
+              "title": "원/달러 환율, 증시 반등·월말 네고에 하락…1,337.9원",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127127600002"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-301",
+          "id": "e261128-301",
           "rank_by_count": 301,
-          "name": "대웅제약, 'TEAD1/2 저해제' 고형암 국내1상 \"IND 승인\"",
+          "name": "코스피 4.3% 상승 4,900선 회복…코스닥 8%대 급등 700선 탈환(종합)",
           "easy": "",
-          "quote": "대웅제약, 'TEAD1/2 저해제' 고형암 국내1상 \"IND 승인\"",
+          "quote": "코스피 4.3% 상승 4,900선 회복…코스닥 8%대 급등 700선 탈환(종합)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1648,
-              "title": "대웅제약, 'TEAD1/2 저해제' 고형암 국내1상 \"IND 승인\" - 바이오스펙테이터",
-              "source_name": "'바이오의약품 임상 승인'",
-              "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBSM0JpbVBvV3lfRVQweUl0ZmMxZ0NXV0NMRWt0QzE0Q3lERFNnZGZrdTF1N29zLXlmOUxzVlpmVFhMOFJDc3oxdnNtMjJiQWNaNXVtbk92dw?oc=5"
+              "n": 2517,
+              "title": "코스피 4.3% 상승 4,900선 회복…코스닥 8%대 급등 700선 탈환(종합)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127120451008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-302",
+          "id": "e261128-302",
           "rank_by_count": 302,
-          "name": "K-바이오, 비만 임상 80% 다국적사에 내줘∙∙∙국산화 과제는 ‘속도’",
-          "easy": "",
-          "quote": "K-바이오, 비만 임상 80% 다국적사에 내줘∙∙∙국산화 과제는 ‘속도’",
+          "name": "[특징주] 삼성전자 4.6%·SK하이닉스 5.4% 급등 마감(종합)",
+          "easy": "삼성전자와 SK하이닉스 주식이 급등 마감했습니다. 삼성이 4.6%, 에스케이하이닉스가 5.4% 올랐는데요. 쉽게 말하면 두 기업 모두 큰 폭으로 상승했다는 겁니다.",
+          "quote": "[특징주] 삼성전자 4.6%·SK하이닉스 5.4% 급등 마감(종합)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1649,
-              "title": "K-바이오, 비만 임상 80% 다국적사에 내줘∙∙∙국산화 과제는 ‘속도’ - 바이오타임즈",
-              "source_name": "'바이오의약품 임상 승인'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB3aUFDRGlMRTRwMnhkajVLOWxLZ1ljZ3ZXV0VCZEh3T2lmZEJnSWlyT0NqbVNoSXcteElKNWdnbWVvSGNQYUpnOXlxYVluaXNGQ1I0VlZtalRxb09vd0pMMVYzQ2h1QkVTaFh6VA?oc=5"
+              "n": 2518,
+              "title": "[특징주] 삼성전자 4.6%·SK하이닉스 5.4% 급등 마감(종합)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127032851008"
             }
           ],
-          "flags": [],
+          "flags": [
+            "쉬운 요약 = 고른 뒤 채움(합친 제목 기준)"
+          ],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-303",
+          "id": "e261128-303",
           "rank_by_count": 303,
-          "name": "단백질 시퀀싱 시장 2035년 전망: 복잡한 바이오의약품 수요가 성장 견인 - 뉴스 및 통계",
+          "name": "[표] 코스닥 기관 순매수도 상위종목(27일)",
           "easy": "",
-          "quote": "단백질 시퀀싱 시장 2035년 전망: 복잡한 바이오의약품 수요가 성장 견인 - 뉴스 및 통계",
+          "quote": "[표] 코스닥 기관 순매수도 상위종목(27일)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1654,
-              "title": "단백질 시퀀싱 시장 2035년 전망: 복잡한 바이오의약품 수요가 성장 견인 - 뉴스 및 통계 - IndexBox",
-              "source_name": "'바이오의약품 임상 승인'",
-              "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOUFowdTVKaFl5cGdmQzM4OXhqTV9pOVZORGtWbWV2R2Y5MDJQSVJ0cjdxNTFHZXhZYkpLVHR1T01obk1BYUloc0FERDlxblFpX2tNWlc1bjZlUHgzeE9fTTBtRDVUTmxkOFNoeWY2X2NLZEN2YURTaDAtZFU1b0xKZnVJZ2RPUGpMdmJrQ2toS2FoRDlybUV4VGQ3R0dKaU00TDBXbnFCRjlDNHhmVXpGY09CTlBIUXp6SnhvdXgwNUxhRUQ2Rk5YSlhERmNtTWp0?oc=5"
+              "n": 2519,
+              "title": "[표] 코스닥 기관 순매수도 상위종목(27일)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127122700008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-304",
+          "id": "e261128-304",
           "rank_by_count": 304,
-          "name": "[중국 특징주] 中 연구진, 난치성 우울증 치료용 BCI 시스템 개발",
+          "name": "[표] 코스닥 외국인 순매수도 상위종목(27일)",
           "easy": "",
-          "quote": "[중국 특징주] 中 연구진, 난치성 우울증 치료용 BCI 시스템 개발",
+          "quote": "[표] 코스닥 외국인 순매수도 상위종목(27일)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1659,
-              "title": "[중국 특징주] 中 연구진, 난치성 우울증 치료용 BCI 시스템 개발 - 뉴스핌",
-              "source_name": "'뇌과학 BCI 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB6Vy1nQUFpQ25TTEQ1RHI0ekhValBXcjdBcmhYQXRaSHlYR3FoNUZvQzdobG5WaFpRdnJaZ2tHVVZDTWRBZ2VWaG9QNE9uWEY5UmQ1ZWNNZ3Fqajly?oc=5"
+              "n": 2520,
+              "title": "[표] 코스닥 외국인 순매수도 상위종목(27일)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127122600008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-305",
+          "id": "e261128-305",
           "rank_by_count": 305,
-          "name": "원전 공론화, 확대·감축 측 없이 중립 전문위원 공개설명회 개최",
+          "name": "[표] 거래소 기관 순매수도 상위종목(27일)",
           "easy": "",
-          "quote": "원전 공론화, 확대·감축 측 없이 중립 전문위원 공개설명회 개최",
+          "quote": "[표] 거래소 기관 순매수도 상위종목(27일)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1664,
-              "title": "원전 공론화, 확대·감축 측 없이 중립 전문위원 공개설명회 개최 - 환경포커스",
-              "source_name": "'전력수급기본계획 에너지 정책'",
-              "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1zcFVtMWxKbzZfT0hrd1RZcjU0dDJnWmtucFZFUXk5dXREZktydGpoMXFoQ2JGaFR6QXNsTkVFM2MwTGZfSlBQYnVUR3VvRFNYZkp1WHczNUpKZEFvbmMtT1Bn?oc=5"
+              "n": 2521,
+              "title": "[표] 거래소 기관 순매수도 상위종목(27일)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127122500008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-306",
+          "id": "e261128-306",
           "rank_by_count": 306,
-          "name": "더 커진 추자 풍력 불확실성 ‘핵심 공약도 치명타’",
+          "name": "[표] 거래소 외국인 순매수도 상위종목(27일)",
           "easy": "",
-          "quote": "더 커진 추자 풍력 불확실성 ‘핵심 공약도 치명타’",
+          "quote": "[표] 거래소 외국인 순매수도 상위종목(27일)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1668,
-              "title": "더 커진 추자 풍력 불확실성 ‘핵심 공약도 치명타’ - 제주의소리",
-              "source_name": "'전력수급기본계획 에너지 정책'",
-              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE0xd2pyVDhjVlhXUTJfTllkblJ4d2RnYWMxZUx5My1DaFd1Qzk5dlZCWVJUMEJtY1hhOVNOQzN2QkFPaUp5eEhmQUZXdTRPcE1saXJpYmJ3cWF3cktqZVhJNHk3NHFKaE9lY2s0?oc=5"
+              "n": 2522,
+              "title": "[표] 거래소 외국인 순매수도 상위종목(27일)",
+              "source_name": "연합뉴스 마켓+",
+              "link": "https://www.yna.co.kr/view/AKR20261127122400008"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-307",
+          "id": "e261128-307",
           "rank_by_count": 307,
-          "name": "지구 덮친 전대미문 ‘열병’…산업화 전보다 2도 높은 고열, 7일째 안 식는다",
+          "name": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
           "easy": "",
-          "quote": "지구 덮친 전대미문 ‘열병’…산업화 전보다 2도 높은 고열, 7일째 안 식는다",
+          "quote": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1672,
-              "title": "지구 덮친 전대미문 ‘열병’…산업화 전보다 2도 높은 고열, 7일째 안 식는다 - 한겨레",
-              "source_name": "'기후변화 엘니뇨 이상기후'",
-              "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNbllTczNuS29mNDJLVU5weVIzN1U0WWlwaThFQTdQRHJkeExKQTdmVXhIM052QU5QeGJYQWhGX0JmdUdBS3pXV3VSQ00zamM4bmh6UVZwdEJCRklESDNURlU2dU9zWHhlODdOSklrQjIwZnQyelZRNk01RzBNd0NnY2Vn?oc=5"
+              "n": 2538,
+              "title": "Decisions taken by the Governing Council of the ECB (in addition to decisions setting interest rates)",
+              "source_name": "ECB 보도자료",
+              "link": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261127~13ecadc0f2.en.html"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-308",
+          "id": "e261128-308",
           "rank_by_count": 308,
-          "name": "엘니뇨·기후변화에 하늘길도 위협…난기류·항공기 결빙 위험 증가",
+          "name": "ECB Consumer Expectations Survey results – October 2026",
           "easy": "",
-          "quote": "엘니뇨·기후변화에 하늘길도 위협…난기류·항공기 결빙 위험 증가",
+          "quote": "ECB Consumer Expectations Survey results – October 2026",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1673,
-              "title": "엘니뇨·기후변화에 하늘길도 위협…난기류·항공기 결빙 위험 증가 - SDG뉴스",
-              "source_name": "'기후변화 엘니뇨 이상기후'",
-              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9GekYzUmt3SEduVHZZc0xyM1ctT3FnN0ExZlp6d2xYWVVQYmNpZ1BCUWpacDZlYUp6UDZTNXhqVjZYZl9XN1laSXV6c1dtdjdiUVpmLUFKTHJlNzNQRUdxd3h0WGdSYW_SAWtBVV95cUxPeVZSYmE4UWE2ZDd4b2tVY3dIR2pzSFZiM19FdTkxMjg0QUotcjI3MlR4UEhtbTdFR0pnNXBsNFU4TURlQmh0bTNpaTFKWWFNdTB2UmsyNVV0Z1hDcDNERVowdzRRQk9TeEMxZw?oc=5"
+              "n": 2539,
+              "title": "ECB Consumer Expectations Survey results – October 2026",
+              "source_name": "ECB 보도자료",
+              "link": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261127~2e53af695e.en.html"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-309",
+          "id": "e261128-309",
           "rank_by_count": 309,
-          "name": "[맹소영의 기후2050]슈퍼엘니뇨! 지구의 엔진이 움직였다",
+          "name": "EU, AI·양자컴퓨팅 육성에 최대 73조원 '기술 주권 펀드' 추진",
           "easy": "",
-          "quote": "[맹소영의 기후2050]슈퍼엘니뇨! 지구의 엔진이 움직였다",
+          "quote": "EU, AI·양자컴퓨팅 육성에 최대 73조원 '기술 주권 펀드' 추진",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1674,
-              "title": "[맹소영의 기후2050]슈퍼엘니뇨! 지구의 엔진이 움직였다 - 울산일보",
-              "source_name": "'기후변화 엘니뇨 이상기후'",
-              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBDWDROTDFOWVd6VkUyN1R6LXdWd2lGX3lNTU9vVU5IUTRsYXo1dHJuNWxWSk82bkR0T3lnR3NmT19mTzZNTkwtc2kyaGhoaUt0NHlPdjRWeUFCazc0RDZYQTZNVXNVN1JOdmcxZll3?oc=5"
+              "n": 2556,
+              "title": "EU, AI·양자컴퓨팅 육성에 최대 73조원 '기술 주권 펀드' 추진 - AI타임스",
+              "source_name": "'양자컴퓨팅 기술 상용화'",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFAtbDFQakhlajJsV2JSZThGbHFYYl9JU0tLRmEzbjE2TnJHX2hyLXhlM2J2MGhQNTNUZDNMT1dVV2xyYjRyRUtRU2k1UXg2dkJ6WXpFOHUxc1NnMUJNd3JaaVdiaF9DbXpOU0E?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-310",
+          "id": "e261128-310",
           "rank_by_count": 310,
-          "name": "지구 기온 엿새 연속 2도 상승…대형 엘니뇨 대응 시급",
+          "name": "양자컴퓨팅 '실질적 활용' 단계 진입…디웨이브, \"암호 위협 시기 멀었지만 전환 준비해야\"",
           "easy": "",
-          "quote": "지구 기온 엿새 연속 2도 상승…대형 엘니뇨 대응 시급",
+          "quote": "양자컴퓨팅 '실질적 활용' 단계 진입…디웨이브, \"암호 위협 시기 멀었지만 전환 준비해야\"",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1675,
-              "title": "지구 기온 엿새 연속 2도 상승…대형 엘니뇨 대응 시급 - 솔루션뉴스",
-              "source_name": "'기후변화 엘니뇨 이상기후'",
-              "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9lYV9Od0M1cXNPVllWNlBNWDV6bnJSR2l0YXV4dlg1X241OF9OVnR5WXNiNURzLUM1cy1sUldfWWgzUDUxU25WQ0JDbTBQMnZHVnNKZ3Y5ek5ibkt0cHdZcVM1VndXZnRXUkFr?oc=5"
+              "n": 2557,
+              "title": "양자컴퓨팅 '실질적 활용' 단계 진입…디웨이브, \"암호 위협 시기 멀었지만 전환 준비해야\" - 테크월드",
+              "source_name": "'양자컴퓨팅 기술 상용화'",
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9RaC1zZWpMQjNEOXY3Q2tzdzk0U1dYS1Z4YkloRTlZSGR0b21BTDFISllfNmRTU25FU0djU09vOWt3SUhxUkpuRng4LXNyeEdjVjJKTXJDTldISVRDVnBWeFhnbGlObm9i?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-311",
+          "id": "e261128-311",
           "rank_by_count": 311,
-          "name": "‘6G 비전 페스트 2026’ 12월 송도서 열린다…국내외 45개 기업 참가",
+          "name": "AI 다음은 양자컴퓨터…유럽, 500억 유로 기술투자기금 추진",
           "easy": "",
-          "quote": "‘6G 비전 페스트 2026’ 12월 송도서 열린다…국내외 45개 기업 참가",
+          "quote": "AI 다음은 양자컴퓨터…유럽, 500억 유로 기술투자기금 추진",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1676,
-              "title": "‘6G 비전 페스트 2026’ 12월 송도서 열린다…국내외 45개 기업 참가 - 동아일보",
-              "source_name": "'위성통신 6G 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrZURLN215dVgxR1NoQV9vT1c3QXBycThWUzBQOV95SG5fNFdsQ3JqMkY1aFM5MWdwQ1Y1RFNPVUFoWGZiQ1daTU1POE1SVzNITnZhLVRrVnptSHZHd08wWGdEa3dyQdIBZkFVX3lxTFBrZURLN215dVgxR1NoQV9vT1c3QXBycThWUzBQOV95SG5fNFdsQ3JqMkY1aFM5MWdwQ1Y1RFNPVUFoWGZiQ1daTU1POE1SVzNITnZhLVRrVnptSHZHd08wWGdEa3dyQQ?oc=5"
+              "n": 2560,
+              "title": "AI 다음은 양자컴퓨터…유럽, 500억 유로 기술투자기금 추진 - 유스연합",
+              "source_name": "'양자컴퓨팅 기술 상용화'",
+              "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBJek5QOE1DamNRcnM1YTFmZmVqNU4yRDNoOE1Uc1VGa05nTlJGV19ralRuaXV4LTFESWFJYThQY0lySW5yM2VKUEhTWFBTNmlQZElN?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-312",
+          "id": "e261128-312",
           "rank_by_count": 312,
+          "name": "[양자보안③] 미래 보안 핵심 기술 ‘양자’…중소기업, “기술 개발 현실 문턱 높다”",
+          "easy": "",
+          "quote": "[양자보안③] 미래 보안 핵심 기술 ‘양자’…중소기업, “기술 개발 현실 문턱 높다”",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2561,
+              "title": "[양자보안③] 미래 보안 핵심 기술 ‘양자’…중소기업, “기술 개발 현실 문턱 높다” - 테크월드",
+              "source_name": "'양자컴퓨팅 기술 상용화'",
+              "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5xOHEzbHllRGE5bmRRM2wtbkV3WTlHSHlpcXNfMFYtRmdLQjg5dmNSMFNJY0NBR296Tjdmd05ycFRRVDdZQ3pySWdFNEQybHBXT2JKMWJGWGZvZXhpdzVJTnM4MlFQNVVv?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-313",
+          "rank_by_count": 313,
+          "name": "EU, 74조원 목표 기술펀드 추진…AI·양자 키워 美·中 추격",
+          "easy": "",
+          "quote": "EU, 74조원 목표 기술펀드 추진…AI·양자 키워 美·中 추격",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2562,
+              "title": "EU, 74조원 목표 기술펀드 추진…AI·양자 키워 美·中 추격 - 뉴시스",
+              "source_name": "'양자컴퓨팅 기술 상용화'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA0a3hwd2l5ZGNvaTdYeXNzbHFOc1ZkMzYtODBCR20wY3hjMW54Z1d4ZGk1WFcybFhQRUVMVUhlVHZoeFYtLVdnVUc4MWdPU0EyOGNaUkdGVmZ2QjlNV1prUtIBeEFVX3lxTE13UXZ2VUlwMkt0SE5nUEw0WGJsWHktTTQ4OUVuZTRwdGVyRjBma3VBN1BoMXFjMmNycTQ3VGcwc3IyaGYwVHhjZzAwVG02V2d4YzB1aTdST1J3M05qN1l0VVVrQnBkMUUyRmFjWGxZa0F6cXFCa1lveA?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-314",
+          "rank_by_count": 314,
+          "name": "오큐티, 1200큐비트 테스트베드 구축",
+          "easy": "",
+          "quote": "오큐티, 1200큐비트 테스트베드 구축",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2563,
+              "title": "오큐티, 1200큐비트 테스트베드 구축 - 한스경제",
+              "source_name": "'양자컴퓨팅 기술 상용화'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE43V0NsZWowWXgwTWVsS2JubTZWTG5ONmRRUlRzRlBHWjI4bjNFY0ZWY0lOOTBabTZZUk9wWHBpNER2c1JZZFZsX3JrMHBZeGMweFZqMUNfa25yUGp6cnBjS2VpYUFQMWlkWkktVA?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-315",
+          "rank_by_count": 315,
+          "name": "[진단] 임상 승인 신청 돌입한 연골 치료기기, '부서 칸막이·책임 회피' 규제 해소 시험대",
+          "easy": "",
+          "quote": "[진단] 임상 승인 신청 돌입한 연골 치료기기, '부서 칸막이·책임 회피' 규제 해소 시험대",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2564,
+              "title": "[진단] 임상 승인 신청 돌입한 연골 치료기기, '부서 칸막이·책임 회피' 규제 해소 시험대 - 의학신문",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9YUmoyWDU3NDY0LThLalNoVjNfcDBrUVB4aElCOHRTYWZWSEsyUWdEcVVNMWw2U0hzVUU3Wk9GRDdzTUVSOUhBeEJvdGR1NUtNNEpOOEQyWDdjTFVDYk9JdDhwVmhRRFB6TXc?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-316",
+          "rank_by_count": 316,
+          "name": "첨단재생의료, 유전물질 직접 투여 허용∙∙∙자체 임상 마쳐야 상용화 이어진다",
+          "easy": "",
+          "quote": "첨단재생의료, 유전물질 직접 투여 허용∙∙∙자체 임상 마쳐야 상용화 이어진다",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2565,
+              "title": "첨단재생의료, 유전물질 직접 투여 허용∙∙∙자체 임상 마쳐야 상용화 이어진다 - 바이오타임즈",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAxTnlFN3VyUVpxZ2JuWklyZm9EWXpHYTBka00xMS1SNnFzcjQ5UnpaZGRkNi0xRDdBQ2pPTXgwTENVcmpIQ3hCbFJXUTdTajNUeDdyOXNDbVM1b3l0NFpVZ0djVjh4aFlIalAzMA?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-317",
+          "rank_by_count": 317,
+          "name": "몸속 직접 유전자치료 제도권 진입…세포처리시설 수입 길도 열려",
+          "easy": "",
+          "quote": "몸속 직접 유전자치료 제도권 진입…세포처리시설 수입 길도 열려",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2566,
+              "title": "몸속 직접 유전자치료 제도권 진입…세포처리시설 수입 길도 열려 - 바이오북미디어",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1FanZYT0ZCSGlLajBMb0RhN21EdHBrZ0E2aXRUZUpzbXhZQ1ZhMjlnUmlDeUcydENxUlBDUXZJTGlKNkI4X21mZFE1aldhemE5MjhYR013?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-318",
+          "rank_by_count": 318,
+          "name": "보령바이오파마 독감신약 3상 설계 공개…위약대조·348명 모집",
+          "easy": "",
+          "quote": "보령바이오파마 독감신약 3상 설계 공개…위약대조·348명 모집",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2567,
+              "title": "보령바이오파마 독감신약 3상 설계 공개…위약대조·348명 모집 - 메디코파마",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9rMXlvRFVOWm9mVXBEd3NKRGVmVWpQbHg2X3VLcDlOdEVCYVRlV3JXSldqWUFHZ05YQ3puZ295VGkySHRGRG5CdE9VZ0hOaVdyVmhqTEVSbTRWMG54TGdSVEVNdk02UTQzdXA3V3JJWU5uZw?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-319",
+          "rank_by_count": 319,
+          "name": "동아ST, 뇌전증 신약 국내 판매 본격화…알테오젠 기술료 성과 [주간 바이오리듬]",
+          "easy": "",
+          "quote": "동아ST, 뇌전증 신약 국내 판매 본격화…알테오젠 기술료 성과 [주간 바이오리듬]",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2568,
+              "title": "동아ST, 뇌전증 신약 국내 판매 본격화…알테오젠 기술료 성과 [주간 바이오리듬] - 조세일보",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBxaTUwMERhWGlrMGJtM2tiMTJ3Q2ZXODhYZFdYVkk1REllbVNqY0NyT0RCNGVaY0dCVmxqQzNGZ0hIMjJmVm52QnIxN1drZlAtZ2wxZzl1RWN1M0w3c1FJ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-320",
+          "rank_by_count": 320,
+          "name": "\"기술이전 잘하면 뭐하나\"…'주가 바닥' K-바이오",
+          "easy": "",
+          "quote": "\"기술이전 잘하면 뭐하나\"…'주가 바닥' K-바이오",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2569,
+              "title": "\"기술이전 잘하면 뭐하나\"…'주가 바닥' K-바이오 - 뉴시스",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9xRWpqa1hWeFVIRlY0a0NOU3NxY1pGNmI2TGk2Q3FZZWt4TjVUamF2V2ZfQThhd2NyQlRhejJRb2o1c3RuSVlUSnFkQmtlX0FZMWxBakh0WjdHYzh2cmJNbNIBeEFVX3lxTE1JamkyTG1mOTY3NVN2WF9xcjRQN2pHNXE3OUtUTmRsYzZfQXItaDFpYTV1R2ZzN09YWDd4dHdmMjdMWTQ4ME1lbDZCd0VhMk9FNUdIeElTbno2aDM0enhnSVI0aUJkOTFCRklFZEhWdEZwVkdVMGl0dQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-321",
+          "rank_by_count": 321,
+          "name": "이노보테라퓨틱스, 바이오재팬·유럽서 주요 신약 후보물질 기술이전 협의",
+          "easy": "",
+          "quote": "이노보테라퓨틱스, 바이오재팬·유럽서 주요 신약 후보물질 기술이전 협의",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2570,
+              "title": "이노보테라퓨틱스, 바이오재팬·유럽서 주요 신약 후보물질 기술이전 협의 - 더스탁(The Stock)",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1KZVhJT2RzdUlRTkppdk9Bbnh1WXNhUVJyb3BKeTdqQjdkQ0FlT2p5SmdRSWluRWxuNTNuaVhJcVFYeW9NVnlPQlJ3T1NDYnphTjRoM09jWmNsaWRfRGRQaFlDaTBUVDl4WFE?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-322",
+          "rank_by_count": 322,
+          "name": "파로스아이바이오, 항암 신약 'PHI-501' 임상 1상 계획 변경 신청",
+          "easy": "",
+          "quote": "파로스아이바이오, 항암 신약 'PHI-501' 임상 1상 계획 변경 신청",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2571,
+              "title": "파로스아이바이오, 항암 신약 'PHI-501' 임상 1상 계획 변경 신청 - 국민기자뉴스",
+              "source_name": "'바이오의약품 임상 승인'",
+              "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1YT1U1V1lBTE1qYTNpelJoVGdHc3ZXd0syX3FXd0RTSkYwQTR6SjFvUVFkVWQtZERTeWs0N2FqSWlrcy1samZCT1hqeDR2Q01zLU1HOHdNenlrTmhmZlpKdG1ISERDX3fSAWdBVV95cUxNWE9VNVdZQUxNamEzaXpSaFRnR3N2V3dLMl9xV3dEU0pGMEE0ekoxb1FRZFVkLWREU3lrNDdhaklpa3MtbGpmQk9Yang0dkNNcy1NRzh3TXp5a05oZmZaSnRtSEhEQ193?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-323",
+          "rank_by_count": 323,
+          "name": "머스크 '이식형 BCI' 상용화 문턱 진입한다…확증 임상 승인",
+          "easy": "",
+          "quote": "머스크 '이식형 BCI' 상용화 문턱 진입한다…확증 임상 승인",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2572,
+              "title": "머스크 '이식형 BCI' 상용화 문턱 진입한다…확증 임상 승인 - DongA Science",
+              "source_name": "'뇌과학 BCI 기술'",
+              "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBLVDh1YnhBMjM1ZlhUUkktSnBRRkZ6T2F6VFhwVzVKZjNFSkpETndtQjlhcmE0UHVibVN1Y1JWdDk5X2FuX0lmeEM2ZWtlYXFsMk90Sg?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-324",
+          "rank_by_count": 324,
+          "name": "뉴럴링크, 뇌 이식 칩 핵심 임상 美FDA 승인…상용화 한 걸음 더",
+          "easy": "",
+          "quote": "뉴럴링크, 뇌 이식 칩 핵심 임상 美FDA 승인…상용화 한 걸음 더",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2579,
+              "title": "뉴럴링크, 뇌 이식 칩 핵심 임상 美FDA 승인…상용화 한 걸음 더 - 메디컬투데이",
+              "source_name": "'뇌과학 BCI 기술'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5uR09CTVRqQWR3QWxId3NQU1lNVGpNNmllSEVnS2pZbFBHTFlYYjFHS3hBdXNOQVV2XzdFZFdUTVktdTNKZm9QcU85cUhHdWtUSC1RN2NsWGIwOU9zUEJYR0M1RXZQdFN5SEpzSQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-325",
+          "rank_by_count": 325,
+          "name": "“정권 따라 뒤집히는 에너지 정책…‘상설 국가에너지위원회’ 법제화 필요”",
+          "easy": "",
+          "quote": "“정권 따라 뒤집히는 에너지 정책…‘상설 국가에너지위원회’ 법제화 필요”",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2580,
+              "title": "“정권 따라 뒤집히는 에너지 정책…‘상설 국가에너지위원회’ 법제화 필요” - 에너지플랫폼뉴스",
+              "source_name": "'전력수급기본계획 에너지 정책'",
+              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fbzhLcHI3enE1MXVMMHlOZi1xbjlwbTV1M3lMak1MMmdQUVJGTHhNV20yT2VpN2doQVd5VFVscGU2djB0alFEM1c5RE5lbVN1WjdEQkw0amp6TGpMLVoxbVdUd2duRWJxYkZGadIBcEFVX3lxTFBhc21vV3NnMkdkM0lDbWJFY05mZHZCaWtWOUpLQ1Mxd0QwY3F4WHlrNWRSZWhqUmJCRUY4R1lRYWRRSDdrTGstUW9KY08wcU5IVlVCWmRRRndrSHQ1Q0MzZEZnMWUwRHNqSVdlbEEyd0E?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-326",
+          "rank_by_count": 326,
+          "name": "내년부터 재생에너지 '20년 고정가격 계약'…태양광 연 4회·풍력 연 2회 입찰",
+          "easy": "",
+          "quote": "내년부터 재생에너지 '20년 고정가격 계약'…태양광 연 4회·풍력 연 2회 입찰",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2581,
+              "title": "내년부터 재생에너지 '20년 고정가격 계약'…태양광 연 4회·풍력 연 2회 입찰 - 전자신문",
+              "source_name": "'전력수급기본계획 에너지 정책'",
+              "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE40cjNlOFlMWS1JWHRNbGw1YUphUXhJajdlSkxZMVR5WDBlTVQwZEdnY3JWeFUzbHBEcTlhQXUzaktscWpPbkEtLWdNTkdvUQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-327",
+          "rank_by_count": 327,
+          "name": "(설명) 정부는 미래 전력수급에 대해 국민들의 다양한 의견을 충분히 듣기 위해 공론화를 추진 중입니다.",
+          "easy": "",
+          "quote": "(설명) 정부는 미래 전력수급에 대해 국민들의 다양한 의견을 충분히 듣기 위해 공론화를 추진 중입니다.",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2582,
+              "title": "(설명) 정부는 미래 전력수급에 대해 국민들의 다양한 의견을 충분히 듣기 위해 공론화를 추진 중입니다. - 대한민국 정책브리핑",
+              "source_name": "'전력수급기본계획 에너지 정책'",
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1pZ0Y4dV8wZ01UdGVxUWtFOTR6MFhrWE94bmNwT3hVMTk0SjFzNDVqcHhXWjF3QldGTThLZUVhYnNSU3RpMUxJQU5DdnlEdjR4eUExR0stUzVLeWFsQlRQdkt5R1k5amw5UDJicU9EVQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-328",
+          "rank_by_count": 328,
+          "name": "제주특별자치도의회 한동훈 의원, “해상풍력 정책 중앙정부와 엇박자”",
+          "easy": "",
+          "quote": "제주특별자치도의회 한동훈 의원, “해상풍력 정책 중앙정부와 엇박자”",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2584,
+              "title": "제주특별자치도의회 한동훈 의원, “해상풍력 정책 중앙정부와 엇박자” - 파이낸셜경제",
+              "source_name": "'전력수급기본계획 에너지 정책'",
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBTWDVfWHcxQW1MU2dmcVB1NmxwRE0tLWhwT0x5b0xScTA3Rlo0dFdUemczZFpCRXBPY1p4YjJkZ2hGM2hBQ1VXVmFoRG9VR1hjOWo2T2hQRERlZm5VMkV1cTJBMXpjbWhmRnlXN21yOXo?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-329",
+          "rank_by_count": 329,
+          "name": "EU ‘전력화 최우선’ 안보법…12차 전기본 원전 공론화는 파행",
+          "easy": "",
+          "quote": "EU ‘전력화 최우선’ 안보법…12차 전기본 원전 공론화는 파행",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2587,
+              "title": "EU ‘전력화 최우선’ 안보법…12차 전기본 원전 공론화는 파행 - 파인드비",
+              "source_name": "'전력수급기본계획 에너지 정책'",
+              "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAtUFlEQnFSaTZJRS0zMFJKRXViWXhHZHNZODJnczFNYUNIYkJUSjdHYnhTclAxTGRUb29XSFR0ZjktZTRpNl81UEtCejB6bGpHY25xV0dHWHhYbGc1VThWOGRYczJVUdIBakFVX3lxTFAyM1BzVTRWZ0FqV0w2TUhTY2tsRXVqVzQ5b1dNd0ppcWNNX2xCUG5RSUJRcDNZdHl2dzBrVzNndzVsNDgwNnNVbG0xdTFwYkVMcWgxTkV6bTF4cmc5V01fNF9RMmpVaXdKSmc?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-330",
+          "rank_by_count": 330,
+          "name": "지구 평균기온, 산업화 이전보다 2℃ 이상 높은 날 사상 첫 엿새 연속",
+          "easy": "",
+          "quote": "지구 평균기온, 산업화 이전보다 2℃ 이상 높은 날 사상 첫 엿새 연속",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2590,
+              "title": "지구 평균기온, 산업화 이전보다 2℃ 이상 높은 날 사상 첫 엿새 연속 - ESG비즈니스리뷰",
+              "source_name": "'기후변화 엘니뇨 이상기후'",
+              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE54NkhBNU8weGJRM0FqeDlhMmFxWjJ3d0l6aHdDUm16TDg4YllVa0VMakI5SUk3dWotcjRscWpxdDNnZWpnV21ROWoxcjc0MXNpQU45VUktcHQxZjl0NVlTaVZNSDZCU3dvUjEyZmV4dXNxZFk?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-331",
+          "rank_by_count": 331,
+          "name": "“오늘 패딩 입었다가 후회막심”…전세계가 ‘따뜻한 11월’이라는데",
+          "easy": "",
+          "quote": "“오늘 패딩 입었다가 후회막심”…전세계가 ‘따뜻한 11월’이라는데",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2592,
+              "title": "“오늘 패딩 입었다가 후회막심”…전세계가 ‘따뜻한 11월’이라는데 - 매일경제",
+              "source_name": "'기후변화 엘니뇨 이상기후'",
+              "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE8wX1VGUGs4QVJ2SXFreGZlS3ZFVmFQT0U1QUhJZW05RUs1QlJteGsxeFVuWHJZX1luWTNwRGd0eEJ2MVhkRHF4U3F5V1FXWmxQU2c?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-332",
+          "rank_by_count": 332,
+          "name": "76년 만에 역대 최강 ‘슈퍼 엘니뇨’? 식량 부족·물류 원자재 위기부터 5000조 경제 손실 전망까지 🌏🚨",
+          "easy": "",
+          "quote": "76년 만에 역대 최강 ‘슈퍼 엘니뇨’? 식량 부족·물류 원자재 위기부터 5000조 경제 손실 전망까지 🌏🚨",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2593,
+              "title": "76년 만에 역대 최강 ‘슈퍼 엘니뇨’? 식량 부족·물류 원자재 위기부터 5000조 경제 손실 전망까지 🌏🚨 - 뉴닉",
+              "source_name": "'기후변화 엘니뇨 이상기후'",
+              "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kYXlyU3dFUkg0RDdFaUNfeGg3d09xMXZlQUxibUt2WFQ1ZVI2MnRVYkk5RWVGbThzUk5pM0JFNFZIRVhxSlU0eU1RYlRxUkt6QlE4?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-333",
+          "rank_by_count": 333,
+          "name": "지구 일평균 기운, 사상 첫 6일 연속 ‘2℃ 장벽’ 넘어",
+          "easy": "",
+          "quote": "지구 일평균 기운, 사상 첫 6일 연속 ‘2℃ 장벽’ 넘어",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2594,
+              "title": "지구 일평균 기운, 사상 첫 6일 연속 ‘2℃ 장벽’ 넘어 - 넷제로뉴스",
+              "source_name": "'기후변화 엘니뇨 이상기후'",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBZVFhIU2JxeG9fTEZfRHJNODJGTURRYkdGZmtWVlNEX3Awa2VxZ1FqMkF3NmhxdV9mZ0t3X2NvOXdIdEh6QUFlaGVqeTh3ZXVWeV9EZkZ1MTU5bmJwYzdZaUxNWl9DUy1xRkHSAW5BVV95cUxPbmVQNG1iaUJCTk02NjNOLVZOZ0lJdUgyWkFJM1dWbkM2NkVFOU1OUmVrOE9aVGlYR0pPSkdWeEc4S3hLY05QSjdCT3ZYbkhHcDNYejVaNEN0SG05MTNfWXotczg3M05FY3dtc01oUQ?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-334",
+          "rank_by_count": 334,
+          "name": "'6일 연속' 2℃ 이상 치솟은 지구...온난화 속도 2배 빨라져",
+          "easy": "",
+          "quote": "'6일 연속' 2℃ 이상 치솟은 지구...온난화 속도 2배 빨라져",
+          "member_count": 1,
+          "sample_articles": [
+            {
+              "n": 2595,
+              "title": "'6일 연속' 2℃ 이상 치솟은 지구...온난화 속도 2배 빨라져 - 뉴스;트리",
+              "source_name": "'기후변화 엘니뇨 이상기후'",
+              "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE01Y2NvY0VfaVR4VGZndGl6YzVSVGEtbmtYUktJUkYwX1k1Q21Zc0pxRERDc0ZPMDF2c3FCNUZBbk5jYmZjZEM0SDczSUlSSUo1UkI1UFllSzU1RjZk?oc=5"
+            }
+          ],
+          "flags": [],
+          "unlumped_from": "",
+          "is_single": true,
+          "addr": "처리-3",
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
+        },
+        {
+          "id": "e261128-335",
+          "rank_by_count": 335,
           "name": "AI 데이터센터·6G·위성망 투자 삼박자 맞았다…센서뷰·RFHIC·인텔리안테크 무슨 호재 있나",
           "easy": "",
           "quote": "AI 데이터센터·6G·위성망 투자 삼박자 맞았다…센서뷰·RFHIC·인텔리안테크 무슨 호재 있나",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1677,
+              "n": 2599,
               "title": "AI 데이터센터·6G·위성망 투자 삼박자 맞았다…센서뷰·RFHIC·인텔리안테크 무슨 호재 있나 - 핀포인트뉴스",
               "source_name": "'위성통신 6G 기술'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Jd3czZkktajlVcW4yWTZMYVloT0pIb0NfWi1aaURlV2pxX0FSNFh1dHVKSkJvakg3aWt5NktOVktwZW5jN0pfNVIzS1hBSlU3X3d4dFJVeUlISG5FTExpS24yakpEb0R5b09LVmFEM1pXVk04S1FN0gF3QVVfeXFMTUl3dzNmSS1qOVVxbjJZNkxhWWhPSkhvQ19aLVppRGVXanFfQVI0WHV0dUpKQm9qSDdpa3k2S05WS3BlbmM3Sl81UjNLWEFKVTdfd3h0UlV5SUhIbkVMTGlLbjJqSkRvRHlvT0tWYUQzWldWTThLUU0?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9PaDVHcjI5dHZxcXVPLXVVUEQ5dmpxVXdSWF9ST2ZsajU2TU9ITVd2ZThuSUpZemY1YUxtTXhmYUxKWmZaWjFhVlB2NDZoQncyNEJPYUZfa29DUmw2SWtSNzdrQVZWdVdZOVVBanhDSnVVRzTSAXdBVV95cUxNSXd3M2ZJLWo5VXFuMlk2TGFZaE9KSG9DX1otWmlEZVdqcV9BUjRYdXR1SkpCb2pIN2lreTZLTlZLcGVuYzdKXzVSM0tYQUpVN193eHRSVXlJSEhuRUxMaUtuMmpKRG9EeW9PS1ZhRDNaV1ZNOEtRTQ?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         },
         {
-          "id": "e261127-313",
-          "rank_by_count": 313,
-          "name": "6G·위성통신 주파수 간섭 우려…정부·통신사 어쩌나",
+          "id": "e261128-336",
+          "rank_by_count": 336,
+          "name": "아이브이웍스, 글로벌 팁스 선정…차세대 반도체 소재 승부수",
           "easy": "",
-          "quote": "6G·위성통신 주파수 간섭 우려…정부·통신사 어쩌나",
+          "quote": "아이브이웍스, 글로벌 팁스 선정…차세대 반도체 소재 승부수",
           "member_count": 1,
           "sample_articles": [
             {
-              "n": 1678,
-              "title": "6G·위성통신 주파수 간섭 우려…정부·통신사 어쩌나 - IT조선",
+              "n": 2602,
+              "title": "아이브이웍스, 글로벌 팁스 선정…차세대 반도체 소재 승부수 - 한스경제",
               "source_name": "'위성통신 6G 기술'",
-              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBpWXJiZm16cWk0M21QallZRzVjcUM1YUN6Wll4bDlSOVoyNUV1Y1RvWnViZkRVSkVzN1hWNlF2U1ZwV1BvZm1wc1RMN3dPZlFrSkF4eUJTRFdLaHp3Tk1zZ0liVHpjYlFjV09RQXh1NFjSAXRBVV95cUxPenVaY0VPODBobDI3VkN2X3RqQXNSem5ONGdLV2NJdGNfS1FObGdCbnZ6MnRERWtXQTlmQWJiQVRRVVBSQU1XX3N3SE9KSlRyVnZFdElldnBhNWczYXd3NjdaYi10RHQxenZzMzVhUC1fODZJNA?oc=5"
+              "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1ZNkUwVVpSZU53ckp2aTR5OGpzUjVVMWZwWUdGVXFUTTRoYXhOeEk5MkJqckJlRzU1TlU4bVVJTXNTdTl3blY3YXpxcXVBbnZpZHFINHRTaGlycURJUkFEN3hqQ2tWbFZ0VGRKTThoNNIBb0FVX3lxTE1ZNkUwVVpSZU53ckp2aTR5OGpzUjVVMWZwWUdGVXFUTTRoYXhOeEk5MkJqckJlRzU1TlU4bVVJTXNTdTl3blY3YXpxcXVBbnZpZHFINHRTaGlycURJUkFEN3hqQ2tWbFZ0VGRKTThoNA?oc=5"
             }
           ],
           "flags": [],
           "unlumped_from": "",
           "is_single": true,
           "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-314",
-          "rank_by_count": 314,
-          "name": "AI·차세대 망 투자가 불 지폈다…센서뷰·AP위성·RFHIC 주가 기세등등",
-          "easy": "",
-          "quote": "AI·차세대 망 투자가 불 지폈다…센서뷰·AP위성·RFHIC 주가 기세등등",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1679,
-              "title": "AI·차세대 망 투자가 불 지폈다…센서뷰·AP위성·RFHIC 주가 기세등등 - 핀포인트뉴스",
-              "source_name": "'위성통신 6G 기술'",
-              "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE4ydkxNWUd0eHNkQXljX3dXRmRZMXNYMHBHaWlfWGxGX1k3elBJWi1nUXRoYjFhWndPOHdnaWJoS0w5a0F5SkFyZVk4T0IteUJBSUpCbjVtVjFmVlFaMnVROUZvRUZmSzd0dm9ud2tmd2tFZHV3R2lB0gF3QVVfeXFMTjJ2TE1ZR3R4c2RBeWNfd1dGZFkxc1gwcEdpaV9YbEZfWTd6UElaLWdRdGhiMWFad084d2dpYmhLTDlrQXlKQXJlWThPQi15QkFJSkJuNW1WMWZWUVoydVE5Rm9FRmZLN3R2b253a2Z3a0VkdXdHaUE?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-315",
-          "rank_by_count": 315,
-          "name": "‘6G 비전 페스트 2026’ 송도서 개최, 45개 기업·기관 기술 공개",
-          "easy": "",
-          "quote": "‘6G 비전 페스트 2026’ 송도서 개최, 45개 기업·기관 기술 공개",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1680,
-              "title": "‘6G 비전 페스트 2026’ 송도서 개최, 45개 기업·기관 기술 공개 - www.dt.co.kr",
-              "source_name": "'위성통신 6G 기술'",
-              "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE11MmhraXh3Z3BMUTJTc3lGd0t6MEY1Qm5JZkJ6bGptbE1rZVNGZ0p2QzVDcEk0dE5RQTBpZEVidHpTTF9yN25HX0M4S2pRUQ?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
-        },
-        {
-          "id": "e261127-316",
-          "rank_by_count": 316,
-          "name": "아이브이웍스, 글로벌 팁스 선정…GaN 재성장 기술 개발에 50억 확보",
-          "easy": "",
-          "quote": "아이브이웍스, 글로벌 팁스 선정…GaN 재성장 기술 개발에 50억 확보",
-          "member_count": 1,
-          "sample_articles": [
-            {
-              "n": 1681,
-              "title": "아이브이웍스, 글로벌 팁스 선정…GaN 재성장 기술 개발에 50억 확보 - 스타트업엔(StartupN)",
-              "source_name": "'위성통신 6G 기술'",
-              "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5JRmpaazhDOUUtTk8xWEFFSU5uR1RrMVBwcjV1aENUSExQQjZsal9OMHp3QndwV252SXY2cjh0QllCTW41WTFHbkJOYUhoci1tTzZ1VXhpaXFZVVdpZVh4WTJGTG9Kb2FBYmgzV9IBbEFVX3lxTE5JRmpaazhDOUUtTk8xWEFFSU5uR1RrMVBwcjV1aENUSExQQjZsal9OMHp3QndwV252SXY2cjh0QllCTW41WTFHbkJOYUhoci1tTzZ1VXhpaXFZVVdpZVh4WTJGTG9Kb2FBYmgzVw?oc=5"
-            }
-          ],
-          "flags": [],
-          "unlumped_from": "",
-          "is_single": true,
-          "addr": "처리-3",
-          "source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         }
       ]
     },
@@ -11316,15 +11427,15 @@ window.PANEL_DATA = {
       "addr": "처리-4",
       "kind": "papers",
       "day": "2026-11-27",
-      "day_label": "11월 27일(오늘)",
-      "day_rel": "오늘",
-      "day_note": "11월 27일(오늘) 논문 — 논문 풀이가 끝난 결과예요.",
+      "day_label": "11월 27일(어제)",
+      "day_rel": "어제",
+      "day_note": "11월 27일(어제) 논문이에요. 오늘 논문은 논문 풀이(새벽 바퀴 바로 뒤, 백업 12:07)가 끝나면 이 자리로 바뀌어요.",
       "made": "2026-11-27T04:26:22",
       "picks_max": 10,
       "status": "돎 — 2026-11-27 논문 풀이 150편 / 새 논문 144편",
       "headline": {
-        "text": "오늘 새 논문 144편 · 풀이한 150편 중 AI 모델·학습법 쪽이 68편으로 가장 많아요.",
-        "text_orig": "",
+        "text": "11월 27일(어제) 새 논문 144편 · 풀이한 150편 중 AI 모델·학습법 쪽이 68편으로 가장 많아요.",
+        "text_orig": "오늘 새 논문 144편 · 풀이한 150편 중 AI 모델·학습법 쪽이 68편으로 가장 많아요.",
         "n_new": {
           "val": 144,
           "source": "v2_secretary/결과/논문/2026-11-27_논문.json"
@@ -11356,9 +11467,10 @@ window.PANEL_DATA = {
         }
       },
       "flow": {
-        "text": "오늘 풀이한 논문들 중에서는 AI 모델·학습법과 제어·로봇 분야가 눈에 띄게 많았는데요, 그중에서도 생각하는 모드를 지원하는 확산 언어 모델 Clover를 개발해 에이전트 성능을 검증한 연구나 무인 항공기가 스스로 날아가도록 다중 궤적 제어법을 제안한 내용이 있었습니다. 이와 함께 전력망·계통 분야의 연구도 여러 편 확인됐는데, 예를 들어 직류 마이크로그리드를 위한 분산형 안정성 기준과 능동 댐핑 전략을 개발한 방식이 그렇습니다. 이들 주제 외에도 문화재 설명이 개별성을 잃는 정도를 측정하는 벤치마크 개발처럼 AI 안전이나 평가를 다룬 조금 다른 결의 연구도 함께 올라왔거든요.",
+        "text": "11월 27일에 풀이한 논문들 중에서는 AI 모델·학습법과 제어·로봇 분야가 눈에 띄게 많았는데요, 그중에서도 생각하는 모드를 지원하는 확산 언어 모델 Clover를 개발해 에이전트 성능을 검증한 연구나 무인 항공기가 스스로 날아가도록 다중 궤적 제어법을 제안한 내용이 있었습니다. 이와 함께 전력망·계통 분야의 연구도 여러 편 확인됐는데, 예를 들어 직류 마이크로그리드를 위한 분산형 안정성 기준과 능동 댐핑 전략을 개발한 방식이 그렇습니다. 이들 주제 외에도 문화재 설명이 개별성을 잃는 정도를 측정하는 벤치마크 개발처럼 AI 안전이나 평가를 다룬 조금 다른 결의 연구도 함께 올라왔거든요.",
         "by": "ai",
-        "flags": []
+        "flags": [],
+        "text_orig": "오늘 풀이한 논문들 중에서는 AI 모델·학습법과 제어·로봇 분야가 눈에 띄게 많았는데요, 그중에서도 생각하는 모드를 지원하는 확산 언어 모델 Clover를 개발해 에이전트 성능을 검증한 연구나 무인 항공기가 스스로 날아가도록 다중 궤적 제어법을 제안한 내용이 있었습니다. 이와 함께 전력망·계통 분야의 연구도 여러 편 확인됐는데, 예를 들어 직류 마이크로그리드를 위한 분산형 안정성 기준과 능동 댐핑 전략을 개발한 방식이 그렇습니다. 이들 주제 외에도 문화재 설명이 개별성을 잃는 정도를 측정하는 벤치마크 개발처럼 AI 안전이나 평가를 다룬 조금 다른 결의 연구도 함께 올라왔거든요."
       },
       "map": [
         {
@@ -26149,7 +26261,7 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 코드 내 출처 38곳 + 구글뉴스 검색어 20개 목록",
         "line_rule": "규칙: daily.py SOURCES 배열 (5층 후보 156개 표와는 아직 미연결)",
-        "line_out": "내보냄: 수집 대상 38곳 (v2_secretary/결과/2026-11-27_하루_전체.md)",
+        "line_out": "내보냄: 수집 대상 38곳 (v2_secretary/결과/2026-11-28_하루_전체.md)",
         "metrics": {
           "in": 156,
           "out": 38,
@@ -26169,13 +26281,13 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 출처 38곳 RSS·웹·OpenDART 공시 목록",
         "line_rule": "규칙: daily.collect() + dart_api.as_items(날짜)",
-        "line_out": "내보냄: 오늘 들어온 글 1681건 (v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json)",
+        "line_out": "내보냄: 오늘 들어온 글 2602건 (v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json)",
         "metrics": {
           "in": 38,
-          "out": 1681,
+          "out": 2602,
           "calls": 0,
-          "secs": 55.6,
-          "num_source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+          "secs": 69.6,
+          "num_source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
         }
       },
       {
@@ -26187,15 +26299,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "`gate_rules/길_규칙.txt` · `반키워드.txt`",
         "source": "구간_주소표.md",
-        "line_in": "받음: 들어온 글 1681건 (새 글 1509 + 이미 본 글 172)",
+        "line_in": "받음: 들어온 글 2602건 (새 글 2388 + 이미 본 글 214)",
         "line_rule": "규칙: gate_rules/길_규칙.txt · 관심_키워드.txt · 반키워드.txt (AI 0콜)",
-        "line_out": "내보냄: 거푸집1 129 · 거푸집2 61 · 뉴스 371 · 제외 783 · 논문T 75 · 모름 90",
+        "line_out": "내보냄: 거푸집1 153 · 거푸집2 53 · 뉴스 370 · 제외 1703 · 논문T 24 · 모름 85",
         "metrics": {
-          "in": 1681,
-          "out": 1509,
+          "in": 2602,
+          "out": 2388,
           "calls": 0,
-          "secs": 10.0,
-          "num_source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+          "secs": 6.7,
+          "num_source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
         }
       },
       {
@@ -26207,12 +26319,12 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "`gate_rules/되살리기.txt`",
         "source": "구간_주소표.md",
-        "line_in": "받음: 문 앞 제외 규칙에 걸린 글 783건",
+        "line_in": "받음: 문 앞 제외 규칙에 걸린 글 1703건",
         "line_rule": "규칙: exclude.py + gate_rules/되살리기.txt (관심 키워드 든 글 표시)",
-        "line_out": "내보냄: 결과/제외보관함/제외보관함.csv (8146행 누적)",
+        "line_out": "내보냄: 결과/제외보관함/제외보관함.csv (9849행 누적)",
         "metrics": {
-          "in": 783,
-          "out": 783,
+          "in": 1703,
+          "out": 1703,
           "calls": 0,
           "secs": 0.1,
           "num_source": "v2_secretary/결과/제외보관함/제외보관함.csv"
@@ -26229,10 +26341,10 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 한국은행 ECOS · 미국 FRED · OpenDART 공식 API",
         "line_rule": "규칙: gate_rules/ECOS_지표짝.txt · FRED_지표.txt 대조",
-        "line_out": "내보냄: 한은 표 59행 · FRED 표 30행 · DART 표 125행(오늘)",
+        "line_out": "내보냄: 한은 표 59행 · FRED 표 32행 · DART 표 150행(오늘)",
         "metrics": {
-          "in": 129,
-          "out": 155,
+          "in": 153,
+          "out": 182,
           "calls": 0,
           "secs": 0.0,
           "num_source": "v2_secretary/결과/거푸집1/*.csv"
@@ -26249,13 +26361,13 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 연준 FOMC·한은 금통위 공식 일정표 + gate_rules 손 일정",
         "line_rule": "규칙: calendar 단계(하루 바퀴 2-2, 0콜) — 지난 7일·앞 60일만 화면으로",
-        "line_out": "내보냄: 일정 24개 · 60일 안 2개 (결과/일정/2026-11-27_거시일정.json)",
+        "line_out": "내보냄: 일정 24개 · 60일 안 3개 (결과/일정/2026-11-28_거시일정.json)",
         "metrics": {
           "in": 24,
-          "out": 2,
+          "out": 3,
           "calls": 0,
           "secs": 1.4,
-          "num_source": "v2_secretary/결과/일정/2026-11-27_거시일정.json"
+          "num_source": "v2_secretary/결과/일정/2026-11-28_거시일정.json"
         }
       },
       {
@@ -26269,12 +26381,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
         "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
-        "line_out": "내보냄: 오늘 받기 9번 · 장부 새 줄 12개 · 새벽: 지표 21/21 받음 · 새 줄 5개 · 19.1초",
+        "line_out": "내보냄: 오늘 받기 1번 · 장부 새 줄 8개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
         "metrics": {
-          "in": 9,
-          "out": 12,
+          "in": 1,
+          "out": 8,
           "calls": 0,
-          "secs": 156.4,
+          "secs": 15.4,
           "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
@@ -26289,13 +26401,13 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 그날 고른 뉴스·거시 사건의 기사 주소(사건마다 3개까지)",
         "line_rule": "규칙: article_body.py (0콜) — 구글뉴스 주소 풀기 + 본문 추출 + 옛 내용 의심 검사",
-        "line_out": "내보냄: 핵심 기사 9개 · 본문 8 · 옛 내용 의심 0 (결과/본문/2026-11-27_핵심기사.json)",
+        "line_out": "내보냄: 핵심 기사 11개 · 본문 11 · 옛 내용 의심 0 (결과/본문/2026-11-28_핵심기사.json)",
         "metrics": {
-          "in": 9,
-          "out": 8,
+          "in": 11,
+          "out": 11,
           "calls": 0,
-          "secs": 20.1,
-          "num_source": "v2_secretary/결과/본문/2026-11-27_핵심기사.json"
+          "secs": 16.7,
+          "num_source": "v2_secretary/결과/본문/2026-11-28_핵심기사.json"
         }
       },
       {
@@ -26307,15 +26419,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: 문 앞 거푸집1 길 129건",
+        "line_in": "받음: 문 앞 거푸집1 길 153건",
         "line_rule": "규칙: plate1.py 정규식 숫자 추출 + 직전 값 계산·공식 API 대조 (AI 0콜)",
-        "line_out": "내보냄: 오늘 DART 표 125건 · 한은 0건 · FRED 30종",
+        "line_out": "내보냄: 오늘 DART 표 150건 · 한은 0건 · FRED 32종",
         "metrics": {
-          "in": 129,
-          "out": 125,
+          "in": 153,
+          "out": 150,
           "calls": 0,
-          "secs": 157.7,
-          "num_source": "v2_secretary/결과/거푸집1/2026-11-27_거푸집1.md"
+          "secs": 178.7,
+          "num_source": "v2_secretary/결과/거푸집1/2026-11-28_거푸집1.md"
         }
       },
       {
@@ -26327,15 +26439,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: 문 앞 거푸집2 길 61건 (보도자료·리포트·연방관보)",
+        "line_in": "받음: 문 앞 거푸집2 길 53건 (보도자료·리포트·연방관보)",
         "line_rule": "규칙: body.py 본문 추출(0콜) → plate2.py 글당 AI 1콜 요약 + 파이썬 원문·숫자 대조 검사",
-        "line_out": "내보냄: 오늘 요약 50건 (결과/거푸집2/2026-11-27_거푸집2.md)",
+        "line_out": "내보냄: 오늘 요약 47건 (결과/거푸집2/2026-11-28_거푸집2.md)",
         "metrics": {
-          "in": 61,
-          "out": 50,
-          "calls": 53,
-          "secs": 503.8,
-          "num_source": "v2_secretary/결과/거푸집2/2026-11-27_거푸집2.md"
+          "in": 53,
+          "out": 47,
+          "calls": 47,
+          "secs": 265.0,
+          "num_source": "v2_secretary/결과/거푸집2/2026-11-28_거푸집2.md"
         }
       },
       {
@@ -26347,15 +26459,15 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: 문 앞 뉴스 길 371건",
+        "line_in": "받음: 문 앞 뉴스 길 370건",
         "line_rule": "규칙: news.py 하루 AI 2콜(A·B 독립 묶기 대조) + 없는 숫자·중복 검사",
-        "line_out": "내보냄: 사건 14개 묶음 (결과/뉴스/2026-11-27_뉴스사건.json)",
+        "line_out": "내보냄: 사건 12개 묶음 (결과/뉴스/2026-11-28_뉴스사건.json)",
         "metrics": {
-          "in": 371,
-          "out": 14,
+          "in": 370,
+          "out": 12,
           "calls": 2,
-          "secs": 17.8,
-          "num_source": "v2_secretary/결과/뉴스/2026-11-27_뉴스사건.json"
+          "secs": 11.3,
+          "num_source": "v2_secretary/결과/뉴스/2026-11-28_뉴스사건.json"
         }
       },
       {
@@ -26367,7 +26479,7 @@ window.PANEL_DATA = {
         "status_kind": "separate",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: [11월 27일(오늘) 논문] 새벽 바퀴 5-1(0콜)이 모으기 원본(arXiv·허깅페이스)으로 만든 새 논문 카드 144편",
+        "line_in": "받음: [11월 27일(어제) 논문 — 이 화면 기준일(2026-11-28)보다 앞선 날, 오늘 논문은 논문 풀이 뒤] 새벽 바퀴 5-1(0콜)이 모으기 원본(arXiv·허깅페이스)으로 만든 새 논문 카드 144편",
         "line_rule": "규칙: papers.py — 새벽 카드(0콜) → 새벽 바퀴가 끝나면 바로 v2-papers(백업 12:07·14:07)가 점수 순으로 편당 AI 1콜 풀이 + 근거 문장 원문 대조 (gate_rules/논문_설정·주제·키워드.txt)",
         "line_out": "내보냄: 풀이 150편(새 카드 0 + 밀린 카드 150) · 새 카드 중 대기 144편 · AI 151콜(그날 합계) · 논문 파일 마지막으로 쓴 시각 2026-11-27 04:26 (v2_secretary/결과/논문/2026-11-27_논문.json)",
         "metrics": {
@@ -26389,13 +26501,13 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 지표 장부(data/indicators.jsonl) — 시장·전력 지표 값",
         "line_rule": "규칙: interp.py (0콜) — 60일 기준 '보통 날 폭의 몇 배'(z) · 동시에 튄 수 · 헛경보 평균",
-        "line_out": "내보냄: 지표 20/20개 해석 · 공통 기준일 2026-11-25 (결과/해석/2026-11-27_해석.json)",
+        "line_out": "내보냄: 지표 20/20개 해석 · 공통 기준일 2026-11-25 (결과/해석/2026-11-28_해석.json)",
         "metrics": {
           "in": 20,
           "out": 20,
           "calls": 0,
-          "secs": 0.8,
-          "num_source": "v2_secretary/결과/해석/2026-11-27_해석.json"
+          "secs": 1.4,
+          "num_source": "v2_secretary/결과/해석/2026-11-28_해석.json"
         }
       },
       {
@@ -26414,7 +26526,7 @@ window.PANEL_DATA = {
           "in": 31,
           "out": 31,
           "calls": 0,
-          "secs": 0.1,
+          "secs": 0.2,
           "num_source": "v2_secretary/결과/연준연설/"
         }
       },
@@ -26469,13 +26581,13 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 그날 사실 카드(거푸집2·뉴스·연준·공시에서 뽑은 문장)",
         "line_rule": "규칙: flows.py — 사실 카드 → 묶음 후보기 → 흐름 5개 → 검사(fact_check) → 채점 카드",
-        "line_out": "내보냄: 흐름 5개 · 카드 377장 · 검사 문제 1 · AI 11콜(실패 5) (data/flows/2026-11-27.json)",
+        "line_out": "내보냄: 흐름 5개 · 카드 401장 · 검사 문제 0 · AI 6콜(실패 0) (data/flows/2026-11-28.json)",
         "metrics": {
-          "in": 377,
+          "in": 401,
           "out": 5,
-          "calls": 11,
-          "secs": 447.8,
-          "num_source": "v2_secretary/data/flows/2026-11-27.json"
+          "calls": 6,
+          "secs": 124.9,
+          "num_source": "v2_secretary/data/flows/2026-11-28.json"
         }
       },
       {
@@ -26489,12 +26601,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 그날 후보(뉴스 사건·숫자·보도·논문·공시)",
         "line_rule": "규칙: rank.py 수식 점수(관심·여러 곳·급증·숫자·새로움) → AI 판정(judge.py) → 자리 수만큼 (gate_rules/중요도_설정.txt)",
-        "line_out": "내보냄: 후보 515개 중 14개 고름 · AI 2콜",
+        "line_out": "내보냄: 후보 555개 중 14개 고름 · AI 3콜",
         "metrics": {
-          "in": 515,
+          "in": 555,
           "out": 14,
-          "calls": 2,
-          "secs": 49.4,
+          "calls": 3,
+          "secs": 45.6,
           "num_source": "v2_secretary/data/picks.jsonl"
         }
       },
@@ -26509,13 +26621,13 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 0~5단계 실행 결과 및 요약 파일들",
         "line_rule": "규칙: run_day.py 종합 마크다운 생성 (AI 0콜)",
-        "line_out": "내보냄: 결과/2026-11-27_하루_전체.md 외 5종 결과지",
+        "line_out": "내보냄: 결과/2026-11-28_하루_전체.md 외 5종 결과지",
         "metrics": {
           "in": 6,
           "out": 6,
           "calls": 0,
           "secs": 0.1,
-          "num_source": "v2_secretary/결과/2026-11-27_하루_전체.md"
+          "num_source": "v2_secretary/결과/2026-11-28_하루_전체.md"
         }
       },
       {
@@ -26547,11 +26659,11 @@ window.PANEL_DATA = {
         "status_kind": "run",
         "editable": "—",
         "source": "구간_주소표.md",
-        "line_in": "받음: 2026-11-27 결과 파일들 + runs.jsonl + calls.jsonl + 구간_주소표.md",
+        "line_in": "받음: 2026-11-28 결과 파일들 + runs.jsonl + calls.jsonl + 구간_주소표.md",
         "line_rule": "규칙: export_panel.py 세기와 옮겨 적기 (새 공식 없음, AI 0콜)",
         "line_out": "내보냄: v2_secretary/결과/화면/panel.json",
         "metrics": {
-          "in": 1681,
+          "in": 2602,
           "out": 1,
           "calls": 0,
           "secs": 0.2,
@@ -26569,9 +26681,9 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 고르기(출력-1)의 후보 전부와 고른 것",
         "line_rule": "규칙: picks.py — 덧붙이기만, 같은 날 두 번 불러도 줄 안 늚",
-        "line_out": "내보냄: 후보 515줄(data/picks/2026-11-27_후보.jsonl) · 고른 것 14줄(data/picks.jsonl)",
+        "line_out": "내보냄: 후보 555줄(data/picks/2026-11-28_후보.jsonl) · 고른 것 14줄(data/picks.jsonl)",
         "metrics": {
-          "in": 515,
+          "in": 555,
           "out": 14,
           "calls": 0,
           "secs": 0.0,
@@ -26695,7 +26807,7 @@ window.PANEL_DATA = {
           "out": 15,
           "calls": 0,
           "secs": 0.0,
-          "num_source": "v2_secretary/결과/문앞/2026-11-27_문앞교통정리_길별.json"
+          "num_source": "v2_secretary/결과/문앞/2026-11-28_문앞교통정리_길별.json"
         }
       },
       {
@@ -26749,12 +26861,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
         "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
-        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 1285초 · AI 69콜 · ok · 그 뒤 낮 갱신·지표만 10번",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok",
         "metrics": {
-          "in": 11,
+          "in": 1,
           "out": 1,
-          "calls": 69,
-          "secs": 1285.0,
+          "calls": 59,
+          "secs": 738.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl (그날 mode=run 줄)"
         }
       },
