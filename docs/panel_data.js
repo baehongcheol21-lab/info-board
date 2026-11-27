@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-27",
-  "generated_at": "2026-11-27 13:56:51",
-  "made_iso": "2026-11-27T13:56:51+09:00",
+  "generated_at": "2026-11-27 16:07:39",
+  "made_iso": "2026-11-27T16:07:39+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -12,151 +12,162 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1206",
-    "made_iso": "2026-11-27T12:06:49+09:00",
-    "new": 319,
-    "news_new": 259,
+    "tag": "1606",
+    "made_iso": "2026-11-27T16:06:12+09:00",
+    "new": 400,
+    "news_new": 327,
     "calls": 2,
     "error": "",
     "times": [
-      "1206"
+      "1206",
+      "1606"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "제3차 ESS 중앙계약시장 결과",
-        "easy": "역대 최대 규모로 꼽히는 제3차 에너지저장장치 중앙계약시장 입찰 결과가 나왔습니다. 삼성SDI와 SK온이 전체 물량을 각각 63%와 37%씩 나눠 가지며 수주에 성공했는데요, 이번 입찰로 재생에너지를 늘리고 전력망을 안정시키는 데 속도가 붙을 것으로 보입니다. 쉽게 말하면 이번 3차 ESS 사업 물량은 삼성SDI가 63%, SK온이 37%를 가져갔다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 8,
-        "arts": [
-          {
-            "t": "(RE100 컨퍼런스)기존 RPS 태양광도 CPPA 합류...“전환 물량 따라 조달 기회 주목\"",
-            "s": "전기신문",
-            "u": "https://www.electimes.com/news/articleView.html?idxno=375354"
-          },
-          {
-            "t": "[단독] 3차 ESS 수주전, 이지스·KGP·에퀴스·SK이터닉스 ‘설욕’ 성공",
-            "s": "전기신문",
-            "u": "https://www.electimes.com/news/articleView.html?idxno=375355"
-          },
-          {
-            "t": "[단독] 3차 ESS 중앙계약시장, 삼성SDI가 웃었다",
-            "s": "전기신문",
-            "u": "https://www.electimes.com/news/articleView.html?idxno=375356"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "엔비디아 칩 대량 구매 中 자회사 논란",
-        "easy": "미국 실리콘밸리에서 엔비디아 첨단 AI 칩을 대량으로 사들인 업체 2곳의 실제 소유주가 중국 기업인 것으로 드러났습니다. 이에 따라 판매상들은 중국 기업에 칩을 임대하면 제품을 팔지 않겠다는 초강수를 두며 공급 제한을 강화했는데요, 수출이 막힌 첨단 칩이 중국 선전에서 버젓이 팔린다는 지적도 함께 나왔습니다. 쉽게 말하면 미국에서 칩을 대거 산 업체가 알고 보니 중국계였고, 이에 판매상들이 단속을 강화하고 나섰다는 겁니다.",
+        "title": "한국가스공사 영업이익 증가",
+        "easy": "한국가스공사가 연결영업익이 51% 껑충 뛰었다고 밝혔는데요. LNG 가격 상승으로 해외사업 이익이 늘어난 반면 미수금 부담도 커졌다는 말이에요. 쉽게 말하면 해외 LNG 사업으로 이익은 늘었지만 미수금이라는 짐도 함께 안게 된 셈이에요.",
         "score": 0.6,
         "macro": [],
         "n": 6,
         "arts": [
           {
-            "t": "\"수출 막힌 엔비디아 첨단 칩, 中 선전서 버젓이 판매\" |",
-            "s": "연합인포맥스",
-            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBlWEEyQWJIaWMwcGhEdXZSX2I2Sk4tN3ljOFNaQTdXaDVTTjJ2aUtOTEJLZUx6b01pa0x1OWQwM0IyRERYT2tEU0t0WjZBRW9RYmxRY2dGOHRma1ptSmlmYldWSThxWjFNWUQzenIyb3dRLTk0?oc=5"
+            "t": "비수기 뚫고 영업익 51% 껑충…\"한국가스공사, 상승 여력 있다\"",
+            "s": "한국경제 증권",
+            "u": "https://www.hankyung.com/article/202611274975i"
           },
           {
-            "t": "엔비디아 AI칩 쓸어담은 美업체…中기업 자회사였다",
-            "s": "머니투데이",
-            "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE42X0ZIQ0lNQ3dFU0JqaGd6WEE0VGlzMUdzdW5KZUxBYm5pTHBUSHRqenhONXBDTzNMS0xZQkxOeFV5dktNVnJfdGhKazQzQ2NXU0p2dWtMdEEyMHUwYjhESGJwV1R4VWow0gFuQVVfeXFMUGN4cXNwMmFiM2p0OWVHS094cUhhbEtFNUltVHZmMUI0QXRTSXh4dVlHREJwSjRxRlNxdGpid2hmWEdMUkNhVHZiOEV3bWV1SW9tSDZqYjJpUHh4QTJQS3k0RnJfNmpqcHJYRmdET1E?oc=5"
+            "t": "'홍의락 사장'의 리더십···한국가스공사 연결영업익 급증에 현대차증권, 목표주가 올려",
+            "s": "팍스경제TV",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBxTnZ3eC1fS1hOM2JvUkRKMUphTUJKX3dnUVY5WXlORVVTQld2Z1pOQVhjMmtrSHpmSGhSbV83OUNTWGlCT1p1Zk9OTVpua2FMVG9ERmFnYmxhaGhCZGNVa3VrQV9FRVk?oc=5"
           },
           {
-            "t": "엔비디아 칩 판매사, AI 클라우드에 “중국 기업 임대 시 칩 안 판다” 통보",
-            "s": "전자신문",
-            "u": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1hSkRUQUp1dWNJc0l5UWpOd1VNMk5FcEZ0SXg3VjhXTWlJN21wQUhPaG03S0tIeEZkYW9QMEloSVB1OHVUNkRtTDNFTlJEdw?oc=5"
+            "t": "LNG값 오르자 해외사업 웃었다…한국가스공사, 미수금은 부담",
+            "s": "파이낸셜뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBIRnJ0dXNwcEZPWFVrNF9rY2x2bGIxQ2toTWJPS1YtRGs2U3IwU3A4NFR3U0FNekgyQnk4Ry12b0JSODBYM3AtalFEYlJyWDlaY1ZuYjBmQU5JQQ?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "한전 상생기업대상 수상",
-        "easy": "한국전력이 올해의 상생기업대상 단체 부문에서 대통령표창을 수상했습니다. 33년간 중소기업을 지원해 온 성과를 인정받았다는 거고요, 그만큼 국내 전력기기 경쟁력을 널리 알리게 된 셈이에요. 쉽게 말하면 한전이 지난 33년 동안 중소기업과 손잡고 일한 공로를 정부로부터 크게 인정받았다는 겁니다.",
+        "title": "제3차 ESS 중앙계약시장 선정",
+        "easy": "제3차 ESS 중앙계약시장 입찰에서 삼성SDI가 63%, SK온이 37%를 수주했습니다. 총 1194MW 규모로 진행된 이번 입찰에서 두 기업이 물량을 나눠 가졌다는 말이에요. 쉽게 말하면 삼성SDI와 SK온이 이번 ESS 입찰의 최대 수혜를 입은 셈입니다.",
         "score": 0.6,
         "macro": [],
-        "n": 5,
+        "n": 6,
         "arts": [
           {
-            "t": "한국전력, ‘올해의 상생기업대상’ 단체 부문 대통령표창 수상",
-            "s": "퍼블릭뉴스통신",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1zb3RVeERDcGdwY0xVc1p1WFdodUlSazd2SDV6ZUptWVRKdldDd2NpbkwyMWYwUVBEUFZIcGFnREJEeno1b1oxTnBjT1l0Q0I3bXFlSFRXZUE5VXJHS2M2V3dPSjVrM2tDa1RJ?oc=5"
+            "t": "역대 최대 3차 ESS 정부 입찰서 삼성SDI 63%·SK온 37% 수주",
+            "s": "연합뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAyUDktdHpMdnRYcmNLRUtzMTdDSXZNTU9tN0ROLVJ6ay1FUDU3NFRaWTZzVDFaalVuUzF6Y3F1SFlmbFhEOEROSjlQSFlUQjdyejVNYnFfREVIWFpLRS1CQtIBYEFVX3lxTFAyUDktdHpMdnRYcmNLRUtzMTdDSXZNTU9tN0ROLVJ6ay1FUDU3NFRaWTZzVDFaalVuUzF6Y3F1SFlmbFhEOEROSjlQSFlUQjdyejVNYnFfREVIWFpLRS1CQg?oc=5"
           },
           {
-            "t": "한전, 상생기업대상 대통령표창…K-전력기기 경쟁력 입증",
-            "s": "에너지안전신문",
-            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBpRWtxU2czUV8zaWhpTEhvTmRNWHVNUllRUk9IV3dEYnMtRmJ1OXIwR0ktVUt5ZnN4UjFFQ2pzbVBzXzQ0TkM2OTZ2TTlmeENkT0dSWFdWcEViQ2d3Qy0wX19sS2I?oc=5"
+            "t": "삼성SDI·SK온, 3차 ESS 물량 각각 63%·37% 확보",
+            "s": "매일일보",
+            "u": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE11RDhuQkxDZDVrcVh6RkF6aWhVZERkRXNpdzNDMUMtNUFNalB4VDFlOUVSeTRkSUQ0Uk1YLW1aUE9FMkxaY0tLNFp6QVp3N0dMS0F5azRQQ2NEVkJpQnZyRlVBX3U?oc=5"
           },
           {
-            "t": "한전, '상생기업대상' 대통령표창 수상…중소기업 협력 성과 인정",
-            "s": "파이낸셜신문",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8tYmhqaVpnR0owTC0wNEItTU5GSmhGQ2JucnpxcGVMdXlVdGxsY1NGSTlweTFrRmFMYjlIQVdNdDVYNUZiNFVqcUJkdzhXSzV6Qm1NaEZaUmROaF83RkVlZHJBdnktbi1mSmZj?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "로봇주 장초반 강세",
-        "easy": "향후 휴머노이드 로봇 수요가 2040년까지 800만대에 이를 것이라는 전망이 나오면서 로봇 관련 주가가 장 초반 일제히 강세를 보였습니다. 삼성전자가 로봇 사업 역량을 키우겠다는 계획의 윤곽을 드러낸 점도 주가 상승에 힘을 보탰는데요, 레인보우로보틱스 등 관련 종목들이 큰 폭으로 올랐습니다. 쉽게 말하면 휴머노이드 로봇 수요 기대감과 삼성전자의 로봇 행보가 겹치면서 관련 주가가 급등했다는 겁니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 5,
-        "arts": [
-          {
-            "t": "레인보우로보틱스 주가 장중 10%대 급등, 삼성전자 휴머노이드 공개 기대 영향",
-            "s": "비즈니스포스트",
-            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1GcnlwN0o2dGcxR0FnTGY1NUh3MUpOdUd3UDh2eWQtcTl6T1k2NDYxVlFaeVFiZTktQ1dMS3hYdlF2MzBNWl9YaVdWQzBXdW9HZFhnU3dOQTlPTnJ5Mi1rd1VFYTZha19SVGJpQXNNQkkxV3c?oc=5"
-          },
-          {
-            "t": "[특징주] 삼성전자 휴머노이드 공개 기대감에…로봇주 上",
-            "s": "Chosunbiz",
-            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUklyMEQ3WUthYW9ZaHg1eWkwLVpVU2ljT3QxRXNOVE8xdVRlRkROM25say1xMFJzQU5TWnFLNVB0TnBLd29CSHFjdmZLZzFWSGhveThKTXpWZGc1cWt0aHZqT01wZVBmUXhnbmpVaVJSWnJ6eTVvVEZvNlQyMHhWWDY1S3BqV2010gGcAUFVX3lxTE03WkIyMzJDdDRrWTNiTGtGSVFqVEhpRjh1a3M1YXI0RlpWQnE3dFZjdFA5TGM3UVJ5YXkyVXl5bGlZR0U4YmN3MUthcjhyZ1FMNXRTZ0FRZHlmTGx6UGl1ZHdCOWNqbTdOOTVnLXVDQTljU0puaFlSQ0E4MjlRXzZ"
-          },
-          {
-            "t": "[특징주] 로봇주, \"2040년 수요 800만대\" 전망에 장 초반 강세",
-            "s": "연합뉴스 마켓+",
-            "u": "https://www.yna.co.kr/view/AKR20261127040700008"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "유비즈, 차세대 산업용 로봇 배터리 기술 개발 나선다",
-        "easy": "",
-        "score": 0.4,
-        "macro": [],
-        "n": 1,
-        "arts": [
-          {
-            "t": "유비즈, 차세대 산업용 로봇 배터리 기술 개발 나선다",
+            "t": "[단독] 3차 ESS 중앙계약시장, 삼성SDI가 웃었다",
             "s": "전기신문",
-            "u": "https://www.electimes.com/news/articleView.html?idxno=375366"
+            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBjdmVrTWN2NnYtWkM2YW0xQ0g5QzZNMUFxSjNzWnp1dlhDcXRudm5aZm5aSENwWm5VclJYa2N2SjlDekg1V1B6bHl5T240d0Z1aklNZXZzc0NJTFQzekw4NjdacURlalFqZmY3ZNIBcEFVX3lxTE9NRFZyNFZ0RkxDVmpvX2lSQ000UW1PakxtN3RHSy1fUHRrbTJxMVhaWG5QT2xzd3lrMXVUdmQ5VWlnRVFGX1BHbkJndTZpc2dLVk5xMGxlVTJ1eWpvZ3E4M2FhazRNZnQ4V0ZyNVdPU2g?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "휴머노이드 로봇 상용화 기대감",
+        "easy": "샤오펑이 휴머노이드 로봇 '아이언'을 내년에 전기차 수준의 가격으로 출시할 계획이라고 밝혔습니다. 로봇 수요 확대 기대감에 관련 테마주가 함께 올랐는데요. 쉽게 말하면 로봇이 대중화되는 시기가 성큼 다가왔다는 겁니다.",
+        "score": 0.55,
+        "macro": [],
+        "n": 4,
+        "arts": [
+          {
+            "t": "\"전기차 한 대 값”…샤오펑 휴머노이드 로봇 ‘아이언’ 내년 출격",
+            "s": "지디넷코리아",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9hcVlRcHEtLXhjc1ZuWEkxRzhaWnhVek1VWlZVM2hPNW5TRUlubFNsTmlVaHFqdWY3YTJtRTg2ZEU4T1BsNDhyR0dWc3dvNmQ1cWxla0xB?oc=5"
+          },
+          {
+            "t": "中샤오펑 \"휴머노이드 로봇 출시 가격, 전기차 수준으로 책정 계획\"",
+            "s": "더구루",
+            "u": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5ubFJFeVQyOG9CRlFrRTRFTHE5c0dmZGxwemRvbW13dGtCVk45bkhCaXdldVNzMVNXVkRZckp1N2V3NF9ybVBKeWY2WFQ1WXM3UzBOc21SbDVWWDR1eGR6T0xsQQ?oc=5"
+          },
+          {
+            "t": "특징주, 현대오토에버-피지컬 AI/휴머노이드 로봇 테마 상승세에 6.3% ↑",
+            "s": "매일경제 마켓",
+            "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE05eEJ4dERxa3U1VFBKb1R5TzRVaWJ6X3BRQzU1X003b2lkb0hfTEZWaHk1MXlyYjczRTJXdVN2UGdoRDN1bEo5bXFOU1phbG9nN0E?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "삼성전자·SK하이닉스 주가 급등",
+        "easy": "코스피가 외국인 매수세에 힘입어 4900선을 회복했습니다. 삼성전자와 SK하이닉스가 4~5%대 급등세를 보였는데요. 쉽게 말하면 대형 반도체 주식들이 증시 상승을 강하게 이끌었다는 겁니다.",
+        "score": 0.5,
+        "macro": [],
+        "n": 4,
+        "arts": [
+          {
+            "t": "코스피, 장중 상승폭 커져 4900 시도…삼전닉스 4%대 급등",
+            "s": "한국경제 증권",
+            "u": "https://www.hankyung.com/article/2026112746746"
+          },
+          {
+            "t": "증시 ‘들었다 놨다’ 외국인 “하루 만에 1조 넘게 샀다”…코스피 4900선 회복",
+            "s": "매일경제 증권",
+            "u": "https://www.mk.co.kr/news/stock/12220228"
+          },
+          {
+            "t": "[특징주] 삼성전자 4.6%·SK하이닉스 5.4% 급등 마감(종합)",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261127032851008"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한국전력 동반성장 대통령표창",
+        "easy": "한국전력이 중소기업 동반성장 성과를 인정받아 대통령표창을 수상했습니다. 중소 협력기업의 경영 부담을 덜어주고 상생 거래를 이어온 공로를 인정받았다는 건데요. 쉽게 말하면 한전이 중소기업과의 상생 경영에서 좋은 성과를 낸 겁니다.",
+        "score": 0.5,
+        "macro": [],
+        "n": 3,
+        "arts": [
+          {
+            "t": "[어워드 Pick] 한전KDN·한국전력, AI 품질혁신과 K-전력기기 동반성장 성과",
+            "s": "라이센스뉴스",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5ELWQ0bVFIeUdJSnZNNDJ5MmxUVEtBNnRLTzUzekV2c2o5eE1nVzU4VXJGWHA3b19NSjJQUFNzTjlfdldMR2g4RGZ4dGR2QjBvQ29wUWFEekpiejdfNTBiME9zdUE2V0pVU0tF?oc=5"
+          },
+          {
+            "t": "한국전력, 동반성장 대통령표창 수상···창업기업 816곳 육성 성과",
+            "s": "팍스경제TV",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE10a3JrZmI4YVBWYWdpY2w0cEJlekZCY0tscUtIajI3SWMxRVlCdG9tVGhVX0xXbUE1V2tKak9DS0NjMWs3d2xMdEx3WGlhdkNUSU9lV1c2VUVKU2V1cUNBUDBDVjV3RkE?oc=5"
+          },
+          {
+            "t": "한국전력, '2026년 올해의 상생기업대상' 대통령표창 수상",
+            "s": "머니투데이",
+            "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9EVUE5WTMxMndpRTl2RXFnOHNpdHdFREFWRDZ3QmR5WXVZZU56bkhOZVhPejBsdUhnd0lYbjg3U09uTEVJdFJWQWJvcmZIWEJQUWhCS3BKc25zQjVVd1dhWDNLcFYyc3VOVWfSAW9BVV95cUxQbDVaUDN0MGFyX3R4amRWcXAyclJQQUNTSmNMY3M0Z0swVGpPTmx5YzBITHlrVG9ubFUzOXhiREZMcy1HMUxKdnlQRl9OWmNRSWk1LVVGOWtyb3EydWJfSGJIYmxtSUcyZXlEdkJzYjA?oc=5"
           }
         ]
       },
       {
         "seat": "거시",
-        "title": "한국은행 기준금리 인상",
-        "easy": "한국은행이 기준금리를 0.25%포인트 인상해 연 3.25%로 상향 조정했습니다. 올해 들어 세 번째로 금리를 올린 건데요, 이 때문에 주택담보대출 금리가 15년 만에 최고 수준을 기록하면서 서민들의 이자 부담이 더 커질 거라는 우려가 나옵니다. 쉽게 말하면 한은이 금리를 3.25%로 올리면서 대출 이자 걱정이 커졌다는 겁니다.",
+        "title": "한은 기준금리 0.25%p 인상",
+        "easy": "한국은행이 기준금리를 연 3.25%로 0.25%포인트 올렸습니다. 금리가 오르면서 가계와 기업의 대출 이자 부담이 커질 수 있다는 우려가 나오는데요. 쉽게 말하면 대출 금리가 더 오를 수 있어 서민들의 한숨이 깊어지는 상황입니다.",
         "score": 0.3,
         "macro": [
           "기준금리",
-          "한국은행"
+          "한은"
         ],
-        "n": 8,
+        "n": 7,
         "arts": [
           {
-            "t": "한은, 금리 올렸지만 끝 아니다…6개월 뒤 중간값 '3.50%'",
-            "s": "뉴시안",
-            "u": "https://news.google.com/rss/articles/CBMibEFVX3lxTE81dUV0dnVLXzRNaTUtblcxNU9EZjdXamJjeFNIRWxEVTJMaUJIeTIzbEpINHRFdnljQl8zUXZpd2NpSjBmZWhfRDk3TDc1S0JBaFIwelJrN2hZY3F5VTAwT1NjbzVQT2VNYnZNQg?oc=5"
+            "t": "한은 기준금리 올린 날 무슨 일이?…국고채 만기별로 희비 엇갈린 이유",
+            "s": "매일경제 마켓",
+            "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE82Ql9PM0NfS0FwdzU3WW5zWGtGTzFLbVc0aXRqUkpmbm9nam5DSHVtQjFyMEdxbWFVUHZDaDNGOWhYVWJwQ2NfUDMyZU9GckxHbFE?oc=5"
           },
           {
-            "t": "김민석 “한국은행 기준 금리 인상에 서민 부담…당력 동원해 민생 정치 올인”",
-            "s": "KBS 뉴스",
-            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8xVFdKQTRLUTJaUXI3aWRtUUpSbTNrWDBTV0RDODBzZDFQMnlpMlBmUjJ3V3lGVDBYMW56S25yUHRRNkxMSlQ1SXh1RGUwWE04bHFlNW9qbUo5U1k?oc=5"
+            "t": "해외기관, 한은 기준금리 전망 엇갈려",
+            "s": "스트레이트뉴스",
+            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5jcXdfZHY5bldBakhQMjREd2ZSTVlKcG1hOUEzMVFLMjRkRkQ1S1ZVczhnV1J4T25VTG9MY2NOUHpZczgtMTZzWlB0Z0R1ZHZpWHJrdmtrNk5NN2g0aWZSS1pmdDZLSWhnWlJNLUxkR3lwWG_SAXdBVV95cUxPZkZpaUlnTjItbF80T09qWkl2bzBiQzNiUjZ3QTN5ZkRIeHNUOEFaQ1Y0YkRSbTRlVFlwaTFxdjZzTlIzc1FDVlJKR2pZN1JYV2xHSGI5NlI0ckcwbGRLMUtKOW05OFkySTFjTklCOEZMOVhzNWVCNA?oc=5"
           },
           {
             "t": "한은, 기준금리 연 3.25%로 0.25%p 인상…올해·내년 성장률 3.9%·4.1%로 대폭 상향",
@@ -185,7 +196,7 @@ window.PANEL_DATA = {
         ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-27_1206.json"
+    "source": "v2_secretary/결과/갱신/2026-11-27_1606.json"
   },
   "flows": {
     "day": "2026-11-27",
@@ -1087,14 +1098,16 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-27",
-      "start": "2026-11-27 13:56:32",
+      "start": "2026-11-27 16:06:12",
       "by": "github",
       "where": "GitHub",
-      "mode": "indicators",
-      "end": "2026-11-27 13:56:50",
-      "secs": 18,
+      "mode": "refresh",
+      "flows_retry_exit": 0,
       "indicators_refresh_exit": 0,
-      "calls": 0,
+      "end": "2026-11-27 16:07:39",
+      "secs": 87,
+      "exit": 0,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -26746,12 +26759,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: PC 작업 스케줄러 매일 05:30 트리거",
         "line_rule": "규칙: auto_run.py → run_day.py --collect 실행 후 runs.jsonl 기록",
-        "line_out": "내보냄: 실행 기록 51건 (최근: 2026-11-27 ok)",
+        "line_out": "내보냄: 실행 기록 52건 (최근: 2026-11-27 ok)",
         "metrics": {
           "in": 1,
-          "out": 51,
-          "calls": 0,
-          "secs": 18.0,
+          "out": 52,
+          "calls": 2,
+          "secs": 87.0,
           "num_source": "v2_secretary/data/auto/runs.jsonl"
         }
       },
