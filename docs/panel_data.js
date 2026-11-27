@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-27",
-  "generated_at": "2026-11-27 21:10:39",
-  "made_iso": "2026-11-27T21:10:39+09:00",
+  "generated_at": "2026-11-27 21:34:04",
+  "made_iso": "2026-11-27T21:34:04+09:00",
   "freshness": {
     "lines": [
       "모델 감시: 단종·전환 말 든 줄 1개 (2026-11-23 확인 — 결과지 아래쪽)"
@@ -1090,16 +1090,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-27",
-      "start": "2026-11-27 21:08:53",
+      "start": "2026-11-27 21:33:46",
       "by": "github",
       "where": "GitHub",
-      "mode": "refresh",
-      "flows_retry_exit": 0,
+      "mode": "indicators",
+      "end": "2026-11-27 21:34:03",
+      "secs": 17,
       "indicators_refresh_exit": 0,
-      "end": "2026-11-27 21:10:39",
-      "secs": 106,
-      "exit": 0,
-      "calls": 2,
+      "calls": 0,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -26271,12 +26269,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
         "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
-        "line_out": "내보냄: 오늘 받기 8번 · 장부 새 줄 12개 · 새벽: 지표 21/21 받음 · 새 줄 5개 · 19.1초",
+        "line_out": "내보냄: 오늘 받기 9번 · 장부 새 줄 12개 · 새벽: 지표 21/21 받음 · 새 줄 5개 · 19.1초",
         "metrics": {
-          "in": 8,
+          "in": 9,
           "out": 12,
           "calls": 0,
-          "secs": 141.0,
+          "secs": 156.4,
           "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
@@ -26751,9 +26749,9 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
         "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
-        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 1285초 · AI 69콜 · ok · 그 뒤 낮 갱신·지표만 9번",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 1285초 · AI 69콜 · ok · 그 뒤 낮 갱신·지표만 10번",
         "metrics": {
-          "in": 10,
+          "in": 11,
           "out": 1,
           "calls": 69,
           "secs": 1285.0,
