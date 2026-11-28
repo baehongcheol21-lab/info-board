@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-28",
-  "generated_at": "2026-11-28 10:56:22",
-  "made_iso": "2026-11-28T10:56:22+09:00",
+  "generated_at": "2026-11-28 12:09:06",
+  "made_iso": "2026-11-28T12:09:06+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 1번",
@@ -12,7 +12,191 @@ window.PANEL_DATA = {
     "pc_locked": "",
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
-  "refresh": {},
+  "refresh": {
+    "tag": "1206",
+    "made_iso": "2026-11-28T12:06:50+09:00",
+    "new": 143,
+    "news_new": 140,
+    "calls": 2,
+    "error": "",
+    "times": [
+      "1206"
+    ],
+    "picks": [
+      {
+        "seat": "뉴스",
+        "title": "SK하이닉스 자사주 매수",
+        "easy": "SK하이닉스가 주가 하락에 대응해 하루 자사주 매수 주문량을 기존 35만주에서 70만주로 두 배 늘렸습니다. 주주가치를 높이기 위한 조치인데요. 쉽게 말하면 회사가 직접 나서서 주가 방어에 속도를 내고 있다는 겁니다.",
+        "score": 0.65,
+        "macro": [],
+        "n": 4,
+        "arts": [
+          {
+            "t": "SK하이닉스, 자사주 매수 주문량 35만주→70만주 확대",
+            "s": "연합인포맥스",
+            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1kS0pZeDFsUTFiRTRYNWV0WGFkMXpTTEtPQ3hENzVPeUZxRU85X1I1c1F6SzNlZmVVMkhEVkRQWlRJa25jTWV5cjczbDAxNFh4ZXZqOTJYblBWMktQeVJIUDExQzBuVXdwdEtsaFJ4ZHg?oc=5"
+          },
+          {
+            "t": "SK하이닉스, 자사주 매입 속도 2배로…하루 70만주 주문",
+            "s": "뉴스토마토",
+            "u": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5OREZkZDhhdnZkVkI4V180RnFya0JfT2oxYnowN0ZWbkFiSldwQy1KTVA1MkhrZ1VBUHlRdjFtdlcxODNlRUVDYm5nYWZ5cTJuX3d6T25fREdaQ2xNS0pVaw?oc=5"
+          },
+          {
+            "t": "SK하이닉스, 자사주 일일 매수 주문량 두 배로…“주주가치 제고 차원”",
+            "s": "Chosunbiz",
+            "u": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcXBOMUdDbnB4X3NIalhnVk82ZlhOc1dUakdRMVQ1Zm5HWnh1cm56LTlWNWJ0SThGQTgxX1ZWd25QbVNSZThXRmFWWVFiX2VjT1g0SWpvZ0tlUks1dE9VS2kzT3h0RkpTR1htTzd2VFVRRk9KN1NubjduZWU5YUl6aXl2anZNNEtF0gGcAUFVX3lxTE5ya0t4NGpXNXlTTFFVSVl3LTZHeDk5dXBqbXo5dk9zT3VSdWF6TmFLVW1HNHlwR3Q2TGlBNmswUnFXdlpLaHNma1VsdjF1b0lRQTU1X29SMEJQa2tRckpwb1FfSFFxXzdxQktTSHpzckVoUnFlVDEta0owVE5CODR"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "엔비디아 칩 중국 발견",
+        "easy": "중국의 특정 시설에서 엔비디아의 최첨단 AI 칩이 발견되어 논란이 일고 있습니다. 수출통제를 우회했거나 연관된 정황이 있다는 보도가 이어졌는데요. 뭔 소리냐면 미국 규제를 받는 첨단 반도체가 중국 내 서버에 흘러 들어갔다는 말이에요.",
+        "score": 0.6,
+        "macro": [],
+        "n": 6,
+        "arts": [
+          {
+            "t": "中 시설서 발견된 엔비디아 최첨단 칩…\"젠슨 황 불륜 상대 연관 기업\"",
+            "s": "조선일보",
+            "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWUFjQTY0amlIeVJVUWpiZFlfNUdEdVJ3STBIblhOVnJNZG9seHN6ZklnMUU4cmo5dUhXUlJyTzNiTElIUDZZNFpQaHJ5c1l5UnRLMjRHRGFOMzd2YlMzMk5OZjcwcEdFSkN5Q1lvQWx6UTNTbGdmNWNIaVBEcXU3R2F3ZnQwdmNwVXRBR1oxR21MMG5pR2w2NVRndVFuUQ?oc=5"
+          },
+          {
+            "t": "‘수출통제’ 엔비디아 블랙웰, 중국 내 서버 탑재 확인…앨리스 황 연계 의심",
+            "s": "경향신문",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaaWkwYk9DaW9ERTlEM21vY29qNHZzOU1UZU1PSkVueUZlQnZYb3huWTQzcGNHTEl5X3UxVWRTbV9xWXdXTzZKTEpzbTJHcW1TY1JXd0xQdU0xQdIBX0FVX3lxTE5hR2Y5Y1d4NGJRdGt4eXR0bW9PMzhURlg1NHZ0Vk1SOUJZTHpNc3dpTFk1R0JRbGh6NXNuZkRxM2F3akxQX3Z0Z2p4YnFzT29OSlBhUnFLTTQxTTRRU3hB?oc=5"
+          },
+          {
+            "t": "엔비디아 최첨단 AI칩, ‘불륜녀 연관’ 中데이터센터에 설치",
+            "s": "동아일보",
+            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBTTjktMDU1LXZjRVBKaE1aWGVXbkd1cFQ4Q0tQTkNYUllsdEVIOWZJTS1xQVFtNGJwb0ttMm1IMmtxMEEyeXprbGE0YWJkSkM0cWxLZXNXRUNrekhGX3dwa2s2ZzdwR0hzclBOWkkyT2cwOTA?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한전 송전선로 활용",
+        "easy": "한국전력공사가 기존 송전선로를 활용하는 전력망 통합구축 방식을 선보여 인사혁신처장상을 수상했습니다. 송전철탑을 줄이거나 효율을 높이는 등의 성과를 거뒀는데요. 쉽게 말하면 전력망 운영 효율을 높여 상을 받았다는 겁니다.",
+        "score": 0.5,
+        "macro": [],
+        "n": 3,
+        "arts": [
+          {
+            "t": "한전, 기존 송전선로 활용한‘전력망 통합구축’으로 적극행정 인사혁신처장상 수상",
+            "s": "에너지타임뉴스",
+            "u": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBFWldkSDZrYjg4SUthYmQ2X3RPNWxsRTFfelpwNE8xeGt4SlU0LW1UalRJR0lfdzlEblVLZ181TEpKdFVvLW5kR21BeHRnX2c2TVhRZW5WaUlxMURYMXFJYU5BajcyRWVHY0NOTkZheDdNR0x4aWfSAXZBVV95cUxQRVpXZEg2a2I4OElLYWJkNl90TzVsbEUxX3pacDRPMXhreEpVNC1tVGpUSUdJX3c5RG5VS2dfNUxKSnRVby1uZEdtQXh0Z19nNk1YUWVuVmlJcTFEWDFxSWFOQWo3MkVlR2NDTk5GYXg3TUdMeGln?oc=5"
+          },
+          {
+            "t": "한전, 송전철탑 40% 감축 추진…적극행정 경진대회 '인사혁신처장상'",
+            "s": "프레시안",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51Qndwc3I1dmhFT3E2c3JucVRrTGU3TVotNG9veTRnU2JPRFNzN2FKcldkOVd4N3NYek5WS2JSdjFvdWhhNTQ5QUlIbFdEanJuZEY1c29SVUU3OFdHZTZGY1ZBcl8wbDZNZ0JZ?oc=5"
+          },
+          {
+            "t": "한전, 기존 송전선로 활용 전력망 통합으로 인사혁신처장상 수상",
+            "s": "웹이코노미",
+            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE5qTWhXMlU5Q3NORWUwV3pkb2pzU1FKTGdSTGV5UHo2bk1fNFdzUHVnYnE3blhRVnd6cFRhTGxDSDNfQkVwcWFaa1pIdW1QOGdjMmg5b0pfNi1aRXNoU3ZGNTl1SmxYWGNJQTJadldVNGZLQQ?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "미중 무역 갈등 시험대",
+        "easy": "미국이 과잉생산 관세 압박을 높이자 중국이 반발하면서 미중 무역 휴전이 다시 시험대에 올랐습니다. 화웨이와 쉬인 등 주요 기업들이 타깃이 되었는데요. 쉽게 말하면 양국의 무역 갈등이 다시 고조될 수 있다는 겁니다.",
+        "score": 0.5,
+        "macro": [],
+        "n": 3,
+        "arts": [
+          {
+            "t": "[초점] 美, 화웨이·쉬인 압박…韓 반도체·車도 관세 거론",
+            "s": "자본시장뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5DZXUzeGk3OEFpNVB5RFFlOGROOWt6cm1tbGRFSnBMMEN2dHBuMl84NWctX2ZldkZja1dmTnJDaEljNktITVhxNHFQVFdhY3djQnlvNGtqUDFaeFlRX2NoUUFsUGVta00?oc=5"
+          },
+          {
+            "t": "\"미국 '과잉 생산' 관세에 중국 반발...무역 휴전 다시 시험대\"",
+            "s": "YTN",
+            "u": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9pVllxbDJQNV9GV3Q2MU94Sjc4b0hiWXBBSjNZaFo4Nm5rTUpFQ1pDUHBxbmIyVzA0NkVjV0IwZXl2MzI3bjdVTGI0YU95VHJidUUwX3RiSlc4c2x0RFE?oc=5"
+          },
+          {
+            "t": "美 과잉생산 관세에 中 반발…미중 무역휴전 다시 ‘시험대’",
+            "s": "미주한국일보",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1nRm1GeThJTjE0dkZ0OUp2cFZUTjgtRzJLbXBhb04xLTFsT0J5OHd3bl9nZGRHcFFaRnBaemQyUWdEeHBHa3JsaGhkNXNHOVRCeUZaNm5n?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한·중 반도체 경쟁",
+        "easy": "한국 반도체가 성과급 잔치로 들썩이는 사이 중국과 일본 등 경쟁국들이 기술 추격에 속도를 내고 있습니다. 화웨이 등이 HBM 개발에 박차를 가하고 있는데요. 뭔 소리냐면 국내 기업들이 앞서가는 동안 경쟁사들의 추격 만만치 않다는 말이에요.",
+        "score": 0.5,
+        "macro": [],
+        "n": 3,
+        "arts": [
+          {
+            "t": "韓 반도체 '성과급 잔치'에 들썩일 때…中·日은 칼 갈았다 [강경주의 테크X]",
+            "s": "한국경제",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsMk83VnZkU0FTUW93T2kwWU93WlFlTzc3NUJrcW5STU1GOEY0WWw1R1k0V1c0TXR4TWpSaFRULUpqd2tBR2ttRWtTMklRR2YtQTdTRG5TSFN5dw?oc=5"
+          },
+          {
+            "t": "中 화웨이, HBM 기술 SK하이닉스·삼성전자 턱밑 추격",
+            "s": "엠투데이",
+            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE85cTlvcmR3eUdsSUI2M3E0NWZsVEUtSDFIMTh0VERoUVNtS0owZDlvUVJxbEdlRFR6Z0x0VFpUYllpZ3BTWWJlb0NhaUd1NnhUYWdqXzZxZWxwWTRhVDFzR0Y1WUxIdk5naE53c0xVYw?oc=5"
+          },
+          {
+            "t": "韓 반도체 '성과급 잔치'에 들썩일 때…中·日은 칼 갈았다 [강경주의 테크X]",
+            "s": "한국경제 경제",
+            "u": "https://www.hankyung.com/article/2026112750696"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "기준금리 3.25% 인상",
+        "easy": "한국은행이 기준금리를 3.25%로 인상하면서 긴축 기조를 이어갔습니다. 대출 이자 부담과 주택시장 영향이 커질 것이라는 전망이 나왔는데요. 쉽게 말하면 금리가 올라가면서 가계와 시장의 자금 압박이 커졌다는 겁니다.",
+        "score": 0.3,
+        "macro": [
+          "기준금리"
+        ],
+        "n": 6,
+        "arts": [
+          {
+            "t": "“한은 금리 인상, 이제 시작일 뿐?”…다시 빨라진 글로벌 ‘긴축 시계’",
+            "s": "매일경제 마켓",
+            "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0xclk0ME5HRXRuaUJTMFNWUXFZRnNGS3JtdzRld2I0cmtHaDJDNGZBazI2QXdZbU5MWWtnaEsxbnRzbUNaU3U0cTU4cTZiWmg0X0E?oc=5"
+          },
+          {
+            "t": "한은, 기준금리 3.25%로 인상…내년 韓성장률 '4.1%' 파격 전망",
+            "s": "머니투데이",
+            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBMZ2p6M1Z3UG8zZUdySkhLS3MwVHZRYXQ3RWxlVXk1dGE2X3RoUzZ2aTI2Q3lvQmgxSVFEb3lvS1prdDdFSVMxOC1uNFRwOWp0ekhwQWk3VTgtQ0Q5cml0dWlMUjJEazVDTF9R0gFwQVVfeXFMUHRwWlc4cHRISExFLVlYdlMwd21rTmxYZGQwblRWWE40VUpGZ1N3ZjJUb1BPZ0FVbVhBUjdrSU1SdFJzSG1GVDRyS2RoN2lKZzgwT3hEb2x0cjRyNnRMUHZLZmVzOS1SQjhTODdtU19vMQ?oc=5"
+          },
+          {
+            "t": "[N2 포커스] 기준금리 2년 만에 3.25%…주택시장 권역별 차별화 짙어진다",
+            "s": "뉴스투데이",
+            "u": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBpLVZhNU9QeDM0YkNST1FlRjlyRHhndElFSE8waHpkYk4tRl9HVWVTNmg1a2NYQWNidDVNVXBYUG9JN3B6Z0FWLUx1UWNpSnVyR3VCUzN3YzltVmxxdmc?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "거시",
+        "title": "ECB 인사들 “물가 여전히 높아 추가 금리 인상 필요할 수도”",
+        "easy": "",
+        "score": 0.1,
+        "macro": [
+          "ecb",
+          "금리",
+          "물가"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "ECB 인사들 “물가 여전히 높아 추가 금리 인상 필요할 수도”",
+            "s": "인베스팅 주식",
+            "u": "https://kr.investing.com/news/stock-market-news/article-2192151"
+          }
+        ]
+      }
+    ],
+    "source": "v2_secretary/결과/갱신/2026-11-28_1206.json"
+  },
   "flows": {
     "day": "2026-11-28",
     "same_day": true,
@@ -1014,14 +1198,16 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-28",
-      "start": "2026-11-28 10:56:03",
+      "start": "2026-11-28 12:06:50",
       "by": "github",
       "where": "GitHub",
-      "mode": "indicators",
-      "end": "2026-11-28 10:56:22",
-      "secs": 19,
+      "mode": "refresh",
+      "flows_retry_exit": 0,
       "indicators_refresh_exit": 0,
-      "calls": 0,
+      "end": "2026-11-28 12:09:05",
+      "secs": 135,
+      "exit": 0,
+      "calls": 2,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -22714,12 +22900,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
         "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
-        "line_out": "내보냄: 오늘 받기 2번 · 장부 새 줄 11개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
+        "line_out": "내보냄: 오늘 받기 3번 · 장부 새 줄 16개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
         "metrics": {
-          "in": 2,
-          "out": 11,
+          "in": 3,
+          "out": 16,
           "calls": 0,
-          "secs": 33.4,
+          "secs": 53.6,
           "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
@@ -23194,9 +23380,9 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
         "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
-        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok · 그 뒤 낮 갱신·지표만 1번",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok · 그 뒤 낮 갱신·지표만 2번",
         "metrics": {
-          "in": 2,
+          "in": 3,
           "out": 1,
           "calls": 59,
           "secs": 738.0,
