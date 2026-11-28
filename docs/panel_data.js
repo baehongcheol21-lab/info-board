@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-28",
-  "generated_at": "2026-11-28 04:37:55",
-  "made_iso": "2026-11-28T04:37:55+09:00",
+  "generated_at": "2026-11-28 10:56:22",
+  "made_iso": "2026-11-28T10:56:22+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 1번",
@@ -1014,16 +1014,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-28",
-      "start": "2026-11-28 04:13:32",
+      "start": "2026-11-28 10:56:03",
       "by": "github",
       "where": "GitHub",
-      "mode": "run",
-      "end": "2026-11-28 04:25:50",
-      "secs": 738,
-      "exit": 0,
-      "result_md": true,
-      "failed_stages": 0,
-      "calls": 59,
+      "mode": "indicators",
+      "end": "2026-11-28 10:56:22",
+      "secs": 19,
+      "indicators_refresh_exit": 0,
+      "calls": 0,
       "result": "ok"
     },
     "last_auto_run_source": "v2_secretary/data/auto/runs.jsonl",
@@ -22716,12 +22714,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
         "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
-        "line_out": "내보냄: 오늘 받기 1번 · 장부 새 줄 8개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
+        "line_out": "내보냄: 오늘 받기 2번 · 장부 새 줄 11개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
         "metrics": {
-          "in": 1,
-          "out": 8,
+          "in": 2,
+          "out": 11,
           "calls": 0,
-          "secs": 15.4,
+          "secs": 33.4,
           "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
@@ -23196,9 +23194,9 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
         "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
-        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok · 그 뒤 낮 갱신·지표만 1번",
         "metrics": {
-          "in": 1,
+          "in": 2,
           "out": 1,
           "calls": 59,
           "secs": 738.0,
