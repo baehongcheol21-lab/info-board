@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-28",
-  "generated_at": "2026-11-28 12:15:06",
-  "made_iso": "2026-11-28T12:15:06+09:00",
+  "generated_at": "2026-11-28 13:42:19",
+  "made_iso": "2026-11-28T13:42:19+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 1번",
@@ -1198,12 +1198,12 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-28",
-      "start": "2026-11-28 12:14:42",
+      "start": "2026-11-28 13:42:07",
       "by": "github",
       "where": "GitHub",
       "mode": "indicators",
-      "end": "2026-11-28 12:15:05",
-      "secs": 23,
+      "end": "2026-11-28 13:42:19",
+      "secs": 11,
       "indicators_refresh_exit": 0,
       "calls": 0,
       "result": "ok"
@@ -22898,12 +22898,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
         "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
-        "line_out": "내보냄: 오늘 받기 4번 · 장부 새 줄 16개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
+        "line_out": "내보냄: 오늘 받기 5번 · 장부 새 줄 16개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
         "metrics": {
-          "in": 4,
+          "in": 5,
           "out": 16,
           "calls": 0,
-          "secs": 75.5,
+          "secs": 85.8,
           "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
@@ -23378,9 +23378,9 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
         "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
-        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok · 그 뒤 낮 갱신·지표만 3번",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok · 그 뒤 낮 갱신·지표만 4번",
         "metrics": {
-          "in": 4,
+          "in": 5,
           "out": 1,
           "calls": 59,
           "secs": 738.0,
