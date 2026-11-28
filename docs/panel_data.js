@@ -2,8 +2,8 @@
 window.PANEL_DATA = {
   "schema_version": "2.1.0-panel-v1",
   "day": "2026-11-28",
-  "generated_at": "2026-11-28 16:08:09",
-  "made_iso": "2026-11-28T16:08:09+09:00",
+  "generated_at": "2026-11-28 21:10:17",
+  "made_iso": "2026-11-28T21:10:17+09:00",
   "freshness": {
     "lines": [
       "AI 사용량 초과(429) 1번",
@@ -13,96 +13,97 @@ window.PANEL_DATA = {
     "source": "v2_secretary/data/auto/runs.jsonl"
   },
   "refresh": {
-    "tag": "1606",
-    "made_iso": "2026-11-28T16:06:15+09:00",
-    "new": 182,
-    "news_new": 179,
+    "tag": "2108",
+    "made_iso": "2026-11-28T21:08:52+09:00",
+    "new": 247,
+    "news_new": 216,
     "calls": 2,
     "error": "",
     "times": [
       "1206",
-      "1606"
+      "1606",
+      "2108"
     ],
     "picks": [
       {
         "seat": "뉴스",
-        "title": "엔비디아 최첨단 칩 중국 발견",
-        "easy": "미국의 수출 통제를 받는 엔비디아의 최첨단 칩과 블랙웰 서버가 중국 내 시설에서 발견됐습니다. 미국이 막아둔 고성능 칩이 버젓이 쓰이고 있다는 사실이 확인되면서 규제 실효성 논란이 커졌는데요. 뭔 소리냐면 글로벌 빅테크의 공급 병목 속에서도 우회 경로를 통한 반도체 유입이 계속되고 있다는 말이에요. 이 때문에 미국 정부의 독점 감시와 규제 압박이 더 거세질 것으로 보입니다.",
+        "title": "GS 동해 AI 데이터센터 착공",
+        "easy": "GS그룹이 강원 동해에 1.2GW 규모의 인공지능(AI) 데이터센터 사업의 첫 삽을 떴는데요. 총 30조원 규모를 투자해 2029년 가동을 목표로 한다는 겁니다. 뭔 소리냐면 AI 산업의 미래 명소가 되겠다는 말이에요. 그래서 글로벌 AI 허브로 도약한다는 셈이에요.",
         "score": 0.6,
         "macro": [],
-        "n": 6,
+        "n": 7,
         "arts": [
           {
-            "t": "美가 막은 엔비디아 최첨단 칩, 中데이터센터에 설치됐다",
-            "s": "조선일보",
-            "u": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWUFjQTY0amlIeVJVUWpiZFlfNUdEdVJ3STBIblhOVnJNZG9seHN6ZklnMUU4cmo5dUhXUlJyTzNiTElIUDZZNFpQaHJ5c1l5UnRLMjRHRGFOMzd2YlMzMk5OZjcwcEdFSkN5Q1lvQWx6UTNTbGdmNWNIaVBEcXU3R2F3ZnQwdmNwVXRBR1oxR21MMG5pR2w2NVRndVFuUQ?oc=5"
+            "t": "GS, 1.2GW AI 데이터센터 착공…허태수 “글로벌 AI 허브로”",
+            "s": "부산일보",
+            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBmemJTNUFBczA4bTgxWWFZbnpIUnYzN1A3TTRsRGdHZkc4Wlc3VzA3Skg1STdVcEMtR05jbHI5YUNoM05CUGx4U1p5eWpVN3VKdWJGbElXUVNUX0ZFaEFvbVlRUU1nS0tQdGFVbFpoTHNmeGYx?oc=5"
           },
           {
-            "t": "‘수출통제’ 엔비디아 블랙웰, 중국 내 서버 탑재 첫 확인···앨리스 황 연계 의심",
-            "s": "경향신문",
-            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaaWkwYk9DaW9ERTlEM21vY29qNHZzOU1UZU1PSkVueUZlQnZYb3huWTQzcGNHTEl5X3UxVWRTbV9xWXdXTzZKTEpzbTJHcW1TY1JXd0xQdU0xQdIBX0FVX3lxTE5hR2Y5Y1d4NGJRdGt4eXR0bW9PMzhURlg1NHZ0Vk1SOUJZTHpNc3dpTFk1R0JRbGh6NXNuZkRxM2F3akxQX3Z0Z2p4YnFzT29OSlBhUnFLTTQxTTRRU3hB?oc=5"
+            "t": "GS, 동해 AI 데이터센터 착공…허태수 회장 “AI 산업의 미래를 보여주는 명소”",
+            "s": "대한경제",
+            "u": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1hWGlySlM0TlVIYkU4Q0ZCM3JMYzZ1ZkZ1N2o2OTk5NnZPd2E1aFZ5b1VSOE8zOHNTZkMzUG9vT2NmY0FtSzZ2Sm9OMHZWUE5zd09hVk91clBmLU05LVF2dGNjY1ExQVRTX0FBWS10anI2SjQ?oc=5"
           },
-          {
-            "t": "젠슨 황 불륜 상대' 연계 중국 시설에서 엔비디아 최첨단 칩 발견",
-            "s": "YTN",
-            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9idXh1VlFpZ2ZTaHFyRExhTGVHMW1sd3hwVWlEejdFWGltOFAyWkZ0d1lQUXdSQ1ZwMlYwWS14NUZMSXpsRDZCSGowOW9pN19OLUhsdEFFWGdxMW5YaTN4WVN6LWQ1UUhIMkdTcmhObw?oc=5"
-          }
-        ]
-      },
-      {
-        "seat": "뉴스",
-        "title": "GS, 동해 AI 데이터센터 착공",
-        "easy": "GS그룹이 총 30조원 규모를 투자해 동해에 AI 데이터센터를 착공하고 2029년 준공과 가동을 목표로 잡았습니다. 이게 뭔 소리냐면 아시아 최대 규모의 인공지능 인프라를 구축하겠다는 거거든요. 덕분에 데이터센터 증설로 냉각 시스템이나 에너지저장장치 같은 관련 분야까지 함께 주목받는 모습이에요. 쉽게 말하면 GS가 대규모 투자를 시작하면서 전력과 인프라 시장 전체가 들썩이는 셈입니다.",
-        "score": 0.6,
-        "macro": [],
-        "n": 5,
-        "arts": [
           {
             "t": "GS, 동해 2.4GW AI 데이터센터 착공…2029년 가동 목표",
             "s": "에너지신문",
             "u": "https://news.google.com/rss/articles/CBMickFVX3lxTE9zTjFGWUJDcHdmYlR0THF1ZTdpTG85b0t5X3VfbGx3dUd6UDFpV0kzcHg0cmp6RklCQzBMaWV1dDkweHRXVE5EZlBPNzBrbmJzVENGaHBHeUpnd0VKV0hVUTFQRmE5WTNkMkRpVXg2cHdUUQ?oc=5"
-          },
-          {
-            "t": "최대 120조원…GS, 동해 아시아 최대 AI 데이터센터 첫 삽",
-            "s": "리드경제",
-            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ocV82bjVrbFhsY2ZTZjJMVUpDNG5hSUtoUjRuX1I3SFEtM295bWZQdlkwRmg0eGVEbXdYZFJPYlhWSFgwM0RhSFZGNDVOYnFHb0hBdFozb211QnJNUFBmVXV5Mk9KSUVWeUhSLTFvbVo?oc=5"
-          },
-          {
-            "t": "GS, 동해 1.2GW급 AI 데이터센터 착공… 2029년 준공·가동 목표",
-            "s": "기계신문",
-            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE95VkFtZWU3MFVUZmNXY0UyQ0dYaXp4akEtcVdrY0kwY3J0ZHZDTGZuWm82VnFGbkdDdGEwN18zUDdGRVV2SWFWUFViUTUxQWgxVmlWU0s0Vnl0bGRKMUdnMFJKeHk3TzA?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "SK하이닉스 자사주 매수 확대",
-        "easy": "SK하이닉스가 주가 급락에 대응하기 위해 하루 자사주 매수 주문량을 기존 35만주에서 70만주로 늘렸습니다. 주가가 고점 대비 크게 떨어지자 이사회 결정으로 매입에 속도를 내는 건데요. 뭔 소리냐면 회사가 직접 나서서 주가 방어와 주주환원에 힘을 싣겠다는 말이에요. 앞으로 주가 흐름에 어떤 변화를 줄지 관심이 쏠린다는 겁니다.",
+        "title": "SK하이닉스 자사주 매입 확대",
+        "easy": "SK하이닉스가 하루 자사주 매수 주문량을 약 35만주에서 70만주로 늘렸는데요. 주가가 급락하자 지난달 이사회에서 매입 속도를 높였다는 겁니다. 뭔 소리냐면 주가 방어를 위해 적극적으로 나섰다는 말이에요. 단점은 주가 하락세가 컸다는 거지만, 장점은 회사의 적극적인 주주환원 의지를 보여준다는 겁니다.",
         "score": 0.6,
         "macro": [],
-        "n": 4,
+        "n": 3,
         "arts": [
           {
-            "t": "SK하이닉스, 자사주 매수 주문량 35만주→70만주 확대 |",
+            "t": "SK하이닉스, 자사주 매수 주문량 35만주→70만주 확대",
             "s": "연합인포맥스",
-            "u": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9iMW1xNUlXakFseGJYcmNESS1MaDFnQ2w3eEdHeklvYVJMVG5vTkhPelVJaFhMOE9VSmNKQm9lcmtaekY2aEJXeERpdlFMTDhFa2c5cldYOXNYc2xabUUzdkFKZWIzUC14ZzQybnJ0c1pDUkdD?oc=5"
+            "u": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1kS0pZeDFsUTFiRTRYNWV0WGFkMXpTTEtPQ3hENzVPeUZxRU85X1I1c1F6SzNlZmVVMkhEVkRQWlRJa25jTWV5cjczbDAxNFh4ZXZqOTJYblBWMktQeVJIUDExQzBuVXdwdEtsaFJ4ZHg?oc=5"
+          },
+          {
+            "t": "주가 급락에 자사주 매입 속도 내는 SK하이닉스…하루 매수 주문 70만주로",
+            "s": "매일경제",
+            "u": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBaRC05Z09VZ2M0dEp2aVRSUVAzcEJrOWNlNmxwNWxZR0ZEenJpRVpwbkVqSXd2ZjFNTGt2c3ZEQXZPZHNMSGc3Q2FHZ20wX18tXzNzOTN3?oc=5"
           },
           {
             "t": "주가 급락에 자사주 매입 속도 내는 SK하이닉스…하루 매수 주문 70만주로",
             "s": "매일경제 증권",
             "u": "https://www.mk.co.kr/news/business/12220647"
-          },
-          {
-            "t": "한국서 5% 뛴 SK하이닉스, 미국선 7%대 급등…나스닥도 2.31%↑",
-            "s": "매일경제 증권",
-            "u": "https://www.mk.co.kr/news/stock/12220603"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "한전 적극행정상 수상",
-        "easy": "한국전력이 기존 송전선로를 활용하는 전력망 통합구축 방식을 통해 신규 철탑을 40% 감축하는 성과를 내고 적극행정상 표창을 받았습니다. 전력망을 늘리는 과정에서 생기는 주민 갈등을 줄이기 위해 새로운 해법을 마련한 건데요. 뭔 소리냐면 환경 훼손과 민원을 동시에 잡으면서 효율을 높였다는 말이에요. 공공기관의 모범 사례로 꼽히면서 긍정적인 평가를 받고 있습니다.",
+        "title": "엔비디아 칩 연루 시설 논란",
+        "easy": "엔비디아의 최첨단 칩이 특정 중국 시설에서 발견됐다는 보도가 나왔는데요. 관련 인물과 얽혀 있다는 의혹이 제기됐다는 겁니다. 뭔 소리냐면 대미 제재망을 피해 칩이 흘러갔을 가능성을 들여다보고 있다는 말이에요. 단점은 엔비디아의 리스크가 커질 수 있다는 건데, 장점이라기보다는 규제 준수 여부가 핵심 쟁점이라는 겁니다.",
+        "score": 0.55,
+        "macro": [],
+        "n": 4,
+        "arts": [
+          {
+            "t": "\"엔비디아 최첨단 칩, 내연녀 관련 中 시설에\"‥'첩첩산중' 젠슨 황",
+            "s": "MBC 뉴스",
+            "u": "https://news.google.com/rss/articles/CBMieEFVX3lxTE0wQldHWFN0RzBKNDlyVmJOclE3alhYRmdOMUZLRDVsQk5IQlMtekZObGU4TFU5dXlJMTdLcGkwdWZQVUtaYkV0aFh5dW52U0xZQUsteUlEQjJPaWRBSG9uRVQwLWw5czlEajZ6MVE1OFlOOWhOZTY1ZtIBeEFVX3lxTE9mb0RtOGtIbHpTWGdCWXVzS3BpWklHN2JmQW9yZ1hrdDZjOGlxVWVkbGk2eWROOVdCdTEzeng3eXBvRVctSFo2azByNDMyWHNBQlpDY0o2eG13ZzdDRWVlazE5LUZWYVBxTV9fRDZPWmtfX2tSYUNOVw?oc=5"
+          },
+          {
+            "t": "\"앨리스 황 연계 중국 시설에 엔비디아 AI 칩\"",
+            "s": "연합뉴스TV",
+            "u": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBqZ3pjYnpIZkExVFE5OVdYZ2dld3d3bkt0dDRCc1cyVUxFRXZkRmFDdDM5VS1FMnNvdDZTbjc5NTlETWV0NmhVWFdTcWtpZU10V3B1T3QtVTVhRDMwSXNEaGFucVZQRVE?oc=5"
+          },
+          {
+            "t": "'앨리스 황' 얽힌 곳인데…엔비디아 최첨단 칩 발견",
+            "s": "m.news.sbs.co.kr",
+            "u": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNVzFKNUJ3dVd2Ym9Oc2tzb1g5QWh4b25Kek1RRWlERlNibk9LUFJjaVRjS2plMXA4T1FGRHNiNVFpOWlyeC1OQVB1YXltNDAxSUt3dG1TOXN5YVM4NDk2MkVnX1RsbGhGQVV5WFhjV3ZjWlc1emdMb0xOV0VINEJmSUJ5SkVqZHE4bTV1elZDdllmdWtGbU5NY1h5Y0t4VFFsbGlGUk5fZzJrRm9WVGc?oc=5"
+          }
+        ]
+      },
+      {
+        "seat": "뉴스",
+        "title": "한전 송전망 방식 개편",
+        "easy": "한국전력이 기존 송전선로를 활용한 전력망 통합구축 방식을 도입했는데요. 철탑을 40% 감축하는 효과가 있다고 보입니다. 뭔 소리냐면 송전망 확충 과정에서 생기는 주민 갈등을 줄여 준다는 말이에요. 장점은 사업 속도가 빨라진다는 건데, 쉽게 말하면 전력망 효율화가 핵심이라는 겁니다.",
         "score": 0.5,
         "macro": [],
         "n": 3,
@@ -113,59 +114,39 @@ window.PANEL_DATA = {
             "u": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9fUFVEdmdVT3BMWHQyR0dpMlFGWFo4YmJNYUpaUjZnNDFSQlZ2ZFdTbnllWVU3SXRDZTF1aUlaekZYaVQ4bzd3WFpwbzRfdEhxR3B6alZ5QTRKNFNxdlJBb21WbElMRGMxbXc?oc=5"
           },
           {
-            "t": "한전, 송전철탑 40% 감축 추진…적극행정 경진대회 '인사혁신처장상'",
-            "s": "프레시안",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTE51Qndwc3I1dmhFT3E2c3JucVRrTGU3TVotNG9veTRnU2JPRFNzN2FKcldkOVd4N3NYek5WS2JSdjFvdWhhNTQ5QUlIbFdEanJuZEY1c29SVUU3OFdHZTZGY1ZBcl8wbDZNZ0JZ?oc=5"
+            "t": "한전, 전력망 확충 과정의 주민 갈등 줄이는 새 해법 마련",
+            "s": "시사의창",
+            "u": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0wRlloSVdydjRvSEZFcjIyY0FOd1BKRS04S3BmRUFrQWZWWlNWTGpXTjJLeHFreEFhT2VsOU93R1dELXVBYXB6Y1gwbWpuS2lBMGZfTQ?oc=5"
           },
           {
-            "t": "한전, 전력망 통합구축으로 적극행정상 수상...신규 철탑 40% 감축 추진",
-            "s": "팝콘뉴스",
-            "u": "https://news.google.com/rss/articles/CBMickFVX3lxTFA0U1M0Q3A3eXl4V2wxTU9MV1dOaEdMX3d6LUQweU94QlIxRTdNMTh4a3VES05qMUR1aVZPcktKSFJycU9SX29qVDVlaGdwSUxwVmc3a2gycWR1TjlqLUYxenhlV202N2VjcGtySkxHdW9jUdIBckFVX3lxTFA0U1M0Q3A3eXl4V2wxTU9MV1dOaEdMX3d6LUQweU94QlIxRTdNMTh4a3VES05qMUR1aVZPcktKSFJycU9SX29qVDVlaGdwSUxwVmc3a2gycWR1TjlqLUYxenhlV202N2VjcGtySkxHdW9jUQ?oc=5"
+            "t": "한전, 송전망 건설 방식 바꾼다…철탑 40% 감축 추진",
+            "s": "더쎈뉴스",
+            "u": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE15cG9BdkVWNzR3UWFiSmZNSldNbjQ5TzREdk5ndkgwX09NdFhwRWhSNDZpdFdpMTJJRmNBbG50ZTEwb3FCRGJOMlB4X2MySGd2aDZRdUNlVUpFVXFhcXlDcG5JSjJfTjRM?oc=5"
           }
         ]
       },
       {
         "seat": "뉴스",
-        "title": "코스피 5000선 뚫을까…증안펀드·젠슨 황에 쏠린 눈[다음주 주요변수 미리보기]",
-        "easy": "",
+        "title": "정부 총리 대기업 채용 요청",
+        "easy": "한성숙 국무총리가 청년들의 취업 현실을 점검하고 삼성전자와 SK하이닉스 등 대기업 관계자들을 만났는데요. 청년 채용을 늘려달라고 요청했다는 겁니다. 뭔 소리냐면 대기업들이 일자리 창출에 더 신경 써 달라는 말이에요. 그래서 청년층 취업난 해소에 얼마나 도움이 될지 주목된다는 셈이에요.",
         "score": 0.5,
-        "macro": [
-          "코스피"
-        ],
-        "n": 1,
+        "macro": [],
+        "n": 3,
         "arts": [
           {
-            "t": "코스피 5000선 뚫을까…증안펀드·젠슨 황에 쏠린 눈[다음주 주요변수 미리보기]",
-            "s": "한국경제 증권",
-            "u": "https://www.hankyung.com/article/202611275312i"
-          }
-        ]
-      },
-      {
-        "seat": "거시",
-        "title": "한국은행 기준금리 인상",
-        "easy": "한국은행이 기준금리를 3.25%로 올리고 내년 한국 경제성장률을 4.1%로 전망했습니다. 금리가 오르면서 서민들의 대출이자가 늘어나는 부담이 생겼는데요. 뭔 소리냐면 물가 안정을 위해 다시 긴축 시계가 빨라졌다는 말이에요. 장점은 물가를 잡는 거지만, 단점은 대출을 쥔 차주들의 이자 부담이 커진다는 거거든요.",
-        "score": 0.25,
-        "macro": [
-          "기준금리",
-          "한국은행"
-        ],
-        "n": 4,
-        "arts": [
-          {
-            "t": "“한은 금리 인상, 이제 시작일 뿐?”…다시 빨라진 글로벌 ‘긴축 시계’",
-            "s": "매일경제 마켓",
-            "u": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0xclk0ME5HRXRuaUJTMFNWUXFZRnNGS3JtdzRld2I0cmtHaDJDNGZBazI2QXdZbU5MWWtnaEsxbnRzbUNaU3U0cTU4cTZiWmg0X0E?oc=5"
+            "t": "한성숙 총리, 삼성전자·SK하이닉스에 “채용 많이 해달라”",
+            "s": "경향신문",
+            "u": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE44ODNLeXRkSkUzeDZaMWN3R1YwajVVbXdmVXRKeVhGY1c1UzktV0FLaUEzR2FjVDRRVXFPSFZlMXRmNWc1cjI5cnVpSzRURVg3UUQ5ZEdXRU0xZ9IBX0FVX3lxTE1CcE1xTnVXclltNlJRY3dXZUVPSzlIajgyVERxWmkzTlNKeXhkOFRHcHFUUmJ4XzdnNWZnb0lXQnljWDlLV2NWUGxLN1lDV21ORWdfaDg3VEpRWDBycWtj?oc=5"
           },
           {
-            "t": "한은, 기준금리 3.25%로 인상…내년 韓성장률 '4.1%' 파격 전망",
-            "s": "머니투데이",
-            "u": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBMZ2p6M1Z3UG8zZUdySkhLS3MwVHZRYXQ3RWxlVXk1dGE2X3RoUzZ2aTI2Q3lvQmgxSVFEb3lvS1prdDdFSVMxOC1uNFRwOWp0ekhwQWk3VTgtQ0Q5cml0dWlMUjJEazVDTF9R0gFwQVVfeXFMUHRwWlc4cHRISExFLVlYdlMwd21rTmxYZGQwblRWWE40VUpGZ1N3ZjJUb1BPZ0FVbVhBUjdrSU1SdFJzSG1GVDRyS2RoN2lKZzgwT3hEb2x0cjRyNnRMUHZLZmVzOS1SQjhTODdtU19vMQ?oc=5"
+            "t": "한성숙 총리, 삼성전자·SK하이닉스에 “청년 채용 늘려달라”",
+            "s": "에너지경제신문",
+            "u": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB5cTVBdnhJOGdDcUlnWXc0b1pVY3MtblBGbXVIQVE2WjhjanNuaWxRelEwZkxMVE04dkZvNmtIWTRjbnpCdlRzWFJpRll0a2FNQTRTbmoyWGdFWTA?oc=5"
           },
           {
-            "t": "한국은행, 기준금리 0.25%p 인상…내년 성장률 전망 4.1%",
-            "s": "국제뉴스",
-            "u": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1jb2stWFZ5YW1qY3czLTA0aGRON0NvM2ZxRzdvVHVHdl85Z3lmNlZuZGxENzgxM2NodXZULUxIMVFNTUpLa2pYd2JvYTl4cFlma2dJQWRtVHMtNVJBSENKSG85MmNMLVJxeHdUOWZn?oc=5"
+            "t": "韓총리, 삼전·하이닉스에 \"채용 많이 해달라\"…청년간담회도",
+            "s": "연합뉴스 경제",
+            "u": "https://www.yna.co.kr/view/AKR20261128043500001"
           }
         ]
       },
@@ -187,9 +168,27 @@ window.PANEL_DATA = {
             "u": "https://kr.investing.com/news/stock-market-news/article-2192151"
           }
         ]
+      },
+      {
+        "seat": "거시",
+        "title": "올해 3번 오른 한은 기준금리…다음 인상은 '내년 2월' 무게",
+        "easy": "",
+        "score": 0.1,
+        "macro": [
+          "기준금리",
+          "한은"
+        ],
+        "n": 1,
+        "arts": [
+          {
+            "t": "올해 3번 오른 한은 기준금리…다음 인상은 '내년 2월' 무게",
+            "s": "뉴스웍스",
+            "u": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5HNkdPM29lc19SX3VoelJzdnJUbXQ3RVcxNTBYYkRfYjcyWEtldl9oM3VkdmFiUzJiZFc2ekl0dTZNbWFZVnIzZmRmSHVNY3JXSzJuOEIwdVQ3MXFuSXlHaE95d1RRQ1NkTFJUQjNuZ9IBc0FVX3lxTE9PUHp1c3FWUGVzV04xWWZPZGN1SDlwQjU5MUxzcFlTVHV5NmxmZW9RNUphMUJKMFUwWWlvN3NZYVZjZk9RTW9uNDlUVVVsNGlycTJKZmpfU1Q3dXpxTG9SYnpWb2w4SnNUdm12N0FiNmNsdmM?oc=5"
+          }
+        ]
       }
     ],
-    "source": "v2_secretary/결과/갱신/2026-11-28_1606.json"
+    "source": "v2_secretary/결과/갱신/2026-11-28_2108.json"
   },
   "flows": {
     "day": "2026-11-28",
@@ -1192,14 +1191,14 @@ window.PANEL_DATA = {
     },
     "last_auto_run": {
       "day": "2026-11-28",
-      "start": "2026-11-28 16:06:15",
+      "start": "2026-11-28 21:08:52",
       "by": "github",
       "where": "GitHub",
       "mode": "refresh",
       "flows_retry_exit": 0,
       "indicators_refresh_exit": 0,
-      "end": "2026-11-28 16:08:09",
-      "secs": 115,
+      "end": "2026-11-28 21:10:17",
+      "secs": 85,
       "exit": 0,
       "calls": 2,
       "result": "ok"
@@ -22894,12 +22893,12 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 야후(시장 12개) · 공공데이터포털(전력 6개)",
         "line_rule": "규칙: indicators.py (0콜) — 안 끝난 오늘 장은 빼고 마감된 값만 장부에 덧붙임",
-        "line_out": "내보냄: 오늘 받기 6번 · 장부 새 줄 16개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
+        "line_out": "내보냄: 오늘 받기 7번 · 장부 새 줄 16개 · 새벽: 지표 21/21 받음 · 새 줄 8개 · 15.4초",
         "metrics": {
-          "in": 6,
+          "in": 7,
           "out": 16,
           "calls": 0,
-          "secs": 99.0,
+          "secs": 110.1,
           "num_source": "v2_secretary/data/indicators_runs.jsonl"
         }
       },
@@ -23374,9 +23373,9 @@ window.PANEL_DATA = {
         "source": "구간_주소표.md",
         "line_in": "받음: 깃허브 Actions 예약(새벽 04시 하루 바퀴 · 낮 갱신 12·16시 · 지표만 받기)",
         "line_rule": "규칙: auto_run.py → run_day.py --collect, 실행마다 data/auto/runs.jsonl 한 줄",
-        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok · 그 뒤 낮 갱신·지표만 5번",
+        "line_out": "내보냄: 새벽 바퀴 04:13 시작 · 738초 · AI 59콜 · ok · 그 뒤 낮 갱신·지표만 6번",
         "metrics": {
-          "in": 6,
+          "in": 7,
           "out": 1,
           "calls": 59,
           "secs": 738.0,
